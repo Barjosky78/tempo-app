@@ -1,6 +1,7 @@
 const tempoDiv = document.getElementById("tempo");
+const lastUpdateDiv = document.getElementById("last-update");
 
-// Chargement du JSON (anti-cache)
+// Chargement JSON avec anti-cache
 fetch("tempo.json?ts=" + Date.now())
   .then(res => res.json())
   .then(days => {
@@ -11,7 +12,22 @@ fetch("tempo.json?ts=" + Date.now())
       return;
     }
 
-    // Dates de référence
+    // Affichage date + heure de mise à jour (locale)
+    const now = new Date();
+    lastUpdateDiv.textContent =
+      "Dernière mise à jour : " +
+      now.toLocaleDateString("fr-FR", {
+        weekday: "long",
+        day: "numeric",
+        month: "long"
+      }) +
+      " à " +
+      now.toLocaleTimeString("fr-FR", {
+        hour: "2-digit",
+        minute: "2-digit"
+      });
+
+    // Références aujourd'hui / demain
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
@@ -26,15 +42,12 @@ fetch("tempo.json?ts=" + Date.now())
 
       const dayOfWeek = dayDate.getDay(); // 0 = dimanche, 6 = samedi
 
-      // 🔒 RÈGLES TEMPO WEEK-END (UNIQUEMENT POUR J+2 → J+9)
+      // 🔒 Règles Tempo week-end (prévisions uniquement)
       if (index >= 2) {
-        // Dimanche = toujours BLEU
         if (dayOfWeek === 0) {
           day.couleur = "bleu";
           day.probabilites = { rouge: 0, blanc: 0, bleu: 100 };
         }
-
-        // Samedi = jamais ROUGE
         if (dayOfWeek === 6 && day.couleur === "rouge") {
           day.couleur = "blanc";
           day.probabilites = { rouge: 0, blanc: 60, bleu: 40 };
@@ -43,12 +56,17 @@ fetch("tempo.json?ts=" + Date.now())
 
       card.className = "day " + day.couleur;
 
-      // Label Aujourd’hui / Demain / J+x
+      // Label logique
       let label = "J+" + index;
-      if (dayDate.getTime() === today.getTime()) label = "Aujourd’hui";
-      else if (dayDate.getTime() === tomorrow.getTime()) label = "Demain";
+      if (dayDate.getTime() === today.getTime()) {
+        label = "Aujourd’hui";
+        card.classList.add("today");
+      } else if (dayDate.getTime() === tomorrow.getTime()) {
+        label = "Demain";
+        card.classList.add("tomorrow");
+      }
 
-      // Date lisible (lundi, mardi, etc.)
+      // Date lisible
       const dateTexte = dayDate.toLocaleDateString("fr-FR", {
         weekday: "long",
         day: "numeric",
