@@ -1,6 +1,7 @@
+/* ===== GLOBAL ===== */
 body {
   background: #111;
-  color: white;
+  color: #fff;
   font-family: Arial, sans-serif;
   text-align: center;
   padding: 16px;
@@ -16,7 +17,16 @@ header {
   opacity: 0.8;
 }
 
-/* ===== GROSSES CARTES ===== */
+h1 {
+  margin-bottom: 6px;
+}
+
+.forecast-title {
+  margin: 20px 0 10px;
+  opacity: 0.85;
+}
+
+/* ===== CONTAINERS ===== */
 #main-days {
   display: flex;
   gap: 16px;
@@ -25,14 +35,6 @@ header {
   flex-wrap: wrap;
 }
 
-.main-cards .day {
-  width: 260px;
-  padding: 18px;
-  border-radius: 16px;
-  font-size: 18px;
-}
-
-/* ===== PETITES CARTES ===== */
 #forecast {
   display: flex;
   gap: 12px;
@@ -40,24 +42,43 @@ header {
   flex-wrap: wrap;
 }
 
+/* ===== CARTES ===== */
+.day {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  border-radius: 16px;
+  padding: 14px;
+  box-sizing: border-box;
+}
+
+/* Grosses cartes */
+.main-cards .day {
+  width: 260px;
+  font-size: 18px;
+}
+
+/* Petites cartes */
 #forecast .day {
   width: 120px;
-  padding: 10px;
-  border-radius: 12px;
   font-size: 14px;
 }
 
-/* Carte commune */
-.day {
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+/* ===== COULEURS TEMPO ===== */
+.day.bleu {
+  background: #1e90ff;
+  color: #fff;
+}
+
+.day.blanc {
+  background: #f2f2f2;
   color: #000;
 }
 
-/* Couleurs Tempo */
-.day.bleu { background: #1e90ff; color: #fff; }
-.day.blanc { background: #f2f2f2; color: #000; }
-.day.rouge { background: #e74c3c; color: #fff; }
+.day.rouge {
+  background: #e74c3c;
+  color: #fff;
+}
 
+/* ===== CONTENU ===== */
 .date {
   font-weight: bold;
   margin-bottom: 6px;
@@ -69,12 +90,31 @@ header {
   margin-top: 6px;
 }
 
-.forecast-title {
-  margin-bottom: 12px;
-  opacity: 0.85;
+/* ===== INDICATEUR DE CONFIANCE ===== */
+.confidence {
+  margin-top: 8px;
+  font-size: 12px;
 }
 
-/* Mobile */
+.confidence-bar {
+  height: 6px;
+  background: rgba(0,0,0,0.25);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 3px;
+}
+
+.confidence-fill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #e74c3c,
+    #f1c40f,
+    #2ecc71
+  );
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 600px) {
   .main-cards .day {
     width: 100%;
