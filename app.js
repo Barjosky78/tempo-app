@@ -1,61 +1,36 @@
 const tempoDiv = document.getElementById("tempo");
 
 fetch("tempo.json")
-  .then(r => r.json())
-  .then(raw => {
-
+  .then(res => res.json())
+  .then(days => {
     tempoDiv.innerHTML = "";
 
-    // 🔥 NORMALISATION FRONT (clé)
-    const days = [];
-
-    if (raw.today) days.push(raw.today);
-    if (raw.tomorrow) days.push(raw.tomorrow);
-
-    if (Array.isArray(raw.forecast)) {
-      raw.forecast.forEach(d => days.push(d));
+    if (!Array.isArray(days) || days.length === 0) {
+      tempoDiv.innerHTML = "<p>Aucune donnée</p>";
+      return;
     }
 
-    // Sécurité si déjà un tableau
-    if (Array.isArray(raw)) {
-      raw.forEach(d => days.push(d));
-    }
+    days.forEach((day, index) => {
+      const card = document.createElement("div");
+      card.className = "day " + day.couleur;
 
-    days.slice(0, 10).forEach((day, index) => {
-
-      const div = document.createElement("div");
-      div.className = "day " + day.couleur.toLowerCase();
-
-      // 🗓️ DATE CORRECTE
-      const dateObj = new Date(day.date);
-      const dateTxt = dateObj.toLocaleDateString("fr-FR", {
-        day: "2-digit",
-        month: "2-digit"
-      });
-
-      const label =
-        index === 0 ? "Aujourd’hui" :
-        index === 1 ? "Demain" :
-        "J+" + index;
-
-      div.innerHTML = `
-        <div class="date">${label}<br>${dateTxt}</div>
-        <div><strong>${day.couleur.toUpperCase()}</strong></div>
+      card.innerHTML = `
+        <div class="date">
+          ${index === 0 ? "Aujourd’hui" : index === 1 ? "Demain" : "J+" + index}
+          <br>${day.date}
+        </div>
+        <strong>${day.couleur.toUpperCase()}</strong>
         <div class="proba">
-          🔴 ${day.probabilites?.rouge ?? 0} %<br>
-          ⚪ ${day.probabilites?.blanc ?? 0} %<br>
-          🔵 ${day.probabilites?.bleu ?? 0} %
+          🔴 ${day.probabilites.rouge} %<br>
+          ⚪ ${day.probabilites.blanc} %<br>
+          🔵 ${day.probabilites.bleu} %
         </div>
       `;
 
-      tempoDiv.appendChild(div);
+      tempoDiv.appendChild(card);
     });
   })
   .catch(err => {
-    tempoDiv.innerHTML = "Erreur chargement Tempo";
+    tempoDiv.innerHTML = "<p>Erreur JS</p>";
     console.error(err);
   });
-
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("service-worker.js");
-}
