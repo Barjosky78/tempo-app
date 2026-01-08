@@ -1,74 +1,92 @@
 [
   {
-    "date": "2026-01-10",
-    "couleur": "rouge",
+    "date": "2026-01-08",
+    "couleur": "blanc",
     "probabilites": {
-      "rouge": 47,
-      "blanc": 20,
-      "bleu": 33
+      "rouge": 0,
+      "blanc": 100,
+      "bleu": 0
+    }
+  },
+  {
+    "date": "2026-01-09",
+    "couleur": "bleu",
+    "probabilites": {
+      "rouge": 0,
+      "blanc": 0,
+      "bleu": 100
+    }
+  },
+  {
+    "date": "2026-01-10",
+    "couleur": "blanc",
+    "probabilites": {
+      "rouge": 11,
+      "blanc": 55,
+      "bleu": 34
     }
   },
   {
     "date": "2026-01-11",
-    "couleur": "rouge",
+    "couleur": "blanc",
     "probabilites": {
-      "rouge": 41,
-      "blanc": 19,
-      "bleu": 40
+      "rouge": 24,
+      "blanc": 62,
+      "bleu": 14
     }
   },
   {
     "date": "2026-01-12",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 13,
-      "blanc": 35,
-      "bleu": 52
+      "rouge": 7,
+      "blanc": 1,
+      "bleu": 92
     }
   },
   {
     "date": "2026-01-13",
-    "couleur": "blanc",
+    "couleur": "rouge",
     "probabilites": {
-      "rouge": 34,
-      "blanc": 38,
-      "bleu": 28
+      "rouge": 49,
+      "blanc": 43,
+      "bleu": 8
     }
   },
   {
     "date": "2026-01-14",
-    "couleur": "bleu",
+    "couleur": "rouge",
     "probabilites": {
-      "rouge": 6,
-      "blanc": 13,
-      "bleu": 81
+      "rouge": 48,
+      "blanc": 17,
+      "bleu": 35
     }
   },
   {
     "date": "2026-01-15",
-    "couleur": "blanc",
+    "couleur": "bleu",
     "probabilites": {
-      "rouge": 6,
-      "blanc": 53,
-      "bleu": 41
+      "rouge": 23,
+      "blanc": 0,
+      "bleu": 77
     }
   },
   {
     "date": "2026-01-16",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 16,
-      "blanc": 40,
-      "bleu": 44
+      "rouge": 6,
+      "blanc": 31,
+      "bleu": 63
     }
   },
   {
     "date": "2026-01-17",
     "couleur": "blanc",
     "probabilites": {
-      "rouge": 24,
+      "rouge": 11,
       "blanc": 68,
-      "bleu": 8
+      "bleu": 21
     }
   }
 ]
