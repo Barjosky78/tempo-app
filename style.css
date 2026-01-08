@@ -1,128 +1,119 @@
-/* ===== GLOBAL ===== */
+/* =========================
+   BASE
+========================= */
 body {
-  background: #111;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  padding: 16px;
   margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f4f6f8;
+  color: #222;
 }
 
+h1, h2, h3 {
+  margin: 0 0 10px 0;
+}
+
+section {
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+/* =========================
+   HEADER
+========================= */
 header {
-  margin-bottom: 16px;
+  background: #1e293b;
+  color: white;
+  padding: 20px 16px;
+  text-align: center;
 }
 
-.last-update {
-  font-size: 14px;
+.subtitle {
+  font-size: 0.9rem;
   opacity: 0.8;
 }
 
-h1 {
-  margin-bottom: 6px;
-}
-
-.forecast-title {
-  margin: 20px 0 10px;
-  opacity: 0.85;
-}
-
-/* ===== CONTAINERS ===== */
-#main-days {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  margin-bottom: 24px;
-  flex-wrap: wrap;
-}
-
-#forecast {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* ===== CARTES ===== */
-.day {
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-  border-radius: 16px;
+/* =========================
+   STATS
+========================= */
+#stats {
+  background: white;
+  border-radius: 10px;
   padding: 14px;
-  box-sizing: border-box;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-/* Grosses cartes */
-.main-cards .day {
-  width: 260px;
-  font-size: 18px;
+#stats p {
+  margin: 6px 0;
 }
 
-/* Petites cartes */
-#forecast .day {
-  width: 120px;
-  font-size: 14px;
+#stats h3 {
+  margin-top: 12px;
 }
 
-/* ===== COULEURS TEMPO ===== */
+/* =========================
+   TEMPO CARDS
+========================= */
+.tempo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.day {
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  background: white;
+}
+
+/* Couleurs Tempo */
 .day.bleu {
-  background: #1e90ff;
-  color: #fff;
+  background: #e0f2fe;
+  border-left: 6px solid #0284c7;
 }
 
 .day.blanc {
-  background: #f2f2f2;
-  color: #000;
+  background: #f8fafc;
+  border-left: 6px solid #94a3b8;
 }
 
 .day.rouge {
-  background: #e74c3c;
-  color: #fff;
+  background: #fee2e2;
+  border-left: 6px solid #dc2626;
 }
 
-/* ===== CONTENU ===== */
-.date {
+/* Mise en avant Aujourd’hui / Demain */
+.day:first-child,
+.day:nth-child(2) {
+  font-size: 1rem;
   font-weight: bold;
-  margin-bottom: 6px;
 }
 
-.proba {
-  font-size: 13px;
-  text-align: left;
-  margin-top: 6px;
+/* =========================
+   HISTORY
+========================= */
+#history {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
 }
 
-/* ===== INDICATEUR DE CONFIANCE ===== */
-.confidence {
-  margin-top: 8px;
-  font-size: 12px;
+.history-card {
+  background: white;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  font-size: 0.85rem;
 }
 
-.confidence-bar {
-  height: 6px;
-  background: rgba(0,0,0,0.25);
-  border-radius: 3px;
-  overflow: hidden;
-  margin-top: 3px;
-}
-
-.confidence-fill {
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    #e74c3c,
-    #f1c40f,
-    #2ecc71
-  );
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 600px) {
-  .main-cards .day {
-    width: 100%;
-    max-width: 320px;
-  }
-
-  #forecast .day {
-    width: 100%;
-    max-width: 160px;
-  }
+/* =========================
+   FOOTER
+========================= */
+footer {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #555;
+  padding: 10px 16px 20px;
 }
