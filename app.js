@@ -1,14 +1,42 @@
+const tempoDiv = document.getElementById("tempo");
+
 fetch("https://www.api-couleur-tempo.fr/api")
-  .then(resp => resp.json())
+  .then(r => r.json())
   .then(data => {
-    const tempo = document.getElementById("tempo");
-    tempo.innerHTML = ""; // on vide avant
-    // Ici data contient les jours avec date et couleur
-    // Exemple format : { date: "2026-01-08", couleur: "bleu" }
-    data.forEach(item => {
+
+    tempoDiv.innerHTML = "";
+
+    // On garde jusqu'à J+9 max
+    const days = data.slice(0, 10);
+
+    days.forEach((day, index) => {
+
       const div = document.createElement("div");
-      div.className = "day " + item.couleur.toLowerCase();
-      div.textContent = item.date.slice(5); // mois-jour
-      tempo.appendChild(div);
+      div.className = `day ${day.couleur.toLowerCase()}`;
+
+      const label =
+        index === 0 ? "Aujourd'hui" :
+        index === 1 ? "Demain" :
+        "J+" + index;
+
+      div.innerHTML = `
+        <div class="date">${label}<br>${day.date.slice(8,10)}/${day.date.slice(5,7)}</div>
+        <div><strong>${day.couleur.toUpperCase()}</strong></div>
+        <div class="proba">
+          🔴 ${day.probabilites?.rouge ?? 0} %<br>
+          ⚪ ${day.probabilites?.blanc ?? 0} %<br>
+          🔵 ${day.probabilites?.bleu ?? 0} %
+        </div>
+      `;
+
+      tempoDiv.appendChild(div);
     });
+  })
+  .catch(err => {
+    tempoDiv.innerHTML = "Erreur de chargement Tempo";
+    console.error(err);
   });
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
