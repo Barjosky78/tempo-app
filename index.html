@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Tempo EDF – Prévisions & Suivi</title>
+  <title>Tempo EDF – Prévisions & suivi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- PWA -->
@@ -20,19 +20,50 @@
     </p>
   </header>
 
-  <!-- STATISTIQUES -->
+  <!-- ======================
+       FIABILITÉ
+  ======================= -->
   <section id="stats-section">
-    <h2>📊 Fiabilité des prévisions</h2>
+    <h2>🧭 Fiabilité des prévisions</h2>
+
+    <p class="explain">
+      Les prévisions sont comparées automatiquement aux couleurs
+      officielles EDF lorsqu’un jour devient réel.
+    </p>
+
     <div id="stats"></div>
+
+    <div class="help">
+      <p><b>Comment lire ces indicateurs ?</b></p>
+      <ul>
+        <li>
+          <b>Exactement correct</b> :
+          la couleur prévue était la bonne.
+        </li>
+        <li>
+          <b>Zone correcte</b> :
+          la bonne couleur faisait partie des deux plus probables
+          (le modèle était dans la bonne zone).
+        </li>
+        <li>
+          Les résultats deviennent fiables après plusieurs jours
+          d’historique.
+        </li>
+      </ul>
+    </div>
   </section>
 
-  <!-- TEMPO -->
+  <!-- ======================
+       PRÉVISIONS TEMPO
+  ======================= -->
   <section id="tempo-section">
     <h2>📅 Prévisions Tempo</h2>
     <div id="tempo" class="tempo-grid"></div>
   </section>
 
-  <!-- HISTORIQUE -->
+  <!-- ======================
+       HISTORIQUE
+  ======================= -->
   <section id="history-section">
     <h2>🕒 Suivi des prédictions passées</h2>
     <div id="history"></div>
