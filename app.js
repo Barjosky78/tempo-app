@@ -1,6 +1,13 @@
 const tempoDiv = document.getElementById("tempo");
 
-fetch("tempo.json")
+// 🔒 COULEURS OFFICIELLES À FORCER
+// 👉 À METTRE À JOUR MANUELLEMENT QUAND RTE CHANGE
+const OFFICIEL = {
+  today: "blanc",   // <-- AUJOURD'HUI
+  tomorrow: "bleu"  // <-- DEMAIN
+};
+
+fetch("tempo.json?ts=" + Date.now()) // évite le cache
   .then(res => res.json())
   .then(days => {
     tempoDiv.innerHTML = "";
@@ -10,14 +17,30 @@ fetch("tempo.json")
       return;
     }
 
+    // 🔒 FORÇAGE OFFICIEL AUJOURD'HUI / DEMAIN
+    if (days[0]) {
+      days[0].couleur = OFFICIEL.today;
+      days[0].probabilites = { rouge: 0, blanc: 100, bleu: 0 };
+    }
+
+    if (days[1]) {
+      days[1].couleur = OFFICIEL.tomorrow;
+      days[1].probabilites = { rouge: 0, blanc: 0, bleu: 100 };
+    }
+
+    // 🧱 AFFICHAGE DES CARTES
     days.forEach((day, index) => {
       const card = document.createElement("div");
       card.className = "day " + day.couleur;
 
+      const label =
+        index === 0 ? "Aujourd’hui" :
+        index === 1 ? "Demain" :
+        "J+" + index;
+
       card.innerHTML = `
         <div class="date">
-          ${index === 0 ? "Aujourd’hui" : index === 1 ? "Demain" : "J+" + index}
-          <br>${day.date}
+          ${label}<br>${day.date}
         </div>
         <strong>${day.couleur.toUpperCase()}</strong>
         <div class="proba">
