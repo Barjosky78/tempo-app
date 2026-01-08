@@ -25,23 +25,8 @@ function verdictLabel(result) {
   return "";
 }
 
-// Stats par horizon
-function horizonStats(history) {
-  const map = {};
-  history.forEach(h => {
-    if (!h.realColor) return;
-    if (!map[h.horizon]) {
-      map[h.horizon] = { total: 0, correct: 0, partial: 0 };
-    }
-    map[h.horizon].total++;
-    if (h.result === "correct") map[h.horizon].correct++;
-    if (h.result === "partial") map[h.horizon].partial++;
-  });
-  return map;
-}
-
 /* ==========================
-   TEMPO (prévisions)
+   PRÉVISIONS TEMPO
 ========================== */
 fetch("tempo.json")
   .then(res => res.json())
@@ -66,71 +51,75 @@ fetch("tempo.json")
       tempoDiv.appendChild(card);
     });
   })
-  .catch(err => {
-    tempoDiv.innerHTML = "<p>Erreur chargement tempo.json</p>";
-    console.error(err);
+  .catch(() => {
+    tempoDiv.innerHTML = "<p>Erreur de chargement des prévisions</p>";
   });
 
 /* ==========================
-   STATS GLOBALES
+   FIABILITÉ – VERSION SIMPLE
 ========================== */
 fetch("stats.json")
   .then(res => res.json())
   .then(stats => {
-    statsDiv.innerHTML = `
-      <p>🎯 Précision stricte : <b>${stats.accuracy}%</b></p>
-      <p>🎯 Précision élargie (±1) : <b>${stats.accuracyWithPartial}%</b></p>
-      <p>📅 Prédictions évaluées : ${stats.total}</p>
+    const total = stats.total || 0;
+
+    let intro = `
+      <p><b>État actuel :</b></p>
+      <ul>
+        <li>L’application apprend progressivement</li>
+        <li>${total} jour${total > 1 ? "s" : ""} analysé${total > 1 ? "s" : ""}</li>
+      </ul>
     `;
+
+    let resume = `
+      <p><b>Résultats observés :</b></p>
+      <ul>
+        <li>✅ Bonne prédiction : ${stats.correct} jour${stats.correct > 1 ? "s" : ""}</li>
+        <li>⚠️ Acceptable : ${stats.partial} jour${stats.partial > 1 ? "s" : ""}</li>
+        <li>❌ Mauvaise : ${stats.wrong} jour${stats.wrong > 1 ? "s" : ""}</li>
+      </ul>
+    `;
+
+    let details = `
+      <details>
+        <summary>Voir les détails techniques</summary>
+        <p>Exactement correct : ${stats.accuracy}%</p>
+        <p>Zone correcte : ${stats.accuracyWithPartial}%</p>
+      </details>
+    `;
+
+    statsDiv.innerHTML = intro + resume + details;
   })
   .catch(() => {
-    statsDiv.innerHTML = "<p>Aucune statistique disponible</p>";
+    statsDiv.innerHTML = "<p>Aucune donnée de fiabilité disponible</p>";
   });
 
 /* ==========================
-   HISTORIQUE + HORIZONS
+   HISTORIQUE DES PRÉDICTIONS
 ========================== */
 fetch("history.json")
   .then(res => res.json())
   .then(history => {
     const resolved = history.filter(h => h.realColor);
 
-    /* ---- Historique récent ---- */
+    if (resolved.length === 0) {
+      historyDiv.innerHTML = "<p>Aucune prédiction passée évaluée pour le moment</p>";
+      return;
+    }
+
     historyDiv.innerHTML = resolved
       .slice(-10)
       .reverse()
       .map(h => `
         <div class="history-card">
           <b>${h.date}</b><br>
-          Prédiction J-${h.horizon} : <b>${h.predictedColor}</b><br>
+          Prédiction faite J-${h.horizon} : <b>${h.predictedColor}</b><br>
           Résultat réel : <b>${h.realColor}</b><br>
           ${verdictLabel(h.result)}
         </div>
       `)
       .join("");
-
-    /* ---- Stats par horizon ---- */
-    const byHorizon = horizonStats(history);
-
-    const horizonHtml = Object.keys(byHorizon)
-      .sort((a,b)=>a-b)
-      .map(h => {
-        const d = byHorizon[h];
-        const strict = Math.round(d.correct / d.total * 100);
-        const extended = Math.round((d.correct + d.partial) / d.total * 100);
-        return `
-          <div>
-            📈 J-${h} → ${strict}% (strict) / ${extended}% (élargi)
-          </div>
-        `;
-      })
-      .join("");
-
-    statsDiv.innerHTML += `
-      <h3>📊 Précision par horizon</h3>
-      ${horizonHtml}
-    `;
   })
   .catch(() => {
-    historyDiv.innerHTML = "<p>Aucun historique disponible</p>";
+    historyDiv.innerHTML = "<p>Impossible de charger l’historique</p>";
   });
