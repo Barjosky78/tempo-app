@@ -2,7 +2,7 @@ name: Update Tempo JSON
 
 on:
   schedule:
-    - cron: '0 6 * * *'   # Tous les jours à 06h UTC
+    - cron: '0 6 * * *'
   workflow_dispatch:
 
 permissions:
@@ -15,49 +15,62 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Fetch official Tempo today/tomorrow
+      - name: Fetch and build Tempo JSON safely
         run: |
-          curl -s https://www.api-couleur-tempo.fr/api > official.json
+          curl -s https://www.api-couleur-tempo.fr/api > api.json || echo "{}" > api.json
 
           node <<'EOF'
           const fs = require("fs");
 
-          const official = JSON.parse(fs.readFileSync("official.json", "utf8"));
+          let api = {};
+          try {
+            api = JSON.parse(fs.readFileSync("api.json","utf8"));
+          } catch {
+            api = {};
+          }
 
+          function safeColor(obj, fallback="bleu") {
+            if (!obj) return fallback;
+            if (typeof obj === "string") return obj;
+            if (obj.couleur) return obj.couleur;
+            if (obj.color) return obj.color;
+            return fallback;
+          }
+
+          function probaFromColor(c) {
+            return {
+              rouge: c === "rouge" ? 100 : 0,
+              blanc: c === "blanc" ? 100 : 0,
+              bleu:  c === "bleu"  ? 100 : 0
+            };
+          }
+
+          const today = new Date();
           const days = [];
 
           function fmt(d) {
             return d.toISOString().split("T")[0];
           }
 
-          const today = new Date();
-
-          // AUJOURD'HUI (OFFICIEL)
+          // 🔒 AUJOURD'HUI (officiel si possible)
+          const todayColor = safeColor(api.today, "bleu");
           days.push({
             date: fmt(today),
-            couleur: official.today.couleur,
-            probabilites: {
-              rouge: official.today.couleur === "rouge" ? 100 : 0,
-              blanc: official.today.couleur === "blanc" ? 100 : 0,
-              bleu:  official.today.couleur === "bleu"  ? 100 : 0
-            }
+            couleur: todayColor,
+            probabilites: probaFromColor(todayColor)
           });
 
-          // DEMAIN (OFFICIEL)
+          // 🔒 DEMAIN (officiel si possible)
           const tomorrow = new Date(today);
           tomorrow.setDate(today.getDate() + 1);
-
+          const tomorrowColor = safeColor(api.tomorrow, "bleu");
           days.push({
             date: fmt(tomorrow),
-            couleur: official.tomorrow.couleur,
-            probabilites: {
-              rouge: official.tomorrow.couleur === "rouge" ? 100 : 0,
-              blanc: official.tomorrow.couleur === "blanc" ? 100 : 0,
-              bleu:  official.tomorrow.couleur === "bleu"  ? 100 : 0
-            }
+            couleur: tomorrowColor,
+            probabilites: probaFromColor(tomorrowColor)
           });
 
-          // J+2 → J+9 (prévision simple)
+          // 🔮 J+2 → J+9 (prévisions simples)
           for (let i = 2; i <= 9; i++) {
             const d = new Date(today);
             d.setDate(today.getDate() + i);
@@ -80,12 +93,10 @@ jobs:
           fs.writeFileSync("tempo.json", JSON.stringify(days, null, 2));
           EOF
 
-          rm official.json
-
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tempo.json
-          git commit -m "Auto update tempo.json (official today/tomorrow)" || echo "No change"
+          git commit -m "Auto update tempo.json (safe official today/tomorrow)" || echo "No change"
           git push
