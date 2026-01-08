@@ -1,4 +1,4 @@
-name: Update Tempo JSON (FINAL FIX)
+name: Update Tempo JSON (Stable Weekday Logic)
 
 on:
   schedule:
@@ -13,19 +13,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-      # 1️⃣ Données officielles aujourd’hui / demain
+      # 1️⃣ Récupération couleur officielle aujourd’hui / demain
       - name: Fetch Hello Watt
         run: |
           curl -s "https://www.hellowatt.fr/calendrier-tempo-edf-couleur-jour/" > page.html
 
-      # 2️⃣ Météo (Open-Meteo – proxy France)
+      # 2️⃣ Récupération météo France (proxy Paris)
       - name: Fetch Weather
         run: |
           curl -s "https://api.open-meteo.com/v1/forecast?latitude=48.85&longitude=2.35&daily=temperature_2m_mean&forecast_days=10&timezone=Europe%2FParis" > weather.json
 
-      # 3️⃣ Génération tempo.json
+      # 3️⃣ Génération du tempo.json
       - name: Build tempo.json
         run: |
           node <<'EOF'
@@ -33,20 +34,20 @@ jobs:
 
           const html = fs.readFileSync("page.html", "utf8");
           const weather = JSON.parse(fs.readFileSync("weather.json", "utf8"));
-          const temps = weather.daily.temperature_2m_mean;
+          const temps = weather.daily.temperature_2m_mean || [];
 
-          // Extraction officiel
+          function fmt(d) {
+            return d.toISOString().split("T")[0];
+          }
+
+          // Couleurs officielles J et J+1
           const matches = [...html.matchAll(/Jour (Bleu|Blanc|Rouge)/gi)]
             .map(m => m[1].toLowerCase());
 
           const todayColor = matches[0] || "bleu";
           const tomorrowColor = matches[1] || todayColor;
 
-          function fmt(d) {
-            return d.toISOString().split("T")[0];
-          }
-
-          function probaFix(color) {
+          function fixedProba(color) {
             return {
               rouge: color === "rouge" ? 100 : 0,
               blanc: color === "blanc" ? 100 : 0,
@@ -54,7 +55,7 @@ jobs:
             };
           }
 
-          // 📊 Historique 4 hivers
+          // 📊 Historique mensuel (4 hivers lissés)
           const HISTO_MONTH = {
             11: { rouge: 8,  blanc: 22, bleu: 70 },
             12: { rouge: 14, blanc: 30, bleu: 56 },
@@ -63,12 +64,13 @@ jobs:
             3:  { rouge: 4,  blanc: 22, bleu: 74 }
           };
 
+          // 📆 Affinage jours de semaine (Lundi → Vendredi)
           const HISTO_WEEKDAY = {
-            1: { rouge: +4 },
-            2: { rouge: +3 },
-            3: { rouge: +1 },
-            4: { rouge:  0 },
-            5: { rouge: -3 }
+            1: { rouge: -2, blanc: +6, bleu: -4 }, // Lundi
+            2: { rouge: +4, blanc: -2, bleu: -2 }, // Mardi
+            3: { rouge: +3, blanc: -1, bleu: -2 }, // Mercredi
+            4: { rouge: +5, blanc: -3, bleu: -2 }, // Jeudi
+            5: { rouge: -3, blanc: +4, bleu: -1 }  // Vendredi
           };
 
           const days = [];
@@ -79,7 +81,7 @@ jobs:
           days.push({
             date: fmt(today),
             couleur: todayColor,
-            probabilites: probaFix(todayColor),
+            probabilites: fixedProba(todayColor),
             coldRisk: 0,
             fixed: true
           });
@@ -90,7 +92,7 @@ jobs:
           days.push({
             date: fmt(tomorrow),
             couleur: tomorrowColor,
-            probabilites: probaFix(tomorrowColor),
+            probabilites: fixedProba(tomorrowColor),
             coldRisk: 0,
             fixed: true
           });
@@ -106,7 +108,7 @@ jobs:
             const month = d.getMonth() + 1;
             const temp = temps[i] ?? 10;
 
-            // 🔵 DIMANCHE → BLEU FIXE
+            // 🔵 Dimanche = bleu fixe
             if (dayOfWeek === 0) {
               days.push({
                 date: fmt(d),
@@ -119,19 +121,20 @@ jobs:
               continue;
             }
 
-            // 🔢 Base historique
+            // Base historique
             let base = HISTO_MONTH[month] || { rouge: 10, blanc: 25, bleu: 65 };
             let rouge = base.rouge;
             let blanc = base.blanc;
             let bleu  = base.bleu;
 
-            // Jour semaine (lundi → vendredi)
+            // 📆 Pondération jour de semaine
             if (HISTO_WEEKDAY[dayOfWeek]) {
               rouge += HISTO_WEEKDAY[dayOfWeek].rouge;
-              bleu  -= HISTO_WEEKDAY[dayOfWeek].rouge;
+              blanc += HISTO_WEEKDAY[dayOfWeek].blanc;
+              bleu  += HISTO_WEEKDAY[dayOfWeek].bleu;
             }
 
-            // Séquence récente
+            // Séquences récentes
             const recent = lastColors.slice(-2);
             if (recent.includes("rouge")) {
               rouge -= 10;
@@ -142,13 +145,13 @@ jobs:
               bleu  -= 5;
             }
 
-            // 📉 Lissage temporel (AVANT météo)
+            // 📉 Lissage temporel
             const factor = (10 - i) / 10;
             rouge = Math.max(2, Math.round(rouge * factor));
             blanc = Math.round(blanc * factor);
             bleu  = 100 - rouge - blanc;
 
-            // 🌦️ Ajustement météo (bleu ↔ blanc)
+            // 🌦️ Météo (impact bleu ↔ blanc)
             let coldRisk = 0;
             if (temp < 0) {
               blanc += 15;
@@ -160,7 +163,7 @@ jobs:
               coldRisk = 1;
             }
 
-            // 🟡 SAMEDI → PAS DE ROUGE
+            // 🟡 Samedi = pas de rouge
             if (dayOfWeek === 6) {
               blanc += Math.round(rouge / 2);
               bleu  += Math.round(rouge / 2);
@@ -184,7 +187,7 @@ jobs:
               continue;
             }
 
-            // 🔴 LUNDI → VENDREDI (ROUGE AUTORISÉ)
+            // 🔴 Lundi → Vendredi (rouge autorisé)
             const total = rouge + blanc + bleu;
             rouge = Math.round((rouge / total) * 100);
             blanc = Math.round((blanc / total) * 100);
@@ -209,10 +212,10 @@ jobs:
           EOF
 
       # 4️⃣ Commit & push
-      - name: Commit and push
+      - name: Commit and push tempo.json
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tempo.json
-          git commit -m "Final fix: weekend rules + red restored" || echo "No changes"
+          git commit -m "Refine weekday logic (Mon-Fri)" || echo "No changes"
           git push
