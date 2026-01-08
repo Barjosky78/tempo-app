@@ -1,4 +1,4 @@
-name: Update Tempo JSON (Cold Span + Monday Adjustment)
+name: Update Tempo + History + Stats
 
 on:
   schedule:
@@ -16,227 +16,249 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 1️⃣ Couleurs officielles aujourd’hui / demain
+      # 1️⃣ Couleurs officielles EDF (J et J+1)
       - name: Fetch Hello Watt
         run: |
           curl -s "https://www.hellowatt.fr/calendrier-tempo-edf-couleur-jour/" > page.html
 
-      # 2️⃣ Météo (température moyenne quotidienne – proxy France)
+      # 2️⃣ Météo France
       - name: Fetch Weather
         run: |
           curl -s "https://api.open-meteo.com/v1/forecast?latitude=48.85&longitude=2.35&daily=temperature_2m_mean&forecast_days=10&timezone=Europe%2FParis" > weather.json
 
-      # 3️⃣ Génération du tempo.json
-      - name: Build tempo.json
+      # 3️⃣ Build tempo.json + history.json + stats.json
+      - name: Build data files
         run: |
           node <<'EOF'
           const fs = require("fs");
 
-          const html = fs.readFileSync("page.html", "utf8");
-          const weather = JSON.parse(fs.readFileSync("weather.json", "utf8"));
+          /* ======================
+             LOAD DATA
+          ====================== */
+          const html = fs.readFileSync("page.html","utf8");
+          const weather = JSON.parse(fs.readFileSync("weather.json","utf8"));
           const temps = weather.daily.temperature_2m_mean || [];
 
-          function fmt(d) {
-            return d.toISOString().split("T")[0];
+          let history = [];
+          if (fs.existsSync("history.json")) {
+            history = JSON.parse(fs.readFileSync("history.json","utf8"));
           }
 
-          // Couleurs officielles J et J+1
+          function fmt(d){ return d.toISOString().split("T")[0]; }
+
+          /* ======================
+             OFFICIAL COLORS
+          ====================== */
           const matches = [...html.matchAll(/Jour (Bleu|Blanc|Rouge)/gi)]
-            .map(m => m[1].toLowerCase());
+            .map(m=>m[1].toLowerCase());
 
           const todayColor = matches[0] || "bleu";
           const tomorrowColor = matches[1] || todayColor;
 
-          function fixedProba(color) {
+          function fixed(color){
             return {
-              rouge: color === "rouge" ? 100 : 0,
-              blanc: color === "blanc" ? 100 : 0,
-              bleu:  color === "bleu"  ? 100 : 0
+              rouge: color==="rouge"?100:0,
+              blanc: color==="blanc"?100:0,
+              bleu:  color==="bleu"?100:0
             };
           }
 
-          // 📊 Historique mensuel (4 hivers lissés)
+          /* ======================
+             MODEL CONSTANTS
+          ====================== */
           const HISTO_MONTH = {
-            11: { rouge: 8,  blanc: 22, bleu: 70 },
-            12: { rouge: 14, blanc: 30, bleu: 56 },
-            1:  { rouge: 20, blanc: 34, bleu: 46 },
-            2:  { rouge: 17, blanc: 33, bleu: 50 },
-            3:  { rouge: 4,  blanc: 22, bleu: 74 }
+            11:{rouge:8, blanc:22, bleu:70},
+            12:{rouge:14,blanc:30, bleu:56},
+            1:{rouge:20, blanc:34, bleu:46},
+            2:{rouge:17, blanc:33, bleu:50},
+            3:{rouge:4,  blanc:22, bleu:74}
           };
 
-          // 📆 Pondération jours de semaine
           const HISTO_WEEKDAY = {
-            1: { rouge: -2, blanc: +6, bleu: -4 }, // Lundi
-            2: { rouge: +4, blanc: -2, bleu: -2 }, // Mardi
-            3: { rouge: +3, blanc: -1, bleu: -2 }, // Mercredi
-            4: { rouge: +5, blanc: -3, bleu: -2 }, // Jeudi
-            5: { rouge: -3, blanc: +4, bleu: -1 }  // Vendredi
+            1:{rouge:-2, blanc:+6, bleu:-4},
+            2:{rouge:+4, blanc:-2, bleu:-2},
+            3:{rouge:+3, blanc:-1, bleu:-2},
+            4:{rouge:+5, blanc:-3, bleu:-2},
+            5:{rouge:-3, blanc:+4, bleu:-1}
           };
 
-          // 🌡️ Détection du froid étendu (< 3°C plusieurs jours)
-          const coldSpans = [];
-          let span = 0;
-          for (let i = 0; i < temps.length; i++) {
-            if (temps[i] < 3) span++;
-            else span = 0;
-            coldSpans[i] = span;
+          /* ======================
+             COLD SPAN
+          ====================== */
+          const coldSpans=[];
+          let span=0;
+          for(let i=0;i<temps.length;i++){
+            if(temps[i]<3) span++; else span=0;
+            coldSpans[i]=span;
           }
 
-          const days = [];
-          const today = new Date();
-          today.setHours(0,0,0,0);
+          /* ======================
+             BUILD TEMPO
+          ====================== */
+          const days=[];
+          const today=new Date(); today.setHours(0,0,0,0);
 
-          // 🔒 Aujourd’hui
           days.push({
-            date: fmt(today),
-            couleur: todayColor,
-            probabilites: fixedProba(todayColor),
-            coldRisk: 0,
-            fixed: true
+            date:fmt(today),
+            couleur:todayColor,
+            probabilites:fixed(todayColor),
+            fixed:true
           });
 
-          // 🔒 Demain
-          const tomorrow = new Date(today);
-          tomorrow.setDate(today.getDate() + 1);
+          const tomorrow=new Date(today);
+          tomorrow.setDate(today.getDate()+1);
           days.push({
-            date: fmt(tomorrow),
-            couleur: tomorrowColor,
-            probabilites: fixedProba(tomorrowColor),
-            coldRisk: 0,
-            fixed: true
+            date:fmt(tomorrow),
+            couleur:tomorrowColor,
+            probabilites:fixed(tomorrowColor),
+            fixed:true
           });
 
-          let lastColors = days.map(d => d.couleur);
+          let lastColors=days.map(d=>d.couleur);
 
-          // 🔮 J+2 → J+9
-          for (let i = 2; i <= 9; i++) {
-            const d = new Date(today);
-            d.setDate(today.getDate() + i);
+          for(let i=2;i<=9;i++){
+            const d=new Date(today);
+            d.setDate(today.getDate()+i);
+            const dow=d.getDay();
+            const month=d.getMonth()+1;
+            const temp=temps[i]??10;
+            const spanDays=coldSpans[i]||0;
 
-            const dayOfWeek = d.getDay(); // 0=dimanche, 6=samedi
-            const month = d.getMonth() + 1;
-            const temp = temps[i] ?? 10;
-            const spanDays = coldSpans[i] || 0;
-
-            // 🔵 Dimanche = bleu fixe
-            if (dayOfWeek === 0) {
+            // Sunday
+            if(dow===0){
               days.push({
-                date: fmt(d),
-                couleur: "bleu",
-                probabilites: { rouge: 0, blanc: 0, bleu: 100 },
-                coldRisk: 0,
-                fixed: true
+                date:fmt(d),
+                couleur:"bleu",
+                probabilites:{rouge:0,blanc:0,bleu:100},
+                fixed:true
               });
               lastColors.push("bleu");
               continue;
             }
 
-            // Base historique
-            let base = HISTO_MONTH[month] || { rouge: 10, blanc: 25, bleu: 65 };
-            let rouge = base.rouge;
-            let blanc = base.blanc;
-            let bleu  = base.bleu;
+            let base=HISTO_MONTH[month]||{rouge:10,blanc:25,bleu:65};
+            let rouge=base.rouge, blanc=base.blanc, bleu=base.bleu;
 
-            // Jour de semaine
-            if (HISTO_WEEKDAY[dayOfWeek]) {
-              rouge += HISTO_WEEKDAY[dayOfWeek].rouge;
-              blanc += HISTO_WEEKDAY[dayOfWeek].blanc;
-              bleu  += HISTO_WEEKDAY[dayOfWeek].bleu;
+            if(HISTO_WEEKDAY[dow]){
+              rouge+=HISTO_WEEKDAY[dow].rouge;
+              blanc+=HISTO_WEEKDAY[dow].blanc;
+              bleu +=HISTO_WEEKDAY[dow].bleu;
             }
 
-            // Séquence précédente
-            const recent = lastColors.slice(-2);
-            if (recent.includes("rouge")) {
-              rouge -= 10;
-              bleu  += 10;
-            }
-            if (recent.every(c => c === "bleu")) {
-              blanc += 5;
-              bleu  -= 5;
-            }
+            const recent=lastColors.slice(-2);
+            if(recent.includes("rouge")){ rouge-=10; bleu+=10; }
+            if(recent.every(c=>c==="bleu")){ blanc+=5; bleu-=5; }
 
-            // 📉 Lissage temporel
-            const factor = (10 - i) / 10;
-            rouge = Math.max(2, Math.round(rouge * factor));
-            blanc = Math.round(blanc * factor);
-            bleu  = 100 - rouge - blanc;
+            const factor=(10-i)/10;
+            rouge=Math.max(2,Math.round(rouge*factor));
+            blanc=Math.round(blanc*factor);
+            bleu=100-rouge-blanc;
 
-            // ❄️ Froid étendu
-            let coldRisk = 0;
-            if (temp < 0 && spanDays >= 3) {
-              rouge += 8;
-              blanc += 12;
-              bleu  -= 20;
-              coldRisk = 3;
-            } else if (temp < 3 && spanDays >= 3) {
-              blanc += 15;
-              bleu  -= 15;
-              coldRisk = 2;
-            } else if (temp < 3) {
-              blanc += 8;
-              bleu  -= 8;
-              coldRisk = 1;
+            if(temp<0 && spanDays>=3){
+              rouge+=8; blanc+=12; bleu-=20;
+            }else if(temp<3 && spanDays>=3){
+              blanc+=15; bleu-=15;
+            }else if(temp<3){
+              blanc+=8; bleu-=8;
             }
 
-            // 🔴 AJUSTEMENT LUNDI (clé)
-            if (dayOfWeek === 1 && spanDays >= 3 && temp <= 0) {
-              rouge += 5;
-              bleu  -= 5;
+            // Monday adjustment
+            if(dow===1 && spanDays>=3 && temp<=0){
+              rouge+=5; bleu-=5;
             }
 
-            // 🟡 Samedi = pas de rouge
-            if (dayOfWeek === 6) {
-              blanc += Math.round(rouge / 2);
-              bleu  += Math.round(rouge / 2);
-              rouge = 0;
-
-              const total = blanc + bleu;
-              blanc = Math.round((blanc / total) * 100);
-              bleu  = 100 - blanc;
-
-              const couleur = blanc > bleu ? "blanc" : "bleu";
-
-              days.push({
-                date: fmt(d),
-                couleur,
-                probabilites: { rouge: 0, blanc, bleu },
-                coldRisk,
-                fixed: false
-              });
-
-              lastColors.push(couleur);
+            // Saturday
+            if(dow===6){
+              blanc+=Math.round(rouge/2);
+              bleu +=Math.round(rouge/2);
+              rouge=0;
+              const t=blanc+bleu;
+              blanc=Math.round(blanc/t*100);
+              bleu=100-blanc;
+              const col=blanc>bleu?"blanc":"bleu";
+              days.push({date:fmt(d),couleur:col,probabilites:{rouge:0,blanc,bleu},fixed:false});
+              lastColors.push(col);
               continue;
             }
 
-            // 🔴 Lundi → Vendredi
-            const total = rouge + blanc + bleu;
-            rouge = Math.round((rouge / total) * 100);
-            blanc = Math.round((blanc / total) * 100);
-            bleu  = 100 - rouge - blanc;
+            const tot=rouge+blanc+bleu;
+            rouge=Math.round(rouge/tot*100);
+            blanc=Math.round(blanc/tot*100);
+            bleu=100-rouge-blanc;
 
-            let couleur = "bleu";
-            if (rouge > blanc && rouge > bleu) couleur = "rouge";
-            else if (blanc > bleu) couleur = "blanc";
+            let col="bleu";
+            if(rouge>blanc && rouge>bleu) col="rouge";
+            else if(blanc>bleu) col="blanc";
 
-            days.push({
-              date: fmt(d),
-              couleur,
-              probabilites: { rouge, blanc, bleu },
-              coldRisk,
-              fixed: false
-            });
-
-            lastColors.push(couleur);
+            days.push({date:fmt(d),couleur:col,probabilites:{rouge,blanc,bleu},fixed:false});
+            lastColors.push(col);
           }
 
-          fs.writeFileSync("tempo.json", JSON.stringify(days, null, 2));
+          fs.writeFileSync("tempo.json",JSON.stringify(days,null,2));
+
+          /* ======================
+             HISTORY UPDATE
+          ====================== */
+          const todayStr=fmt(today);
+
+          // Add predictions
+          days.forEach((d,i)=>{
+            if(i>=2){
+              const exists=history.find(h=>h.date===d.date && h.predictedOn===todayStr);
+              if(!exists){
+                history.push({
+                  date:d.date,
+                  predictedOn:todayStr,
+                  horizon:i,
+                  predictedColor:d.couleur,
+                  probabilites:d.probabilites,
+                  realColor:null,
+                  result:null
+                });
+              }
+            }
+          });
+
+          // Verdict function
+          function verdict(entry){
+            const sorted=Object.entries(entry.probabilites).sort((a,b)=>b[1]-a[1]);
+            if(sorted[0][0]===entry.realColor) return "correct";
+            if(sorted[1][0]===entry.realColor) return "partial";
+            return "wrong";
+          }
+
+          // Resolve real results
+          history.forEach(h=>{
+            if(!h.realColor && h.date===todayStr){
+              h.realColor=todayColor;
+              h.result=verdict(h);
+            }
+          });
+
+          fs.writeFileSync("history.json",JSON.stringify(history,null,2));
+
+          /* ======================
+             STATS
+          ====================== */
+          const resolved=history.filter(h=>h.realColor);
+          const stats={
+            total:resolved.length,
+            correct:resolved.filter(h=>h.result==="correct").length,
+            partial:resolved.filter(h=>h.result==="partial").length,
+            wrong:resolved.filter(h=>h.result==="wrong").length
+          };
+          stats.accuracy=stats.total?Math.round(stats.correct/stats.total*100):0;
+          stats.accuracyWithPartial=stats.total?
+            Math.round((stats.correct+stats.partial)/stats.total*100):0;
+
+          fs.writeFileSync("stats.json",JSON.stringify(stats,null,2));
           EOF
 
       # 4️⃣ Commit & push
-      - name: Commit and push tempo.json
+      - name: Commit and push files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add tempo.json
-          git commit -m "Adjust Monday red probability (cold span)" || echo "No changes"
+          git add tempo.json history.json stats.json
+          git commit -m "Update tempo + prediction history + stats" || echo "No changes"
           git push
