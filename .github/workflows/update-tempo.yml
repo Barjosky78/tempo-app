@@ -1,8 +1,8 @@
-name: Update Tempo JSON (Option 1)
+name: Update Tempo JSON (Option 1 + 4 Winters History)
 
 on:
   schedule:
-    - cron: '0 6 * * *'   # Tous les jours à 06h UTC
+    - cron: '0 6 * * *'
   workflow_dispatch:
 
 permissions:
@@ -15,20 +15,19 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # 1️⃣ Récupération Aujourd'hui / Demain depuis Hello Watt
-      - name: Fetch Hello Watt page
+      # 1️⃣ Récupération Aujourd'hui / Demain (Hello Watt)
+      - name: Fetch Hello Watt
         run: |
           curl -s "https://www.hellowatt.fr/calendrier-tempo-edf-couleur-jour/" > page.html
 
-      # 2️⃣ Génération tempo.json avec OPTION 1
-      - name: Build tempo.json (Option 1)
+      # 2️⃣ Construction tempo.json
+      - name: Build tempo.json (Option 1 + 4 winters history)
         run: |
           node <<'EOF'
           const fs = require("fs");
 
           const html = fs.readFileSync("page.html", "utf8");
 
-          // 🔎 Extraction simple des couleurs officielles
           const matches = [...html.matchAll(/Jour (Bleu|Blanc|Rouge)/gi)]
             .map(m => m[1].toLowerCase());
 
@@ -47,18 +46,35 @@ jobs:
             return d.toISOString().split("T")[0];
           }
 
+          // 📊 HISTORIQUE AGRÉGÉ – 4 DERNIERS HIVERS
+          const HISTO_MONTH = {
+            11: { rouge: 8,  blanc: 22, bleu: 70 },
+            12: { rouge: 14, blanc: 30, bleu: 56 },
+            1:  { rouge: 20, blanc: 34, bleu: 46 },
+            2:  { rouge: 17, blanc: 33, bleu: 50 },
+            3:  { rouge: 4,  blanc: 22, bleu: 74 }
+          };
+
+          const HISTO_WEEKDAY = {
+            1: { rouge: +4 },
+            2: { rouge: +3 },
+            3: { rouge: +1 },
+            4: { rouge:  0 },
+            5: { rouge: -3 }
+          };
+
           const days = [];
           const today = new Date();
           today.setHours(0,0,0,0);
 
-          // 🔒 AUJOURD'HUI (officiel)
+          // 🔒 Aujourd'hui (officiel)
           days.push({
             date: fmt(today),
             couleur: todayColor,
             probabilites: proba(todayColor)
           });
 
-          // 🔒 DEMAIN (officiel)
+          // 🔒 Demain (officiel)
           const tomorrow = new Date(today);
           tomorrow.setDate(today.getDate() + 1);
           days.push({
@@ -67,71 +83,48 @@ jobs:
             probabilites: proba(tomorrowColor)
           });
 
-          // ===============================
-          // 🔮 J+2 → J+9 — OPTION 1 ACTIVE
-          // ===============================
-
+          // 🔮 J+2 → J+9 (Option 1 + historique)
           let lastColors = days.map(d => d.couleur);
 
           for (let i = 2; i <= 9; i++) {
             const d = new Date(today);
             d.setDate(today.getDate() + i);
 
-            const month = d.getMonth() + 1; // 1 = janvier
-            const dayOfWeek = d.getDay();   // 0 = dimanche
+            const month = d.getMonth() + 1;
+            const dayOfWeek = d.getDay();
 
-            // 📊 Base saisonnière
-            let rouge = 10;
-            let blanc = 25;
-            let bleu  = 65;
+            // Base depuis l'historique mensuel
+            let base = HISTO_MONTH[month] || { rouge: 10, blanc: 25, bleu: 65 };
+            let rouge = base.rouge;
+            let blanc = base.blanc;
+            let bleu  = base.bleu;
 
-            // ❄️ Cœur de l’hiver (janvier / février)
-            if (month === 1 || month === 2) {
-              rouge = 20;
-              blanc = 35;
-              bleu  = 45;
+            // Ajustement jour de semaine
+            if (HISTO_WEEKDAY[dayOfWeek]) {
+              rouge += HISTO_WEEKDAY[dayOfWeek].rouge;
+              bleu  -= HISTO_WEEKDAY[dayOfWeek].rouge;
             }
 
-            // 🌱 Fin d’hiver (mars)
-            if (month === 3) {
-              rouge = 5;
-              blanc = 20;
-              bleu  = 75;
-            }
-
-            // 📆 Ajustement jour de semaine
-            if (dayOfWeek === 1 || dayOfWeek === 2) { // lundi / mardi
-              rouge += 5;
-              bleu  -= 5;
-            }
-
-            if (dayOfWeek === 5) { // vendredi
-              rouge -= 5;
-              bleu  += 5;
-            }
-
-            // 🔁 Séquences précédentes
+            // Séquences précédentes
             const recent = lastColors.slice(-2);
 
-            // ❌ Pas de rouge consécutif
             if (recent.includes("rouge")) {
               rouge -= 10;
               bleu  += 10;
             }
 
-            // 🔵 Après plusieurs bleus → blanc favorisé
             if (recent.every(c => c === "bleu")) {
               blanc += 5;
               bleu  -= 5;
             }
 
-            // 📉 Lissage avec la distance
+            // Lissage avec la distance
             const factor = (10 - i) / 10;
-            rouge = Math.max(3, Math.round(rouge * factor));
+            rouge = Math.max(2, Math.round(rouge * factor));
             blanc = Math.round(blanc * factor);
             bleu  = 100 - rouge - blanc;
 
-            // 🎯 Couleur dominante
+            // Couleur dominante
             let couleur = "bleu";
             if (rouge > blanc && rouge > bleu) couleur = "rouge";
             else if (blanc > bleu) couleur = "blanc";
@@ -154,5 +147,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tempo.json
-          git commit -m "Update tempo.json (Option 1 statistical forecast)" || echo "No changes"
+          git commit -m "Update tempo.json (Option 1 + 4 winters history)" || echo "No changes"
           git push
