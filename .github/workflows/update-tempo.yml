@@ -1,4 +1,4 @@
-name: Update Tempo JSON (History + Weather FIXED)
+name: Update Tempo JSON (History + Weather + Weekend Fix)
 
 on:
   schedule:
@@ -15,12 +15,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # 1️⃣ Couleurs officielles Aujourd’hui / Demain
+      # 1️⃣ Officiel aujourd’hui / demain
       - name: Fetch Hello Watt
         run: |
           curl -s "https://www.hellowatt.fr/calendrier-tempo-edf-couleur-jour/" > page.html
 
-      # 2️⃣ Météo nationale (Paris = proxy France)
+      # 2️⃣ Météo (proxy France)
       - name: Fetch Weather
         run: |
           curl -s "https://api.open-meteo.com/v1/forecast?latitude=48.85&longitude=2.35&daily=temperature_2m_mean&forecast_days=10&timezone=Europe%2FParis" > weather.json
@@ -34,12 +34,15 @@ jobs:
           const html = fs.readFileSync("page.html", "utf8");
           const weather = JSON.parse(fs.readFileSync("weather.json", "utf8"));
 
-          // 🔎 Extraction officiel
           const matches = [...html.matchAll(/Jour (Bleu|Blanc|Rouge)/gi)]
             .map(m => m[1].toLowerCase());
 
           const todayColor = matches[0] || "bleu";
           const tomorrowColor = matches[1] || todayColor;
+
+          function fmt(d) {
+            return d.toISOString().split("T")[0];
+          }
 
           function proba(color) {
             return {
@@ -49,11 +52,6 @@ jobs:
             };
           }
 
-          function fmt(d) {
-            return d.toISOString().split("T")[0];
-          }
-
-          // 📊 HISTORIQUE 4 HIVERS
           const HISTO_MONTH = {
             11: { rouge: 8,  blanc: 22, bleu: 70 },
             12: { rouge: 14, blanc: 30, bleu: 56 },
@@ -76,69 +74,79 @@ jobs:
           const today = new Date();
           today.setHours(0,0,0,0);
 
-          // 🔒 Aujourd’hui
+          // Aujourd’hui
           days.push({
             date: fmt(today),
             couleur: todayColor,
             probabilites: proba(todayColor),
-            coldRisk: 0
+            coldRisk: 0,
+            fixed: true
           });
 
-          // 🔒 Demain
+          // Demain
           const tomorrow = new Date(today);
           tomorrow.setDate(today.getDate() + 1);
           days.push({
             date: fmt(tomorrow),
             couleur: tomorrowColor,
             probabilites: proba(tomorrowColor),
-            coldRisk: 0
+            coldRisk: 0,
+            fixed: true
           });
 
           let lastColors = days.map(d => d.couleur);
 
-          // 🔮 J+2 → J+9
           for (let i = 2; i <= 9; i++) {
             const d = new Date(today);
             d.setDate(today.getDate() + i);
 
+            const dayOfWeek = d.getDay(); // 0 = dimanche
             const month = d.getMonth() + 1;
-            const dayOfWeek = d.getDay();
             const temp = temps[i] ?? 10;
 
-            // 🔢 Base historique
+            // 🔵 DIMANCHE = BLEU FIXE
+            if (dayOfWeek === 0) {
+              days.push({
+                date: fmt(d),
+                couleur: "bleu",
+                probabilites: { rouge: 0, blanc: 0, bleu: 100 },
+                coldRisk: 0,
+                fixed: true
+              });
+              lastColors.push("bleu");
+              continue;
+            }
+
             let base = HISTO_MONTH[month] || { rouge: 10, blanc: 25, bleu: 65 };
             let rouge = base.rouge;
             let blanc = base.blanc;
             let bleu  = base.bleu;
 
-            // 📆 Jour de semaine
+            // Jour semaine
             if (HISTO_WEEKDAY[dayOfWeek]) {
               rouge += HISTO_WEEKDAY[dayOfWeek].rouge;
               bleu  -= HISTO_WEEKDAY[dayOfWeek].rouge;
             }
 
-            // 🔁 Séquences
+            // Séquences
             const recent = lastColors.slice(-2);
-
             if (recent.includes("rouge")) {
               rouge -= 10;
               bleu  += 10;
             }
-
             if (recent.every(c => c === "bleu")) {
               blanc += 5;
               bleu  -= 5;
             }
 
-            // 📉 LISSAGE (AVANT météo)
+            // Lissage
             const factor = (10 - i) / 10;
             rouge = Math.max(2, Math.round(rouge * factor));
             blanc = Math.round(blanc * factor);
             bleu  = 100 - rouge - blanc;
 
-            // 🌦️ MÉTÉO (AJUSTEMENT FINAL)
+            // 🌦️ météo (bleu ↔ blanc)
             let coldRisk = 0;
-
             if (temp < 0) {
               blanc += 15;
               bleu  -= 15;
@@ -149,21 +157,26 @@ jobs:
               coldRisk = 1;
             }
 
-            // 🛡️ Sécurité
-            blanc = Math.max(0, blanc);
-            bleu  = Math.max(0, bleu);
-            rouge = Math.max(0, 100 - blanc - bleu);
+            // 🟡 SAMEDI = PAS DE ROUGE
+            if (dayOfWeek === 6) {
+              blanc += Math.round(rouge / 2);
+              bleu  += Math.round(rouge / 2);
+              rouge = 0;
+            }
 
-            // 🎯 Couleur dominante
-            let couleur = "bleu";
-            if (rouge > blanc && rouge > bleu) couleur = "rouge";
-            else if (blanc > bleu) couleur = "blanc";
+            // Sécurité finale
+            const total = blanc + bleu;
+            blanc = Math.round((blanc / total) * 100);
+            bleu  = 100 - blanc;
+
+            let couleur = blanc > bleu ? "blanc" : "bleu";
 
             days.push({
               date: fmt(d),
               couleur,
-              probabilites: { rouge, blanc, bleu },
-              coldRisk
+              probabilites: { rouge: 0, blanc, bleu },
+              coldRisk,
+              fixed: false
             });
 
             lastColors.push(couleur);
@@ -172,11 +185,10 @@ jobs:
           fs.writeFileSync("tempo.json", JSON.stringify(days, null, 2));
           EOF
 
-      # 4️⃣ Commit & push
-      - name: Commit and push tempo.json
+      - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tempo.json
-          git commit -m "Update tempo.json (weather applied correctly)" || echo "No changes"
+          git commit -m "Fix weekend rules (Sunday fixed, Saturday no red)" || echo "No changes"
           git push
