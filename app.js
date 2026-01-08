@@ -27,9 +27,15 @@ fetch("tempo.json?ts=" + Date.now())
       if (dayDate.getTime() === today.getTime()) label = "Aujourd’hui";
       else if (dayDate.getTime() === tomorrow.getTime()) label = "Demain";
 
+      const dateTexte = dayDate.toLocaleDateString("fr-FR", {
+        weekday: "long",
+        day: "numeric",
+        month: "long"
+      });
+
       card.innerHTML = `
         <div class="date">
-          ${label}<br>${day.date}
+          ${label}<br>${dateTexte}
         </div>
         <strong>${day.couleur.toUpperCase()}</strong>
         <div class="proba">
