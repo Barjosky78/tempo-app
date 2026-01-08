@@ -33,21 +33,40 @@ header {
 }
 
 /* =========================
-   STATS
+   FIABILITÉ / STATS
 ========================= */
 #stats {
   background: white;
   border-radius: 10px;
   padding: 14px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  margin-bottom: 10px;
 }
 
 #stats p {
   margin: 6px 0;
 }
 
-#stats h3 {
-  margin-top: 12px;
+.explain {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-bottom: 8px;
+}
+
+.help {
+  font-size: 0.8rem;
+  background: #f1f5f9;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.help ul {
+  padding-left: 18px;
+  margin: 6px 0 0;
+}
+
+.help li {
+  margin-bottom: 4px;
 }
 
 /* =========================
@@ -91,8 +110,14 @@ header {
   font-weight: bold;
 }
 
+/* Date discrète */
+.date {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
 /* =========================
-   HISTORY
+   HISTORIQUE
 ========================= */
 #history {
   display: grid;
