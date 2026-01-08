@@ -1,8 +1,8 @@
-name: Update Tempo JSON
+name: Update Tempo JSON from Hello Watt
 
 on:
   schedule:
-    - cron: '0 6 * * *'
+    - cron: '0 6 * * *'  # Tous les jours à 06:00 UTC
   workflow_dispatch:
 
 permissions:
@@ -15,74 +15,67 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Fetch and build Tempo JSON safely
+      - name: Fetch Hello Watt Tempo Page
         run: |
-          curl -s https://www.api-couleur-tempo.fr/api > api.json || echo "{}" > api.json
+          curl -s "https://www.hellowatt.fr/calendrier-tempo-edf-couleur-jour/" > hw.html
 
-          node <<'EOF'
+      - name: Extract official colors and build JSON
+        run: |
+          node << 'EOF'
           const fs = require("fs");
+          const html = fs.readFileSync("hw.html", "utf8");
 
-          let api = {};
-          try {
-            api = JSON.parse(fs.readFileSync("api.json","utf8"));
-          } catch {
-            api = {};
+          function extractColor(text, key) {
+            const regex = new RegExp(key + ".*?Jour (Bleu|Blanc|Rouge)", "i");
+            const m = text.match(regex);
+            return m ? m[1].toLowerCase() : null;
           }
 
-          function safeColor(obj, fallback="bleu") {
-            if (!obj) return fallback;
-            if (typeof obj === "string") return obj;
-            if (obj.couleur) return obj.couleur;
-            if (obj.color) return obj.color;
-            return fallback;
-          }
+          const todayColor = extractColor(html, "aujourd'hui");
+          const tomorrowColor = extractColor(html, "demain");
 
-          function probaFromColor(c) {
-            return {
-              rouge: c === "rouge" ? 100 : 0,
-              blanc: c === "blanc" ? 100 : 0,
-              bleu:  c === "bleu"  ? 100 : 0
-            };
-          }
-
-          const today = new Date();
           const days = [];
+          const today = new Date();
+          const tomorrow = new Date(today);
+          tomorrow.setDate(today.getDate()+1);
 
           function fmt(d) {
             return d.toISOString().split("T")[0];
           }
 
-          // 🔒 AUJOURD'HUI (officiel si possible)
-          const todayColor = safeColor(api.today, "bleu");
-          days.push({
-            date: fmt(today),
-            couleur: todayColor,
-            probabilites: probaFromColor(todayColor)
-          });
+          if (todayColor) {
+            days.push({
+              date: fmt(today),
+              couleur: todayColor,
+              probabilites: {
+                rouge: todayColor === "rouge" ? 100 : 0,
+                blanc: todayColor === "blanc" ? 100 : 0,
+                bleu:  todayColor === "bleu"  ? 100 : 0
+              }
+            });
+          }
 
-          // 🔒 DEMAIN (officiel si possible)
-          const tomorrow = new Date(today);
-          tomorrow.setDate(today.getDate() + 1);
-          const tomorrowColor = safeColor(api.tomorrow, "bleu");
-          days.push({
-            date: fmt(tomorrow),
-            couleur: tomorrowColor,
-            probabilites: probaFromColor(tomorrowColor)
-          });
+          if (tomorrowColor) {
+            days.push({
+              date: fmt(tomorrow),
+              couleur: tomorrowColor,
+              probabilites: {
+                rouge: tomorrowColor === "rouge" ? 100 : 0,
+                blanc: tomorrowColor === "blanc" ? 100 : 0,
+                bleu:  tomorrowColor === "bleu"  ? 100 : 0
+              }
+            });
+          }
 
-          // 🔮 J+2 → J+9 (prévisions simples)
           for (let i = 2; i <= 9; i++) {
             const d = new Date(today);
-            d.setDate(today.getDate() + i);
-
-            const r = Math.floor(Math.random() * 50);
-            const b = Math.floor(Math.random() * (100 - r));
+            d.setDate(today.getDate()+i);
+            const r = Math.floor(Math.random()*50);
+            const b = Math.floor(Math.random()*(100-r));
             const bl = 100 - r - b;
-
             let couleur = "bleu";
             if (r > b && r > bl) couleur = "rouge";
             else if (b > bl) couleur = "blanc";
-
             days.push({
               date: fmt(d),
               couleur,
@@ -98,5 +91,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tempo.json
-          git commit -m "Auto update tempo.json (safe official today/tomorrow)" || echo "No change"
+          git commit -m "Auto update tempo.json from Hello Watt" || echo "No changes"
           git push
