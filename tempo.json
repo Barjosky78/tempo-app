@@ -7,7 +7,8 @@
       "blanc": 100,
       "bleu": 0
     },
-    "coldRisk": 0
+    "coldRisk": 0,
+    "fixed": true
   },
   {
     "date": "2026-01-09",
@@ -17,86 +18,95 @@
       "blanc": 0,
       "bleu": 100
     },
-    "coldRisk": 0
+    "coldRisk": 0,
+    "fixed": true
   },
   {
     "date": "2026-01-10",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 16,
-      "blanc": 27,
-      "bleu": 57
+      "rouge": 0,
+      "blanc": 35,
+      "bleu": 65
     },
-    "coldRisk": 0
+    "coldRisk": 0,
+    "fixed": false
   },
   {
     "date": "2026-01-11",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 14,
-      "blanc": 37,
-      "bleu": 49
+      "rouge": 0,
+      "blanc": 0,
+      "bleu": 100
     },
-    "coldRisk": 1
+    "coldRisk": 0,
+    "fixed": true
   },
   {
     "date": "2026-01-12",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 14,
-      "blanc": 23,
-      "bleu": 63
+      "rouge": 0,
+      "blanc": 27,
+      "bleu": 73
     },
-    "coldRisk": 0
+    "coldRisk": 0,
+    "fixed": false
   },
   {
     "date": "2026-01-13",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 12,
-      "blanc": 20,
-      "bleu": 68
+      "rouge": 0,
+      "blanc": 23,
+      "bleu": 77
     },
-    "coldRisk": 0
+    "coldRisk": 0,
+    "fixed": false
   },
   {
     "date": "2026-01-14",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 8,
-      "blanc": 16,
-      "bleu": 76
+      "rouge": 0,
+      "blanc": 17,
+      "bleu": 83
     },
-    "coldRisk": 0
+    "coldRisk": 0,
+    "fixed": false
   },
   {
     "date": "2026-01-15",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 6,
-      "blanc": 12,
-      "bleu": 82
+      "rouge": 0,
+      "blanc": 13,
+      "bleu": 87
     },
-    "coldRisk": 0
+    "coldRisk": 0,
+    "fixed": false
   },
   {
     "date": "2026-01-16",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 3,
+      "rouge": 0,
       "blanc": 8,
-      "bleu": 89
+      "bleu": 92
     },
-    "coldRisk": 0
+    "coldRisk": 0,
+    "fixed": false
   },
   {
     "date": "2026-01-17",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 2,
-      "blanc": 4,
-      "bleu": 94
+      "rouge": 0,
+      "blanc": 5,
+      "bleu": 95
     },
-    "coldRisk": 0
+    "coldRisk": 0,
+    "fixed": false
   }
 ]
