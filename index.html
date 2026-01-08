@@ -4,12 +4,31 @@
   <meta charset="UTF-8">
   <title>Tempo EDF</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Manifest PWA -->
   <link rel="manifest" href="manifest.json">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Tempo EDF</h1>
-  <div id="tempo"></div>
+
+  <header>
+    <h1>Tempo EDF</h1>
+
+    <!-- Date et heure de dernière mise à jour -->
+    <p id="last-update" class="last-update">
+      Chargement des données…
+    </p>
+  </header>
+
+  <!-- Cartes Tempo -->
+  <main>
+    <div id="tempo"></div>
+  </main>
+
+  <!-- Script principal -->
   <script src="app.js"></script>
+
 </body>
 </html>
