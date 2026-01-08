@@ -22,8 +22,8 @@
     "couleur": "bleu",
     "probabilites": {
       "rouge": 16,
-      "blanc": 28,
-      "bleu": 56
+      "blanc": 27,
+      "bleu": 57
     }
   },
   {
@@ -31,26 +31,26 @@
     "couleur": "bleu",
     "probabilites": {
       "rouge": 14,
-      "blanc": 28,
-      "bleu": 58
+      "blanc": 27,
+      "bleu": 59
     }
   },
   {
     "date": "2026-01-12",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 15,
-      "blanc": 24,
-      "bleu": 61
+      "rouge": 14,
+      "blanc": 23,
+      "bleu": 63
     }
   },
   {
     "date": "2026-01-13",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 13,
+      "rouge": 12,
       "blanc": 20,
-      "bleu": 67
+      "bleu": 68
     }
   },
   {
@@ -84,9 +84,9 @@
     "date": "2026-01-17",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 3,
+      "rouge": 2,
       "blanc": 4,
-      "bleu": 93
+      "bleu": 94
     }
   }
 ]
