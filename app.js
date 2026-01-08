@@ -3,19 +3,13 @@ const tomorrowDiv = document.getElementById("tomorrow");
 const forecastDiv = document.getElementById("forecast");
 const lastUpdateDiv = document.getElementById("last-update");
 
-// 🔢 Calcul de l'indicateur de confiance
-function confidenceScore(index, proba) {
+// 🔢 Calcul fiabilité avec impact météo
+function confidenceScore(index, proba, coldRisk) {
   if (index === 0 || index === 1) return 100;
 
   const baseMap = {
-    2: 80,
-    3: 75,
-    4: 70,
-    5: 65,
-    6: 60,
-    7: 55,
-    8: 50,
-    9: 45
+    2: 80, 3: 75, 4: 70, 5: 65,
+    6: 60, 7: 55, 8: 50, 9: 45
   };
 
   let score = baseMap[index] || 45;
@@ -24,15 +18,18 @@ function confidenceScore(index, proba) {
   if (maxProba >= 70) score += 10;
   else if (maxProba >= 60) score += 5;
 
+  // ❄️ Impact météo
+  if (coldRisk === 1) score -= 10;
+  if (coldRisk === 2) score -= 15;
+
   return Math.max(30, Math.min(score, 85));
 }
 
-// Chargement des données
+// Chargement données
 fetch("tempo.json?ts=" + Date.now())
   .then(res => res.json())
   .then(days => {
 
-    // 🕒 Date & heure de mise à jour
     const now = new Date();
     lastUpdateDiv.textContent =
       "Dernière mise à jour : " +
@@ -63,7 +60,11 @@ fetch("tempo.json?ts=" + Date.now())
         index === 1 ? "Demain" :
         "J+" + index;
 
-      const confidence = confidenceScore(index, day.probabilites);
+      const confidence = confidenceScore(
+        index,
+        day.probabilites,
+        day.coldRisk || 0
+      );
 
       card.innerHTML = `
         <div class="date">${label}<br>${dateText}</div>
@@ -83,13 +84,9 @@ fetch("tempo.json?ts=" + Date.now())
         </div>
       `;
 
-      if (index === 0) {
-        todayDiv.appendChild(card);
-      } else if (index === 1) {
-        tomorrowDiv.appendChild(card);
-      } else {
-        forecastDiv.appendChild(card);
-      }
+      if (index === 0) todayDiv.appendChild(card);
+      else if (index === 1) tomorrowDiv.appendChild(card);
+      else forecastDiv.appendChild(card);
     });
   })
   .catch(() => {
