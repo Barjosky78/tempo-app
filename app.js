@@ -10,14 +10,22 @@ fetch("tempo.json?ts=" + Date.now())
       return;
     }
 
+    const today = new Date();
+    today.setHours(0,0,0,0);
+
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+
     days.forEach((day, index) => {
       const card = document.createElement("div");
       card.className = "day " + day.couleur;
 
-      const label =
-        index === 0 ? "Aujourd’hui" :
-        index === 1 ? "Demain" :
-        "J+" + index;
+      const dayDate = new Date(day.date);
+      dayDate.setHours(0,0,0,0);
+
+      let label = "J+" + index;
+      if (dayDate.getTime() === today.getTime()) label = "Aujourd’hui";
+      else if (dayDate.getTime() === tomorrow.getTime()) label = "Demain";
 
       card.innerHTML = `
         <div class="date">
