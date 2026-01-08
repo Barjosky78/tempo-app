@@ -3,8 +3,14 @@ const tomorrowDiv = document.getElementById("tomorrow");
 const forecastDiv = document.getElementById("forecast");
 const lastUpdateDiv = document.getElementById("last-update");
 
-// 🔢 Calcul fiabilité avec impact météo
-function confidenceScore(index, proba, coldRisk) {
+function confidenceScore(index, proba, coldRisk, fixed, dateStr) {
+  const date = new Date(dateStr);
+  const day = date.getDay();
+
+  // 🔵 DIMANCHE = 100 %
+  if (day === 0) return 100;
+
+  // Officiel
   if (index === 0 || index === 1) return 100;
 
   const baseMap = {
@@ -13,23 +19,20 @@ function confidenceScore(index, proba, coldRisk) {
   };
 
   let score = baseMap[index] || 45;
-  const maxProba = Math.max(proba.rouge, proba.blanc, proba.bleu);
+  const maxProba = Math.max(proba.blanc, proba.bleu);
 
   if (maxProba >= 70) score += 10;
   else if (maxProba >= 60) score += 5;
 
-  // ❄️ Impact météo
   if (coldRisk === 1) score -= 10;
   if (coldRisk === 2) score -= 15;
 
   return Math.max(30, Math.min(score, 85));
 }
 
-// Chargement données
 fetch("tempo.json?ts=" + Date.now())
   .then(res => res.json())
   .then(days => {
-
     const now = new Date();
     lastUpdateDiv.textContent =
       "Dernière mise à jour : " +
@@ -49,25 +52,21 @@ fetch("tempo.json?ts=" + Date.now())
       card.className = "day " + day.couleur;
 
       const date = new Date(day.date);
-      const dateText = date.toLocaleDateString("fr-FR", {
-        weekday: "long",
-        day: "numeric",
-        month: "long"
-      });
-
       const label =
         index === 0 ? "Aujourd’hui" :
         index === 1 ? "Demain" :
-        "J+" + index;
+        date.toLocaleDateString("fr-FR", { weekday: "long" });
 
       const confidence = confidenceScore(
         index,
         day.probabilites,
-        day.coldRisk || 0
+        day.coldRisk,
+        day.fixed,
+        day.date
       );
 
       card.innerHTML = `
-        <div class="date">${label}<br>${dateText}</div>
+        <div class="date">${label}<br>${date.toLocaleDateString("fr-FR")}</div>
         <strong>${day.couleur.toUpperCase()}</strong>
 
         <div class="proba">
@@ -88,7 +87,4 @@ fetch("tempo.json?ts=" + Date.now())
       else if (index === 1) tomorrowDiv.appendChild(card);
       else forecastDiv.appendChild(card);
     });
-  })
-  .catch(() => {
-    forecastDiv.innerHTML = "<p>Erreur chargement données</p>";
   });
