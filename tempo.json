@@ -7,7 +7,6 @@
       "blanc": 100,
       "bleu": 0
     },
-    "coldRisk": 0,
     "fixed": true
   },
   {
@@ -18,7 +17,6 @@
       "blanc": 0,
       "bleu": 100
     },
-    "coldRisk": 0,
     "fixed": true
   },
   {
@@ -29,7 +27,6 @@
       "blanc": 35,
       "bleu": 65
     },
-    "coldRisk": 0,
     "fixed": false
   },
   {
@@ -40,7 +37,6 @@
       "blanc": 0,
       "bleu": 100
     },
-    "coldRisk": 0,
     "fixed": true
   },
   {
@@ -51,7 +47,6 @@
       "blanc": 27,
       "bleu": 62
     },
-    "coldRisk": 0,
     "fixed": false
   },
   {
@@ -62,7 +57,6 @@
       "blanc": 19,
       "bleu": 69
     },
-    "coldRisk": 0,
     "fixed": false
   },
   {
@@ -73,7 +67,6 @@
       "blanc": 15,
       "bleu": 76
     },
-    "coldRisk": 0,
     "fixed": false
   },
   {
@@ -84,7 +77,6 @@
       "blanc": 11,
       "bleu": 81
     },
-    "coldRisk": 0,
     "fixed": false
   },
   {
@@ -95,7 +87,6 @@
       "blanc": 9,
       "bleu": 88
     },
-    "coldRisk": 0,
     "fixed": false
   },
   {
@@ -106,7 +97,6 @@
       "blanc": 5,
       "bleu": 95
     },
-    "coldRisk": 0,
     "fixed": false
   }
 ]

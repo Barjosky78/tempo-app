@@ -11,5 +11,109 @@
     },
     "realColor": "rouge",
     "result": "wrong"
+  },
+  {
+    "date": "2026-01-10",
+    "predictedOn": "2026-01-08",
+    "horizon": 2,
+    "predictedColor": "bleu",
+    "probabilites": {
+      "rouge": 0,
+      "blanc": 35,
+      "bleu": 65
+    },
+    "realColor": null,
+    "result": null
+  },
+  {
+    "date": "2026-01-11",
+    "predictedOn": "2026-01-08",
+    "horizon": 3,
+    "predictedColor": "bleu",
+    "probabilites": {
+      "rouge": 0,
+      "blanc": 0,
+      "bleu": 100
+    },
+    "realColor": null,
+    "result": null
+  },
+  {
+    "date": "2026-01-12",
+    "predictedOn": "2026-01-08",
+    "horizon": 4,
+    "predictedColor": "bleu",
+    "probabilites": {
+      "rouge": 11,
+      "blanc": 27,
+      "bleu": 62
+    },
+    "realColor": null,
+    "result": null
+  },
+  {
+    "date": "2026-01-13",
+    "predictedOn": "2026-01-08",
+    "horizon": 5,
+    "predictedColor": "bleu",
+    "probabilites": {
+      "rouge": 12,
+      "blanc": 19,
+      "bleu": 69
+    },
+    "realColor": null,
+    "result": null
+  },
+  {
+    "date": "2026-01-14",
+    "predictedOn": "2026-01-08",
+    "horizon": 6,
+    "predictedColor": "bleu",
+    "probabilites": {
+      "rouge": 9,
+      "blanc": 15,
+      "bleu": 76
+    },
+    "realColor": null,
+    "result": null
+  },
+  {
+    "date": "2026-01-15",
+    "predictedOn": "2026-01-08",
+    "horizon": 7,
+    "predictedColor": "bleu",
+    "probabilites": {
+      "rouge": 8,
+      "blanc": 11,
+      "bleu": 81
+    },
+    "realColor": null,
+    "result": null
+  },
+  {
+    "date": "2026-01-16",
+    "predictedOn": "2026-01-08",
+    "horizon": 8,
+    "predictedColor": "bleu",
+    "probabilites": {
+      "rouge": 3,
+      "blanc": 9,
+      "bleu": 88
+    },
+    "realColor": null,
+    "result": null
+  },
+  {
+    "date": "2026-01-17",
+    "predictedOn": "2026-01-08",
+    "horizon": 9,
+    "predictedColor": "bleu",
+    "probabilites": {
+      "rouge": 0,
+      "blanc": 5,
+      "bleu": 95
+    },
+    "realColor": null,
+    "result": null
   }
 ]
