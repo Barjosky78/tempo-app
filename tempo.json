@@ -47,9 +47,9 @@
     "date": "2026-01-12",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 0,
-      "blanc": 27,
-      "bleu": 73
+      "rouge": 14,
+      "blanc": 23,
+      "bleu": 63
     },
     "coldRisk": 0,
     "fixed": false
@@ -58,9 +58,9 @@
     "date": "2026-01-13",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 0,
-      "blanc": 23,
-      "bleu": 77
+      "rouge": 12,
+      "blanc": 20,
+      "bleu": 68
     },
     "coldRisk": 0,
     "fixed": false
@@ -69,9 +69,9 @@
     "date": "2026-01-14",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 0,
-      "blanc": 17,
-      "bleu": 83
+      "rouge": 8,
+      "blanc": 16,
+      "bleu": 76
     },
     "coldRisk": 0,
     "fixed": false
@@ -80,9 +80,9 @@
     "date": "2026-01-15",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 0,
-      "blanc": 13,
-      "bleu": 87
+      "rouge": 6,
+      "blanc": 12,
+      "bleu": 82
     },
     "coldRisk": 0,
     "fixed": false
@@ -91,9 +91,9 @@
     "date": "2026-01-16",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 0,
+      "rouge": 3,
       "blanc": 8,
-      "bleu": 92
+      "bleu": 89
     },
     "coldRisk": 0,
     "fixed": false
