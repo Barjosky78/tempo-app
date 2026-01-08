@@ -1,4 +1,4 @@
-name: Update Tempo JSON (Option 1 + 4 Winters History)
+name: Update Tempo JSON (Option 1 + History + Weather)
 
 on:
   schedule:
@@ -15,18 +15,24 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # 1️⃣ Récupération Aujourd'hui / Demain (Hello Watt)
+      # 1️⃣ Récupération Aujourd'hui / Demain
       - name: Fetch Hello Watt
         run: |
           curl -s "https://www.hellowatt.fr/calendrier-tempo-edf-couleur-jour/" > page.html
 
-      # 2️⃣ Construction tempo.json
-      - name: Build tempo.json (Option 1 + 4 winters history)
+      # 2️⃣ Récupération météo (Paris comme proxy national)
+      - name: Fetch Weather
+        run: |
+          curl -s "https://api.open-meteo.com/v1/forecast?latitude=48.85&longitude=2.35&daily=temperature_2m_mean&forecast_days=10&timezone=Europe%2FParis" > weather.json
+
+      # 3️⃣ Construction tempo.json
+      - name: Build tempo.json
         run: |
           node <<'EOF'
           const fs = require("fs");
 
           const html = fs.readFileSync("page.html", "utf8");
+          const weather = JSON.parse(fs.readFileSync("weather.json", "utf8"));
 
           const matches = [...html.matchAll(/Jour (Bleu|Blanc|Rouge)/gi)]
             .map(m => m[1].toLowerCase());
@@ -46,7 +52,7 @@ jobs:
             return d.toISOString().split("T")[0];
           }
 
-          // 📊 HISTORIQUE AGRÉGÉ – 4 DERNIERS HIVERS
+          // 📊 Historique 4 hivers
           const HISTO_MONTH = {
             11: { rouge: 8,  blanc: 22, bleu: 70 },
             12: { rouge: 14, blanc: 30, bleu: 56 },
@@ -63,18 +69,18 @@ jobs:
             5: { rouge: -3 }
           };
 
+          const temps = weather.daily.temperature_2m_mean;
+
           const days = [];
           const today = new Date();
           today.setHours(0,0,0,0);
 
-          // 🔒 Aujourd'hui (officiel)
           days.push({
             date: fmt(today),
             couleur: todayColor,
             probabilites: proba(todayColor)
           });
 
-          // 🔒 Demain (officiel)
           const tomorrow = new Date(today);
           tomorrow.setDate(today.getDate() + 1);
           days.push({
@@ -83,7 +89,6 @@ jobs:
             probabilites: proba(tomorrowColor)
           });
 
-          // 🔮 J+2 → J+9 (Option 1 + historique)
           let lastColors = days.map(d => d.couleur);
 
           for (let i = 2; i <= 9; i++) {
@@ -93,19 +98,27 @@ jobs:
             const month = d.getMonth() + 1;
             const dayOfWeek = d.getDay();
 
-            // Base depuis l'historique mensuel
             let base = HISTO_MONTH[month] || { rouge: 10, blanc: 25, bleu: 65 };
             let rouge = base.rouge;
             let blanc = base.blanc;
             let bleu  = base.bleu;
 
-            // Ajustement jour de semaine
             if (HISTO_WEEKDAY[dayOfWeek]) {
               rouge += HISTO_WEEKDAY[dayOfWeek].rouge;
               bleu  -= HISTO_WEEKDAY[dayOfWeek].rouge;
             }
 
-            // Séquences précédentes
+            const temp = temps[i] ?? 10;
+
+            // 🌦️ Ajustement météo (BLEU ↔ BLANC uniquement)
+            if (temp < 0) {
+              blanc += 15;
+              bleu  -= 15;
+            } else if (temp < 3) {
+              blanc += 10;
+              bleu  -= 10;
+            }
+
             const recent = lastColors.slice(-2);
 
             if (recent.includes("rouge")) {
@@ -118,13 +131,11 @@ jobs:
               bleu  -= 5;
             }
 
-            // Lissage avec la distance
             const factor = (10 - i) / 10;
             rouge = Math.max(2, Math.round(rouge * factor));
             blanc = Math.round(blanc * factor);
             bleu  = 100 - rouge - blanc;
 
-            // Couleur dominante
             let couleur = "bleu";
             if (rouge > blanc && rouge > bleu) couleur = "rouge";
             else if (blanc > bleu) couleur = "blanc";
@@ -141,11 +152,11 @@ jobs:
           fs.writeFileSync("tempo.json", JSON.stringify(days, null, 2));
           EOF
 
-      # 3️⃣ Commit & push
+      # 4️⃣ Commit & push
       - name: Commit and push tempo.json
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tempo.json
-          git commit -m "Update tempo.json (Option 1 + 4 winters history)" || echo "No changes"
+          git commit -m "Update tempo.json (history + weather)" || echo "No changes"
           git push
