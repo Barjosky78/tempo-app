@@ -1,4 +1,4 @@
-name: Update Tempo JSON from Hello Watt (simple)
+name: Update Tempo JSON (Option 1)
 
 on:
   schedule:
@@ -15,22 +15,23 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      # 1️⃣ Récupération Aujourd'hui / Demain depuis Hello Watt
       - name: Fetch Hello Watt page
         run: |
           curl -s "https://www.hellowatt.fr/calendrier-tempo-edf-couleur-jour/" > page.html
 
-      - name: Extract colors and build tempo.json
+      # 2️⃣ Génération tempo.json avec OPTION 1
+      - name: Build tempo.json (Option 1)
         run: |
           node <<'EOF'
           const fs = require("fs");
 
           const html = fs.readFileSync("page.html", "utf8");
 
-          // Cherche simplement les couleurs dans l'ordre d'apparition
+          // 🔎 Extraction simple des couleurs officielles
           const matches = [...html.matchAll(/Jour (Bleu|Blanc|Rouge)/gi)]
             .map(m => m[1].toLowerCase());
 
-          // Sécurité : fallback bleu
           const todayColor = matches[0] || "bleu";
           const tomorrowColor = matches[1] || todayColor;
 
@@ -46,17 +47,18 @@ jobs:
             return d.toISOString().split("T")[0];
           }
 
-          const today = new Date();
           const days = [];
+          const today = new Date();
+          today.setHours(0,0,0,0);
 
-          // Aujourd'hui (officiel Hello Watt)
+          // 🔒 AUJOURD'HUI (officiel)
           days.push({
             date: fmt(today),
             couleur: todayColor,
             probabilites: proba(todayColor)
           });
 
-          // Demain (officiel Hello Watt)
+          // 🔒 DEMAIN (officiel)
           const tomorrow = new Date(today);
           tomorrow.setDate(today.getDate() + 1);
           days.push({
@@ -65,33 +67,92 @@ jobs:
             probabilites: proba(tomorrowColor)
           });
 
-          // J+2 → J+9 (prévisions simples)
+          // ===============================
+          // 🔮 J+2 → J+9 — OPTION 1 ACTIVE
+          // ===============================
+
+          let lastColors = days.map(d => d.couleur);
+
           for (let i = 2; i <= 9; i++) {
             const d = new Date(today);
             d.setDate(today.getDate() + i);
 
-            const r = Math.floor(Math.random() * 50);
-            const b = Math.floor(Math.random() * (100 - r));
-            const bl = 100 - r - b;
+            const month = d.getMonth() + 1; // 1 = janvier
+            const dayOfWeek = d.getDay();   // 0 = dimanche
 
+            // 📊 Base saisonnière
+            let rouge = 10;
+            let blanc = 25;
+            let bleu  = 65;
+
+            // ❄️ Cœur de l’hiver (janvier / février)
+            if (month === 1 || month === 2) {
+              rouge = 20;
+              blanc = 35;
+              bleu  = 45;
+            }
+
+            // 🌱 Fin d’hiver (mars)
+            if (month === 3) {
+              rouge = 5;
+              blanc = 20;
+              bleu  = 75;
+            }
+
+            // 📆 Ajustement jour de semaine
+            if (dayOfWeek === 1 || dayOfWeek === 2) { // lundi / mardi
+              rouge += 5;
+              bleu  -= 5;
+            }
+
+            if (dayOfWeek === 5) { // vendredi
+              rouge -= 5;
+              bleu  += 5;
+            }
+
+            // 🔁 Séquences précédentes
+            const recent = lastColors.slice(-2);
+
+            // ❌ Pas de rouge consécutif
+            if (recent.includes("rouge")) {
+              rouge -= 10;
+              bleu  += 10;
+            }
+
+            // 🔵 Après plusieurs bleus → blanc favorisé
+            if (recent.every(c => c === "bleu")) {
+              blanc += 5;
+              bleu  -= 5;
+            }
+
+            // 📉 Lissage avec la distance
+            const factor = (10 - i) / 10;
+            rouge = Math.max(3, Math.round(rouge * factor));
+            blanc = Math.round(blanc * factor);
+            bleu  = 100 - rouge - blanc;
+
+            // 🎯 Couleur dominante
             let couleur = "bleu";
-            if (r > b && r > bl) couleur = "rouge";
-            else if (b > bl) couleur = "blanc";
+            if (rouge > blanc && rouge > bleu) couleur = "rouge";
+            else if (blanc > bleu) couleur = "blanc";
 
             days.push({
               date: fmt(d),
               couleur,
-              probabilites: { rouge: r, blanc: b, bleu: bl }
+              probabilites: { rouge, blanc, bleu }
             });
+
+            lastColors.push(couleur);
           }
 
           fs.writeFileSync("tempo.json", JSON.stringify(days, null, 2));
           EOF
 
-      - name: Commit and push
+      # 3️⃣ Commit & push
+      - name: Commit and push tempo.json
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tempo.json
-          git commit -m "Auto update tempo.json (Hello Watt simple)" || echo "No change"
+          git commit -m "Update tempo.json (Option 1 statistical forecast)" || echo "No changes"
           git push
