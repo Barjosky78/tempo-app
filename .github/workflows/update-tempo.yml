@@ -1,4 +1,4 @@
-name: Update Tempo JSON (Option 1 + History + Weather)
+name: Update Tempo JSON (History + Weather FIXED)
 
 on:
   schedule:
@@ -15,17 +15,17 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # 1️⃣ Récupération Aujourd'hui / Demain
+      # 1️⃣ Couleurs officielles Aujourd’hui / Demain
       - name: Fetch Hello Watt
         run: |
           curl -s "https://www.hellowatt.fr/calendrier-tempo-edf-couleur-jour/" > page.html
 
-      # 2️⃣ Récupération météo (Paris comme proxy national)
+      # 2️⃣ Météo nationale (Paris = proxy France)
       - name: Fetch Weather
         run: |
           curl -s "https://api.open-meteo.com/v1/forecast?latitude=48.85&longitude=2.35&daily=temperature_2m_mean&forecast_days=10&timezone=Europe%2FParis" > weather.json
 
-      # 3️⃣ Construction tempo.json
+      # 3️⃣ Génération tempo.json
       - name: Build tempo.json
         run: |
           node <<'EOF'
@@ -34,6 +34,7 @@ jobs:
           const html = fs.readFileSync("page.html", "utf8");
           const weather = JSON.parse(fs.readFileSync("weather.json", "utf8"));
 
+          // 🔎 Extraction officiel
           const matches = [...html.matchAll(/Jour (Bleu|Blanc|Rouge)/gi)]
             .map(m => m[1].toLowerCase());
 
@@ -52,7 +53,7 @@ jobs:
             return d.toISOString().split("T")[0];
           }
 
-          // 📊 Historique 4 hivers
+          // 📊 HISTORIQUE 4 HIVERS
           const HISTO_MONTH = {
             11: { rouge: 8,  blanc: 22, bleu: 70 },
             12: { rouge: 14, blanc: 30, bleu: 56 },
@@ -75,50 +76,48 @@ jobs:
           const today = new Date();
           today.setHours(0,0,0,0);
 
+          // 🔒 Aujourd’hui
           days.push({
             date: fmt(today),
             couleur: todayColor,
-            probabilites: proba(todayColor)
+            probabilites: proba(todayColor),
+            coldRisk: 0
           });
 
+          // 🔒 Demain
           const tomorrow = new Date(today);
           tomorrow.setDate(today.getDate() + 1);
           days.push({
             date: fmt(tomorrow),
             couleur: tomorrowColor,
-            probabilites: proba(tomorrowColor)
+            probabilites: proba(tomorrowColor),
+            coldRisk: 0
           });
 
           let lastColors = days.map(d => d.couleur);
 
+          // 🔮 J+2 → J+9
           for (let i = 2; i <= 9; i++) {
             const d = new Date(today);
             d.setDate(today.getDate() + i);
 
             const month = d.getMonth() + 1;
             const dayOfWeek = d.getDay();
+            const temp = temps[i] ?? 10;
 
+            // 🔢 Base historique
             let base = HISTO_MONTH[month] || { rouge: 10, blanc: 25, bleu: 65 };
             let rouge = base.rouge;
             let blanc = base.blanc;
             let bleu  = base.bleu;
 
+            // 📆 Jour de semaine
             if (HISTO_WEEKDAY[dayOfWeek]) {
               rouge += HISTO_WEEKDAY[dayOfWeek].rouge;
               bleu  -= HISTO_WEEKDAY[dayOfWeek].rouge;
             }
 
-            const temp = temps[i] ?? 10;
-
-            // 🌦️ Ajustement météo (BLEU ↔ BLANC uniquement)
-            if (temp < 0) {
-              blanc += 15;
-              bleu  -= 15;
-            } else if (temp < 3) {
-              blanc += 10;
-              bleu  -= 10;
-            }
-
+            // 🔁 Séquences
             const recent = lastColors.slice(-2);
 
             if (recent.includes("rouge")) {
@@ -131,11 +130,31 @@ jobs:
               bleu  -= 5;
             }
 
+            // 📉 LISSAGE (AVANT météo)
             const factor = (10 - i) / 10;
             rouge = Math.max(2, Math.round(rouge * factor));
             blanc = Math.round(blanc * factor);
             bleu  = 100 - rouge - blanc;
 
+            // 🌦️ MÉTÉO (AJUSTEMENT FINAL)
+            let coldRisk = 0;
+
+            if (temp < 0) {
+              blanc += 15;
+              bleu  -= 15;
+              coldRisk = 2;
+            } else if (temp < 3) {
+              blanc += 10;
+              bleu  -= 10;
+              coldRisk = 1;
+            }
+
+            // 🛡️ Sécurité
+            blanc = Math.max(0, blanc);
+            bleu  = Math.max(0, bleu);
+            rouge = Math.max(0, 100 - blanc - bleu);
+
+            // 🎯 Couleur dominante
             let couleur = "bleu";
             if (rouge > blanc && rouge > bleu) couleur = "rouge";
             else if (blanc > bleu) couleur = "blanc";
@@ -143,7 +162,8 @@ jobs:
             days.push({
               date: fmt(d),
               couleur,
-              probabilites: { rouge, blanc, bleu }
+              probabilites: { rouge, blanc, bleu },
+              coldRisk
             });
 
             lastColors.push(couleur);
@@ -158,5 +178,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tempo.json
-          git commit -m "Update tempo.json (history + weather)" || echo "No changes"
+          git commit -m "Update tempo.json (weather applied correctly)" || echo "No changes"
           git push
