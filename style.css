@@ -1,18 +1,100 @@
+/* Global */
+body {
+  margin: 0;
+  padding: 16px;
+  background: #111;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+header {
+  margin-bottom: 16px;
+}
+
+h1 {
+  margin-bottom: 6px;
+}
+
+.last-update {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Conteneur des cartes */
+#tempo {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Carte */
+.day {
+  width: 140px;
+  padding: 12px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  color: #000;
+  background: #eee;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  transition: transform 0.2s ease;
+}
+
+.day:hover {
+  transform: translateY(-3px);
+}
+
+/* Couleurs Tempo */
+.day.bleu {
+  background: #1e90ff;
+  color: #fff;
+}
+
+.day.blanc {
+  background: #f2f2f2;
+  color: #000;
+}
+
+.day.rouge {
+  background: #e74c3c;
+  color: #fff;
+}
+
 /* Mise en avant Aujourd'hui / Demain */
 .day.today {
-  transform: scale(1.08);
   border: 3px solid gold;
-  box-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+  transform: scale(1.08);
 }
 
 .day.tomorrow {
-  transform: scale(1.04);
   border: 3px solid silver;
-  box-shadow: 0 0 10px rgba(192, 192, 192, 0.5);
+  transform: scale(1.04);
 }
 
-/* Ajustement mobile */
+/* Contenu */
+.date {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.proba {
+  font-size: 13px;
+  margin-top: 6px;
+  text-align: left;
+}
+
+/* Responsive mobile */
 @media (max-width: 600px) {
+  #tempo {
+    gap: 10px;
+  }
+
+  .day {
+    width: 100%;
+    max-width: 320px;
+  }
+
   .day.today,
   .day.tomorrow {
     transform: scale(1.02);
