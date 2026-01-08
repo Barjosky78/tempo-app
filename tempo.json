@@ -1,0 +1,12 @@
+
+[
+  {"date": "2026-01-08", "couleur": "bleu", "probabilites":{"rouge":10,"blanc":20,"bleu":70}},
+  {"date": "2026-01-09", "couleur": "blanc", "probabilites":{"rouge":5,"blanc":85,"bleu":10}},
+  {"date": "2026-01-10", "couleur": "rouge", "probabilites":{"rouge":65,"blanc":25,"bleu":10}},
+  {"date": "2026-01-11", "couleur": "bleu", "probabilites":{"rouge":20,"blanc":30,"bleu":50}},
+  {"date": "2026-01-12", "couleur": "bleu", "probabilites":{"rouge":15,"blanc":25,"bleu":60}},
+  {"date": "2026-01-13", "couleur": "blanc", "probabilites":{"rouge":5,"blanc":85,"bleu":10}},
+  {"date": "2026-01-14", "couleur": "rouge", "probabilites":{"rouge":70,"blanc":20,"bleu":10}},
+  {"date": "2026-01-15", "couleur": "bleu", "probabilites":{"rouge":10,"blanc":20,"bleu":70}},
+  {"date": "2026-01-16", "couleur": "bleu", "probabilites":{"rouge":15,"blanc":25,"bleu":60}}
+]
