@@ -2,29 +2,48 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Tempo EDF</title>
+  <title>Tempo EDF – Prévisions & Suivi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- PWA -->
   <link rel="manifest" href="manifest.json">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header>
-    <h1>Tempo EDF</h1>
-    <p id="last-update" class="last-update">Chargement…</p>
+    <h1>⚡ Tempo EDF</h1>
+    <p class="subtitle">
+      Prévisions, suivi des prédictions et statistiques réelles
+    </p>
   </header>
 
-  <!-- Aujourd'hui / Demain -->
-  <section id="main-days">
-    <div id="today" class="main-cards"></div>
-    <div id="tomorrow" class="main-cards"></div>
+  <!-- STATISTIQUES -->
+  <section id="stats-section">
+    <h2>📊 Fiabilité des prévisions</h2>
+    <div id="stats"></div>
   </section>
 
-  <!-- Prévisions -->
-  <section>
-    <h2 class="forecast-title">Prévisions</h2>
-    <div id="forecast"></div>
+  <!-- TEMPO -->
+  <section id="tempo-section">
+    <h2>📅 Prévisions Tempo</h2>
+    <div id="tempo" class="tempo-grid"></div>
   </section>
+
+  <!-- HISTORIQUE -->
+  <section id="history-section">
+    <h2>🕒 Suivi des prédictions passées</h2>
+    <div id="history"></div>
+  </section>
+
+  <footer>
+    <p>
+      Données officielles EDF (via Hello Watt) –  
+      Modèle prédictif expérimental, sans garantie.
+    </p>
+  </footer>
 
   <script src="app.js"></script>
 </body>
