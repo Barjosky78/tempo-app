@@ -1,21 +1,19 @@
+body {
+  background: #111;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+#tempo { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
 .day {
-  width: 90px;
+  background: #333;
+  border-radius: 8px;
   padding: 8px;
-  border-radius: 12px;
-  font-size: 12px;
+  width: 90px;
   color: black;
 }
-
-.date {
-  font-weight: bold;
-  margin-bottom: 4px;
-}
-
-.proba {
-  font-size: 11px;
-  text-align: left;
-}
-
-.bleu { background: #1e90ff; }
-.blanc { background: #f2f2f2; }
 .rouge { background: #e74c3c; }
+.blanc { background: #f2f2f2; }
+.bleu { background: #1e90ff; }
+.proba { font-size: 12px; text-align: left; }
+.date { font-weight: bold; margin-bottom: 4px; color: black; }
