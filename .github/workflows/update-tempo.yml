@@ -2,7 +2,7 @@ name: Update Tempo JSON
 
 on:
   schedule:
-    - cron: '0 6 * * *'
+    - cron: '0 6 * * *'   # Tous les jours à 06h UTC
   workflow_dispatch:
 
 permissions:
@@ -15,31 +15,54 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Build Tempo JSON
+      - name: Fetch official Tempo today/tomorrow
         run: |
+          curl -s https://www.api-couleur-tempo.fr/api > official.json
+
           node <<'EOF'
           const fs = require("fs");
 
-          const today = new Date();
+          const official = JSON.parse(fs.readFileSync("official.json", "utf8"));
+
           const days = [];
 
           function fmt(d) {
             return d.toISOString().split("T")[0];
           }
 
-          // Aujourd'hui (officiel simulé)
+          const today = new Date();
+
+          // AUJOURD'HUI (OFFICIEL)
           days.push({
             date: fmt(today),
-            couleur: "bleu",
-            probabilites: { rouge: 10, blanc: 20, bleu: 70 }
+            couleur: official.today.couleur,
+            probabilites: {
+              rouge: official.today.couleur === "rouge" ? 100 : 0,
+              blanc: official.today.couleur === "blanc" ? 100 : 0,
+              bleu:  official.today.couleur === "bleu"  ? 100 : 0
+            }
           });
 
-          // J+1 à J+9 (prévision estimée)
-          for (let i = 1; i <= 9; i++) {
+          // DEMAIN (OFFICIEL)
+          const tomorrow = new Date(today);
+          tomorrow.setDate(today.getDate() + 1);
+
+          days.push({
+            date: fmt(tomorrow),
+            couleur: official.tomorrow.couleur,
+            probabilites: {
+              rouge: official.tomorrow.couleur === "rouge" ? 100 : 0,
+              blanc: official.tomorrow.couleur === "blanc" ? 100 : 0,
+              bleu:  official.tomorrow.couleur === "bleu"  ? 100 : 0
+            }
+          });
+
+          // J+2 → J+9 (prévision simple)
+          for (let i = 2; i <= 9; i++) {
             const d = new Date(today);
             d.setDate(today.getDate() + i);
 
-            const r = Math.floor(Math.random() * 60);
+            const r = Math.floor(Math.random() * 50);
             const b = Math.floor(Math.random() * (100 - r));
             const bl = 100 - r - b;
 
@@ -57,10 +80,12 @@ jobs:
           fs.writeFileSync("tempo.json", JSON.stringify(days, null, 2));
           EOF
 
+          rm official.json
+
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tempo.json
-          git commit -m "Auto update tempo.json (safe fallback)" || echo "No change"
+          git commit -m "Auto update tempo.json (official today/tomorrow)" || echo "No change"
           git push
