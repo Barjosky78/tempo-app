@@ -40,4 +40,22 @@ fetch("tempo.json")
 
       div.innerHTML = `
         <div class="date">${label}<br>${dateTxt}</div>
-        <div><strong>${day.couleur.toUpperCase()}</strong></
+        <div><strong>${day.couleur.toUpperCase()}</strong></div>
+        <div class="proba">
+          🔴 ${day.probabilites?.rouge ?? 0} %<br>
+          ⚪ ${day.probabilites?.blanc ?? 0} %<br>
+          🔵 ${day.probabilites?.bleu ?? 0} %
+        </div>
+      `;
+
+      tempoDiv.appendChild(div);
+    });
+  })
+  .catch(err => {
+    tempoDiv.innerHTML = "Erreur chargement Tempo";
+    console.error(err);
+  });
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
