@@ -1,4 +1,4 @@
-name: Update Tempo JSON (Stable Weekday Logic)
+name: Update Tempo JSON (Cold Span + Weekday Logic)
 
 on:
   schedule:
@@ -13,15 +13,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 1️⃣ Récupération couleur officielle aujourd’hui / demain
+      # 1️⃣ Couleurs officielles aujourd’hui / demain
       - name: Fetch Hello Watt
         run: |
           curl -s "https://www.hellowatt.fr/calendrier-tempo-edf-couleur-jour/" > page.html
 
-      # 2️⃣ Récupération météo France (proxy Paris)
+      # 2️⃣ Météo France (température moyenne quotidienne)
       - name: Fetch Weather
         run: |
           curl -s "https://api.open-meteo.com/v1/forecast?latitude=48.85&longitude=2.35&daily=temperature_2m_mean&forecast_days=10&timezone=Europe%2FParis" > weather.json
@@ -40,7 +40,7 @@ jobs:
             return d.toISOString().split("T")[0];
           }
 
-          // Couleurs officielles J et J+1
+          // Couleurs officielles (J et J+1)
           const matches = [...html.matchAll(/Jour (Bleu|Blanc|Rouge)/gi)]
             .map(m => m[1].toLowerCase());
 
@@ -64,7 +64,7 @@ jobs:
             3:  { rouge: 4,  blanc: 22, bleu: 74 }
           };
 
-          // 📆 Affinage jours de semaine (Lundi → Vendredi)
+          // 📆 Pondération jours de semaine (EDF-like)
           const HISTO_WEEKDAY = {
             1: { rouge: -2, blanc: +6, bleu: -4 }, // Lundi
             2: { rouge: +4, blanc: -2, bleu: -2 }, // Mardi
@@ -73,11 +73,21 @@ jobs:
             5: { rouge: -3, blanc: +4, bleu: -1 }  // Vendredi
           };
 
+          // 🌡️ Détection du froid étendu (temp < 3°C sur plusieurs jours)
+          const coldSpans = [];
+          let span = 0;
+
+          for (let i = 0; i < temps.length; i++) {
+            if (temps[i] < 3) span++;
+            else span = 0;
+            coldSpans[i] = span;
+          }
+
           const days = [];
           const today = new Date();
           today.setHours(0,0,0,0);
 
-          // 🔒 Aujourd’hui
+          // 🔒 Aujourd’hui (officiel)
           days.push({
             date: fmt(today),
             couleur: todayColor,
@@ -86,7 +96,7 @@ jobs:
             fixed: true
           });
 
-          // 🔒 Demain
+          // 🔒 Demain (officiel)
           const tomorrow = new Date(today);
           tomorrow.setDate(today.getDate() + 1);
           days.push({
@@ -107,6 +117,7 @@ jobs:
             const dayOfWeek = d.getDay(); // 0=dimanche, 6=samedi
             const month = d.getMonth() + 1;
             const temp = temps[i] ?? 10;
+            const spanDays = coldSpans[i] || 0;
 
             // 🔵 Dimanche = bleu fixe
             if (dayOfWeek === 0) {
@@ -127,14 +138,14 @@ jobs:
             let blanc = base.blanc;
             let bleu  = base.bleu;
 
-            // 📆 Pondération jour de semaine
+            // Pondération jour de semaine
             if (HISTO_WEEKDAY[dayOfWeek]) {
               rouge += HISTO_WEEKDAY[dayOfWeek].rouge;
               blanc += HISTO_WEEKDAY[dayOfWeek].blanc;
               bleu  += HISTO_WEEKDAY[dayOfWeek].bleu;
             }
 
-            // Séquences récentes
+            // Séquences précédentes
             const recent = lastColors.slice(-2);
             if (recent.includes("rouge")) {
               rouge -= 10;
@@ -151,15 +162,20 @@ jobs:
             blanc = Math.round(blanc * factor);
             bleu  = 100 - rouge - blanc;
 
-            // 🌦️ Météo (impact bleu ↔ blanc)
+            // ❄️ Froid étendu (clé de la nouvelle logique)
             let coldRisk = 0;
-            if (temp < 0) {
+            if (temp < 0 && spanDays >= 3) {
+              rouge += 8;
+              blanc += 12;
+              bleu  -= 20;
+              coldRisk = 3;
+            } else if (temp < 3 && spanDays >= 3) {
               blanc += 15;
               bleu  -= 15;
               coldRisk = 2;
             } else if (temp < 3) {
-              blanc += 10;
-              bleu  -= 10;
+              blanc += 8;
+              bleu  -= 8;
               coldRisk = 1;
             }
 
@@ -187,7 +203,7 @@ jobs:
               continue;
             }
 
-            // 🔴 Lundi → Vendredi (rouge autorisé)
+            // 🔴 Lundi → Vendredi
             const total = rouge + blanc + bleu;
             rouge = Math.round((rouge / total) * 100);
             blanc = Math.round((blanc / total) * 100);
@@ -217,5 +233,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tempo.json
-          git commit -m "Refine weekday logic (Mon-Fri)" || echo "No changes"
+          git commit -m "Add cold span logic (network tension)" || echo "No changes"
           git push
