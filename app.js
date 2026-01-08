@@ -3,17 +3,36 @@ const tomorrowDiv = document.getElementById("tomorrow");
 const forecastDiv = document.getElementById("forecast");
 const lastUpdateDiv = document.getElementById("last-update");
 
-// Chargement JSON (anti-cache)
+// 🔢 Calcul de l'indicateur de confiance
+function confidenceScore(index, proba) {
+  if (index === 0 || index === 1) return 100;
+
+  const baseMap = {
+    2: 80,
+    3: 75,
+    4: 70,
+    5: 65,
+    6: 60,
+    7: 55,
+    8: 50,
+    9: 45
+  };
+
+  let score = baseMap[index] || 45;
+  const maxProba = Math.max(proba.rouge, proba.blanc, proba.bleu);
+
+  if (maxProba >= 70) score += 10;
+  else if (maxProba >= 60) score += 5;
+
+  return Math.max(30, Math.min(score, 85));
+}
+
+// Chargement des données
 fetch("tempo.json?ts=" + Date.now())
   .then(res => res.json())
   .then(days => {
 
-    if (!Array.isArray(days) || days.length === 0) {
-      forecastDiv.innerHTML = "<p>Aucune donnée</p>";
-      return;
-    }
-
-    // 🕒 Date & heure de mise à jour (locale)
+    // 🕒 Date & heure de mise à jour
     const now = new Date();
     lastUpdateDiv.textContent =
       "Dernière mise à jour : " +
@@ -28,60 +47,42 @@ fetch("tempo.json?ts=" + Date.now())
         minute: "2-digit"
       });
 
-    // Référence aujourd’hui (minuit local)
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-
     days.forEach((day, index) => {
       const card = document.createElement("div");
-
-      const dayDate = new Date(day.date);
-      dayDate.setHours(0, 0, 0, 0);
-      const dayOfWeek = dayDate.getDay(); // 0 = dimanche, 6 = samedi
-
-      // 🔒 Règles Tempo week-end (prévisions uniquement)
-      if (index >= 2) {
-        // Dimanche = toujours BLEU
-        if (dayOfWeek === 0) {
-          day.couleur = "bleu";
-          day.probabilites = { rouge: 0, blanc: 0, bleu: 100 };
-        }
-
-        // Samedi = jamais ROUGE
-        if (dayOfWeek === 6 && day.couleur === "rouge") {
-          day.couleur = "blanc";
-          day.probabilites = { rouge: 0, blanc: 60, bleu: 40 };
-        }
-      }
-
       card.className = "day " + day.couleur;
 
-      // Libellé
-      const label =
-        index === 0 ? "Aujourd’hui" :
-        index === 1 ? "Demain" :
-        "J+" + index;
-
-      // Date lisible
-      const dateTexte = dayDate.toLocaleDateString("fr-FR", {
+      const date = new Date(day.date);
+      const dateText = date.toLocaleDateString("fr-FR", {
         weekday: "long",
         day: "numeric",
         month: "long"
       });
 
+      const label =
+        index === 0 ? "Aujourd’hui" :
+        index === 1 ? "Demain" :
+        "J+" + index;
+
+      const confidence = confidenceScore(index, day.probabilites);
+
       card.innerHTML = `
-        <div class="date">
-          ${label}<br>${dateTexte}
-        </div>
+        <div class="date">${label}<br>${dateText}</div>
         <strong>${day.couleur.toUpperCase()}</strong>
+
         <div class="proba">
-          🔴 ${day.probabilites.rouge} %<br>
-          ⚪ ${day.probabilites.blanc} %<br>
-          🔵 ${day.probabilites.bleu} %
+          🔴 ${day.probabilites.rouge}%<br>
+          ⚪ ${day.probabilites.blanc}%<br>
+          🔵 ${day.probabilites.bleu}%
+        </div>
+
+        <div class="confidence">
+          Fiabilité : <strong>${confidence}%</strong>
+          <div class="confidence-bar">
+            <div class="confidence-fill" style="width:${confidence}%"></div>
+          </div>
         </div>
       `;
 
-      // Placement des cartes
       if (index === 0) {
         todayDiv.appendChild(card);
       } else if (index === 1) {
@@ -91,7 +92,6 @@ fetch("tempo.json?ts=" + Date.now())
       }
     });
   })
-  .catch(err => {
+  .catch(() => {
     forecastDiv.innerHTML = "<p>Erreur chargement données</p>";
-    console.error(err);
   });
