@@ -1,19 +1,14 @@
-/* Global */
 body {
-  margin: 0;
-  padding: 16px;
   background: #111;
-  color: #fff;
+  color: white;
   font-family: Arial, sans-serif;
   text-align: center;
+  padding: 16px;
+  margin: 0;
 }
 
 header {
   margin-bottom: 16px;
-}
-
-h1 {
-  margin-bottom: 6px;
 }
 
 .last-update {
@@ -21,58 +16,48 @@ h1 {
   opacity: 0.8;
 }
 
-/* Conteneur des cartes */
-#tempo {
+/* ===== GROSSES CARTES ===== */
+#main-days {
   display: flex;
-  gap: 14px;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.main-cards .day {
+  width: 260px;
+  padding: 18px;
+  border-radius: 16px;
+  font-size: 18px;
+}
+
+/* ===== PETITES CARTES ===== */
+#forecast {
+  display: flex;
+  gap: 12px;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-/* Carte */
-.day {
-  width: 140px;
-  padding: 12px;
+#forecast .day {
+  width: 120px;
+  padding: 10px;
   border-radius: 12px;
-  box-sizing: border-box;
-  color: #000;
-  background: #eee;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-  transition: transform 0.2s ease;
+  font-size: 14px;
 }
 
-.day:hover {
-  transform: translateY(-3px);
+/* Carte commune */
+.day {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  color: #000;
 }
 
 /* Couleurs Tempo */
-.day.bleu {
-  background: #1e90ff;
-  color: #fff;
-}
+.day.bleu { background: #1e90ff; color: #fff; }
+.day.blanc { background: #f2f2f2; color: #000; }
+.day.rouge { background: #e74c3c; color: #fff; }
 
-.day.blanc {
-  background: #f2f2f2;
-  color: #000;
-}
-
-.day.rouge {
-  background: #e74c3c;
-  color: #fff;
-}
-
-/* Mise en avant Aujourd'hui / Demain */
-.day.today {
-  border: 3px solid gold;
-  transform: scale(1.08);
-}
-
-.day.tomorrow {
-  border: 3px solid silver;
-  transform: scale(1.04);
-}
-
-/* Contenu */
 .date {
   font-weight: bold;
   margin-bottom: 6px;
@@ -80,23 +65,24 @@ h1 {
 
 .proba {
   font-size: 13px;
-  margin-top: 6px;
   text-align: left;
+  margin-top: 6px;
 }
 
-/* Responsive mobile */
-@media (max-width: 600px) {
-  #tempo {
-    gap: 10px;
-  }
+.forecast-title {
+  margin-bottom: 12px;
+  opacity: 0.85;
+}
 
-  .day {
+/* Mobile */
+@media (max-width: 600px) {
+  .main-cards .day {
     width: 100%;
     max-width: 320px;
   }
 
-  .day.today,
-  .day.tomorrow {
-    transform: scale(1.02);
+  #forecast .day {
+    width: 100%;
+    max-width: 160px;
   }
 }
