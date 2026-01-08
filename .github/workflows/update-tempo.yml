@@ -2,28 +2,45 @@ name: Update Tempo JSON
 
 on:
   schedule:
-    - cron: '0 6 * * *'   # Tous les jours à 06:00 UTC
+    - cron: '0 6 * * *'
   workflow_dispatch:
 
 permissions:
-  contents: write   # 🔴 OBLIGATOIRE pour pouvoir push
+  contents: write
 
 jobs:
   update-tempo:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Fetch Tempo data
+      - name: Fetch and normalize Tempo data
         run: |
-          curl -s https://www.api-couleur-tempo.fr/api > tempo.json
+          curl -s https://www.api-couleur-tempo.fr/api > raw.json
 
-      - name: Commit and push if changed
+          node <<'EOF'
+          const fs = require('fs');
+          const raw = JSON.parse(fs.readFileSync('raw.json','utf8'));
+
+          const days = [];
+
+          if (raw.today) days.push(raw.today);
+          if (raw.tomorrow) days.push(raw.tomorrow);
+
+          if (Array.isArray(raw.forecast)) {
+            raw.forecast.forEach(d => days.push(d));
+          }
+
+          fs.writeFileSync('tempo.json', JSON.stringify(days, null, 2));
+          EOF
+
+          rm raw.json
+
+      - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tempo.json
-          git commit -m "Auto update tempo.json" || echo "No changes"
+          git commit -m "Auto update tempo.json (normalized)" || echo "No changes"
           git push
