@@ -1,22 +1,92 @@
 [
   {
-    "date": "2026-01-01",
+    "date": "2026-01-08",
     "couleur": "bleu",
-    "probabilites": { "rouge": 10, "blanc": 20, "bleu": 70 }
+    "probabilites": {
+      "rouge": 10,
+      "blanc": 20,
+      "bleu": 70
+    }
   },
   {
-    "date": "2026-01-02",
+    "date": "2026-01-09",
     "couleur": "blanc",
-    "probabilites": { "rouge": 5, "blanc": 85, "bleu": 10 }
+    "probabilites": {
+      "rouge": 11,
+      "blanc": 53,
+      "bleu": 36
+    }
   },
   {
-    "date": "2026-01-03",
-    "couleur": "rouge",
-    "probabilites": { "rouge": 70, "blanc": 20, "bleu": 10 }
+    "date": "2026-01-10",
+    "couleur": "blanc",
+    "probabilites": {
+      "rouge": 4,
+      "blanc": 54,
+      "bleu": 42
+    }
   },
   {
-    "date": "2026-01-04",
+    "date": "2026-01-11",
+    "couleur": "blanc",
+    "probabilites": {
+      "rouge": 17,
+      "blanc": 50,
+      "bleu": 33
+    }
+  },
+  {
+    "date": "2026-01-12",
     "couleur": "bleu",
-    "probabilites": { "rouge": 15, "blanc": 25, "bleu": 60 }
+    "probabilites": {
+      "rouge": 47,
+      "blanc": 6,
+      "bleu": 47
+    }
+  },
+  {
+    "date": "2026-01-13",
+    "couleur": "blanc",
+    "probabilites": {
+      "rouge": 16,
+      "blanc": 66,
+      "bleu": 18
+    }
+  },
+  {
+    "date": "2026-01-14",
+    "couleur": "blanc",
+    "probabilites": {
+      "rouge": 46,
+      "blanc": 46,
+      "bleu": 8
+    }
+  },
+  {
+    "date": "2026-01-15",
+    "couleur": "blanc",
+    "probabilites": {
+      "rouge": 43,
+      "blanc": 51,
+      "bleu": 6
+    }
+  },
+  {
+    "date": "2026-01-16",
+    "couleur": "bleu",
+    "probabilites": {
+      "rouge": 13,
+      "blanc": 5,
+      "bleu": 82
+    }
+  },
+  {
+    "date": "2026-01-17",
+    "couleur": "blanc",
+    "probabilites": {
+      "rouge": 21,
+      "blanc": 76,
+      "bleu": 3
+    }
   }
 ]
