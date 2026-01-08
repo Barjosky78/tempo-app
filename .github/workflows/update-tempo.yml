@@ -3,7 +3,10 @@ name: Update Tempo JSON
 on:
   schedule:
     - cron: '0 6 * * *'   # Tous les jours à 06:00 UTC
-  workflow_dispatch:      # Lancement manuel possible
+  workflow_dispatch:
+
+permissions:
+  contents: write   # 🔴 OBLIGATOIRE pour pouvoir push
 
 jobs:
   update-tempo:
@@ -19,8 +22,8 @@ jobs:
 
       - name: Commit and push if changed
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tempo.json
-          git commit -m "Auto update tempo.json" || echo "No changes to commit"
+          git commit -m "Auto update tempo.json" || echo "No changes"
           git push
