@@ -1,4 +1,4 @@
-name: Update Tempo + History + Stats
+name: Update Tempo + History + Stats (Weekday Recalibrated)
 
 on:
   schedule:
@@ -21,7 +21,7 @@ jobs:
         run: |
           curl -s "https://www.hellowatt.fr/calendrier-tempo-edf-couleur-jour/" > page.html
 
-      # 2️⃣ Météo France
+      # 2️⃣ Météo (température moyenne quotidienne – proxy France)
       - name: Fetch Weather
         run: |
           curl -s "https://api.open-meteo.com/v1/forecast?latitude=48.85&longitude=2.35&daily=temperature_2m_mean&forecast_days=10&timezone=Europe%2FParis" > weather.json
@@ -66,24 +66,27 @@ jobs:
           /* ======================
              MODEL CONSTANTS
           ====================== */
+
+          // 📊 Historique mensuel (4 hivers lissés)
           const HISTO_MONTH = {
-            11:{rouge:8, blanc:22, bleu:70},
-            12:{rouge:14,blanc:30, bleu:56},
+            11:{rouge:8,  blanc:22, bleu:70},
+            12:{rouge:14, blanc:30, bleu:56},
             1:{rouge:20, blanc:34, bleu:46},
             2:{rouge:17, blanc:33, bleu:50},
             3:{rouge:4,  blanc:22, bleu:74}
           };
 
+          // 📆 Jours de semaine – RECALIBRÉS EDF
           const HISTO_WEEKDAY = {
-            1:{rouge:-2, blanc:+6, bleu:-4},
-            2:{rouge:+4, blanc:-2, bleu:-2},
-            3:{rouge:+3, blanc:-1, bleu:-2},
-            4:{rouge:+5, blanc:-3, bleu:-2},
-            5:{rouge:-3, blanc:+4, bleu:-1}
+            1:{ rouge:-3, blanc:+6, bleu:-3 }, // Lundi → tampon
+            2:{ rouge:+4, blanc:+1, bleu:-5 }, // Mardi → tension possible
+            3:{ rouge:+5, blanc: 0, bleu:-5 }, // Mercredi → pic tension
+            4:{ rouge:+2, blanc:+3, bleu:-5 }, // Jeudi → neutre (blanc fréquent)
+            5:{ rouge:-4, blanc:+2, bleu:+2 }  // Vendredi → relâchement
           };
 
           /* ======================
-             COLD SPAN
+             COLD SPAN (froid étendu)
           ====================== */
           const coldSpans=[];
           let span=0;
@@ -98,6 +101,7 @@ jobs:
           const days=[];
           const today=new Date(); today.setHours(0,0,0,0);
 
+          // 🔒 Aujourd’hui
           days.push({
             date:fmt(today),
             couleur:todayColor,
@@ -105,6 +109,7 @@ jobs:
             fixed:true
           });
 
+          // 🔒 Demain
           const tomorrow=new Date(today);
           tomorrow.setDate(today.getDate()+1);
           days.push({
@@ -116,15 +121,17 @@ jobs:
 
           let lastColors=days.map(d=>d.couleur);
 
+          // 🔮 J+2 → J+9
           for(let i=2;i<=9;i++){
             const d=new Date(today);
             d.setDate(today.getDate()+i);
-            const dow=d.getDay();
+
+            const dow=d.getDay(); // 0=dimanche, 6=samedi
             const month=d.getMonth()+1;
             const temp=temps[i]??10;
             const spanDays=coldSpans[i]||0;
 
-            // Sunday
+            // 🔵 Dimanche = bleu fixe
             if(dow===0){
               days.push({
                 date:fmt(d),
@@ -136,51 +143,76 @@ jobs:
               continue;
             }
 
+            // Base mensuelle
             let base=HISTO_MONTH[month]||{rouge:10,blanc:25,bleu:65};
             let rouge=base.rouge, blanc=base.blanc, bleu=base.bleu;
 
+            // Jour de semaine
             if(HISTO_WEEKDAY[dow]){
               rouge+=HISTO_WEEKDAY[dow].rouge;
               blanc+=HISTO_WEEKDAY[dow].blanc;
               bleu +=HISTO_WEEKDAY[dow].bleu;
             }
 
+            // 🔁 Séquence précédente (SORTIE DE ROUGE RÉALISTE)
             const recent=lastColors.slice(-2);
-            if(recent.includes("rouge")){ rouge-=10; bleu+=10; }
-            if(recent.every(c=>c==="bleu")){ blanc+=5; bleu-=5; }
+            if(recent.includes("rouge")){
+              rouge-=10;
+              blanc+=5;
+              bleu +=5;
+            }
+            if(recent.every(c=>c==="bleu")){
+              blanc+=5;
+              bleu -=5;
+            }
 
+            // 📉 Lissage temporel
             const factor=(10-i)/10;
             rouge=Math.max(2,Math.round(rouge*factor));
             blanc=Math.round(blanc*factor);
             bleu=100-rouge-blanc;
 
+            // ❄️ Froid étendu
             if(temp<0 && spanDays>=3){
-              rouge+=8; blanc+=12; bleu-=20;
+              rouge+=8;
+              blanc+=12;
+              bleu -=20;
             }else if(temp<3 && spanDays>=3){
-              blanc+=15; bleu-=15;
+              blanc+=15;
+              bleu -=15;
             }else if(temp<3){
-              blanc+=8; bleu-=8;
+              blanc+=8;
+              bleu -=8;
             }
 
-            // Monday adjustment
+            // 🔴 Ajustement lundi (froid durable fort)
             if(dow===1 && spanDays>=3 && temp<=0){
-              rouge+=5; bleu-=5;
+              rouge+=5;
+              bleu -=5;
             }
 
-            // Saturday
+            // 🟡 Samedi = jamais rouge
             if(dow===6){
               blanc+=Math.round(rouge/2);
               bleu +=Math.round(rouge/2);
               rouge=0;
+
               const t=blanc+bleu;
               blanc=Math.round(blanc/t*100);
               bleu=100-blanc;
+
               const col=blanc>bleu?"blanc":"bleu";
-              days.push({date:fmt(d),couleur:col,probabilites:{rouge:0,blanc,bleu},fixed:false});
+              days.push({
+                date:fmt(d),
+                couleur:col,
+                probabilites:{rouge:0,blanc,bleu},
+                fixed:false
+              });
               lastColors.push(col);
               continue;
             }
 
+            // 🔴 Lundi → Vendredi normalisation
             const tot=rouge+blanc+bleu;
             rouge=Math.round(rouge/tot*100);
             blanc=Math.round(blanc/tot*100);
@@ -190,7 +222,13 @@ jobs:
             if(rouge>blanc && rouge>bleu) col="rouge";
             else if(blanc>bleu) col="blanc";
 
-            days.push({date:fmt(d),couleur:col,probabilites:{rouge,blanc,bleu},fixed:false});
+            days.push({
+              date:fmt(d),
+              couleur:col,
+              probabilites:{rouge,blanc,bleu},
+              fixed:false
+            });
+
             lastColors.push(col);
           }
 
@@ -221,7 +259,8 @@ jobs:
 
           // Verdict function
           function verdict(entry){
-            const sorted=Object.entries(entry.probabilites).sort((a,b)=>b[1]-a[1]);
+            const sorted=Object.entries(entry.probabilites)
+              .sort((a,b)=>b[1]-a[1]);
             if(sorted[0][0]===entry.realColor) return "correct";
             if(sorted[1][0]===entry.realColor) return "partial";
             return "wrong";
@@ -247,9 +286,10 @@ jobs:
             partial:resolved.filter(h=>h.result==="partial").length,
             wrong:resolved.filter(h=>h.result==="wrong").length
           };
-          stats.accuracy=stats.total?Math.round(stats.correct/stats.total*100):0;
-          stats.accuracyWithPartial=stats.total?
-            Math.round((stats.correct+stats.partial)/stats.total*100):0;
+          stats.accuracy=stats.total
+            ?Math.round(stats.correct/stats.total*100):0;
+          stats.accuracyWithPartial=stats.total
+            ?Math.round((stats.correct+stats.partial)/stats.total*100):0;
 
           fs.writeFileSync("stats.json",JSON.stringify(stats,null,2));
           EOF
@@ -260,5 +300,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tempo.json history.json stats.json
-          git commit -m "Update tempo + prediction history + stats" || echo "No changes"
+          git commit -m "Recalibrate weekday logic (EDF-like)" || echo "No changes"
           git push
