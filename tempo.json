@@ -1,3 +1,1 @@
-[
-  {"date":"2026-01-01","couleur":"bleu","probabilites":{"rouge":10,"blanc":20,"bleu":70}}
-]
+{"resourceNameCollection":["App\\Entity\\JourTempo","App\\Entity\\Statistiques","App\\Entity\\Tarification","App\\Entity\\TempsReel"]}
