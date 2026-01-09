@@ -2,7 +2,7 @@ name: Update Tempo + History + Stats (EDF White Bias)
 
 on:
   schedule:
-    - cron: '0 6 * * *'
+    - cron: '0 9 * * *'   # ✅ 10h heure FR
   workflow_dispatch:
 
 permissions:
@@ -188,7 +188,6 @@ jobs:
             if(rouge>blanc && rouge>bleu) couleur="rouge";
             else if(blanc>bleu) couleur="blanc";
 
-            // ⭐ CORRECTION EDF : BLANC COULEUR TAMPON ⭐
             if (Math.abs(blanc - bleu) <= 5 && blanc > rouge) {
               couleur = "blanc";
             }
@@ -204,12 +203,18 @@ jobs:
           }
 
           fs.writeFileSync("tempo.json",JSON.stringify(days,null,2));
+
+          // ⏱️ META
+          const meta = {
+            updatedAt: new Date().toISOString()
+          };
+          fs.writeFileSync("meta.json", JSON.stringify(meta,null,2));
           EOF
 
       - name: Commit & push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add tempo.json
-          git commit -m "EDF behavior: white favored when close to blue" || echo "No changes"
+          git add tempo.json meta.json
+          git commit -m "Update Tempo + timestamp" || echo "No changes"
           git push
