@@ -16,10 +16,10 @@
   <header>
     <h1>⚡ Tempo EDF</h1>
     <p class="subtitle">
-      Prévisions, suivi des prédictions et statistiques réelles
+      Aujourd’hui réel • Demain estimé • J+2 à J+9 prévisions
     </p>
 
-    <!-- ⏱️ AJOUT : heure de mise à jour -->
+    <!-- ⏱️ Heure de mise à jour -->
     <p id="updated" class="updated"></p>
   </header>
 
@@ -31,7 +31,7 @@
 
     <p class="explain">
       Les prévisions sont comparées automatiquement aux couleurs
-      officielles EDF lorsqu’un jour devient réel.
+      réelles lorsqu’un jour devient effectif.
     </p>
 
     <div id="stats"></div>
@@ -40,17 +40,15 @@
       <p><b>Comment lire ces indicateurs ?</b></p>
       <ul>
         <li>
-          <b>Exactement correct</b> :
+          <b>Bonne prédiction</b> :
           la couleur prévue était la bonne.
         </li>
         <li>
           <b>Zone correcte</b> :
-          la bonne couleur faisait partie des deux plus probables
-          (le modèle était dans la bonne zone).
+          la bonne couleur faisait partie des deux plus probables.
         </li>
         <li>
-          Les résultats deviennent fiables après plusieurs jours
-          d’historique.
+          Les statistiques gagnent en fiabilité avec l’historique.
         </li>
       </ul>
     </div>
@@ -74,7 +72,8 @@
 
   <footer>
     <p>
-      Données officielles EDF (via Hello Watt) –  
+      Aujourd’hui : couleur réelle •  
+      Demain : estimation météo •  
       Modèle prédictif expérimental, sans garantie.
     </p>
   </footer>
