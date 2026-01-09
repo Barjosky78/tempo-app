@@ -51,7 +51,7 @@ jobs:
 
           /* ======================
              AUJOURD’HUI (RÉEL)
-             ⚠️ volontairement fixé
+             ⚠️ fixé volontairement
           ====================== */
           const todayColor = "bleu";
 
@@ -138,9 +138,15 @@ jobs:
           blanc = Math.round(blanc / totJ1 * 100);
           bleu  = 100 - rouge - blanc;
 
+          // ⭐ RÈGLE CRITIQUE EDF : BLANC PRIORITAIRE À ÉGALITÉ
           let couleurJ1 = "bleu";
-          if (rouge > blanc && rouge > bleu) couleurJ1 = "rouge";
-          else if (blanc > bleu) couleurJ1 = "blanc";
+          if (rouge > blanc && rouge > bleu) {
+            couleurJ1 = "rouge";
+          } else if (blanc > bleu) {
+            couleurJ1 = "blanc";
+          } else if (blanc === bleu && blanc > rouge) {
+            couleurJ1 = "blanc";
+          }
 
           days.push({
             date: fmt(tomorrow),
@@ -232,5 +238,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tempo.json meta.json
-          git commit -m "Update tempo (J1 weather estimation)" || echo "No changes"
+          git commit -m "J1 estimation: white wins on tie" || echo "No changes"
           git push
