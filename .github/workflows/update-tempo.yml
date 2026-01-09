@@ -1,4 +1,4 @@
-name: Update Tempo + History + Stats (EDF Official + Model)
+name: Update Tempo + History + Stats (Open-DPE priority)
 
 on:
   schedule:
@@ -18,19 +18,22 @@ jobs:
         uses: actions/checkout@v3
 
       # ======================
-      # SOURCE OFFICIELLE EDF
+      # SOURCE 1 : OPEN-DPE
       # ======================
-      - name: Fetch EDF official Tempo
+      - name: Fetch Open-DPE Tempo
         run: |
-          curl -s "https://particulier.edf.fr/bin/edf_rc/servlets/ejptempo" > edf.json
+          curl -s "https://open-dpe.fr/tempo-forecast/" > open_dpe.html
 
       # ======================
-      # SOURCE SECONDAIRE (fallback)
+      # SOURCE 2 : HELLOWATT
       # ======================
       - name: Fetch HelloWatt
         run: |
           curl -s "https://www.hellowatt.fr/calendrier-tempo-edf-couleur-jour/" > page.html
 
+      # ======================
+      # MÉTÉO
+      # ======================
       - name: Fetch Weather
         run: |
           curl -s "https://api.open-meteo.com/v1/forecast?latitude=48.85&longitude=2.35&daily=temperature_2m_mean&forecast_days=10&timezone=Europe%2FParis" > weather.json
@@ -45,20 +48,30 @@ jobs:
 
           function fmt(d){ return d.toISOString().split("T")[0]; }
 
-          const html = fs.readFileSync("page.html","utf8");
+          const openDpeHtml = fs.existsSync("open_dpe.html")
+            ? fs.readFileSync("open_dpe.html","utf8")
+            : "";
+
+          const helloHtml = fs.existsSync("page.html")
+            ? fs.readFileSync("page.html","utf8")
+            : "";
+
           const weather = JSON.parse(fs.readFileSync("weather.json","utf8"));
           const temps = weather.daily.temperature_2m_mean || [];
 
-          let edf = {};
-          try {
-            edf = JSON.parse(fs.readFileSync("edf.json","utf8"));
-          } catch(e){}
+          let history = fs.existsSync("history.json")
+            ? JSON.parse(fs.readFileSync("history.json","utf8"))
+            : [];
 
           /* ======================
-             EXTRACTION COULEUR
+             EXTRACTION COULEURS
           ====================== */
-          function extractColor(label) {
-            const regex = new RegExp(label + "[^A-Za-z]*(Bleu|Blanc|Rouge)", "i");
+
+          function extract(html, label) {
+            const regex = new RegExp(
+              label + "[^A-Za-z]*(Bleu|Blanc|Rouge)",
+              "i"
+            );
             const match = html.match(regex);
             return match ? match[1].toLowerCase() : null;
           }
@@ -68,15 +81,15 @@ jobs:
 
           const todayStr = fmt(today);
 
-          // 🔒 PRIORITÉ EDF
+          // 🔑 PRIORITÉ DES SOURCES
           const todayColor =
-            edf?.jourJ?.couleur?.toLowerCase()
-            || extractColor("Aujourd.?hui")
+            extract(openDpeHtml, "Aujourd.?hui")
+            || extract(helloHtml, "Aujourd.?hui")
             || "bleu";
 
           const tomorrowColor =
-            edf?.jourJ1?.couleur?.toLowerCase()
-            || extractColor("Demain")
+            extract(openDpeHtml, "Demain")
+            || extract(helloHtml, "Demain")
             || todayColor;
 
           function fixed(color){
@@ -107,7 +120,7 @@ jobs:
           };
 
           /* ======================
-             FROID ETENDU
+             FROID ÉTENDU
           ====================== */
           const coldSpans=[];
           let span=0;
@@ -120,6 +133,7 @@ jobs:
              BUILD TEMPO
           ====================== */
           const days=[];
+
           days.push({
             date: todayStr,
             couleur: todayColor,
@@ -205,5 +219,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tempo.json meta.json
-          git commit -m "EDF official today/tomorrow + model predictions" || echo "No changes"
+          git commit -m "Tempo update (Open-DPE priority)" || echo "No changes"
           git push
