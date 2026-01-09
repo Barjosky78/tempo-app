@@ -1,15 +1,5 @@
 [
   {
-    "date": "2026-01-08",
-    "couleur": "blanc",
-    "probabilites": {
-      "rouge": 0,
-      "blanc": 100,
-      "bleu": 0
-    },
-    "fixed": true
-  },
-  {
     "date": "2026-01-09",
     "couleur": "bleu",
     "probabilites": {
@@ -24,10 +14,10 @@
     "couleur": "bleu",
     "probabilites": {
       "rouge": 0,
-      "blanc": 39,
-      "bleu": 61
+      "blanc": 0,
+      "bleu": 100
     },
-    "fixed": false
+    "fixed": true
   },
   {
     "date": "2026-01-11",
@@ -43,9 +33,9 @@
     "date": "2026-01-12",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 11,
-      "blanc": 29,
-      "bleu": 60
+      "rouge": 13,
+      "blanc": 34,
+      "bleu": 53
     },
     "fixed": false
   },
@@ -53,9 +43,9 @@
     "date": "2026-01-13",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 13,
-      "blanc": 22,
-      "bleu": 65
+      "rouge": 16,
+      "blanc": 26,
+      "bleu": 58
     },
     "fixed": false
   },
@@ -63,9 +53,9 @@
     "date": "2026-01-14",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 11,
-      "blanc": 17,
-      "bleu": 72
+      "rouge": 14,
+      "blanc": 21,
+      "bleu": 65
     },
     "fixed": false
   },
@@ -73,9 +63,9 @@
     "date": "2026-01-15",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 7,
-      "blanc": 14,
-      "bleu": 79
+      "rouge": 10,
+      "blanc": 18,
+      "bleu": 72
     },
     "fixed": false
   },
@@ -83,9 +73,9 @@
     "date": "2026-01-16",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 4,
-      "blanc": 9,
-      "bleu": 87
+      "rouge": 5,
+      "blanc": 13,
+      "bleu": 82
     },
     "fixed": false
   },
@@ -94,9 +84,19 @@
     "couleur": "bleu",
     "probabilites": {
       "rouge": 0,
-      "blanc": 5,
-      "bleu": 95
+      "blanc": 10,
+      "bleu": 90
     },
     "fixed": false
+  },
+  {
+    "date": "2026-01-18",
+    "couleur": "bleu",
+    "probabilites": {
+      "rouge": 0,
+      "blanc": 0,
+      "bleu": 100
+    },
+    "fixed": true
   }
 ]

@@ -115,5 +115,109 @@
     },
     "realColor": null,
     "result": null
+  },
+  {
+    "date": "2026-01-11",
+    "predictedOn": "2026-01-09",
+    "horizon": 2,
+    "predictedColor": "bleu",
+    "probabilites": {
+      "rouge": 0,
+      "blanc": 0,
+      "bleu": 100
+    },
+    "realColor": null,
+    "result": null
+  },
+  {
+    "date": "2026-01-12",
+    "predictedOn": "2026-01-09",
+    "horizon": 3,
+    "predictedColor": "bleu",
+    "probabilites": {
+      "rouge": 13,
+      "blanc": 34,
+      "bleu": 53
+    },
+    "realColor": null,
+    "result": null
+  },
+  {
+    "date": "2026-01-13",
+    "predictedOn": "2026-01-09",
+    "horizon": 4,
+    "predictedColor": "bleu",
+    "probabilites": {
+      "rouge": 16,
+      "blanc": 26,
+      "bleu": 58
+    },
+    "realColor": null,
+    "result": null
+  },
+  {
+    "date": "2026-01-14",
+    "predictedOn": "2026-01-09",
+    "horizon": 5,
+    "predictedColor": "bleu",
+    "probabilites": {
+      "rouge": 14,
+      "blanc": 21,
+      "bleu": 65
+    },
+    "realColor": null,
+    "result": null
+  },
+  {
+    "date": "2026-01-15",
+    "predictedOn": "2026-01-09",
+    "horizon": 6,
+    "predictedColor": "bleu",
+    "probabilites": {
+      "rouge": 10,
+      "blanc": 18,
+      "bleu": 72
+    },
+    "realColor": null,
+    "result": null
+  },
+  {
+    "date": "2026-01-16",
+    "predictedOn": "2026-01-09",
+    "horizon": 7,
+    "predictedColor": "bleu",
+    "probabilites": {
+      "rouge": 5,
+      "blanc": 13,
+      "bleu": 82
+    },
+    "realColor": null,
+    "result": null
+  },
+  {
+    "date": "2026-01-17",
+    "predictedOn": "2026-01-09",
+    "horizon": 8,
+    "predictedColor": "bleu",
+    "probabilites": {
+      "rouge": 0,
+      "blanc": 10,
+      "bleu": 90
+    },
+    "realColor": null,
+    "result": null
+  },
+  {
+    "date": "2026-01-18",
+    "predictedOn": "2026-01-09",
+    "horizon": 9,
+    "predictedColor": "bleu",
+    "probabilites": {
+      "rouge": 0,
+      "blanc": 0,
+      "bleu": 100
+    },
+    "realColor": null,
+    "result": null
   }
 ]
