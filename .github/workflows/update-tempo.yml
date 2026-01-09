@@ -1,8 +1,7 @@
-name: Update Tempo + History + Stats (Cold boosts white & red)
+name: Update Tempo + History + Stats (Weather + RTE leverage 7%)
 
 on:
   schedule:
-    # 9h UTC = 10h heure française (hiver)
     - cron: '0 9 * * *'
   workflow_dispatch:
 
@@ -18,11 +17,18 @@ jobs:
         uses: actions/checkout@v3
 
       # ======================
-      # MÉTÉO
+      # MÉTÉO (Open-Meteo)
       # ======================
       - name: Fetch Weather
         run: |
           curl -s "https://api.open-meteo.com/v1/forecast?latitude=48.85&longitude=2.35&daily=temperature_2m_mean&forecast_days=10&timezone=Europe%2FParis" > weather.json
+
+      # ======================
+      # CONSOMMATION RTE (dernier jour)
+      # ======================
+      - name: Fetch RTE consumption
+        run: |
+          curl -s "https://odre.opendatasoft.com/api/records/1.0/search/?dataset=eco2mix-national-cons-def&rows=1&sort=-date_heure" > rte.json
 
       # ======================
       # BUILD TEMPO.JSON
@@ -37,18 +43,23 @@ jobs:
           const weather = JSON.parse(fs.readFileSync("weather.json","utf8"));
           const temps = weather.daily.temperature_2m_mean || [];
 
+          const rteData = JSON.parse(fs.readFileSync("rte.json","utf8"));
+          const rteRecord = rteData.records?.[0]?.fields;
+          const consommation = rteRecord?.consommation ?? null;
+
+          // ----------------------
+          // INDICE TENSION RÉSEAU
+          // ----------------------
+          let tension = 60; // neutre par défaut
+          if (consommation !== null) {
+            if (consommation < 45000) tension = 50;
+            else if (consommation < 55000) tension = 60;
+            else if (consommation < 65000) tension = 70;
+            else tension = 80;
+          }
+
           const today = new Date();
           today.setHours(0,0,0,0);
-
-          const todayColor = "bleu";
-
-          function fixed(color){
-            return {
-              rouge: color === "rouge" ? 100 : 0,
-              blanc: color === "blanc" ? 100 : 0,
-              bleu:  color === "bleu"  ? 100 : 0
-            };
-          }
 
           const HISTO_MONTH = {
             11:{rouge:8,  blanc:22, bleu:70},
@@ -69,132 +80,104 @@ jobs:
           // ----------------------
           // FROID ÉTENDU
           // ----------------------
-          const coldSpans = [];
-          let span = 0;
+          const coldSpans=[];
+          let span=0;
           for(let i=0;i<temps.length;i++){
-            if(temps[i] < 3) span++;
-            else span = 0;
-            coldSpans[i] = span;
+            if(temps[i]<3) span++;
+            else span=0;
+            coldSpans[i]=span;
           }
 
-          const days = [];
+          const days=[];
 
           // ---------- AUJOURD’HUI ----------
           days.push({
             date: fmt(today),
-            couleur: todayColor,
-            probabilites: fixed(todayColor),
-            fixed: true
+            couleur: "bleu",
+            probabilites:{rouge:0,blanc:0,bleu:100},
+            fixed:true
           });
 
           // ---------- J+1 → J+9 ----------
           for(let i=1;i<=9;i++){
-            const d = new Date(today);
-            d.setDate(today.getDate() + i);
-            const dow = d.getDay();
-            const month = d.getMonth() + 1;
-            const temp = temps[i] ?? 8;
-            const spanDays = coldSpans[i] || 0;
+            const d=new Date(today);
+            d.setDate(today.getDate()+i);
+            const dow=d.getDay();
+            const month=d.getMonth()+1;
+            const temp=temps[i]??8;
+            const spanDays=coldSpans[i]||0;
 
-            let rouge = 20;
-            let blanc = 40;
-            let bleu  = 40;
-
-            // météo simple
-            if(temp < 0){ rouge += 15; bleu -= 10; }
-            else if(temp < 3){ blanc += 15; bleu -= 10; }
-            else if(temp > 6){ bleu += 10; blanc -= 5; }
-
-            // saison / historique
-            let base = HISTO_MONTH[month] || {rouge:10, blanc:25, bleu:65};
-            rouge += base.rouge - 20;
-            blanc += base.blanc - 40;
-            bleu  += base.bleu  - 40;
+            let base=HISTO_MONTH[month]||{rouge:10,blanc:25,bleu:65};
+            let rouge=base.rouge;
+            let blanc=base.blanc;
+            let bleu=base.bleu;
 
             if(HISTO_WEEKDAY[dow]){
-              rouge += HISTO_WEEKDAY[dow].rouge;
-              blanc += HISTO_WEEKDAY[dow].blanc;
-              bleu  += HISTO_WEEKDAY[dow].bleu;
+              rouge+=HISTO_WEEKDAY[dow].rouge;
+              blanc+=HISTO_WEEKDAY[dow].blanc;
+              bleu+=HISTO_WEEKDAY[dow].bleu;
             }
 
-            if(month >= 11 || month <= 3){
-              bleu -= 5;
-              blanc += 3;
-              rouge += 2;
-            }
+            if(temp<0){ rouge+=10; bleu-=5; }
+            else if(temp<3){ blanc+=10; bleu-=5; }
 
-            // horizon
-            const factor = (10 - i) / 10;
-            rouge = Math.max(2, Math.round(rouge * factor));
-            blanc = Math.round(blanc * factor);
-            bleu  = 100 - rouge - blanc;
+            if(spanDays>=4 && temp<0){ rouge+=10; blanc+=5; bleu-=15; }
+            else if(spanDays>=3 && temp<3){ blanc+=10; bleu-=10; }
 
             // ----------------------
-            // ⚪ FROID MODÉRÉ → BLANC
+            // 🔌 EFFET RTE (MAX 7 %)
             // ----------------------
-            if(spanDays >= 3 && temp < 3 && dow !== 0){
-              const boost = Math.min(10, spanDays * 2);
-              blanc += boost;
-              bleu  -= boost;
-            }
-
-            // ----------------------
-            // 🔴 FROID FORT → ROUGE
-            // ----------------------
-            if(spanDays >= 4 && temp < 0 && dow !== 0 && dow !== 6){
-              const redBoost = Math.min(15, spanDays * 3);
-              rouge += redBoost;
-              bleu  -= redBoost;
-              blanc += Math.round(redBoost / 2);
-            }
-
-            // normalisation
-            let total = rouge + blanc + bleu;
-            rouge = Math.round(rouge / total * 100);
-            blanc = Math.round(blanc / total * 100);
-            bleu  = 100 - rouge - blanc;
-
-            // ----------------------
-            // 🔒 VERROUS EDF
-            // ----------------------
-            if(dow === 0){
-              rouge = 0; blanc = 0; bleu = 100;
-            }
-
-            if(dow === 6){
-              blanc += rouge;
-              rouge = 0;
-              total = blanc + bleu;
-              blanc = Math.round(blanc / total * 100);
-              bleu  = 100 - blanc;
+            if(i>=3 && consommation!==null){
+              const boost=7;
+              if(tension<55){
+                bleu+=boost; blanc-=Math.floor(boost/2); rouge-=Math.floor(boost/2);
+              } else if(tension<=70){
+                blanc+=boost; bleu-=Math.floor(boost/2); rouge-=Math.floor(boost/2);
+              } else {
+                rouge+=boost; blanc+=Math.floor(boost/2); bleu-=Math.floor(boost/2);
+              }
             }
 
             // ----------------------
-            // DÉCISION COULEUR
+            // NORMALISATION
             // ----------------------
-            let couleur = "bleu";
-            if (rouge > blanc && rouge > bleu) {
-              couleur = "rouge";
-            } else if (blanc > bleu) {
-              couleur = "blanc";
-            } else if (blanc === bleu && blanc > rouge) {
-              couleur = "blanc";
+            let total=rouge+blanc+bleu;
+            rouge=Math.max(0,Math.round(rouge/total*100));
+            blanc=Math.max(0,Math.round(blanc/total*100));
+            bleu=100-rouge-blanc;
+
+            // ----------------------
+            // 🔒 RÈGLES EDF
+            // ----------------------
+            if(dow===0){
+              rouge=0; blanc=0; bleu=100;
             }
+            if(dow===6){
+              blanc+=rouge; rouge=0;
+              total=blanc+bleu;
+              blanc=Math.round(blanc/total*100);
+              bleu=100-blanc;
+            }
+
+            let couleur="bleu";
+            if(rouge>blanc && rouge>bleu) couleur="rouge";
+            else if(blanc>bleu) couleur="blanc";
 
             days.push({
-              date: fmt(d),
+              date:fmt(d),
               couleur,
-              probabilites: { rouge, blanc, bleu },
-              fixed: false,
-              estimated: i === 1
+              probabilites:{rouge,blanc,bleu},
+              fixed:false,
+              estimated:i===1
             });
           }
 
-          fs.writeFileSync("tempo.json", JSON.stringify(days,null,2));
-          fs.writeFileSync(
-            "meta.json",
-            JSON.stringify({ updatedAt: new Date().toISOString() }, null, 2)
-          );
+          fs.writeFileSync("tempo.json",JSON.stringify(days,null,2));
+          fs.writeFileSync("meta.json",JSON.stringify({
+            updatedAt:new Date().toISOString(),
+            rteConsommation:consommation,
+            rteTension:tension
+          },null,2));
           EOF
 
       # ======================
@@ -205,5 +188,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tempo.json meta.json
-          git commit -m "Cold spell boosts white and red realistically" || echo "No changes"
+          git commit -m "Add RTE consumption influence (7% max)" || echo "No changes"
           git push
