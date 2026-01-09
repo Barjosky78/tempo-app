@@ -14,8 +14,8 @@
     "couleur": "blanc",
     "probabilites": {
       "rouge": 0,
-      "blanc": 60,
-      "bleu": 40
+      "blanc": 53,
+      "bleu": 47
     },
     "fixed": false,
     "estimated": true
