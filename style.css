@@ -32,6 +32,13 @@ header {
   opacity: 0.8;
 }
 
+/* ⏱️ Heure de mise à jour */
+.updated {
+  font-size: 0.75rem;
+  opacity: 0.75;
+  margin-top: 6px;
+}
+
 /* =========================
    FIABILITÉ / STATS
 ========================= */
