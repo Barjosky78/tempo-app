@@ -1,4 +1,4 @@
-name: Update Tempo + History + Stats (EDF White Bias)
+name: Update Tempo + History + Stats (EDF Official + Model)
 
 on:
   schedule:
@@ -17,7 +17,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Fetch Hello Watt
+      # ======================
+      # SOURCE OFFICIELLE EDF
+      # ======================
+      - name: Fetch EDF official Tempo
+        run: |
+          curl -s "https://particulier.edf.fr/bin/edf_rc/servlets/ejptempo" > edf.json
+
+      # ======================
+      # SOURCE SECONDAIRE (fallback)
+      # ======================
+      - name: Fetch HelloWatt
         run: |
           curl -s "https://www.hellowatt.fr/calendrier-tempo-edf-couleur-jour/" > page.html
 
@@ -25,6 +35,9 @@ jobs:
         run: |
           curl -s "https://api.open-meteo.com/v1/forecast?latitude=48.85&longitude=2.35&daily=temperature_2m_mean&forecast_days=10&timezone=Europe%2FParis" > weather.json
 
+      # ======================
+      # BUILD DATA
+      # ======================
       - name: Build data
         run: |
           node <<'EOF'
@@ -36,14 +49,14 @@ jobs:
           const weather = JSON.parse(fs.readFileSync("weather.json","utf8"));
           const temps = weather.daily.temperature_2m_mean || [];
 
-          let history = fs.existsSync("history.json")
-            ? JSON.parse(fs.readFileSync("history.json","utf8"))
-            : [];
+          let edf = {};
+          try {
+            edf = JSON.parse(fs.readFileSync("edf.json","utf8"));
+          } catch(e){}
 
           /* ======================
-             OFFICIAL COLORS (ROBUST)
+             EXTRACTION COULEUR
           ====================== */
-
           function extractColor(label) {
             const regex = new RegExp(label + "[^A-Za-z]*(Bleu|Blanc|Rouge)", "i");
             const match = html.match(regex);
@@ -55,8 +68,16 @@ jobs:
 
           const todayStr = fmt(today);
 
-          const todayColor = extractColor("Aujourd.?hui") || "bleu";
-          const tomorrowColor = extractColor("Demain") || todayColor;
+          // 🔒 PRIORITÉ EDF
+          const todayColor =
+            edf?.jourJ?.couleur?.toLowerCase()
+            || extractColor("Aujourd.?hui")
+            || "bleu";
+
+          const tomorrowColor =
+            edf?.jourJ1?.couleur?.toLowerCase()
+            || extractColor("Demain")
+            || todayColor;
 
           function fixed(color){
             return {
@@ -145,17 +166,6 @@ jobs:
               bleu  += HISTO_WEEKDAY[dow].bleu;
             }
 
-            const recent = lastColors.slice(-2);
-            if(recent.includes("rouge")){
-              rouge -= 10;
-              blanc += 5;
-              bleu  += 5;
-            }
-            if(recent.every(c=>c==="bleu")){
-              blanc += 5;
-              bleu  -= 5;
-            }
-
             if(month>=11 || month<=3){
               bleu  -= 5;
               blanc += 3;
@@ -167,37 +177,9 @@ jobs:
             blanc=Math.round(blanc*factor);
             bleu=100-rouge-blanc;
 
-            if(temp<0 && spanDays>=3){
-              rouge+=8; blanc+=12; bleu-=20;
-            }else if(temp<3 && spanDays>=3){
-              blanc+=15; bleu-=15;
-            }else if(temp<3){
-              blanc+=8; bleu-=8;
-            }
-
-            if(dow===1 && spanDays>=3 && temp<=0){
-              rouge+=5; bleu-=5;
-            }
-
-            if(dow===6){
-              blanc+=Math.round(rouge/2);
-              bleu +=Math.round(rouge/2);
-              rouge=0;
-            }
-
-            const total = rouge+blanc+bleu;
-            rouge=Math.round(rouge/total*100);
-            blanc=Math.round(blanc/total*100);
-            bleu=100-rouge-blanc;
-
             let couleur="bleu";
             if(rouge>blanc && rouge>bleu) couleur="rouge";
             else if(blanc>bleu) couleur="blanc";
-
-            // ⭐ BLANC TAMPON EDF
-            if (Math.abs(blanc - bleu) <= 5 && blanc > rouge) {
-              couleur = "blanc";
-            }
 
             days.push({
               date: fmt(d),
@@ -212,10 +194,10 @@ jobs:
           fs.writeFileSync("tempo.json",JSON.stringify(days,null,2));
 
           // ⏱️ META
-          const meta = {
-            updatedAt: new Date().toISOString()
-          };
-          fs.writeFileSync("meta.json", JSON.stringify(meta,null,2));
+          fs.writeFileSync(
+            "meta.json",
+            JSON.stringify({ updatedAt: new Date().toISOString() }, null, 2)
+          );
           EOF
 
       - name: Commit & push
@@ -223,5 +205,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tempo.json meta.json
-          git commit -m "Fix parsing today/tomorrow + timestamp" || echo "No changes"
+          git commit -m "EDF official today/tomorrow + model predictions" || echo "No changes"
           git push
