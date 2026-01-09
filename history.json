@@ -219,5 +219,17 @@
     },
     "realColor": null,
     "result": null
+  },
+  {
+    "date": "2026-01-09",
+    "predictedColor": "bleu",
+    "probabilities": {
+      "rouge": 0,
+      "blanc": 0,
+      "bleu": 100
+    },
+    "horizon": 0,
+    "realColor": null,
+    "result": null
   }
 ]

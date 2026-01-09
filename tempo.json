@@ -35,9 +35,9 @@
     "date": "2026-01-12",
     "couleur": "blanc",
     "probabilites": {
-      "rouge": 14,
+      "rouge": 13,
       "blanc": 47,
-      "bleu": 39
+      "bleu": 40
     },
     "fixed": false,
     "estimated": false
@@ -46,9 +46,9 @@
     "date": "2026-01-13",
     "couleur": "blanc",
     "probabilites": {
-      "rouge": 21,
+      "rouge": 20,
       "blanc": 42,
-      "bleu": 37
+      "bleu": 38
     },
     "fixed": false,
     "estimated": false
@@ -57,9 +57,9 @@
     "date": "2026-01-14",
     "couleur": "blanc",
     "probabilites": {
-      "rouge": 22,
+      "rouge": 21,
       "blanc": 41,
-      "bleu": 37
+      "bleu": 38
     },
     "fixed": false,
     "estimated": false
@@ -68,9 +68,9 @@
     "date": "2026-01-15",
     "couleur": "blanc",
     "probabilites": {
-      "rouge": 19,
+      "rouge": 18,
       "blanc": 44,
-      "bleu": 37
+      "bleu": 38
     },
     "fixed": false,
     "estimated": false
@@ -79,9 +79,9 @@
     "date": "2026-01-16",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 13,
+      "rouge": 12,
       "blanc": 43,
-      "bleu": 44
+      "bleu": 45
     },
     "fixed": false,
     "estimated": false
@@ -91,8 +91,8 @@
     "couleur": "blanc",
     "probabilites": {
       "rouge": 0,
-      "blanc": 58,
-      "bleu": 42
+      "blanc": 57,
+      "bleu": 43
     },
     "fixed": false,
     "estimated": false
