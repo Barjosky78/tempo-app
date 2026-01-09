@@ -29,6 +29,13 @@ function verdictLabel(result) {
   return "";
 }
 
+// Classe CSS selon confiance
+function confidenceClass(value) {
+  if (value >= 66) return "conf-high";
+  if (value >= 46) return "conf-medium";
+  return "conf-low";
+}
+
 /* ==========================
    ⏱️ HEURE DE MISE À JOUR
 ========================== */
@@ -55,6 +62,14 @@ if (tempoDiv) {
       tempoDiv.innerHTML = "";
 
       days.forEach((day, index) => {
+
+        // 🔹 Confiance = probabilité max
+        const confidence = Math.max(
+          day.probabilites.rouge,
+          day.probabilites.blanc,
+          day.probabilites.bleu
+        );
+
         const card = document.createElement("div");
         card.className = "day " + day.couleur;
 
@@ -68,7 +83,18 @@ if (tempoDiv) {
 
           🔴 ${day.probabilites.rouge}%<br>
           ⚪ ${day.probabilites.blanc}%<br>
-          🔵 ${day.probabilites.bleu}%
+          🔵 ${day.probabilites.bleu}%<br>
+
+          <!-- BARRE DE CONFIANCE -->
+          <div class="confidence">
+            <div class="confidence-label">
+              Confiance : <b>${confidence}%</b>
+            </div>
+            <div class="confidence-bar">
+              <div class="confidence-fill ${confidenceClass(confidence)}"
+                   style="width:${confidence}%"></div>
+            </div>
+          </div>
         `;
 
         tempoDiv.appendChild(card);
