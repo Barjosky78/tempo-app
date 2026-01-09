@@ -1,4 +1,4 @@
-name: Update Tempo + History + Stats (J1–J9 white priority)
+name: Update Tempo + History + Stats (Cold boosts white)
 
 on:
   schedule:
@@ -40,9 +40,6 @@ jobs:
           const today = new Date();
           today.setHours(0,0,0,0);
 
-          const tomorrow = new Date(today);
-          tomorrow.setDate(today.getDate() + 1);
-
           const todayColor = "bleu";
 
           function fixed(color){
@@ -69,6 +66,9 @@ jobs:
             5:{ rouge:-4, blanc:+2, bleu:+2 }
           };
 
+          // ----------------------
+          // FROID ÉTENDU
+          // ----------------------
           const coldSpans = [];
           let span = 0;
           for(let i=0;i<temps.length;i++){
@@ -87,7 +87,7 @@ jobs:
             fixed: true
           });
 
-          // ---------- J+1 ----------
+          // ---------- J+1 → J+9 ----------
           for(let i=1;i<=9;i++){
             const d = new Date(today);
             d.setDate(today.getDate() + i);
@@ -100,37 +100,42 @@ jobs:
             let blanc = 40;
             let bleu  = 40;
 
-            // météo
+            // météo simple
             if(temp < 0){ rouge += 15; bleu -= 10; }
             else if(temp < 3){ blanc += 15; bleu -= 10; }
             else if(temp > 6){ bleu += 10; blanc -= 5; }
 
-            if(i >= 2){
-              let base = HISTO_MONTH[month] || {rouge:10, blanc:25, bleu:65};
-              rouge += base.rouge - 20;
-              blanc += base.blanc - 40;
-              bleu  += base.bleu  - 40;
+            // saison / historique
+            let base = HISTO_MONTH[month] || {rouge:10, blanc:25, bleu:65};
+            rouge += base.rouge - 20;
+            blanc += base.blanc - 40;
+            bleu  += base.bleu  - 40;
 
-              if(HISTO_WEEKDAY[dow]){
-                rouge += HISTO_WEEKDAY[dow].rouge;
-                blanc += HISTO_WEEKDAY[dow].blanc;
-                bleu  += HISTO_WEEKDAY[dow].bleu;
-              }
+            if(HISTO_WEEKDAY[dow]){
+              rouge += HISTO_WEEKDAY[dow].rouge;
+              blanc += HISTO_WEEKDAY[dow].blanc;
+              bleu  += HISTO_WEEKDAY[dow].bleu;
+            }
 
-              if(month >= 11 || month <= 3){
-                bleu -= 5; blanc += 3; rouge += 2;
-              }
+            if(month >= 11 || month <= 3){
+              bleu -= 5;
+              blanc += 3;
+              rouge += 2;
+            }
 
-              const factor = (10 - i) / 10;
-              rouge = Math.max(2, Math.round(rouge * factor));
-              blanc = Math.round(blanc * factor);
-              bleu  = 100 - rouge - blanc;
+            // horizon
+            const factor = (10 - i) / 10;
+            rouge = Math.max(2, Math.round(rouge * factor));
+            blanc = Math.round(blanc * factor);
+            bleu  = 100 - rouge - blanc;
 
-              if(temp < 0 && spanDays >= 3){
-                rouge += 8; blanc += 12; bleu -= 20;
-              } else if(temp < 3 && spanDays >= 3){
-                blanc += 15; bleu -= 15;
-              }
+            // ----------------------
+            // 🆕 BOOST BLANC SI FROID DURABLE
+            // ----------------------
+            if(spanDays >= 3 && temp < 3 && dow !== 0){
+              const boost = Math.min(10, spanDays * 2);
+              blanc += boost;
+              bleu  -= boost;
             }
 
             // normalisation
@@ -139,9 +144,9 @@ jobs:
             blanc = Math.round(blanc / total * 100);
             bleu  = 100 - rouge - blanc;
 
-            /* ======================
-               🔒 VERROUS EDF FINAUX
-            ====================== */
+            // ----------------------
+            // 🔒 VERROUS EDF FINAUX
+            // ----------------------
             if(dow === 0){
               rouge = 0; blanc = 0; bleu = 100;
             }
@@ -154,9 +159,9 @@ jobs:
               bleu  = 100 - blanc;
             }
 
-            /* ======================
-               DÉCISION COULEUR
-            ====================== */
+            // ----------------------
+            // DÉCISION COULEUR
+            // ----------------------
             let couleur = "bleu";
             if (rouge > blanc && rouge > bleu) {
               couleur = "rouge";
@@ -170,7 +175,7 @@ jobs:
               date: fmt(d),
               couleur,
               probabilites: { rouge, blanc, bleu },
-              fixed: i === 1 ? false : false,
+              fixed: false,
               estimated: i === 1
             });
           }
@@ -190,5 +195,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tempo.json meta.json
-          git commit -m "EDF rules locked (week-end + white priority)" || echo "No changes"
+          git commit -m "Cold spell boosts white on weekdays" || echo "No changes"
           git push
