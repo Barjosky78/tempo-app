@@ -1,4 +1,4 @@
-name: Update Tempo + History + Stats (Winter calibrated)
+name: Update Tempo + History + Stats (EDF White Bias)
 
 on:
   schedule:
@@ -9,71 +9,60 @@ permissions:
   contents: write
 
 jobs:
-  update-tempo:
+  update:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v3
 
-      # ======================
-      # 1️⃣ Couleurs officielles EDF (J0 / J1)
-      # ======================
       - name: Fetch Hello Watt
         run: |
           curl -s "https://www.hellowatt.fr/calendrier-tempo-edf-couleur-jour/" > page.html
 
-      # ======================
-      # 2️⃣ Météo (température moyenne)
-      # ======================
       - name: Fetch Weather
         run: |
           curl -s "https://api.open-meteo.com/v1/forecast?latitude=48.85&longitude=2.35&daily=temperature_2m_mean&forecast_days=10&timezone=Europe%2FParis" > weather.json
 
-      # ======================
-      # 3️⃣ Build tempo.json + history.json + stats.json
-      # ======================
-      - name: Build data files
+      - name: Build data
         run: |
           node <<'EOF'
           const fs = require("fs");
 
-          /* ======================
-             LOAD DATA
-          ====================== */
+          function fmt(d){ return d.toISOString().split("T")[0]; }
+
           const html = fs.readFileSync("page.html","utf8");
           const weather = JSON.parse(fs.readFileSync("weather.json","utf8"));
           const temps = weather.daily.temperature_2m_mean || [];
 
-          let history = [];
-          if (fs.existsSync("history.json")) {
-            history = JSON.parse(fs.readFileSync("history.json","utf8"));
-          }
-
-          function fmt(d){ return d.toISOString().split("T")[0]; }
+          let history = fs.existsSync("history.json")
+            ? JSON.parse(fs.readFileSync("history.json","utf8"))
+            : [];
 
           /* ======================
              OFFICIAL COLORS
           ====================== */
           const matches = [...html.matchAll(/Jour (Bleu|Blanc|Rouge)/gi)]
-            .map(m => m[1].toLowerCase());
+            .map(m=>m[1].toLowerCase());
 
+          const today = new Date(); today.setHours(0,0,0,0);
+          const tomorrow = new Date(today); tomorrow.setDate(today.getDate()+1);
+
+          const todayStr = fmt(today);
           const todayColor = matches[0] || "bleu";
           const tomorrowColor = matches[1] || todayColor;
 
           function fixed(color){
             return {
-              rouge: color === "rouge" ? 100 : 0,
-              blanc: color === "blanc" ? 100 : 0,
-              bleu:  color === "bleu"  ? 100 : 0
+              rouge: color==="rouge"?100:0,
+              blanc: color==="blanc"?100:0,
+              bleu:  color==="bleu"?100:0
             };
           }
 
           /* ======================
-             MODEL CONSTANTS
+             CONSTANTES MODELE
           ====================== */
-
-          // Historique mensuel (4 hivers lissés)
           const HISTO_MONTH = {
             11:{rouge:8,  blanc:22, bleu:70},
             12:{rouge:14, blanc:30, bleu:56},
@@ -82,43 +71,35 @@ jobs:
             3:{rouge:4,  blanc:22, bleu:74}
           };
 
-          // Jours de semaine (recalibrés EDF)
           const HISTO_WEEKDAY = {
-            1:{ rouge:-3, blanc:+6, bleu:-3 }, // Lundi
-            2:{ rouge:+4, blanc:+1, bleu:-5 }, // Mardi
-            3:{ rouge:+5, blanc: 0, bleu:-5 }, // Mercredi
-            4:{ rouge:+2, blanc:+3, bleu:-5 }, // Jeudi
-            5:{ rouge:-4, blanc:+2, bleu:+2 }  // Vendredi
+            1:{ rouge:-3, blanc:+6, bleu:-3 },
+            2:{ rouge:+4, blanc:+1, bleu:-5 },
+            3:{ rouge:+5, blanc: 0, bleu:-5 },
+            4:{ rouge:+2, blanc:+3, bleu:-5 },
+            5:{ rouge:-4, blanc:+2, bleu:+2 }
           };
 
           /* ======================
-             COLD SPAN
+             FROID ETENDU
           ====================== */
-          const coldSpans = [];
-          let span = 0;
-          for (let i = 0; i < temps.length; i++) {
-            if (temps[i] < 3) span++;
-            else span = 0;
-            coldSpans[i] = span;
+          const coldSpans=[];
+          let span=0;
+          for(let i=0;i<temps.length;i++){
+            if(temps[i]<3) span++; else span=0;
+            coldSpans[i]=span;
           }
 
           /* ======================
              BUILD TEMPO
           ====================== */
-          const days = [];
-          const today = new Date(); today.setHours(0,0,0,0);
-
-          // Aujourd’hui (officiel)
+          const days=[];
           days.push({
-            date: fmt(today),
+            date: todayStr,
             couleur: todayColor,
             probabilites: fixed(todayColor),
             fixed: true
           });
 
-          // Demain (officiel)
-          const tomorrow = new Date(today);
-          tomorrow.setDate(today.getDate()+1);
           days.push({
             date: fmt(tomorrow),
             couleur: tomorrowColor,
@@ -126,200 +107,109 @@ jobs:
             fixed: true
           });
 
-          let lastColors = days.map(d => d.couleur);
+          let lastColors = days.map(d=>d.couleur);
 
-          // J+2 → J+9
-          for (let i = 2; i <= 9; i++) {
+          for(let i=2;i<=9;i++){
             const d = new Date(today);
-            d.setDate(today.getDate() + i);
-
-            const dow = d.getDay();        // 0=dimanche
+            d.setDate(today.getDate()+i);
+            const dow = d.getDay();
             const month = d.getMonth()+1;
             const temp = temps[i] ?? 10;
             const spanDays = coldSpans[i] || 0;
 
-            // Dimanche = bleu fixe
-            if (dow === 0) {
+            if(dow===0){
               days.push({
                 date: fmt(d),
                 couleur: "bleu",
-                probabilites: { rouge:0, blanc:0, bleu:100 },
-                fixed: true
+                probabilites:{rouge:0,blanc:0,bleu:100},
+                fixed:true
               });
               lastColors.push("bleu");
               continue;
             }
 
-            // Base mensuelle
-            let base = HISTO_MONTH[month] || { rouge:10, blanc:25, bleu:65 };
+            let base = HISTO_MONTH[month] || {rouge:10,blanc:25,bleu:65};
             let rouge = base.rouge;
             let blanc = base.blanc;
             let bleu  = base.bleu;
 
-            // Jour de semaine
-            if (HISTO_WEEKDAY[dow]) {
+            if(HISTO_WEEKDAY[dow]){
               rouge += HISTO_WEEKDAY[dow].rouge;
               blanc += HISTO_WEEKDAY[dow].blanc;
               bleu  += HISTO_WEEKDAY[dow].bleu;
             }
 
-            // Sortie de série rouge réaliste
             const recent = lastColors.slice(-2);
-            if (recent.includes("rouge")) {
+            if(recent.includes("rouge")){
               rouge -= 10;
               blanc += 5;
               bleu  += 5;
             }
-            if (recent.every(c => c === "bleu")) {
+            if(recent.every(c=>c==="bleu")){
               blanc += 5;
               bleu  -= 5;
             }
 
-            // 🍂❄️ PATCH SAISON HIVER (NOV → MAR)
-            if (month >= 11 || month <= 3) {
+            if(month>=11 || month<=3){
               bleu  -= 5;
               blanc += 3;
               rouge += 2;
             }
 
-            // Lissage temporel
-            const factor = (10 - i) / 10;
-            rouge = Math.max(2, Math.round(rouge * factor));
-            blanc = Math.round(blanc * factor);
-            bleu  = 100 - rouge - blanc;
+            const factor=(10-i)/10;
+            rouge=Math.max(2,Math.round(rouge*factor));
+            blanc=Math.round(blanc*factor);
+            bleu=100-rouge-blanc;
 
-            // Froid étendu
-            if (temp < 0 && spanDays >= 3) {
-              rouge += 8;
-              blanc += 12;
-              bleu  -= 20;
-            } else if (temp < 3 && spanDays >= 3) {
-              blanc += 15;
-              bleu  -= 15;
-            } else if (temp < 3) {
-              blanc += 8;
-              bleu  -= 8;
+            if(temp<0 && spanDays>=3){
+              rouge+=8; blanc+=12; bleu-=20;
+            }else if(temp<3 && spanDays>=3){
+              blanc+=15; bleu-=15;
+            }else if(temp<3){
+              blanc+=8; bleu-=8;
             }
 
-            // Lundi très froid
-            if (dow === 1 && spanDays >= 3 && temp <= 0) {
-              rouge += 5;
-              bleu  -= 5;
+            if(dow===1 && spanDays>=3 && temp<=0){
+              rouge+=5; bleu-=5;
             }
 
-            // Samedi = jamais rouge
-            if (dow === 6) {
-              blanc += Math.round(rouge / 2);
-              bleu  += Math.round(rouge / 2);
-              rouge = 0;
-
-              const t = blanc + bleu;
-              blanc = Math.round(blanc / t * 100);
-              bleu  = 100 - blanc;
-
-              const col = blanc > bleu ? "blanc" : "bleu";
-              days.push({
-                date: fmt(d),
-                couleur: col,
-                probabilites: { rouge:0, blanc, bleu },
-                fixed: false
-              });
-              lastColors.push(col);
-              continue;
+            if(dow===6){
+              blanc+=Math.round(rouge/2);
+              bleu +=Math.round(rouge/2);
+              rouge=0;
             }
 
-            // Normalisation finale
-            const tot = rouge + blanc + bleu;
-            rouge = Math.round(rouge / tot * 100);
-            blanc = Math.round(blanc / tot * 100);
-            bleu  = 100 - rouge - blanc;
+            const total = rouge+blanc+bleu;
+            rouge=Math.round(rouge/total*100);
+            blanc=Math.round(blanc/total*100);
+            bleu=100-rouge-blanc;
 
-            let col = "bleu";
-            if (rouge > blanc && rouge > bleu) col = "rouge";
-            else if (blanc > bleu) col = "blanc";
+            let couleur="bleu";
+            if(rouge>blanc && rouge>bleu) couleur="rouge";
+            else if(blanc>bleu) couleur="blanc";
+
+            // ⭐ CORRECTION EDF : BLANC COULEUR TAMPON ⭐
+            if (Math.abs(blanc - bleu) <= 5 && blanc > rouge) {
+              couleur = "blanc";
+            }
 
             days.push({
               date: fmt(d),
-              couleur: col,
-              probabilites: { rouge, blanc, bleu },
-              fixed: false
+              couleur,
+              probabilites:{rouge,blanc,bleu},
+              fixed:false
             });
 
-            lastColors.push(col);
+            lastColors.push(couleur);
           }
 
-          fs.writeFileSync("tempo.json", JSON.stringify(days, null, 2));
-
-          /* ======================
-             HISTORY UPDATE
-          ====================== */
-          const todayStr = fmt(today);
-
-          days.forEach((d,i)=>{
-            if (i >= 2) {
-              const exists = history.find(h =>
-                h.date === d.date && h.predictedOn === todayStr
-              );
-              if (!exists) {
-                history.push({
-                  date: d.date,
-                  predictedOn: todayStr,
-                  horizon: i,
-                  predictedColor: d.couleur,
-                  probabilites: d.probabilites,
-                  realColor: null,
-                  result: null
-                });
-              }
-            }
-          });
-
-          function verdict(entry){
-            const sorted = Object.entries(entry.probabilites)
-              .sort((a,b)=>b[1]-a[1]);
-            if (sorted[0][0] === entry.realColor) return "correct";
-            if (sorted[1][0] === entry.realColor) return "partial";
-            return "wrong";
-          }
-
-          history.forEach(h=>{
-            if (!h.realColor && h.date === todayStr) {
-              h.realColor = todayColor;
-              h.result = verdict(h);
-            }
-          });
-
-          fs.writeFileSync("history.json", JSON.stringify(history, null, 2));
-
-          /* ======================
-             STATS
-          ====================== */
-          const resolved = history.filter(h => h.realColor);
-          const stats = {
-            total: resolved.length,
-            correct: resolved.filter(h => h.result === "correct").length,
-            partial: resolved.filter(h => h.result === "partial").length,
-            wrong: resolved.filter(h => h.result === "wrong").length
-          };
-
-          stats.accuracy = stats.total
-            ? Math.round(stats.correct / stats.total * 100)
-            : 0;
-
-          stats.accuracyWithPartial = stats.total
-            ? Math.round((stats.correct + stats.partial) / stats.total * 100)
-            : 0;
-
-          fs.writeFileSync("stats.json", JSON.stringify(stats, null, 2));
+          fs.writeFileSync("tempo.json",JSON.stringify(days,null,2));
           EOF
 
-      # ======================
-      # 4️⃣ Commit & push
-      # ======================
-      - name: Commit and push files
+      - name: Commit & push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add tempo.json history.json stats.json
-          git commit -m "Winter calibration + weekday recalibration" || echo "No changes"
+          git add tempo.json
+          git commit -m "EDF behavior: white favored when close to blue" || echo "No changes"
           git push
