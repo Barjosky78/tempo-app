@@ -1,8 +1,8 @@
-name: Update Tempo + History + Stats (Weather + RTE leverage 7%)
+name: Update Tempo + History + Stats (Weather + RTE + HelloWatt)
 
 on:
   schedule:
-    - cron: '0 9 * * *'
+    - cron: '0 9 * * *'   # 10h heure française (hiver)
   workflow_dispatch:
 
 permissions:
@@ -15,6 +15,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
+      # ======================
+      # HELLOWATT – COULEURS OFFICIELLES
+      # ======================
+      - name: Fetch HelloWatt
+        run: |
+          curl -s "https://www.hellowatt.fr/calendrier-tempo-edf-couleur-jour/" > hellowatt.html
 
       # ======================
       # MÉTÉO (Open-Meteo)
@@ -31,26 +38,46 @@ jobs:
           curl -s "https://odre.opendatasoft.com/api/records/1.0/search/?dataset=eco2mix-national-cons-def&rows=1&sort=-date_heure" > rte.json
 
       # ======================
-      # BUILD TEMPO.JSON
+      # BUILD TEMPO + HISTORY + STATS
       # ======================
-      - name: Build tempo data
+      - name: Build data
         run: |
           node <<'EOF'
           const fs = require("fs");
 
           function fmt(d){ return d.toISOString().split("T")[0]; }
 
+          /* ======================
+             HELLOWATT
+          ====================== */
+          const html = fs.readFileSync("hellowatt.html","utf8");
+          const hwMatches = [...html.matchAll(/Jour (Bleu|Blanc|Rouge)/gi)]
+            .map(m => m[1].toLowerCase());
+
+          const today = new Date();
+          today.setHours(0,0,0,0);
+          const yesterday = new Date(today);
+          yesterday.setDate(today.getDate() - 1);
+
+          const todayStr = fmt(today);
+          const yesterdayStr = fmt(yesterday);
+
+          const todayColor = hwMatches[0] || null;
+
+          /* ======================
+             MÉTÉO
+          ====================== */
           const weather = JSON.parse(fs.readFileSync("weather.json","utf8"));
           const temps = weather.daily.temperature_2m_mean || [];
 
+          /* ======================
+             RTE
+          ====================== */
           const rteData = JSON.parse(fs.readFileSync("rte.json","utf8"));
           const rteRecord = rteData.records?.[0]?.fields;
           const consommation = rteRecord?.consommation ?? null;
 
-          // ----------------------
-          // INDICE TENSION RÉSEAU
-          // ----------------------
-          let tension = 60; // neutre par défaut
+          let tension = 60;
           if (consommation !== null) {
             if (consommation < 45000) tension = 50;
             else if (consommation < 55000) tension = 60;
@@ -58,9 +85,9 @@ jobs:
             else tension = 80;
           }
 
-          const today = new Date();
-          today.setHours(0,0,0,0);
-
+          /* ======================
+             CONSTANTES
+          ====================== */
           const HISTO_MONTH = {
             11:{rouge:8,  blanc:22, bleu:70},
             12:{rouge:14, blanc:30, bleu:56},
@@ -77,9 +104,9 @@ jobs:
             5:{ rouge:-4, blanc:+2, bleu:+2 }
           };
 
-          // ----------------------
-          // FROID ÉTENDU
-          // ----------------------
+          /* ======================
+             FROID ÉTENDU
+          ====================== */
           const coldSpans=[];
           let span=0;
           for(let i=0;i<temps.length;i++){
@@ -88,17 +115,24 @@ jobs:
             coldSpans[i]=span;
           }
 
+          /* ======================
+             BUILD TEMPO.JSON
+          ====================== */
           const days=[];
 
-          // ---------- AUJOURD’HUI ----------
+          // Aujourd’hui (réel)
           days.push({
-            date: fmt(today),
-            couleur: "bleu",
-            probabilites:{rouge:0,blanc:0,bleu:100},
+            date: todayStr,
+            couleur: todayColor || "bleu",
+            probabilites:{
+              rouge: todayColor==="rouge"?100:0,
+              blanc: todayColor==="blanc"?100:0,
+              bleu:  todayColor==="bleu"?100:0
+            },
             fixed:true
           });
 
-          // ---------- J+1 → J+9 ----------
+          // J+1 → J+9
           for(let i=1;i<=9;i++){
             const d=new Date(today);
             d.setDate(today.getDate()+i);
@@ -124,31 +158,25 @@ jobs:
             if(spanDays>=4 && temp<0){ rouge+=10; blanc+=5; bleu-=15; }
             else if(spanDays>=3 && temp<3){ blanc+=10; bleu-=10; }
 
-            // ----------------------
-            // 🔌 EFFET RTE (MAX 7 %)
-            // ----------------------
+            // 🔌 RTE (7 % max)
             if(i>=3 && consommation!==null){
               const boost=7;
               if(tension<55){
-                bleu+=boost; blanc-=Math.floor(boost/2); rouge-=Math.floor(boost/2);
+                bleu+=boost; blanc-=3; rouge-=4;
               } else if(tension<=70){
-                blanc+=boost; bleu-=Math.floor(boost/2); rouge-=Math.floor(boost/2);
+                blanc+=boost; bleu-=3; rouge-=4;
               } else {
-                rouge+=boost; blanc+=Math.floor(boost/2); bleu-=Math.floor(boost/2);
+                rouge+=boost; blanc+=3; bleu-=10;
               }
             }
 
-            // ----------------------
-            // NORMALISATION
-            // ----------------------
+            // Normalisation
             let total=rouge+blanc+bleu;
             rouge=Math.max(0,Math.round(rouge/total*100));
             blanc=Math.max(0,Math.round(blanc/total*100));
             bleu=100-rouge-blanc;
 
-            // ----------------------
-            // 🔒 RÈGLES EDF
-            // ----------------------
+            // 🔒 EDF week-end
             if(dow===0){
               rouge=0; blanc=0; bleu=100;
             }
@@ -173,6 +201,61 @@ jobs:
           }
 
           fs.writeFileSync("tempo.json",JSON.stringify(days,null,2));
+
+          /* ======================
+             HISTORY.JSON (validation J-1)
+          ====================== */
+          let history = fs.existsSync("history.json")
+            ? JSON.parse(fs.readFileSync("history.json","utf8"))
+            : [];
+
+          if (!history.find(h => h.date === todayStr)) {
+            const todayEntry = days.find(d => d.date === todayStr);
+            history.push({
+              date: todayStr,
+              predictedColor: todayEntry.couleur,
+              probabilities: todayEntry.probabilites,
+              horizon: 0,
+              realColor: null,
+              result: null
+            });
+          }
+
+          const entry = history.find(h => h.date === yesterdayStr && !h.realColor);
+          if (entry && todayColor) {
+            entry.realColor = todayColor;
+            const sorted = Object.entries(entry.probabilities)
+              .sort((a,b)=>b[1]-a[1])
+              .map(e=>e[0]);
+
+            if (entry.predictedColor === todayColor) entry.result="correct";
+            else if (sorted.slice(0,2).includes(todayColor)) entry.result="partial";
+            else entry.result="wrong";
+          }
+
+          fs.writeFileSync("history.json",JSON.stringify(history,null,2));
+
+          /* ======================
+             STATS.JSON
+          ====================== */
+          const resolved = history.filter(h => h.realColor);
+          const stats = {
+            total: resolved.length,
+            correct: resolved.filter(h=>h.result==="correct").length,
+            partial: resolved.filter(h=>h.result==="partial").length,
+            wrong:   resolved.filter(h=>h.result==="wrong").length
+          };
+
+          stats.accuracy = stats.total ? Math.round(stats.correct/stats.total*100) : 0;
+          stats.accuracyWithPartial = stats.total
+            ? Math.round((stats.correct+stats.partial)/stats.total*100)
+            : 0;
+
+          fs.writeFileSync("stats.json",JSON.stringify(stats,null,2));
+
+          /* ======================
+             META.JSON
+          ====================== */
           fs.writeFileSync("meta.json",JSON.stringify({
             updatedAt:new Date().toISOString(),
             rteConsommation:consommation,
@@ -187,6 +270,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add tempo.json meta.json
-          git commit -m "Add RTE consumption influence (7% max)" || echo "No changes"
+          git add tempo.json history.json stats.json meta.json
+          git commit -m "Daily forecast + J-1 validation (HelloWatt + RTE)" || echo "No changes"
           git push
