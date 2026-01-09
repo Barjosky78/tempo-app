@@ -1,6 +1,7 @@
 const tempoDiv = document.getElementById("tempo");
 const statsDiv = document.getElementById("stats");
 const historyDiv = document.getElementById("history");
+const updatedDiv = document.getElementById("updated"); // ⏱️ AJOUT
 
 /* ==========================
    OUTILS
@@ -24,6 +25,24 @@ function verdictLabel(result) {
   if (result === "wrong") return "❌ Mauvaise";
   return "";
 }
+
+/* ==========================
+   ⏱️ HEURE DE MISE À JOUR
+========================== */
+
+fetch("meta.json")
+  .then(res => res.json())
+  .then(meta => {
+    if (!updatedDiv) return;
+    const d = new Date(meta.updatedAt);
+    updatedDiv.textContent =
+      "Dernière mise à jour : " + d.toLocaleString("fr-FR");
+  })
+  .catch(() => {
+    if (updatedDiv) {
+      updatedDiv.textContent = "Dernière mise à jour inconnue";
+    }
+  });
 
 /* ==========================
    PRÉVISIONS TEMPO
