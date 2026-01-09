@@ -16,21 +16,55 @@
   <header>
     <h1>⚡ Tempo EDF</h1>
     <p class="subtitle">
-      Prévisions, suivi des prédictions et statistiques réelles
+      Aujourd’hui réel • Demain estimé • J+2 à J+9 prévisions
     </p>
+
+    <!-- ⏱️ Heure de mise à jour -->
     <p id="updated" class="updated"></p>
   </header>
 
+  <!-- ======================
+       FIABILITÉ
+  ======================= -->
   <section id="stats-section">
     <h2>🧭 Fiabilité des prévisions</h2>
+
+    <p class="explain">
+      Les prévisions sont comparées automatiquement aux couleurs
+      réelles lorsqu’un jour devient effectif.
+    </p>
+
     <div id="stats"></div>
+
+    <div class="help">
+      <p><b>Comment lire ces indicateurs ?</b></p>
+      <ul>
+        <li>
+          <b>Bonne prédiction</b> :
+          la couleur prévue était la bonne.
+        </li>
+        <li>
+          <b>Zone correcte</b> :
+          la bonne couleur faisait partie des deux plus probables.
+        </li>
+        <li>
+          Les statistiques gagnent en fiabilité avec l’historique.
+        </li>
+      </ul>
+    </div>
   </section>
 
+  <!-- ======================
+       PRÉVISIONS TEMPO
+  ======================= -->
   <section id="tempo-section">
     <h2>📅 Prévisions Tempo</h2>
     <div id="tempo" class="tempo-grid"></div>
   </section>
 
+  <!-- ======================
+       HISTORIQUE
+  ======================= -->
   <section id="history-section">
     <h2>🕒 Suivi des prédictions passées</h2>
     <div id="history"></div>
@@ -38,8 +72,9 @@
 
   <footer>
     <p>
-      Données officielles EDF (via Hello Watt) –  
-      Modèle prédictif expérimental, sans garantie.
+      Aujourd’hui : couleur réelle •  
+      Demain : estimation météo •  
+      Prévisions basées sur météo, saison et historique EDF.
     </p>
   </footer>
 
