@@ -2,7 +2,8 @@ name: Update Tempo + History + Stats (EDF White Bias)
 
 on:
   schedule:
-    - cron: '0 9 * * *'   # ✅ 10h heure FR
+    # 9h UTC = 10h heure française (hiver)
+    - cron: '0 9 * * *'
   workflow_dispatch:
 
 permissions:
@@ -40,17 +41,22 @@ jobs:
             : [];
 
           /* ======================
-             OFFICIAL COLORS
+             OFFICIAL COLORS (ROBUST)
           ====================== */
-          const matches = [...html.matchAll(/Jour (Bleu|Blanc|Rouge)/gi)]
-            .map(m=>m[1].toLowerCase());
+
+          function extractColor(label) {
+            const regex = new RegExp(label + "[^A-Za-z]*(Bleu|Blanc|Rouge)", "i");
+            const match = html.match(regex);
+            return match ? match[1].toLowerCase() : null;
+          }
 
           const today = new Date(); today.setHours(0,0,0,0);
           const tomorrow = new Date(today); tomorrow.setDate(today.getDate()+1);
 
           const todayStr = fmt(today);
-          const todayColor = matches[0] || "bleu";
-          const tomorrowColor = matches[1] || todayColor;
+
+          const todayColor = extractColor("Aujourd.?hui") || "bleu";
+          const tomorrowColor = extractColor("Demain") || todayColor;
 
           function fixed(color){
             return {
@@ -188,6 +194,7 @@ jobs:
             if(rouge>blanc && rouge>bleu) couleur="rouge";
             else if(blanc>bleu) couleur="blanc";
 
+            // ⭐ BLANC TAMPON EDF
             if (Math.abs(blanc - bleu) <= 5 && blanc > rouge) {
               couleur = "blanc";
             }
@@ -216,5 +223,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tempo.json meta.json
-          git commit -m "Update Tempo + timestamp" || echo "No changes"
+          git commit -m "Fix parsing today/tomorrow + timestamp" || echo "No changes"
           git push
