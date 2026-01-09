@@ -14,8 +14,8 @@
     "couleur": "blanc",
     "probabilites": {
       "rouge": 0,
-      "blanc": 53,
-      "bleu": 47
+      "blanc": 54,
+      "bleu": 46
     },
     "fixed": false,
     "estimated": true
@@ -33,44 +33,44 @@
   },
   {
     "date": "2026-01-12",
-    "couleur": "bleu",
+    "couleur": "blanc",
     "probabilites": {
-      "rouge": 13,
-      "blanc": 27,
-      "bleu": 60
+      "rouge": 14,
+      "blanc": 47,
+      "bleu": 39
     },
     "fixed": false,
     "estimated": false
   },
   {
     "date": "2026-01-13",
-    "couleur": "bleu",
+    "couleur": "blanc",
     "probabilites": {
-      "rouge": 16,
-      "blanc": 20,
-      "bleu": 64
+      "rouge": 21,
+      "blanc": 42,
+      "bleu": 37
     },
     "fixed": false,
     "estimated": false
   },
   {
     "date": "2026-01-14",
-    "couleur": "bleu",
+    "couleur": "blanc",
     "probabilites": {
-      "rouge": 14,
-      "blanc": 16,
-      "bleu": 70
+      "rouge": 22,
+      "blanc": 41,
+      "bleu": 37
     },
     "fixed": false,
     "estimated": false
   },
   {
     "date": "2026-01-15",
-    "couleur": "bleu",
+    "couleur": "blanc",
     "probabilites": {
-      "rouge": 10,
-      "blanc": 14,
-      "bleu": 76
+      "rouge": 19,
+      "blanc": 44,
+      "bleu": 37
     },
     "fixed": false,
     "estimated": false
@@ -79,20 +79,20 @@
     "date": "2026-01-16",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 5,
-      "blanc": 10,
-      "bleu": 85
+      "rouge": 13,
+      "blanc": 43,
+      "bleu": 44
     },
     "fixed": false,
     "estimated": false
   },
   {
     "date": "2026-01-17",
-    "couleur": "bleu",
+    "couleur": "blanc",
     "probabilites": {
       "rouge": 0,
-      "blanc": 10,
-      "bleu": 90
+      "blanc": 58,
+      "bleu": 42
     },
     "fixed": false,
     "estimated": false
