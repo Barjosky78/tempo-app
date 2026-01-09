@@ -14,8 +14,8 @@
     "couleur": "blanc",
     "probabilites": {
       "rouge": 0,
-      "blanc": 50,
-      "bleu": 50
+      "blanc": 60,
+      "bleu": 40
     },
     "fixed": false,
     "estimated": true
@@ -28,67 +28,74 @@
       "blanc": 0,
       "bleu": 100
     },
-    "fixed": true
+    "fixed": false,
+    "estimated": false
   },
   {
     "date": "2026-01-12",
     "couleur": "bleu",
     "probabilites": {
       "rouge": 13,
-      "blanc": 30,
-      "bleu": 57
+      "blanc": 27,
+      "bleu": 60
     },
-    "fixed": false
+    "fixed": false,
+    "estimated": false
   },
   {
     "date": "2026-01-13",
     "couleur": "bleu",
     "probabilites": {
       "rouge": 16,
-      "blanc": 23,
-      "bleu": 61
+      "blanc": 20,
+      "bleu": 64
     },
-    "fixed": false
+    "fixed": false,
+    "estimated": false
   },
   {
     "date": "2026-01-14",
     "couleur": "bleu",
     "probabilites": {
       "rouge": 14,
-      "blanc": 19,
-      "bleu": 67
+      "blanc": 16,
+      "bleu": 70
     },
-    "fixed": false
+    "fixed": false,
+    "estimated": false
   },
   {
     "date": "2026-01-15",
     "couleur": "bleu",
     "probabilites": {
       "rouge": 10,
-      "blanc": 16,
-      "bleu": 74
+      "blanc": 14,
+      "bleu": 76
     },
-    "fixed": false
+    "fixed": false,
+    "estimated": false
   },
   {
     "date": "2026-01-16",
     "couleur": "bleu",
     "probabilites": {
       "rouge": 5,
-      "blanc": 12,
-      "bleu": 83
+      "blanc": 10,
+      "bleu": 85
     },
-    "fixed": false
+    "fixed": false,
+    "estimated": false
   },
   {
     "date": "2026-01-17",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 4,
-      "blanc": 7,
-      "bleu": 89
+      "rouge": 0,
+      "blanc": 10,
+      "bleu": 90
     },
-    "fixed": false
+    "fixed": false,
+    "estimated": false
   },
   {
     "date": "2026-01-18",
@@ -98,6 +105,7 @@
       "blanc": 0,
       "bleu": 100
     },
-    "fixed": true
+    "fixed": false,
+    "estimated": false
   }
 ]
