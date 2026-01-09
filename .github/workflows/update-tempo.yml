@@ -34,24 +34,15 @@ jobs:
 
           function fmt(d){ return d.toISOString().split("T")[0]; }
 
-          /* ======================
-             CHARGEMENT MÉTÉO
-          ====================== */
           const weather = JSON.parse(fs.readFileSync("weather.json","utf8"));
           const temps = weather.daily.temperature_2m_mean || [];
 
-          /* ======================
-             DATES
-          ====================== */
           const today = new Date();
           today.setHours(0,0,0,0);
 
           const tomorrow = new Date(today);
           tomorrow.setDate(today.getDate() + 1);
 
-          /* ======================
-             AUJOURD’HUI (RÉEL)
-          ====================== */
           const todayColor = "bleu";
 
           function fixed(color){
@@ -62,9 +53,6 @@ jobs:
             };
           }
 
-          /* ======================
-             CONSTANTES HISTORIQUES
-          ====================== */
           const HISTO_MONTH = {
             11:{rouge:8,  blanc:22, bleu:70},
             12:{rouge:14, blanc:30, bleu:56},
@@ -81,9 +69,6 @@ jobs:
             5:{ rouge:-4, blanc:+2, bleu:+2 }
           };
 
-          /* ======================
-             FROID ÉTENDU
-          ====================== */
           const coldSpans = [];
           let span = 0;
           for(let i=0;i<temps.length;i++){
@@ -92,9 +77,6 @@ jobs:
             coldSpans[i] = span;
           }
 
-          /* ======================
-             BUILD TEMPO
-          ====================== */
           const days = [];
 
           // ---------- AUJOURD’HUI ----------
@@ -105,58 +87,8 @@ jobs:
             fixed: true
           });
 
-          // ---------- DEMAIN (J+1 ESTIMATION MÉTÉO) ----------
-          {
-            const temp = temps[1] ?? 5;
-            const dow = tomorrow.getDay();
-
-            let rouge = 20;
-            let blanc = 40;
-            let bleu  = 40;
-
-            if (temp < 0) {
-              rouge += 15; bleu -= 10;
-            } else if (temp < 3) {
-              blanc += 15; bleu -= 10;
-            } else if (temp > 6) {
-              bleu += 10; blanc -= 5;
-            }
-
-            if (dow === 0) {
-              rouge = 0; blanc = 0; bleu = 100;
-            } else if (dow === 6) {
-              blanc += Math.round(rouge / 2);
-              bleu  += Math.round(rouge / 2);
-              rouge = 0;
-            }
-
-            const total = rouge + blanc + bleu;
-            rouge = Math.round(rouge / total * 100);
-            blanc = Math.round(blanc / total * 100);
-            bleu  = 100 - rouge - blanc;
-
-            let couleur = "bleu";
-            if (rouge > blanc && rouge > bleu) {
-              couleur = "rouge";
-            } else if (blanc > bleu) {
-              couleur = "blanc";
-            } else if (blanc === bleu && blanc > rouge) {
-              couleur = "blanc";
-            }
-
-            days.push({
-              date: fmt(tomorrow),
-              couleur,
-              probabilites: { rouge, blanc, bleu },
-              fixed: false,
-              estimated: true
-            });
-          }
-
-          let lastColors = days.map(d => d.couleur);
-
-          // ---------- J+2 → J+9 ----------
-          for(let i=2;i<=9;i++){
+          // ---------- J+1 ----------
+          for(let i=1;i<=9;i++){
             const d = new Date(today);
             d.setDate(today.getDate() + i);
             const dow = d.getDay();
@@ -164,51 +96,67 @@ jobs:
             const temp = temps[i] ?? 8;
             const spanDays = coldSpans[i] || 0;
 
-            if(dow === 0){
-              days.push({
-                date: fmt(d),
-                couleur: "bleu",
-                probabilites:{rouge:0,blanc:0,bleu:100},
-                fixed:true
-              });
-              lastColors.push("bleu");
-              continue;
+            let rouge = 20;
+            let blanc = 40;
+            let bleu  = 40;
+
+            // météo
+            if(temp < 0){ rouge += 15; bleu -= 10; }
+            else if(temp < 3){ blanc += 15; bleu -= 10; }
+            else if(temp > 6){ bleu += 10; blanc -= 5; }
+
+            if(i >= 2){
+              let base = HISTO_MONTH[month] || {rouge:10, blanc:25, bleu:65};
+              rouge += base.rouge - 20;
+              blanc += base.blanc - 40;
+              bleu  += base.bleu  - 40;
+
+              if(HISTO_WEEKDAY[dow]){
+                rouge += HISTO_WEEKDAY[dow].rouge;
+                blanc += HISTO_WEEKDAY[dow].blanc;
+                bleu  += HISTO_WEEKDAY[dow].bleu;
+              }
+
+              if(month >= 11 || month <= 3){
+                bleu -= 5; blanc += 3; rouge += 2;
+              }
+
+              const factor = (10 - i) / 10;
+              rouge = Math.max(2, Math.round(rouge * factor));
+              blanc = Math.round(blanc * factor);
+              bleu  = 100 - rouge - blanc;
+
+              if(temp < 0 && spanDays >= 3){
+                rouge += 8; blanc += 12; bleu -= 20;
+              } else if(temp < 3 && spanDays >= 3){
+                blanc += 15; bleu -= 15;
+              }
             }
 
-            let base = HISTO_MONTH[month] || {rouge:10, blanc:25, bleu:65};
-            let rouge = base.rouge;
-            let blanc = base.blanc;
-            let bleu  = base.bleu;
-
-            if(HISTO_WEEKDAY[dow]){
-              rouge += HISTO_WEEKDAY[dow].rouge;
-              blanc += HISTO_WEEKDAY[dow].blanc;
-              bleu  += HISTO_WEEKDAY[dow].bleu;
-            }
-
-            if(month >= 11 || month <= 3){
-              bleu  -= 5;
-              blanc += 3;
-              rouge += 2;
-            }
-
-            const factor = (10 - i) / 10;
-            rouge = Math.max(2, Math.round(rouge * factor));
-            blanc = Math.round(blanc * factor);
-            bleu  = 100 - rouge - blanc;
-
-            if(temp < 0 && spanDays >= 3){
-              rouge += 8; blanc += 12; bleu -= 20;
-            } else if(temp < 3 && spanDays >= 3){
-              blanc += 15; bleu -= 15;
-            }
-
-            const total = rouge + blanc + bleu;
+            // normalisation
+            let total = rouge + blanc + bleu;
             rouge = Math.round(rouge / total * 100);
             blanc = Math.round(blanc / total * 100);
             bleu  = 100 - rouge - blanc;
 
-            // ⭐ MÊME RÈGLE EDF POUR J+2 → J+9
+            /* ======================
+               🔒 VERROUS EDF FINAUX
+            ====================== */
+            if(dow === 0){
+              rouge = 0; blanc = 0; bleu = 100;
+            }
+
+            if(dow === 6){
+              blanc += rouge;
+              rouge = 0;
+              total = blanc + bleu;
+              blanc = Math.round(blanc / total * 100);
+              bleu  = 100 - blanc;
+            }
+
+            /* ======================
+               DÉCISION COULEUR
+            ====================== */
             let couleur = "bleu";
             if (rouge > blanc && rouge > bleu) {
               couleur = "rouge";
@@ -221,11 +169,10 @@ jobs:
             days.push({
               date: fmt(d),
               couleur,
-              probabilites:{rouge, blanc, bleu},
-              fixed:false
+              probabilites: { rouge, blanc, bleu },
+              fixed: i === 1 ? false : false,
+              estimated: i === 1
             });
-
-            lastColors.push(couleur);
           }
 
           fs.writeFileSync("tempo.json", JSON.stringify(days,null,2));
@@ -243,5 +190,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tempo.json meta.json
-          git commit -m "EDF rule: white wins ties J1–J9" || echo "No changes"
+          git commit -m "EDF rules locked (week-end + white priority)" || echo "No changes"
           git push
