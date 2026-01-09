@@ -1,4 +1,4 @@
-name: Update Tempo + History + Stats (Open-DPE priority)
+name: Update Tempo + History + Stats (J1 weather estimation)
 
 on:
   schedule:
@@ -14,94 +14,57 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       # ======================
-      # SOURCE 1 : OPEN-DPE
-      # ======================
-      - name: Fetch Open-DPE Tempo
-        run: |
-          curl -s "https://open-dpe.fr/tempo-forecast/" > open_dpe.html
-
-      # ======================
-      # SOURCE 2 : HELLOWATT
-      # ======================
-      - name: Fetch HelloWatt
-        run: |
-          curl -s "https://www.hellowatt.fr/calendrier-tempo-edf-couleur-jour/" > page.html
-
-      # ======================
-      # MÉTÉO
+      # MÉTÉO (Open-Meteo)
       # ======================
       - name: Fetch Weather
         run: |
           curl -s "https://api.open-meteo.com/v1/forecast?latitude=48.85&longitude=2.35&daily=temperature_2m_mean&forecast_days=10&timezone=Europe%2FParis" > weather.json
 
       # ======================
-      # BUILD DATA
+      # BUILD TEMPO.JSON
       # ======================
-      - name: Build data
+      - name: Build tempo data
         run: |
           node <<'EOF'
           const fs = require("fs");
 
           function fmt(d){ return d.toISOString().split("T")[0]; }
 
-          const openDpeHtml = fs.existsSync("open_dpe.html")
-            ? fs.readFileSync("open_dpe.html","utf8")
-            : "";
-
-          const helloHtml = fs.existsSync("page.html")
-            ? fs.readFileSync("page.html","utf8")
-            : "";
-
+          /* ======================
+             CHARGEMENT MÉTÉO
+          ====================== */
           const weather = JSON.parse(fs.readFileSync("weather.json","utf8"));
           const temps = weather.daily.temperature_2m_mean || [];
 
-          let history = fs.existsSync("history.json")
-            ? JSON.parse(fs.readFileSync("history.json","utf8"))
-            : [];
+          /* ======================
+             DATES
+          ====================== */
+          const today = new Date();
+          today.setHours(0,0,0,0);
+
+          const tomorrow = new Date(today);
+          tomorrow.setDate(today.getDate() + 1);
 
           /* ======================
-             EXTRACTION COULEURS
+             AUJOURD’HUI (RÉEL)
+             ⚠️ volontairement fixé
           ====================== */
-
-          function extract(html, label) {
-            const regex = new RegExp(
-              label + "[^A-Za-z]*(Bleu|Blanc|Rouge)",
-              "i"
-            );
-            const match = html.match(regex);
-            return match ? match[1].toLowerCase() : null;
-          }
-
-          const today = new Date(); today.setHours(0,0,0,0);
-          const tomorrow = new Date(today); tomorrow.setDate(today.getDate()+1);
-
-          const todayStr = fmt(today);
-
-          // 🔑 PRIORITÉ DES SOURCES
-          const todayColor =
-            extract(openDpeHtml, "Aujourd.?hui")
-            || extract(helloHtml, "Aujourd.?hui")
-            || "bleu";
-
-          const tomorrowColor =
-            extract(openDpeHtml, "Demain")
-            || extract(helloHtml, "Demain")
-            || todayColor;
+          const todayColor = "bleu";
 
           function fixed(color){
             return {
-              rouge: color==="rouge"?100:0,
-              blanc: color==="blanc"?100:0,
-              bleu:  color==="bleu"?100:0
+              rouge: color === "rouge" ? 100 : 0,
+              blanc: color === "blanc" ? 100 : 0,
+              bleu:  color === "bleu"  ? 100 : 0
             };
           }
 
           /* ======================
-             CONSTANTES MODELE
+             CONSTANTES HISTORIQUES
           ====================== */
           const HISTO_MONTH = {
             11:{rouge:8,  blanc:22, bleu:70},
@@ -122,43 +85,83 @@ jobs:
           /* ======================
              FROID ÉTENDU
           ====================== */
-          const coldSpans=[];
-          let span=0;
+          const coldSpans = [];
+          let span = 0;
           for(let i=0;i<temps.length;i++){
-            if(temps[i]<3) span++; else span=0;
-            coldSpans[i]=span;
+            if(temps[i] < 3) span++;
+            else span = 0;
+            coldSpans[i] = span;
           }
 
           /* ======================
              BUILD TEMPO
           ====================== */
-          const days=[];
+          const days = [];
 
+          // ---------- AUJOURD’HUI ----------
           days.push({
-            date: todayStr,
+            date: fmt(today),
             couleur: todayColor,
             probabilites: fixed(todayColor),
             fixed: true
           });
 
+          // ---------- DEMAIN (J+1 ESTIMATION MÉTÉO) ----------
+          const tempJ1 = temps[1] ?? 5;
+          const dowJ1 = tomorrow.getDay();
+
+          let rouge = 20;
+          let blanc = 40;
+          let bleu  = 40;
+
+          // Effet température
+          if (tempJ1 < 0) {
+            rouge += 15; bleu -= 10;
+          } else if (tempJ1 < 3) {
+            blanc += 15; bleu -= 10;
+          } else if (tempJ1 > 6) {
+            bleu += 10; blanc -= 5;
+          }
+
+          // Règles EDF connues
+          if (dowJ1 === 0) {
+            rouge = 0; blanc = 0; bleu = 100;
+          } else if (dowJ1 === 6) {
+            blanc += Math.round(rouge / 2);
+            bleu  += Math.round(rouge / 2);
+            rouge = 0;
+          }
+
+          // Normalisation
+          const totJ1 = rouge + blanc + bleu;
+          rouge = Math.round(rouge / totJ1 * 100);
+          blanc = Math.round(blanc / totJ1 * 100);
+          bleu  = 100 - rouge - blanc;
+
+          let couleurJ1 = "bleu";
+          if (rouge > blanc && rouge > bleu) couleurJ1 = "rouge";
+          else if (blanc > bleu) couleurJ1 = "blanc";
+
           days.push({
             date: fmt(tomorrow),
-            couleur: tomorrowColor,
-            probabilites: fixed(tomorrowColor),
-            fixed: true
+            couleur: couleurJ1,
+            probabilites: { rouge, blanc, bleu },
+            fixed: false,
+            estimated: true
           });
 
-          let lastColors = days.map(d=>d.couleur);
+          let lastColors = days.map(d => d.couleur);
 
+          // ---------- J+2 → J+9 (MODÈLE COMPLET) ----------
           for(let i=2;i<=9;i++){
             const d = new Date(today);
-            d.setDate(today.getDate()+i);
+            d.setDate(today.getDate() + i);
             const dow = d.getDay();
-            const month = d.getMonth()+1;
-            const temp = temps[i] ?? 10;
+            const month = d.getMonth() + 1;
+            const temp = temps[i] ?? 8;
             const spanDays = coldSpans[i] || 0;
 
-            if(dow===0){
+            if(dow === 0){
               days.push({
                 date: fmt(d),
                 couleur: "bleu",
@@ -169,55 +172,65 @@ jobs:
               continue;
             }
 
-            let base = HISTO_MONTH[month] || {rouge:10,blanc:25,bleu:65};
-            let rouge = base.rouge;
-            let blanc = base.blanc;
-            let bleu  = base.bleu;
+            let base = HISTO_MONTH[month] || {rouge:10, blanc:25, bleu:65};
+            let r = base.rouge;
+            let b = base.blanc;
+            let bl = base.bleu;
 
             if(HISTO_WEEKDAY[dow]){
-              rouge += HISTO_WEEKDAY[dow].rouge;
-              blanc += HISTO_WEEKDAY[dow].blanc;
-              bleu  += HISTO_WEEKDAY[dow].bleu;
+              r += HISTO_WEEKDAY[dow].rouge;
+              b += HISTO_WEEKDAY[dow].blanc;
+              bl+= HISTO_WEEKDAY[dow].bleu;
             }
 
-            if(month>=11 || month<=3){
-              bleu  -= 5;
-              blanc += 3;
-              rouge += 2;
+            if(month >= 11 || month <= 3){
+              bl -= 5; b += 3; r += 2;
             }
 
-            const factor=(10-i)/10;
-            rouge=Math.max(2,Math.round(rouge*factor));
-            blanc=Math.round(blanc*factor);
-            bleu=100-rouge-blanc;
+            const factor = (10 - i) / 10;
+            r = Math.max(2, Math.round(r * factor));
+            b = Math.round(b * factor);
+            bl = 100 - r - b;
 
-            let couleur="bleu";
-            if(rouge>blanc && rouge>bleu) couleur="rouge";
-            else if(blanc>bleu) couleur="blanc";
+            if(temp < 0 && spanDays >= 3){
+              r += 8; b += 12; bl -= 20;
+            } else if(temp < 3 && spanDays >= 3){
+              b += 15; bl -= 15;
+            }
+
+            const total = r + b + bl;
+            r = Math.round(r / total * 100);
+            b = Math.round(b / total * 100);
+            bl = 100 - r - b;
+
+            let c = "bleu";
+            if(r > b && r > bl) c = "rouge";
+            else if(b > bl) c = "blanc";
 
             days.push({
               date: fmt(d),
-              couleur,
-              probabilites:{rouge,blanc,bleu},
+              couleur: c,
+              probabilites:{rouge:r, blanc:b, bleu:bl},
               fixed:false
             });
 
-            lastColors.push(couleur);
+            lastColors.push(c);
           }
 
-          fs.writeFileSync("tempo.json",JSON.stringify(days,null,2));
-
-          // ⏱️ META
+          fs.writeFileSync("tempo.json", JSON.stringify(days,null,2));
           fs.writeFileSync(
             "meta.json",
             JSON.stringify({ updatedAt: new Date().toISOString() }, null, 2)
           );
           EOF
 
+      # ======================
+      # COMMIT
+      # ======================
       - name: Commit & push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tempo.json meta.json
-          git commit -m "Tempo update (Open-DPE priority)" || echo "No changes"
+          git commit -m "Update tempo (J1 weather estimation)" || echo "No changes"
           git push
