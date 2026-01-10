@@ -229,7 +229,7 @@
       "bleu": 100
     },
     "horizon": 0,
-    "realColor": null,
-    "result": null
+    "realColor": "blanc",
+    "result": "wrong"
   }
 ]

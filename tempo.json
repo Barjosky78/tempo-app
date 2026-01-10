@@ -1,24 +1,13 @@
 [
   {
-    "date": "2026-01-09",
-    "couleur": "bleu",
-    "probabilites": {
-      "rouge": 0,
-      "blanc": 0,
-      "bleu": 100
-    },
-    "fixed": true
-  },
-  {
     "date": "2026-01-10",
     "couleur": "blanc",
     "probabilites": {
       "rouge": 0,
-      "blanc": 54,
-      "bleu": 46
+      "blanc": 100,
+      "bleu": 0
     },
-    "fixed": false,
-    "estimated": true
+    "fixed": true
   },
   {
     "date": "2026-01-11",
@@ -29,15 +18,15 @@
       "bleu": 100
     },
     "fixed": false,
-    "estimated": false
+    "estimated": true
   },
   {
     "date": "2026-01-12",
-    "couleur": "blanc",
+    "couleur": "bleu",
     "probabilites": {
-      "rouge": 13,
-      "blanc": 47,
-      "bleu": 40
+      "rouge": 17,
+      "blanc": 40,
+      "bleu": 43
     },
     "fixed": false,
     "estimated": false
@@ -104,6 +93,17 @@
       "rouge": 0,
       "blanc": 0,
       "bleu": 100
+    },
+    "fixed": false,
+    "estimated": false
+  },
+  {
+    "date": "2026-01-19",
+    "couleur": "blanc",
+    "probabilites": {
+      "rouge": 13,
+      "blanc": 47,
+      "bleu": 40
     },
     "fixed": false,
     "estimated": false
