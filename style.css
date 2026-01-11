@@ -50,18 +50,18 @@ section {
 }
 
 .day.bleu {
-  background:#e0f2fe;
-  border-left:6px solid #0284c7;
+  background: #e0f2fe;
+  border-left: 6px solid #0284c7;
 }
 
 .day.blanc {
-  background:#f8fafc;
-  border-left:6px solid #94a3b8;
+  background: #f8fafc;
+  border-left: 6px solid #94a3b8;
 }
 
 .day.rouge {
-  background:#fee2e2;
-  border-left:6px solid #dc2626;
+  background: #fee2e2;
+  border-left: 6px solid #dc2626;
 }
 
 .date {
@@ -102,7 +102,7 @@ section {
 
 .confidence-fill {
   height: 100%;
-  background: linear-gradient(90deg,#22c55e,#16a34a);
+  background: linear-gradient(90deg, #22c55e, #16a34a);
 }
 
 .confidence-label {
@@ -116,11 +116,16 @@ section {
 ========================== */
 .ml-box {
   margin-top: 12px;
-  padding: 8px;
+  padding: 8px 10px;
   border-radius: 10px;
   background: #f1f5f9;
   font-size: 0.75rem;
   text-align: left;
+  border-left: 4px solid #6366f1;
+}
+
+.ml-box b {
+  font-size: 0.8rem;
 }
 
 .ml-bar {
@@ -128,12 +133,12 @@ section {
   background: #e5e7eb;
   border-radius: 6px;
   overflow: hidden;
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
 .ml-fill {
   height: 100%;
-  background: linear-gradient(90deg,#6366f1,#4338ca);
+  background: linear-gradient(90deg, #6366f1, #4338ca);
 }
 
 /* ==========================
@@ -141,7 +146,7 @@ section {
 ========================== */
 #history {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
   gap: 12px;
 }
 
