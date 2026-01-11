@@ -10,7 +10,6 @@ const updatedDiv = document.getElementById("updated");
 function dayLabel(dateStr, index) {
   const d = new Date(dateStr);
   const jours = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
-
   if (index === 0) return "Aujourd’hui";
   if (index === 1) return "Demain";
   return jours[d.getDay()];
@@ -20,11 +19,11 @@ function verdictLabel(result) {
   if (result === "correct") return "✅ Bonne prédiction";
   if (result === "partial") return "⚠️ Zone correcte";
   if (result === "wrong") return "❌ Mauvaise prédiction";
-  return "";
+  return "⏳ En attente de validation";
 }
 
 /* ==========================
-   ⏱️ META
+   META
 ========================== */
 fetch("meta.json?v=" + Date.now())
   .then(r => r.json())
@@ -52,6 +51,12 @@ fetch("tempo.json?v=" + Date.now())
             day.probabilites.bleu
           );
 
+      const icons = [];
+      if (day.sources?.meteo) icons.push("☁️");
+      if (day.sources?.rte) icons.push("⚡");
+      if (day.sources?.historique) icons.push("📊");
+      if (day.sources?.reel) icons.push("✔️");
+
       const card = document.createElement("div");
       card.className = "day " + day.couleur;
 
@@ -61,8 +66,9 @@ fetch("tempo.json?v=" + Date.now())
 
         <b>${day.couleur.toUpperCase()}</b>
         ${day.estimated ? `<div class="tag">Estimation météo</div>` : ""}
-        <br><br>
+        <div class="sources">${icons.join(" ")}</div>
 
+        <br>
         🔴 ${day.probabilites.rouge}%<br>
         ⚪ ${day.probabilites.blanc}%<br>
         🔵 ${day.probabilites.bleu}%
@@ -89,10 +95,7 @@ fetch("history.json?v=" + Date.now())
     today.setHours(0,0,0,0);
 
     const visibles = history
-      .filter(h => {
-        const d = new Date(h.date);
-        return d < today; // hier et avant
-      })
+      .filter(h => new Date(h.date) < today)
       .sort((a,b) => new Date(b.date) - new Date(a.date))
       .slice(0, 10);
 
@@ -105,8 +108,8 @@ fetch("history.json?v=" + Date.now())
     historyDiv.innerHTML = visibles.map(h => `
       <div class="history-card">
         <b>${h.date}</b><br>
-        Prédiction J-${h.horizon} : <b>${h.predictedColor}</b><br>
-        Résultat réel : <b>${h.realColor}</b><br>
+        Prédiction J-${h.horizon ?? "?"} : <b>${h.predictedColor}</b><br>
+        Résultat réel : <b>${h.realColor ?? "En attente"}</b><br>
         ${verdictLabel(h.result)}
       </div>
     `).join("");
