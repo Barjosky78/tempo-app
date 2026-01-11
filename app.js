@@ -35,7 +35,7 @@ fetch("meta.json?v=" + Date.now())
   });
 
 /* ==========================
-   PRÉVISIONS TEMPO
+   PRÉVISIONS TEMPO + ML
 ========================== */
 fetch("tempo.json?v=" + Date.now())
   .then(r => r.json())
@@ -52,10 +52,12 @@ fetch("tempo.json?v=" + Date.now())
           );
 
       const icons = [];
+      if (day.sources?.reel) icons.push("✔️");
       if (day.sources?.meteo) icons.push("☁️");
       if (day.sources?.rte) icons.push("⚡");
       if (day.sources?.historique) icons.push("📊");
-      if (day.sources?.reel) icons.push("✔️");
+
+      const ml = day.ml || null;
 
       const card = document.createElement("div");
       card.className = "day " + day.couleur;
@@ -77,8 +79,17 @@ fetch("tempo.json?v=" + Date.now())
           <div class="confidence-bar">
             <div class="confidence-fill" style="width:${confidence}%"></div>
           </div>
-          <div class="confidence-label">Confiance : ${confidence}%</div>
+          <div class="confidence-label">Confiance moteur : ${confidence}%</div>
         </div>
+
+        ${ml ? `
+          <div class="ml-box">
+            🤖 <b>ML :</b> ${ml.color.toUpperCase()} (${ml.confidence}%)
+            <div class="ml-bar">
+              <div class="ml-fill" style="width:${ml.confidence}%"></div>
+            </div>
+          </div>
+        ` : ""}
       `;
 
       tempoDiv.appendChild(card);
