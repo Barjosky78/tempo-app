@@ -13,188 +13,189 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # ======================
+      # CHECKOUT
+      # ======================
       - name: Checkout repository
         uses: actions/checkout@v3
 
       # ======================
-      # MÉTÉO
+      # MÉTÉO (SÉCURISÉE)
       # ======================
       - name: Fetch Weather
         run: |
-          curl -s "https://api.open-meteo.com/v1/forecast?latitude=48.85&longitude=2.35&daily=temperature_2m_mean&forecast_days=10&timezone=Europe%2FParis" > weather.json
+          echo "🌡️ Fetch weather"
+          curl -s "https://api.open-meteo.com/v1/forecast?latitude=48.85&longitude=2.35&daily=temperature_2m_mean&forecast_days=10&timezone=Europe%2FParis" \
+          | jq . > weather.json || echo '{}' > weather.json
 
       # ======================
-      # RTE
+      # RTE (SÉCURISÉ)
       # ======================
       - name: Fetch RTE consumption
         run: |
-          curl -s "https://odre.opendatasoft.com/api/records/1.0/search/?dataset=eco2mix-national-cons-def&rows=1&sort=-date_heure" > rte.json || echo "{}" > rte.json
+          echo "🔌 Fetch RTE"
+          curl -s "https://odre.opendatasoft.com/api/records/1.0/search/?dataset=eco2mix-national-cons-def&rows=1&sort=-date_heure" \
+          | jq . > rte.json || echo '{}' > rte.json
 
       # ======================
-      # BUILD TEMPO + HISTORIQUES
+      # BUILD TEMPO.JSON
       # ======================
-      - name: Build tempo + history
+      - name: Build tempo data
         run: |
           node <<'EOF'
           const fs = require("fs");
 
-          function fmt(d){ return d.toISOString().split("T")[0]; }
-          const today = new Date(); today.setHours(0,0,0,0);
-          const todayStr = fmt(today);
+          function fmt(d) {
+            return d.toISOString().split("T")[0];
+          }
 
-          // ----------------------
-          // LOAD WEATHER
-          // ----------------------
-          let temps=[];
-          try{
-            temps = JSON.parse(fs.readFileSync("weather.json","utf8"))
-              .daily?.temperature_2m_mean || [];
-          }catch{}
+          // ======================
+          // SAFE LOAD WEATHER
+          // ======================
+          let temps = [];
+          try {
+            const w = JSON.parse(fs.readFileSync("weather.json", "utf8") || "{}");
+            temps = w.daily?.temperature_2m_mean || [];
+          } catch {
+            temps = [];
+          }
 
-          // ----------------------
-          // LOAD RTE
-          // ----------------------
-          let consommation=null, tension=60;
-          try{
-            const rte = JSON.parse(fs.readFileSync("rte.json","utf8"));
+          // ======================
+          // SAFE LOAD RTE
+          // ======================
+          let consommation = null;
+          let tension = 60;
+
+          try {
+            const rte = JSON.parse(fs.readFileSync("rte.json", "utf8") || "{}");
             consommation = rte.records?.[0]?.fields?.consommation ?? null;
-            if(consommation){
-              if(consommation<45000) tension=50;
-              else if(consommation<55000) tension=60;
-              else if(consommation<65000) tension=70;
-              else tension=80;
+
+            if (consommation !== null) {
+              if (consommation < 45000) tension = 50;
+              else if (consommation < 55000) tension = 60;
+              else if (consommation < 65000) tension = 70;
+              else tension = 80;
             }
-          }catch{}
+          } catch {}
 
           // ======================
-          // 🔁 WEATHER HISTORY
+          // HISTORIQUES
           // ======================
-          const WEATHER_HIST="weather_history.json";
-          let weatherHist=[];
-          if(fs.existsSync(WEATHER_HIST)){
-            weatherHist = JSON.parse(fs.readFileSync(WEATHER_HIST,"utf8"));
-          }
-          if(!weatherHist.find(e=>e.date===todayStr)){
-            weatherHist.push({
-              date: todayStr,
-              temperature: temps[0] ?? null
-            });
-          }
-
-          // ======================
-          // 🔁 RTE HISTORY
-          // ======================
-          const RTE_HIST="rte_history.json";
-          let rteHist=[];
-          if(fs.existsSync(RTE_HIST)){
-            rteHist = JSON.parse(fs.readFileSync(RTE_HIST,"utf8"));
-          }
-          if(!rteHist.find(e=>e.date===todayStr)){
-            rteHist.push({
-              date: todayStr,
-              consommation,
-              tension
-            });
-          }
-
-          // ======================
-          // TEMPO CALCUL
-          // ======================
-          const HISTO_MONTH={
-            11:{rouge:8,blanc:22,bleu:70},
-            12:{rouge:14,blanc:30,bleu:56},
-            1:{rouge:20,blanc:34,bleu:46},
-            2:{rouge:17,blanc:33,bleu:50},
-            3:{rouge:4,blanc:22,bleu:74}
+          const HISTO_MONTH = {
+            11:{rouge:8,  blanc:22, bleu:70},
+            12:{rouge:14, blanc:30, bleu:56},
+            1:{rouge:20, blanc:34, bleu:46},
+            2:{rouge:17, blanc:33, bleu:50},
+            3:{rouge:4,  blanc:22, bleu:74}
           };
 
-          const HISTO_WEEKDAY={
-            1:{rouge:-3,blanc:+6,bleu:-3},
-            2:{rouge:+4,blanc:+1,bleu:-5},
-            3:{rouge:+5,blanc:0,bleu:-5},
-            4:{rouge:+2,blanc:+3,bleu:-5},
-            5:{rouge:-4,blanc:+2,bleu:+2}
+          const HISTO_WEEKDAY = {
+            1:{ rouge:-3, blanc:+6, bleu:-3 },
+            2:{ rouge:+4, blanc:+1, bleu:-5 },
+            3:{ rouge:+5, blanc:0,  bleu:-5 },
+            4:{ rouge:+2, blanc:+3, bleu:-5 },
+            5:{ rouge:-4, blanc:+2, bleu:+2 }
           };
 
-          const coldSpans=[];
-          let span=0;
-          for(let i=0;i<temps.length;i++){
-            if(temps[i]<3) span++; else span=0;
-            coldSpans[i]=span;
+          // ======================
+          // FROID CONSÉCUTIF
+          // ======================
+          const coldSpans = [];
+          let span = 0;
+          for (let i = 0; i < temps.length; i++) {
+            if (temps[i] < 3) span++;
+            else span = 0;
+            coldSpans[i] = span;
           }
 
-          const days=[];
+          const today = new Date();
+          today.setHours(0,0,0,0);
+          const days = [];
 
+          // ======================
+          // AUJOURD'HUI (RÉEL)
+          // ======================
           days.push({
-            date:todayStr,
-            couleur:"bleu",
-            probabilites:{rouge:0,blanc:0,bleu:100},
-            fixed:true,
-            sources:{reel:true}
+            date: fmt(today),
+            couleur: "bleu",
+            probabilites: { rouge:0, blanc:0, bleu:100 },
+            fixed: true,
+            sources: { reel:true }
           });
 
-          for(let i=1;i<=9;i++){
-            const d=new Date(today); d.setDate(today.getDate()+i);
-            const dow=d.getDay(), month=d.getMonth()+1;
-            const temp=temps[i]??8, spanDays=coldSpans[i]||0;
+          // ======================
+          // J+1 → J+9
+          // ======================
+          for (let i = 1; i <= 9; i++) {
+            const d = new Date(today);
+            d.setDate(today.getDate() + i);
 
-            let base=HISTO_MONTH[month]||{rouge:10,blanc:25,bleu:65};
-            let rouge=base.rouge, blanc=base.blanc, bleu=base.bleu;
+            const dow = d.getDay();
+            const month = d.getMonth() + 1;
+            const temp = temps[i] ?? 8;
+            const spanDays = coldSpans[i] || 0;
 
-            if(HISTO_WEEKDAY[dow]){
-              rouge+=HISTO_WEEKDAY[dow].rouge;
-              blanc+=HISTO_WEEKDAY[dow].blanc;
-              bleu+=HISTO_WEEKDAY[dow].bleu;
+            let base = HISTO_MONTH[month] || { rouge:10, blanc:25, bleu:65 };
+            let rouge = base.rouge;
+            let blanc = base.blanc;
+            let bleu  = base.bleu;
+
+            if (HISTO_WEEKDAY[dow]) {
+              rouge += HISTO_WEEKDAY[dow].rouge;
+              blanc += HISTO_WEEKDAY[dow].blanc;
+              bleu  += HISTO_WEEKDAY[dow].bleu;
             }
 
-            if(temp<0){ rouge+=10; bleu-=5; }
-            else if(temp<3){ blanc+=10; bleu-=5; }
+            if (temp < 0) { rouge += 10; bleu -= 5; }
+            else if (temp < 3) { blanc += 10; bleu -= 5; }
 
-            if(spanDays>=4 && temp<0){ rouge+=10; blanc+=5; bleu-=15; }
-            else if(spanDays>=3 && temp<3){ blanc+=10; bleu-=10; }
-
-            if(i>=3 && consommation!==null){
-              const boost=7;
-              if(tension<55){ bleu+=boost; blanc-=3; rouge-=3; }
-              else if(tension<=70){ blanc+=boost; bleu-=3; rouge-=3; }
-              else{ rouge+=boost; blanc+=3; bleu-=6; }
+            if (spanDays >= 4 && temp < 0) {
+              rouge += 10; blanc += 5; bleu -= 15;
+            } else if (spanDays >= 3 && temp < 3) {
+              blanc += 10; bleu -= 10;
             }
 
-            if(dow===0){ rouge=0; blanc=0; bleu=100; }
-            if(dow===6){ blanc+=rouge; rouge=0; }
+            if (i >= 3 && consommation !== null) {
+              const boost = 7;
+              if (tension < 55) { bleu += boost; blanc -= 3; rouge -= 3; }
+              else if (tension <= 70) { blanc += boost; bleu -= 3; rouge -= 3; }
+              else { rouge += boost; blanc += 3; bleu -= 6; }
+            }
 
-            const total=rouge+blanc+bleu;
-            rouge=Math.max(0,Math.round(rouge/total*100));
-            blanc=Math.max(0,Math.round(blanc/total*100));
-            bleu=100-rouge-blanc;
+            if (dow === 0) { rouge=0; blanc=0; bleu=100; }
+            if (dow === 6) { blanc += rouge; rouge = 0; }
 
-            let couleur="bleu";
-            if(rouge>blanc && rouge>bleu) couleur="rouge";
-            else if(blanc>=bleu) couleur="blanc";
+            const total = rouge + blanc + bleu;
+            rouge = Math.max(0, Math.round(rouge / total * 100));
+            blanc = Math.max(0, Math.round(blanc / total * 100));
+            bleu  = 100 - rouge - blanc;
+
+            let couleur = "bleu";
+            if (rouge > blanc && rouge > bleu) couleur = "rouge";
+            else if (blanc >= bleu) couleur = "blanc";
 
             days.push({
-              date:fmt(d),
+              date: fmt(d),
               couleur,
-              probabilites:{rouge,blanc,bleu},
-              fixed:false,
-              estimated:i===1,
-              sources:{
-                meteo:true,
-                historique:true,
-                rte:(i>=3 && consommation!==null)
+              probabilites: { rouge, blanc, bleu },
+              fixed: false,
+              estimated: i === 1,
+              sources: {
+                meteo: true,
+                historique: true,
+                rte: (i >= 3 && consommation !== null)
               }
             });
           }
 
-          fs.writeFileSync("tempo.json",JSON.stringify(days,null,2));
-          fs.writeFileSync("meta.json",JSON.stringify({
-            updatedAt:new Date().toISOString(),
-            rteConsommation:consommation,
-            rteTension:tension
-          },null,2));
+          fs.writeFileSync("tempo.json", JSON.stringify(days, null, 2));
+          fs.writeFileSync("meta.json", JSON.stringify({
+            updatedAt: new Date().toISOString(),
+            rteConsommation: consommation,
+            rteTension: tension
+          }, null, 2));
 
-          fs.writeFileSync("weather_history.json",JSON.stringify(weatherHist,null,2));
-          fs.writeFileSync("rte_history.json",JSON.stringify(rteHist,null,2));
+          console.log("✅ tempo.json & meta.json generated");
           EOF
 
       # ======================
@@ -204,6 +205,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add tempo.json meta.json weather_history.json rte_history.json
-          git commit -m "Persist weather & RTE history for ML" || echo "No changes"
+          git add tempo.json meta.json
+          git commit -m "Update tempo (weather + RTE secured)" || echo "No changes"
           git push
