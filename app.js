@@ -1,4 +1,10 @@
-const tempoDiv = document.getElementById("tempo");
+/* =========================================================
+   TEMPO EDF – APPLICATION PRINCIPALE
+   Version stable – Historique visible dès J-1
+========================================================= */
+
+const tempoDiv   = document.getElementById("tempo");
+const statsDiv   = document.getElementById("stats");
 const historyDiv = document.getElementById("history");
 const updatedDiv = document.getElementById("updated");
 
@@ -6,119 +12,167 @@ const updatedDiv = document.getElementById("updated");
    OUTILS
 ========================== */
 
+// Nom du jour en français
 function dayLabel(dateStr, index) {
   const d = new Date(dateStr);
-  const jours = ["dimanche","lundi","mardi","mercredi","jeudi","vendredi","samedi"];
+  const jours = [
+    "dimanche","lundi","mardi",
+    "mercredi","jeudi","vendredi","samedi"
+  ];
+
   if (index === 0) return "Aujourd’hui";
   if (index === 1) return "Demain";
-  return jours[d.getDay()].charAt(0).toUpperCase() + jours[d.getDay()].slice(1);
+
+  const name = jours[d.getDay()];
+  return name.charAt(0).toUpperCase() + name.slice(1);
 }
 
-function verdictLabel(h) {
-  if (!h.realColor) return "⏳ En attente de validation EDF";
-  if (h.result === "correct") return "✅ Bonne prédiction";
-  if (h.result === "partial") return "⚠️ Acceptable";
-  if (h.result === "wrong") return "❌ Mauvaise";
-  return "";
-}
-
-function getProbabilites(h) {
-  // compatibilité anciens / nouveaux formats
-  return h.probabilites || h.probabilities || { rouge:0, blanc:0, bleu:0 };
-}
-
-function confidenceValue(p) {
-  return Math.max(p.rouge || 0, p.blanc || 0, p.bleu || 0);
+// Verdict lisible
+function verdictLabel(result) {
+  if (result === "correct") return "✅ Bonne prédiction";
+  if (result === "partial") return "⚠️ Zone correcte";
+  if (result === "wrong")   return "❌ Mauvaise prédiction";
+  return "⏳ En attente de validation EDF";
 }
 
 /* ==========================
-   HEURE DE MISE À JOUR
+   ⏱️ HEURE DE MISE À JOUR
 ========================== */
-fetch("meta.json?v=" + Date.now())
-  .then(res => res.json())
-  .then(meta => {
-    const d = new Date(meta.updatedAt);
-    updatedDiv.textContent =
-      "Dernière mise à jour : " + d.toLocaleString("fr-FR");
-  });
+if (updatedDiv) {
+  fetch("meta.json?v=" + Date.now())
+    .then(res => res.json())
+    .then(meta => {
+      const d = new Date(meta.updatedAt);
+      updatedDiv.textContent =
+        "Dernière mise à jour : " + d.toLocaleString("fr-FR");
+    })
+    .catch(() => {
+      updatedDiv.textContent = "Dernière mise à jour inconnue";
+    });
+}
 
 /* ==========================
    PRÉVISIONS TEMPO
 ========================== */
-fetch("tempo.json?v=" + Date.now())
-  .then(res => res.json())
-  .then(days => {
-    tempoDiv.innerHTML = "";
+if (tempoDiv) {
+  fetch("tempo.json?v=" + Date.now())
+    .then(res => res.json())
+    .then(days => {
+      tempoDiv.innerHTML = "";
 
-    days.forEach((day, index) => {
-      const conf = confidenceValue(day.probabilites);
+      days.forEach((day, index) => {
+        const card = document.createElement("div");
+        card.className = "day " + day.couleur;
 
-      const card = document.createElement("div");
-      card.className = "day " + day.couleur;
+        const confidence = Math.max(
+          day.probabilites.rouge,
+          day.probabilites.blanc,
+          day.probabilites.bleu
+        );
 
-      card.innerHTML = `
-        <strong>${dayLabel(day.date, index)}</strong><br>
-        <span class="date">${day.date}</span><br><br>
+        card.innerHTML = `
+          <strong>${dayLabel(day.date, index)}</strong><br>
+          <span class="date">${day.date}</span><br><br>
 
-        <b>${day.couleur.toUpperCase()}</b>
-        ${day.estimated ? "<div class='tag'>Estimation météo</div>" : ""}
-        <br><br>
+          <b>${day.couleur.toUpperCase()}</b>
+          ${day.estimated ? "<div class='tag'>Estimation météo</div>" : ""}
+          <br><br>
 
-        🔴 ${day.probabilites.rouge}%<br>
-        ⚪ ${day.probabilites.blanc}%<br>
-        🔵 ${day.probabilites.bleu}%<br><br>
+          🔴 ${day.probabilites.rouge}%<br>
+          ⚪ ${day.probabilites.blanc}%<br>
+          🔵 ${day.probabilites.bleu}%<br><br>
 
-        <div class="confidence">
-          <div class="confidence-bar" style="width:${conf}%"></div>
-        </div>
-        <div class="confidence-label">Confiance : ${conf}%</div>
-      `;
+          <div class="confidence-bar">
+            <div class="confidence-fill" style="width:${confidence}%"></div>
+          </div>
+          <div class="confidence-label">Confiance : ${confidence}%</div>
+        `;
 
-      tempoDiv.appendChild(card);
+        tempoDiv.appendChild(card);
+      });
+    })
+    .catch(() => {
+      tempoDiv.innerHTML =
+        "<p>Erreur de chargement des prévisions</p>";
     });
-  });
+}
 
 /* ==========================
-   HISTORIQUE (À PARTIR D’HIER)
+   FIABILITÉ / STATS
 ========================== */
-fetch("history.json?v=" + Date.now())
-  .then(res => res.json())
-  .then(history => {
-    const today = new Date();
-    today.setHours(0,0,0,0);
+if (statsDiv) {
+  fetch("stats.json?v=" + Date.now())
+    .then(res => res.json())
+    .then(stats => {
+      const total = stats.total || 0;
 
-    const past = history.filter(h => {
-      const d = new Date(h.date);
-      d.setHours(0,0,0,0);
-      return d < today;
+      statsDiv.innerHTML = `
+        <p><b>État du modèle :</b></p>
+        <ul>
+          <li>${total} jour${total > 1 ? "s" : ""} analysé${total > 1 ? "s" : ""}</li>
+          <li>Le modèle apprend progressivement</li>
+        </ul>
+
+        <p><b>Résultats :</b></p>
+        <ul>
+          <li>✅ Bonnes prédictions : ${stats.correct}</li>
+          <li>⚠️ Zones correctes : ${stats.partial}</li>
+          <li>❌ Mauvaises : ${stats.wrong}</li>
+        </ul>
+
+        <details>
+          <summary>Détails techniques</summary>
+          <p>Exactitude stricte : ${stats.accuracy}%</p>
+          <p>Exactitude élargie : ${stats.accuracyWithPartial}%</p>
+        </details>
+      `;
+    })
+    .catch(() => {
+      statsDiv.innerHTML =
+        "<p>Aucune donnée de fiabilité disponible</p>";
     });
+}
 
-    if (past.length === 0) {
-      historyDiv.innerHTML =
-        "<p>Aucune prédiction passée disponible pour le moment.</p>";
-      return;
-    }
+/* ==========================
+   HISTORIQUE DES PRÉDICTIONS
+   ➜ Visible à partir d’HIER
+========================== */
+if (historyDiv) {
+  fetch("history.json?v=" + Date.now())
+    .then(res => res.json())
+    .then(history => {
 
-    historyDiv.innerHTML = past
-      .slice(-10)
-      .reverse()
-      .map(h => {
-        const p = getProbabilites(h);
-        return `
+      const today = new Date();
+      today.setHours(0,0,0,0);
+
+      // 👉 Afficher tout ce qui est passé (hier inclus)
+      const visible = history.filter(h => {
+        const d = new Date(h.date);
+        d.setHours(0,0,0,0);
+        return d < today;
+      });
+
+      if (visible.length === 0) {
+        historyDiv.innerHTML =
+          "<p>Aucune prédiction passée à afficher</p>";
+        return;
+      }
+
+      historyDiv.innerHTML = visible
+        .slice(-15)
+        .reverse()
+        .map(h => `
           <div class="history-card">
             <b>${h.date}</b><br>
-            Prédiction faite J-${h.horizon ?? "?"} :
-            <b>${h.predictedColor ?? "?"}</b><br>
-
-            🔴 ${p.rouge}% ⚪ ${p.blanc}% 🔵 ${p.bleu}%<br>
-
-            ${verdictLabel(h)}
+            Prédiction faite J-${h.horizon} : <b>${h.predictedColor}</b><br>
+            ${h.realColor ? `Résultat réel : <b>${h.realColor}</b><br>` : ""}
+            ${verdictLabel(h.result)}
           </div>
-        `;
-      })
-      .join("");
-  })
-  .catch(() => {
-    historyDiv.innerHTML =
-      "<p>Impossible de charger l’historique</p>";
-  });
+        `)
+        .join("");
+    })
+    .catch(() => {
+      historyDiv.innerHTML =
+        "<p>Impossible de charger l’historique</p>";
+    });
+}
