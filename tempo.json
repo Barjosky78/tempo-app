@@ -7,7 +7,10 @@
       "blanc": 0,
       "bleu": 100
     },
-    "fixed": true
+    "fixed": true,
+    "sources": {
+      "reel": true
+    }
   },
   {
     "date": "2026-01-12",
@@ -18,7 +21,12 @@
       "bleu": 43
     },
     "fixed": false,
-    "estimated": true
+    "estimated": true,
+    "sources": {
+      "meteo": true,
+      "historique": true,
+      "rte": false
+    }
   },
   {
     "date": "2026-01-13",
@@ -29,7 +37,12 @@
       "bleu": 41
     },
     "fixed": false,
-    "estimated": false
+    "estimated": false,
+    "sources": {
+      "meteo": true,
+      "historique": true,
+      "rte": false
+    }
   },
   {
     "date": "2026-01-14",
@@ -40,7 +53,12 @@
       "bleu": 37
     },
     "fixed": false,
-    "estimated": false
+    "estimated": false,
+    "sources": {
+      "meteo": true,
+      "historique": true,
+      "rte": true
+    }
   },
   {
     "date": "2026-01-15",
@@ -51,7 +69,12 @@
       "bleu": 37
     },
     "fixed": false,
-    "estimated": false
+    "estimated": false,
+    "sources": {
+      "meteo": true,
+      "historique": true,
+      "rte": true
+    }
   },
   {
     "date": "2026-01-16",
@@ -62,7 +85,12 @@
       "bleu": 44
     },
     "fixed": false,
-    "estimated": false
+    "estimated": false,
+    "sources": {
+      "meteo": true,
+      "historique": true,
+      "rte": true
+    }
   },
   {
     "date": "2026-01-17",
@@ -73,7 +101,12 @@
       "bleu": 43
     },
     "fixed": false,
-    "estimated": false
+    "estimated": false,
+    "sources": {
+      "meteo": true,
+      "historique": true,
+      "rte": true
+    }
   },
   {
     "date": "2026-01-18",
@@ -84,7 +117,12 @@
       "bleu": 100
     },
     "fixed": false,
-    "estimated": false
+    "estimated": false,
+    "sources": {
+      "meteo": true,
+      "historique": true,
+      "rte": true
+    }
   },
   {
     "date": "2026-01-19",
@@ -95,7 +133,12 @@
       "bleu": 39
     },
     "fixed": false,
-    "estimated": false
+    "estimated": false,
+    "sources": {
+      "meteo": true,
+      "historique": true,
+      "rte": true
+    }
   },
   {
     "date": "2026-01-20",
@@ -106,6 +149,11 @@
       "bleu": 37
     },
     "fixed": false,
-    "estimated": false
+    "estimated": false,
+    "sources": {
+      "meteo": true,
+      "historique": true,
+      "rte": true
+    }
   }
 ]
