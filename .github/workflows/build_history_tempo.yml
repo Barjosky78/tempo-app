@@ -1,0 +1,36 @@
+name: Build historical Tempo EDF (API)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Build history from Tempo API
+        run: |
+          python ML/build_history_from_tempo_api.py
+
+      - name: Commit generated history
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add history_real_tempo.json
+          git commit -m "Add historical Tempo EDF data (API)" || echo "No changes"
+          git push
