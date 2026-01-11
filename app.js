@@ -14,16 +14,21 @@ function dayLabel(dateStr, index) {
   return jours[d.getDay()].charAt(0).toUpperCase() + jours[d.getDay()].slice(1);
 }
 
-function confidenceValue(p) {
-  return Math.max(p.rouge, p.blanc, p.bleu);
-}
-
 function verdictLabel(h) {
   if (!h.realColor) return "⏳ En attente de validation EDF";
   if (h.result === "correct") return "✅ Bonne prédiction";
   if (h.result === "partial") return "⚠️ Acceptable";
   if (h.result === "wrong") return "❌ Mauvaise";
   return "";
+}
+
+function getProbabilites(h) {
+  // compatibilité anciens / nouveaux formats
+  return h.probabilites || h.probabilities || { rouge:0, blanc:0, bleu:0 };
+}
+
+function confidenceValue(p) {
+  return Math.max(p.rouge || 0, p.blanc || 0, p.bleu || 0);
 }
 
 /* ==========================
@@ -97,16 +102,20 @@ fetch("history.json?v=" + Date.now())
     historyDiv.innerHTML = past
       .slice(-10)
       .reverse()
-      .map(h => `
-        <div class="history-card">
-          <b>${h.date}</b><br>
-          Prédiction faite J-${h.horizon} : <b>${h.predictedColor}</b><br>
-          ${h.realColor
-            ? `Résultat réel : <b>${h.realColor}</b><br>`
-            : ""}
-          ${verdictLabel(h)}
-        </div>
-      `)
+      .map(h => {
+        const p = getProbabilites(h);
+        return `
+          <div class="history-card">
+            <b>${h.date}</b><br>
+            Prédiction faite J-${h.horizon ?? "?"} :
+            <b>${h.predictedColor ?? "?"}</b><br>
+
+            🔴 ${p.rouge}% ⚪ ${p.blanc}% 🔵 ${p.bleu}%<br>
+
+            ${verdictLabel(h)}
+          </div>
+        `;
+      })
       .join("");
   })
   .catch(() => {
