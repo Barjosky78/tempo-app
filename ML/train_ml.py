@@ -1,48 +1,49 @@
 import json
-import pandas as pd
-from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import LabelEncoder
-import joblib
+import pickle
+import os
+from sklearn.tree import DecisionTreeClassifier
 
-# ===== Charger l'historique =====
-with open("../history.json", "r") as f:
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+HISTORY_PATH = os.path.join(BASE_DIR, "history.json")
+MODEL_PATH = os.path.join(BASE_DIR, "ML", "model.pkl")
+
+print("📂 Base dir:", BASE_DIR)
+
+# Vérifier history.json
+if not os.path.exists(HISTORY_PATH):
+    print("❌ history.json introuvable")
+    exit(0)
+
+with open(HISTORY_PATH, "r") as f:
     history = json.load(f)
 
-# Garder uniquement les jours validés EDF
-data = [h for h in history if h.get("realColor")]
+X = []
+y = []
 
-if len(data) < 20:
-    print("Pas assez de données pour entraîner le ML")
-    exit()
+for h in history:
+    if h.get("realColor") is None:
+        continue
 
-df = pd.DataFrame(data)
+    probs = h.get("probabilites") or h.get("probabilities")
+    if not probs:
+        continue
 
-# ===== Features =====
-X = pd.DataFrame({
-    "temp": df["temp"],
-    "coldDays": df["coldDays"],
-    "rte": df["rte"],
-    "weekday": df["weekday"],
-    "month": df["month"],
-    "horizon": df["horizon"]
-})
+    X.append([
+        h.get("horizon", 0),
+        probs.get("rouge", 0),
+        probs.get("blanc", 0),
+        probs.get("bleu", 0)
+    ])
+    y.append(h["realColor"])
 
-# ===== Label =====
-le = LabelEncoder()
-y = le.fit_transform(df["realColor"])
+if len(X) < 5:
+    print("⚠️ Pas assez de données pour entraîner le modèle")
+    exit(0)
 
-# ===== Modèle =====
-model = LogisticRegression(
-    multi_class="multinomial",
-    max_iter=500
-)
-
+model = DecisionTreeClassifier(max_depth=4)
 model.fit(X, y)
 
-# ===== Sauvegarde =====
-joblib.dump({
-    "model": model,
-    "label_encoder": le
-}, "ml_model.pkl")
+with open(MODEL_PATH, "wb") as f:
+    pickle.dump(model, f)
 
-print("✅ Modèle ML entraîné avec", len(df), "jours")
+print("✅ Modèle ML entraîné et sauvegardé")
