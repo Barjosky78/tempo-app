@@ -1,8 +1,8 @@
-name: Update Tempo + History + Stats (Weather + RTE leverage 7%)
+name: Update Tempo + History + Stats + ML (Weather + RTE leverage 7%)
 
 on:
   schedule:
-    - cron: '0 9 * * *'
+    - cron: '0 9 * * *'   # 10h France (hiver)
   workflow_dispatch:
 
 permissions:
@@ -18,6 +18,18 @@ jobs:
       # ======================
       - name: Checkout repository
         uses: actions/checkout@v3
+
+      # ======================
+      # SETUP PYTHON (ML)
+      # ======================
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Python dependencies
+        run: |
+          pip install scikit-learn
 
       # ======================
       # MÉTÉO (SÉCURISÉE)
@@ -180,6 +192,9 @@ jobs:
               probabilites: { rouge, blanc, bleu },
               fixed: false,
               estimated: i === 1,
+              temperature: temp,
+              rteConsommation: consommation,
+              rteTension: tension,
               sources: {
                 meteo: true,
                 historique: true,
@@ -199,12 +214,26 @@ jobs:
           EOF
 
       # ======================
+      # ML — TRAIN
+      # ======================
+      - name: Train ML model
+        run: |
+          python ML/train_ml.py
+
+      # ======================
+      # ML — PREDICT (SHADOW MODE)
+      # ======================
+      - name: ML prediction
+        run: |
+          python ML/predict_ml.py
+
+      # ======================
       # COMMIT
       # ======================
       - name: Commit & push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add tempo.json meta.json
-          git commit -m "Update tempo (weather + RTE secured)" || echo "No changes"
+          git add tempo.json meta.json ML/model.pkl
+          git commit -m "Update tempo + ML (weather + RTE + predictions)" || echo "No changes"
           git push
