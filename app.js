@@ -1,5 +1,4 @@
 const tempoDiv = document.getElementById("tempo");
-const statsDiv = document.getElementById("stats");
 const historyDiv = document.getElementById("history");
 const updatedDiv = document.getElementById("updated");
 
@@ -35,6 +34,22 @@ fetch("meta.json?v=" + Date.now())
   });
 
 /* ==========================
+   CHARGEMENT ML (PAR DATE)
+========================== */
+let mlByDate = {};
+
+fetch("ML/ml_predictions.json?v=" + Date.now())
+  .then(r => r.json())
+  .then(data => {
+    data.forEach(p => {
+      mlByDate[p.date] = p;
+    });
+  })
+  .catch(() => {
+    mlByDate = {};
+  });
+
+/* ==========================
    PRÉVISIONS TEMPO + ML
 ========================== */
 fetch("tempo.json?v=" + Date.now())
@@ -57,7 +72,16 @@ fetch("tempo.json?v=" + Date.now())
       if (day.sources?.rte) icons.push("⚡");
       if (day.sources?.historique) icons.push("📊");
 
-      const ml = day.ml || null;
+      const ml = mlByDate[day.date] || null;
+
+      let mlConfidence = 0;
+      if (ml && ml.mlProbabilities) {
+        mlConfidence = Math.max(
+          ml.mlProbabilities.rouge || 0,
+          ml.mlProbabilities.blanc || 0,
+          ml.mlProbabilities.bleu || 0
+        );
+      }
 
       const card = document.createElement("div");
       card.className = "day " + day.couleur;
@@ -84,10 +108,15 @@ fetch("tempo.json?v=" + Date.now())
 
         ${ml ? `
           <div class="ml-box">
-            🤖 <b>ML :</b> ${ml.color.toUpperCase()} (${ml.confidence}%)
+            🧠 <b>ML :</b> ${ml.mlPrediction.toUpperCase()}<br>
+            🔴 ${ml.mlProbabilities.rouge ?? 0}% 
+            ⚪ ${ml.mlProbabilities.blanc ?? 0}% 
+            🔵 ${ml.mlProbabilities.bleu ?? 0}%
+
             <div class="ml-bar">
-              <div class="ml-fill" style="width:${ml.confidence}%"></div>
+              <div class="ml-fill" style="width:${mlConfidence}%"></div>
             </div>
+            <div class="confidence-label">Confiance ML : ${mlConfidence}%</div>
           </div>
         ` : ""}
       `;
