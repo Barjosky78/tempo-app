@@ -14,24 +14,15 @@ function dayLabel(dateStr, index) {
   return jours[d.getDay()].charAt(0).toUpperCase() + jours[d.getDay()].slice(1);
 }
 
-function sourceIcons(s) {
-  if (!s) return "";
-  let icons = "";
-  if (s.reel) icons += "⚡ ";
-  if (s.meteo) icons += "🌡️ ";
-  if (s.rte) icons += "🔌 ";
-  if (s.historique) icons += "📊 ";
-  return `<div class="sources">${icons}</div>`;
-}
-
 function confidenceValue(p) {
   return Math.max(p.rouge, p.blanc, p.bleu);
 }
 
-function verdictLabel(result) {
-  if (result === "correct") return "✅ Bonne prédiction";
-  if (result === "partial") return "⚠️ Acceptable";
-  if (result === "wrong") return "❌ Mauvaise";
+function verdictLabel(h) {
+  if (!h.realColor) return "⏳ En attente de validation EDF";
+  if (h.result === "correct") return "✅ Bonne prédiction";
+  if (h.result === "partial") return "⚠️ Acceptable";
+  if (h.result === "wrong") return "❌ Mauvaise";
   return "";
 }
 
@@ -76,8 +67,6 @@ fetch("tempo.json?v=" + Date.now())
           <div class="confidence-bar" style="width:${conf}%"></div>
         </div>
         <div class="confidence-label">Confiance : ${conf}%</div>
-
-        ${sourceIcons(day.sources)}
       `;
 
       tempoDiv.appendChild(card);
@@ -85,7 +74,7 @@ fetch("tempo.json?v=" + Date.now())
   });
 
 /* ==========================
-   HISTORIQUE (DEPUIS HIER)
+   HISTORIQUE (À PARTIR D’HIER)
 ========================== */
 fetch("history.json?v=" + Date.now())
   .then(res => res.json())
@@ -96,7 +85,7 @@ fetch("history.json?v=" + Date.now())
     const past = history.filter(h => {
       const d = new Date(h.date);
       d.setHours(0,0,0,0);
-      return d < today && h.realColor;
+      return d < today;
     });
 
     if (past.length === 0) {
@@ -112,9 +101,15 @@ fetch("history.json?v=" + Date.now())
         <div class="history-card">
           <b>${h.date}</b><br>
           Prédiction faite J-${h.horizon} : <b>${h.predictedColor}</b><br>
-          Résultat réel : <b>${h.realColor}</b><br>
-          ${verdictLabel(h.result)}
+          ${h.realColor
+            ? `Résultat réel : <b>${h.realColor}</b><br>`
+            : ""}
+          ${verdictLabel(h)}
         </div>
       `)
       .join("");
+  })
+  .catch(() => {
+    historyDiv.innerHTML =
+      "<p>Impossible de charger l’historique</p>";
   });
