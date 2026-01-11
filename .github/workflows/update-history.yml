@@ -1,0 +1,107 @@
+name: Update Tempo History (Auto Validation J-1)
+
+on:
+  schedule:
+    # Tous les jours à 10h30 heure française (après mise à jour EDF)
+    - cron: '30 9 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-history:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # ======================
+      # COULEUR RÉELLE EDF
+      # ======================
+      - name: Fetch EDF Tempo color
+        run: |
+          curl -s "https://www.hellowatt.fr/calendrier-tempo-edf-couleur-jour/" > edf.html
+
+      # ======================
+      # UPDATE HISTORY.JSON
+      # ======================
+      - name: Validate yesterday prediction
+        run: |
+          node <<'EOF'
+          const fs = require("fs");
+
+          function fmt(d){ return d.toISOString().split("T")[0]; }
+
+          const today = new Date();
+          today.setHours(0,0,0,0);
+
+          const yesterday = new Date(today);
+          yesterday.setDate(today.getDate() - 1);
+          const yStr = fmt(yesterday);
+
+          // -------- LOAD HISTORY --------
+          if (!fs.existsSync("history.json")) {
+            console.log("No history.json found");
+            process.exit(0);
+          }
+
+          const history = JSON.parse(fs.readFileSync("history.json","utf8"));
+
+          // -------- PARSE EDF --------
+          const html = fs.readFileSync("edf.html","utf8");
+          const match = html.match(/Jour\s+(Bleu|Blanc|Rouge)/i);
+
+          if (!match) {
+            console.log("EDF color not found");
+            process.exit(0);
+          }
+
+          const realColor = match[1].toLowerCase();
+
+          let updated = false;
+
+          history.forEach(entry => {
+            if (
+              entry.date === yStr &&
+              entry.realColor === null &&
+              entry.predictedColor
+            ) {
+              entry.realColor = realColor;
+
+              if (entry.predictedColor === realColor) {
+                entry.result = "correct";
+              } else {
+                const probs = Object.entries(entry.probabilites || {})
+                  .sort((a,b)=>b[1]-a[1])
+                  .slice(0,2)
+                  .map(e=>e[0]);
+
+                entry.result = probs.includes(realColor)
+                  ? "partial"
+                  : "wrong";
+              }
+
+              updated = true;
+            }
+          });
+
+          if (updated) {
+            fs.writeFileSync("history.json", JSON.stringify(history, null, 2));
+            console.log("History updated for", yStr);
+          } else {
+            console.log("No history entry to update for", yStr);
+          }
+          EOF
+
+      # ======================
+      # COMMIT
+      # ======================
+      - name: Commit & push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add history.json
+          git commit -m "Auto validate Tempo history for yesterday" || echo "No changes"
+          git push
