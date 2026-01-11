@@ -24,26 +24,36 @@ jobs:
           curl -s "https://api.open-meteo.com/v1/forecast?latitude=48.85&longitude=2.35&daily=temperature_2m_mean&forecast_days=10&timezone=Europe%2FParis" > weather.json
 
       # ======================
-      # RTE (sécurisé)
+      # RTE
       # ======================
       - name: Fetch RTE consumption
         run: |
           curl -s "https://odre.opendatasoft.com/api/records/1.0/search/?dataset=eco2mix-national-cons-def&rows=1&sort=-date_heure" > rte.json || echo "{}" > rte.json
 
       # ======================
-      # BUILD TEMPO.JSON
+      # BUILD TEMPO + HISTORIQUES
       # ======================
-      - name: Build tempo data
+      - name: Build tempo + history
         run: |
           node <<'EOF'
           const fs = require("fs");
-          function fmt(d){ return d.toISOString().split("T")[0]; }
 
+          function fmt(d){ return d.toISOString().split("T")[0]; }
+          const today = new Date(); today.setHours(0,0,0,0);
+          const todayStr = fmt(today);
+
+          // ----------------------
+          // LOAD WEATHER
+          // ----------------------
           let temps=[];
           try{
-            temps = JSON.parse(fs.readFileSync("weather.json","utf8")).daily?.temperature_2m_mean || [];
+            temps = JSON.parse(fs.readFileSync("weather.json","utf8"))
+              .daily?.temperature_2m_mean || [];
           }catch{}
 
+          // ----------------------
+          // LOAD RTE
+          // ----------------------
           let consommation=null, tension=60;
           try{
             const rte = JSON.parse(fs.readFileSync("rte.json","utf8"));
@@ -56,6 +66,40 @@ jobs:
             }
           }catch{}
 
+          // ======================
+          // 🔁 WEATHER HISTORY
+          // ======================
+          const WEATHER_HIST="weather_history.json";
+          let weatherHist=[];
+          if(fs.existsSync(WEATHER_HIST)){
+            weatherHist = JSON.parse(fs.readFileSync(WEATHER_HIST,"utf8"));
+          }
+          if(!weatherHist.find(e=>e.date===todayStr)){
+            weatherHist.push({
+              date: todayStr,
+              temperature: temps[0] ?? null
+            });
+          }
+
+          // ======================
+          // 🔁 RTE HISTORY
+          // ======================
+          const RTE_HIST="rte_history.json";
+          let rteHist=[];
+          if(fs.existsSync(RTE_HIST)){
+            rteHist = JSON.parse(fs.readFileSync(RTE_HIST,"utf8"));
+          }
+          if(!rteHist.find(e=>e.date===todayStr)){
+            rteHist.push({
+              date: todayStr,
+              consommation,
+              tension
+            });
+          }
+
+          // ======================
+          // TEMPO CALCUL
+          // ======================
           const HISTO_MONTH={
             11:{rouge:8,blanc:22,bleu:70},
             12:{rouge:14,blanc:30,bleu:56},
@@ -79,12 +123,10 @@ jobs:
             coldSpans[i]=span;
           }
 
-          const today=new Date(); today.setHours(0,0,0,0);
           const days=[];
 
-          // Aujourd’hui réel
           days.push({
-            date:fmt(today),
+            date:todayStr,
             couleur:"bleu",
             probabilites:{rouge:0,blanc:0,bleu:100},
             fixed:true,
@@ -150,12 +192,18 @@ jobs:
             rteConsommation:consommation,
             rteTension:tension
           },null,2));
+
+          fs.writeFileSync("weather_history.json",JSON.stringify(weatherHist,null,2));
+          fs.writeFileSync("rte_history.json",JSON.stringify(rteHist,null,2));
           EOF
 
+      # ======================
+      # COMMIT
+      # ======================
       - name: Commit & push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add tempo.json meta.json
-          git commit -m "Add icons metadata (meteo / rte / historique)" || echo "No changes"
+          git add tempo.json meta.json weather_history.json rte_history.json
+          git commit -m "Persist weather & RTE history for ML" || echo "No changes"
           git push
