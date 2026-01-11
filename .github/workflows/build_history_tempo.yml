@@ -1,4 +1,4 @@
-name: Build historical Tempo EDF (API)
+name: Build historical Tempo EDF + Weather
 
 on:
   workflow_dispatch:
@@ -11,9 +11,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # ======================
+      # CHECKOUT
+      # ======================
       - name: Checkout repo
         uses: actions/checkout@v3
 
+      # ======================
+      # PYTHON
+      # ======================
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
@@ -23,14 +29,27 @@ jobs:
         run: |
           pip install requests
 
+      # ======================
+      # TEMPO EDF — HISTORIQUE
+      # ======================
       - name: Build history from Tempo API
         run: |
           python ML/build_history_from_tempo_api.py
 
+      # ======================
+      # MÉTÉO — HISTORIQUE
+      # ======================
+      - name: Build weather history
+        run: |
+          python ML/build_weather_history.py
+
+      # ======================
+      # COMMIT
+      # ======================
       - name: Commit generated history
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add history_real_tempo.json
-          git commit -m "Add historical Tempo EDF data (API)" || echo "No changes"
+          git add history_real_tempo.json weather_history.json
+          git commit -m "Add historical Tempo EDF + weather data" || echo "No changes"
           git push
