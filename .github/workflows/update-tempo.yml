@@ -2,7 +2,6 @@ name: Update Tempo + History + Stats (Weather + RTE leverage 7%)
 
 on:
   schedule:
-    # 9h UTC = 10h heure française (hiver)
     - cron: '0 9 * * *'
   workflow_dispatch:
 
@@ -18,14 +17,14 @@ jobs:
         uses: actions/checkout@v3
 
       # ======================
-      # MÉTÉO (Open-Meteo)
+      # MÉTÉO
       # ======================
       - name: Fetch Weather
         run: |
           curl -s "https://api.open-meteo.com/v1/forecast?latitude=48.85&longitude=2.35&daily=temperature_2m_mean&forecast_days=10&timezone=Europe%2FParis" > weather.json
 
       # ======================
-      # CONSOMMATION RTE (sécurisée)
+      # RTE (sécurisé)
       # ======================
       - name: Fetch RTE consumption
         run: |
@@ -38,102 +37,67 @@ jobs:
         run: |
           node <<'EOF'
           const fs = require("fs");
-
           function fmt(d){ return d.toISOString().split("T")[0]; }
 
-          /* ======================
-             MÉTÉO
-          ====================== */
-          let temps = [];
-          try {
-            const weather = JSON.parse(fs.readFileSync("weather.json","utf8"));
-            temps = weather.daily?.temperature_2m_mean || [];
-          } catch {
-            temps = [];
-          }
+          let temps=[];
+          try{
+            temps = JSON.parse(fs.readFileSync("weather.json","utf8")).daily?.temperature_2m_mean || [];
+          }catch{}
 
-          /* ======================
-             RTE (ANTI-CRASH)
-          ====================== */
-          let consommation = null;
-          let tension = 60; // neutre
-
-          try {
-            const rteData = JSON.parse(fs.readFileSync("rte.json","utf8"));
-            const record = rteData.records?.[0]?.fields;
-            consommation = record?.consommation ?? null;
-
-            if (consommation !== null) {
-              if (consommation < 45000) tension = 50;
-              else if (consommation < 55000) tension = 60;
-              else if (consommation < 65000) tension = 70;
-              else tension = 80;
+          let consommation=null, tension=60;
+          try{
+            const rte = JSON.parse(fs.readFileSync("rte.json","utf8"));
+            consommation = rte.records?.[0]?.fields?.consommation ?? null;
+            if(consommation){
+              if(consommation<45000) tension=50;
+              else if(consommation<55000) tension=60;
+              else if(consommation<65000) tension=70;
+              else tension=80;
             }
-          } catch {
-            consommation = null;
-            tension = 60;
-          }
+          }catch{}
 
-          /* ======================
-             BASES HISTORIQUES
-          ====================== */
-          const HISTO_MONTH = {
-            11:{rouge:8,  blanc:22, bleu:70},
-            12:{rouge:14, blanc:30, bleu:56},
-            1:{rouge:20, blanc:34, bleu:46},
-            2:{rouge:17, blanc:33, bleu:50},
-            3:{rouge:4,  blanc:22, bleu:74}
+          const HISTO_MONTH={
+            11:{rouge:8,blanc:22,bleu:70},
+            12:{rouge:14,blanc:30,bleu:56},
+            1:{rouge:20,blanc:34,bleu:46},
+            2:{rouge:17,blanc:33,bleu:50},
+            3:{rouge:4,blanc:22,bleu:74}
           };
 
-          const HISTO_WEEKDAY = {
-            1:{ rouge:-3, blanc:+6, bleu:-3 },
-            2:{ rouge:+4, blanc:+1, bleu:-5 },
-            3:{ rouge:+5, blanc: 0, bleu:-5 },
-            4:{ rouge:+2, blanc:+3, bleu:-5 },
-            5:{ rouge:-4, blanc:+2, bleu:+2 }
+          const HISTO_WEEKDAY={
+            1:{rouge:-3,blanc:+6,bleu:-3},
+            2:{rouge:+4,blanc:+1,bleu:-5},
+            3:{rouge:+5,blanc:0,bleu:-5},
+            4:{rouge:+2,blanc:+3,bleu:-5},
+            5:{rouge:-4,blanc:+2,bleu:+2}
           };
 
-          /* ======================
-             FROID ÉTENDU
-          ====================== */
           const coldSpans=[];
           let span=0;
           for(let i=0;i<temps.length;i++){
-            if(temps[i] < 3) span++;
-            else span = 0;
-            coldSpans[i] = span;
+            if(temps[i]<3) span++; else span=0;
+            coldSpans[i]=span;
           }
 
-          const today = new Date();
-          today.setHours(0,0,0,0);
-
+          const today=new Date(); today.setHours(0,0,0,0);
           const days=[];
 
-          /* ======================
-             AUJOURD’HUI (RÉEL)
-          ====================== */
+          // Aujourd’hui réel
           days.push({
-            date: fmt(today),
-            couleur: "bleu",
+            date:fmt(today),
+            couleur:"bleu",
             probabilites:{rouge:0,blanc:0,bleu:100},
-            fixed:true
+            fixed:true,
+            sources:{reel:true}
           });
 
-          /* ======================
-             J+1 → J+9
-          ====================== */
           for(let i=1;i<=9;i++){
-            const d=new Date(today);
-            d.setDate(today.getDate()+i);
-            const dow=d.getDay();
-            const month=d.getMonth()+1;
-            const temp=temps[i] ?? 8;
-            const spanDays=coldSpans[i] || 0;
+            const d=new Date(today); d.setDate(today.getDate()+i);
+            const dow=d.getDay(), month=d.getMonth()+1;
+            const temp=temps[i]??8, spanDays=coldSpans[i]||0;
 
-            let base=HISTO_MONTH[month] || {rouge:10,blanc:25,bleu:65};
-            let rouge=base.rouge;
-            let blanc=base.blanc;
-            let bleu=base.bleu;
+            let base=HISTO_MONTH[month]||{rouge:10,blanc:25,bleu:65};
+            let rouge=base.rouge, blanc=base.blanc, bleu=base.bleu;
 
             if(HISTO_WEEKDAY[dow]){
               rouge+=HISTO_WEEKDAY[dow].rouge;
@@ -141,40 +105,27 @@ jobs:
               bleu+=HISTO_WEEKDAY[dow].bleu;
             }
 
-            // ❄️ MÉTÉO
-            if(temp < 0){ rouge+=10; bleu-=5; }
-            else if(temp < 3){ blanc+=10; bleu-=5; }
+            if(temp<0){ rouge+=10; bleu-=5; }
+            else if(temp<3){ blanc+=10; bleu-=5; }
 
             if(spanDays>=4 && temp<0){ rouge+=10; blanc+=5; bleu-=15; }
             else if(spanDays>=3 && temp<3){ blanc+=10; bleu-=10; }
 
-            // 🔌 RTE (MAX 7 %)
-            if(i>=3 && consommation !== null){
+            if(i>=3 && consommation!==null){
               const boost=7;
-              if(tension < 55){
-                bleu+=boost; blanc-=3; rouge-=3;
-              } else if(tension <= 70){
-                blanc+=boost; bleu-=3; rouge-=3;
-              } else {
-                rouge+=boost; blanc+=3; bleu-=6;
-              }
+              if(tension<55){ bleu+=boost; blanc-=3; rouge-=3; }
+              else if(tension<=70){ blanc+=boost; bleu-=3; rouge-=3; }
+              else{ rouge+=boost; blanc+=3; bleu-=6; }
             }
 
-            // 🔒 RÈGLES EDF
-            if(dow === 0){
-              rouge=0; blanc=0; bleu=100;
-            }
-            if(dow === 6){
-              blanc+=rouge; rouge=0;
-            }
+            if(dow===0){ rouge=0; blanc=0; bleu=100; }
+            if(dow===6){ blanc+=rouge; rouge=0; }
 
-            // NORMALISATION
-            let total=rouge+blanc+bleu;
+            const total=rouge+blanc+bleu;
             rouge=Math.max(0,Math.round(rouge/total*100));
             blanc=Math.max(0,Math.round(blanc/total*100));
             bleu=100-rouge-blanc;
 
-            // PRIORITÉ BLANC SI ÉGALITÉ
             let couleur="bleu";
             if(rouge>blanc && rouge>bleu) couleur="rouge";
             else if(blanc>=bleu) couleur="blanc";
@@ -184,7 +135,12 @@ jobs:
               couleur,
               probabilites:{rouge,blanc,bleu},
               fixed:false,
-              estimated:i===1
+              estimated:i===1,
+              sources:{
+                meteo:true,
+                historique:true,
+                rte:(i>=3 && consommation!==null)
+              }
             });
           }
 
@@ -196,13 +152,10 @@ jobs:
           },null,2));
           EOF
 
-      # ======================
-      # COMMIT
-      # ======================
       - name: Commit & push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tempo.json meta.json
-          git commit -m "Secure RTE + Weather model (no crash)" || echo "No changes"
+          git commit -m "Add icons metadata (meteo / rte / historique)" || echo "No changes"
           git push
