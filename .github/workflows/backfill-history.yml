@@ -1,0 +1,106 @@
+name: Backfill Tempo History (Last 7 days)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  backfill-history:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # ======================
+      # COULEURS EDF (Hello Watt)
+      # ======================
+      - name: Fetch EDF Tempo page
+        run: |
+          curl -s "https://www.hellowatt.fr/calendrier-tempo-edf-couleur-jour/" > edf.html
+
+      # ======================
+      # BACKFILL HISTORY
+      # ======================
+      - name: Backfill last 7 days
+        run: |
+          node <<'EOF'
+          const fs = require("fs");
+
+          function fmt(d) {
+            return d.toISOString().split("T")[0];
+          }
+
+          if (!fs.existsSync("history.json")) {
+            console.log("history.json not found");
+            process.exit(0);
+          }
+
+          const history = JSON.parse(fs.readFileSync("history.json", "utf8"));
+
+          const html = fs.readFileSync("edf.html", "utf8");
+          const match = html.match(/Jour\s+(Bleu|Blanc|Rouge)/i);
+
+          if (!match) {
+            console.log("EDF color not found on page");
+            process.exit(0);
+          }
+
+          const today = new Date();
+          today.setHours(0,0,0,0);
+
+          let updated = false;
+
+          for (let delta = 1; delta <= 7; delta++) {
+            const d = new Date(today);
+            d.setDate(today.getDate() - delta);
+            const dateStr = fmt(d);
+
+            history.forEach(entry => {
+              if (
+                entry.date === dateStr &&
+                entry.realColor === null &&
+                entry.predictedColor
+              ) {
+                const realColor = match[1].toLowerCase();
+                entry.realColor = realColor;
+
+                if (entry.predictedColor === realColor) {
+                  entry.result = "correct";
+                } else {
+                  const probs = Object.entries(entry.probabilites || {})
+                    .sort((a, b) => b[1] - a[1])
+                    .slice(0, 2)
+                    .map(e => e[0]);
+
+                  entry.result = probs.includes(realColor)
+                    ? "partial"
+                    : "wrong";
+                }
+
+                updated = true;
+                console.log(`Validated ${dateStr}`);
+              }
+            });
+          }
+
+          if (updated) {
+            fs.writeFileSync("history.json", JSON.stringify(history, null, 2));
+            console.log("History backfill completed");
+          } else {
+            console.log("No history entries to backfill");
+          }
+          EOF
+
+      # ======================
+      # COMMIT
+      # ======================
+      - name: Commit & push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add history.json
+          git commit -m "Backfill Tempo history (last 7 days)" || echo "No changes"
+          git push
