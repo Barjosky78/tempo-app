@@ -1,1 +1,9 @@
-
+{
+  "date": "2026-01-15",
+  "mlPrediction": "rouge",
+  "mlProbabilities": {
+    "bleu": 12,
+    "blanc": 28,
+    "rouge": 60
+  }
+}
