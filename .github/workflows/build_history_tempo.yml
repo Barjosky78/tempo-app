@@ -1,4 +1,4 @@
-name: Build historical Tempo EDF + Weather
+name: Build historical Tempo EDF + Weather + RTE
 
 on:
   workflow_dispatch:
@@ -44,12 +44,19 @@ jobs:
           python ML/build_weather_history.py
 
       # ======================
+      # RTE — HISTORIQUE (AJOUT)
+      # ======================
+      - name: Build RTE history
+        run: |
+          python ML/build_rte_history.py
+
+      # ======================
       # COMMIT
       # ======================
       - name: Commit generated history
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add history_real_tempo.json weather_history.json
-          git commit -m "Add historical Tempo EDF + weather data" || echo "No changes"
+          git add history_real_tempo.json weather_history.json rte_history.json
+          git commit -m "Add historical Tempo EDF + weather + RTE data" || echo "No changes"
           git push
