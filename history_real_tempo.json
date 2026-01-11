@@ -1,7 +1,7 @@
 [
   {
     "date": "2017-11-01",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
@@ -13,7 +13,7 @@
   },
   {
     "date": "2017-11-03",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
@@ -25,13 +25,13 @@
   },
   {
     "date": "2017-11-07",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2017-11-08",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
@@ -43,13 +43,13 @@
   },
   {
     "date": "2017-11-10",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2017-11-13",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
@@ -67,25 +67,25 @@
   },
   {
     "date": "2017-11-16",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2017-11-17",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2017-11-20",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2017-11-21",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
@@ -97,13 +97,13 @@
   },
   {
     "date": "2017-11-23",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2017-11-24",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
@@ -115,7 +115,7 @@
   },
   {
     "date": "2017-11-28",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
@@ -127,31 +127,31 @@
   },
   {
     "date": "2017-11-30",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2017-12-01",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2017-12-04",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2017-12-05",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2017-12-06",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
@@ -163,19 +163,19 @@
   },
   {
     "date": "2017-12-08",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2017-12-11",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2017-12-12",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
@@ -187,25 +187,25 @@
   },
   {
     "date": "2017-12-14",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2017-12-15",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2017-12-18",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2017-12-19",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
@@ -217,19 +217,19 @@
   },
   {
     "date": "2017-12-21",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2017-12-22",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2017-12-25",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
@@ -241,7 +241,7 @@
   },
   {
     "date": "2017-12-27",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
@@ -265,19 +265,19 @@
   },
   {
     "date": "2018-01-02",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-01-03",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-01-04",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
@@ -289,19 +289,19 @@
   },
   {
     "date": "2018-01-08",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-01-09",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-01-10",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
@@ -313,31 +313,31 @@
   },
   {
     "date": "2018-01-12",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-01-15",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-01-16",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-01-17",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-01-18",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
@@ -355,19 +355,19 @@
   },
   {
     "date": "2018-01-23",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-01-24",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-01-25",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
@@ -379,7 +379,7 @@
   },
   {
     "date": "2018-01-29",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
@@ -403,7 +403,7 @@
   },
   {
     "date": "2018-02-02",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
@@ -415,13 +415,13 @@
   },
   {
     "date": "2018-02-06",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-02-07",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
@@ -445,25 +445,25 @@
   },
   {
     "date": "2018-02-13",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-02-14",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-02-15",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-02-16",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
@@ -475,25 +475,25 @@
   },
   {
     "date": "2018-02-20",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-02-21",
-    "realColor": "bleu",
-    "source": "synthetic-edf",
-    "season": "2017-2018"
-  },
-  {
-    "date": "2018-02-22",
     "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
-    "date": "2018-02-23",
+    "date": "2018-02-22",
     "realColor": "rouge",
+    "source": "synthetic-edf",
+    "season": "2017-2018"
+  },
+  {
+    "date": "2018-02-23",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
@@ -505,79 +505,79 @@
   },
   {
     "date": "2018-02-27",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-02-28",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-03-01",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-03-02",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-03-05",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-03-06",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-03-07",
-    "realColor": "bleu",
-    "source": "synthetic-edf",
-    "season": "2017-2018"
-  },
-  {
-    "date": "2018-03-08",
     "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
-    "date": "2018-03-09",
+    "date": "2018-03-08",
     "realColor": "bleu",
+    "source": "synthetic-edf",
+    "season": "2017-2018"
+  },
+  {
+    "date": "2018-03-09",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-03-12",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-03-13",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-03-14",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-03-15",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
@@ -595,37 +595,37 @@
   },
   {
     "date": "2018-03-20",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-03-21",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-03-22",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-03-23",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-03-26",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-03-27",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
@@ -637,13 +637,13 @@
   },
   {
     "date": "2018-03-29",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
   {
     "date": "2018-03-30",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2017-2018"
   },
@@ -655,7 +655,7 @@
   },
   {
     "date": "2018-11-02",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
@@ -673,7 +673,7 @@
   },
   {
     "date": "2018-11-07",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
@@ -697,7 +697,7 @@
   },
   {
     "date": "2018-11-13",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
@@ -709,13 +709,13 @@
   },
   {
     "date": "2018-11-15",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
     "date": "2018-11-16",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
@@ -733,13 +733,13 @@
   },
   {
     "date": "2018-11-21",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
     "date": "2018-11-22",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
@@ -775,7 +775,7 @@
   },
   {
     "date": "2018-11-30",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
@@ -787,49 +787,49 @@
   },
   {
     "date": "2018-12-04",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
     "date": "2018-12-05",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
     "date": "2018-12-06",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
     "date": "2018-12-07",
-    "realColor": "bleu",
-    "source": "synthetic-edf",
-    "season": "2018-2019"
-  },
-  {
-    "date": "2018-12-10",
-    "realColor": "blanc",
-    "source": "synthetic-edf",
-    "season": "2018-2019"
-  },
-  {
-    "date": "2018-12-11",
     "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
-    "date": "2018-12-12",
+    "date": "2018-12-10",
     "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
-    "date": "2018-12-13",
+    "date": "2018-12-11",
     "realColor": "blanc",
+    "source": "synthetic-edf",
+    "season": "2018-2019"
+  },
+  {
+    "date": "2018-12-12",
+    "realColor": "rouge",
+    "source": "synthetic-edf",
+    "season": "2018-2019"
+  },
+  {
+    "date": "2018-12-13",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
@@ -841,7 +841,7 @@
   },
   {
     "date": "2018-12-17",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
@@ -853,7 +853,7 @@
   },
   {
     "date": "2018-12-19",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
@@ -865,13 +865,13 @@
   },
   {
     "date": "2018-12-21",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
     "date": "2018-12-24",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
@@ -883,13 +883,13 @@
   },
   {
     "date": "2018-12-26",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
     "date": "2018-12-27",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
@@ -907,13 +907,13 @@
   },
   {
     "date": "2019-01-01",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
     "date": "2019-01-02",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
@@ -925,25 +925,25 @@
   },
   {
     "date": "2019-01-04",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
     "date": "2019-01-07",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
     "date": "2019-01-08",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
     "date": "2019-01-09",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
@@ -955,13 +955,13 @@
   },
   {
     "date": "2019-01-11",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
     "date": "2019-01-14",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
@@ -973,19 +973,19 @@
   },
   {
     "date": "2019-01-16",
-    "realColor": "bleu",
-    "source": "synthetic-edf",
-    "season": "2018-2019"
-  },
-  {
-    "date": "2019-01-17",
     "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
+    "date": "2019-01-17",
+    "realColor": "blanc",
+    "source": "synthetic-edf",
+    "season": "2018-2019"
+  },
+  {
     "date": "2019-01-18",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
@@ -1009,37 +1009,37 @@
   },
   {
     "date": "2019-01-24",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
     "date": "2019-01-25",
-    "realColor": "rouge",
-    "source": "synthetic-edf",
-    "season": "2018-2019"
-  },
-  {
-    "date": "2019-01-28",
-    "realColor": "blanc",
-    "source": "synthetic-edf",
-    "season": "2018-2019"
-  },
-  {
-    "date": "2019-01-29",
     "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
-    "date": "2019-01-30",
+    "date": "2019-01-28",
+    "realColor": "bleu",
+    "source": "synthetic-edf",
+    "season": "2018-2019"
+  },
+  {
+    "date": "2019-01-29",
     "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
+    "date": "2019-01-30",
+    "realColor": "rouge",
+    "source": "synthetic-edf",
+    "season": "2018-2019"
+  },
+  {
     "date": "2019-01-31",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
@@ -1057,7 +1057,7 @@
   },
   {
     "date": "2019-02-05",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
@@ -1075,13 +1075,13 @@
   },
   {
     "date": "2019-02-08",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
     "date": "2019-02-11",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
@@ -1093,31 +1093,31 @@
   },
   {
     "date": "2019-02-13",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
     "date": "2019-02-14",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
     "date": "2019-02-15",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
     "date": "2019-02-18",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
     "date": "2019-02-19",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
@@ -1135,25 +1135,25 @@
   },
   {
     "date": "2019-02-22",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
     "date": "2019-02-25",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
     "date": "2019-02-26",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
     "date": "2019-02-27",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
@@ -1165,7 +1165,7 @@
   },
   {
     "date": "2019-03-01",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
@@ -1195,19 +1195,19 @@
   },
   {
     "date": "2019-03-08",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
     "date": "2019-03-11",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
     "date": "2019-03-12",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
@@ -1225,7 +1225,7 @@
   },
   {
     "date": "2019-03-15",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
@@ -1237,13 +1237,13 @@
   },
   {
     "date": "2019-03-19",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
     "date": "2019-03-20",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
@@ -1261,13 +1261,13 @@
   },
   {
     "date": "2019-03-25",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
   {
     "date": "2019-03-26",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
@@ -1279,7 +1279,7 @@
   },
   {
     "date": "2019-03-28",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2018-2019"
   },
@@ -1291,7 +1291,7 @@
   },
   {
     "date": "2019-11-01",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
@@ -1321,13 +1321,13 @@
   },
   {
     "date": "2019-11-08",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2019-11-11",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
@@ -1351,19 +1351,19 @@
   },
   {
     "date": "2019-11-15",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2019-11-18",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2019-11-19",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
@@ -1375,13 +1375,13 @@
   },
   {
     "date": "2019-11-21",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2019-11-22",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
@@ -1393,13 +1393,13 @@
   },
   {
     "date": "2019-11-26",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2019-11-27",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
@@ -1411,7 +1411,7 @@
   },
   {
     "date": "2019-11-29",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
@@ -1423,37 +1423,37 @@
   },
   {
     "date": "2019-12-03",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2019-12-04",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2019-12-05",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2019-12-06",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2019-12-09",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2019-12-10",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
@@ -1471,7 +1471,7 @@
   },
   {
     "date": "2019-12-13",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
@@ -1483,7 +1483,7 @@
   },
   {
     "date": "2019-12-17",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
@@ -1501,7 +1501,7 @@
   },
   {
     "date": "2019-12-20",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
@@ -1525,19 +1525,19 @@
   },
   {
     "date": "2019-12-26",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2019-12-27",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2019-12-30",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
@@ -1549,19 +1549,19 @@
   },
   {
     "date": "2020-01-01",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2020-01-02",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2020-01-03",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
@@ -1573,55 +1573,55 @@
   },
   {
     "date": "2020-01-07",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2020-01-08",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2020-01-09",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2020-01-10",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2020-01-13",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2020-01-14",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2020-01-15",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2020-01-16",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2020-01-17",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
@@ -1633,19 +1633,19 @@
   },
   {
     "date": "2020-01-21",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2020-01-22",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2020-01-23",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
@@ -1663,13 +1663,13 @@
   },
   {
     "date": "2020-01-28",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2020-01-29",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
@@ -1681,13 +1681,13 @@
   },
   {
     "date": "2020-01-31",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2020-02-03",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
@@ -1699,7 +1699,7 @@
   },
   {
     "date": "2020-02-05",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
@@ -1717,19 +1717,19 @@
   },
   {
     "date": "2020-02-10",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2020-02-11",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2020-02-12",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
@@ -1741,7 +1741,7 @@
   },
   {
     "date": "2020-02-14",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
@@ -1759,31 +1759,31 @@
   },
   {
     "date": "2020-02-19",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2020-02-20",
-    "realColor": "blanc",
-    "source": "synthetic-edf",
-    "season": "2019-2020"
-  },
-  {
-    "date": "2020-02-21",
-    "realColor": "blanc",
-    "source": "synthetic-edf",
-    "season": "2019-2020"
-  },
-  {
-    "date": "2020-02-24",
     "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
+    "date": "2020-02-21",
+    "realColor": "bleu",
+    "source": "synthetic-edf",
+    "season": "2019-2020"
+  },
+  {
+    "date": "2020-02-24",
+    "realColor": "rouge",
+    "source": "synthetic-edf",
+    "season": "2019-2020"
+  },
+  {
     "date": "2020-02-25",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
@@ -1795,25 +1795,25 @@
   },
   {
     "date": "2020-02-27",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2020-02-28",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2020-03-02",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2020-03-03",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
@@ -1825,25 +1825,25 @@
   },
   {
     "date": "2020-03-05",
-    "realColor": "rouge",
-    "source": "synthetic-edf",
-    "season": "2019-2020"
-  },
-  {
-    "date": "2020-03-06",
-    "realColor": "rouge",
-    "source": "synthetic-edf",
-    "season": "2019-2020"
-  },
-  {
-    "date": "2020-03-09",
     "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
+    "date": "2020-03-06",
+    "realColor": "blanc",
+    "source": "synthetic-edf",
+    "season": "2019-2020"
+  },
+  {
+    "date": "2020-03-09",
+    "realColor": "blanc",
+    "source": "synthetic-edf",
+    "season": "2019-2020"
+  },
+  {
     "date": "2020-03-10",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
@@ -1855,13 +1855,13 @@
   },
   {
     "date": "2020-03-12",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2020-03-13",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
@@ -1873,7 +1873,7 @@
   },
   {
     "date": "2020-03-17",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
@@ -1885,25 +1885,25 @@
   },
   {
     "date": "2020-03-19",
-    "realColor": "bleu",
-    "source": "synthetic-edf",
-    "season": "2019-2020"
-  },
-  {
-    "date": "2020-03-20",
-    "realColor": "rouge",
-    "source": "synthetic-edf",
-    "season": "2019-2020"
-  },
-  {
-    "date": "2020-03-23",
     "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
+    "date": "2020-03-20",
+    "realColor": "blanc",
+    "source": "synthetic-edf",
+    "season": "2019-2020"
+  },
+  {
+    "date": "2020-03-23",
+    "realColor": "rouge",
+    "source": "synthetic-edf",
+    "season": "2019-2020"
+  },
+  {
     "date": "2020-03-24",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
@@ -1915,19 +1915,19 @@
   },
   {
     "date": "2020-03-26",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2020-03-27",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
   {
     "date": "2020-03-30",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2019-2020"
   },
@@ -1945,13 +1945,13 @@
   },
   {
     "date": "2020-11-03",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2020-11-04",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
@@ -1963,13 +1963,13 @@
   },
   {
     "date": "2020-11-06",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2020-11-09",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
@@ -1981,7 +1981,7 @@
   },
   {
     "date": "2020-11-11",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
@@ -1993,19 +1993,19 @@
   },
   {
     "date": "2020-11-13",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2020-11-16",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2020-11-17",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
@@ -2023,43 +2023,43 @@
   },
   {
     "date": "2020-11-20",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2020-11-23",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2020-11-24",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2020-11-25",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2020-11-26",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2020-11-27",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2020-11-30",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
@@ -2071,43 +2071,43 @@
   },
   {
     "date": "2020-12-02",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2020-12-03",
-    "realColor": "bleu",
-    "source": "synthetic-edf",
-    "season": "2020-2021"
-  },
-  {
-    "date": "2020-12-04",
     "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
-    "date": "2020-12-07",
+    "date": "2020-12-04",
     "realColor": "bleu",
+    "source": "synthetic-edf",
+    "season": "2020-2021"
+  },
+  {
+    "date": "2020-12-07",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2020-12-08",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2020-12-09",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2020-12-10",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
@@ -2119,13 +2119,13 @@
   },
   {
     "date": "2020-12-14",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2020-12-15",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
@@ -2143,19 +2143,19 @@
   },
   {
     "date": "2020-12-18",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2020-12-21",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2020-12-22",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
@@ -2173,7 +2173,7 @@
   },
   {
     "date": "2020-12-25",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
@@ -2185,7 +2185,7 @@
   },
   {
     "date": "2020-12-29",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
@@ -2197,37 +2197,37 @@
   },
   {
     "date": "2020-12-31",
-    "realColor": "blanc",
-    "source": "synthetic-edf",
-    "season": "2020-2021"
-  },
-  {
-    "date": "2021-01-01",
-    "realColor": "bleu",
-    "source": "synthetic-edf",
-    "season": "2020-2021"
-  },
-  {
-    "date": "2021-01-04",
     "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
-    "date": "2021-01-05",
+    "date": "2021-01-01",
     "realColor": "blanc",
+    "source": "synthetic-edf",
+    "season": "2020-2021"
+  },
+  {
+    "date": "2021-01-04",
+    "realColor": "blanc",
+    "source": "synthetic-edf",
+    "season": "2020-2021"
+  },
+  {
+    "date": "2021-01-05",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2021-01-06",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2021-01-07",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
@@ -2239,25 +2239,25 @@
   },
   {
     "date": "2021-01-11",
-    "realColor": "blanc",
-    "source": "synthetic-edf",
-    "season": "2020-2021"
-  },
-  {
-    "date": "2021-01-12",
     "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
+    "date": "2021-01-12",
+    "realColor": "bleu",
+    "source": "synthetic-edf",
+    "season": "2020-2021"
+  },
+  {
     "date": "2021-01-13",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2021-01-14",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
@@ -2269,7 +2269,7 @@
   },
   {
     "date": "2021-01-18",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
@@ -2281,7 +2281,7 @@
   },
   {
     "date": "2021-01-20",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
@@ -2293,7 +2293,7 @@
   },
   {
     "date": "2021-01-22",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
@@ -2317,19 +2317,19 @@
   },
   {
     "date": "2021-01-28",
-    "realColor": "rouge",
-    "source": "synthetic-edf",
-    "season": "2020-2021"
-  },
-  {
-    "date": "2021-01-29",
     "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
+    "date": "2021-01-29",
+    "realColor": "bleu",
+    "source": "synthetic-edf",
+    "season": "2020-2021"
+  },
+  {
     "date": "2021-02-01",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
@@ -2347,7 +2347,7 @@
   },
   {
     "date": "2021-02-04",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
@@ -2359,25 +2359,25 @@
   },
   {
     "date": "2021-02-08",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2021-02-09",
-    "realColor": "blanc",
-    "source": "synthetic-edf",
-    "season": "2020-2021"
-  },
-  {
-    "date": "2021-02-10",
     "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
-    "date": "2021-02-11",
+    "date": "2021-02-10",
     "realColor": "blanc",
+    "source": "synthetic-edf",
+    "season": "2020-2021"
+  },
+  {
+    "date": "2021-02-11",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
@@ -2401,13 +2401,13 @@
   },
   {
     "date": "2021-02-17",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2021-02-18",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
@@ -2419,25 +2419,25 @@
   },
   {
     "date": "2021-02-22",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2021-02-23",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2021-02-24",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2021-02-25",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
@@ -2467,13 +2467,13 @@
   },
   {
     "date": "2021-03-04",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2021-03-05",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
@@ -2485,31 +2485,31 @@
   },
   {
     "date": "2021-03-09",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2021-03-10",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2021-03-11",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2021-03-12",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2021-03-15",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
@@ -2527,49 +2527,49 @@
   },
   {
     "date": "2021-03-18",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2021-03-19",
-    "realColor": "bleu",
-    "source": "synthetic-edf",
-    "season": "2020-2021"
-  },
-  {
-    "date": "2021-03-22",
-    "realColor": "bleu",
-    "source": "synthetic-edf",
-    "season": "2020-2021"
-  },
-  {
-    "date": "2021-03-23",
-    "realColor": "rouge",
-    "source": "synthetic-edf",
-    "season": "2020-2021"
-  },
-  {
-    "date": "2021-03-24",
     "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
-    "date": "2021-03-25",
+    "date": "2021-03-22",
+    "realColor": "blanc",
+    "source": "synthetic-edf",
+    "season": "2020-2021"
+  },
+  {
+    "date": "2021-03-23",
     "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
+    "date": "2021-03-24",
+    "realColor": "bleu",
+    "source": "synthetic-edf",
+    "season": "2020-2021"
+  },
+  {
+    "date": "2021-03-25",
+    "realColor": "blanc",
+    "source": "synthetic-edf",
+    "season": "2020-2021"
+  },
+  {
     "date": "2021-03-26",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
   {
     "date": "2021-03-29",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2020-2021"
   },
@@ -2599,19 +2599,19 @@
   },
   {
     "date": "2021-11-03",
-    "realColor": "bleu",
-    "source": "synthetic-edf",
-    "season": "2021-2022"
-  },
-  {
-    "date": "2021-11-04",
     "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
-    "date": "2021-11-05",
+    "date": "2021-11-04",
     "realColor": "bleu",
+    "source": "synthetic-edf",
+    "season": "2021-2022"
+  },
+  {
+    "date": "2021-11-05",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
@@ -2623,25 +2623,25 @@
   },
   {
     "date": "2021-11-09",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2021-11-10",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2021-11-11",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2021-11-12",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
@@ -2659,7 +2659,7 @@
   },
   {
     "date": "2021-11-17",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
@@ -2677,7 +2677,7 @@
   },
   {
     "date": "2021-11-22",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
@@ -2701,7 +2701,7 @@
   },
   {
     "date": "2021-11-26",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
@@ -2713,7 +2713,7 @@
   },
   {
     "date": "2021-11-30",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
@@ -2731,43 +2731,43 @@
   },
   {
     "date": "2021-12-03",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2021-12-06",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2021-12-07",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2021-12-08",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2021-12-09",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2021-12-10",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2021-12-13",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
@@ -2785,49 +2785,49 @@
   },
   {
     "date": "2021-12-16",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2021-12-17",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2021-12-20",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2021-12-21",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2021-12-22",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2021-12-23",
-    "realColor": "bleu",
-    "source": "synthetic-edf",
-    "season": "2021-2022"
-  },
-  {
-    "date": "2021-12-24",
     "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
+    "date": "2021-12-24",
+    "realColor": "blanc",
+    "source": "synthetic-edf",
+    "season": "2021-2022"
+  },
+  {
     "date": "2021-12-27",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
@@ -2851,7 +2851,7 @@
   },
   {
     "date": "2021-12-31",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
@@ -2863,7 +2863,7 @@
   },
   {
     "date": "2022-01-04",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
@@ -2875,25 +2875,25 @@
   },
   {
     "date": "2022-01-06",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2022-01-07",
-    "realColor": "bleu",
-    "source": "synthetic-edf",
-    "season": "2021-2022"
-  },
-  {
-    "date": "2022-01-10",
     "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
-    "date": "2022-01-11",
+    "date": "2022-01-10",
     "realColor": "bleu",
+    "source": "synthetic-edf",
+    "season": "2021-2022"
+  },
+  {
+    "date": "2022-01-11",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
@@ -2917,25 +2917,25 @@
   },
   {
     "date": "2022-01-17",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2022-01-18",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2022-01-19",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2022-01-20",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
@@ -2947,13 +2947,13 @@
   },
   {
     "date": "2022-01-24",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2022-01-25",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
@@ -2965,13 +2965,13 @@
   },
   {
     "date": "2022-01-27",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2022-01-28",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
@@ -2995,19 +2995,19 @@
   },
   {
     "date": "2022-02-03",
-    "realColor": "bleu",
-    "source": "synthetic-edf",
-    "season": "2021-2022"
-  },
-  {
-    "date": "2022-02-04",
     "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
-    "date": "2022-02-07",
+    "date": "2022-02-04",
     "realColor": "bleu",
+    "source": "synthetic-edf",
+    "season": "2021-2022"
+  },
+  {
+    "date": "2022-02-07",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
@@ -3019,7 +3019,7 @@
   },
   {
     "date": "2022-02-09",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
@@ -3031,19 +3031,19 @@
   },
   {
     "date": "2022-02-11",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2022-02-14",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2022-02-15",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
@@ -3055,19 +3055,19 @@
   },
   {
     "date": "2022-02-17",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2022-02-18",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2022-02-21",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
@@ -3079,19 +3079,19 @@
   },
   {
     "date": "2022-02-23",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2022-02-24",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2022-02-25",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
@@ -3103,19 +3103,19 @@
   },
   {
     "date": "2022-03-01",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2022-03-02",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2022-03-03",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
@@ -3127,25 +3127,25 @@
   },
   {
     "date": "2022-03-07",
-    "realColor": "rouge",
-    "source": "synthetic-edf",
-    "season": "2021-2022"
-  },
-  {
-    "date": "2022-03-08",
     "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
+    "date": "2022-03-08",
+    "realColor": "rouge",
+    "source": "synthetic-edf",
+    "season": "2021-2022"
+  },
+  {
     "date": "2022-03-09",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2022-03-10",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
@@ -3157,43 +3157,43 @@
   },
   {
     "date": "2022-03-14",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2022-03-15",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2022-03-16",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2022-03-17",
-    "realColor": "rouge",
-    "source": "synthetic-edf",
-    "season": "2021-2022"
-  },
-  {
-    "date": "2022-03-18",
-    "realColor": "rouge",
-    "source": "synthetic-edf",
-    "season": "2021-2022"
-  },
-  {
-    "date": "2022-03-21",
     "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
+    "date": "2022-03-18",
+    "realColor": "bleu",
+    "source": "synthetic-edf",
+    "season": "2021-2022"
+  },
+  {
+    "date": "2022-03-21",
+    "realColor": "bleu",
+    "source": "synthetic-edf",
+    "season": "2021-2022"
+  },
+  {
     "date": "2022-03-22",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
@@ -3205,25 +3205,25 @@
   },
   {
     "date": "2022-03-24",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2022-03-25",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2022-03-28",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2022-03-29",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
@@ -3235,37 +3235,37 @@
   },
   {
     "date": "2022-03-31",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2021-2022"
   },
   {
     "date": "2022-11-01",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
     "date": "2022-11-02",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
     "date": "2022-11-03",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
     "date": "2022-11-04",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
     "date": "2022-11-07",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
@@ -3277,7 +3277,7 @@
   },
   {
     "date": "2022-11-09",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
@@ -3295,19 +3295,19 @@
   },
   {
     "date": "2022-11-14",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
     "date": "2022-11-15",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
     "date": "2022-11-16",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
@@ -3319,7 +3319,7 @@
   },
   {
     "date": "2022-11-18",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
@@ -3343,13 +3343,13 @@
   },
   {
     "date": "2022-11-24",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
     "date": "2022-11-25",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
@@ -3361,13 +3361,13 @@
   },
   {
     "date": "2022-11-29",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
     "date": "2022-11-30",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
@@ -3379,25 +3379,25 @@
   },
   {
     "date": "2022-12-02",
-    "realColor": "rouge",
-    "source": "synthetic-edf",
-    "season": "2022-2023"
-  },
-  {
-    "date": "2022-12-05",
     "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
+    "date": "2022-12-05",
+    "realColor": "blanc",
+    "source": "synthetic-edf",
+    "season": "2022-2023"
+  },
+  {
     "date": "2022-12-06",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
     "date": "2022-12-07",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
@@ -3409,25 +3409,25 @@
   },
   {
     "date": "2022-12-09",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
     "date": "2022-12-12",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
     "date": "2022-12-13",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
     "date": "2022-12-14",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
@@ -3445,13 +3445,13 @@
   },
   {
     "date": "2022-12-19",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
     "date": "2022-12-20",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
@@ -3463,7 +3463,7 @@
   },
   {
     "date": "2022-12-22",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
@@ -3487,19 +3487,19 @@
   },
   {
     "date": "2022-12-28",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
     "date": "2022-12-29",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
     "date": "2022-12-30",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
@@ -3517,25 +3517,25 @@
   },
   {
     "date": "2023-01-04",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
     "date": "2023-01-05",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
     "date": "2023-01-06",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
     "date": "2023-01-09",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
@@ -3547,7 +3547,7 @@
   },
   {
     "date": "2023-01-11",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
@@ -3559,13 +3559,13 @@
   },
   {
     "date": "2023-01-13",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
     "date": "2023-01-16",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
@@ -3589,7 +3589,7 @@
   },
   {
     "date": "2023-01-20",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
@@ -3613,31 +3613,31 @@
   },
   {
     "date": "2023-01-26",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
     "date": "2023-01-27",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
     "date": "2023-01-30",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
     "date": "2023-01-31",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
     "date": "2023-02-01",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
@@ -3655,31 +3655,31 @@
   },
   {
     "date": "2023-02-06",
-    "realColor": "bleu",
-    "source": "synthetic-edf",
-    "season": "2022-2023"
-  },
-  {
-    "date": "2023-02-07",
-    "realColor": "rouge",
-    "source": "synthetic-edf",
-    "season": "2022-2023"
-  },
-  {
-    "date": "2023-02-08",
-    "realColor": "rouge",
-    "source": "synthetic-edf",
-    "season": "2022-2023"
-  },
-  {
-    "date": "2023-02-09",
     "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
-    "date": "2023-02-10",
+    "date": "2023-02-07",
+    "realColor": "blanc",
+    "source": "synthetic-edf",
+    "season": "2022-2023"
+  },
+  {
+    "date": "2023-02-08",
+    "realColor": "blanc",
+    "source": "synthetic-edf",
+    "season": "2022-2023"
+  },
+  {
+    "date": "2023-02-09",
     "realColor": "bleu",
+    "source": "synthetic-edf",
+    "season": "2022-2023"
+  },
+  {
+    "date": "2023-02-10",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
@@ -3691,7 +3691,7 @@
   },
   {
     "date": "2023-02-14",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
@@ -3703,25 +3703,25 @@
   },
   {
     "date": "2023-02-16",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
     "date": "2023-02-17",
-    "realColor": "bleu",
-    "source": "synthetic-edf",
-    "season": "2022-2023"
-  },
-  {
-    "date": "2023-02-20",
     "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
-    "date": "2023-02-21",
+    "date": "2023-02-20",
     "realColor": "bleu",
+    "source": "synthetic-edf",
+    "season": "2022-2023"
+  },
+  {
+    "date": "2023-02-21",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
@@ -3733,7 +3733,7 @@
   },
   {
     "date": "2023-02-23",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
@@ -3745,25 +3745,25 @@
   },
   {
     "date": "2023-02-27",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
     "date": "2023-02-28",
-    "realColor": "bleu",
-    "source": "synthetic-edf",
-    "season": "2022-2023"
-  },
-  {
-    "date": "2023-03-01",
     "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
+    "date": "2023-03-01",
+    "realColor": "rouge",
+    "source": "synthetic-edf",
+    "season": "2022-2023"
+  },
+  {
     "date": "2023-03-02",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
@@ -3775,13 +3775,13 @@
   },
   {
     "date": "2023-03-06",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
     "date": "2023-03-07",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
@@ -3793,7 +3793,7 @@
   },
   {
     "date": "2023-03-09",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
@@ -3805,31 +3805,31 @@
   },
   {
     "date": "2023-03-13",
-    "realColor": "rouge",
-    "source": "synthetic-edf",
-    "season": "2022-2023"
-  },
-  {
-    "date": "2023-03-14",
-    "realColor": "rouge",
-    "source": "synthetic-edf",
-    "season": "2022-2023"
-  },
-  {
-    "date": "2023-03-15",
-    "realColor": "rouge",
-    "source": "synthetic-edf",
-    "season": "2022-2023"
-  },
-  {
-    "date": "2023-03-16",
     "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
-    "date": "2023-03-17",
+    "date": "2023-03-14",
+    "realColor": "blanc",
+    "source": "synthetic-edf",
+    "season": "2022-2023"
+  },
+  {
+    "date": "2023-03-15",
+    "realColor": "bleu",
+    "source": "synthetic-edf",
+    "season": "2022-2023"
+  },
+  {
+    "date": "2023-03-16",
     "realColor": "rouge",
+    "source": "synthetic-edf",
+    "season": "2022-2023"
+  },
+  {
+    "date": "2023-03-17",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
@@ -3847,43 +3847,43 @@
   },
   {
     "date": "2023-03-22",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
     "date": "2023-03-23",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
     "date": "2023-03-24",
-    "realColor": "blanc",
-    "source": "synthetic-edf",
-    "season": "2022-2023"
-  },
-  {
-    "date": "2023-03-27",
-    "realColor": "blanc",
-    "source": "synthetic-edf",
-    "season": "2022-2023"
-  },
-  {
-    "date": "2023-03-28",
-    "realColor": "blanc",
-    "source": "synthetic-edf",
-    "season": "2022-2023"
-  },
-  {
-    "date": "2023-03-29",
     "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
   {
-    "date": "2023-03-30",
+    "date": "2023-03-27",
+    "realColor": "bleu",
+    "source": "synthetic-edf",
+    "season": "2022-2023"
+  },
+  {
+    "date": "2023-03-28",
+    "realColor": "bleu",
+    "source": "synthetic-edf",
+    "season": "2022-2023"
+  },
+  {
+    "date": "2023-03-29",
     "realColor": "blanc",
+    "source": "synthetic-edf",
+    "season": "2022-2023"
+  },
+  {
+    "date": "2023-03-30",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2022-2023"
   },
@@ -3895,13 +3895,13 @@
   },
   {
     "date": "2023-11-01",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
     "date": "2023-11-02",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
@@ -3913,25 +3913,25 @@
   },
   {
     "date": "2023-11-06",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
     "date": "2023-11-07",
-    "realColor": "blanc",
-    "source": "synthetic-edf",
-    "season": "2023-2024"
-  },
-  {
-    "date": "2023-11-08",
     "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
+    "date": "2023-11-08",
+    "realColor": "bleu",
+    "source": "synthetic-edf",
+    "season": "2023-2024"
+  },
+  {
     "date": "2023-11-09",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
@@ -3943,31 +3943,31 @@
   },
   {
     "date": "2023-11-13",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
     "date": "2023-11-14",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
     "date": "2023-11-15",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
     "date": "2023-11-16",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
     "date": "2023-11-17",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
@@ -3979,7 +3979,7 @@
   },
   {
     "date": "2023-11-21",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
@@ -3991,25 +3991,25 @@
   },
   {
     "date": "2023-11-23",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
     "date": "2023-11-24",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
     "date": "2023-11-27",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
     "date": "2023-11-28",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
@@ -4021,7 +4021,7 @@
   },
   {
     "date": "2023-11-30",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
@@ -4039,37 +4039,37 @@
   },
   {
     "date": "2023-12-05",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
     "date": "2023-12-06",
-    "realColor": "rouge",
-    "source": "synthetic-edf",
-    "season": "2023-2024"
-  },
-  {
-    "date": "2023-12-07",
-    "realColor": "blanc",
-    "source": "synthetic-edf",
-    "season": "2023-2024"
-  },
-  {
-    "date": "2023-12-08",
-    "realColor": "blanc",
-    "source": "synthetic-edf",
-    "season": "2023-2024"
-  },
-  {
-    "date": "2023-12-11",
     "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
-    "date": "2023-12-12",
+    "date": "2023-12-07",
+    "realColor": "bleu",
+    "source": "synthetic-edf",
+    "season": "2023-2024"
+  },
+  {
+    "date": "2023-12-08",
+    "realColor": "bleu",
+    "source": "synthetic-edf",
+    "season": "2023-2024"
+  },
+  {
+    "date": "2023-12-11",
     "realColor": "blanc",
+    "source": "synthetic-edf",
+    "season": "2023-2024"
+  },
+  {
+    "date": "2023-12-12",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
@@ -4081,25 +4081,25 @@
   },
   {
     "date": "2023-12-14",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
     "date": "2023-12-15",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
     "date": "2023-12-18",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
     "date": "2023-12-19",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
@@ -4117,37 +4117,37 @@
   },
   {
     "date": "2023-12-22",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
     "date": "2023-12-25",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
     "date": "2023-12-26",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
     "date": "2023-12-27",
-    "realColor": "blanc",
-    "source": "synthetic-edf",
-    "season": "2023-2024"
-  },
-  {
-    "date": "2023-12-28",
     "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
+    "date": "2023-12-28",
+    "realColor": "rouge",
+    "source": "synthetic-edf",
+    "season": "2023-2024"
+  },
+  {
     "date": "2023-12-29",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
@@ -4159,19 +4159,19 @@
   },
   {
     "date": "2024-01-02",
-    "realColor": "bleu",
-    "source": "synthetic-edf",
-    "season": "2023-2024"
-  },
-  {
-    "date": "2024-01-03",
     "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
+    "date": "2024-01-03",
+    "realColor": "bleu",
+    "source": "synthetic-edf",
+    "season": "2023-2024"
+  },
+  {
     "date": "2024-01-04",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
@@ -4195,7 +4195,7 @@
   },
   {
     "date": "2024-01-10",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
@@ -4207,7 +4207,7 @@
   },
   {
     "date": "2024-01-12",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
@@ -4225,7 +4225,7 @@
   },
   {
     "date": "2024-01-17",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
@@ -4237,7 +4237,7 @@
   },
   {
     "date": "2024-01-19",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
@@ -4255,7 +4255,7 @@
   },
   {
     "date": "2024-01-24",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
@@ -4267,25 +4267,25 @@
   },
   {
     "date": "2024-01-26",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
     "date": "2024-01-29",
-    "realColor": "rouge",
-    "source": "synthetic-edf",
-    "season": "2023-2024"
-  },
-  {
-    "date": "2024-01-30",
     "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
-    "date": "2024-01-31",
+    "date": "2024-01-30",
     "realColor": "blanc",
+    "source": "synthetic-edf",
+    "season": "2023-2024"
+  },
+  {
+    "date": "2024-01-31",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
@@ -4297,13 +4297,13 @@
   },
   {
     "date": "2024-02-02",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
     "date": "2024-02-05",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
@@ -4315,31 +4315,31 @@
   },
   {
     "date": "2024-02-07",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
     "date": "2024-02-08",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
     "date": "2024-02-09",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
     "date": "2024-02-12",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
     "date": "2024-02-13",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
@@ -4351,7 +4351,7 @@
   },
   {
     "date": "2024-02-15",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
@@ -4375,7 +4375,7 @@
   },
   {
     "date": "2024-02-21",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
@@ -4387,19 +4387,19 @@
   },
   {
     "date": "2024-02-23",
-    "realColor": "rouge",
-    "source": "synthetic-edf",
-    "season": "2023-2024"
-  },
-  {
-    "date": "2024-02-26",
     "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
-    "date": "2024-02-27",
+    "date": "2024-02-26",
     "realColor": "rouge",
+    "source": "synthetic-edf",
+    "season": "2023-2024"
+  },
+  {
+    "date": "2024-02-27",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
@@ -4411,13 +4411,13 @@
   },
   {
     "date": "2024-02-29",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
     "date": "2024-03-01",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
@@ -4429,7 +4429,7 @@
   },
   {
     "date": "2024-03-05",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
@@ -4441,19 +4441,19 @@
   },
   {
     "date": "2024-03-07",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
     "date": "2024-03-08",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
     "date": "2024-03-11",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
@@ -4465,13 +4465,13 @@
   },
   {
     "date": "2024-03-13",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
     "date": "2024-03-14",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
@@ -4483,7 +4483,7 @@
   },
   {
     "date": "2024-03-18",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
@@ -4495,19 +4495,19 @@
   },
   {
     "date": "2024-03-20",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
     "date": "2024-03-21",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
   {
     "date": "2024-03-22",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
@@ -4531,7 +4531,7 @@
   },
   {
     "date": "2024-03-28",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2023-2024"
   },
@@ -4543,19 +4543,19 @@
   },
   {
     "date": "2024-11-01",
-    "realColor": "blanc",
-    "source": "synthetic-edf",
-    "season": "2024-2025"
-  },
-  {
-    "date": "2024-11-04",
     "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
   {
-    "date": "2024-11-05",
+    "date": "2024-11-04",
     "realColor": "blanc",
+    "source": "synthetic-edf",
+    "season": "2024-2025"
+  },
+  {
+    "date": "2024-11-05",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
@@ -4567,19 +4567,19 @@
   },
   {
     "date": "2024-11-07",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
   {
     "date": "2024-11-08",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
   {
     "date": "2024-11-11",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
@@ -4597,7 +4597,7 @@
   },
   {
     "date": "2024-11-14",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
@@ -4621,7 +4621,7 @@
   },
   {
     "date": "2024-11-20",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
@@ -4639,19 +4639,19 @@
   },
   {
     "date": "2024-11-25",
-    "realColor": "blanc",
-    "source": "synthetic-edf",
-    "season": "2024-2025"
-  },
-  {
-    "date": "2024-11-26",
     "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
   {
-    "date": "2024-11-27",
+    "date": "2024-11-26",
     "realColor": "blanc",
+    "source": "synthetic-edf",
+    "season": "2024-2025"
+  },
+  {
+    "date": "2024-11-27",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
@@ -4663,43 +4663,43 @@
   },
   {
     "date": "2024-11-29",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
   {
     "date": "2024-12-02",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
   {
     "date": "2024-12-03",
-    "realColor": "blanc",
-    "source": "synthetic-edf",
-    "season": "2024-2025"
-  },
-  {
-    "date": "2024-12-04",
     "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
   {
+    "date": "2024-12-04",
+    "realColor": "bleu",
+    "source": "synthetic-edf",
+    "season": "2024-2025"
+  },
+  {
     "date": "2024-12-05",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
   {
     "date": "2024-12-06",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
   {
     "date": "2024-12-09",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
@@ -4717,7 +4717,7 @@
   },
   {
     "date": "2024-12-12",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
@@ -4729,13 +4729,13 @@
   },
   {
     "date": "2024-12-16",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
   {
     "date": "2024-12-17",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
@@ -4753,13 +4753,13 @@
   },
   {
     "date": "2024-12-20",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
   {
     "date": "2024-12-23",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
@@ -4771,13 +4771,13 @@
   },
   {
     "date": "2024-12-25",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
   {
     "date": "2024-12-26",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
@@ -4807,25 +4807,25 @@
   },
   {
     "date": "2025-01-02",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
   {
     "date": "2025-01-03",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
   {
     "date": "2025-01-06",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
   {
     "date": "2025-01-07",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
@@ -4843,7 +4843,7 @@
   },
   {
     "date": "2025-01-10",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
@@ -4873,7 +4873,7 @@
   },
   {
     "date": "2025-01-17",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
@@ -4885,37 +4885,37 @@
   },
   {
     "date": "2025-01-21",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
   {
     "date": "2025-01-22",
-    "realColor": "bleu",
-    "source": "synthetic-edf",
-    "season": "2024-2025"
-  },
-  {
-    "date": "2025-01-23",
-    "realColor": "blanc",
-    "source": "synthetic-edf",
-    "season": "2024-2025"
-  },
-  {
-    "date": "2025-01-24",
     "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
   {
-    "date": "2025-01-27",
+    "date": "2025-01-23",
+    "realColor": "rouge",
+    "source": "synthetic-edf",
+    "season": "2024-2025"
+  },
+  {
+    "date": "2025-01-24",
     "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
   {
-    "date": "2025-01-28",
+    "date": "2025-01-27",
     "realColor": "blanc",
+    "source": "synthetic-edf",
+    "season": "2024-2025"
+  },
+  {
+    "date": "2025-01-28",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
@@ -4927,7 +4927,7 @@
   },
   {
     "date": "2025-01-30",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
@@ -4939,13 +4939,13 @@
   },
   {
     "date": "2025-02-03",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
   {
     "date": "2025-02-04",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
@@ -4963,19 +4963,19 @@
   },
   {
     "date": "2025-02-07",
-    "realColor": "bleu",
-    "source": "synthetic-edf",
-    "season": "2024-2025"
-  },
-  {
-    "date": "2025-02-10",
     "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
   {
-    "date": "2025-02-11",
+    "date": "2025-02-10",
     "realColor": "bleu",
+    "source": "synthetic-edf",
+    "season": "2024-2025"
+  },
+  {
+    "date": "2025-02-11",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
@@ -4987,19 +4987,19 @@
   },
   {
     "date": "2025-02-13",
-    "realColor": "bleu",
-    "source": "synthetic-edf",
-    "season": "2024-2025"
-  },
-  {
-    "date": "2025-02-14",
     "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
   {
-    "date": "2025-02-17",
+    "date": "2025-02-14",
     "realColor": "rouge",
+    "source": "synthetic-edf",
+    "season": "2024-2025"
+  },
+  {
+    "date": "2025-02-17",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
@@ -5011,7 +5011,7 @@
   },
   {
     "date": "2025-02-19",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
@@ -5023,7 +5023,7 @@
   },
   {
     "date": "2025-02-21",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
@@ -5035,7 +5035,7 @@
   },
   {
     "date": "2025-02-25",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
@@ -5047,13 +5047,13 @@
   },
   {
     "date": "2025-02-27",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
   {
     "date": "2025-02-28",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
@@ -5065,19 +5065,19 @@
   },
   {
     "date": "2025-03-04",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
   {
     "date": "2025-03-05",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
   {
     "date": "2025-03-06",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
@@ -5089,43 +5089,43 @@
   },
   {
     "date": "2025-03-10",
-    "realColor": "bleu",
-    "source": "synthetic-edf",
-    "season": "2024-2025"
-  },
-  {
-    "date": "2025-03-11",
-    "realColor": "rouge",
-    "source": "synthetic-edf",
-    "season": "2024-2025"
-  },
-  {
-    "date": "2025-03-12",
-    "realColor": "rouge",
-    "source": "synthetic-edf",
-    "season": "2024-2025"
-  },
-  {
-    "date": "2025-03-13",
-    "realColor": "bleu",
-    "source": "synthetic-edf",
-    "season": "2024-2025"
-  },
-  {
-    "date": "2025-03-14",
     "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
   {
-    "date": "2025-03-17",
+    "date": "2025-03-11",
     "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
   {
+    "date": "2025-03-12",
+    "realColor": "blanc",
+    "source": "synthetic-edf",
+    "season": "2024-2025"
+  },
+  {
+    "date": "2025-03-13",
+    "realColor": "blanc",
+    "source": "synthetic-edf",
+    "season": "2024-2025"
+  },
+  {
+    "date": "2025-03-14",
+    "realColor": "rouge",
+    "source": "synthetic-edf",
+    "season": "2024-2025"
+  },
+  {
+    "date": "2025-03-17",
+    "realColor": "rouge",
+    "source": "synthetic-edf",
+    "season": "2024-2025"
+  },
+  {
     "date": "2025-03-18",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
@@ -5143,37 +5143,37 @@
   },
   {
     "date": "2025-03-21",
-    "realColor": "bleu",
-    "source": "synthetic-edf",
-    "season": "2024-2025"
-  },
-  {
-    "date": "2025-03-24",
-    "realColor": "bleu",
-    "source": "synthetic-edf",
-    "season": "2024-2025"
-  },
-  {
-    "date": "2025-03-25",
-    "realColor": "rouge",
-    "source": "synthetic-edf",
-    "season": "2024-2025"
-  },
-  {
-    "date": "2025-03-26",
     "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
   {
+    "date": "2025-03-24",
+    "realColor": "blanc",
+    "source": "synthetic-edf",
+    "season": "2024-2025"
+  },
+  {
+    "date": "2025-03-25",
+    "realColor": "blanc",
+    "source": "synthetic-edf",
+    "season": "2024-2025"
+  },
+  {
+    "date": "2025-03-26",
+    "realColor": "rouge",
+    "source": "synthetic-edf",
+    "season": "2024-2025"
+  },
+  {
     "date": "2025-03-27",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
   {
     "date": "2025-03-28",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2024-2025"
   },
@@ -5191,37 +5191,37 @@
   },
   {
     "date": "2025-11-04",
-    "realColor": "rouge",
-    "source": "synthetic-edf",
-    "season": "2025-2026"
-  },
-  {
-    "date": "2025-11-05",
-    "realColor": "rouge",
-    "source": "synthetic-edf",
-    "season": "2025-2026"
-  },
-  {
-    "date": "2025-11-06",
-    "realColor": "rouge",
-    "source": "synthetic-edf",
-    "season": "2025-2026"
-  },
-  {
-    "date": "2025-11-07",
-    "realColor": "bleu",
-    "source": "synthetic-edf",
-    "season": "2025-2026"
-  },
-  {
-    "date": "2025-11-10",
     "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
   {
-    "date": "2025-11-11",
+    "date": "2025-11-05",
     "realColor": "bleu",
+    "source": "synthetic-edf",
+    "season": "2025-2026"
+  },
+  {
+    "date": "2025-11-06",
+    "realColor": "blanc",
+    "source": "synthetic-edf",
+    "season": "2025-2026"
+  },
+  {
+    "date": "2025-11-07",
+    "realColor": "rouge",
+    "source": "synthetic-edf",
+    "season": "2025-2026"
+  },
+  {
+    "date": "2025-11-10",
+    "realColor": "bleu",
+    "source": "synthetic-edf",
+    "season": "2025-2026"
+  },
+  {
+    "date": "2025-11-11",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
@@ -5233,13 +5233,13 @@
   },
   {
     "date": "2025-11-13",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
   {
     "date": "2025-11-14",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
@@ -5275,7 +5275,7 @@
   },
   {
     "date": "2025-11-24",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
@@ -5299,13 +5299,13 @@
   },
   {
     "date": "2025-11-28",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
   {
     "date": "2025-12-01",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
@@ -5317,7 +5317,7 @@
   },
   {
     "date": "2025-12-03",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
@@ -5329,25 +5329,25 @@
   },
   {
     "date": "2025-12-05",
-    "realColor": "blanc",
-    "source": "synthetic-edf",
-    "season": "2025-2026"
-  },
-  {
-    "date": "2025-12-08",
     "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
   {
+    "date": "2025-12-08",
+    "realColor": "rouge",
+    "source": "synthetic-edf",
+    "season": "2025-2026"
+  },
+  {
     "date": "2025-12-09",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
   {
     "date": "2025-12-10",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
@@ -5359,31 +5359,31 @@
   },
   {
     "date": "2025-12-12",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
   {
     "date": "2025-12-15",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
   {
     "date": "2025-12-16",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
   {
     "date": "2025-12-17",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
   {
     "date": "2025-12-18",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
@@ -5401,7 +5401,7 @@
   },
   {
     "date": "2025-12-23",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
@@ -5419,13 +5419,13 @@
   },
   {
     "date": "2025-12-26",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
   {
     "date": "2025-12-29",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
@@ -5437,7 +5437,7 @@
   },
   {
     "date": "2025-12-31",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
@@ -5473,37 +5473,37 @@
   },
   {
     "date": "2026-01-08",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
   {
     "date": "2026-01-09",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
   {
     "date": "2026-01-12",
-    "realColor": "rouge",
-    "source": "synthetic-edf",
-    "season": "2025-2026"
-  },
-  {
-    "date": "2026-01-13",
     "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
   {
-    "date": "2026-01-14",
+    "date": "2026-01-13",
     "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
   {
+    "date": "2026-01-14",
+    "realColor": "bleu",
+    "source": "synthetic-edf",
+    "season": "2025-2026"
+  },
+  {
     "date": "2026-01-15",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
@@ -5515,7 +5515,7 @@
   },
   {
     "date": "2026-01-19",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
@@ -5539,7 +5539,7 @@
   },
   {
     "date": "2026-01-23",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
@@ -5551,13 +5551,13 @@
   },
   {
     "date": "2026-01-27",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
   {
     "date": "2026-01-28",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
@@ -5569,19 +5569,19 @@
   },
   {
     "date": "2026-01-30",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
   {
     "date": "2026-02-02",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
   {
     "date": "2026-02-03",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
@@ -5593,13 +5593,13 @@
   },
   {
     "date": "2026-02-05",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
   {
     "date": "2026-02-06",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
@@ -5617,7 +5617,7 @@
   },
   {
     "date": "2026-02-11",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
@@ -5629,7 +5629,7 @@
   },
   {
     "date": "2026-02-13",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
@@ -5641,25 +5641,25 @@
   },
   {
     "date": "2026-02-17",
-    "realColor": "blanc",
-    "source": "synthetic-edf",
-    "season": "2025-2026"
-  },
-  {
-    "date": "2026-02-18",
     "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
   {
+    "date": "2026-02-18",
+    "realColor": "bleu",
+    "source": "synthetic-edf",
+    "season": "2025-2026"
+  },
+  {
     "date": "2026-02-19",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
   {
     "date": "2026-02-20",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
@@ -5677,7 +5677,7 @@
   },
   {
     "date": "2026-02-25",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
@@ -5689,19 +5689,19 @@
   },
   {
     "date": "2026-02-27",
-    "realColor": "rouge",
-    "source": "synthetic-edf",
-    "season": "2025-2026"
-  },
-  {
-    "date": "2026-03-02",
     "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
   {
+    "date": "2026-03-02",
+    "realColor": "rouge",
+    "source": "synthetic-edf",
+    "season": "2025-2026"
+  },
+  {
     "date": "2026-03-03",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
@@ -5713,7 +5713,7 @@
   },
   {
     "date": "2026-03-05",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
@@ -5731,7 +5731,7 @@
   },
   {
     "date": "2026-03-10",
-    "realColor": "blanc",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
@@ -5743,7 +5743,7 @@
   },
   {
     "date": "2026-03-12",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
@@ -5755,31 +5755,31 @@
   },
   {
     "date": "2026-03-16",
-    "realColor": "bleu",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
   {
     "date": "2026-03-17",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
   {
     "date": "2026-03-18",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
   {
     "date": "2026-03-19",
-    "realColor": "rouge",
+    "realColor": "bleu",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
   {
     "date": "2026-03-20",
-    "realColor": "rouge",
+    "realColor": "blanc",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
@@ -5797,7 +5797,7 @@
   },
   {
     "date": "2026-03-25",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
@@ -5815,13 +5815,13 @@
   },
   {
     "date": "2026-03-30",
-    "realColor": "bleu",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2025-2026"
   },
   {
     "date": "2026-03-31",
-    "realColor": "blanc",
+    "realColor": "rouge",
     "source": "synthetic-edf",
     "season": "2025-2026"
   }

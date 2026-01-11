@@ -1,1 +1,527 @@
-{}
+[
+  {
+    "date": "2024-09-18",
+    "consommation": 44457,
+    "tension": 50
+  },
+  {
+    "date": "2024-09-19",
+    "consommation": 44750,
+    "tension": 50
+  },
+  {
+    "date": "2024-09-20",
+    "consommation": 43886,
+    "tension": 50
+  },
+  {
+    "date": "2024-09-21",
+    "consommation": 39279,
+    "tension": 50
+  },
+  {
+    "date": "2024-09-22",
+    "consommation": 37977,
+    "tension": 50
+  },
+  {
+    "date": "2024-09-23",
+    "consommation": 43502,
+    "tension": 50
+  },
+  {
+    "date": "2024-09-24",
+    "consommation": 44569,
+    "tension": 50
+  },
+  {
+    "date": "2024-09-25",
+    "consommation": 45205,
+    "tension": 60
+  },
+  {
+    "date": "2024-09-26",
+    "consommation": 45434,
+    "tension": 60
+  },
+  {
+    "date": "2024-09-27",
+    "consommation": 45438,
+    "tension": 60
+  },
+  {
+    "date": "2024-09-28",
+    "consommation": 41570,
+    "tension": 50
+  },
+  {
+    "date": "2024-09-29",
+    "consommation": 41581,
+    "tension": 50
+  },
+  {
+    "date": "2024-09-30",
+    "consommation": 46461,
+    "tension": 60
+  },
+  {
+    "date": "2024-10-01",
+    "consommation": 46440,
+    "tension": 60
+  },
+  {
+    "date": "2024-10-02",
+    "consommation": 47089,
+    "tension": 60
+  },
+  {
+    "date": "2024-10-03",
+    "consommation": 47786,
+    "tension": 60
+  },
+  {
+    "date": "2024-10-04",
+    "consommation": 48218,
+    "tension": 60
+  },
+  {
+    "date": "2024-10-05",
+    "consommation": 43769,
+    "tension": 50
+  },
+  {
+    "date": "2024-10-06",
+    "consommation": 41950,
+    "tension": 50
+  },
+  {
+    "date": "2024-10-07",
+    "consommation": 46619,
+    "tension": 60
+  },
+  {
+    "date": "2024-10-08",
+    "consommation": 46863,
+    "tension": 60
+  },
+  {
+    "date": "2024-10-09",
+    "consommation": 47482,
+    "tension": 60
+  },
+  {
+    "date": "2024-10-10",
+    "consommation": 47384,
+    "tension": 60
+  },
+  {
+    "date": "2024-10-11",
+    "consommation": 47790,
+    "tension": 60
+  },
+  {
+    "date": "2024-10-12",
+    "consommation": 44062,
+    "tension": 50
+  },
+  {
+    "date": "2024-10-13",
+    "consommation": 41385,
+    "tension": 50
+  },
+  {
+    "date": "2024-10-14",
+    "consommation": 46782,
+    "tension": 60
+  },
+  {
+    "date": "2024-10-15",
+    "consommation": 46756,
+    "tension": 60
+  },
+  {
+    "date": "2024-10-16",
+    "consommation": 46389,
+    "tension": 60
+  },
+  {
+    "date": "2024-10-17",
+    "consommation": 46268,
+    "tension": 60
+  },
+  {
+    "date": "2024-10-18",
+    "consommation": 46409,
+    "tension": 60
+  },
+  {
+    "date": "2024-10-19",
+    "consommation": 42248,
+    "tension": 50
+  },
+  {
+    "date": "2024-10-20",
+    "consommation": 40639,
+    "tension": 50
+  },
+  {
+    "date": "2024-10-21",
+    "consommation": 45804,
+    "tension": 60
+  },
+  {
+    "date": "2024-10-22",
+    "consommation": 46838,
+    "tension": 60
+  },
+  {
+    "date": "2024-10-23",
+    "consommation": 47962,
+    "tension": 60
+  },
+  {
+    "date": "2024-10-24",
+    "consommation": 47903,
+    "tension": 60
+  },
+  {
+    "date": "2024-10-25",
+    "consommation": 46791,
+    "tension": 60
+  },
+  {
+    "date": "2024-10-26",
+    "consommation": 42704,
+    "tension": 50
+  },
+  {
+    "date": "2024-10-27",
+    "consommation": 41297,
+    "tension": 50
+  },
+  {
+    "date": "2024-10-28",
+    "consommation": 47013,
+    "tension": 60
+  },
+  {
+    "date": "2024-10-29",
+    "consommation": 48297,
+    "tension": 60
+  },
+  {
+    "date": "2024-10-30",
+    "consommation": 48584,
+    "tension": 60
+  },
+  {
+    "date": "2024-10-31",
+    "consommation": 48715,
+    "tension": 60
+  },
+  {
+    "date": "2024-11-01",
+    "consommation": 44607,
+    "tension": 50
+  },
+  {
+    "date": "2024-11-02",
+    "consommation": 44864,
+    "tension": 50
+  },
+  {
+    "date": "2024-11-03",
+    "consommation": 44658,
+    "tension": 50
+  },
+  {
+    "date": "2024-11-04",
+    "consommation": 51390,
+    "tension": 60
+  },
+  {
+    "date": "2024-11-05",
+    "consommation": 51772,
+    "tension": 60
+  },
+  {
+    "date": "2024-11-06",
+    "consommation": 51756,
+    "tension": 60
+  },
+  {
+    "date": "2024-11-07",
+    "consommation": 52119,
+    "tension": 60
+  },
+  {
+    "date": "2024-11-08",
+    "consommation": 52302,
+    "tension": 60
+  },
+  {
+    "date": "2024-11-09",
+    "consommation": 47252,
+    "tension": 60
+  },
+  {
+    "date": "2024-11-10",
+    "consommation": 45080,
+    "tension": 60
+  },
+  {
+    "date": "2024-11-11",
+    "consommation": 47177,
+    "tension": 60
+  },
+  {
+    "date": "2024-11-12",
+    "consommation": 55480,
+    "tension": 70
+  },
+  {
+    "date": "2024-11-13",
+    "consommation": 57814,
+    "tension": 70
+  },
+  {
+    "date": "2024-11-14",
+    "consommation": 58643,
+    "tension": 70
+  },
+  {
+    "date": "2024-11-15",
+    "consommation": 58264,
+    "tension": 70
+  },
+  {
+    "date": "2024-11-16",
+    "consommation": 54375,
+    "tension": 60
+  },
+  {
+    "date": "2024-11-17",
+    "consommation": 52541,
+    "tension": 60
+  },
+  {
+    "date": "2024-11-18",
+    "consommation": 57726,
+    "tension": 70
+  },
+  {
+    "date": "2024-11-19",
+    "consommation": 57932,
+    "tension": 70
+  },
+  {
+    "date": "2024-11-20",
+    "consommation": 60829,
+    "tension": 70
+  },
+  {
+    "date": "2024-11-21",
+    "consommation": 66009,
+    "tension": 80
+  },
+  {
+    "date": "2024-11-22",
+    "consommation": 66922,
+    "tension": 80
+  },
+  {
+    "date": "2024-11-23",
+    "consommation": 61605,
+    "tension": 70
+  },
+  {
+    "date": "2024-11-24",
+    "consommation": 51416,
+    "tension": 60
+  },
+  {
+    "date": "2024-11-25",
+    "consommation": 54355,
+    "tension": 60
+  },
+  {
+    "date": "2024-11-26",
+    "consommation": 56656,
+    "tension": 70
+  },
+  {
+    "date": "2024-11-27",
+    "consommation": 57305,
+    "tension": 70
+  },
+  {
+    "date": "2024-11-28",
+    "consommation": 58251,
+    "tension": 70
+  },
+  {
+    "date": "2024-11-29",
+    "consommation": 60245,
+    "tension": 70
+  },
+  {
+    "date": "2024-11-30",
+    "consommation": 56992,
+    "tension": 70
+  },
+  {
+    "date": "2024-12-01",
+    "consommation": 54856,
+    "tension": 60
+  },
+  {
+    "date": "2024-12-02",
+    "consommation": 57855,
+    "tension": 70
+  },
+  {
+    "date": "2024-12-03",
+    "consommation": 60747,
+    "tension": 70
+  },
+  {
+    "date": "2024-12-04",
+    "consommation": 64115,
+    "tension": 70
+  },
+  {
+    "date": "2024-12-05",
+    "consommation": 64661,
+    "tension": 70
+  },
+  {
+    "date": "2024-12-06",
+    "consommation": 59746,
+    "tension": 70
+  },
+  {
+    "date": "2024-12-07",
+    "consommation": 56484,
+    "tension": 70
+  },
+  {
+    "date": "2024-12-08",
+    "consommation": 57379,
+    "tension": 70
+  },
+  {
+    "date": "2024-12-09",
+    "consommation": 64860,
+    "tension": 70
+  },
+  {
+    "date": "2024-12-10",
+    "consommation": 66998,
+    "tension": 80
+  },
+  {
+    "date": "2024-12-11",
+    "consommation": 67922,
+    "tension": 80
+  },
+  {
+    "date": "2024-12-12",
+    "consommation": 69267,
+    "tension": 80
+  },
+  {
+    "date": "2024-12-13",
+    "consommation": 70050,
+    "tension": 80
+  },
+  {
+    "date": "2024-12-14",
+    "consommation": 63882,
+    "tension": 70
+  },
+  {
+    "date": "2024-12-15",
+    "consommation": 60524,
+    "tension": 70
+  },
+  {
+    "date": "2024-12-16",
+    "consommation": 64653,
+    "tension": 70
+  },
+  {
+    "date": "2024-12-17",
+    "consommation": 64841,
+    "tension": 70
+  },
+  {
+    "date": "2024-12-18",
+    "consommation": 61916,
+    "tension": 70
+  },
+  {
+    "date": "2024-12-19",
+    "consommation": 61096,
+    "tension": 70
+  },
+  {
+    "date": "2024-12-20",
+    "consommation": 64203,
+    "tension": 70
+  },
+  {
+    "date": "2024-12-21",
+    "consommation": 58039,
+    "tension": 70
+  },
+  {
+    "date": "2024-12-22",
+    "consommation": 56541,
+    "tension": 70
+  },
+  {
+    "date": "2024-12-23",
+    "consommation": 61761,
+    "tension": 70
+  },
+  {
+    "date": "2024-12-24",
+    "consommation": 58196,
+    "tension": 70
+  },
+  {
+    "date": "2024-12-25",
+    "consommation": 51703,
+    "tension": 60
+  },
+  {
+    "date": "2024-12-26",
+    "consommation": 57561,
+    "tension": 70
+  },
+  {
+    "date": "2024-12-27",
+    "consommation": 62521,
+    "tension": 70
+  },
+  {
+    "date": "2024-12-28",
+    "consommation": 62952,
+    "tension": 70
+  },
+  {
+    "date": "2024-12-29",
+    "consommation": 61504,
+    "tension": 70
+  },
+  {
+    "date": "2024-12-30",
+    "consommation": 65441,
+    "tension": 80
+  },
+  {
+    "date": "2024-12-31",
+    "consommation": 65976,
+    "tension": 80
+  }
+]
