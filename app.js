@@ -122,7 +122,7 @@ Promise.all([
 });
 
 /* ==========================
-   HISTORIQUE
+   HISTORIQUE — JOURS VALIDÉS EDF
 ========================== */
 
 fetch("history.json?v=" + Date.now())
@@ -132,22 +132,31 @@ fetch("history.json?v=" + Date.now())
     today.setHours(0,0,0,0);
 
     const visibles = history
-      .filter(h => new Date(h.date) < today)
-      .sort((a,b) => new Date(b.date) - new Date(a.date))
+      .filter(h =>
+        h.realColor !== null &&
+        new Date(h.date) < today
+      )
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
       .slice(0, 10);
 
     if (visibles.length === 0) {
       historyDiv.innerHTML =
-        "<p>Aucune prédiction passée disponible</p>";
+        "<p>Aucune prédiction passée validée par EDF</p>";
       return;
     }
 
     historyDiv.innerHTML = visibles.map(h => `
       <div class="history-card">
         <b>${h.date}</b><br>
-        Prédiction J-${h.horizon ?? "?"} : <b>${h.predictedColor}</b><br>
-        Résultat réel : <b>${h.realColor ?? "En attente"}</b><br>
+        Prédiction J-${h.horizon} :
+        <b>${h.predictedColor.toUpperCase()}</b><br>
+        Résultat réel :
+        <b>${h.realColor.toUpperCase()}</b><br>
         ${verdictLabel(h.result)}
       </div>
     `).join("");
+  })
+  .catch(() => {
+    historyDiv.innerHTML =
+      "<p>Erreur de chargement de l’historique</p>";
   });
