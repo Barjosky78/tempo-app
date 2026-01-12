@@ -164,3 +164,45 @@ fetch("history.json?v=" + Date.now())
     historyDiv.innerHTML =
       "<p>Erreur de chargement de l’historique</p>";
   });
+/* ==========================
+   COMPTEURS TEMPO RESTANTS
+========================== */
+
+fetch("history.json?v=" + Date.now())
+  .then(r => r.json())
+  .then(history => {
+    const MAX = {
+      bleu: 300,
+      blanc: 43,
+      rouge: 22
+    };
+
+    const used = {
+      bleu: 0,
+      blanc: 0,
+      rouge: 0
+    };
+
+    history.forEach(h => {
+      if (!h.realColor) return;
+
+      if (used[h.realColor] !== undefined) {
+        used[h.realColor]++;
+      }
+    });
+
+    const remaining = {
+      bleu: Math.max(0, MAX.bleu - used.bleu),
+      blanc: Math.max(0, MAX.blanc - used.blanc),
+      rouge: Math.max(0, MAX.rouge - used.rouge)
+    };
+
+    document.getElementById("count-bleu").textContent = remaining.bleu;
+    document.getElementById("count-blanc").textContent = remaining.blanc;
+    document.getElementById("count-rouge").textContent = remaining.rouge;
+  })
+  .catch(() => {
+    document.getElementById("count-bleu").textContent = "–";
+    document.getElementById("count-blanc").textContent = "–";
+    document.getElementById("count-rouge").textContent = "–";
+  });
