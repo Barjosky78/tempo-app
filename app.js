@@ -35,101 +35,94 @@ fetch("meta.json?v=" + Date.now())
   });
 
 /* ==========================
-   CHARGEMENT ML (PAR DATE)
+   TEMPO + ML (SYNC GARANTIE)
 ========================== */
 
-let mlByDate = {};
+Promise.all([
+  fetch("tempo.json?v=" + Date.now()).then(r => r.json()),
+  fetch("ML/ml_predictions.json?v=" + Date.now())
+    .then(r => r.json())
+    .catch(() => [])
+]).then(([days, mlData]) => {
 
-fetch("ML/ml_predictions.json?v=" + Date.now())
-  .then(r => r.json())
-  .then(data => {
-    data.forEach(p => {
-      mlByDate[p.date] = p;
-    });
-  })
-  .catch(() => {
-    mlByDate = {};
+  const mlByDate = {};
+  mlData.forEach(p => {
+    mlByDate[p.date] = p;
   });
 
-/* ==========================
-   PRÉVISIONS TEMPO + ML
-========================== */
+  tempoDiv.innerHTML = "";
 
-fetch("tempo.json?v=" + Date.now())
-  .then(r => r.json())
-  .then(days => {
-    tempoDiv.innerHTML = "";
+  days.forEach((day, index) => {
 
-    days.forEach((day, index) => {
-      const confidence = day.fixed
-        ? 100
-        : Math.max(
-            day.probabilites.rouge,
-            day.probabilites.blanc,
-            day.probabilites.bleu
-          );
-
-      const icons = [];
-      if (day.sources?.reel) icons.push("✔️");
-      if (day.sources?.meteo) icons.push("☁️");
-      if (day.sources?.rte) icons.push("⚡");
-      if (day.sources?.historique) icons.push("📊");
-
-      const ml = mlByDate[day.date] || null;
-
-      let mlConfidence = 0;
-      if (ml && ml.mlProbabilities) {
-        mlConfidence = Math.max(
-          ml.mlProbabilities.rouge || 0,
-          ml.mlProbabilities.blanc || 0,
-          ml.mlProbabilities.bleu || 0
+    const confidence = day.fixed
+      ? 100
+      : Math.max(
+          day.probabilites.rouge,
+          day.probabilites.blanc,
+          day.probabilites.bleu
         );
-      }
 
-      const card = document.createElement("div");
-      card.className = "day " + day.couleur;
+    const icons = [];
+    if (day.sources?.reel) icons.push("✔️");
+    if (day.sources?.meteo) icons.push("☁️");
+    if (day.sources?.rte) icons.push("⚡");
+    if (day.sources?.historique) icons.push("📊");
 
-      card.innerHTML = `
-        <strong>${dayLabel(day.date, index)}</strong><br>
-        <span class="date">${day.date}</span><br><br>
+    const ml = mlByDate[day.date] || null;
 
-        <b>${day.couleur.toUpperCase()}</b>
-        ${day.estimated ? `<div class="tag">Estimation météo</div>` : ""}
-        <div class="sources">${icons.join(" ")}</div>
+    let mlConfidence = 0;
+    if (ml?.mlProbabilities) {
+      mlConfidence = Math.max(
+        ml.mlProbabilities.rouge || 0,
+        ml.mlProbabilities.blanc || 0,
+        ml.mlProbabilities.bleu || 0
+      );
+    }
 
-        <br>
-        🔴 ${day.probabilites.rouge}%<br>
-        ⚪ ${day.probabilites.blanc}%<br>
-        🔵 ${day.probabilites.bleu}%
+    const card = document.createElement("div");
+    card.className = "day " + day.couleur;
 
-        <div class="confidence-wrapper">
-          <div class="confidence-bar">
-            <div class="confidence-fill" style="width:${confidence}%"></div>
-          </div>
-          <div class="confidence-label">Confiance moteur : ${confidence}%</div>
+    card.innerHTML = `
+      <strong>${dayLabel(day.date, index)}</strong><br>
+      <span class="date">${day.date}</span><br><br>
+
+      <b>${day.couleur.toUpperCase()}</b>
+      ${day.estimated ? `<div class="tag">Estimation météo</div>` : ""}
+      <div class="sources">${icons.join(" ")}</div>
+
+      <br>
+      🔴 ${day.probabilites.rouge}%<br>
+      ⚪ ${day.probabilites.blanc}%<br>
+      🔵 ${day.probabilites.bleu}%
+
+      <div class="confidence-wrapper">
+        <div class="confidence-bar">
+          <div class="confidence-fill" style="width:${confidence}%"></div>
         </div>
+        <div class="confidence-label">Confiance moteur : ${confidence}%</div>
+      </div>
 
-        ${ml ? `
-          <div class="ml-box ml-${ml.mlPrediction}">
-            🧠 <b>ML :</b> ${ml.mlPrediction.toUpperCase()}<br>
-            🔴 ${ml.mlProbabilities.rouge ?? 0}% 
-            ⚪ ${ml.mlProbabilities.blanc ?? 0}% 
-            🔵 ${ml.mlProbabilities.bleu ?? 0}%
+      ${ml ? `
+        <div class="ml-box ml-${ml.mlPrediction}">
+          🧠 <b>ML :</b> ${ml.mlPrediction.toUpperCase()}<br>
+          🔴 ${ml.mlProbabilities.rouge ?? 0}% 
+          ⚪ ${ml.mlProbabilities.blanc ?? 0}% 
+          🔵 ${ml.mlProbabilities.bleu ?? 0}%
 
-            <div class="ml-bar">
-              <div class="ml-fill" style="width:${mlConfidence}%"></div>
-            </div>
-            <div class="confidence-label">Confiance ML : ${mlConfidence}%</div>
+          <div class="ml-bar">
+            <div class="ml-fill" style="width:${mlConfidence}%"></div>
           </div>
-        ` : ""}
-      `;
+          <div class="confidence-label">Confiance ML : ${mlConfidence}%</div>
+        </div>
+      ` : ""}
+    `;
 
-      tempoDiv.appendChild(card);
-    });
+    tempoDiv.appendChild(card);
   });
+});
 
 /* ==========================
-   HISTORIQUE — À PARTIR D’HIER
+   HISTORIQUE
 ========================== */
 
 fetch("history.json?v=" + Date.now())
