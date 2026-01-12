@@ -9,7 +9,7 @@
     "remainingBleu": 299,
     "remainingBlanc": 43,
     "remainingRouge": 22,
-    "seasonDayIndex": 1
+    "seasonDayIndex": 62
   },
   {
     "date": "2017-11-02",
@@ -21,7 +21,7 @@
     "remainingBleu": 299,
     "remainingBlanc": 43,
     "remainingRouge": 21,
-    "seasonDayIndex": 2
+    "seasonDayIndex": 63
   },
   {
     "date": "2017-11-03",
@@ -33,7 +33,7 @@
     "remainingBleu": 298,
     "remainingBlanc": 43,
     "remainingRouge": 21,
-    "seasonDayIndex": 3
+    "seasonDayIndex": 64
   },
   {
     "date": "2017-11-06",
@@ -45,7 +45,7 @@
     "remainingBleu": 297,
     "remainingBlanc": 43,
     "remainingRouge": 21,
-    "seasonDayIndex": 6
+    "seasonDayIndex": 67
   },
   {
     "date": "2017-11-07",
@@ -57,7 +57,7 @@
     "remainingBleu": 297,
     "remainingBlanc": 43,
     "remainingRouge": 20,
-    "seasonDayIndex": 7
+    "seasonDayIndex": 68
   },
   {
     "date": "2017-11-08",
@@ -69,7 +69,7 @@
     "remainingBleu": 296,
     "remainingBlanc": 43,
     "remainingRouge": 20,
-    "seasonDayIndex": 8
+    "seasonDayIndex": 69
   },
   {
     "date": "2017-11-09",
@@ -81,7 +81,7 @@
     "remainingBleu": 296,
     "remainingBlanc": 42,
     "remainingRouge": 20,
-    "seasonDayIndex": 9
+    "seasonDayIndex": 70
   },
   {
     "date": "2017-11-10",
@@ -93,7 +93,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 42,
     "remainingRouge": 20,
-    "seasonDayIndex": 10
+    "seasonDayIndex": 71
   },
   {
     "date": "2017-11-13",
@@ -105,7 +105,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 41,
     "remainingRouge": 20,
-    "seasonDayIndex": 13
+    "seasonDayIndex": 74
   },
   {
     "date": "2017-11-14",
@@ -117,7 +117,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 40,
     "remainingRouge": 20,
-    "seasonDayIndex": 14
+    "seasonDayIndex": 75
   },
   {
     "date": "2017-11-15",
@@ -129,7 +129,7 @@
     "remainingBleu": 294,
     "remainingBlanc": 40,
     "remainingRouge": 20,
-    "seasonDayIndex": 15
+    "seasonDayIndex": 76
   },
   {
     "date": "2017-11-16",
@@ -141,7 +141,7 @@
     "remainingBleu": 293,
     "remainingBlanc": 40,
     "remainingRouge": 20,
-    "seasonDayIndex": 16
+    "seasonDayIndex": 77
   },
   {
     "date": "2017-11-17",
@@ -153,7 +153,7 @@
     "remainingBleu": 293,
     "remainingBlanc": 39,
     "remainingRouge": 20,
-    "seasonDayIndex": 17
+    "seasonDayIndex": 78
   },
   {
     "date": "2017-11-20",
@@ -165,7 +165,7 @@
     "remainingBleu": 293,
     "remainingBlanc": 38,
     "remainingRouge": 20,
-    "seasonDayIndex": 20
+    "seasonDayIndex": 81
   },
   {
     "date": "2017-11-21",
@@ -177,7 +177,7 @@
     "remainingBleu": 293,
     "remainingBlanc": 38,
     "remainingRouge": 19,
-    "seasonDayIndex": 21
+    "seasonDayIndex": 82
   },
   {
     "date": "2017-11-22",
@@ -189,7 +189,7 @@
     "remainingBleu": 292,
     "remainingBlanc": 38,
     "remainingRouge": 19,
-    "seasonDayIndex": 22
+    "seasonDayIndex": 83
   },
   {
     "date": "2017-11-23",
@@ -201,7 +201,7 @@
     "remainingBleu": 291,
     "remainingBlanc": 38,
     "remainingRouge": 19,
-    "seasonDayIndex": 23
+    "seasonDayIndex": 84
   },
   {
     "date": "2017-11-24",
@@ -213,7 +213,7 @@
     "remainingBleu": 290,
     "remainingBlanc": 38,
     "remainingRouge": 19,
-    "seasonDayIndex": 24
+    "seasonDayIndex": 85
   },
   {
     "date": "2017-11-27",
@@ -225,7 +225,7 @@
     "remainingBleu": 289,
     "remainingBlanc": 38,
     "remainingRouge": 19,
-    "seasonDayIndex": 27
+    "seasonDayIndex": 88
   },
   {
     "date": "2017-11-28",
@@ -237,7 +237,7 @@
     "remainingBleu": 289,
     "remainingBlanc": 37,
     "remainingRouge": 19,
-    "seasonDayIndex": 28
+    "seasonDayIndex": 89
   },
   {
     "date": "2017-11-29",
@@ -249,7 +249,7 @@
     "remainingBleu": 288,
     "remainingBlanc": 37,
     "remainingRouge": 19,
-    "seasonDayIndex": 29
+    "seasonDayIndex": 90
   },
   {
     "date": "2017-11-30",
@@ -261,7 +261,7 @@
     "remainingBleu": 288,
     "remainingBlanc": 37,
     "remainingRouge": 18,
-    "seasonDayIndex": 30
+    "seasonDayIndex": 91
   },
   {
     "date": "2017-12-01",
@@ -273,7 +273,7 @@
     "remainingBleu": 287,
     "remainingBlanc": 37,
     "remainingRouge": 18,
-    "seasonDayIndex": 31
+    "seasonDayIndex": 92
   },
   {
     "date": "2017-12-04",
@@ -285,7 +285,7 @@
     "remainingBleu": 286,
     "remainingBlanc": 37,
     "remainingRouge": 18,
-    "seasonDayIndex": 34
+    "seasonDayIndex": 95
   },
   {
     "date": "2017-12-05",
@@ -297,7 +297,7 @@
     "remainingBleu": 285,
     "remainingBlanc": 37,
     "remainingRouge": 18,
-    "seasonDayIndex": 35
+    "seasonDayIndex": 96
   },
   {
     "date": "2017-12-06",
@@ -309,7 +309,7 @@
     "remainingBleu": 285,
     "remainingBlanc": 36,
     "remainingRouge": 18,
-    "seasonDayIndex": 36
+    "seasonDayIndex": 97
   },
   {
     "date": "2017-12-07",
@@ -321,7 +321,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 36,
     "remainingRouge": 18,
-    "seasonDayIndex": 37
+    "seasonDayIndex": 98
   },
   {
     "date": "2017-12-08",
@@ -333,7 +333,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 36,
     "remainingRouge": 17,
-    "seasonDayIndex": 38
+    "seasonDayIndex": 99
   },
   {
     "date": "2017-12-11",
@@ -345,7 +345,7 @@
     "remainingBleu": 283,
     "remainingBlanc": 36,
     "remainingRouge": 17,
-    "seasonDayIndex": 41
+    "seasonDayIndex": 102
   },
   {
     "date": "2017-12-12",
@@ -357,7 +357,7 @@
     "remainingBleu": 282,
     "remainingBlanc": 36,
     "remainingRouge": 17,
-    "seasonDayIndex": 42
+    "seasonDayIndex": 103
   },
   {
     "date": "2017-12-13",
@@ -369,7 +369,7 @@
     "remainingBleu": 282,
     "remainingBlanc": 35,
     "remainingRouge": 17,
-    "seasonDayIndex": 43
+    "seasonDayIndex": 104
   },
   {
     "date": "2017-12-14",
@@ -381,7 +381,7 @@
     "remainingBleu": 281,
     "remainingBlanc": 35,
     "remainingRouge": 17,
-    "seasonDayIndex": 44
+    "seasonDayIndex": 105
   },
   {
     "date": "2017-12-15",
@@ -393,7 +393,7 @@
     "remainingBleu": 280,
     "remainingBlanc": 35,
     "remainingRouge": 17,
-    "seasonDayIndex": 45
+    "seasonDayIndex": 106
   },
   {
     "date": "2017-12-18",
@@ -405,7 +405,7 @@
     "remainingBleu": 280,
     "remainingBlanc": 35,
     "remainingRouge": 16,
-    "seasonDayIndex": 48
+    "seasonDayIndex": 109
   },
   {
     "date": "2017-12-19",
@@ -417,7 +417,7 @@
     "remainingBleu": 280,
     "remainingBlanc": 35,
     "remainingRouge": 15,
-    "seasonDayIndex": 49
+    "seasonDayIndex": 110
   },
   {
     "date": "2017-12-20",
@@ -429,7 +429,7 @@
     "remainingBleu": 279,
     "remainingBlanc": 35,
     "remainingRouge": 15,
-    "seasonDayIndex": 50
+    "seasonDayIndex": 111
   },
   {
     "date": "2017-12-21",
@@ -441,7 +441,7 @@
     "remainingBleu": 279,
     "remainingBlanc": 35,
     "remainingRouge": 14,
-    "seasonDayIndex": 51
+    "seasonDayIndex": 112
   },
   {
     "date": "2017-12-22",
@@ -453,7 +453,7 @@
     "remainingBleu": 278,
     "remainingBlanc": 35,
     "remainingRouge": 14,
-    "seasonDayIndex": 52
+    "seasonDayIndex": 113
   },
   {
     "date": "2017-12-25",
@@ -465,7 +465,7 @@
     "remainingBleu": 277,
     "remainingBlanc": 35,
     "remainingRouge": 14,
-    "seasonDayIndex": 55
+    "seasonDayIndex": 116
   },
   {
     "date": "2017-12-26",
@@ -477,7 +477,7 @@
     "remainingBleu": 277,
     "remainingBlanc": 34,
     "remainingRouge": 14,
-    "seasonDayIndex": 56
+    "seasonDayIndex": 117
   },
   {
     "date": "2017-12-27",
@@ -489,7 +489,7 @@
     "remainingBleu": 277,
     "remainingBlanc": 33,
     "remainingRouge": 14,
-    "seasonDayIndex": 57
+    "seasonDayIndex": 118
   },
   {
     "date": "2017-12-28",
@@ -501,7 +501,7 @@
     "remainingBleu": 277,
     "remainingBlanc": 32,
     "remainingRouge": 14,
-    "seasonDayIndex": 58
+    "seasonDayIndex": 119
   },
   {
     "date": "2017-12-29",
@@ -513,7 +513,7 @@
     "remainingBleu": 277,
     "remainingBlanc": 31,
     "remainingRouge": 14,
-    "seasonDayIndex": 59
+    "seasonDayIndex": 120
   },
   {
     "date": "2018-01-01",
@@ -525,7 +525,7 @@
     "remainingBleu": 276,
     "remainingBlanc": 31,
     "remainingRouge": 14,
-    "seasonDayIndex": 62
+    "seasonDayIndex": 123
   },
   {
     "date": "2018-01-02",
@@ -537,7 +537,7 @@
     "remainingBleu": 276,
     "remainingBlanc": 30,
     "remainingRouge": 14,
-    "seasonDayIndex": 63
+    "seasonDayIndex": 124
   },
   {
     "date": "2018-01-03",
@@ -549,7 +549,7 @@
     "remainingBleu": 275,
     "remainingBlanc": 30,
     "remainingRouge": 14,
-    "seasonDayIndex": 64
+    "seasonDayIndex": 125
   },
   {
     "date": "2018-01-04",
@@ -561,7 +561,7 @@
     "remainingBleu": 275,
     "remainingBlanc": 30,
     "remainingRouge": 13,
-    "seasonDayIndex": 65
+    "seasonDayIndex": 126
   },
   {
     "date": "2018-01-05",
@@ -573,7 +573,7 @@
     "remainingBleu": 275,
     "remainingBlanc": 29,
     "remainingRouge": 13,
-    "seasonDayIndex": 66
+    "seasonDayIndex": 127
   },
   {
     "date": "2018-01-08",
@@ -585,7 +585,7 @@
     "remainingBleu": 275,
     "remainingBlanc": 28,
     "remainingRouge": 13,
-    "seasonDayIndex": 69
+    "seasonDayIndex": 130
   },
   {
     "date": "2018-01-09",
@@ -597,7 +597,7 @@
     "remainingBleu": 275,
     "remainingBlanc": 27,
     "remainingRouge": 13,
-    "seasonDayIndex": 70
+    "seasonDayIndex": 131
   },
   {
     "date": "2018-01-10",
@@ -609,7 +609,7 @@
     "remainingBleu": 275,
     "remainingBlanc": 26,
     "remainingRouge": 13,
-    "seasonDayIndex": 71
+    "seasonDayIndex": 132
   },
   {
     "date": "2018-01-11",
@@ -621,7 +621,7 @@
     "remainingBleu": 275,
     "remainingBlanc": 25,
     "remainingRouge": 13,
-    "seasonDayIndex": 72
+    "seasonDayIndex": 133
   },
   {
     "date": "2018-01-12",
@@ -633,7 +633,7 @@
     "remainingBleu": 275,
     "remainingBlanc": 24,
     "remainingRouge": 13,
-    "seasonDayIndex": 73
+    "seasonDayIndex": 134
   },
   {
     "date": "2018-01-15",
@@ -645,7 +645,7 @@
     "remainingBleu": 275,
     "remainingBlanc": 23,
     "remainingRouge": 13,
-    "seasonDayIndex": 76
+    "seasonDayIndex": 137
   },
   {
     "date": "2018-01-16",
@@ -657,7 +657,7 @@
     "remainingBleu": 274,
     "remainingBlanc": 23,
     "remainingRouge": 13,
-    "seasonDayIndex": 77
+    "seasonDayIndex": 138
   },
   {
     "date": "2018-01-17",
@@ -669,7 +669,7 @@
     "remainingBleu": 273,
     "remainingBlanc": 23,
     "remainingRouge": 13,
-    "seasonDayIndex": 78
+    "seasonDayIndex": 139
   },
   {
     "date": "2018-01-18",
@@ -681,7 +681,7 @@
     "remainingBleu": 273,
     "remainingBlanc": 22,
     "remainingRouge": 13,
-    "seasonDayIndex": 79
+    "seasonDayIndex": 140
   },
   {
     "date": "2018-01-19",
@@ -693,7 +693,7 @@
     "remainingBleu": 273,
     "remainingBlanc": 22,
     "remainingRouge": 12,
-    "seasonDayIndex": 80
+    "seasonDayIndex": 141
   },
   {
     "date": "2018-01-22",
@@ -705,7 +705,7 @@
     "remainingBleu": 272,
     "remainingBlanc": 22,
     "remainingRouge": 12,
-    "seasonDayIndex": 83
+    "seasonDayIndex": 144
   },
   {
     "date": "2018-01-23",
@@ -717,7 +717,7 @@
     "remainingBleu": 272,
     "remainingBlanc": 21,
     "remainingRouge": 12,
-    "seasonDayIndex": 84
+    "seasonDayIndex": 145
   },
   {
     "date": "2018-01-24",
@@ -729,7 +729,7 @@
     "remainingBleu": 272,
     "remainingBlanc": 21,
     "remainingRouge": 11,
-    "seasonDayIndex": 85
+    "seasonDayIndex": 146
   },
   {
     "date": "2018-01-25",
@@ -741,7 +741,7 @@
     "remainingBleu": 272,
     "remainingBlanc": 20,
     "remainingRouge": 11,
-    "seasonDayIndex": 86
+    "seasonDayIndex": 147
   },
   {
     "date": "2018-01-26",
@@ -753,7 +753,7 @@
     "remainingBleu": 272,
     "remainingBlanc": 19,
     "remainingRouge": 11,
-    "seasonDayIndex": 87
+    "seasonDayIndex": 148
   },
   {
     "date": "2018-01-29",
@@ -765,7 +765,7 @@
     "remainingBleu": 272,
     "remainingBlanc": 19,
     "remainingRouge": 10,
-    "seasonDayIndex": 90
+    "seasonDayIndex": 151
   },
   {
     "date": "2018-01-30",
@@ -777,7 +777,7 @@
     "remainingBleu": 271,
     "remainingBlanc": 19,
     "remainingRouge": 10,
-    "seasonDayIndex": 91
+    "seasonDayIndex": 152
   },
   {
     "date": "2018-01-31",
@@ -789,7 +789,7 @@
     "remainingBleu": 271,
     "remainingBlanc": 18,
     "remainingRouge": 10,
-    "seasonDayIndex": 92
+    "seasonDayIndex": 153
   },
   {
     "date": "2018-02-01",
@@ -801,7 +801,7 @@
     "remainingBleu": 271,
     "remainingBlanc": 17,
     "remainingRouge": 10,
-    "seasonDayIndex": 93
+    "seasonDayIndex": 154
   },
   {
     "date": "2018-02-02",
@@ -813,7 +813,7 @@
     "remainingBleu": 270,
     "remainingBlanc": 17,
     "remainingRouge": 10,
-    "seasonDayIndex": 94
+    "seasonDayIndex": 155
   },
   {
     "date": "2018-02-05",
@@ -825,7 +825,7 @@
     "remainingBleu": 269,
     "remainingBlanc": 17,
     "remainingRouge": 10,
-    "seasonDayIndex": 97
+    "seasonDayIndex": 158
   },
   {
     "date": "2018-02-06",
@@ -837,7 +837,7 @@
     "remainingBleu": 269,
     "remainingBlanc": 16,
     "remainingRouge": 10,
-    "seasonDayIndex": 98
+    "seasonDayIndex": 159
   },
   {
     "date": "2018-02-07",
@@ -849,7 +849,7 @@
     "remainingBleu": 268,
     "remainingBlanc": 16,
     "remainingRouge": 10,
-    "seasonDayIndex": 99
+    "seasonDayIndex": 160
   },
   {
     "date": "2018-02-08",
@@ -861,7 +861,7 @@
     "remainingBleu": 268,
     "remainingBlanc": 16,
     "remainingRouge": 9,
-    "seasonDayIndex": 100
+    "seasonDayIndex": 161
   },
   {
     "date": "2018-02-09",
@@ -873,7 +873,7 @@
     "remainingBleu": 268,
     "remainingBlanc": 15,
     "remainingRouge": 9,
-    "seasonDayIndex": 101
+    "seasonDayIndex": 162
   },
   {
     "date": "2018-02-12",
@@ -885,7 +885,7 @@
     "remainingBleu": 267,
     "remainingBlanc": 15,
     "remainingRouge": 9,
-    "seasonDayIndex": 104
+    "seasonDayIndex": 165
   },
   {
     "date": "2018-02-13",
@@ -897,7 +897,7 @@
     "remainingBleu": 266,
     "remainingBlanc": 15,
     "remainingRouge": 9,
-    "seasonDayIndex": 105
+    "seasonDayIndex": 166
   },
   {
     "date": "2018-02-14",
@@ -909,7 +909,7 @@
     "remainingBleu": 265,
     "remainingBlanc": 15,
     "remainingRouge": 9,
-    "seasonDayIndex": 106
+    "seasonDayIndex": 167
   },
   {
     "date": "2018-02-15",
@@ -921,7 +921,7 @@
     "remainingBleu": 265,
     "remainingBlanc": 14,
     "remainingRouge": 9,
-    "seasonDayIndex": 107
+    "seasonDayIndex": 168
   },
   {
     "date": "2018-02-16",
@@ -933,7 +933,7 @@
     "remainingBleu": 265,
     "remainingBlanc": 14,
     "remainingRouge": 8,
-    "seasonDayIndex": 108
+    "seasonDayIndex": 169
   },
   {
     "date": "2018-02-19",
@@ -945,7 +945,7 @@
     "remainingBleu": 265,
     "remainingBlanc": 14,
     "remainingRouge": 7,
-    "seasonDayIndex": 111
+    "seasonDayIndex": 172
   },
   {
     "date": "2018-02-20",
@@ -957,7 +957,7 @@
     "remainingBleu": 265,
     "remainingBlanc": 14,
     "remainingRouge": 6,
-    "seasonDayIndex": 112
+    "seasonDayIndex": 173
   },
   {
     "date": "2018-02-21",
@@ -969,7 +969,7 @@
     "remainingBleu": 265,
     "remainingBlanc": 13,
     "remainingRouge": 6,
-    "seasonDayIndex": 113
+    "seasonDayIndex": 174
   },
   {
     "date": "2018-02-22",
@@ -981,7 +981,7 @@
     "remainingBleu": 265,
     "remainingBlanc": 13,
     "remainingRouge": 5,
-    "seasonDayIndex": 114
+    "seasonDayIndex": 175
   },
   {
     "date": "2018-02-23",
@@ -993,7 +993,7 @@
     "remainingBleu": 265,
     "remainingBlanc": 12,
     "remainingRouge": 5,
-    "seasonDayIndex": 115
+    "seasonDayIndex": 176
   },
   {
     "date": "2018-02-26",
@@ -1005,7 +1005,7 @@
     "remainingBleu": 264,
     "remainingBlanc": 12,
     "remainingRouge": 5,
-    "seasonDayIndex": 118
+    "seasonDayIndex": 179
   },
   {
     "date": "2018-02-27",
@@ -1017,7 +1017,7 @@
     "remainingBleu": 264,
     "remainingBlanc": 12,
     "remainingRouge": 4,
-    "seasonDayIndex": 119
+    "seasonDayIndex": 180
   },
   {
     "date": "2018-02-28",
@@ -1029,7 +1029,7 @@
     "remainingBleu": 264,
     "remainingBlanc": 11,
     "remainingRouge": 4,
-    "seasonDayIndex": 120
+    "seasonDayIndex": 181
   },
   {
     "date": "2018-03-01",
@@ -1041,7 +1041,7 @@
     "remainingBleu": 264,
     "remainingBlanc": 10,
     "remainingRouge": 4,
-    "seasonDayIndex": 121
+    "seasonDayIndex": 182
   },
   {
     "date": "2018-03-02",
@@ -1053,7 +1053,7 @@
     "remainingBleu": 263,
     "remainingBlanc": 10,
     "remainingRouge": 4,
-    "seasonDayIndex": 122
+    "seasonDayIndex": 183
   },
   {
     "date": "2018-03-05",
@@ -1065,7 +1065,7 @@
     "remainingBleu": 262,
     "remainingBlanc": 10,
     "remainingRouge": 4,
-    "seasonDayIndex": 125
+    "seasonDayIndex": 186
   },
   {
     "date": "2018-03-06",
@@ -1077,7 +1077,7 @@
     "remainingBleu": 262,
     "remainingBlanc": 10,
     "remainingRouge": 3,
-    "seasonDayIndex": 126
+    "seasonDayIndex": 187
   },
   {
     "date": "2018-03-07",
@@ -1089,7 +1089,7 @@
     "remainingBleu": 262,
     "remainingBlanc": 9,
     "remainingRouge": 3,
-    "seasonDayIndex": 127
+    "seasonDayIndex": 188
   },
   {
     "date": "2018-03-08",
@@ -1101,7 +1101,7 @@
     "remainingBleu": 261,
     "remainingBlanc": 9,
     "remainingRouge": 3,
-    "seasonDayIndex": 128
+    "seasonDayIndex": 189
   },
   {
     "date": "2018-03-09",
@@ -1113,7 +1113,7 @@
     "remainingBleu": 261,
     "remainingBlanc": 8,
     "remainingRouge": 3,
-    "seasonDayIndex": 129
+    "seasonDayIndex": 190
   },
   {
     "date": "2018-03-12",
@@ -1125,7 +1125,7 @@
     "remainingBleu": 261,
     "remainingBlanc": 7,
     "remainingRouge": 3,
-    "seasonDayIndex": 132
+    "seasonDayIndex": 193
   },
   {
     "date": "2018-03-13",
@@ -1137,7 +1137,7 @@
     "remainingBleu": 261,
     "remainingBlanc": 6,
     "remainingRouge": 3,
-    "seasonDayIndex": 133
+    "seasonDayIndex": 194
   },
   {
     "date": "2018-03-14",
@@ -1149,7 +1149,7 @@
     "remainingBleu": 261,
     "remainingBlanc": 5,
     "remainingRouge": 3,
-    "seasonDayIndex": 134
+    "seasonDayIndex": 195
   },
   {
     "date": "2018-03-15",
@@ -1161,7 +1161,7 @@
     "remainingBleu": 261,
     "remainingBlanc": 4,
     "remainingRouge": 3,
-    "seasonDayIndex": 135
+    "seasonDayIndex": 196
   },
   {
     "date": "2018-03-16",
@@ -1173,7 +1173,7 @@
     "remainingBleu": 260,
     "remainingBlanc": 4,
     "remainingRouge": 3,
-    "seasonDayIndex": 136
+    "seasonDayIndex": 197
   },
   {
     "date": "2018-03-19",
@@ -1185,7 +1185,7 @@
     "remainingBleu": 260,
     "remainingBlanc": 3,
     "remainingRouge": 3,
-    "seasonDayIndex": 139
+    "seasonDayIndex": 200
   },
   {
     "date": "2018-03-20",
@@ -1197,7 +1197,7 @@
     "remainingBleu": 260,
     "remainingBlanc": 2,
     "remainingRouge": 3,
-    "seasonDayIndex": 140
+    "seasonDayIndex": 201
   },
   {
     "date": "2018-03-21",
@@ -1209,7 +1209,7 @@
     "remainingBleu": 260,
     "remainingBlanc": 2,
     "remainingRouge": 2,
-    "seasonDayIndex": 141
+    "seasonDayIndex": 202
   },
   {
     "date": "2018-03-22",
@@ -1221,7 +1221,7 @@
     "remainingBleu": 260,
     "remainingBlanc": 1,
     "remainingRouge": 2,
-    "seasonDayIndex": 142
+    "seasonDayIndex": 203
   },
   {
     "date": "2018-03-23",
@@ -1233,7 +1233,7 @@
     "remainingBleu": 260,
     "remainingBlanc": 1,
     "remainingRouge": 1,
-    "seasonDayIndex": 143
+    "seasonDayIndex": 204
   },
   {
     "date": "2018-03-26",
@@ -1245,7 +1245,7 @@
     "remainingBleu": 259,
     "remainingBlanc": 1,
     "remainingRouge": 1,
-    "seasonDayIndex": 146
+    "seasonDayIndex": 207
   },
   {
     "date": "2018-03-27",
@@ -1257,7 +1257,7 @@
     "remainingBleu": 259,
     "remainingBlanc": 0,
     "remainingRouge": 1,
-    "seasonDayIndex": 147
+    "seasonDayIndex": 208
   },
   {
     "date": "2018-03-28",
@@ -1269,7 +1269,7 @@
     "remainingBleu": 258,
     "remainingBlanc": 0,
     "remainingRouge": 1,
-    "seasonDayIndex": 148
+    "seasonDayIndex": 209
   },
   {
     "date": "2018-03-29",
@@ -1281,7 +1281,7 @@
     "remainingBleu": 258,
     "remainingBlanc": 0,
     "remainingRouge": 0,
-    "seasonDayIndex": 149
+    "seasonDayIndex": 210
   },
   {
     "date": "2018-03-30",
@@ -1293,7 +1293,7 @@
     "remainingBleu": 257,
     "remainingBlanc": 0,
     "remainingRouge": 0,
-    "seasonDayIndex": 150
+    "seasonDayIndex": 211
   },
   {
     "date": "2018-11-01",
@@ -1305,7 +1305,7 @@
     "remainingBleu": 299,
     "remainingBlanc": 43,
     "remainingRouge": 22,
-    "seasonDayIndex": 1
+    "seasonDayIndex": 62
   },
   {
     "date": "2018-11-02",
@@ -1317,7 +1317,7 @@
     "remainingBleu": 299,
     "remainingBlanc": 43,
     "remainingRouge": 21,
-    "seasonDayIndex": 2
+    "seasonDayIndex": 63
   },
   {
     "date": "2018-11-05",
@@ -1329,7 +1329,7 @@
     "remainingBleu": 298,
     "remainingBlanc": 43,
     "remainingRouge": 21,
-    "seasonDayIndex": 5
+    "seasonDayIndex": 66
   },
   {
     "date": "2018-11-06",
@@ -1341,7 +1341,7 @@
     "remainingBleu": 298,
     "remainingBlanc": 42,
     "remainingRouge": 21,
-    "seasonDayIndex": 6
+    "seasonDayIndex": 67
   },
   {
     "date": "2018-11-07",
@@ -1353,7 +1353,7 @@
     "remainingBleu": 297,
     "remainingBlanc": 42,
     "remainingRouge": 21,
-    "seasonDayIndex": 7
+    "seasonDayIndex": 68
   },
   {
     "date": "2018-11-08",
@@ -1365,7 +1365,7 @@
     "remainingBleu": 297,
     "remainingBlanc": 42,
     "remainingRouge": 20,
-    "seasonDayIndex": 8
+    "seasonDayIndex": 69
   },
   {
     "date": "2018-11-09",
@@ -1377,7 +1377,7 @@
     "remainingBleu": 296,
     "remainingBlanc": 42,
     "remainingRouge": 20,
-    "seasonDayIndex": 9
+    "seasonDayIndex": 70
   },
   {
     "date": "2018-11-12",
@@ -1389,7 +1389,7 @@
     "remainingBleu": 296,
     "remainingBlanc": 42,
     "remainingRouge": 19,
-    "seasonDayIndex": 12
+    "seasonDayIndex": 73
   },
   {
     "date": "2018-11-13",
@@ -1401,7 +1401,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 42,
     "remainingRouge": 19,
-    "seasonDayIndex": 13
+    "seasonDayIndex": 74
   },
   {
     "date": "2018-11-14",
@@ -1413,7 +1413,7 @@
     "remainingBleu": 294,
     "remainingBlanc": 42,
     "remainingRouge": 19,
-    "seasonDayIndex": 14
+    "seasonDayIndex": 75
   },
   {
     "date": "2018-11-15",
@@ -1425,7 +1425,7 @@
     "remainingBleu": 294,
     "remainingBlanc": 42,
     "remainingRouge": 18,
-    "seasonDayIndex": 15
+    "seasonDayIndex": 76
   },
   {
     "date": "2018-11-16",
@@ -1437,7 +1437,7 @@
     "remainingBleu": 294,
     "remainingBlanc": 42,
     "remainingRouge": 17,
-    "seasonDayIndex": 16
+    "seasonDayIndex": 77
   },
   {
     "date": "2018-11-19",
@@ -1449,7 +1449,7 @@
     "remainingBleu": 294,
     "remainingBlanc": 41,
     "remainingRouge": 17,
-    "seasonDayIndex": 19
+    "seasonDayIndex": 80
   },
   {
     "date": "2018-11-20",
@@ -1461,7 +1461,7 @@
     "remainingBleu": 294,
     "remainingBlanc": 40,
     "remainingRouge": 17,
-    "seasonDayIndex": 20
+    "seasonDayIndex": 81
   },
   {
     "date": "2018-11-21",
@@ -1473,7 +1473,7 @@
     "remainingBleu": 293,
     "remainingBlanc": 40,
     "remainingRouge": 17,
-    "seasonDayIndex": 21
+    "seasonDayIndex": 82
   },
   {
     "date": "2018-11-22",
@@ -1485,7 +1485,7 @@
     "remainingBleu": 292,
     "remainingBlanc": 40,
     "remainingRouge": 17,
-    "seasonDayIndex": 22
+    "seasonDayIndex": 83
   },
   {
     "date": "2018-11-23",
@@ -1497,7 +1497,7 @@
     "remainingBleu": 292,
     "remainingBlanc": 39,
     "remainingRouge": 17,
-    "seasonDayIndex": 23
+    "seasonDayIndex": 84
   },
   {
     "date": "2018-11-26",
@@ -1509,7 +1509,7 @@
     "remainingBleu": 292,
     "remainingBlanc": 38,
     "remainingRouge": 17,
-    "seasonDayIndex": 26
+    "seasonDayIndex": 87
   },
   {
     "date": "2018-11-27",
@@ -1521,7 +1521,7 @@
     "remainingBleu": 291,
     "remainingBlanc": 38,
     "remainingRouge": 17,
-    "seasonDayIndex": 27
+    "seasonDayIndex": 88
   },
   {
     "date": "2018-11-28",
@@ -1533,7 +1533,7 @@
     "remainingBleu": 290,
     "remainingBlanc": 38,
     "remainingRouge": 17,
-    "seasonDayIndex": 28
+    "seasonDayIndex": 89
   },
   {
     "date": "2018-11-29",
@@ -1545,7 +1545,7 @@
     "remainingBleu": 289,
     "remainingBlanc": 38,
     "remainingRouge": 17,
-    "seasonDayIndex": 29
+    "seasonDayIndex": 90
   },
   {
     "date": "2018-11-30",
@@ -1557,7 +1557,7 @@
     "remainingBleu": 289,
     "remainingBlanc": 38,
     "remainingRouge": 16,
-    "seasonDayIndex": 30
+    "seasonDayIndex": 91
   },
   {
     "date": "2018-12-03",
@@ -1569,7 +1569,7 @@
     "remainingBleu": 289,
     "remainingBlanc": 37,
     "remainingRouge": 16,
-    "seasonDayIndex": 33
+    "seasonDayIndex": 94
   },
   {
     "date": "2018-12-04",
@@ -1581,7 +1581,7 @@
     "remainingBleu": 289,
     "remainingBlanc": 36,
     "remainingRouge": 16,
-    "seasonDayIndex": 34
+    "seasonDayIndex": 95
   },
   {
     "date": "2018-12-05",
@@ -1593,7 +1593,7 @@
     "remainingBleu": 289,
     "remainingBlanc": 36,
     "remainingRouge": 15,
-    "seasonDayIndex": 35
+    "seasonDayIndex": 96
   },
   {
     "date": "2018-12-06",
@@ -1605,7 +1605,7 @@
     "remainingBleu": 288,
     "remainingBlanc": 36,
     "remainingRouge": 15,
-    "seasonDayIndex": 36
+    "seasonDayIndex": 97
   },
   {
     "date": "2018-12-07",
@@ -1617,7 +1617,7 @@
     "remainingBleu": 288,
     "remainingBlanc": 36,
     "remainingRouge": 14,
-    "seasonDayIndex": 37
+    "seasonDayIndex": 98
   },
   {
     "date": "2018-12-10",
@@ -1629,7 +1629,7 @@
     "remainingBleu": 287,
     "remainingBlanc": 36,
     "remainingRouge": 14,
-    "seasonDayIndex": 40
+    "seasonDayIndex": 101
   },
   {
     "date": "2018-12-11",
@@ -1641,7 +1641,7 @@
     "remainingBleu": 287,
     "remainingBlanc": 35,
     "remainingRouge": 14,
-    "seasonDayIndex": 41
+    "seasonDayIndex": 102
   },
   {
     "date": "2018-12-12",
@@ -1653,7 +1653,7 @@
     "remainingBleu": 287,
     "remainingBlanc": 35,
     "remainingRouge": 13,
-    "seasonDayIndex": 42
+    "seasonDayIndex": 103
   },
   {
     "date": "2018-12-13",
@@ -1665,7 +1665,7 @@
     "remainingBleu": 287,
     "remainingBlanc": 35,
     "remainingRouge": 12,
-    "seasonDayIndex": 43
+    "seasonDayIndex": 104
   },
   {
     "date": "2018-12-14",
@@ -1677,7 +1677,7 @@
     "remainingBleu": 287,
     "remainingBlanc": 34,
     "remainingRouge": 12,
-    "seasonDayIndex": 44
+    "seasonDayIndex": 105
   },
   {
     "date": "2018-12-17",
@@ -1689,7 +1689,7 @@
     "remainingBleu": 287,
     "remainingBlanc": 33,
     "remainingRouge": 12,
-    "seasonDayIndex": 47
+    "seasonDayIndex": 108
   },
   {
     "date": "2018-12-18",
@@ -1701,7 +1701,7 @@
     "remainingBleu": 286,
     "remainingBlanc": 33,
     "remainingRouge": 12,
-    "seasonDayIndex": 48
+    "seasonDayIndex": 109
   },
   {
     "date": "2018-12-19",
@@ -1713,7 +1713,7 @@
     "remainingBleu": 285,
     "remainingBlanc": 33,
     "remainingRouge": 12,
-    "seasonDayIndex": 49
+    "seasonDayIndex": 110
   },
   {
     "date": "2018-12-20",
@@ -1725,7 +1725,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 33,
     "remainingRouge": 12,
-    "seasonDayIndex": 50
+    "seasonDayIndex": 111
   },
   {
     "date": "2018-12-21",
@@ -1737,7 +1737,7 @@
     "remainingBleu": 283,
     "remainingBlanc": 33,
     "remainingRouge": 12,
-    "seasonDayIndex": 51
+    "seasonDayIndex": 112
   },
   {
     "date": "2018-12-24",
@@ -1749,7 +1749,7 @@
     "remainingBleu": 283,
     "remainingBlanc": 33,
     "remainingRouge": 11,
-    "seasonDayIndex": 54
+    "seasonDayIndex": 115
   },
   {
     "date": "2018-12-25",
@@ -1761,7 +1761,7 @@
     "remainingBleu": 283,
     "remainingBlanc": 32,
     "remainingRouge": 11,
-    "seasonDayIndex": 55
+    "seasonDayIndex": 116
   },
   {
     "date": "2018-12-26",
@@ -1773,7 +1773,7 @@
     "remainingBleu": 283,
     "remainingBlanc": 31,
     "remainingRouge": 11,
-    "seasonDayIndex": 56
+    "seasonDayIndex": 117
   },
   {
     "date": "2018-12-27",
@@ -1785,7 +1785,7 @@
     "remainingBleu": 282,
     "remainingBlanc": 31,
     "remainingRouge": 11,
-    "seasonDayIndex": 57
+    "seasonDayIndex": 118
   },
   {
     "date": "2018-12-28",
@@ -1797,7 +1797,7 @@
     "remainingBleu": 282,
     "remainingBlanc": 31,
     "remainingRouge": 10,
-    "seasonDayIndex": 58
+    "seasonDayIndex": 119
   },
   {
     "date": "2018-12-31",
@@ -1809,7 +1809,7 @@
     "remainingBleu": 282,
     "remainingBlanc": 30,
     "remainingRouge": 10,
-    "seasonDayIndex": 61
+    "seasonDayIndex": 122
   },
   {
     "date": "2019-01-01",
@@ -1821,7 +1821,7 @@
     "remainingBleu": 282,
     "remainingBlanc": 29,
     "remainingRouge": 10,
-    "seasonDayIndex": 62
+    "seasonDayIndex": 123
   },
   {
     "date": "2019-01-02",
@@ -1833,7 +1833,7 @@
     "remainingBleu": 282,
     "remainingBlanc": 29,
     "remainingRouge": 9,
-    "seasonDayIndex": 63
+    "seasonDayIndex": 124
   },
   {
     "date": "2019-01-03",
@@ -1845,7 +1845,7 @@
     "remainingBleu": 282,
     "remainingBlanc": 29,
     "remainingRouge": 8,
-    "seasonDayIndex": 64
+    "seasonDayIndex": 125
   },
   {
     "date": "2019-01-04",
@@ -1857,7 +1857,7 @@
     "remainingBleu": 282,
     "remainingBlanc": 28,
     "remainingRouge": 8,
-    "seasonDayIndex": 65
+    "seasonDayIndex": 126
   },
   {
     "date": "2019-01-07",
@@ -1869,7 +1869,7 @@
     "remainingBleu": 282,
     "remainingBlanc": 28,
     "remainingRouge": 7,
-    "seasonDayIndex": 68
+    "seasonDayIndex": 129
   },
   {
     "date": "2019-01-08",
@@ -1881,7 +1881,7 @@
     "remainingBleu": 282,
     "remainingBlanc": 27,
     "remainingRouge": 7,
-    "seasonDayIndex": 69
+    "seasonDayIndex": 130
   },
   {
     "date": "2019-01-09",
@@ -1893,7 +1893,7 @@
     "remainingBleu": 281,
     "remainingBlanc": 27,
     "remainingRouge": 7,
-    "seasonDayIndex": 70
+    "seasonDayIndex": 131
   },
   {
     "date": "2019-01-10",
@@ -1905,7 +1905,7 @@
     "remainingBleu": 280,
     "remainingBlanc": 27,
     "remainingRouge": 7,
-    "seasonDayIndex": 71
+    "seasonDayIndex": 132
   },
   {
     "date": "2019-01-11",
@@ -1917,7 +1917,7 @@
     "remainingBleu": 280,
     "remainingBlanc": 26,
     "remainingRouge": 7,
-    "seasonDayIndex": 72
+    "seasonDayIndex": 133
   },
   {
     "date": "2019-01-14",
@@ -1929,7 +1929,7 @@
     "remainingBleu": 279,
     "remainingBlanc": 26,
     "remainingRouge": 7,
-    "seasonDayIndex": 75
+    "seasonDayIndex": 136
   },
   {
     "date": "2019-01-15",
@@ -1941,7 +1941,7 @@
     "remainingBleu": 279,
     "remainingBlanc": 25,
     "remainingRouge": 7,
-    "seasonDayIndex": 76
+    "seasonDayIndex": 137
   },
   {
     "date": "2019-01-16",
@@ -1953,7 +1953,7 @@
     "remainingBleu": 279,
     "remainingBlanc": 25,
     "remainingRouge": 6,
-    "seasonDayIndex": 77
+    "seasonDayIndex": 138
   },
   {
     "date": "2019-01-17",
@@ -1965,7 +1965,7 @@
     "remainingBleu": 279,
     "remainingBlanc": 24,
     "remainingRouge": 6,
-    "seasonDayIndex": 78
+    "seasonDayIndex": 139
   },
   {
     "date": "2019-01-18",
@@ -1977,7 +1977,7 @@
     "remainingBleu": 279,
     "remainingBlanc": 24,
     "remainingRouge": 5,
-    "seasonDayIndex": 79
+    "seasonDayIndex": 140
   },
   {
     "date": "2019-01-21",
@@ -1989,7 +1989,7 @@
     "remainingBleu": 278,
     "remainingBlanc": 24,
     "remainingRouge": 5,
-    "seasonDayIndex": 82
+    "seasonDayIndex": 143
   },
   {
     "date": "2019-01-22",
@@ -2001,7 +2001,7 @@
     "remainingBleu": 278,
     "remainingBlanc": 23,
     "remainingRouge": 5,
-    "seasonDayIndex": 83
+    "seasonDayIndex": 144
   },
   {
     "date": "2019-01-23",
@@ -2013,7 +2013,7 @@
     "remainingBleu": 277,
     "remainingBlanc": 23,
     "remainingRouge": 5,
-    "seasonDayIndex": 84
+    "seasonDayIndex": 145
   },
   {
     "date": "2019-01-24",
@@ -2025,7 +2025,7 @@
     "remainingBleu": 277,
     "remainingBlanc": 22,
     "remainingRouge": 5,
-    "seasonDayIndex": 85
+    "seasonDayIndex": 146
   },
   {
     "date": "2019-01-25",
@@ -2037,7 +2037,7 @@
     "remainingBleu": 276,
     "remainingBlanc": 22,
     "remainingRouge": 5,
-    "seasonDayIndex": 86
+    "seasonDayIndex": 147
   },
   {
     "date": "2019-01-28",
@@ -2049,7 +2049,7 @@
     "remainingBleu": 275,
     "remainingBlanc": 22,
     "remainingRouge": 5,
-    "seasonDayIndex": 89
+    "seasonDayIndex": 150
   },
   {
     "date": "2019-01-29",
@@ -2061,7 +2061,7 @@
     "remainingBleu": 275,
     "remainingBlanc": 21,
     "remainingRouge": 5,
-    "seasonDayIndex": 90
+    "seasonDayIndex": 151
   },
   {
     "date": "2019-01-30",
@@ -2073,7 +2073,7 @@
     "remainingBleu": 275,
     "remainingBlanc": 21,
     "remainingRouge": 4,
-    "seasonDayIndex": 91
+    "seasonDayIndex": 152
   },
   {
     "date": "2019-01-31",
@@ -2085,7 +2085,7 @@
     "remainingBleu": 275,
     "remainingBlanc": 21,
     "remainingRouge": 3,
-    "seasonDayIndex": 92
+    "seasonDayIndex": 153
   },
   {
     "date": "2019-02-01",
@@ -2097,7 +2097,7 @@
     "remainingBleu": 275,
     "remainingBlanc": 20,
     "remainingRouge": 3,
-    "seasonDayIndex": 93
+    "seasonDayIndex": 154
   },
   {
     "date": "2019-02-04",
@@ -2109,7 +2109,7 @@
     "remainingBleu": 274,
     "remainingBlanc": 20,
     "remainingRouge": 3,
-    "seasonDayIndex": 96
+    "seasonDayIndex": 157
   },
   {
     "date": "2019-02-05",
@@ -2121,7 +2121,7 @@
     "remainingBleu": 273,
     "remainingBlanc": 20,
     "remainingRouge": 3,
-    "seasonDayIndex": 97
+    "seasonDayIndex": 158
   },
   {
     "date": "2019-02-06",
@@ -2133,7 +2133,7 @@
     "remainingBleu": 272,
     "remainingBlanc": 20,
     "remainingRouge": 3,
-    "seasonDayIndex": 98
+    "seasonDayIndex": 159
   },
   {
     "date": "2019-02-07",
@@ -2145,7 +2145,7 @@
     "remainingBleu": 272,
     "remainingBlanc": 20,
     "remainingRouge": 2,
-    "seasonDayIndex": 99
+    "seasonDayIndex": 160
   },
   {
     "date": "2019-02-08",
@@ -2157,7 +2157,7 @@
     "remainingBleu": 272,
     "remainingBlanc": 19,
     "remainingRouge": 2,
-    "seasonDayIndex": 100
+    "seasonDayIndex": 161
   },
   {
     "date": "2019-02-11",
@@ -2169,7 +2169,7 @@
     "remainingBleu": 271,
     "remainingBlanc": 19,
     "remainingRouge": 2,
-    "seasonDayIndex": 103
+    "seasonDayIndex": 164
   },
   {
     "date": "2019-02-12",
@@ -2181,7 +2181,7 @@
     "remainingBleu": 271,
     "remainingBlanc": 18,
     "remainingRouge": 2,
-    "seasonDayIndex": 104
+    "seasonDayIndex": 165
   },
   {
     "date": "2019-02-13",
@@ -2193,7 +2193,7 @@
     "remainingBleu": 271,
     "remainingBlanc": 17,
     "remainingRouge": 2,
-    "seasonDayIndex": 105
+    "seasonDayIndex": 166
   },
   {
     "date": "2019-02-14",
@@ -2205,7 +2205,7 @@
     "remainingBleu": 270,
     "remainingBlanc": 17,
     "remainingRouge": 2,
-    "seasonDayIndex": 106
+    "seasonDayIndex": 167
   },
   {
     "date": "2019-02-15",
@@ -2217,7 +2217,7 @@
     "remainingBleu": 269,
     "remainingBlanc": 17,
     "remainingRouge": 2,
-    "seasonDayIndex": 107
+    "seasonDayIndex": 168
   },
   {
     "date": "2019-02-18",
@@ -2229,7 +2229,7 @@
     "remainingBleu": 269,
     "remainingBlanc": 16,
     "remainingRouge": 2,
-    "seasonDayIndex": 110
+    "seasonDayIndex": 171
   },
   {
     "date": "2019-02-19",
@@ -2241,7 +2241,7 @@
     "remainingBleu": 269,
     "remainingBlanc": 15,
     "remainingRouge": 2,
-    "seasonDayIndex": 111
+    "seasonDayIndex": 172
   },
   {
     "date": "2019-02-20",
@@ -2253,7 +2253,7 @@
     "remainingBleu": 269,
     "remainingBlanc": 14,
     "remainingRouge": 2,
-    "seasonDayIndex": 112
+    "seasonDayIndex": 173
   },
   {
     "date": "2019-02-21",
@@ -2265,7 +2265,7 @@
     "remainingBleu": 269,
     "remainingBlanc": 13,
     "remainingRouge": 2,
-    "seasonDayIndex": 113
+    "seasonDayIndex": 174
   },
   {
     "date": "2019-02-22",
@@ -2277,7 +2277,7 @@
     "remainingBleu": 268,
     "remainingBlanc": 13,
     "remainingRouge": 2,
-    "seasonDayIndex": 114
+    "seasonDayIndex": 175
   },
   {
     "date": "2019-02-25",
@@ -2289,7 +2289,7 @@
     "remainingBleu": 268,
     "remainingBlanc": 12,
     "remainingRouge": 2,
-    "seasonDayIndex": 117
+    "seasonDayIndex": 178
   },
   {
     "date": "2019-02-26",
@@ -2301,7 +2301,7 @@
     "remainingBleu": 268,
     "remainingBlanc": 11,
     "remainingRouge": 2,
-    "seasonDayIndex": 118
+    "seasonDayIndex": 179
   },
   {
     "date": "2019-02-27",
@@ -2313,7 +2313,7 @@
     "remainingBleu": 268,
     "remainingBlanc": 10,
     "remainingRouge": 2,
-    "seasonDayIndex": 119
+    "seasonDayIndex": 180
   },
   {
     "date": "2019-02-28",
@@ -2325,7 +2325,7 @@
     "remainingBleu": 267,
     "remainingBlanc": 10,
     "remainingRouge": 2,
-    "seasonDayIndex": 120
+    "seasonDayIndex": 181
   },
   {
     "date": "2019-03-01",
@@ -2337,7 +2337,7 @@
     "remainingBleu": 266,
     "remainingBlanc": 10,
     "remainingRouge": 2,
-    "seasonDayIndex": 121
+    "seasonDayIndex": 182
   },
   {
     "date": "2019-03-04",
@@ -2349,7 +2349,7 @@
     "remainingBleu": 266,
     "remainingBlanc": 9,
     "remainingRouge": 2,
-    "seasonDayIndex": 124
+    "seasonDayIndex": 185
   },
   {
     "date": "2019-03-05",
@@ -2361,7 +2361,7 @@
     "remainingBleu": 266,
     "remainingBlanc": 8,
     "remainingRouge": 2,
-    "seasonDayIndex": 125
+    "seasonDayIndex": 186
   },
   {
     "date": "2019-03-06",
@@ -2373,7 +2373,7 @@
     "remainingBleu": 265,
     "remainingBlanc": 8,
     "remainingRouge": 2,
-    "seasonDayIndex": 126
+    "seasonDayIndex": 187
   },
   {
     "date": "2019-03-07",
@@ -2385,7 +2385,7 @@
     "remainingBleu": 265,
     "remainingBlanc": 7,
     "remainingRouge": 2,
-    "seasonDayIndex": 127
+    "seasonDayIndex": 188
   },
   {
     "date": "2019-03-08",
@@ -2397,7 +2397,7 @@
     "remainingBleu": 265,
     "remainingBlanc": 6,
     "remainingRouge": 2,
-    "seasonDayIndex": 128
+    "seasonDayIndex": 189
   },
   {
     "date": "2019-03-11",
@@ -2409,7 +2409,7 @@
     "remainingBleu": 265,
     "remainingBlanc": 5,
     "remainingRouge": 2,
-    "seasonDayIndex": 131
+    "seasonDayIndex": 192
   },
   {
     "date": "2019-03-12",
@@ -2421,7 +2421,7 @@
     "remainingBleu": 265,
     "remainingBlanc": 4,
     "remainingRouge": 2,
-    "seasonDayIndex": 132
+    "seasonDayIndex": 193
   },
   {
     "date": "2019-03-13",
@@ -2433,7 +2433,7 @@
     "remainingBleu": 265,
     "remainingBlanc": 3,
     "remainingRouge": 2,
-    "seasonDayIndex": 133
+    "seasonDayIndex": 194
   },
   {
     "date": "2019-03-14",
@@ -2445,7 +2445,7 @@
     "remainingBleu": 264,
     "remainingBlanc": 3,
     "remainingRouge": 2,
-    "seasonDayIndex": 134
+    "seasonDayIndex": 195
   },
   {
     "date": "2019-03-15",
@@ -2457,7 +2457,7 @@
     "remainingBleu": 263,
     "remainingBlanc": 3,
     "remainingRouge": 2,
-    "seasonDayIndex": 135
+    "seasonDayIndex": 196
   },
   {
     "date": "2019-03-18",
@@ -2469,7 +2469,7 @@
     "remainingBleu": 262,
     "remainingBlanc": 3,
     "remainingRouge": 2,
-    "seasonDayIndex": 138
+    "seasonDayIndex": 199
   },
   {
     "date": "2019-03-19",
@@ -2481,7 +2481,7 @@
     "remainingBleu": 261,
     "remainingBlanc": 3,
     "remainingRouge": 2,
-    "seasonDayIndex": 139
+    "seasonDayIndex": 200
   },
   {
     "date": "2019-03-20",
@@ -2493,7 +2493,7 @@
     "remainingBleu": 260,
     "remainingBlanc": 3,
     "remainingRouge": 2,
-    "seasonDayIndex": 140
+    "seasonDayIndex": 201
   },
   {
     "date": "2019-03-21",
@@ -2505,7 +2505,7 @@
     "remainingBleu": 260,
     "remainingBlanc": 2,
     "remainingRouge": 2,
-    "seasonDayIndex": 141
+    "seasonDayIndex": 202
   },
   {
     "date": "2019-03-22",
@@ -2517,7 +2517,7 @@
     "remainingBleu": 260,
     "remainingBlanc": 2,
     "remainingRouge": 1,
-    "seasonDayIndex": 142
+    "seasonDayIndex": 203
   },
   {
     "date": "2019-03-25",
@@ -2529,7 +2529,7 @@
     "remainingBleu": 259,
     "remainingBlanc": 2,
     "remainingRouge": 1,
-    "seasonDayIndex": 145
+    "seasonDayIndex": 206
   },
   {
     "date": "2019-03-26",
@@ -2541,7 +2541,7 @@
     "remainingBleu": 259,
     "remainingBlanc": 2,
     "remainingRouge": 0,
-    "seasonDayIndex": 146
+    "seasonDayIndex": 207
   },
   {
     "date": "2019-03-27",
@@ -2553,7 +2553,7 @@
     "remainingBleu": 259,
     "remainingBlanc": 1,
     "remainingRouge": 0,
-    "seasonDayIndex": 147
+    "seasonDayIndex": 208
   },
   {
     "date": "2019-03-28",
@@ -2565,7 +2565,7 @@
     "remainingBleu": 258,
     "remainingBlanc": 1,
     "remainingRouge": 0,
-    "seasonDayIndex": 148
+    "seasonDayIndex": 209
   },
   {
     "date": "2019-03-29",
@@ -2577,7 +2577,7 @@
     "remainingBleu": 258,
     "remainingBlanc": 0,
     "remainingRouge": 0,
-    "seasonDayIndex": 149
+    "seasonDayIndex": 210
   },
   {
     "date": "2019-11-01",
@@ -2589,7 +2589,7 @@
     "remainingBleu": 300,
     "remainingBlanc": 43,
     "remainingRouge": 21,
-    "seasonDayIndex": 1
+    "seasonDayIndex": 62
   },
   {
     "date": "2019-11-04",
@@ -2601,7 +2601,7 @@
     "remainingBleu": 300,
     "remainingBlanc": 43,
     "remainingRouge": 20,
-    "seasonDayIndex": 4
+    "seasonDayIndex": 65
   },
   {
     "date": "2019-11-05",
@@ -2613,7 +2613,7 @@
     "remainingBleu": 299,
     "remainingBlanc": 43,
     "remainingRouge": 20,
-    "seasonDayIndex": 5
+    "seasonDayIndex": 66
   },
   {
     "date": "2019-11-06",
@@ -2625,7 +2625,7 @@
     "remainingBleu": 298,
     "remainingBlanc": 43,
     "remainingRouge": 20,
-    "seasonDayIndex": 6
+    "seasonDayIndex": 67
   },
   {
     "date": "2019-11-07",
@@ -2637,7 +2637,7 @@
     "remainingBleu": 298,
     "remainingBlanc": 42,
     "remainingRouge": 20,
-    "seasonDayIndex": 7
+    "seasonDayIndex": 68
   },
   {
     "date": "2019-11-08",
@@ -2649,7 +2649,7 @@
     "remainingBleu": 297,
     "remainingBlanc": 42,
     "remainingRouge": 20,
-    "seasonDayIndex": 8
+    "seasonDayIndex": 69
   },
   {
     "date": "2019-11-11",
@@ -2661,7 +2661,7 @@
     "remainingBleu": 296,
     "remainingBlanc": 42,
     "remainingRouge": 20,
-    "seasonDayIndex": 11
+    "seasonDayIndex": 72
   },
   {
     "date": "2019-11-12",
@@ -2673,7 +2673,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 42,
     "remainingRouge": 20,
-    "seasonDayIndex": 12
+    "seasonDayIndex": 73
   },
   {
     "date": "2019-11-13",
@@ -2685,7 +2685,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 41,
     "remainingRouge": 20,
-    "seasonDayIndex": 13
+    "seasonDayIndex": 74
   },
   {
     "date": "2019-11-14",
@@ -2697,7 +2697,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 40,
     "remainingRouge": 20,
-    "seasonDayIndex": 14
+    "seasonDayIndex": 75
   },
   {
     "date": "2019-11-15",
@@ -2709,7 +2709,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 40,
     "remainingRouge": 19,
-    "seasonDayIndex": 15
+    "seasonDayIndex": 76
   },
   {
     "date": "2019-11-18",
@@ -2721,7 +2721,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 39,
     "remainingRouge": 19,
-    "seasonDayIndex": 18
+    "seasonDayIndex": 79
   },
   {
     "date": "2019-11-19",
@@ -2733,7 +2733,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 38,
     "remainingRouge": 19,
-    "seasonDayIndex": 19
+    "seasonDayIndex": 80
   },
   {
     "date": "2019-11-20",
@@ -2745,7 +2745,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 37,
     "remainingRouge": 19,
-    "seasonDayIndex": 20
+    "seasonDayIndex": 81
   },
   {
     "date": "2019-11-21",
@@ -2757,7 +2757,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 37,
     "remainingRouge": 18,
-    "seasonDayIndex": 21
+    "seasonDayIndex": 82
   },
   {
     "date": "2019-11-22",
@@ -2769,7 +2769,7 @@
     "remainingBleu": 294,
     "remainingBlanc": 37,
     "remainingRouge": 18,
-    "seasonDayIndex": 22
+    "seasonDayIndex": 83
   },
   {
     "date": "2019-11-25",
@@ -2781,7 +2781,7 @@
     "remainingBleu": 294,
     "remainingBlanc": 36,
     "remainingRouge": 18,
-    "seasonDayIndex": 25
+    "seasonDayIndex": 86
   },
   {
     "date": "2019-11-26",
@@ -2793,7 +2793,7 @@
     "remainingBleu": 293,
     "remainingBlanc": 36,
     "remainingRouge": 18,
-    "seasonDayIndex": 26
+    "seasonDayIndex": 87
   },
   {
     "date": "2019-11-27",
@@ -2805,7 +2805,7 @@
     "remainingBleu": 293,
     "remainingBlanc": 35,
     "remainingRouge": 18,
-    "seasonDayIndex": 27
+    "seasonDayIndex": 88
   },
   {
     "date": "2019-11-28",
@@ -2817,7 +2817,7 @@
     "remainingBleu": 292,
     "remainingBlanc": 35,
     "remainingRouge": 18,
-    "seasonDayIndex": 28
+    "seasonDayIndex": 89
   },
   {
     "date": "2019-11-29",
@@ -2829,7 +2829,7 @@
     "remainingBleu": 292,
     "remainingBlanc": 34,
     "remainingRouge": 18,
-    "seasonDayIndex": 29
+    "seasonDayIndex": 90
   },
   {
     "date": "2019-12-02",
@@ -2841,7 +2841,7 @@
     "remainingBleu": 291,
     "remainingBlanc": 34,
     "remainingRouge": 18,
-    "seasonDayIndex": 32
+    "seasonDayIndex": 93
   },
   {
     "date": "2019-12-03",
@@ -2853,7 +2853,7 @@
     "remainingBleu": 290,
     "remainingBlanc": 34,
     "remainingRouge": 18,
-    "seasonDayIndex": 33
+    "seasonDayIndex": 94
   },
   {
     "date": "2019-12-04",
@@ -2865,7 +2865,7 @@
     "remainingBleu": 289,
     "remainingBlanc": 34,
     "remainingRouge": 18,
-    "seasonDayIndex": 34
+    "seasonDayIndex": 95
   },
   {
     "date": "2019-12-05",
@@ -2877,7 +2877,7 @@
     "remainingBleu": 288,
     "remainingBlanc": 34,
     "remainingRouge": 18,
-    "seasonDayIndex": 35
+    "seasonDayIndex": 96
   },
   {
     "date": "2019-12-06",
@@ -2889,7 +2889,7 @@
     "remainingBleu": 287,
     "remainingBlanc": 34,
     "remainingRouge": 18,
-    "seasonDayIndex": 36
+    "seasonDayIndex": 97
   },
   {
     "date": "2019-12-09",
@@ -2901,7 +2901,7 @@
     "remainingBleu": 287,
     "remainingBlanc": 34,
     "remainingRouge": 17,
-    "seasonDayIndex": 39
+    "seasonDayIndex": 100
   },
   {
     "date": "2019-12-10",
@@ -2913,7 +2913,7 @@
     "remainingBleu": 287,
     "remainingBlanc": 33,
     "remainingRouge": 17,
-    "seasonDayIndex": 40
+    "seasonDayIndex": 101
   },
   {
     "date": "2019-12-11",
@@ -2925,7 +2925,7 @@
     "remainingBleu": 286,
     "remainingBlanc": 33,
     "remainingRouge": 17,
-    "seasonDayIndex": 41
+    "seasonDayIndex": 102
   },
   {
     "date": "2019-12-12",
@@ -2937,7 +2937,7 @@
     "remainingBleu": 285,
     "remainingBlanc": 33,
     "remainingRouge": 17,
-    "seasonDayIndex": 42
+    "seasonDayIndex": 103
   },
   {
     "date": "2019-12-13",
@@ -2949,7 +2949,7 @@
     "remainingBleu": 285,
     "remainingBlanc": 33,
     "remainingRouge": 16,
-    "seasonDayIndex": 43
+    "seasonDayIndex": 104
   },
   {
     "date": "2019-12-16",
@@ -2961,7 +2961,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 33,
     "remainingRouge": 16,
-    "seasonDayIndex": 46
+    "seasonDayIndex": 107
   },
   {
     "date": "2019-12-17",
@@ -2973,7 +2973,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 32,
     "remainingRouge": 16,
-    "seasonDayIndex": 47
+    "seasonDayIndex": 108
   },
   {
     "date": "2019-12-18",
@@ -2985,7 +2985,7 @@
     "remainingBleu": 283,
     "remainingBlanc": 32,
     "remainingRouge": 16,
-    "seasonDayIndex": 48
+    "seasonDayIndex": 109
   },
   {
     "date": "2019-12-19",
@@ -2997,7 +2997,7 @@
     "remainingBleu": 283,
     "remainingBlanc": 31,
     "remainingRouge": 16,
-    "seasonDayIndex": 49
+    "seasonDayIndex": 110
   },
   {
     "date": "2019-12-20",
@@ -3009,7 +3009,7 @@
     "remainingBleu": 283,
     "remainingBlanc": 30,
     "remainingRouge": 16,
-    "seasonDayIndex": 50
+    "seasonDayIndex": 111
   },
   {
     "date": "2019-12-23",
@@ -3021,7 +3021,7 @@
     "remainingBleu": 283,
     "remainingBlanc": 29,
     "remainingRouge": 16,
-    "seasonDayIndex": 53
+    "seasonDayIndex": 114
   },
   {
     "date": "2019-12-24",
@@ -3033,7 +3033,7 @@
     "remainingBleu": 283,
     "remainingBlanc": 28,
     "remainingRouge": 16,
-    "seasonDayIndex": 54
+    "seasonDayIndex": 115
   },
   {
     "date": "2019-12-25",
@@ -3045,7 +3045,7 @@
     "remainingBleu": 282,
     "remainingBlanc": 28,
     "remainingRouge": 16,
-    "seasonDayIndex": 55
+    "seasonDayIndex": 116
   },
   {
     "date": "2019-12-26",
@@ -3057,7 +3057,7 @@
     "remainingBleu": 282,
     "remainingBlanc": 28,
     "remainingRouge": 15,
-    "seasonDayIndex": 56
+    "seasonDayIndex": 117
   },
   {
     "date": "2019-12-27",
@@ -3069,7 +3069,7 @@
     "remainingBleu": 282,
     "remainingBlanc": 27,
     "remainingRouge": 15,
-    "seasonDayIndex": 57
+    "seasonDayIndex": 118
   },
   {
     "date": "2019-12-30",
@@ -3081,7 +3081,7 @@
     "remainingBleu": 281,
     "remainingBlanc": 27,
     "remainingRouge": 15,
-    "seasonDayIndex": 60
+    "seasonDayIndex": 121
   },
   {
     "date": "2019-12-31",
@@ -3093,7 +3093,7 @@
     "remainingBleu": 281,
     "remainingBlanc": 26,
     "remainingRouge": 15,
-    "seasonDayIndex": 61
+    "seasonDayIndex": 122
   },
   {
     "date": "2020-11-02",
@@ -3105,7 +3105,7 @@
     "remainingBleu": 300,
     "remainingBlanc": 42,
     "remainingRouge": 22,
-    "seasonDayIndex": 2
+    "seasonDayIndex": 63
   },
   {
     "date": "2020-11-03",
@@ -3117,7 +3117,7 @@
     "remainingBleu": 300,
     "remainingBlanc": 42,
     "remainingRouge": 21,
-    "seasonDayIndex": 3
+    "seasonDayIndex": 64
   },
   {
     "date": "2020-11-04",
@@ -3129,7 +3129,7 @@
     "remainingBleu": 299,
     "remainingBlanc": 42,
     "remainingRouge": 21,
-    "seasonDayIndex": 4
+    "seasonDayIndex": 65
   },
   {
     "date": "2020-11-05",
@@ -3141,7 +3141,7 @@
     "remainingBleu": 299,
     "remainingBlanc": 42,
     "remainingRouge": 20,
-    "seasonDayIndex": 5
+    "seasonDayIndex": 66
   },
   {
     "date": "2020-11-06",
@@ -3153,7 +3153,7 @@
     "remainingBleu": 298,
     "remainingBlanc": 42,
     "remainingRouge": 20,
-    "seasonDayIndex": 6
+    "seasonDayIndex": 67
   },
   {
     "date": "2020-11-09",
@@ -3165,7 +3165,7 @@
     "remainingBleu": 298,
     "remainingBlanc": 41,
     "remainingRouge": 20,
-    "seasonDayIndex": 9
+    "seasonDayIndex": 70
   },
   {
     "date": "2020-11-10",
@@ -3177,7 +3177,7 @@
     "remainingBleu": 297,
     "remainingBlanc": 41,
     "remainingRouge": 20,
-    "seasonDayIndex": 10
+    "seasonDayIndex": 71
   },
   {
     "date": "2020-11-11",
@@ -3189,7 +3189,7 @@
     "remainingBleu": 296,
     "remainingBlanc": 41,
     "remainingRouge": 20,
-    "seasonDayIndex": 11
+    "seasonDayIndex": 72
   },
   {
     "date": "2020-11-12",
@@ -3201,7 +3201,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 41,
     "remainingRouge": 20,
-    "seasonDayIndex": 12
+    "seasonDayIndex": 73
   },
   {
     "date": "2020-11-13",
@@ -3213,7 +3213,7 @@
     "remainingBleu": 294,
     "remainingBlanc": 41,
     "remainingRouge": 20,
-    "seasonDayIndex": 13
+    "seasonDayIndex": 74
   },
   {
     "date": "2020-11-16",
@@ -3225,7 +3225,7 @@
     "remainingBleu": 294,
     "remainingBlanc": 41,
     "remainingRouge": 19,
-    "seasonDayIndex": 16
+    "seasonDayIndex": 77
   },
   {
     "date": "2020-11-17",
@@ -3237,7 +3237,7 @@
     "remainingBleu": 294,
     "remainingBlanc": 40,
     "remainingRouge": 19,
-    "seasonDayIndex": 17
+    "seasonDayIndex": 78
   },
   {
     "date": "2020-11-18",
@@ -3249,7 +3249,7 @@
     "remainingBleu": 293,
     "remainingBlanc": 40,
     "remainingRouge": 19,
-    "seasonDayIndex": 18
+    "seasonDayIndex": 79
   },
   {
     "date": "2020-11-19",
@@ -3261,7 +3261,7 @@
     "remainingBleu": 293,
     "remainingBlanc": 39,
     "remainingRouge": 19,
-    "seasonDayIndex": 19
+    "seasonDayIndex": 80
   },
   {
     "date": "2020-11-20",
@@ -3273,7 +3273,7 @@
     "remainingBleu": 292,
     "remainingBlanc": 39,
     "remainingRouge": 19,
-    "seasonDayIndex": 20
+    "seasonDayIndex": 81
   },
   {
     "date": "2020-11-23",
@@ -3285,7 +3285,7 @@
     "remainingBleu": 292,
     "remainingBlanc": 39,
     "remainingRouge": 18,
-    "seasonDayIndex": 23
+    "seasonDayIndex": 84
   },
   {
     "date": "2020-11-24",
@@ -3297,7 +3297,7 @@
     "remainingBleu": 292,
     "remainingBlanc": 39,
     "remainingRouge": 17,
-    "seasonDayIndex": 24
+    "seasonDayIndex": 85
   },
   {
     "date": "2020-11-25",
@@ -3309,7 +3309,7 @@
     "remainingBleu": 292,
     "remainingBlanc": 39,
     "remainingRouge": 16,
-    "seasonDayIndex": 25
+    "seasonDayIndex": 86
   },
   {
     "date": "2020-11-26",
@@ -3321,7 +3321,7 @@
     "remainingBleu": 291,
     "remainingBlanc": 39,
     "remainingRouge": 16,
-    "seasonDayIndex": 26
+    "seasonDayIndex": 87
   },
   {
     "date": "2020-11-27",
@@ -3333,7 +3333,7 @@
     "remainingBleu": 291,
     "remainingBlanc": 38,
     "remainingRouge": 16,
-    "seasonDayIndex": 27
+    "seasonDayIndex": 88
   },
   {
     "date": "2020-11-30",
@@ -3345,7 +3345,7 @@
     "remainingBleu": 291,
     "remainingBlanc": 38,
     "remainingRouge": 15,
-    "seasonDayIndex": 30
+    "seasonDayIndex": 91
   },
   {
     "date": "2020-12-01",
@@ -3357,7 +3357,7 @@
     "remainingBleu": 291,
     "remainingBlanc": 38,
     "remainingRouge": 14,
-    "seasonDayIndex": 31
+    "seasonDayIndex": 92
   },
   {
     "date": "2020-12-02",
@@ -3369,7 +3369,7 @@
     "remainingBleu": 290,
     "remainingBlanc": 38,
     "remainingRouge": 14,
-    "seasonDayIndex": 32
+    "seasonDayIndex": 93
   },
   {
     "date": "2020-12-03",
@@ -3381,7 +3381,7 @@
     "remainingBleu": 290,
     "remainingBlanc": 37,
     "remainingRouge": 14,
-    "seasonDayIndex": 33
+    "seasonDayIndex": 94
   },
   {
     "date": "2020-12-04",
@@ -3393,7 +3393,7 @@
     "remainingBleu": 289,
     "remainingBlanc": 37,
     "remainingRouge": 14,
-    "seasonDayIndex": 34
+    "seasonDayIndex": 95
   },
   {
     "date": "2020-12-07",
@@ -3405,7 +3405,7 @@
     "remainingBleu": 289,
     "remainingBlanc": 36,
     "remainingRouge": 14,
-    "seasonDayIndex": 37
+    "seasonDayIndex": 98
   },
   {
     "date": "2020-12-08",
@@ -3417,7 +3417,7 @@
     "remainingBleu": 289,
     "remainingBlanc": 35,
     "remainingRouge": 14,
-    "seasonDayIndex": 38
+    "seasonDayIndex": 99
   },
   {
     "date": "2020-12-09",
@@ -3429,7 +3429,7 @@
     "remainingBleu": 289,
     "remainingBlanc": 34,
     "remainingRouge": 14,
-    "seasonDayIndex": 39
+    "seasonDayIndex": 100
   },
   {
     "date": "2020-12-10",
@@ -3441,7 +3441,7 @@
     "remainingBleu": 289,
     "remainingBlanc": 33,
     "remainingRouge": 14,
-    "seasonDayIndex": 40
+    "seasonDayIndex": 101
   },
   {
     "date": "2020-12-11",
@@ -3453,7 +3453,7 @@
     "remainingBleu": 289,
     "remainingBlanc": 32,
     "remainingRouge": 14,
-    "seasonDayIndex": 41
+    "seasonDayIndex": 102
   },
   {
     "date": "2020-12-14",
@@ -3465,7 +3465,7 @@
     "remainingBleu": 289,
     "remainingBlanc": 31,
     "remainingRouge": 14,
-    "seasonDayIndex": 44
+    "seasonDayIndex": 105
   },
   {
     "date": "2020-12-15",
@@ -3477,7 +3477,7 @@
     "remainingBleu": 289,
     "remainingBlanc": 30,
     "remainingRouge": 14,
-    "seasonDayIndex": 45
+    "seasonDayIndex": 106
   },
   {
     "date": "2020-12-16",
@@ -3489,7 +3489,7 @@
     "remainingBleu": 288,
     "remainingBlanc": 30,
     "remainingRouge": 14,
-    "seasonDayIndex": 46
+    "seasonDayIndex": 107
   },
   {
     "date": "2020-12-17",
@@ -3501,7 +3501,7 @@
     "remainingBleu": 287,
     "remainingBlanc": 30,
     "remainingRouge": 14,
-    "seasonDayIndex": 47
+    "seasonDayIndex": 108
   },
   {
     "date": "2020-12-18",
@@ -3513,7 +3513,7 @@
     "remainingBleu": 287,
     "remainingBlanc": 30,
     "remainingRouge": 13,
-    "seasonDayIndex": 48
+    "seasonDayIndex": 109
   },
   {
     "date": "2020-12-21",
@@ -3525,7 +3525,7 @@
     "remainingBleu": 287,
     "remainingBlanc": 29,
     "remainingRouge": 13,
-    "seasonDayIndex": 51
+    "seasonDayIndex": 112
   },
   {
     "date": "2020-12-22",
@@ -3537,7 +3537,7 @@
     "remainingBleu": 287,
     "remainingBlanc": 28,
     "remainingRouge": 13,
-    "seasonDayIndex": 52
+    "seasonDayIndex": 113
   },
   {
     "date": "2020-12-23",
@@ -3549,7 +3549,7 @@
     "remainingBleu": 287,
     "remainingBlanc": 27,
     "remainingRouge": 13,
-    "seasonDayIndex": 53
+    "seasonDayIndex": 114
   },
   {
     "date": "2020-12-24",
@@ -3561,7 +3561,7 @@
     "remainingBleu": 286,
     "remainingBlanc": 27,
     "remainingRouge": 13,
-    "seasonDayIndex": 54
+    "seasonDayIndex": 115
   },
   {
     "date": "2020-12-25",
@@ -3573,7 +3573,7 @@
     "remainingBleu": 285,
     "remainingBlanc": 27,
     "remainingRouge": 13,
-    "seasonDayIndex": 55
+    "seasonDayIndex": 116
   },
   {
     "date": "2020-12-28",
@@ -3585,7 +3585,7 @@
     "remainingBleu": 285,
     "remainingBlanc": 26,
     "remainingRouge": 13,
-    "seasonDayIndex": 58
+    "seasonDayIndex": 119
   },
   {
     "date": "2020-12-29",
@@ -3597,7 +3597,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 26,
     "remainingRouge": 13,
-    "seasonDayIndex": 59
+    "seasonDayIndex": 120
   },
   {
     "date": "2020-12-30",
@@ -3609,7 +3609,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 25,
     "remainingRouge": 13,
-    "seasonDayIndex": 60
+    "seasonDayIndex": 121
   },
   {
     "date": "2020-12-31",
@@ -3621,7 +3621,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 25,
     "remainingRouge": 12,
-    "seasonDayIndex": 61
+    "seasonDayIndex": 122
   },
   {
     "date": "2021-01-01",
@@ -3633,7 +3633,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 24,
     "remainingRouge": 12,
-    "seasonDayIndex": 62
+    "seasonDayIndex": 123
   },
   {
     "date": "2021-01-04",
@@ -3645,7 +3645,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 23,
     "remainingRouge": 12,
-    "seasonDayIndex": 65
+    "seasonDayIndex": 126
   },
   {
     "date": "2021-01-05",
@@ -3657,7 +3657,7 @@
     "remainingBleu": 283,
     "remainingBlanc": 23,
     "remainingRouge": 12,
-    "seasonDayIndex": 66
+    "seasonDayIndex": 127
   },
   {
     "date": "2021-01-06",
@@ -3669,7 +3669,7 @@
     "remainingBleu": 282,
     "remainingBlanc": 23,
     "remainingRouge": 12,
-    "seasonDayIndex": 67
+    "seasonDayIndex": 128
   },
   {
     "date": "2021-01-07",
@@ -3681,7 +3681,7 @@
     "remainingBleu": 282,
     "remainingBlanc": 22,
     "remainingRouge": 12,
-    "seasonDayIndex": 68
+    "seasonDayIndex": 129
   },
   {
     "date": "2021-01-08",
@@ -3693,7 +3693,7 @@
     "remainingBleu": 281,
     "remainingBlanc": 22,
     "remainingRouge": 12,
-    "seasonDayIndex": 69
+    "seasonDayIndex": 130
   },
   {
     "date": "2021-01-11",
@@ -3705,7 +3705,7 @@
     "remainingBleu": 281,
     "remainingBlanc": 22,
     "remainingRouge": 11,
-    "seasonDayIndex": 72
+    "seasonDayIndex": 133
   },
   {
     "date": "2021-01-12",
@@ -3717,7 +3717,7 @@
     "remainingBleu": 280,
     "remainingBlanc": 22,
     "remainingRouge": 11,
-    "seasonDayIndex": 73
+    "seasonDayIndex": 134
   },
   {
     "date": "2021-01-13",
@@ -3729,7 +3729,7 @@
     "remainingBleu": 280,
     "remainingBlanc": 22,
     "remainingRouge": 10,
-    "seasonDayIndex": 74
+    "seasonDayIndex": 135
   },
   {
     "date": "2021-01-14",
@@ -3741,7 +3741,7 @@
     "remainingBleu": 280,
     "remainingBlanc": 22,
     "remainingRouge": 9,
-    "seasonDayIndex": 75
+    "seasonDayIndex": 136
   },
   {
     "date": "2021-01-15",
@@ -3753,7 +3753,7 @@
     "remainingBleu": 280,
     "remainingBlanc": 21,
     "remainingRouge": 9,
-    "seasonDayIndex": 76
+    "seasonDayIndex": 137
   },
   {
     "date": "2021-01-18",
@@ -3765,7 +3765,7 @@
     "remainingBleu": 280,
     "remainingBlanc": 21,
     "remainingRouge": 8,
-    "seasonDayIndex": 79
+    "seasonDayIndex": 140
   },
   {
     "date": "2021-01-19",
@@ -3777,7 +3777,7 @@
     "remainingBleu": 280,
     "remainingBlanc": 20,
     "remainingRouge": 8,
-    "seasonDayIndex": 80
+    "seasonDayIndex": 141
   },
   {
     "date": "2021-01-20",
@@ -3789,7 +3789,7 @@
     "remainingBleu": 280,
     "remainingBlanc": 20,
     "remainingRouge": 7,
-    "seasonDayIndex": 81
+    "seasonDayIndex": 142
   },
   {
     "date": "2021-01-21",
@@ -3801,7 +3801,7 @@
     "remainingBleu": 280,
     "remainingBlanc": 19,
     "remainingRouge": 7,
-    "seasonDayIndex": 82
+    "seasonDayIndex": 143
   },
   {
     "date": "2021-01-22",
@@ -3813,7 +3813,7 @@
     "remainingBleu": 279,
     "remainingBlanc": 19,
     "remainingRouge": 7,
-    "seasonDayIndex": 83
+    "seasonDayIndex": 144
   },
   {
     "date": "2021-01-25",
@@ -3825,7 +3825,7 @@
     "remainingBleu": 279,
     "remainingBlanc": 19,
     "remainingRouge": 6,
-    "seasonDayIndex": 86
+    "seasonDayIndex": 147
   },
   {
     "date": "2021-01-26",
@@ -3837,7 +3837,7 @@
     "remainingBleu": 279,
     "remainingBlanc": 18,
     "remainingRouge": 6,
-    "seasonDayIndex": 87
+    "seasonDayIndex": 148
   },
   {
     "date": "2021-01-27",
@@ -3849,7 +3849,7 @@
     "remainingBleu": 279,
     "remainingBlanc": 17,
     "remainingRouge": 6,
-    "seasonDayIndex": 88
+    "seasonDayIndex": 149
   },
   {
     "date": "2021-01-28",
@@ -3861,7 +3861,7 @@
     "remainingBleu": 279,
     "remainingBlanc": 16,
     "remainingRouge": 6,
-    "seasonDayIndex": 89
+    "seasonDayIndex": 150
   },
   {
     "date": "2021-01-29",
@@ -3873,7 +3873,7 @@
     "remainingBleu": 278,
     "remainingBlanc": 16,
     "remainingRouge": 6,
-    "seasonDayIndex": 90
+    "seasonDayIndex": 151
   },
   {
     "date": "2021-02-01",
@@ -3885,7 +3885,7 @@
     "remainingBleu": 278,
     "remainingBlanc": 15,
     "remainingRouge": 6,
-    "seasonDayIndex": 93
+    "seasonDayIndex": 154
   },
   {
     "date": "2021-02-02",
@@ -3897,7 +3897,7 @@
     "remainingBleu": 278,
     "remainingBlanc": 14,
     "remainingRouge": 6,
-    "seasonDayIndex": 94
+    "seasonDayIndex": 155
   },
   {
     "date": "2021-02-03",
@@ -3909,7 +3909,7 @@
     "remainingBleu": 278,
     "remainingBlanc": 14,
     "remainingRouge": 5,
-    "seasonDayIndex": 95
+    "seasonDayIndex": 156
   },
   {
     "date": "2021-02-04",
@@ -3921,7 +3921,7 @@
     "remainingBleu": 277,
     "remainingBlanc": 14,
     "remainingRouge": 5,
-    "seasonDayIndex": 96
+    "seasonDayIndex": 157
   },
   {
     "date": "2021-02-05",
@@ -3933,7 +3933,7 @@
     "remainingBleu": 277,
     "remainingBlanc": 14,
     "remainingRouge": 4,
-    "seasonDayIndex": 97
+    "seasonDayIndex": 158
   },
   {
     "date": "2021-02-08",
@@ -3945,7 +3945,7 @@
     "remainingBleu": 277,
     "remainingBlanc": 13,
     "remainingRouge": 4,
-    "seasonDayIndex": 100
+    "seasonDayIndex": 161
   },
   {
     "date": "2021-02-09",
@@ -3957,7 +3957,7 @@
     "remainingBleu": 276,
     "remainingBlanc": 13,
     "remainingRouge": 4,
-    "seasonDayIndex": 101
+    "seasonDayIndex": 162
   },
   {
     "date": "2021-02-10",
@@ -3969,7 +3969,7 @@
     "remainingBleu": 276,
     "remainingBlanc": 12,
     "remainingRouge": 4,
-    "seasonDayIndex": 102
+    "seasonDayIndex": 163
   },
   {
     "date": "2021-02-11",
@@ -3981,7 +3981,7 @@
     "remainingBleu": 275,
     "remainingBlanc": 12,
     "remainingRouge": 4,
-    "seasonDayIndex": 103
+    "seasonDayIndex": 164
   },
   {
     "date": "2021-02-12",
@@ -3993,7 +3993,7 @@
     "remainingBleu": 274,
     "remainingBlanc": 12,
     "remainingRouge": 4,
-    "seasonDayIndex": 104
+    "seasonDayIndex": 165
   },
   {
     "date": "2021-02-15",
@@ -4005,7 +4005,7 @@
     "remainingBleu": 273,
     "remainingBlanc": 12,
     "remainingRouge": 4,
-    "seasonDayIndex": 107
+    "seasonDayIndex": 168
   },
   {
     "date": "2021-02-16",
@@ -4017,7 +4017,7 @@
     "remainingBleu": 273,
     "remainingBlanc": 11,
     "remainingRouge": 4,
-    "seasonDayIndex": 108
+    "seasonDayIndex": 169
   },
   {
     "date": "2021-02-17",
@@ -4029,7 +4029,7 @@
     "remainingBleu": 273,
     "remainingBlanc": 10,
     "remainingRouge": 4,
-    "seasonDayIndex": 109
+    "seasonDayIndex": 170
   },
   {
     "date": "2021-02-18",
@@ -4041,7 +4041,7 @@
     "remainingBleu": 272,
     "remainingBlanc": 10,
     "remainingRouge": 4,
-    "seasonDayIndex": 110
+    "seasonDayIndex": 171
   },
   {
     "date": "2021-02-19",
@@ -4053,7 +4053,7 @@
     "remainingBleu": 271,
     "remainingBlanc": 10,
     "remainingRouge": 4,
-    "seasonDayIndex": 111
+    "seasonDayIndex": 172
   },
   {
     "date": "2021-02-22",
@@ -4065,7 +4065,7 @@
     "remainingBleu": 271,
     "remainingBlanc": 9,
     "remainingRouge": 4,
-    "seasonDayIndex": 114
+    "seasonDayIndex": 175
   },
   {
     "date": "2021-02-23",
@@ -4077,7 +4077,7 @@
     "remainingBleu": 270,
     "remainingBlanc": 9,
     "remainingRouge": 4,
-    "seasonDayIndex": 115
+    "seasonDayIndex": 176
   },
   {
     "date": "2021-02-24",
@@ -4089,7 +4089,7 @@
     "remainingBleu": 269,
     "remainingBlanc": 9,
     "remainingRouge": 4,
-    "seasonDayIndex": 116
+    "seasonDayIndex": 177
   },
   {
     "date": "2021-02-25",
@@ -4101,7 +4101,7 @@
     "remainingBleu": 269,
     "remainingBlanc": 9,
     "remainingRouge": 3,
-    "seasonDayIndex": 117
+    "seasonDayIndex": 178
   },
   {
     "date": "2021-02-26",
@@ -4113,7 +4113,7 @@
     "remainingBleu": 268,
     "remainingBlanc": 9,
     "remainingRouge": 3,
-    "seasonDayIndex": 118
+    "seasonDayIndex": 179
   },
   {
     "date": "2021-03-01",
@@ -4125,7 +4125,7 @@
     "remainingBleu": 268,
     "remainingBlanc": 9,
     "remainingRouge": 2,
-    "seasonDayIndex": 121
+    "seasonDayIndex": 182
   },
   {
     "date": "2021-03-02",
@@ -4137,7 +4137,7 @@
     "remainingBleu": 267,
     "remainingBlanc": 9,
     "remainingRouge": 2,
-    "seasonDayIndex": 122
+    "seasonDayIndex": 183
   },
   {
     "date": "2021-03-03",
@@ -4149,7 +4149,7 @@
     "remainingBleu": 267,
     "remainingBlanc": 9,
     "remainingRouge": 1,
-    "seasonDayIndex": 123
+    "seasonDayIndex": 184
   },
   {
     "date": "2021-03-04",
@@ -4161,7 +4161,7 @@
     "remainingBleu": 267,
     "remainingBlanc": 9,
     "remainingRouge": 0,
-    "seasonDayIndex": 124
+    "seasonDayIndex": 185
   },
   {
     "date": "2021-03-05",
@@ -4173,7 +4173,7 @@
     "remainingBleu": 266,
     "remainingBlanc": 9,
     "remainingRouge": 0,
-    "seasonDayIndex": 125
+    "seasonDayIndex": 186
   },
   {
     "date": "2021-03-08",
@@ -4185,7 +4185,7 @@
     "remainingBleu": 266,
     "remainingBlanc": 8,
     "remainingRouge": 0,
-    "seasonDayIndex": 128
+    "seasonDayIndex": 189
   },
   {
     "date": "2021-03-09",
@@ -4197,7 +4197,7 @@
     "remainingBleu": 265,
     "remainingBlanc": 8,
     "remainingRouge": 0,
-    "seasonDayIndex": 129
+    "seasonDayIndex": 190
   },
   {
     "date": "2021-03-10",
@@ -4209,7 +4209,7 @@
     "remainingBleu": 265,
     "remainingBlanc": 7,
     "remainingRouge": 0,
-    "seasonDayIndex": 130
+    "seasonDayIndex": 191
   },
   {
     "date": "2021-03-11",
@@ -4221,7 +4221,7 @@
     "remainingBleu": 264,
     "remainingBlanc": 7,
     "remainingRouge": 0,
-    "seasonDayIndex": 131
+    "seasonDayIndex": 192
   },
   {
     "date": "2021-03-12",
@@ -4233,7 +4233,7 @@
     "remainingBleu": 263,
     "remainingBlanc": 7,
     "remainingRouge": 0,
-    "seasonDayIndex": 132
+    "seasonDayIndex": 193
   },
   {
     "date": "2021-03-15",
@@ -4245,7 +4245,7 @@
     "remainingBleu": 263,
     "remainingBlanc": 6,
     "remainingRouge": 0,
-    "seasonDayIndex": 135
+    "seasonDayIndex": 196
   },
   {
     "date": "2021-03-16",
@@ -4257,7 +4257,7 @@
     "remainingBleu": 262,
     "remainingBlanc": 6,
     "remainingRouge": 0,
-    "seasonDayIndex": 136
+    "seasonDayIndex": 197
   },
   {
     "date": "2021-03-17",
@@ -4269,7 +4269,7 @@
     "remainingBleu": 261,
     "remainingBlanc": 6,
     "remainingRouge": 0,
-    "seasonDayIndex": 137
+    "seasonDayIndex": 198
   },
   {
     "date": "2021-03-18",
@@ -4281,7 +4281,7 @@
     "remainingBleu": 260,
     "remainingBlanc": 6,
     "remainingRouge": 0,
-    "seasonDayIndex": 138
+    "seasonDayIndex": 199
   },
   {
     "date": "2021-03-19",
@@ -4293,7 +4293,7 @@
     "remainingBleu": 260,
     "remainingBlanc": 5,
     "remainingRouge": 0,
-    "seasonDayIndex": 139
+    "seasonDayIndex": 200
   },
   {
     "date": "2021-03-22",
@@ -4305,7 +4305,7 @@
     "remainingBleu": 260,
     "remainingBlanc": 4,
     "remainingRouge": 0,
-    "seasonDayIndex": 142
+    "seasonDayIndex": 203
   },
   {
     "date": "2021-03-23",
@@ -4317,7 +4317,7 @@
     "remainingBleu": 259,
     "remainingBlanc": 4,
     "remainingRouge": 0,
-    "seasonDayIndex": 143
+    "seasonDayIndex": 204
   },
   {
     "date": "2021-03-24",
@@ -4329,7 +4329,7 @@
     "remainingBleu": 258,
     "remainingBlanc": 4,
     "remainingRouge": 0,
-    "seasonDayIndex": 144
+    "seasonDayIndex": 205
   },
   {
     "date": "2021-03-25",
@@ -4341,7 +4341,7 @@
     "remainingBleu": 258,
     "remainingBlanc": 3,
     "remainingRouge": 0,
-    "seasonDayIndex": 145
+    "seasonDayIndex": 206
   },
   {
     "date": "2021-03-26",
@@ -4353,7 +4353,7 @@
     "remainingBleu": 258,
     "remainingBlanc": 2,
     "remainingRouge": 0,
-    "seasonDayIndex": 146
+    "seasonDayIndex": 207
   },
   {
     "date": "2021-03-29",
@@ -4365,7 +4365,7 @@
     "remainingBleu": 258,
     "remainingBlanc": 1,
     "remainingRouge": 0,
-    "seasonDayIndex": 149
+    "seasonDayIndex": 210
   },
   {
     "date": "2021-03-30",
@@ -4377,7 +4377,7 @@
     "remainingBleu": 257,
     "remainingBlanc": 1,
     "remainingRouge": 0,
-    "seasonDayIndex": 150
+    "seasonDayIndex": 211
   },
   {
     "date": "2021-03-31",
@@ -4389,7 +4389,7 @@
     "remainingBleu": 257,
     "remainingBlanc": 0,
     "remainingRouge": 0,
-    "seasonDayIndex": 151
+    "seasonDayIndex": 212
   },
   {
     "date": "2021-11-01",
@@ -4401,7 +4401,7 @@
     "remainingBleu": 299,
     "remainingBlanc": 43,
     "remainingRouge": 22,
-    "seasonDayIndex": 1
+    "seasonDayIndex": 62
   },
   {
     "date": "2021-11-02",
@@ -4413,7 +4413,7 @@
     "remainingBleu": 299,
     "remainingBlanc": 42,
     "remainingRouge": 22,
-    "seasonDayIndex": 2
+    "seasonDayIndex": 63
   },
   {
     "date": "2021-11-03",
@@ -4425,7 +4425,7 @@
     "remainingBleu": 299,
     "remainingBlanc": 41,
     "remainingRouge": 22,
-    "seasonDayIndex": 3
+    "seasonDayIndex": 64
   },
   {
     "date": "2021-11-04",
@@ -4437,7 +4437,7 @@
     "remainingBleu": 298,
     "remainingBlanc": 41,
     "remainingRouge": 22,
-    "seasonDayIndex": 4
+    "seasonDayIndex": 65
   },
   {
     "date": "2021-11-05",
@@ -4449,7 +4449,7 @@
     "remainingBleu": 298,
     "remainingBlanc": 40,
     "remainingRouge": 22,
-    "seasonDayIndex": 5
+    "seasonDayIndex": 66
   },
   {
     "date": "2021-11-08",
@@ -4461,7 +4461,7 @@
     "remainingBleu": 298,
     "remainingBlanc": 39,
     "remainingRouge": 22,
-    "seasonDayIndex": 8
+    "seasonDayIndex": 69
   },
   {
     "date": "2021-11-09",
@@ -4473,7 +4473,7 @@
     "remainingBleu": 297,
     "remainingBlanc": 39,
     "remainingRouge": 22,
-    "seasonDayIndex": 9
+    "seasonDayIndex": 70
   },
   {
     "date": "2021-11-10",
@@ -4485,7 +4485,7 @@
     "remainingBleu": 297,
     "remainingBlanc": 38,
     "remainingRouge": 22,
-    "seasonDayIndex": 10
+    "seasonDayIndex": 71
   },
   {
     "date": "2021-11-11",
@@ -4497,7 +4497,7 @@
     "remainingBleu": 296,
     "remainingBlanc": 38,
     "remainingRouge": 22,
-    "seasonDayIndex": 11
+    "seasonDayIndex": 72
   },
   {
     "date": "2021-11-12",
@@ -4509,7 +4509,7 @@
     "remainingBleu": 296,
     "remainingBlanc": 37,
     "remainingRouge": 22,
-    "seasonDayIndex": 12
+    "seasonDayIndex": 73
   },
   {
     "date": "2021-11-15",
@@ -4521,7 +4521,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 37,
     "remainingRouge": 22,
-    "seasonDayIndex": 15
+    "seasonDayIndex": 76
   },
   {
     "date": "2021-11-16",
@@ -4533,7 +4533,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 37,
     "remainingRouge": 21,
-    "seasonDayIndex": 16
+    "seasonDayIndex": 77
   },
   {
     "date": "2021-11-17",
@@ -4545,7 +4545,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 36,
     "remainingRouge": 21,
-    "seasonDayIndex": 17
+    "seasonDayIndex": 78
   },
   {
     "date": "2021-11-18",
@@ -4557,7 +4557,7 @@
     "remainingBleu": 294,
     "remainingBlanc": 36,
     "remainingRouge": 21,
-    "seasonDayIndex": 18
+    "seasonDayIndex": 79
   },
   {
     "date": "2021-11-19",
@@ -4569,7 +4569,7 @@
     "remainingBleu": 294,
     "remainingBlanc": 35,
     "remainingRouge": 21,
-    "seasonDayIndex": 19
+    "seasonDayIndex": 80
   },
   {
     "date": "2021-11-22",
@@ -4581,7 +4581,7 @@
     "remainingBleu": 294,
     "remainingBlanc": 35,
     "remainingRouge": 20,
-    "seasonDayIndex": 22
+    "seasonDayIndex": 83
   },
   {
     "date": "2021-11-23",
@@ -4593,7 +4593,7 @@
     "remainingBleu": 293,
     "remainingBlanc": 35,
     "remainingRouge": 20,
-    "seasonDayIndex": 23
+    "seasonDayIndex": 84
   },
   {
     "date": "2021-11-24",
@@ -4605,7 +4605,7 @@
     "remainingBleu": 292,
     "remainingBlanc": 35,
     "remainingRouge": 20,
-    "seasonDayIndex": 24
+    "seasonDayIndex": 85
   },
   {
     "date": "2021-11-25",
@@ -4617,7 +4617,7 @@
     "remainingBleu": 292,
     "remainingBlanc": 34,
     "remainingRouge": 20,
-    "seasonDayIndex": 25
+    "seasonDayIndex": 86
   },
   {
     "date": "2021-11-26",
@@ -4629,7 +4629,7 @@
     "remainingBleu": 291,
     "remainingBlanc": 34,
     "remainingRouge": 20,
-    "seasonDayIndex": 26
+    "seasonDayIndex": 87
   },
   {
     "date": "2021-11-29",
@@ -4641,7 +4641,7 @@
     "remainingBleu": 291,
     "remainingBlanc": 33,
     "remainingRouge": 20,
-    "seasonDayIndex": 29
+    "seasonDayIndex": 90
   },
   {
     "date": "2021-11-30",
@@ -4653,7 +4653,7 @@
     "remainingBleu": 291,
     "remainingBlanc": 32,
     "remainingRouge": 20,
-    "seasonDayIndex": 30
+    "seasonDayIndex": 91
   },
   {
     "date": "2021-12-01",
@@ -4665,7 +4665,7 @@
     "remainingBleu": 290,
     "remainingBlanc": 32,
     "remainingRouge": 20,
-    "seasonDayIndex": 31
+    "seasonDayIndex": 92
   },
   {
     "date": "2021-12-02",
@@ -4677,7 +4677,7 @@
     "remainingBleu": 290,
     "remainingBlanc": 31,
     "remainingRouge": 20,
-    "seasonDayIndex": 32
+    "seasonDayIndex": 93
   },
   {
     "date": "2021-12-03",
@@ -4689,7 +4689,7 @@
     "remainingBleu": 290,
     "remainingBlanc": 30,
     "remainingRouge": 20,
-    "seasonDayIndex": 33
+    "seasonDayIndex": 94
   },
   {
     "date": "2021-12-06",
@@ -4701,7 +4701,7 @@
     "remainingBleu": 289,
     "remainingBlanc": 30,
     "remainingRouge": 20,
-    "seasonDayIndex": 36
+    "seasonDayIndex": 97
   },
   {
     "date": "2021-12-07",
@@ -4713,7 +4713,7 @@
     "remainingBleu": 289,
     "remainingBlanc": 30,
     "remainingRouge": 19,
-    "seasonDayIndex": 37
+    "seasonDayIndex": 98
   },
   {
     "date": "2021-12-08",
@@ -4725,7 +4725,7 @@
     "remainingBleu": 289,
     "remainingBlanc": 29,
     "remainingRouge": 19,
-    "seasonDayIndex": 38
+    "seasonDayIndex": 99
   },
   {
     "date": "2021-12-09",
@@ -4737,7 +4737,7 @@
     "remainingBleu": 288,
     "remainingBlanc": 29,
     "remainingRouge": 19,
-    "seasonDayIndex": 39
+    "seasonDayIndex": 100
   },
   {
     "date": "2021-12-10",
@@ -4749,7 +4749,7 @@
     "remainingBleu": 288,
     "remainingBlanc": 28,
     "remainingRouge": 19,
-    "seasonDayIndex": 40
+    "seasonDayIndex": 101
   },
   {
     "date": "2021-12-13",
@@ -4761,7 +4761,7 @@
     "remainingBleu": 288,
     "remainingBlanc": 27,
     "remainingRouge": 19,
-    "seasonDayIndex": 43
+    "seasonDayIndex": 104
   },
   {
     "date": "2021-12-14",
@@ -4773,7 +4773,7 @@
     "remainingBleu": 287,
     "remainingBlanc": 27,
     "remainingRouge": 19,
-    "seasonDayIndex": 44
+    "seasonDayIndex": 105
   },
   {
     "date": "2021-12-15",
@@ -4785,7 +4785,7 @@
     "remainingBleu": 286,
     "remainingBlanc": 27,
     "remainingRouge": 19,
-    "seasonDayIndex": 45
+    "seasonDayIndex": 106
   },
   {
     "date": "2021-12-16",
@@ -4797,7 +4797,7 @@
     "remainingBleu": 286,
     "remainingBlanc": 26,
     "remainingRouge": 19,
-    "seasonDayIndex": 46
+    "seasonDayIndex": 107
   },
   {
     "date": "2021-12-17",
@@ -4809,7 +4809,7 @@
     "remainingBleu": 285,
     "remainingBlanc": 26,
     "remainingRouge": 19,
-    "seasonDayIndex": 47
+    "seasonDayIndex": 108
   },
   {
     "date": "2021-12-20",
@@ -4821,7 +4821,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 26,
     "remainingRouge": 19,
-    "seasonDayIndex": 50
+    "seasonDayIndex": 111
   },
   {
     "date": "2021-12-21",
@@ -4833,7 +4833,7 @@
     "remainingBleu": 283,
     "remainingBlanc": 26,
     "remainingRouge": 19,
-    "seasonDayIndex": 51
+    "seasonDayIndex": 112
   },
   {
     "date": "2021-12-22",
@@ -4845,7 +4845,7 @@
     "remainingBleu": 283,
     "remainingBlanc": 25,
     "remainingRouge": 19,
-    "seasonDayIndex": 52
+    "seasonDayIndex": 113
   },
   {
     "date": "2021-12-23",
@@ -4857,7 +4857,7 @@
     "remainingBleu": 283,
     "remainingBlanc": 25,
     "remainingRouge": 18,
-    "seasonDayIndex": 53
+    "seasonDayIndex": 114
   },
   {
     "date": "2021-12-24",
@@ -4869,7 +4869,7 @@
     "remainingBleu": 283,
     "remainingBlanc": 24,
     "remainingRouge": 18,
-    "seasonDayIndex": 54
+    "seasonDayIndex": 115
   },
   {
     "date": "2021-12-27",
@@ -4881,7 +4881,7 @@
     "remainingBleu": 283,
     "remainingBlanc": 24,
     "remainingRouge": 17,
-    "seasonDayIndex": 57
+    "seasonDayIndex": 118
   },
   {
     "date": "2021-12-28",
@@ -4893,7 +4893,7 @@
     "remainingBleu": 283,
     "remainingBlanc": 24,
     "remainingRouge": 16,
-    "seasonDayIndex": 58
+    "seasonDayIndex": 119
   },
   {
     "date": "2021-12-29",
@@ -4905,7 +4905,7 @@
     "remainingBleu": 283,
     "remainingBlanc": 23,
     "remainingRouge": 16,
-    "seasonDayIndex": 59
+    "seasonDayIndex": 120
   },
   {
     "date": "2021-12-30",
@@ -4917,7 +4917,7 @@
     "remainingBleu": 283,
     "remainingBlanc": 22,
     "remainingRouge": 16,
-    "seasonDayIndex": 60
+    "seasonDayIndex": 121
   },
   {
     "date": "2021-12-31",
@@ -4929,7 +4929,7 @@
     "remainingBleu": 282,
     "remainingBlanc": 22,
     "remainingRouge": 16,
-    "seasonDayIndex": 61
+    "seasonDayIndex": 122
   },
   {
     "date": "2022-01-03",
@@ -4941,7 +4941,7 @@
     "remainingBleu": 281,
     "remainingBlanc": 22,
     "remainingRouge": 16,
-    "seasonDayIndex": 64
+    "seasonDayIndex": 125
   },
   {
     "date": "2022-01-04",
@@ -4953,7 +4953,7 @@
     "remainingBleu": 280,
     "remainingBlanc": 22,
     "remainingRouge": 16,
-    "seasonDayIndex": 65
+    "seasonDayIndex": 126
   },
   {
     "date": "2022-01-05",
@@ -4965,7 +4965,7 @@
     "remainingBleu": 280,
     "remainingBlanc": 22,
     "remainingRouge": 15,
-    "seasonDayIndex": 66
+    "seasonDayIndex": 127
   },
   {
     "date": "2022-01-06",
@@ -4977,7 +4977,7 @@
     "remainingBleu": 280,
     "remainingBlanc": 22,
     "remainingRouge": 14,
-    "seasonDayIndex": 67
+    "seasonDayIndex": 128
   },
   {
     "date": "2022-01-07",
@@ -4989,7 +4989,7 @@
     "remainingBleu": 280,
     "remainingBlanc": 21,
     "remainingRouge": 14,
-    "seasonDayIndex": 68
+    "seasonDayIndex": 129
   },
   {
     "date": "2022-01-10",
@@ -5001,7 +5001,7 @@
     "remainingBleu": 279,
     "remainingBlanc": 21,
     "remainingRouge": 14,
-    "seasonDayIndex": 71
+    "seasonDayIndex": 132
   },
   {
     "date": "2022-01-11",
@@ -5013,7 +5013,7 @@
     "remainingBleu": 279,
     "remainingBlanc": 21,
     "remainingRouge": 13,
-    "seasonDayIndex": 72
+    "seasonDayIndex": 133
   },
   {
     "date": "2022-01-12",
@@ -5025,7 +5025,7 @@
     "remainingBleu": 279,
     "remainingBlanc": 20,
     "remainingRouge": 13,
-    "seasonDayIndex": 73
+    "seasonDayIndex": 134
   },
   {
     "date": "2022-01-13",
@@ -5037,7 +5037,7 @@
     "remainingBleu": 279,
     "remainingBlanc": 19,
     "remainingRouge": 13,
-    "seasonDayIndex": 74
+    "seasonDayIndex": 135
   },
   {
     "date": "2022-01-14",
@@ -5049,7 +5049,7 @@
     "remainingBleu": 279,
     "remainingBlanc": 18,
     "remainingRouge": 13,
-    "seasonDayIndex": 75
+    "seasonDayIndex": 136
   },
   {
     "date": "2022-01-17",
@@ -5061,7 +5061,7 @@
     "remainingBleu": 279,
     "remainingBlanc": 18,
     "remainingRouge": 12,
-    "seasonDayIndex": 78
+    "seasonDayIndex": 139
   },
   {
     "date": "2022-01-18",
@@ -5073,7 +5073,7 @@
     "remainingBleu": 279,
     "remainingBlanc": 18,
     "remainingRouge": 11,
-    "seasonDayIndex": 79
+    "seasonDayIndex": 140
   },
   {
     "date": "2022-01-19",
@@ -5085,7 +5085,7 @@
     "remainingBleu": 278,
     "remainingBlanc": 18,
     "remainingRouge": 11,
-    "seasonDayIndex": 80
+    "seasonDayIndex": 141
   },
   {
     "date": "2022-01-20",
@@ -5097,7 +5097,7 @@
     "remainingBleu": 277,
     "remainingBlanc": 18,
     "remainingRouge": 11,
-    "seasonDayIndex": 81
+    "seasonDayIndex": 142
   },
   {
     "date": "2022-01-21",
@@ -5109,7 +5109,7 @@
     "remainingBleu": 276,
     "remainingBlanc": 18,
     "remainingRouge": 11,
-    "seasonDayIndex": 82
+    "seasonDayIndex": 143
   },
   {
     "date": "2022-01-24",
@@ -5121,7 +5121,7 @@
     "remainingBleu": 276,
     "remainingBlanc": 18,
     "remainingRouge": 10,
-    "seasonDayIndex": 85
+    "seasonDayIndex": 146
   },
   {
     "date": "2022-01-25",
@@ -5133,7 +5133,7 @@
     "remainingBleu": 276,
     "remainingBlanc": 17,
     "remainingRouge": 10,
-    "seasonDayIndex": 86
+    "seasonDayIndex": 147
   },
   {
     "date": "2022-01-26",
@@ -5145,7 +5145,7 @@
     "remainingBleu": 276,
     "remainingBlanc": 16,
     "remainingRouge": 10,
-    "seasonDayIndex": 87
+    "seasonDayIndex": 148
   },
   {
     "date": "2022-01-27",
@@ -5157,7 +5157,7 @@
     "remainingBleu": 276,
     "remainingBlanc": 15,
     "remainingRouge": 10,
-    "seasonDayIndex": 88
+    "seasonDayIndex": 149
   },
   {
     "date": "2022-01-28",
@@ -5169,7 +5169,7 @@
     "remainingBleu": 275,
     "remainingBlanc": 15,
     "remainingRouge": 10,
-    "seasonDayIndex": 89
+    "seasonDayIndex": 150
   },
   {
     "date": "2022-01-31",
@@ -5181,7 +5181,7 @@
     "remainingBleu": 275,
     "remainingBlanc": 14,
     "remainingRouge": 10,
-    "seasonDayIndex": 92
+    "seasonDayIndex": 153
   },
   {
     "date": "2022-03-01",
@@ -5193,7 +5193,7 @@
     "remainingBleu": 275,
     "remainingBlanc": 13,
     "remainingRouge": 10,
-    "seasonDayIndex": 121
+    "seasonDayIndex": 182
   },
   {
     "date": "2022-03-02",
@@ -5205,7 +5205,7 @@
     "remainingBleu": 274,
     "remainingBlanc": 13,
     "remainingRouge": 10,
-    "seasonDayIndex": 122
+    "seasonDayIndex": 183
   },
   {
     "date": "2022-03-03",
@@ -5217,7 +5217,7 @@
     "remainingBleu": 273,
     "remainingBlanc": 13,
     "remainingRouge": 10,
-    "seasonDayIndex": 123
+    "seasonDayIndex": 184
   },
   {
     "date": "2022-03-04",
@@ -5229,7 +5229,7 @@
     "remainingBleu": 273,
     "remainingBlanc": 12,
     "remainingRouge": 10,
-    "seasonDayIndex": 124
+    "seasonDayIndex": 185
   },
   {
     "date": "2022-03-07",
@@ -5241,7 +5241,7 @@
     "remainingBleu": 273,
     "remainingBlanc": 11,
     "remainingRouge": 10,
-    "seasonDayIndex": 127
+    "seasonDayIndex": 188
   },
   {
     "date": "2022-03-08",
@@ -5253,7 +5253,7 @@
     "remainingBleu": 273,
     "remainingBlanc": 11,
     "remainingRouge": 9,
-    "seasonDayIndex": 128
+    "seasonDayIndex": 189
   },
   {
     "date": "2022-03-09",
@@ -5265,7 +5265,7 @@
     "remainingBleu": 273,
     "remainingBlanc": 11,
     "remainingRouge": 8,
-    "seasonDayIndex": 129
+    "seasonDayIndex": 190
   },
   {
     "date": "2022-03-10",
@@ -5277,7 +5277,7 @@
     "remainingBleu": 273,
     "remainingBlanc": 11,
     "remainingRouge": 7,
-    "seasonDayIndex": 130
+    "seasonDayIndex": 191
   },
   {
     "date": "2022-03-11",
@@ -5289,7 +5289,7 @@
     "remainingBleu": 272,
     "remainingBlanc": 11,
     "remainingRouge": 7,
-    "seasonDayIndex": 131
+    "seasonDayIndex": 192
   },
   {
     "date": "2022-03-14",
@@ -5301,7 +5301,7 @@
     "remainingBleu": 271,
     "remainingBlanc": 11,
     "remainingRouge": 7,
-    "seasonDayIndex": 134
+    "seasonDayIndex": 195
   },
   {
     "date": "2022-03-15",
@@ -5313,7 +5313,7 @@
     "remainingBleu": 270,
     "remainingBlanc": 11,
     "remainingRouge": 7,
-    "seasonDayIndex": 135
+    "seasonDayIndex": 196
   },
   {
     "date": "2022-03-16",
@@ -5325,7 +5325,7 @@
     "remainingBleu": 270,
     "remainingBlanc": 11,
     "remainingRouge": 6,
-    "seasonDayIndex": 136
+    "seasonDayIndex": 197
   },
   {
     "date": "2022-03-17",
@@ -5337,7 +5337,7 @@
     "remainingBleu": 270,
     "remainingBlanc": 10,
     "remainingRouge": 6,
-    "seasonDayIndex": 137
+    "seasonDayIndex": 198
   },
   {
     "date": "2022-03-18",
@@ -5349,7 +5349,7 @@
     "remainingBleu": 269,
     "remainingBlanc": 10,
     "remainingRouge": 6,
-    "seasonDayIndex": 138
+    "seasonDayIndex": 199
   },
   {
     "date": "2022-03-21",
@@ -5361,7 +5361,7 @@
     "remainingBleu": 268,
     "remainingBlanc": 10,
     "remainingRouge": 6,
-    "seasonDayIndex": 141
+    "seasonDayIndex": 202
   },
   {
     "date": "2022-03-22",
@@ -5373,7 +5373,7 @@
     "remainingBleu": 267,
     "remainingBlanc": 10,
     "remainingRouge": 6,
-    "seasonDayIndex": 142
+    "seasonDayIndex": 203
   },
   {
     "date": "2022-03-23",
@@ -5385,7 +5385,7 @@
     "remainingBleu": 266,
     "remainingBlanc": 10,
     "remainingRouge": 6,
-    "seasonDayIndex": 143
+    "seasonDayIndex": 204
   },
   {
     "date": "2022-03-24",
@@ -5397,7 +5397,7 @@
     "remainingBleu": 266,
     "remainingBlanc": 10,
     "remainingRouge": 5,
-    "seasonDayIndex": 144
+    "seasonDayIndex": 205
   },
   {
     "date": "2022-03-25",
@@ -5409,7 +5409,7 @@
     "remainingBleu": 266,
     "remainingBlanc": 9,
     "remainingRouge": 5,
-    "seasonDayIndex": 145
+    "seasonDayIndex": 206
   },
   {
     "date": "2022-03-28",
@@ -5421,7 +5421,7 @@
     "remainingBleu": 266,
     "remainingBlanc": 9,
     "remainingRouge": 4,
-    "seasonDayIndex": 148
+    "seasonDayIndex": 209
   },
   {
     "date": "2022-03-29",
@@ -5433,7 +5433,7 @@
     "remainingBleu": 265,
     "remainingBlanc": 9,
     "remainingRouge": 4,
-    "seasonDayIndex": 149
+    "seasonDayIndex": 210
   },
   {
     "date": "2022-03-30",
@@ -5445,7 +5445,7 @@
     "remainingBleu": 265,
     "remainingBlanc": 8,
     "remainingRouge": 4,
-    "seasonDayIndex": 150
+    "seasonDayIndex": 211
   },
   {
     "date": "2022-03-31",
@@ -5457,7 +5457,7 @@
     "remainingBleu": 265,
     "remainingBlanc": 7,
     "remainingRouge": 4,
-    "seasonDayIndex": 151
+    "seasonDayIndex": 212
   },
   {
     "date": "2022-11-01",
@@ -5469,7 +5469,7 @@
     "remainingBleu": 300,
     "remainingBlanc": 43,
     "remainingRouge": 21,
-    "seasonDayIndex": 1
+    "seasonDayIndex": 62
   },
   {
     "date": "2022-11-02",
@@ -5481,7 +5481,7 @@
     "remainingBleu": 300,
     "remainingBlanc": 42,
     "remainingRouge": 21,
-    "seasonDayIndex": 2
+    "seasonDayIndex": 63
   },
   {
     "date": "2022-11-03",
@@ -5493,7 +5493,7 @@
     "remainingBleu": 300,
     "remainingBlanc": 41,
     "remainingRouge": 21,
-    "seasonDayIndex": 3
+    "seasonDayIndex": 64
   },
   {
     "date": "2022-11-04",
@@ -5505,7 +5505,7 @@
     "remainingBleu": 300,
     "remainingBlanc": 41,
     "remainingRouge": 20,
-    "seasonDayIndex": 4
+    "seasonDayIndex": 65
   },
   {
     "date": "2022-11-07",
@@ -5517,7 +5517,7 @@
     "remainingBleu": 300,
     "remainingBlanc": 40,
     "remainingRouge": 20,
-    "seasonDayIndex": 7
+    "seasonDayIndex": 68
   },
   {
     "date": "2022-11-08",
@@ -5529,7 +5529,7 @@
     "remainingBleu": 300,
     "remainingBlanc": 39,
     "remainingRouge": 20,
-    "seasonDayIndex": 8
+    "seasonDayIndex": 69
   },
   {
     "date": "2022-11-09",
@@ -5541,7 +5541,7 @@
     "remainingBleu": 300,
     "remainingBlanc": 39,
     "remainingRouge": 19,
-    "seasonDayIndex": 9
+    "seasonDayIndex": 70
   },
   {
     "date": "2022-11-10",
@@ -5553,7 +5553,7 @@
     "remainingBleu": 300,
     "remainingBlanc": 38,
     "remainingRouge": 19,
-    "seasonDayIndex": 10
+    "seasonDayIndex": 71
   },
   {
     "date": "2022-11-11",
@@ -5565,7 +5565,7 @@
     "remainingBleu": 299,
     "remainingBlanc": 38,
     "remainingRouge": 19,
-    "seasonDayIndex": 11
+    "seasonDayIndex": 72
   },
   {
     "date": "2022-11-14",
@@ -5577,7 +5577,7 @@
     "remainingBleu": 298,
     "remainingBlanc": 38,
     "remainingRouge": 19,
-    "seasonDayIndex": 14
+    "seasonDayIndex": 75
   },
   {
     "date": "2022-11-15",
@@ -5589,7 +5589,7 @@
     "remainingBleu": 298,
     "remainingBlanc": 37,
     "remainingRouge": 19,
-    "seasonDayIndex": 15
+    "seasonDayIndex": 76
   },
   {
     "date": "2022-11-16",
@@ -5601,7 +5601,7 @@
     "remainingBleu": 297,
     "remainingBlanc": 37,
     "remainingRouge": 19,
-    "seasonDayIndex": 16
+    "seasonDayIndex": 77
   },
   {
     "date": "2022-11-17",
@@ -5613,7 +5613,7 @@
     "remainingBleu": 296,
     "remainingBlanc": 37,
     "remainingRouge": 19,
-    "seasonDayIndex": 17
+    "seasonDayIndex": 78
   },
   {
     "date": "2022-11-18",
@@ -5625,7 +5625,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 37,
     "remainingRouge": 19,
-    "seasonDayIndex": 18
+    "seasonDayIndex": 79
   },
   {
     "date": "2022-11-21",
@@ -5637,7 +5637,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 37,
     "remainingRouge": 18,
-    "seasonDayIndex": 21
+    "seasonDayIndex": 82
   },
   {
     "date": "2022-11-22",
@@ -5649,7 +5649,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 36,
     "remainingRouge": 18,
-    "seasonDayIndex": 22
+    "seasonDayIndex": 83
   },
   {
     "date": "2022-11-23",
@@ -5661,7 +5661,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 35,
     "remainingRouge": 18,
-    "seasonDayIndex": 23
+    "seasonDayIndex": 84
   },
   {
     "date": "2022-11-24",
@@ -5673,7 +5673,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 35,
     "remainingRouge": 17,
-    "seasonDayIndex": 24
+    "seasonDayIndex": 85
   },
   {
     "date": "2022-11-25",
@@ -5685,7 +5685,7 @@
     "remainingBleu": 294,
     "remainingBlanc": 35,
     "remainingRouge": 17,
-    "seasonDayIndex": 25
+    "seasonDayIndex": 86
   },
   {
     "date": "2022-11-28",
@@ -5697,7 +5697,7 @@
     "remainingBleu": 293,
     "remainingBlanc": 35,
     "remainingRouge": 17,
-    "seasonDayIndex": 28
+    "seasonDayIndex": 89
   },
   {
     "date": "2022-11-29",
@@ -5709,7 +5709,7 @@
     "remainingBleu": 292,
     "remainingBlanc": 35,
     "remainingRouge": 17,
-    "seasonDayIndex": 29
+    "seasonDayIndex": 90
   },
   {
     "date": "2022-11-30",
@@ -5721,7 +5721,7 @@
     "remainingBleu": 292,
     "remainingBlanc": 34,
     "remainingRouge": 17,
-    "seasonDayIndex": 30
+    "seasonDayIndex": 91
   },
   {
     "date": "2022-12-01",
@@ -5733,7 +5733,7 @@
     "remainingBleu": 292,
     "remainingBlanc": 33,
     "remainingRouge": 17,
-    "seasonDayIndex": 31
+    "seasonDayIndex": 92
   },
   {
     "date": "2022-12-02",
@@ -5745,7 +5745,7 @@
     "remainingBleu": 291,
     "remainingBlanc": 33,
     "remainingRouge": 17,
-    "seasonDayIndex": 32
+    "seasonDayIndex": 93
   },
   {
     "date": "2022-12-05",
@@ -5757,7 +5757,7 @@
     "remainingBleu": 291,
     "remainingBlanc": 32,
     "remainingRouge": 17,
-    "seasonDayIndex": 35
+    "seasonDayIndex": 96
   },
   {
     "date": "2022-12-06",
@@ -5769,7 +5769,7 @@
     "remainingBleu": 290,
     "remainingBlanc": 32,
     "remainingRouge": 17,
-    "seasonDayIndex": 36
+    "seasonDayIndex": 97
   },
   {
     "date": "2022-12-07",
@@ -5781,7 +5781,7 @@
     "remainingBleu": 290,
     "remainingBlanc": 32,
     "remainingRouge": 16,
-    "seasonDayIndex": 37
+    "seasonDayIndex": 98
   },
   {
     "date": "2022-12-08",
@@ -5793,7 +5793,7 @@
     "remainingBleu": 290,
     "remainingBlanc": 32,
     "remainingRouge": 15,
-    "seasonDayIndex": 38
+    "seasonDayIndex": 99
   },
   {
     "date": "2022-12-09",
@@ -5805,7 +5805,7 @@
     "remainingBleu": 289,
     "remainingBlanc": 32,
     "remainingRouge": 15,
-    "seasonDayIndex": 39
+    "seasonDayIndex": 100
   },
   {
     "date": "2022-12-12",
@@ -5817,7 +5817,7 @@
     "remainingBleu": 289,
     "remainingBlanc": 32,
     "remainingRouge": 14,
-    "seasonDayIndex": 42
+    "seasonDayIndex": 103
   },
   {
     "date": "2022-12-13",
@@ -5829,7 +5829,7 @@
     "remainingBleu": 289,
     "remainingBlanc": 32,
     "remainingRouge": 13,
-    "seasonDayIndex": 43
+    "seasonDayIndex": 104
   },
   {
     "date": "2022-12-14",
@@ -5841,7 +5841,7 @@
     "remainingBleu": 288,
     "remainingBlanc": 32,
     "remainingRouge": 13,
-    "seasonDayIndex": 44
+    "seasonDayIndex": 105
   },
   {
     "date": "2022-12-15",
@@ -5853,7 +5853,7 @@
     "remainingBleu": 288,
     "remainingBlanc": 31,
     "remainingRouge": 13,
-    "seasonDayIndex": 45
+    "seasonDayIndex": 106
   },
   {
     "date": "2022-12-16",
@@ -5865,7 +5865,7 @@
     "remainingBleu": 287,
     "remainingBlanc": 31,
     "remainingRouge": 13,
-    "seasonDayIndex": 46
+    "seasonDayIndex": 107
   },
   {
     "date": "2022-12-19",
@@ -5877,7 +5877,7 @@
     "remainingBleu": 286,
     "remainingBlanc": 31,
     "remainingRouge": 13,
-    "seasonDayIndex": 49
+    "seasonDayIndex": 110
   },
   {
     "date": "2022-12-20",
@@ -5889,7 +5889,7 @@
     "remainingBleu": 286,
     "remainingBlanc": 31,
     "remainingRouge": 12,
-    "seasonDayIndex": 50
+    "seasonDayIndex": 111
   },
   {
     "date": "2022-12-21",
@@ -5901,7 +5901,7 @@
     "remainingBleu": 286,
     "remainingBlanc": 30,
     "remainingRouge": 12,
-    "seasonDayIndex": 51
+    "seasonDayIndex": 112
   },
   {
     "date": "2022-12-22",
@@ -5913,7 +5913,7 @@
     "remainingBleu": 286,
     "remainingBlanc": 30,
     "remainingRouge": 11,
-    "seasonDayIndex": 52
+    "seasonDayIndex": 113
   },
   {
     "date": "2022-12-23",
@@ -5925,7 +5925,7 @@
     "remainingBleu": 285,
     "remainingBlanc": 30,
     "remainingRouge": 11,
-    "seasonDayIndex": 53
+    "seasonDayIndex": 114
   },
   {
     "date": "2022-12-26",
@@ -5937,7 +5937,7 @@
     "remainingBleu": 285,
     "remainingBlanc": 29,
     "remainingRouge": 11,
-    "seasonDayIndex": 56
+    "seasonDayIndex": 117
   },
   {
     "date": "2022-12-27",
@@ -5949,7 +5949,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 29,
     "remainingRouge": 11,
-    "seasonDayIndex": 57
+    "seasonDayIndex": 118
   },
   {
     "date": "2022-12-28",
@@ -5961,7 +5961,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 28,
     "remainingRouge": 11,
-    "seasonDayIndex": 58
+    "seasonDayIndex": 119
   },
   {
     "date": "2022-12-29",
@@ -5973,7 +5973,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 27,
     "remainingRouge": 11,
-    "seasonDayIndex": 59
+    "seasonDayIndex": 120
   },
   {
     "date": "2022-12-30",
@@ -5985,7 +5985,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 26,
     "remainingRouge": 11,
-    "seasonDayIndex": 60
+    "seasonDayIndex": 121
   },
   {
     "date": "2023-01-02",
@@ -5997,7 +5997,7 @@
     "remainingBleu": 283,
     "remainingBlanc": 26,
     "remainingRouge": 11,
-    "seasonDayIndex": 63
+    "seasonDayIndex": 124
   },
   {
     "date": "2023-01-03",
@@ -6009,7 +6009,7 @@
     "remainingBleu": 283,
     "remainingBlanc": 25,
     "remainingRouge": 11,
-    "seasonDayIndex": 64
+    "seasonDayIndex": 125
   },
   {
     "date": "2023-01-04",
@@ -6021,7 +6021,7 @@
     "remainingBleu": 282,
     "remainingBlanc": 25,
     "remainingRouge": 11,
-    "seasonDayIndex": 65
+    "seasonDayIndex": 126
   },
   {
     "date": "2023-01-05",
@@ -6033,7 +6033,7 @@
     "remainingBleu": 282,
     "remainingBlanc": 24,
     "remainingRouge": 11,
-    "seasonDayIndex": 66
+    "seasonDayIndex": 127
   },
   {
     "date": "2023-01-06",
@@ -6045,7 +6045,7 @@
     "remainingBleu": 282,
     "remainingBlanc": 23,
     "remainingRouge": 11,
-    "seasonDayIndex": 67
+    "seasonDayIndex": 128
   },
   {
     "date": "2023-01-09",
@@ -6057,7 +6057,7 @@
     "remainingBleu": 282,
     "remainingBlanc": 22,
     "remainingRouge": 11,
-    "seasonDayIndex": 70
+    "seasonDayIndex": 131
   },
   {
     "date": "2023-01-10",
@@ -6069,7 +6069,7 @@
     "remainingBleu": 281,
     "remainingBlanc": 22,
     "remainingRouge": 11,
-    "seasonDayIndex": 71
+    "seasonDayIndex": 132
   },
   {
     "date": "2023-01-11",
@@ -6081,7 +6081,7 @@
     "remainingBleu": 281,
     "remainingBlanc": 21,
     "remainingRouge": 11,
-    "seasonDayIndex": 72
+    "seasonDayIndex": 133
   },
   {
     "date": "2023-01-12",
@@ -6093,7 +6093,7 @@
     "remainingBleu": 281,
     "remainingBlanc": 20,
     "remainingRouge": 11,
-    "seasonDayIndex": 73
+    "seasonDayIndex": 134
   },
   {
     "date": "2023-01-13",
@@ -6105,7 +6105,7 @@
     "remainingBleu": 280,
     "remainingBlanc": 20,
     "remainingRouge": 11,
-    "seasonDayIndex": 74
+    "seasonDayIndex": 135
   },
   {
     "date": "2023-01-16",
@@ -6117,7 +6117,7 @@
     "remainingBleu": 279,
     "remainingBlanc": 20,
     "remainingRouge": 11,
-    "seasonDayIndex": 77
+    "seasonDayIndex": 138
   },
   {
     "date": "2023-01-17",
@@ -6129,7 +6129,7 @@
     "remainingBleu": 278,
     "remainingBlanc": 20,
     "remainingRouge": 11,
-    "seasonDayIndex": 78
+    "seasonDayIndex": 139
   },
   {
     "date": "2023-01-18",
@@ -6141,7 +6141,7 @@
     "remainingBleu": 277,
     "remainingBlanc": 20,
     "remainingRouge": 11,
-    "seasonDayIndex": 79
+    "seasonDayIndex": 140
   },
   {
     "date": "2023-01-19",
@@ -6153,7 +6153,7 @@
     "remainingBleu": 276,
     "remainingBlanc": 20,
     "remainingRouge": 11,
-    "seasonDayIndex": 80
+    "seasonDayIndex": 141
   },
   {
     "date": "2023-01-20",
@@ -6165,7 +6165,7 @@
     "remainingBleu": 276,
     "remainingBlanc": 20,
     "remainingRouge": 10,
-    "seasonDayIndex": 81
+    "seasonDayIndex": 142
   },
   {
     "date": "2023-01-23",
@@ -6177,7 +6177,7 @@
     "remainingBleu": 276,
     "remainingBlanc": 19,
     "remainingRouge": 10,
-    "seasonDayIndex": 84
+    "seasonDayIndex": 145
   },
   {
     "date": "2023-01-24",
@@ -6189,7 +6189,7 @@
     "remainingBleu": 276,
     "remainingBlanc": 19,
     "remainingRouge": 9,
-    "seasonDayIndex": 85
+    "seasonDayIndex": 146
   },
   {
     "date": "2023-01-25",
@@ -6201,7 +6201,7 @@
     "remainingBleu": 275,
     "remainingBlanc": 19,
     "remainingRouge": 9,
-    "seasonDayIndex": 86
+    "seasonDayIndex": 147
   },
   {
     "date": "2023-01-26",
@@ -6213,7 +6213,7 @@
     "remainingBleu": 275,
     "remainingBlanc": 18,
     "remainingRouge": 9,
-    "seasonDayIndex": 87
+    "seasonDayIndex": 148
   },
   {
     "date": "2023-01-27",
@@ -6225,7 +6225,7 @@
     "remainingBleu": 274,
     "remainingBlanc": 18,
     "remainingRouge": 9,
-    "seasonDayIndex": 88
+    "seasonDayIndex": 149
   },
   {
     "date": "2023-01-30",
@@ -6237,7 +6237,7 @@
     "remainingBleu": 273,
     "remainingBlanc": 18,
     "remainingRouge": 9,
-    "seasonDayIndex": 91
+    "seasonDayIndex": 152
   },
   {
     "date": "2023-01-31",
@@ -6249,7 +6249,7 @@
     "remainingBleu": 272,
     "remainingBlanc": 18,
     "remainingRouge": 9,
-    "seasonDayIndex": 92
+    "seasonDayIndex": 153
   },
   {
     "date": "2023-02-01",
@@ -6261,7 +6261,7 @@
     "remainingBleu": 271,
     "remainingBlanc": 18,
     "remainingRouge": 9,
-    "seasonDayIndex": 93
+    "seasonDayIndex": 154
   },
   {
     "date": "2023-02-02",
@@ -6273,7 +6273,7 @@
     "remainingBleu": 271,
     "remainingBlanc": 17,
     "remainingRouge": 9,
-    "seasonDayIndex": 94
+    "seasonDayIndex": 155
   },
   {
     "date": "2023-02-03",
@@ -6285,7 +6285,7 @@
     "remainingBleu": 270,
     "remainingBlanc": 17,
     "remainingRouge": 9,
-    "seasonDayIndex": 95
+    "seasonDayIndex": 156
   },
   {
     "date": "2023-02-06",
@@ -6297,7 +6297,7 @@
     "remainingBleu": 270,
     "remainingBlanc": 16,
     "remainingRouge": 9,
-    "seasonDayIndex": 98
+    "seasonDayIndex": 159
   },
   {
     "date": "2023-02-07",
@@ -6309,7 +6309,7 @@
     "remainingBleu": 270,
     "remainingBlanc": 15,
     "remainingRouge": 9,
-    "seasonDayIndex": 99
+    "seasonDayIndex": 160
   },
   {
     "date": "2023-02-08",
@@ -6321,7 +6321,7 @@
     "remainingBleu": 270,
     "remainingBlanc": 14,
     "remainingRouge": 9,
-    "seasonDayIndex": 100
+    "seasonDayIndex": 161
   },
   {
     "date": "2023-02-09",
@@ -6333,7 +6333,7 @@
     "remainingBleu": 269,
     "remainingBlanc": 14,
     "remainingRouge": 9,
-    "seasonDayIndex": 101
+    "seasonDayIndex": 162
   },
   {
     "date": "2023-02-10",
@@ -6345,7 +6345,7 @@
     "remainingBleu": 269,
     "remainingBlanc": 13,
     "remainingRouge": 9,
-    "seasonDayIndex": 102
+    "seasonDayIndex": 163
   },
   {
     "date": "2023-02-13",
@@ -6357,7 +6357,7 @@
     "remainingBleu": 269,
     "remainingBlanc": 12,
     "remainingRouge": 9,
-    "seasonDayIndex": 105
+    "seasonDayIndex": 166
   },
   {
     "date": "2023-02-14",
@@ -6369,7 +6369,7 @@
     "remainingBleu": 269,
     "remainingBlanc": 11,
     "remainingRouge": 9,
-    "seasonDayIndex": 106
+    "seasonDayIndex": 167
   },
   {
     "date": "2023-02-15",
@@ -6381,7 +6381,7 @@
     "remainingBleu": 269,
     "remainingBlanc": 10,
     "remainingRouge": 9,
-    "seasonDayIndex": 107
+    "seasonDayIndex": 168
   },
   {
     "date": "2023-02-16",
@@ -6393,7 +6393,7 @@
     "remainingBleu": 268,
     "remainingBlanc": 10,
     "remainingRouge": 9,
-    "seasonDayIndex": 108
+    "seasonDayIndex": 169
   },
   {
     "date": "2023-02-17",
@@ -6405,7 +6405,7 @@
     "remainingBleu": 268,
     "remainingBlanc": 10,
     "remainingRouge": 8,
-    "seasonDayIndex": 109
+    "seasonDayIndex": 170
   },
   {
     "date": "2023-02-20",
@@ -6417,7 +6417,7 @@
     "remainingBleu": 267,
     "remainingBlanc": 10,
     "remainingRouge": 8,
-    "seasonDayIndex": 112
+    "seasonDayIndex": 173
   },
   {
     "date": "2023-02-21",
@@ -6429,7 +6429,7 @@
     "remainingBleu": 267,
     "remainingBlanc": 9,
     "remainingRouge": 8,
-    "seasonDayIndex": 113
+    "seasonDayIndex": 174
   },
   {
     "date": "2023-02-22",
@@ -6441,7 +6441,7 @@
     "remainingBleu": 267,
     "remainingBlanc": 8,
     "remainingRouge": 8,
-    "seasonDayIndex": 114
+    "seasonDayIndex": 175
   },
   {
     "date": "2023-02-23",
@@ -6453,7 +6453,7 @@
     "remainingBleu": 266,
     "remainingBlanc": 8,
     "remainingRouge": 8,
-    "seasonDayIndex": 115
+    "seasonDayIndex": 176
   },
   {
     "date": "2023-02-24",
@@ -6465,7 +6465,7 @@
     "remainingBleu": 265,
     "remainingBlanc": 8,
     "remainingRouge": 8,
-    "seasonDayIndex": 116
+    "seasonDayIndex": 177
   },
   {
     "date": "2023-02-27",
@@ -6477,7 +6477,7 @@
     "remainingBleu": 265,
     "remainingBlanc": 8,
     "remainingRouge": 7,
-    "seasonDayIndex": 119
+    "seasonDayIndex": 180
   },
   {
     "date": "2023-02-28",
@@ -6489,7 +6489,7 @@
     "remainingBleu": 265,
     "remainingBlanc": 7,
     "remainingRouge": 7,
-    "seasonDayIndex": 120
+    "seasonDayIndex": 181
   },
   {
     "date": "2023-03-01",
@@ -6501,7 +6501,7 @@
     "remainingBleu": 265,
     "remainingBlanc": 7,
     "remainingRouge": 6,
-    "seasonDayIndex": 121
+    "seasonDayIndex": 182
   },
   {
     "date": "2023-03-02",
@@ -6513,7 +6513,7 @@
     "remainingBleu": 265,
     "remainingBlanc": 7,
     "remainingRouge": 5,
-    "seasonDayIndex": 122
+    "seasonDayIndex": 183
   },
   {
     "date": "2023-03-03",
@@ -6525,7 +6525,7 @@
     "remainingBleu": 265,
     "remainingBlanc": 7,
     "remainingRouge": 4,
-    "seasonDayIndex": 123
+    "seasonDayIndex": 184
   },
   {
     "date": "2023-03-06",
@@ -6537,7 +6537,7 @@
     "remainingBleu": 264,
     "remainingBlanc": 7,
     "remainingRouge": 4,
-    "seasonDayIndex": 126
+    "seasonDayIndex": 187
   },
   {
     "date": "2023-03-07",
@@ -6549,7 +6549,7 @@
     "remainingBleu": 264,
     "remainingBlanc": 6,
     "remainingRouge": 4,
-    "seasonDayIndex": 127
+    "seasonDayIndex": 188
   },
   {
     "date": "2023-03-08",
@@ -6561,7 +6561,7 @@
     "remainingBleu": 263,
     "remainingBlanc": 6,
     "remainingRouge": 4,
-    "seasonDayIndex": 128
+    "seasonDayIndex": 189
   },
   {
     "date": "2023-03-09",
@@ -6573,7 +6573,7 @@
     "remainingBleu": 263,
     "remainingBlanc": 6,
     "remainingRouge": 3,
-    "seasonDayIndex": 129
+    "seasonDayIndex": 190
   },
   {
     "date": "2023-03-10",
@@ -6585,7 +6585,7 @@
     "remainingBleu": 263,
     "remainingBlanc": 5,
     "remainingRouge": 3,
-    "seasonDayIndex": 130
+    "seasonDayIndex": 191
   },
   {
     "date": "2023-03-13",
@@ -6597,7 +6597,7 @@
     "remainingBleu": 263,
     "remainingBlanc": 4,
     "remainingRouge": 3,
-    "seasonDayIndex": 133
+    "seasonDayIndex": 194
   },
   {
     "date": "2023-03-14",
@@ -6609,7 +6609,7 @@
     "remainingBleu": 263,
     "remainingBlanc": 3,
     "remainingRouge": 3,
-    "seasonDayIndex": 134
+    "seasonDayIndex": 195
   },
   {
     "date": "2023-03-15",
@@ -6621,7 +6621,7 @@
     "remainingBleu": 262,
     "remainingBlanc": 3,
     "remainingRouge": 3,
-    "seasonDayIndex": 135
+    "seasonDayIndex": 196
   },
   {
     "date": "2023-03-16",
@@ -6633,7 +6633,7 @@
     "remainingBleu": 262,
     "remainingBlanc": 3,
     "remainingRouge": 2,
-    "seasonDayIndex": 136
+    "seasonDayIndex": 197
   },
   {
     "date": "2023-03-17",
@@ -6645,7 +6645,7 @@
     "remainingBleu": 261,
     "remainingBlanc": 3,
     "remainingRouge": 2,
-    "seasonDayIndex": 137
+    "seasonDayIndex": 198
   },
   {
     "date": "2023-03-20",
@@ -6657,7 +6657,7 @@
     "remainingBleu": 260,
     "remainingBlanc": 3,
     "remainingRouge": 2,
-    "seasonDayIndex": 140
+    "seasonDayIndex": 201
   },
   {
     "date": "2023-03-21",
@@ -6669,7 +6669,7 @@
     "remainingBleu": 260,
     "remainingBlanc": 2,
     "remainingRouge": 2,
-    "seasonDayIndex": 141
+    "seasonDayIndex": 202
   },
   {
     "date": "2023-03-22",
@@ -6681,7 +6681,7 @@
     "remainingBleu": 260,
     "remainingBlanc": 2,
     "remainingRouge": 1,
-    "seasonDayIndex": 142
+    "seasonDayIndex": 203
   },
   {
     "date": "2023-03-23",
@@ -6693,7 +6693,7 @@
     "remainingBleu": 260,
     "remainingBlanc": 2,
     "remainingRouge": 0,
-    "seasonDayIndex": 143
+    "seasonDayIndex": 204
   },
   {
     "date": "2023-03-24",
@@ -6705,7 +6705,7 @@
     "remainingBleu": 259,
     "remainingBlanc": 2,
     "remainingRouge": 0,
-    "seasonDayIndex": 144
+    "seasonDayIndex": 205
   },
   {
     "date": "2023-03-27",
@@ -6717,7 +6717,7 @@
     "remainingBleu": 258,
     "remainingBlanc": 2,
     "remainingRouge": 0,
-    "seasonDayIndex": 147
+    "seasonDayIndex": 208
   },
   {
     "date": "2023-03-28",
@@ -6729,7 +6729,7 @@
     "remainingBleu": 257,
     "remainingBlanc": 2,
     "remainingRouge": 0,
-    "seasonDayIndex": 148
+    "seasonDayIndex": 209
   },
   {
     "date": "2023-03-29",
@@ -6741,7 +6741,7 @@
     "remainingBleu": 257,
     "remainingBlanc": 1,
     "remainingRouge": 0,
-    "seasonDayIndex": 149
+    "seasonDayIndex": 210
   },
   {
     "date": "2023-03-30",
@@ -6753,7 +6753,7 @@
     "remainingBleu": 256,
     "remainingBlanc": 1,
     "remainingRouge": 0,
-    "seasonDayIndex": 150
+    "seasonDayIndex": 211
   },
   {
     "date": "2023-03-31",
@@ -6765,7 +6765,7 @@
     "remainingBleu": 256,
     "remainingBlanc": 0,
     "remainingRouge": 0,
-    "seasonDayIndex": 151
+    "seasonDayIndex": 212
   },
   {
     "date": "2023-11-01",
@@ -6777,7 +6777,7 @@
     "remainingBleu": 299,
     "remainingBlanc": 43,
     "remainingRouge": 22,
-    "seasonDayIndex": 1
+    "seasonDayIndex": 62
   },
   {
     "date": "2023-11-02",
@@ -6789,7 +6789,7 @@
     "remainingBleu": 299,
     "remainingBlanc": 42,
     "remainingRouge": 22,
-    "seasonDayIndex": 2
+    "seasonDayIndex": 63
   },
   {
     "date": "2023-11-03",
@@ -6801,7 +6801,7 @@
     "remainingBleu": 298,
     "remainingBlanc": 42,
     "remainingRouge": 22,
-    "seasonDayIndex": 3
+    "seasonDayIndex": 64
   },
   {
     "date": "2023-11-06",
@@ -6813,7 +6813,7 @@
     "remainingBleu": 297,
     "remainingBlanc": 42,
     "remainingRouge": 22,
-    "seasonDayIndex": 6
+    "seasonDayIndex": 67
   },
   {
     "date": "2023-11-07",
@@ -6825,7 +6825,7 @@
     "remainingBleu": 297,
     "remainingBlanc": 42,
     "remainingRouge": 21,
-    "seasonDayIndex": 7
+    "seasonDayIndex": 68
   },
   {
     "date": "2023-11-08",
@@ -6837,7 +6837,7 @@
     "remainingBleu": 296,
     "remainingBlanc": 42,
     "remainingRouge": 21,
-    "seasonDayIndex": 8
+    "seasonDayIndex": 69
   },
   {
     "date": "2023-11-09",
@@ -6849,7 +6849,7 @@
     "remainingBleu": 296,
     "remainingBlanc": 42,
     "remainingRouge": 20,
-    "seasonDayIndex": 9
+    "seasonDayIndex": 70
   },
   {
     "date": "2023-11-10",
@@ -6861,7 +6861,7 @@
     "remainingBleu": 296,
     "remainingBlanc": 41,
     "remainingRouge": 20,
-    "seasonDayIndex": 10
+    "seasonDayIndex": 71
   },
   {
     "date": "2023-11-13",
@@ -6873,7 +6873,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 41,
     "remainingRouge": 20,
-    "seasonDayIndex": 13
+    "seasonDayIndex": 74
   },
   {
     "date": "2023-11-14",
@@ -6885,7 +6885,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 41,
     "remainingRouge": 19,
-    "seasonDayIndex": 14
+    "seasonDayIndex": 75
   },
   {
     "date": "2023-11-15",
@@ -6897,7 +6897,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 40,
     "remainingRouge": 19,
-    "seasonDayIndex": 15
+    "seasonDayIndex": 76
   },
   {
     "date": "2023-11-16",
@@ -6909,7 +6909,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 40,
     "remainingRouge": 18,
-    "seasonDayIndex": 16
+    "seasonDayIndex": 77
   },
   {
     "date": "2023-11-17",
@@ -6921,7 +6921,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 39,
     "remainingRouge": 18,
-    "seasonDayIndex": 17
+    "seasonDayIndex": 78
   },
   {
     "date": "2023-11-20",
@@ -6933,7 +6933,7 @@
     "remainingBleu": 294,
     "remainingBlanc": 39,
     "remainingRouge": 18,
-    "seasonDayIndex": 20
+    "seasonDayIndex": 81
   },
   {
     "date": "2023-11-21",
@@ -6945,7 +6945,7 @@
     "remainingBleu": 293,
     "remainingBlanc": 39,
     "remainingRouge": 18,
-    "seasonDayIndex": 21
+    "seasonDayIndex": 82
   },
   {
     "date": "2023-11-22",
@@ -6957,7 +6957,7 @@
     "remainingBleu": 292,
     "remainingBlanc": 39,
     "remainingRouge": 18,
-    "seasonDayIndex": 22
+    "seasonDayIndex": 83
   },
   {
     "date": "2023-11-23",
@@ -6969,7 +6969,7 @@
     "remainingBleu": 292,
     "remainingBlanc": 38,
     "remainingRouge": 18,
-    "seasonDayIndex": 23
+    "seasonDayIndex": 84
   },
   {
     "date": "2023-11-24",
@@ -6981,7 +6981,7 @@
     "remainingBleu": 292,
     "remainingBlanc": 38,
     "remainingRouge": 17,
-    "seasonDayIndex": 24
+    "seasonDayIndex": 85
   },
   {
     "date": "2023-11-27",
@@ -6993,7 +6993,7 @@
     "remainingBleu": 291,
     "remainingBlanc": 38,
     "remainingRouge": 17,
-    "seasonDayIndex": 27
+    "seasonDayIndex": 88
   },
   {
     "date": "2023-11-28",
@@ -7005,7 +7005,7 @@
     "remainingBleu": 291,
     "remainingBlanc": 38,
     "remainingRouge": 16,
-    "seasonDayIndex": 28
+    "seasonDayIndex": 89
   },
   {
     "date": "2023-11-29",
@@ -7017,7 +7017,7 @@
     "remainingBleu": 291,
     "remainingBlanc": 38,
     "remainingRouge": 15,
-    "seasonDayIndex": 29
+    "seasonDayIndex": 90
   },
   {
     "date": "2023-11-30",
@@ -7029,7 +7029,7 @@
     "remainingBleu": 291,
     "remainingBlanc": 38,
     "remainingRouge": 14,
-    "seasonDayIndex": 30
+    "seasonDayIndex": 91
   },
   {
     "date": "2023-12-01",
@@ -7041,7 +7041,7 @@
     "remainingBleu": 290,
     "remainingBlanc": 38,
     "remainingRouge": 14,
-    "seasonDayIndex": 31
+    "seasonDayIndex": 92
   },
   {
     "date": "2023-12-04",
@@ -7053,7 +7053,7 @@
     "remainingBleu": 290,
     "remainingBlanc": 37,
     "remainingRouge": 14,
-    "seasonDayIndex": 34
+    "seasonDayIndex": 95
   },
   {
     "date": "2023-12-05",
@@ -7065,7 +7065,7 @@
     "remainingBleu": 290,
     "remainingBlanc": 36,
     "remainingRouge": 14,
-    "seasonDayIndex": 35
+    "seasonDayIndex": 96
   },
   {
     "date": "2023-12-06",
@@ -7077,7 +7077,7 @@
     "remainingBleu": 289,
     "remainingBlanc": 36,
     "remainingRouge": 14,
-    "seasonDayIndex": 36
+    "seasonDayIndex": 97
   },
   {
     "date": "2023-12-07",
@@ -7089,7 +7089,7 @@
     "remainingBleu": 288,
     "remainingBlanc": 36,
     "remainingRouge": 14,
-    "seasonDayIndex": 37
+    "seasonDayIndex": 98
   },
   {
     "date": "2023-12-08",
@@ -7101,7 +7101,7 @@
     "remainingBleu": 287,
     "remainingBlanc": 36,
     "remainingRouge": 14,
-    "seasonDayIndex": 38
+    "seasonDayIndex": 99
   },
   {
     "date": "2023-12-11",
@@ -7113,7 +7113,7 @@
     "remainingBleu": 287,
     "remainingBlanc": 35,
     "remainingRouge": 14,
-    "seasonDayIndex": 41
+    "seasonDayIndex": 102
   },
   {
     "date": "2023-12-12",
@@ -7125,7 +7125,7 @@
     "remainingBleu": 286,
     "remainingBlanc": 35,
     "remainingRouge": 14,
-    "seasonDayIndex": 42
+    "seasonDayIndex": 103
   },
   {
     "date": "2023-12-13",
@@ -7137,7 +7137,7 @@
     "remainingBleu": 286,
     "remainingBlanc": 34,
     "remainingRouge": 14,
-    "seasonDayIndex": 43
+    "seasonDayIndex": 104
   },
   {
     "date": "2023-12-14",
@@ -7149,7 +7149,7 @@
     "remainingBleu": 285,
     "remainingBlanc": 34,
     "remainingRouge": 14,
-    "seasonDayIndex": 44
+    "seasonDayIndex": 105
   },
   {
     "date": "2023-12-15",
@@ -7161,7 +7161,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 34,
     "remainingRouge": 14,
-    "seasonDayIndex": 45
+    "seasonDayIndex": 106
   },
   {
     "date": "2023-12-18",
@@ -7173,7 +7173,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 33,
     "remainingRouge": 14,
-    "seasonDayIndex": 48
+    "seasonDayIndex": 109
   },
   {
     "date": "2023-12-19",
@@ -7185,7 +7185,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 33,
     "remainingRouge": 13,
-    "seasonDayIndex": 49
+    "seasonDayIndex": 110
   },
   {
     "date": "2023-12-20",
@@ -7197,7 +7197,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 32,
     "remainingRouge": 13,
-    "seasonDayIndex": 50
+    "seasonDayIndex": 111
   },
   {
     "date": "2023-12-21",
@@ -7209,7 +7209,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 31,
     "remainingRouge": 13,
-    "seasonDayIndex": 51
+    "seasonDayIndex": 112
   },
   {
     "date": "2023-12-22",
@@ -7221,7 +7221,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 31,
     "remainingRouge": 12,
-    "seasonDayIndex": 52
+    "seasonDayIndex": 113
   },
   {
     "date": "2023-12-25",
@@ -7233,7 +7233,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 30,
     "remainingRouge": 12,
-    "seasonDayIndex": 55
+    "seasonDayIndex": 116
   },
   {
     "date": "2023-12-26",
@@ -7245,7 +7245,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 30,
     "remainingRouge": 11,
-    "seasonDayIndex": 56
+    "seasonDayIndex": 117
   },
   {
     "date": "2023-12-27",
@@ -7257,7 +7257,7 @@
     "remainingBleu": 283,
     "remainingBlanc": 30,
     "remainingRouge": 11,
-    "seasonDayIndex": 57
+    "seasonDayIndex": 118
   },
   {
     "date": "2023-12-28",
@@ -7269,7 +7269,7 @@
     "remainingBleu": 283,
     "remainingBlanc": 30,
     "remainingRouge": 10,
-    "seasonDayIndex": 58
+    "seasonDayIndex": 119
   },
   {
     "date": "2023-12-29",
@@ -7281,7 +7281,7 @@
     "remainingBleu": 283,
     "remainingBlanc": 30,
     "remainingRouge": 9,
-    "seasonDayIndex": 59
+    "seasonDayIndex": 120
   },
   {
     "date": "2024-01-01",
@@ -7293,7 +7293,7 @@
     "remainingBleu": 282,
     "remainingBlanc": 30,
     "remainingRouge": 9,
-    "seasonDayIndex": 62
+    "seasonDayIndex": 123
   },
   {
     "date": "2024-01-02",
@@ -7305,7 +7305,7 @@
     "remainingBleu": 282,
     "remainingBlanc": 29,
     "remainingRouge": 9,
-    "seasonDayIndex": 63
+    "seasonDayIndex": 124
   },
   {
     "date": "2024-01-03",
@@ -7317,7 +7317,7 @@
     "remainingBleu": 281,
     "remainingBlanc": 29,
     "remainingRouge": 9,
-    "seasonDayIndex": 64
+    "seasonDayIndex": 125
   },
   {
     "date": "2024-01-04",
@@ -7329,7 +7329,7 @@
     "remainingBleu": 280,
     "remainingBlanc": 29,
     "remainingRouge": 9,
-    "seasonDayIndex": 65
+    "seasonDayIndex": 126
   },
   {
     "date": "2024-01-05",
@@ -7341,7 +7341,7 @@
     "remainingBleu": 279,
     "remainingBlanc": 29,
     "remainingRouge": 9,
-    "seasonDayIndex": 66
+    "seasonDayIndex": 127
   },
   {
     "date": "2024-01-08",
@@ -7353,7 +7353,7 @@
     "remainingBleu": 279,
     "remainingBlanc": 28,
     "remainingRouge": 9,
-    "seasonDayIndex": 69
+    "seasonDayIndex": 130
   },
   {
     "date": "2024-01-09",
@@ -7365,7 +7365,7 @@
     "remainingBleu": 279,
     "remainingBlanc": 27,
     "remainingRouge": 9,
-    "seasonDayIndex": 70
+    "seasonDayIndex": 131
   },
   {
     "date": "2024-01-10",
@@ -7377,7 +7377,7 @@
     "remainingBleu": 278,
     "remainingBlanc": 27,
     "remainingRouge": 9,
-    "seasonDayIndex": 71
+    "seasonDayIndex": 132
   },
   {
     "date": "2024-01-11",
@@ -7389,7 +7389,7 @@
     "remainingBleu": 278,
     "remainingBlanc": 27,
     "remainingRouge": 8,
-    "seasonDayIndex": 72
+    "seasonDayIndex": 133
   },
   {
     "date": "2024-01-12",
@@ -7401,7 +7401,7 @@
     "remainingBleu": 278,
     "remainingBlanc": 26,
     "remainingRouge": 8,
-    "seasonDayIndex": 73
+    "seasonDayIndex": 134
   },
   {
     "date": "2024-01-15",
@@ -7413,7 +7413,7 @@
     "remainingBleu": 277,
     "remainingBlanc": 26,
     "remainingRouge": 8,
-    "seasonDayIndex": 76
+    "seasonDayIndex": 137
   },
   {
     "date": "2024-01-16",
@@ -7425,7 +7425,7 @@
     "remainingBleu": 277,
     "remainingBlanc": 25,
     "remainingRouge": 8,
-    "seasonDayIndex": 77
+    "seasonDayIndex": 138
   },
   {
     "date": "2024-01-17",
@@ -7437,7 +7437,7 @@
     "remainingBleu": 277,
     "remainingBlanc": 25,
     "remainingRouge": 7,
-    "seasonDayIndex": 78
+    "seasonDayIndex": 139
   },
   {
     "date": "2024-01-18",
@@ -7449,7 +7449,7 @@
     "remainingBleu": 277,
     "remainingBlanc": 24,
     "remainingRouge": 7,
-    "seasonDayIndex": 79
+    "seasonDayIndex": 140
   },
   {
     "date": "2024-01-19",
@@ -7461,7 +7461,7 @@
     "remainingBleu": 277,
     "remainingBlanc": 23,
     "remainingRouge": 7,
-    "seasonDayIndex": 80
+    "seasonDayIndex": 141
   },
   {
     "date": "2024-01-22",
@@ -7473,7 +7473,7 @@
     "remainingBleu": 276,
     "remainingBlanc": 23,
     "remainingRouge": 7,
-    "seasonDayIndex": 83
+    "seasonDayIndex": 144
   },
   {
     "date": "2024-01-23",
@@ -7485,7 +7485,7 @@
     "remainingBleu": 275,
     "remainingBlanc": 23,
     "remainingRouge": 7,
-    "seasonDayIndex": 84
+    "seasonDayIndex": 145
   },
   {
     "date": "2024-01-24",
@@ -7497,7 +7497,7 @@
     "remainingBleu": 275,
     "remainingBlanc": 22,
     "remainingRouge": 7,
-    "seasonDayIndex": 85
+    "seasonDayIndex": 146
   },
   {
     "date": "2024-01-25",
@@ -7509,7 +7509,7 @@
     "remainingBleu": 274,
     "remainingBlanc": 22,
     "remainingRouge": 7,
-    "seasonDayIndex": 86
+    "seasonDayIndex": 147
   },
   {
     "date": "2024-01-26",
@@ -7521,7 +7521,7 @@
     "remainingBleu": 274,
     "remainingBlanc": 21,
     "remainingRouge": 7,
-    "seasonDayIndex": 87
+    "seasonDayIndex": 148
   },
   {
     "date": "2024-01-29",
@@ -7533,7 +7533,7 @@
     "remainingBleu": 273,
     "remainingBlanc": 21,
     "remainingRouge": 7,
-    "seasonDayIndex": 90
+    "seasonDayIndex": 151
   },
   {
     "date": "2024-01-30",
@@ -7545,7 +7545,7 @@
     "remainingBleu": 273,
     "remainingBlanc": 20,
     "remainingRouge": 7,
-    "seasonDayIndex": 91
+    "seasonDayIndex": 152
   },
   {
     "date": "2024-01-31",
@@ -7557,7 +7557,7 @@
     "remainingBleu": 272,
     "remainingBlanc": 20,
     "remainingRouge": 7,
-    "seasonDayIndex": 92
+    "seasonDayIndex": 153
   },
   {
     "date": "2024-02-01",
@@ -7569,7 +7569,7 @@
     "remainingBleu": 272,
     "remainingBlanc": 19,
     "remainingRouge": 7,
-    "seasonDayIndex": 93
+    "seasonDayIndex": 154
   },
   {
     "date": "2024-02-02",
@@ -7581,7 +7581,7 @@
     "remainingBleu": 272,
     "remainingBlanc": 19,
     "remainingRouge": 6,
-    "seasonDayIndex": 94
+    "seasonDayIndex": 155
   },
   {
     "date": "2024-02-05",
@@ -7593,7 +7593,7 @@
     "remainingBleu": 272,
     "remainingBlanc": 18,
     "remainingRouge": 6,
-    "seasonDayIndex": 97
+    "seasonDayIndex": 158
   },
   {
     "date": "2024-02-06",
@@ -7605,7 +7605,7 @@
     "remainingBleu": 272,
     "remainingBlanc": 18,
     "remainingRouge": 5,
-    "seasonDayIndex": 98
+    "seasonDayIndex": 159
   },
   {
     "date": "2024-02-07",
@@ -7617,7 +7617,7 @@
     "remainingBleu": 271,
     "remainingBlanc": 18,
     "remainingRouge": 5,
-    "seasonDayIndex": 99
+    "seasonDayIndex": 160
   },
   {
     "date": "2024-02-08",
@@ -7629,7 +7629,7 @@
     "remainingBleu": 270,
     "remainingBlanc": 18,
     "remainingRouge": 5,
-    "seasonDayIndex": 100
+    "seasonDayIndex": 161
   },
   {
     "date": "2024-02-09",
@@ -7641,7 +7641,7 @@
     "remainingBleu": 270,
     "remainingBlanc": 17,
     "remainingRouge": 5,
-    "seasonDayIndex": 101
+    "seasonDayIndex": 162
   },
   {
     "date": "2024-02-12",
@@ -7653,7 +7653,7 @@
     "remainingBleu": 270,
     "remainingBlanc": 16,
     "remainingRouge": 5,
-    "seasonDayIndex": 104
+    "seasonDayIndex": 165
   },
   {
     "date": "2024-02-13",
@@ -7665,7 +7665,7 @@
     "remainingBleu": 270,
     "remainingBlanc": 15,
     "remainingRouge": 5,
-    "seasonDayIndex": 105
+    "seasonDayIndex": 166
   },
   {
     "date": "2024-02-14",
@@ -7677,7 +7677,7 @@
     "remainingBleu": 270,
     "remainingBlanc": 14,
     "remainingRouge": 5,
-    "seasonDayIndex": 106
+    "seasonDayIndex": 167
   },
   {
     "date": "2024-02-15",
@@ -7689,7 +7689,7 @@
     "remainingBleu": 270,
     "remainingBlanc": 13,
     "remainingRouge": 5,
-    "seasonDayIndex": 107
+    "seasonDayIndex": 168
   },
   {
     "date": "2024-02-16",
@@ -7701,7 +7701,7 @@
     "remainingBleu": 270,
     "remainingBlanc": 12,
     "remainingRouge": 5,
-    "seasonDayIndex": 108
+    "seasonDayIndex": 169
   },
   {
     "date": "2024-02-19",
@@ -7713,7 +7713,7 @@
     "remainingBleu": 269,
     "remainingBlanc": 12,
     "remainingRouge": 5,
-    "seasonDayIndex": 111
+    "seasonDayIndex": 172
   },
   {
     "date": "2024-02-20",
@@ -7725,7 +7725,7 @@
     "remainingBleu": 269,
     "remainingBlanc": 11,
     "remainingRouge": 5,
-    "seasonDayIndex": 112
+    "seasonDayIndex": 173
   },
   {
     "date": "2024-02-21",
@@ -7737,7 +7737,7 @@
     "remainingBleu": 268,
     "remainingBlanc": 11,
     "remainingRouge": 5,
-    "seasonDayIndex": 113
+    "seasonDayIndex": 174
   },
   {
     "date": "2024-02-22",
@@ -7749,7 +7749,7 @@
     "remainingBleu": 267,
     "remainingBlanc": 11,
     "remainingRouge": 5,
-    "seasonDayIndex": 114
+    "seasonDayIndex": 175
   },
   {
     "date": "2024-02-23",
@@ -7761,7 +7761,7 @@
     "remainingBleu": 267,
     "remainingBlanc": 10,
     "remainingRouge": 5,
-    "seasonDayIndex": 115
+    "seasonDayIndex": 176
   },
   {
     "date": "2024-02-26",
@@ -7773,7 +7773,7 @@
     "remainingBleu": 267,
     "remainingBlanc": 10,
     "remainingRouge": 4,
-    "seasonDayIndex": 118
+    "seasonDayIndex": 179
   },
   {
     "date": "2024-02-27",
@@ -7785,7 +7785,7 @@
     "remainingBleu": 267,
     "remainingBlanc": 9,
     "remainingRouge": 4,
-    "seasonDayIndex": 119
+    "seasonDayIndex": 180
   },
   {
     "date": "2024-02-28",
@@ -7797,7 +7797,7 @@
     "remainingBleu": 267,
     "remainingBlanc": 8,
     "remainingRouge": 4,
-    "seasonDayIndex": 120
+    "seasonDayIndex": 181
   },
   {
     "date": "2024-02-29",
@@ -7809,7 +7809,7 @@
     "remainingBleu": 267,
     "remainingBlanc": 7,
     "remainingRouge": 4,
-    "seasonDayIndex": 121
+    "seasonDayIndex": 182
   },
   {
     "date": "2024-03-01",
@@ -7821,7 +7821,7 @@
     "remainingBleu": 266,
     "remainingBlanc": 7,
     "remainingRouge": 4,
-    "seasonDayIndex": 122
+    "seasonDayIndex": 183
   },
   {
     "date": "2024-03-04",
@@ -7833,7 +7833,7 @@
     "remainingBleu": 266,
     "remainingBlanc": 6,
     "remainingRouge": 4,
-    "seasonDayIndex": 125
+    "seasonDayIndex": 186
   },
   {
     "date": "2024-03-05",
@@ -7845,7 +7845,7 @@
     "remainingBleu": 266,
     "remainingBlanc": 5,
     "remainingRouge": 4,
-    "seasonDayIndex": 126
+    "seasonDayIndex": 187
   },
   {
     "date": "2024-03-06",
@@ -7857,7 +7857,7 @@
     "remainingBleu": 265,
     "remainingBlanc": 5,
     "remainingRouge": 4,
-    "seasonDayIndex": 127
+    "seasonDayIndex": 188
   },
   {
     "date": "2024-03-07",
@@ -7869,7 +7869,7 @@
     "remainingBleu": 264,
     "remainingBlanc": 5,
     "remainingRouge": 4,
-    "seasonDayIndex": 128
+    "seasonDayIndex": 189
   },
   {
     "date": "2024-03-08",
@@ -7881,7 +7881,7 @@
     "remainingBleu": 263,
     "remainingBlanc": 5,
     "remainingRouge": 4,
-    "seasonDayIndex": 129
+    "seasonDayIndex": 190
   },
   {
     "date": "2024-03-11",
@@ -7893,7 +7893,7 @@
     "remainingBleu": 263,
     "remainingBlanc": 4,
     "remainingRouge": 4,
-    "seasonDayIndex": 132
+    "seasonDayIndex": 193
   },
   {
     "date": "2024-03-12",
@@ -7905,7 +7905,7 @@
     "remainingBleu": 263,
     "remainingBlanc": 3,
     "remainingRouge": 4,
-    "seasonDayIndex": 133
+    "seasonDayIndex": 194
   },
   {
     "date": "2024-03-13",
@@ -7917,7 +7917,7 @@
     "remainingBleu": 263,
     "remainingBlanc": 3,
     "remainingRouge": 3,
-    "seasonDayIndex": 134
+    "seasonDayIndex": 195
   },
   {
     "date": "2024-03-14",
@@ -7929,7 +7929,7 @@
     "remainingBleu": 263,
     "remainingBlanc": 3,
     "remainingRouge": 2,
-    "seasonDayIndex": 135
+    "seasonDayIndex": 196
   },
   {
     "date": "2024-03-15",
@@ -7941,7 +7941,7 @@
     "remainingBleu": 262,
     "remainingBlanc": 3,
     "remainingRouge": 2,
-    "seasonDayIndex": 136
+    "seasonDayIndex": 197
   },
   {
     "date": "2024-03-18",
@@ -7953,7 +7953,7 @@
     "remainingBleu": 261,
     "remainingBlanc": 3,
     "remainingRouge": 2,
-    "seasonDayIndex": 139
+    "seasonDayIndex": 200
   },
   {
     "date": "2024-03-19",
@@ -7965,7 +7965,7 @@
     "remainingBleu": 260,
     "remainingBlanc": 3,
     "remainingRouge": 2,
-    "seasonDayIndex": 140
+    "seasonDayIndex": 201
   },
   {
     "date": "2024-03-20",
@@ -7977,7 +7977,7 @@
     "remainingBleu": 259,
     "remainingBlanc": 3,
     "remainingRouge": 2,
-    "seasonDayIndex": 141
+    "seasonDayIndex": 202
   },
   {
     "date": "2024-03-21",
@@ -7989,7 +7989,7 @@
     "remainingBleu": 259,
     "remainingBlanc": 2,
     "remainingRouge": 2,
-    "seasonDayIndex": 142
+    "seasonDayIndex": 203
   },
   {
     "date": "2024-03-22",
@@ -8001,7 +8001,7 @@
     "remainingBleu": 259,
     "remainingBlanc": 2,
     "remainingRouge": 1,
-    "seasonDayIndex": 143
+    "seasonDayIndex": 204
   },
   {
     "date": "2024-03-25",
@@ -8013,7 +8013,7 @@
     "remainingBleu": 258,
     "remainingBlanc": 2,
     "remainingRouge": 1,
-    "seasonDayIndex": 146
+    "seasonDayIndex": 207
   },
   {
     "date": "2024-03-26",
@@ -8025,7 +8025,7 @@
     "remainingBleu": 257,
     "remainingBlanc": 2,
     "remainingRouge": 1,
-    "seasonDayIndex": 147
+    "seasonDayIndex": 208
   },
   {
     "date": "2024-03-27",
@@ -8037,7 +8037,7 @@
     "remainingBleu": 257,
     "remainingBlanc": 1,
     "remainingRouge": 1,
-    "seasonDayIndex": 148
+    "seasonDayIndex": 209
   },
   {
     "date": "2024-03-28",
@@ -8049,7 +8049,7 @@
     "remainingBleu": 257,
     "remainingBlanc": 0,
     "remainingRouge": 1,
-    "seasonDayIndex": 149
+    "seasonDayIndex": 210
   },
   {
     "date": "2024-03-29",
@@ -8061,7 +8061,7 @@
     "remainingBleu": 257,
     "remainingBlanc": 0,
     "remainingRouge": 0,
-    "seasonDayIndex": 150
+    "seasonDayIndex": 211
   },
   {
     "date": "2024-11-01",
@@ -8073,7 +8073,7 @@
     "remainingBleu": 299,
     "remainingBlanc": 43,
     "remainingRouge": 22,
-    "seasonDayIndex": 1
+    "seasonDayIndex": 62
   },
   {
     "date": "2024-11-04",
@@ -8085,7 +8085,7 @@
     "remainingBleu": 299,
     "remainingBlanc": 42,
     "remainingRouge": 22,
-    "seasonDayIndex": 4
+    "seasonDayIndex": 65
   },
   {
     "date": "2024-11-05",
@@ -8097,7 +8097,7 @@
     "remainingBleu": 298,
     "remainingBlanc": 42,
     "remainingRouge": 22,
-    "seasonDayIndex": 5
+    "seasonDayIndex": 66
   },
   {
     "date": "2024-11-06",
@@ -8109,7 +8109,7 @@
     "remainingBleu": 298,
     "remainingBlanc": 42,
     "remainingRouge": 21,
-    "seasonDayIndex": 6
+    "seasonDayIndex": 67
   },
   {
     "date": "2024-11-07",
@@ -8121,7 +8121,7 @@
     "remainingBleu": 298,
     "remainingBlanc": 41,
     "remainingRouge": 21,
-    "seasonDayIndex": 7
+    "seasonDayIndex": 68
   },
   {
     "date": "2024-11-08",
@@ -8133,7 +8133,7 @@
     "remainingBleu": 297,
     "remainingBlanc": 41,
     "remainingRouge": 21,
-    "seasonDayIndex": 8
+    "seasonDayIndex": 69
   },
   {
     "date": "2024-11-11",
@@ -8145,7 +8145,7 @@
     "remainingBleu": 296,
     "remainingBlanc": 41,
     "remainingRouge": 21,
-    "seasonDayIndex": 11
+    "seasonDayIndex": 72
   },
   {
     "date": "2024-11-12",
@@ -8157,7 +8157,7 @@
     "remainingBleu": 296,
     "remainingBlanc": 40,
     "remainingRouge": 21,
-    "seasonDayIndex": 12
+    "seasonDayIndex": 73
   },
   {
     "date": "2024-11-13",
@@ -8169,7 +8169,7 @@
     "remainingBleu": 296,
     "remainingBlanc": 39,
     "remainingRouge": 21,
-    "seasonDayIndex": 13
+    "seasonDayIndex": 74
   },
   {
     "date": "2024-11-14",
@@ -8181,7 +8181,7 @@
     "remainingBleu": 296,
     "remainingBlanc": 39,
     "remainingRouge": 20,
-    "seasonDayIndex": 14
+    "seasonDayIndex": 75
   },
   {
     "date": "2024-11-15",
@@ -8193,7 +8193,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 39,
     "remainingRouge": 20,
-    "seasonDayIndex": 15
+    "seasonDayIndex": 76
   },
   {
     "date": "2024-11-18",
@@ -8205,7 +8205,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 38,
     "remainingRouge": 20,
-    "seasonDayIndex": 18
+    "seasonDayIndex": 79
   },
   {
     "date": "2024-11-19",
@@ -8217,7 +8217,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 38,
     "remainingRouge": 19,
-    "seasonDayIndex": 19
+    "seasonDayIndex": 80
   },
   {
     "date": "2024-11-20",
@@ -8229,7 +8229,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 37,
     "remainingRouge": 19,
-    "seasonDayIndex": 20
+    "seasonDayIndex": 81
   },
   {
     "date": "2024-11-21",
@@ -8241,7 +8241,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 36,
     "remainingRouge": 19,
-    "seasonDayIndex": 21
+    "seasonDayIndex": 82
   },
   {
     "date": "2024-11-22",
@@ -8253,7 +8253,7 @@
     "remainingBleu": 294,
     "remainingBlanc": 36,
     "remainingRouge": 19,
-    "seasonDayIndex": 22
+    "seasonDayIndex": 83
   },
   {
     "date": "2024-11-25",
@@ -8265,7 +8265,7 @@
     "remainingBleu": 293,
     "remainingBlanc": 36,
     "remainingRouge": 19,
-    "seasonDayIndex": 25
+    "seasonDayIndex": 86
   },
   {
     "date": "2024-11-26",
@@ -8277,7 +8277,7 @@
     "remainingBleu": 293,
     "remainingBlanc": 35,
     "remainingRouge": 19,
-    "seasonDayIndex": 26
+    "seasonDayIndex": 87
   },
   {
     "date": "2024-11-27",
@@ -8289,7 +8289,7 @@
     "remainingBleu": 293,
     "remainingBlanc": 35,
     "remainingRouge": 18,
-    "seasonDayIndex": 27
+    "seasonDayIndex": 88
   },
   {
     "date": "2024-11-28",
@@ -8301,7 +8301,7 @@
     "remainingBleu": 293,
     "remainingBlanc": 35,
     "remainingRouge": 17,
-    "seasonDayIndex": 28
+    "seasonDayIndex": 89
   },
   {
     "date": "2024-11-29",
@@ -8313,7 +8313,7 @@
     "remainingBleu": 292,
     "remainingBlanc": 35,
     "remainingRouge": 17,
-    "seasonDayIndex": 29
+    "seasonDayIndex": 90
   },
   {
     "date": "2024-12-02",
@@ -8325,7 +8325,7 @@
     "remainingBleu": 291,
     "remainingBlanc": 35,
     "remainingRouge": 17,
-    "seasonDayIndex": 32
+    "seasonDayIndex": 93
   },
   {
     "date": "2024-12-03",
@@ -8337,7 +8337,7 @@
     "remainingBleu": 291,
     "remainingBlanc": 35,
     "remainingRouge": 16,
-    "seasonDayIndex": 33
+    "seasonDayIndex": 94
   },
   {
     "date": "2024-12-04",
@@ -8349,7 +8349,7 @@
     "remainingBleu": 290,
     "remainingBlanc": 35,
     "remainingRouge": 16,
-    "seasonDayIndex": 34
+    "seasonDayIndex": 95
   },
   {
     "date": "2024-12-05",
@@ -8361,7 +8361,7 @@
     "remainingBleu": 289,
     "remainingBlanc": 35,
     "remainingRouge": 16,
-    "seasonDayIndex": 35
+    "seasonDayIndex": 96
   },
   {
     "date": "2024-12-06",
@@ -8373,7 +8373,7 @@
     "remainingBleu": 289,
     "remainingBlanc": 35,
     "remainingRouge": 15,
-    "seasonDayIndex": 36
+    "seasonDayIndex": 97
   },
   {
     "date": "2024-12-09",
@@ -8385,7 +8385,7 @@
     "remainingBleu": 289,
     "remainingBlanc": 34,
     "remainingRouge": 15,
-    "seasonDayIndex": 39
+    "seasonDayIndex": 100
   },
   {
     "date": "2024-12-10",
@@ -8397,7 +8397,7 @@
     "remainingBleu": 289,
     "remainingBlanc": 34,
     "remainingRouge": 14,
-    "seasonDayIndex": 40
+    "seasonDayIndex": 101
   },
   {
     "date": "2024-12-11",
@@ -8409,7 +8409,7 @@
     "remainingBleu": 288,
     "remainingBlanc": 34,
     "remainingRouge": 14,
-    "seasonDayIndex": 41
+    "seasonDayIndex": 102
   },
   {
     "date": "2024-12-12",
@@ -8421,7 +8421,7 @@
     "remainingBleu": 287,
     "remainingBlanc": 34,
     "remainingRouge": 14,
-    "seasonDayIndex": 42
+    "seasonDayIndex": 103
   },
   {
     "date": "2024-12-13",
@@ -8433,7 +8433,7 @@
     "remainingBleu": 286,
     "remainingBlanc": 34,
     "remainingRouge": 14,
-    "seasonDayIndex": 43
+    "seasonDayIndex": 104
   },
   {
     "date": "2024-12-16",
@@ -8445,7 +8445,7 @@
     "remainingBleu": 286,
     "remainingBlanc": 33,
     "remainingRouge": 14,
-    "seasonDayIndex": 46
+    "seasonDayIndex": 107
   },
   {
     "date": "2024-12-17",
@@ -8457,7 +8457,7 @@
     "remainingBleu": 285,
     "remainingBlanc": 33,
     "remainingRouge": 14,
-    "seasonDayIndex": 47
+    "seasonDayIndex": 108
   },
   {
     "date": "2024-12-18",
@@ -8469,7 +8469,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 33,
     "remainingRouge": 14,
-    "seasonDayIndex": 48
+    "seasonDayIndex": 109
   },
   {
     "date": "2024-12-19",
@@ -8481,7 +8481,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 33,
     "remainingRouge": 13,
-    "seasonDayIndex": 49
+    "seasonDayIndex": 110
   },
   {
     "date": "2024-12-20",
@@ -8493,7 +8493,7 @@
     "remainingBleu": 283,
     "remainingBlanc": 33,
     "remainingRouge": 13,
-    "seasonDayIndex": 50
+    "seasonDayIndex": 111
   },
   {
     "date": "2024-12-23",
@@ -8505,7 +8505,7 @@
     "remainingBleu": 282,
     "remainingBlanc": 33,
     "remainingRouge": 13,
-    "seasonDayIndex": 53
+    "seasonDayIndex": 114
   },
   {
     "date": "2024-12-24",
@@ -8517,7 +8517,7 @@
     "remainingBleu": 282,
     "remainingBlanc": 32,
     "remainingRouge": 13,
-    "seasonDayIndex": 54
+    "seasonDayIndex": 115
   },
   {
     "date": "2024-12-25",
@@ -8529,7 +8529,7 @@
     "remainingBleu": 282,
     "remainingBlanc": 31,
     "remainingRouge": 13,
-    "seasonDayIndex": 55
+    "seasonDayIndex": 116
   },
   {
     "date": "2024-12-26",
@@ -8541,7 +8541,7 @@
     "remainingBleu": 281,
     "remainingBlanc": 31,
     "remainingRouge": 13,
-    "seasonDayIndex": 56
+    "seasonDayIndex": 117
   },
   {
     "date": "2024-12-27",
@@ -8553,7 +8553,7 @@
     "remainingBleu": 281,
     "remainingBlanc": 30,
     "remainingRouge": 13,
-    "seasonDayIndex": 57
+    "seasonDayIndex": 118
   },
   {
     "date": "2024-12-30",
@@ -8565,7 +8565,7 @@
     "remainingBleu": 280,
     "remainingBlanc": 30,
     "remainingRouge": 13,
-    "seasonDayIndex": 60
+    "seasonDayIndex": 121
   },
   {
     "date": "2024-12-31",
@@ -8577,7 +8577,7 @@
     "remainingBleu": 280,
     "remainingBlanc": 29,
     "remainingRouge": 13,
-    "seasonDayIndex": 61
+    "seasonDayIndex": 122
   },
   {
     "date": "2025-01-01",
@@ -8589,7 +8589,7 @@
     "remainingBleu": 279,
     "remainingBlanc": 29,
     "remainingRouge": 13,
-    "seasonDayIndex": 62
+    "seasonDayIndex": 123
   },
   {
     "date": "2025-01-02",
@@ -8601,7 +8601,7 @@
     "remainingBleu": 278,
     "remainingBlanc": 29,
     "remainingRouge": 13,
-    "seasonDayIndex": 63
+    "seasonDayIndex": 124
   },
   {
     "date": "2025-01-03",
@@ -8613,7 +8613,7 @@
     "remainingBleu": 278,
     "remainingBlanc": 28,
     "remainingRouge": 13,
-    "seasonDayIndex": 64
+    "seasonDayIndex": 125
   },
   {
     "date": "2025-01-06",
@@ -8625,7 +8625,7 @@
     "remainingBleu": 278,
     "remainingBlanc": 27,
     "remainingRouge": 13,
-    "seasonDayIndex": 67
+    "seasonDayIndex": 128
   },
   {
     "date": "2025-01-07",
@@ -8637,7 +8637,7 @@
     "remainingBleu": 277,
     "remainingBlanc": 27,
     "remainingRouge": 13,
-    "seasonDayIndex": 68
+    "seasonDayIndex": 129
   },
   {
     "date": "2025-01-08",
@@ -8649,7 +8649,7 @@
     "remainingBleu": 276,
     "remainingBlanc": 27,
     "remainingRouge": 13,
-    "seasonDayIndex": 69
+    "seasonDayIndex": 130
   },
   {
     "date": "2025-01-09",
@@ -8661,7 +8661,7 @@
     "remainingBleu": 276,
     "remainingBlanc": 26,
     "remainingRouge": 13,
-    "seasonDayIndex": 70
+    "seasonDayIndex": 131
   },
   {
     "date": "2025-01-10",
@@ -8673,7 +8673,7 @@
     "remainingBleu": 275,
     "remainingBlanc": 26,
     "remainingRouge": 13,
-    "seasonDayIndex": 71
+    "seasonDayIndex": 132
   },
   {
     "date": "2025-01-13",
@@ -8685,7 +8685,7 @@
     "remainingBleu": 275,
     "remainingBlanc": 25,
     "remainingRouge": 13,
-    "seasonDayIndex": 74
+    "seasonDayIndex": 135
   },
   {
     "date": "2025-01-14",
@@ -8697,7 +8697,7 @@
     "remainingBleu": 274,
     "remainingBlanc": 25,
     "remainingRouge": 13,
-    "seasonDayIndex": 75
+    "seasonDayIndex": 136
   },
   {
     "date": "2025-01-15",
@@ -8709,7 +8709,7 @@
     "remainingBleu": 273,
     "remainingBlanc": 25,
     "remainingRouge": 13,
-    "seasonDayIndex": 76
+    "seasonDayIndex": 137
   },
   {
     "date": "2025-01-16",
@@ -8721,7 +8721,7 @@
     "remainingBleu": 272,
     "remainingBlanc": 25,
     "remainingRouge": 13,
-    "seasonDayIndex": 77
+    "seasonDayIndex": 138
   },
   {
     "date": "2025-01-17",
@@ -8733,7 +8733,7 @@
     "remainingBleu": 271,
     "remainingBlanc": 25,
     "remainingRouge": 13,
-    "seasonDayIndex": 78
+    "seasonDayIndex": 139
   },
   {
     "date": "2025-01-20",
@@ -8745,7 +8745,7 @@
     "remainingBleu": 271,
     "remainingBlanc": 24,
     "remainingRouge": 13,
-    "seasonDayIndex": 81
+    "seasonDayIndex": 142
   },
   {
     "date": "2025-01-21",
@@ -8757,7 +8757,7 @@
     "remainingBleu": 271,
     "remainingBlanc": 23,
     "remainingRouge": 13,
-    "seasonDayIndex": 82
+    "seasonDayIndex": 143
   },
   {
     "date": "2025-01-22",
@@ -8769,7 +8769,7 @@
     "remainingBleu": 271,
     "remainingBlanc": 23,
     "remainingRouge": 12,
-    "seasonDayIndex": 83
+    "seasonDayIndex": 144
   },
   {
     "date": "2025-01-23",
@@ -8781,7 +8781,7 @@
     "remainingBleu": 271,
     "remainingBlanc": 23,
     "remainingRouge": 11,
-    "seasonDayIndex": 84
+    "seasonDayIndex": 145
   },
   {
     "date": "2025-01-24",
@@ -8793,7 +8793,7 @@
     "remainingBleu": 270,
     "remainingBlanc": 23,
     "remainingRouge": 11,
-    "seasonDayIndex": 85
+    "seasonDayIndex": 146
   },
   {
     "date": "2025-01-27",
@@ -8805,7 +8805,7 @@
     "remainingBleu": 270,
     "remainingBlanc": 22,
     "remainingRouge": 11,
-    "seasonDayIndex": 88
+    "seasonDayIndex": 149
   },
   {
     "date": "2025-01-28",
@@ -8817,7 +8817,7 @@
     "remainingBleu": 269,
     "remainingBlanc": 22,
     "remainingRouge": 11,
-    "seasonDayIndex": 89
+    "seasonDayIndex": 150
   },
   {
     "date": "2025-01-29",
@@ -8829,7 +8829,7 @@
     "remainingBleu": 269,
     "remainingBlanc": 21,
     "remainingRouge": 11,
-    "seasonDayIndex": 90
+    "seasonDayIndex": 151
   },
   {
     "date": "2025-01-30",
@@ -8841,7 +8841,7 @@
     "remainingBleu": 268,
     "remainingBlanc": 21,
     "remainingRouge": 11,
-    "seasonDayIndex": 91
+    "seasonDayIndex": 152
   },
   {
     "date": "2025-01-31",
@@ -8853,7 +8853,7 @@
     "remainingBleu": 268,
     "remainingBlanc": 20,
     "remainingRouge": 11,
-    "seasonDayIndex": 92
+    "seasonDayIndex": 153
   },
   {
     "date": "2025-02-03",
@@ -8865,7 +8865,7 @@
     "remainingBleu": 268,
     "remainingBlanc": 19,
     "remainingRouge": 11,
-    "seasonDayIndex": 95
+    "seasonDayIndex": 156
   },
   {
     "date": "2025-02-04",
@@ -8877,7 +8877,7 @@
     "remainingBleu": 268,
     "remainingBlanc": 19,
     "remainingRouge": 10,
-    "seasonDayIndex": 96
+    "seasonDayIndex": 157
   },
   {
     "date": "2025-02-05",
@@ -8889,7 +8889,7 @@
     "remainingBleu": 267,
     "remainingBlanc": 19,
     "remainingRouge": 10,
-    "seasonDayIndex": 97
+    "seasonDayIndex": 158
   },
   {
     "date": "2025-02-06",
@@ -8901,7 +8901,7 @@
     "remainingBleu": 267,
     "remainingBlanc": 18,
     "remainingRouge": 10,
-    "seasonDayIndex": 98
+    "seasonDayIndex": 159
   },
   {
     "date": "2025-02-07",
@@ -8913,7 +8913,7 @@
     "remainingBleu": 267,
     "remainingBlanc": 17,
     "remainingRouge": 10,
-    "seasonDayIndex": 99
+    "seasonDayIndex": 160
   },
   {
     "date": "2025-02-10",
@@ -8925,7 +8925,7 @@
     "remainingBleu": 266,
     "remainingBlanc": 17,
     "remainingRouge": 10,
-    "seasonDayIndex": 102
+    "seasonDayIndex": 163
   },
   {
     "date": "2025-02-11",
@@ -8937,7 +8937,7 @@
     "remainingBleu": 266,
     "remainingBlanc": 16,
     "remainingRouge": 10,
-    "seasonDayIndex": 103
+    "seasonDayIndex": 164
   },
   {
     "date": "2025-02-12",
@@ -8949,7 +8949,7 @@
     "remainingBleu": 266,
     "remainingBlanc": 16,
     "remainingRouge": 9,
-    "seasonDayIndex": 104
+    "seasonDayIndex": 165
   },
   {
     "date": "2025-02-13",
@@ -8961,7 +8961,7 @@
     "remainingBleu": 266,
     "remainingBlanc": 15,
     "remainingRouge": 9,
-    "seasonDayIndex": 105
+    "seasonDayIndex": 166
   },
   {
     "date": "2025-02-14",
@@ -8973,7 +8973,7 @@
     "remainingBleu": 266,
     "remainingBlanc": 15,
     "remainingRouge": 8,
-    "seasonDayIndex": 106
+    "seasonDayIndex": 167
   },
   {
     "date": "2025-02-17",
@@ -8985,7 +8985,7 @@
     "remainingBleu": 266,
     "remainingBlanc": 14,
     "remainingRouge": 8,
-    "seasonDayIndex": 109
+    "seasonDayIndex": 170
   },
   {
     "date": "2025-02-18",
@@ -8997,7 +8997,7 @@
     "remainingBleu": 265,
     "remainingBlanc": 14,
     "remainingRouge": 8,
-    "seasonDayIndex": 110
+    "seasonDayIndex": 171
   },
   {
     "date": "2025-02-19",
@@ -9009,7 +9009,7 @@
     "remainingBleu": 265,
     "remainingBlanc": 13,
     "remainingRouge": 8,
-    "seasonDayIndex": 111
+    "seasonDayIndex": 172
   },
   {
     "date": "2025-02-20",
@@ -9021,7 +9021,7 @@
     "remainingBleu": 264,
     "remainingBlanc": 13,
     "remainingRouge": 8,
-    "seasonDayIndex": 112
+    "seasonDayIndex": 173
   },
   {
     "date": "2025-02-21",
@@ -9033,7 +9033,7 @@
     "remainingBleu": 263,
     "remainingBlanc": 13,
     "remainingRouge": 8,
-    "seasonDayIndex": 113
+    "seasonDayIndex": 174
   },
   {
     "date": "2025-02-24",
@@ -9045,7 +9045,7 @@
     "remainingBleu": 263,
     "remainingBlanc": 12,
     "remainingRouge": 8,
-    "seasonDayIndex": 116
+    "seasonDayIndex": 177
   },
   {
     "date": "2025-02-25",
@@ -9057,7 +9057,7 @@
     "remainingBleu": 262,
     "remainingBlanc": 12,
     "remainingRouge": 8,
-    "seasonDayIndex": 117
+    "seasonDayIndex": 178
   },
   {
     "date": "2025-02-26",
@@ -9069,7 +9069,7 @@
     "remainingBleu": 261,
     "remainingBlanc": 12,
     "remainingRouge": 8,
-    "seasonDayIndex": 118
+    "seasonDayIndex": 179
   },
   {
     "date": "2025-02-27",
@@ -9081,7 +9081,7 @@
     "remainingBleu": 261,
     "remainingBlanc": 12,
     "remainingRouge": 7,
-    "seasonDayIndex": 119
+    "seasonDayIndex": 180
   },
   {
     "date": "2025-02-28",
@@ -9093,7 +9093,7 @@
     "remainingBleu": 261,
     "remainingBlanc": 11,
     "remainingRouge": 7,
-    "seasonDayIndex": 120
+    "seasonDayIndex": 181
   },
   {
     "date": "2025-03-03",
@@ -9105,7 +9105,7 @@
     "remainingBleu": 260,
     "remainingBlanc": 11,
     "remainingRouge": 7,
-    "seasonDayIndex": 123
+    "seasonDayIndex": 184
   },
   {
     "date": "2025-03-04",
@@ -9117,7 +9117,7 @@
     "remainingBleu": 260,
     "remainingBlanc": 10,
     "remainingRouge": 7,
-    "seasonDayIndex": 124
+    "seasonDayIndex": 185
   },
   {
     "date": "2025-03-05",
@@ -9129,7 +9129,7 @@
     "remainingBleu": 260,
     "remainingBlanc": 10,
     "remainingRouge": 6,
-    "seasonDayIndex": 125
+    "seasonDayIndex": 186
   },
   {
     "date": "2025-03-06",
@@ -9141,7 +9141,7 @@
     "remainingBleu": 259,
     "remainingBlanc": 10,
     "remainingRouge": 6,
-    "seasonDayIndex": 126
+    "seasonDayIndex": 187
   },
   {
     "date": "2025-03-07",
@@ -9153,7 +9153,7 @@
     "remainingBleu": 259,
     "remainingBlanc": 10,
     "remainingRouge": 5,
-    "seasonDayIndex": 127
+    "seasonDayIndex": 188
   },
   {
     "date": "2025-03-10",
@@ -9165,7 +9165,7 @@
     "remainingBleu": 259,
     "remainingBlanc": 9,
     "remainingRouge": 5,
-    "seasonDayIndex": 130
+    "seasonDayIndex": 191
   },
   {
     "date": "2025-03-11",
@@ -9177,7 +9177,7 @@
     "remainingBleu": 258,
     "remainingBlanc": 9,
     "remainingRouge": 5,
-    "seasonDayIndex": 131
+    "seasonDayIndex": 192
   },
   {
     "date": "2025-03-12",
@@ -9189,7 +9189,7 @@
     "remainingBleu": 258,
     "remainingBlanc": 8,
     "remainingRouge": 5,
-    "seasonDayIndex": 132
+    "seasonDayIndex": 193
   },
   {
     "date": "2025-03-13",
@@ -9201,7 +9201,7 @@
     "remainingBleu": 258,
     "remainingBlanc": 7,
     "remainingRouge": 5,
-    "seasonDayIndex": 133
+    "seasonDayIndex": 194
   },
   {
     "date": "2025-03-14",
@@ -9213,7 +9213,7 @@
     "remainingBleu": 258,
     "remainingBlanc": 7,
     "remainingRouge": 4,
-    "seasonDayIndex": 134
+    "seasonDayIndex": 195
   },
   {
     "date": "2025-03-17",
@@ -9225,7 +9225,7 @@
     "remainingBleu": 258,
     "remainingBlanc": 7,
     "remainingRouge": 3,
-    "seasonDayIndex": 137
+    "seasonDayIndex": 198
   },
   {
     "date": "2025-03-18",
@@ -9237,7 +9237,7 @@
     "remainingBleu": 258,
     "remainingBlanc": 7,
     "remainingRouge": 2,
-    "seasonDayIndex": 138
+    "seasonDayIndex": 199
   },
   {
     "date": "2025-03-19",
@@ -9249,7 +9249,7 @@
     "remainingBleu": 258,
     "remainingBlanc": 6,
     "remainingRouge": 2,
-    "seasonDayIndex": 139
+    "seasonDayIndex": 200
   },
   {
     "date": "2025-03-20",
@@ -9261,7 +9261,7 @@
     "remainingBleu": 258,
     "remainingBlanc": 5,
     "remainingRouge": 2,
-    "seasonDayIndex": 140
+    "seasonDayIndex": 201
   },
   {
     "date": "2025-03-21",
@@ -9273,7 +9273,7 @@
     "remainingBleu": 258,
     "remainingBlanc": 4,
     "remainingRouge": 2,
-    "seasonDayIndex": 141
+    "seasonDayIndex": 202
   },
   {
     "date": "2025-03-24",
@@ -9285,7 +9285,7 @@
     "remainingBleu": 258,
     "remainingBlanc": 3,
     "remainingRouge": 2,
-    "seasonDayIndex": 144
+    "seasonDayIndex": 205
   },
   {
     "date": "2025-03-25",
@@ -9297,7 +9297,7 @@
     "remainingBleu": 258,
     "remainingBlanc": 2,
     "remainingRouge": 2,
-    "seasonDayIndex": 145
+    "seasonDayIndex": 206
   },
   {
     "date": "2025-03-26",
@@ -9309,7 +9309,7 @@
     "remainingBleu": 258,
     "remainingBlanc": 2,
     "remainingRouge": 1,
-    "seasonDayIndex": 146
+    "seasonDayIndex": 207
   },
   {
     "date": "2025-03-27",
@@ -9321,7 +9321,7 @@
     "remainingBleu": 258,
     "remainingBlanc": 2,
     "remainingRouge": 0,
-    "seasonDayIndex": 147
+    "seasonDayIndex": 208
   },
   {
     "date": "2025-03-28",
@@ -9333,7 +9333,7 @@
     "remainingBleu": 258,
     "remainingBlanc": 1,
     "remainingRouge": 0,
-    "seasonDayIndex": 148
+    "seasonDayIndex": 209
   },
   {
     "date": "2025-03-31",
@@ -9345,7 +9345,7 @@
     "remainingBleu": 258,
     "remainingBlanc": 0,
     "remainingRouge": 0,
-    "seasonDayIndex": 151
+    "seasonDayIndex": 212
   },
   {
     "date": "2025-11-03",
@@ -9357,7 +9357,7 @@
     "remainingBleu": 299,
     "remainingBlanc": 43,
     "remainingRouge": 22,
-    "seasonDayIndex": 3
+    "seasonDayIndex": 64
   },
   {
     "date": "2025-11-04",
@@ -9369,7 +9369,7 @@
     "remainingBleu": 299,
     "remainingBlanc": 42,
     "remainingRouge": 22,
-    "seasonDayIndex": 4
+    "seasonDayIndex": 65
   },
   {
     "date": "2025-11-05",
@@ -9381,7 +9381,7 @@
     "remainingBleu": 298,
     "remainingBlanc": 42,
     "remainingRouge": 22,
-    "seasonDayIndex": 5
+    "seasonDayIndex": 66
   },
   {
     "date": "2025-11-06",
@@ -9393,7 +9393,7 @@
     "remainingBleu": 298,
     "remainingBlanc": 41,
     "remainingRouge": 22,
-    "seasonDayIndex": 6
+    "seasonDayIndex": 67
   },
   {
     "date": "2025-11-07",
@@ -9405,7 +9405,7 @@
     "remainingBleu": 298,
     "remainingBlanc": 41,
     "remainingRouge": 21,
-    "seasonDayIndex": 7
+    "seasonDayIndex": 68
   },
   {
     "date": "2025-11-10",
@@ -9417,7 +9417,7 @@
     "remainingBleu": 297,
     "remainingBlanc": 41,
     "remainingRouge": 21,
-    "seasonDayIndex": 10
+    "seasonDayIndex": 71
   },
   {
     "date": "2025-11-11",
@@ -9429,7 +9429,7 @@
     "remainingBleu": 297,
     "remainingBlanc": 40,
     "remainingRouge": 21,
-    "seasonDayIndex": 11
+    "seasonDayIndex": 72
   },
   {
     "date": "2025-11-12",
@@ -9441,7 +9441,7 @@
     "remainingBleu": 296,
     "remainingBlanc": 40,
     "remainingRouge": 21,
-    "seasonDayIndex": 12
+    "seasonDayIndex": 73
   },
   {
     "date": "2025-11-13",
@@ -9453,7 +9453,7 @@
     "remainingBleu": 295,
     "remainingBlanc": 40,
     "remainingRouge": 21,
-    "seasonDayIndex": 13
+    "seasonDayIndex": 74
   },
   {
     "date": "2025-11-14",
@@ -9465,7 +9465,7 @@
     "remainingBleu": 294,
     "remainingBlanc": 40,
     "remainingRouge": 21,
-    "seasonDayIndex": 14
+    "seasonDayIndex": 75
   },
   {
     "date": "2025-11-17",
@@ -9477,7 +9477,7 @@
     "remainingBleu": 294,
     "remainingBlanc": 39,
     "remainingRouge": 21,
-    "seasonDayIndex": 17
+    "seasonDayIndex": 78
   },
   {
     "date": "2025-11-18",
@@ -9489,7 +9489,7 @@
     "remainingBleu": 293,
     "remainingBlanc": 39,
     "remainingRouge": 21,
-    "seasonDayIndex": 18
+    "seasonDayIndex": 79
   },
   {
     "date": "2025-11-19",
@@ -9501,7 +9501,7 @@
     "remainingBleu": 293,
     "remainingBlanc": 38,
     "remainingRouge": 21,
-    "seasonDayIndex": 19
+    "seasonDayIndex": 80
   },
   {
     "date": "2025-11-20",
@@ -9513,7 +9513,7 @@
     "remainingBleu": 292,
     "remainingBlanc": 38,
     "remainingRouge": 21,
-    "seasonDayIndex": 20
+    "seasonDayIndex": 81
   },
   {
     "date": "2025-11-21",
@@ -9525,7 +9525,7 @@
     "remainingBleu": 291,
     "remainingBlanc": 38,
     "remainingRouge": 21,
-    "seasonDayIndex": 21
+    "seasonDayIndex": 82
   },
   {
     "date": "2025-11-24",
@@ -9537,7 +9537,7 @@
     "remainingBleu": 291,
     "remainingBlanc": 38,
     "remainingRouge": 20,
-    "seasonDayIndex": 24
+    "seasonDayIndex": 85
   },
   {
     "date": "2025-11-25",
@@ -9549,7 +9549,7 @@
     "remainingBleu": 290,
     "remainingBlanc": 38,
     "remainingRouge": 20,
-    "seasonDayIndex": 25
+    "seasonDayIndex": 86
   },
   {
     "date": "2025-11-26",
@@ -9561,7 +9561,7 @@
     "remainingBleu": 290,
     "remainingBlanc": 37,
     "remainingRouge": 20,
-    "seasonDayIndex": 26
+    "seasonDayIndex": 87
   },
   {
     "date": "2025-11-27",
@@ -9573,7 +9573,7 @@
     "remainingBleu": 290,
     "remainingBlanc": 36,
     "remainingRouge": 20,
-    "seasonDayIndex": 27
+    "seasonDayIndex": 88
   },
   {
     "date": "2025-11-28",
@@ -9585,7 +9585,7 @@
     "remainingBleu": 290,
     "remainingBlanc": 35,
     "remainingRouge": 20,
-    "seasonDayIndex": 28
+    "seasonDayIndex": 89
   },
   {
     "date": "2025-12-01",
@@ -9597,7 +9597,7 @@
     "remainingBleu": 290,
     "remainingBlanc": 34,
     "remainingRouge": 20,
-    "seasonDayIndex": 31
+    "seasonDayIndex": 92
   },
   {
     "date": "2025-12-02",
@@ -9609,7 +9609,7 @@
     "remainingBleu": 289,
     "remainingBlanc": 34,
     "remainingRouge": 20,
-    "seasonDayIndex": 32
+    "seasonDayIndex": 93
   },
   {
     "date": "2025-12-03",
@@ -9621,7 +9621,7 @@
     "remainingBleu": 288,
     "remainingBlanc": 34,
     "remainingRouge": 20,
-    "seasonDayIndex": 33
+    "seasonDayIndex": 94
   },
   {
     "date": "2025-12-04",
@@ -9633,7 +9633,7 @@
     "remainingBleu": 287,
     "remainingBlanc": 34,
     "remainingRouge": 20,
-    "seasonDayIndex": 34
+    "seasonDayIndex": 95
   },
   {
     "date": "2025-12-05",
@@ -9645,7 +9645,7 @@
     "remainingBleu": 286,
     "remainingBlanc": 34,
     "remainingRouge": 20,
-    "seasonDayIndex": 35
+    "seasonDayIndex": 96
   },
   {
     "date": "2025-12-08",
@@ -9657,7 +9657,7 @@
     "remainingBleu": 286,
     "remainingBlanc": 34,
     "remainingRouge": 19,
-    "seasonDayIndex": 38
+    "seasonDayIndex": 99
   },
   {
     "date": "2025-12-09",
@@ -9669,7 +9669,7 @@
     "remainingBleu": 285,
     "remainingBlanc": 34,
     "remainingRouge": 19,
-    "seasonDayIndex": 39
+    "seasonDayIndex": 100
   },
   {
     "date": "2025-12-10",
@@ -9681,7 +9681,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 34,
     "remainingRouge": 19,
-    "seasonDayIndex": 40
+    "seasonDayIndex": 101
   },
   {
     "date": "2025-12-11",
@@ -9693,7 +9693,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 34,
     "remainingRouge": 18,
-    "seasonDayIndex": 41
+    "seasonDayIndex": 102
   },
   {
     "date": "2025-12-12",
@@ -9705,7 +9705,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 33,
     "remainingRouge": 18,
-    "seasonDayIndex": 42
+    "seasonDayIndex": 103
   },
   {
     "date": "2025-12-15",
@@ -9717,7 +9717,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 32,
     "remainingRouge": 18,
-    "seasonDayIndex": 45
+    "seasonDayIndex": 106
   },
   {
     "date": "2025-12-16",
@@ -9729,7 +9729,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 31,
     "remainingRouge": 18,
-    "seasonDayIndex": 46
+    "seasonDayIndex": 107
   },
   {
     "date": "2025-12-17",
@@ -9741,7 +9741,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 30,
     "remainingRouge": 18,
-    "seasonDayIndex": 47
+    "seasonDayIndex": 108
   },
   {
     "date": "2025-12-18",
@@ -9753,7 +9753,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 29,
     "remainingRouge": 18,
-    "seasonDayIndex": 48
+    "seasonDayIndex": 109
   },
   {
     "date": "2025-12-19",
@@ -9765,7 +9765,7 @@
     "remainingBleu": 284,
     "remainingBlanc": 28,
     "remainingRouge": 18,
-    "seasonDayIndex": 49
+    "seasonDayIndex": 110
   },
   {
     "date": "2025-12-22",
@@ -9777,7 +9777,7 @@
     "remainingBleu": 283,
     "remainingBlanc": 28,
     "remainingRouge": 18,
-    "seasonDayIndex": 52
+    "seasonDayIndex": 113
   },
   {
     "date": "2025-12-23",
@@ -9789,7 +9789,7 @@
     "remainingBleu": 283,
     "remainingBlanc": 27,
     "remainingRouge": 18,
-    "seasonDayIndex": 53
+    "seasonDayIndex": 114
   },
   {
     "date": "2025-12-24",
@@ -9801,7 +9801,7 @@
     "remainingBleu": 282,
     "remainingBlanc": 27,
     "remainingRouge": 18,
-    "seasonDayIndex": 54
+    "seasonDayIndex": 115
   },
   {
     "date": "2025-12-25",
@@ -9813,7 +9813,7 @@
     "remainingBleu": 282,
     "remainingBlanc": 27,
     "remainingRouge": 17,
-    "seasonDayIndex": 55
+    "seasonDayIndex": 116
   },
   {
     "date": "2025-12-26",
@@ -9825,7 +9825,7 @@
     "remainingBleu": 282,
     "remainingBlanc": 26,
     "remainingRouge": 17,
-    "seasonDayIndex": 56
+    "seasonDayIndex": 117
   },
   {
     "date": "2025-12-29",
@@ -9837,7 +9837,7 @@
     "remainingBleu": 281,
     "remainingBlanc": 26,
     "remainingRouge": 17,
-    "seasonDayIndex": 59
+    "seasonDayIndex": 120
   },
   {
     "date": "2025-12-30",
@@ -9849,7 +9849,7 @@
     "remainingBleu": 280,
     "remainingBlanc": 26,
     "remainingRouge": 17,
-    "seasonDayIndex": 60
+    "seasonDayIndex": 121
   },
   {
     "date": "2025-12-31",
@@ -9861,6 +9861,6 @@
     "remainingBleu": 280,
     "remainingBlanc": 26,
     "remainingRouge": 16,
-    "seasonDayIndex": 61
+    "seasonDayIndex": 122
   }
 ]
