@@ -58,3 +58,10 @@ jobs:
           else
             echo "⚠️ Model not generated, skipping commit"
           fi
+import os
+
+if os.path.exists("ML/model.pkl"):
+    print("✅ model.pkl créé")
+    print("📦 Taille:", os.path.getsize("ML/model.pkl"), "bytes")
+else:
+    print("❌ model.pkl NON créé")
