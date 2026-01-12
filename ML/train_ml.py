@@ -9,9 +9,9 @@ from pathlib import Path
 # PATHS
 # ======================
 DATASET_PATH = Path("ML/ml_dataset.json")
-MODEL_PATH = Path("ML/ml_model.pkl")
+MODEL_PATH   = Path("ML/ml_model.pkl")
 
-print("🤖 Lancement entraînement ML")
+print("🤖 Lancement entraînement ML (avec quotas Tempo)")
 
 # ======================
 # LOAD DATASET
@@ -25,7 +25,7 @@ df = pd.read_json(DATASET_PATH)
 print(f"📊 Échantillons disponibles : {len(df)}")
 print("🧱 Colonnes dataset :", list(df.columns))
 
-if len(df) < 100:
+if len(df) < 200:
     print("❌ Dataset insuffisant pour entraîner un modèle fiable")
     exit(1)
 
@@ -34,24 +34,41 @@ if len(df) < 100:
 # ======================
 print("🛠️ Construction des features ML")
 
-# Date → weekday / month
+# Date
 df["date"] = pd.to_datetime(df["date"], errors="coerce")
 df = df.dropna(subset=["date"])
 
 df["weekday"] = df["date"].dt.weekday
-df["month"] = df["date"].dt.month
+df["month"]   = df["date"].dt.month
 
-# Historique réel → horizon = 0
+# Horizon = 0 (historique réel uniquement)
 df["horizon"] = 0
 
-# Label = couleur réelle
+# Label
 df["label"] = df["color"]
 
 # Harmonisation noms
 df["temp"] = df["temperature"]
-df["rte"] = df["rteConsommation"]
+df["rte"]  = df["rteConsommation"]
 
-FEATURES = ["temp", "coldDays", "rte", "weekday", "month", "horizon"]
+# ======================
+# FEATURES ML (CLÉS)
+# ======================
+FEATURES = [
+    "temp",
+    "coldDays",
+    "rte",
+    "weekday",
+    "month",
+    "horizon",
+
+    # 🔥 NOUVELLES FEATURES TEMPO
+    "remainingBleu",
+    "remainingBlanc",
+    "remainingRouge",
+    "seasonDayIndex"
+]
+
 TARGET = "label"
 
 missing = [c for c in FEATURES + [TARGET] if c not in df.columns]
@@ -76,15 +93,15 @@ print("🏷️ Classes apprises :", list(le.classes_))
 print("🚀 Entraînement du modèle ML")
 
 model = DecisionTreeClassifier(
-    max_depth=6,
-    min_samples_leaf=3,
+    max_depth=7,          # un peu plus profond (logique saisonnière)
+    min_samples_leaf=5,   # évite l’overfit
     random_state=42
 )
 
 model.fit(X, y_enc)
 
 # ======================
-# SAVE MODEL (JOBLIB)
+# SAVE MODEL
 # ======================
 bundle = {
     "model": model,
@@ -99,9 +116,8 @@ size = MODEL_PATH.stat().st_size
 print("✅ Modèle ML entraîné")
 print(f"📦 Taille du modèle : {size} bytes")
 
-# Seuil réaliste (DecisionTree = petit modèle)
-if size < 200:
+if size < 300:
     print("❌ Modèle anormalement petit")
     exit(1)
 
-print("🎉 Modèle ML valide et prêt à l'emploi")
+print("🎉 Modèle ML valide (Tempo-aware)")
