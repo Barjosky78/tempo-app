@@ -13,7 +13,7 @@ MODEL_PATH = BASE_DIR / "ML" / "ml_model.pkl"
 TEMPO_PATH = BASE_DIR / "tempo.json"
 OUTPUT_PATH = BASE_DIR / "ML" / "ml_predictions.json"
 
-print("🤖 Lancement prédictions ML")
+print("🤖 Lancement prédictions ML (avec règles Tempo)")
 
 # ======================
 # LOAD MODEL BUNDLE
@@ -23,7 +23,6 @@ if not MODEL_PATH.exists():
     exit(1)
 
 bundle = joblib.load(MODEL_PATH)
-
 model = bundle["model"]
 le = bundle["label_encoder"]
 FEATURES = bundle["features"]
@@ -42,6 +41,35 @@ with open(TEMPO_PATH, "r") as f:
     tempo = json.load(f)
 
 predictions = []
+
+# ======================
+# TEMPO RULES
+# ======================
+def apply_tempo_rules(date_str, ml_probs):
+    """
+    Règles Tempo officielles :
+    - Samedi / Dimanche => ROUGE interdit
+    """
+    d = datetime.fromisoformat(date_str)
+    weekday = d.weekday()  # 5=Samedi, 6=Dimanche
+
+    corrected = False
+
+    if weekday in (5, 6):
+        if ml_probs.get("rouge", 0) > 0:
+            ml_probs["rouge"] = 0
+            corrected = True
+
+    # Renormalisation
+    total = sum(ml_probs.values())
+    if total > 0:
+        for k in ml_probs:
+            ml_probs[k] = round(ml_probs[k] * 100 / total)
+    else:
+        ml_probs = {"bleu": 100, "blanc": 0, "rouge": 0}
+        corrected = True
+
+    return ml_probs, corrected
 
 # ======================
 # PREDICT
@@ -75,6 +103,11 @@ for day in tempo:
         for i in range(len(classes))
     }
 
+    # ======================
+    # APPLY TEMPO RULES
+    # ======================
+    ml_probs, corrected = apply_tempo_rules(day["date"], ml_probs)
+
     ml_color = max(ml_probs, key=ml_probs.get)
     ml_confidence = ml_probs[ml_color]
 
@@ -82,7 +115,8 @@ for day in tempo:
         "date": day["date"],
         "mlPrediction": ml_color,
         "mlProbabilities": ml_probs,
-        "mlConfidence": ml_confidence
+        "mlConfidence": ml_confidence,
+        "correctedByRules": corrected
     })
 
 # ======================
