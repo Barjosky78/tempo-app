@@ -22,7 +22,7 @@
     },
     "fixed": false,
     "estimated": true,
-    "temperature": 9.9,
+    "temperature": 9.7,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
@@ -41,7 +41,7 @@
     },
     "fixed": false,
     "estimated": false,
-    "temperature": 9.4,
+    "temperature": 9.2,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
