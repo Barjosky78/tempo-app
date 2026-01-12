@@ -24,24 +24,42 @@ function verdictLabel(result) {
 }
 
 /* ==========================
-   META
-========================== */
-fetch("meta.json?v=" + Date.now())
-  .then(r => r.json())
-  .then(meta => {
-    if (!updatedDiv) return;
-    updatedDiv.textContent =
-      "Dernière mise à jour : " +
-      new Date(meta.updatedAt).toLocaleString("fr-FR");
-  });
-
-/* ==========================
-   TEMPO + ML (SYNC)
+   POINT D’ENTRÉE UNIQUE
+   (RECALCUL TOTAL À CHAQUE REFRESH)
 ========================== */
 Promise.all([
   fetch("tempo.json?v=" + Date.now()).then(r => r.json()),
-  fetch("ML/ml_predictions.json?v=" + Date.now()).then(r => r.json()).catch(() => [])
-]).then(([days, mlData]) => {
+  fetch("history.json?v=" + Date.now()).then(r => r.json()),
+  fetch("ML/ml_predictions.json?v=" + Date.now()).then(r => r.json()).catch(() => []),
+  fetch("meta.json?v=" + Date.now()).then(r => r.json())
+]).then(([tempo, history, mlData, meta]) => {
+
+  if (!tempo || !tempo.length) {
+    tempoDiv.innerHTML = "<p>Données Tempo indisponibles</p>";
+    return;
+  }
+
+  updateMeta(meta);
+  renderTempo(tempo, mlData);
+  renderHistory(history);
+  computeCounters(tempo);
+
+});
+
+/* ==========================
+   META
+========================== */
+function updateMeta(meta) {
+  if (!updatedDiv || !meta?.updatedAt) return;
+  updatedDiv.textContent =
+    "Dernière mise à jour : " +
+    new Date(meta.updatedAt).toLocaleString("fr-FR");
+}
+
+/* ==========================
+   TEMPO + ML
+========================== */
+function renderTempo(days, mlData) {
 
   const mlByDate = {};
   mlData.forEach(p => mlByDate[p.date] = p);
@@ -115,76 +133,64 @@ Promise.all([
 
     tempoDiv.appendChild(card);
   });
-});
+}
 
 /* ==========================
    HISTORIQUE — VALIDÉ EDF
 ========================== */
-fetch("history.json?v=" + Date.now())
-  .then(r => r.json())
-  .then(history => {
+function renderHistory(history = []) {
 
-    const today = new Date();
-    today.setHours(0,0,0,0);
+  const today = new Date();
+  today.setHours(0,0,0,0);
 
-    const visibles = history
-      .filter(h => h.realColor && new Date(h.date) <= today)
-      .sort((a,b) => new Date(b.date) - new Date(a.date))
-      .slice(0, 10);
+  const visibles = history
+    .filter(h => h.realColor && new Date(h.date) <= today)
+    .sort((a,b) => new Date(b.date) - new Date(a.date))
+    .slice(0, 10);
 
-    if (visibles.length === 0) {
-      historyDiv.innerHTML = "<p>Aucune prédiction validée par EDF</p>";
-      return;
-    }
+  if (visibles.length === 0) {
+    historyDiv.innerHTML = "<p>Aucune prédiction validée par EDF</p>";
+    return;
+  }
 
-    historyDiv.innerHTML = visibles.map(h => `
-      <div class="history-card">
-        <b>${h.date}</b><br>
-        Prédiction J-${h.horizon} :
-        <b>${h.predictedColor.toUpperCase()}</b><br>
-        Résultat réel :
-        <b>${h.realColor.toUpperCase()}</b><br>
-        ${verdictLabel(h.result)}
-      </div>
-    `).join("");
-  });
+  historyDiv.innerHTML = visibles.map(h => `
+    <div class="history-card">
+      <b>${h.date}</b><br>
+      Prédiction J-${h.horizon} :
+      <b>${h.predictedColor.toUpperCase()}</b><br>
+      Résultat réel :
+      <b>${h.realColor.toUpperCase()}</b><br>
+      ${verdictLabel(h.result)}
+    </div>
+  `).join("");
+}
 
 /* ==========================
    COMPTEURS TEMPO (OFFICIELS)
    BASE EDF + J0 UNIQUEMENT
 ========================== */
+function computeCounters(tempo) {
 
-// 🔴⚪🔵 RÉFÉRENCE EDF AUJOURD’HUI
-const EDF_REMAINING = {
-  rouge: 17,
-  blanc: 24,
-  bleu: 189
-};
+  // 🔴⚪🔵 Valeurs officielles EDF (AUJOURD’HUI)
+  const EDF_REMAINING = {
+    rouge: 17,
+    blanc: 24,
+    bleu: 189
+  };
 
-const MAX = {
-  rouge: 22,
-  blanc: 43,
-  bleu: 300
-};
+  const remaining = { ...EDF_REMAINING };
 
-// J0 uniquement
-fetch("tempo.json?v=" + Date.now())
-  .then(r => r.json())
-  .then(tempo => {
+  const todayStr = new Date().toISOString().split("T")[0];
+  const today = tempo.find(d => d.fixed && d.date === todayStr);
 
-    const todayStr = new Date().toISOString().split("T")[0];
-    const today = tempo.find(d => d.fixed && d.date === todayStr);
+  if (today) {
+    remaining[today.couleur] = Math.max(
+      0,
+      remaining[today.couleur] - 1
+    );
+  }
 
-    const remaining = { ...EDF_REMAINING };
-
-    if (today) {
-      remaining[today.couleur] = Math.max(
-        0,
-        remaining[today.couleur] - 1
-      );
-    }
-
-    document.getElementById("count-rouge").textContent = remaining.rouge;
-    document.getElementById("count-blanc").textContent = remaining.blanc;
-    document.getElementById("count-bleu").textContent  = remaining.bleu;
-  });
+  document.getElementById("count-rouge").textContent = remaining.rouge;
+  document.getElementById("count-blanc").textContent = remaining.blanc;
+  document.getElementById("count-bleu").textContent  = remaining.bleu;
+}
