@@ -1,83 +1,97 @@
 import json
-import pickle
-import os
+import pandas as pd
+import joblib
 from datetime import datetime
+from pathlib import Path
 
 # ======================
 # PATHS
 # ======================
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parents[1]
 
-MODEL_PATH = os.path.join(BASE_DIR, "ML", "model.pkl")
-TEMPO_PATH = os.path.join(BASE_DIR, "tempo.json")
-OUTPUT_PATH = os.path.join(BASE_DIR, "tempo.json")  # overwrite
+MODEL_PATH = BASE_DIR / "ML" / "ml_model.pkl"
+TEMPO_PATH = BASE_DIR / "tempo.json"
+OUTPUT_PATH = BASE_DIR / "ML" / "ml_predictions.json"
+
+print("🤖 Lancement prédictions ML")
 
 # ======================
-# LOAD MODEL
+# LOAD MODEL BUNDLE
 # ======================
-if not os.path.exists(MODEL_PATH):
+if not MODEL_PATH.exists():
     print("❌ Modèle ML introuvable")
-    exit(0)
+    exit(1)
 
-with open(MODEL_PATH, "rb") as f:
-    model = pickle.load(f)
+bundle = joblib.load(MODEL_PATH)
+
+model = bundle["model"]
+le = bundle["label_encoder"]
+FEATURES = bundle["features"]
+
+print("🧠 Modèle ML chargé")
+print("🧩 Features utilisées :", FEATURES)
 
 # ======================
 # LOAD TEMPO
 # ======================
-if not os.path.exists(TEMPO_PATH):
+if not TEMPO_PATH.exists():
     print("❌ tempo.json introuvable")
-    exit(0)
+    exit(1)
 
 with open(TEMPO_PATH, "r") as f:
     tempo = json.load(f)
+
+predictions = []
 
 # ======================
 # PREDICT
 # ======================
 for day in tempo:
     if day.get("fixed"):
-        continue  # pas de ML sur jour réel
+        continue  # pas de ML sur aujourd’hui réel
 
-    probs = day.get("probabilites")
-    if not probs:
+    try:
+        d = datetime.fromisoformat(day["date"])
+    except Exception:
         continue
 
-    date = day["date"]
-    d = datetime.fromisoformat(date)
+    # === FEATURES STRICTEMENT IDENTIQUES AU TRAIN ===
+    features = {
+        "temp": day.get("temperature", 8),
+        "coldDays": day.get("coldDays", 0),
+        "rte": day.get("rteConsommation", 55000),
+        "weekday": d.weekday(),
+        "month": d.month,
+        "horizon": day.get("horizon", 0),
+    }
 
-    # === FEATURES (STRICTEMENT identiques à train_ml.py) ===
-    X = [[
-        day.get("horizon", 0),
-        probs.get("rouge", 0),
-        probs.get("blanc", 0),
-        probs.get("bleu", 0),
-        day.get("temperature", 8),
-        day.get("rteConsommation", 55000),
-        day.get("rteTension", 60)
-    ]]
+    X = pd.DataFrame([features])
 
-    proba = model.predict_proba(X)[0]
-    classes = model.classes_
+    probs = model.predict_proba(X)[0]
+    classes = le.inverse_transform(range(len(probs)))
 
     ml_probs = {
-        classes[i]: round(proba[i] * 100)
+        classes[i]: round(probs[i] * 100)
         for i in range(len(classes))
     }
 
     ml_color = max(ml_probs, key=ml_probs.get)
     ml_confidence = ml_probs[ml_color]
 
-    day["ml"] = {
-        "color": ml_color,
-        "confidence": ml_confidence,
-        "probabilites": ml_probs
-    }
+    predictions.append({
+        "date": day["date"],
+        "mlPrediction": ml_color,
+        "mlProbabilities": ml_probs,
+        "mlConfidence": ml_confidence
+    })
 
 # ======================
 # SAVE
 # ======================
-with open(OUTPUT_PATH, "w") as f:
-    json.dump(tempo, f, indent=2)
+OUTPUT_PATH.parent.mkdir(exist_ok=True)
 
-print("🤖 Prédictions ML ajoutées à tempo.json")
+with open(OUTPUT_PATH, "w") as f:
+    json.dump(predictions, f, indent=2)
+
+print(f"✅ {len(predictions)} prédictions ML générées")
+print("📁 Fichier :", OUTPUT_PATH)
