@@ -30,7 +30,7 @@ jobs:
       # ======================
       - name: Build ML dataset
         run: |
-          python ML/build_ml_dataset.py
+          python ML/ml_build_ml_dataset.py
 
       # ======================
       # COMMIT
