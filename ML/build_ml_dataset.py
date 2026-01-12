@@ -4,99 +4,90 @@ from datetime import datetime
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-HISTORY_TEMPO_PATH = os.path.join(BASE_DIR, "history_real_tempo.json")
+TEMPO_PATH = os.path.join(BASE_DIR, "history_real_tempo.json")
 WEATHER_PATH = os.path.join(BASE_DIR, "weather_history.json")
 RTE_PATH = os.path.join(BASE_DIR, "rte_history.json")
-ENGINE_HISTORY_PATH = os.path.join(BASE_DIR, "history.json")
+OUTPUT_PATH = os.path.join(BASE_DIR, "ML", "ml_dataset.json")
 
-OUTPUT_PATH = os.path.join(BASE_DIR, "ML", "dataset_ml.json")
-
-# =========================
-# LOAD JSON SAFE
-# =========================
+# ======================
+# LOAD FILES (SAFE)
+# ======================
 def load_json(path):
     if not os.path.exists(path):
-        print(f"⚠️ Fichier manquant : {path}")
+        print("❌ Fichier manquant :", path)
         return []
-    with open(path, "r") as f:
+    with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
-tempo_real = load_json(HISTORY_TEMPO_PATH)
-weather_hist = load_json(WEATHER_PATH)
-rte_hist = load_json(RTE_PATH)
-engine_hist = load_json(ENGINE_HISTORY_PATH)
+tempo = load_json(TEMPO_PATH)
+weather = load_json(WEATHER_PATH)
+rte = load_json(RTE_PATH)
 
-# =========================
-# INDEX BY DATE
-# =========================
-weather_by_date = {w["date"]: w for w in weather_hist}
-rte_by_date = {r["date"]: r for r in rte_hist}
-engine_by_date = {}
+print("📊 Tempo:", len(tempo))
+print("🌦️ Weather:", len(weather))
+print("⚡ RTE:", len(rte))
 
-for h in engine_hist:
-    engine_by_date.setdefault(h["date"], []).append(h)
+# ======================
+# INDEX PAR DATE
+# ======================
+weather_by_date = {
+    w["date"]: w for w in weather
+    if "date" in w
+}
+
+rte_by_date = {
+    r["date"]: r for r in rte
+    if "date" in r
+}
 
 dataset = []
 
-# =========================
+# ======================
 # BUILD DATASET
-# =========================
-for day in tempo_real:
-    date = day.get("date")
-    label = day.get("couleur")
+# ======================
+for h in tempo:
+    date = h.get("date")
+    couleur = h.get("couleur")  # ⚠️ PAS realColor
 
-    if not date or not label:
+    if not date or not couleur:
         continue
 
-    weather = weather_by_date.get(date)
-    rte = rte_by_date.get(date)
-    engine_preds = engine_by_date.get(date, [])
+    w = weather_by_date.get(date)
+    r = rte_by_date.get(date)
 
-    if not weather or not engine_preds:
-        continue
+    # --- FEATURES ---
+    temperature = w.get("temperature", 8) if w else 8
+    consommation = r.get("consommation", 55000) if r else 55000
+    tension = r.get("tension", 60) if r else 60
 
-    for pred in engine_preds:
-        probs = pred.get("probabilites") or pred.get("probabilities")
-        if not probs:
-            continue
+    d = datetime.fromisoformat(date)
 
-        entry = {
-            "date": date,
-            "label": label,
-            "horizon": pred.get("horizon", 0),
+    sample = {
+        "date": date,
 
-            # Moteur
-            "prob_rouge": probs.get("rouge", 0),
-            "prob_blanc": probs.get("blanc", 0),
-            "prob_bleu": probs.get("bleu", 0),
+        # FEATURES
+        "temperature": temperature,
+        "weekday": d.weekday(),
+        "month": d.month,
+        "rteConsommation": consommation,
+        "rteTension": tension,
 
-            # Météo
-            "temperature": weather.get("temperature", 10),
-            "cold_span": weather.get("cold_span", 0),
+        # LABEL
+        "label": couleur
+    }
 
-            # RTE
-            "rte_consumption": rte.get("consommation", 55000),
-            "rte_tension": rte.get("tension", 60),
+    dataset.append(sample)
 
-            # Calendrier
-            "weekday": datetime.fromisoformat(date).weekday(),
-            "month": datetime.fromisoformat(date).month
-        }
-
-        dataset.append(entry)
-
-# =========================
+# ======================
 # SAVE
-# =========================
+# ======================
 if len(dataset) == 0:
     print("❌ Aucun échantillon généré")
     exit(1)
 
-os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
-
-with open(OUTPUT_PATH, "w") as f:
+with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
     json.dump(dataset, f, indent=2)
 
 print("✅ Dataset ML généré")
-print("📊 Échantillons :", len(dataset))
+print("📦 Échantillons :", len(dataset))
 print("📁 Fichier :", OUTPUT_PATH)
