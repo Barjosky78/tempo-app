@@ -34,7 +34,7 @@ section {
 ========================== */
 .tempo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 12px;
 }
 
@@ -112,7 +112,7 @@ section {
 }
 
 /* ==========================
-   ML — PRÉDICTION SHADOW
+   ML — PRÉDICTION (SHADOW)
 ========================== */
 .ml-box {
   margin-top: 12px;
@@ -126,6 +126,22 @@ section {
 
 .ml-box b {
   font-size: 0.8rem;
+}
+
+/* Couleur ML selon prédiction */
+.ml-box.ml-bleu {
+  border-left-color: #0284c7;
+  background: #e0f2fe;
+}
+
+.ml-box.ml-blanc {
+  border-left-color: #94a3b8;
+  background: #f8fafc;
+}
+
+.ml-box.ml-rouge {
+  border-left-color: #dc2626;
+  background: #fee2e2;
 }
 
 .ml-bar {
@@ -146,7 +162,7 @@ section {
 ========================== */
 #history {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 12px;
 }
 
