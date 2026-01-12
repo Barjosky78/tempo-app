@@ -3,14 +3,14 @@
     "date": "2026-01-09",
     "predictedOn": "2026-01-09",
     "horizon": 0,
-    "predictedColor": "bleu",
+    "predictedColor": "blanc",
     "probabilites": {
       "rouge": 0,
       "blanc": 0,
       "bleu": 100
     },
     "realColor": "blanc",
-    "result": "wrong"
+    "result": "correct"
   },
   {
     "date": "2026-01-10",
