@@ -114,17 +114,47 @@ jobs:
           today.setHours(0,0,0,0);
           const days = [];
 
-          // ===== TODAY (REAL) =====
+          // ======================
+          // J0 — AUJOURD’HUI (EDF)
+          // ======================
+          const todayColor = "bleu"; // 🔴⚪🔵 valeur EDF réelle
+
           days.push({
             date: fmt(today),
-            couleur: "bleu",
-            probabilites: { rouge:0, blanc:0, bleu:100 },
+            couleur: todayColor,
+            probabilites: {
+              rouge: todayColor === "rouge" ? 100 : 0,
+              blanc: todayColor === "blanc" ? 100 : 0,
+              bleu:  todayColor === "bleu"  ? 100 : 0
+            },
             fixed: true,
             sources: { reel:true }
           });
 
-          // ===== J+1 → J+9 =====
-          for (let i = 1; i <= 9; i++) {
+          // ======================
+          // J1 — DEMAIN (EDF)
+          // ======================
+          const tomorrow = new Date(today);
+          tomorrow.setDate(today.getDate() + 1);
+
+          const tomorrowColor = "blanc"; // 🔴⚪🔵 valeur EDF officielle J+1
+
+          days.push({
+            date: fmt(tomorrow),
+            couleur: tomorrowColor,
+            probabilites: {
+              rouge: tomorrowColor === "rouge" ? 100 : 0,
+              blanc: tomorrowColor === "blanc" ? 100 : 0,
+              bleu:  tomorrowColor === "bleu"  ? 100 : 0
+            },
+            fixed: true,
+            sources: { reel:true }
+          });
+
+          // ======================
+          // J+2 → J+9 (PRÉVISIONS)
+          // ======================
+          for (let i = 2; i <= 9; i++) {
             const d = new Date(today);
             d.setDate(today.getDate() + i);
 
@@ -160,7 +190,8 @@ jobs:
               else { rouge += boost; blanc += 3; bleu -= 6; }
             }
 
-            if (dow === 0) { rouge=0; blanc=0; bleu=100; }
+            // RÈGLES TEMPO
+            if (dow === 0) { rouge = 0; blanc = 0; bleu = 100; }
             if (dow === 6) { blanc += rouge; rouge = 0; }
 
             const total = rouge + blanc + bleu;
@@ -177,7 +208,7 @@ jobs:
               couleur,
               probabilites: { rouge, blanc, bleu },
               fixed: false,
-              estimated: i === 1,
+              estimated: i === 2,
               temperature: temp,
               rteConsommation: consommation,
               rteTension: tension,
@@ -212,7 +243,7 @@ jobs:
           python ML/predict_ml.py || echo "ML prediction skipped"
 
       # ======================
-      # COMMIT (SAFE)
+      # COMMIT
       # ======================
       - name: Commit & push
         run: |
@@ -222,5 +253,5 @@ jobs:
           git add tempo.json meta.json
           git add ML/*.pkl ML/*.json || true
 
-          git commit -m "Update tempo + ML (weather + RTE + shadow ML)" || echo "No changes"
+          git commit -m "Update tempo (J0/J1 EDF confirmed + ML shadow)" || echo "No changes"
           git push
