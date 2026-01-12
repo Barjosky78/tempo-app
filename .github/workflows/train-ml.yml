@@ -1,7 +1,8 @@
-name: Train ML model (Tempo EDF)
+name: Train ML model (Tempo + Weather + RTE)
 
 on:
   schedule:
+    # Tous les jours à 11h UTC (12h FR hiver)
     - cron: "0 11 * * *"
   workflow_dispatch:
 
@@ -33,14 +34,14 @@ jobs:
       - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install scikit-learn joblib
+          pip install pandas scikit-learn joblib
 
       # ======================
       # CHECK DATASET
       # ======================
       - name: Check ML dataset
         run: |
-          echo "📁 Vérification du dataset ML"
+          echo "📂 Vérification du dataset ML"
           ls -lh ML/ml_dataset.json
 
       # ======================
@@ -57,7 +58,7 @@ jobs:
         run: |
           echo "🔍 Vérification du modèle ML"
           if [ ! -f ML/model.pkl ]; then
-            echo "❌ Modèle introuvable"
+            echo "❌ Modèle absent"
             exit 1
           fi
 
@@ -65,7 +66,7 @@ jobs:
           echo "📦 Taille du modèle : $SIZE bytes"
 
           if [ "$SIZE" -lt 1000 ]; then
-            echo "❌ Modèle trop petit"
+            echo "❌ Modèle trop petit (probablement vide)"
             exit 1
           fi
 
@@ -79,5 +80,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add ML/model.pkl
-          git commit -m "🤖 Auto-train ML model (Tempo EDF)" || echo "No changes"
+          git commit -m "🤖 Auto-train ML model (Tempo + Weather + RTE)" || echo "No changes"
           git push
