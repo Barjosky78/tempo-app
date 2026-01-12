@@ -42,13 +42,13 @@ jobs:
       - name: Check ML dataset
         run: |
           echo "📂 Vérification du dataset ML"
-          if [ ! -f ML/ml_dataset_ml.json ]; then
-            echo "❌ ML/ml_dataset_ml.json introuvable"
+          if [ ! -f ML/ml_dataset.json ]; then
+            echo "❌ ML/ml_dataset.json introuvable"
             exit 1
           fi
           echo "✅ Dataset trouvé"
           echo "📊 Taille :"
-          wc -l ML/ml_dataset_ml.json
+          wc -l ML/ml_dataset.json
 
       # ======================
       # TRAIN MODEL
