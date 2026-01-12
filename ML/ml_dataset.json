@@ -1,0 +1,6578 @@
+[
+  {
+    "date": "2017-11-01",
+    "color": "bleu",
+    "temperature": 8.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-11-02",
+    "color": "rouge",
+    "temperature": 11.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-11-03",
+    "color": "bleu",
+    "temperature": 11.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-11-06",
+    "color": "bleu",
+    "temperature": 5.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-11-07",
+    "color": "rouge",
+    "temperature": 3.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-11-08",
+    "color": "bleu",
+    "temperature": 4.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-11-09",
+    "color": "blanc",
+    "temperature": 7.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-11-10",
+    "color": "bleu",
+    "temperature": 9.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-11-13",
+    "color": "blanc",
+    "temperature": 6.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-11-14",
+    "color": "blanc",
+    "temperature": 5.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-11-15",
+    "color": "bleu",
+    "temperature": 7.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-11-16",
+    "color": "bleu",
+    "temperature": 6.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-11-17",
+    "color": "blanc",
+    "temperature": 7.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-11-20",
+    "color": "blanc",
+    "temperature": 7.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-11-21",
+    "color": "rouge",
+    "temperature": 9.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-11-22",
+    "color": "bleu",
+    "temperature": 10.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-11-23",
+    "color": "bleu",
+    "temperature": 13.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-11-24",
+    "color": "bleu",
+    "temperature": 10.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-11-27",
+    "color": "bleu",
+    "temperature": 6.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-11-28",
+    "color": "blanc",
+    "temperature": 6.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-11-29",
+    "color": "bleu",
+    "temperature": 2.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-11-30",
+    "color": "rouge",
+    "temperature": 2.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-12-01",
+    "color": "bleu",
+    "temperature": 2.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-12-04",
+    "color": "bleu",
+    "temperature": 5.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-12-05",
+    "color": "bleu",
+    "temperature": 5.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-12-06",
+    "color": "blanc",
+    "temperature": 5.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-12-07",
+    "color": "bleu",
+    "temperature": 5.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-12-08",
+    "color": "rouge",
+    "temperature": 3.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-12-11",
+    "color": "bleu",
+    "temperature": 6.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-12-12",
+    "color": "bleu",
+    "temperature": 2.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-12-13",
+    "color": "blanc",
+    "temperature": 6.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-12-14",
+    "color": "bleu",
+    "temperature": 5.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-12-15",
+    "color": "bleu",
+    "temperature": 4.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-12-18",
+    "color": "rouge",
+    "temperature": 6.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-12-19",
+    "color": "rouge",
+    "temperature": 3.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-12-20",
+    "color": "bleu",
+    "temperature": 6.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-12-21",
+    "color": "rouge",
+    "temperature": 9.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-12-22",
+    "color": "bleu",
+    "temperature": 8.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-12-25",
+    "color": "bleu",
+    "temperature": 6.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-12-26",
+    "color": "blanc",
+    "temperature": 6.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-12-27",
+    "color": "blanc",
+    "temperature": 4.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-12-28",
+    "color": "blanc",
+    "temperature": 2.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2017-12-29",
+    "color": "blanc",
+    "temperature": 4.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-01-01",
+    "color": "bleu",
+    "temperature": 7.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-01-02",
+    "color": "blanc",
+    "temperature": 7.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-01-03",
+    "color": "bleu",
+    "temperature": 9.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-01-04",
+    "color": "rouge",
+    "temperature": 11.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-01-05",
+    "color": "blanc",
+    "temperature": 8.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-01-08",
+    "color": "blanc",
+    "temperature": 4.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-01-09",
+    "color": "blanc",
+    "temperature": 4.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-01-10",
+    "color": "blanc",
+    "temperature": 7.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-01-11",
+    "color": "blanc",
+    "temperature": 5.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-01-12",
+    "color": "blanc",
+    "temperature": 5.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-01-15",
+    "color": "blanc",
+    "temperature": 6.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-01-16",
+    "color": "bleu",
+    "temperature": 7.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-01-17",
+    "color": "bleu",
+    "temperature": 5.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-01-18",
+    "color": "blanc",
+    "temperature": 8.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-01-19",
+    "color": "rouge",
+    "temperature": 4.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-01-22",
+    "color": "bleu",
+    "temperature": 10.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-01-23",
+    "color": "blanc",
+    "temperature": 8.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-01-24",
+    "color": "rouge",
+    "temperature": 11.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-01-25",
+    "color": "blanc",
+    "temperature": 8.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-01-26",
+    "color": "blanc",
+    "temperature": 5.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-01-29",
+    "color": "rouge",
+    "temperature": 10.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-01-30",
+    "color": "bleu",
+    "temperature": 9.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-01-31",
+    "color": "blanc",
+    "temperature": 8.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-02-01",
+    "color": "blanc",
+    "temperature": 3.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-02-02",
+    "color": "bleu",
+    "temperature": 3.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-02-05",
+    "color": "bleu",
+    "temperature": -0.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-02-06",
+    "color": "blanc",
+    "temperature": 0.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-02-07",
+    "color": "bleu",
+    "temperature": -1.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-02-08",
+    "color": "rouge",
+    "temperature": -5.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-02-09",
+    "color": "blanc",
+    "temperature": -1.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-02-12",
+    "color": "bleu",
+    "temperature": 1.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-02-13",
+    "color": "bleu",
+    "temperature": 1.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-02-14",
+    "color": "bleu",
+    "temperature": 2.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-02-15",
+    "color": "blanc",
+    "temperature": 8.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-02-16",
+    "color": "rouge",
+    "temperature": 4.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-02-19",
+    "color": "rouge",
+    "temperature": 3.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-02-20",
+    "color": "rouge",
+    "temperature": 4.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-02-21",
+    "color": "blanc",
+    "temperature": 1.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-02-22",
+    "color": "rouge",
+    "temperature": 0.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-02-23",
+    "color": "blanc",
+    "temperature": 0.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-02-26",
+    "color": "bleu",
+    "temperature": -2.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-02-27",
+    "color": "rouge",
+    "temperature": -4.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-02-28",
+    "color": "blanc",
+    "temperature": -3.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-03-01",
+    "color": "blanc",
+    "temperature": 0.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-03-02",
+    "color": "bleu",
+    "temperature": 3.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-03-05",
+    "color": "bleu",
+    "temperature": 7.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-03-06",
+    "color": "rouge",
+    "temperature": 7.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-03-07",
+    "color": "blanc",
+    "temperature": 5.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-03-08",
+    "color": "bleu",
+    "temperature": 6.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-03-09",
+    "color": "blanc",
+    "temperature": 9.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-03-12",
+    "color": "blanc",
+    "temperature": 10.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-03-13",
+    "color": "blanc",
+    "temperature": 8.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-03-14",
+    "color": "blanc",
+    "temperature": 9.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-03-15",
+    "color": "blanc",
+    "temperature": 9.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-03-16",
+    "color": "bleu",
+    "temperature": 8.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-03-19",
+    "color": "blanc",
+    "temperature": 0.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-03-20",
+    "color": "blanc",
+    "temperature": 2.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-03-21",
+    "color": "rouge",
+    "temperature": 3.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-03-22",
+    "color": "blanc",
+    "temperature": 4.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-03-23",
+    "color": "rouge",
+    "temperature": 5.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-03-26",
+    "color": "bleu",
+    "temperature": 8.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-03-27",
+    "color": "blanc",
+    "temperature": 7.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-03-28",
+    "color": "bleu",
+    "temperature": 8.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-03-29",
+    "color": "rouge",
+    "temperature": 6.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-03-30",
+    "color": "bleu",
+    "temperature": 6.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-11-01",
+    "color": "bleu",
+    "temperature": 10.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-11-02",
+    "color": "rouge",
+    "temperature": 7.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-11-05",
+    "color": "bleu",
+    "temperature": 13.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-11-06",
+    "color": "blanc",
+    "temperature": 14.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-11-07",
+    "color": "bleu",
+    "temperature": 11.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-11-08",
+    "color": "rouge",
+    "temperature": 8.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-11-09",
+    "color": "bleu",
+    "temperature": 9.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-11-12",
+    "color": "rouge",
+    "temperature": 10.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-11-13",
+    "color": "bleu",
+    "temperature": 10.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-11-14",
+    "color": "bleu",
+    "temperature": 8.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-11-15",
+    "color": "rouge",
+    "temperature": 8.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-11-16",
+    "color": "rouge",
+    "temperature": 7.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-11-19",
+    "color": "blanc",
+    "temperature": 2.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-11-20",
+    "color": "blanc",
+    "temperature": 1.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-11-21",
+    "color": "bleu",
+    "temperature": 1.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-11-22",
+    "color": "bleu",
+    "temperature": 2.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-11-23",
+    "color": "blanc",
+    "temperature": 5.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-11-26",
+    "color": "blanc",
+    "temperature": 5.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-11-27",
+    "color": "bleu",
+    "temperature": 5.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-11-28",
+    "color": "bleu",
+    "temperature": 10.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-11-29",
+    "color": "bleu",
+    "temperature": 11.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-11-30",
+    "color": "rouge",
+    "temperature": 9.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-12-03",
+    "color": "blanc",
+    "temperature": 12.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-12-04",
+    "color": "blanc",
+    "temperature": 9.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-12-05",
+    "color": "rouge",
+    "temperature": 10.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-12-06",
+    "color": "bleu",
+    "temperature": 11.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-12-07",
+    "color": "rouge",
+    "temperature": 10.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-12-10",
+    "color": "bleu",
+    "temperature": 7.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-12-11",
+    "color": "blanc",
+    "temperature": 4.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-12-12",
+    "color": "rouge",
+    "temperature": 2.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-12-13",
+    "color": "rouge",
+    "temperature": 0.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-12-14",
+    "color": "blanc",
+    "temperature": -1.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-12-17",
+    "color": "blanc",
+    "temperature": 5.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-12-18",
+    "color": "bleu",
+    "temperature": 6.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-12-19",
+    "color": "bleu",
+    "temperature": 7.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-12-20",
+    "color": "bleu",
+    "temperature": 7.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-12-21",
+    "color": "bleu",
+    "temperature": 12.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-12-24",
+    "color": "rouge",
+    "temperature": 8.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-12-25",
+    "color": "blanc",
+    "temperature": 2.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-12-26",
+    "color": "blanc",
+    "temperature": -0.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-12-27",
+    "color": "bleu",
+    "temperature": -1.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-12-28",
+    "color": "rouge",
+    "temperature": -0.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2018-12-31",
+    "color": "blanc",
+    "temperature": 8.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-01-01",
+    "color": "blanc",
+    "temperature": 7.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-01-02",
+    "color": "rouge",
+    "temperature": 5.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-01-03",
+    "color": "rouge",
+    "temperature": 3.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-01-04",
+    "color": "blanc",
+    "temperature": 3.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-01-07",
+    "color": "rouge",
+    "temperature": 5.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-01-08",
+    "color": "blanc",
+    "temperature": 7.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-01-09",
+    "color": "bleu",
+    "temperature": 3.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-01-10",
+    "color": "bleu",
+    "temperature": 1.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-01-11",
+    "color": "blanc",
+    "temperature": 4.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-01-14",
+    "color": "bleu",
+    "temperature": 7.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-01-15",
+    "color": "blanc",
+    "temperature": 5.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-01-16",
+    "color": "rouge",
+    "temperature": 4.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-01-17",
+    "color": "blanc",
+    "temperature": 4.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-01-18",
+    "color": "rouge",
+    "temperature": 0.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-01-21",
+    "color": "bleu",
+    "temperature": -2.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-01-22",
+    "color": "blanc",
+    "temperature": -0.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-01-23",
+    "color": "bleu",
+    "temperature": 0.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-01-24",
+    "color": "blanc",
+    "temperature": 0.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-01-25",
+    "color": "bleu",
+    "temperature": 3.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-01-28",
+    "color": "bleu",
+    "temperature": 3.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-01-29",
+    "color": "blanc",
+    "temperature": 1.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-01-30",
+    "color": "rouge",
+    "temperature": 1.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-01-31",
+    "color": "rouge",
+    "temperature": -0.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-02-01",
+    "color": "blanc",
+    "temperature": 4.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-02-04",
+    "color": "bleu",
+    "temperature": 1.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-02-05",
+    "color": "bleu",
+    "temperature": 2.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-02-06",
+    "color": "bleu",
+    "temperature": 7.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-02-07",
+    "color": "rouge",
+    "temperature": 8.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-02-08",
+    "color": "blanc",
+    "temperature": 8.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-02-11",
+    "color": "bleu",
+    "temperature": 5.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-02-12",
+    "color": "blanc",
+    "temperature": 2.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-02-13",
+    "color": "blanc",
+    "temperature": 1.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-02-14",
+    "color": "bleu",
+    "temperature": 4.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-02-15",
+    "color": "bleu",
+    "temperature": 5.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-02-18",
+    "color": "blanc",
+    "temperature": 7.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-02-19",
+    "color": "blanc",
+    "temperature": 7.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-02-20",
+    "color": "blanc",
+    "temperature": 5.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-02-21",
+    "color": "blanc",
+    "temperature": 7.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-02-22",
+    "color": "bleu",
+    "temperature": 7.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-02-25",
+    "color": "blanc",
+    "temperature": 6.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-02-26",
+    "color": "blanc",
+    "temperature": 7.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-02-27",
+    "color": "blanc",
+    "temperature": 9.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-02-28",
+    "color": "bleu",
+    "temperature": 10.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-03-01",
+    "color": "bleu",
+    "temperature": 9.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-03-04",
+    "color": "blanc",
+    "temperature": 8.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-03-05",
+    "color": "blanc",
+    "temperature": 7.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-03-06",
+    "color": "bleu",
+    "temperature": 10.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-03-07",
+    "color": "blanc",
+    "temperature": 8.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-03-08",
+    "color": "blanc",
+    "temperature": 8.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-03-11",
+    "color": "blanc",
+    "temperature": 6.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-03-12",
+    "color": "blanc",
+    "temperature": 7.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-03-13",
+    "color": "blanc",
+    "temperature": 6.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-03-14",
+    "color": "bleu",
+    "temperature": 8.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-03-15",
+    "color": "bleu",
+    "temperature": 11.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-03-18",
+    "color": "bleu",
+    "temperature": 6.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-03-19",
+    "color": "bleu",
+    "temperature": 6.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-03-20",
+    "color": "bleu",
+    "temperature": 7.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-03-21",
+    "color": "blanc",
+    "temperature": 8.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-03-22",
+    "color": "rouge",
+    "temperature": 9.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-03-25",
+    "color": "bleu",
+    "temperature": 6.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-03-26",
+    "color": "rouge",
+    "temperature": 6.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-03-27",
+    "color": "blanc",
+    "temperature": 7.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-03-28",
+    "color": "bleu",
+    "temperature": 9.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-03-29",
+    "color": "blanc",
+    "temperature": 10.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-11-01",
+    "color": "rouge",
+    "temperature": 12.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-11-04",
+    "color": "rouge",
+    "temperature": 10.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-11-05",
+    "color": "bleu",
+    "temperature": 9.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-11-06",
+    "color": "bleu",
+    "temperature": 9.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-11-07",
+    "color": "blanc",
+    "temperature": 8.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-11-08",
+    "color": "bleu",
+    "temperature": 6.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-11-11",
+    "color": "bleu",
+    "temperature": 5.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-11-12",
+    "color": "bleu",
+    "temperature": 5.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-11-13",
+    "color": "blanc",
+    "temperature": 6.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-11-14",
+    "color": "blanc",
+    "temperature": 5.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-11-15",
+    "color": "rouge",
+    "temperature": 3.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-11-18",
+    "color": "blanc",
+    "temperature": 5.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-11-19",
+    "color": "blanc",
+    "temperature": 5.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-11-20",
+    "color": "blanc",
+    "temperature": 2.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-11-21",
+    "color": "rouge",
+    "temperature": 5.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-11-22",
+    "color": "bleu",
+    "temperature": 8.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-11-25",
+    "color": "blanc",
+    "temperature": 9.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-11-26",
+    "color": "bleu",
+    "temperature": 11.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-11-27",
+    "color": "blanc",
+    "temperature": 10.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-11-28",
+    "color": "bleu",
+    "temperature": 9.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-11-29",
+    "color": "blanc",
+    "temperature": 7.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-12-02",
+    "color": "bleu",
+    "temperature": 2.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-12-03",
+    "color": "bleu",
+    "temperature": 2.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-12-04",
+    "color": "bleu",
+    "temperature": 0.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-12-05",
+    "color": "bleu",
+    "temperature": -0.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-12-06",
+    "color": "bleu",
+    "temperature": 3.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-12-09",
+    "color": "rouge",
+    "temperature": 7.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-12-10",
+    "color": "blanc",
+    "temperature": 3.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-12-11",
+    "color": "bleu",
+    "temperature": 6.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-12-12",
+    "color": "bleu",
+    "temperature": 4.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-12-13",
+    "color": "rouge",
+    "temperature": 7.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-12-16",
+    "color": "bleu",
+    "temperature": 9.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-12-17",
+    "color": "blanc",
+    "temperature": 10.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-12-18",
+    "color": "bleu",
+    "temperature": 8.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-12-19",
+    "color": "blanc",
+    "temperature": 11.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-12-20",
+    "color": "blanc",
+    "temperature": 10.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-12-23",
+    "color": "blanc",
+    "temperature": 8.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-12-24",
+    "color": "blanc",
+    "temperature": 10.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-12-25",
+    "color": "bleu",
+    "temperature": 8.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-12-26",
+    "color": "rouge",
+    "temperature": 6.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-12-27",
+    "color": "blanc",
+    "temperature": 8.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-12-30",
+    "color": "bleu",
+    "temperature": 1.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2019-12-31",
+    "color": "blanc",
+    "temperature": 0.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-11-02",
+    "color": "blanc",
+    "temperature": 16.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-11-03",
+    "color": "rouge",
+    "temperature": 8.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-11-04",
+    "color": "bleu",
+    "temperature": 6.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-11-05",
+    "color": "rouge",
+    "temperature": 6.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-11-06",
+    "color": "bleu",
+    "temperature": 7.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-11-09",
+    "color": "blanc",
+    "temperature": 12.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-11-10",
+    "color": "bleu",
+    "temperature": 11.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-11-11",
+    "color": "bleu",
+    "temperature": 10.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-11-12",
+    "color": "bleu",
+    "temperature": 11.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-11-13",
+    "color": "bleu",
+    "temperature": 11.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-11-16",
+    "color": "rouge",
+    "temperature": 11.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-11-17",
+    "color": "blanc",
+    "temperature": 11.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-11-18",
+    "color": "bleu",
+    "temperature": 10.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-11-19",
+    "color": "blanc",
+    "temperature": 9.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-11-20",
+    "color": "bleu",
+    "temperature": 6.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-11-23",
+    "color": "rouge",
+    "temperature": 8.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-11-24",
+    "color": "rouge",
+    "temperature": 5.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-11-25",
+    "color": "rouge",
+    "temperature": 7.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-11-26",
+    "color": "bleu",
+    "temperature": 5.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-11-27",
+    "color": "blanc",
+    "temperature": 6.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-11-30",
+    "color": "rouge",
+    "temperature": 1.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-12-01",
+    "color": "rouge",
+    "temperature": 7.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-12-02",
+    "color": "bleu",
+    "temperature": 6.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-12-03",
+    "color": "blanc",
+    "temperature": 6.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-12-04",
+    "color": "bleu",
+    "temperature": 5.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-12-07",
+    "color": "blanc",
+    "temperature": 2.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-12-08",
+    "color": "blanc",
+    "temperature": 1.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-12-09",
+    "color": "blanc",
+    "temperature": 1.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-12-10",
+    "color": "blanc",
+    "temperature": 4.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-12-11",
+    "color": "blanc",
+    "temperature": 8.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-12-14",
+    "color": "blanc",
+    "temperature": 9.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-12-15",
+    "color": "blanc",
+    "temperature": 9.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-12-16",
+    "color": "bleu",
+    "temperature": 8.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-12-17",
+    "color": "bleu",
+    "temperature": 9.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-12-18",
+    "color": "rouge",
+    "temperature": 7.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-12-21",
+    "color": "blanc",
+    "temperature": 10.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-12-22",
+    "color": "blanc",
+    "temperature": 13.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-12-23",
+    "color": "blanc",
+    "temperature": 11.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-12-24",
+    "color": "bleu",
+    "temperature": 6.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-12-25",
+    "color": "bleu",
+    "temperature": 3.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-12-28",
+    "color": "blanc",
+    "temperature": 3.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-12-29",
+    "color": "bleu",
+    "temperature": 3.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-12-30",
+    "color": "blanc",
+    "temperature": 3.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2020-12-31",
+    "color": "rouge",
+    "temperature": 3.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-01-01",
+    "color": "blanc",
+    "temperature": 0.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-01-04",
+    "color": "blanc",
+    "temperature": 1.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-01-05",
+    "color": "bleu",
+    "temperature": 1.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-01-06",
+    "color": "bleu",
+    "temperature": 2.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-01-07",
+    "color": "blanc",
+    "temperature": 1.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-01-08",
+    "color": "bleu",
+    "temperature": 0.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-01-11",
+    "color": "rouge",
+    "temperature": 1.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-01-12",
+    "color": "bleu",
+    "temperature": 6.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-01-13",
+    "color": "rouge",
+    "temperature": 7.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-01-14",
+    "color": "rouge",
+    "temperature": 8.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-01-15",
+    "color": "blanc",
+    "temperature": 1.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-01-18",
+    "color": "rouge",
+    "temperature": 4.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-01-19",
+    "color": "blanc",
+    "temperature": 5.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-01-20",
+    "color": "rouge",
+    "temperature": 9.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-01-21",
+    "color": "blanc",
+    "temperature": 8.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-01-22",
+    "color": "bleu",
+    "temperature": 5.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-01-25",
+    "color": "rouge",
+    "temperature": 2.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-01-26",
+    "color": "blanc",
+    "temperature": 1.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-01-27",
+    "color": "blanc",
+    "temperature": 5.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-01-28",
+    "color": "blanc",
+    "temperature": 11.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-01-29",
+    "color": "bleu",
+    "temperature": 9.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-02-01",
+    "color": "blanc",
+    "temperature": 8.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-02-02",
+    "color": "blanc",
+    "temperature": 11.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-02-03",
+    "color": "rouge",
+    "temperature": 10.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-02-04",
+    "color": "bleu",
+    "temperature": 8.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-02-05",
+    "color": "rouge",
+    "temperature": 8.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-02-08",
+    "color": "blanc",
+    "temperature": -0.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-02-09",
+    "color": "bleu",
+    "temperature": -2.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-02-10",
+    "color": "blanc",
+    "temperature": -3.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-02-11",
+    "color": "bleu",
+    "temperature": -3.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-02-12",
+    "color": "bleu",
+    "temperature": -2.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-02-15",
+    "color": "bleu",
+    "temperature": 4.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-02-16",
+    "color": "blanc",
+    "temperature": 7.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-02-17",
+    "color": "blanc",
+    "temperature": 9.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-02-18",
+    "color": "bleu",
+    "temperature": 8.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-02-19",
+    "color": "bleu",
+    "temperature": 8.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-02-22",
+    "color": "blanc",
+    "temperature": 11.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-02-23",
+    "color": "bleu",
+    "temperature": 13.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-02-24",
+    "color": "bleu",
+    "temperature": 12.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-02-25",
+    "color": "rouge",
+    "temperature": 11.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-02-26",
+    "color": "bleu",
+    "temperature": 8.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-03-01",
+    "color": "rouge",
+    "temperature": 5.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-03-02",
+    "color": "bleu",
+    "temperature": 7.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-03-03",
+    "color": "rouge",
+    "temperature": 10.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-03-04",
+    "color": "rouge",
+    "temperature": 8.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-03-05",
+    "color": "bleu",
+    "temperature": 4.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-03-08",
+    "color": "blanc",
+    "temperature": 2.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-03-09",
+    "color": "bleu",
+    "temperature": 4.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-03-10",
+    "color": "blanc",
+    "temperature": 5.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-03-11",
+    "color": "bleu",
+    "temperature": 10.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-03-12",
+    "color": "bleu",
+    "temperature": 7.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-03-15",
+    "color": "blanc",
+    "temperature": 8.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-03-16",
+    "color": "bleu",
+    "temperature": 7.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-03-17",
+    "color": "bleu",
+    "temperature": 6.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-03-18",
+    "color": "bleu",
+    "temperature": 5.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-03-19",
+    "color": "blanc",
+    "temperature": 5.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-03-22",
+    "color": "blanc",
+    "temperature": 5.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-03-23",
+    "color": "bleu",
+    "temperature": 6.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-03-24",
+    "color": "bleu",
+    "temperature": 8.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-03-25",
+    "color": "blanc",
+    "temperature": 8.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-03-26",
+    "color": "blanc",
+    "temperature": 8.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-03-29",
+    "color": "blanc",
+    "temperature": 11.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-03-30",
+    "color": "bleu",
+    "temperature": 13.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-03-31",
+    "color": "blanc",
+    "temperature": 15.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-11-01",
+    "color": "bleu",
+    "temperature": 9.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-11-02",
+    "color": "blanc",
+    "temperature": 8.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-11-03",
+    "color": "blanc",
+    "temperature": 7.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-11-04",
+    "color": "bleu",
+    "temperature": 7.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-11-05",
+    "color": "blanc",
+    "temperature": 7.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-11-08",
+    "color": "blanc",
+    "temperature": 7.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-11-09",
+    "color": "bleu",
+    "temperature": 4.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-11-10",
+    "color": "blanc",
+    "temperature": 4.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-11-11",
+    "color": "bleu",
+    "temperature": 4.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-11-12",
+    "color": "blanc",
+    "temperature": 6.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-11-15",
+    "color": "bleu",
+    "temperature": 6.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-11-16",
+    "color": "rouge",
+    "temperature": 7.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-11-17",
+    "color": "blanc",
+    "temperature": 8.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-11-18",
+    "color": "bleu",
+    "temperature": 5.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-11-19",
+    "color": "blanc",
+    "temperature": 8.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-11-22",
+    "color": "rouge",
+    "temperature": 4.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-11-23",
+    "color": "bleu",
+    "temperature": 3.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-11-24",
+    "color": "bleu",
+    "temperature": 3.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-11-25",
+    "color": "blanc",
+    "temperature": 3.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-11-26",
+    "color": "bleu",
+    "temperature": 4.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-11-29",
+    "color": "blanc",
+    "temperature": 1.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-11-30",
+    "color": "blanc",
+    "temperature": 5.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-12-01",
+    "color": "bleu",
+    "temperature": 8.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-12-02",
+    "color": "blanc",
+    "temperature": 3.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-12-03",
+    "color": "blanc",
+    "temperature": 3.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-12-06",
+    "color": "bleu",
+    "temperature": 4.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-12-07",
+    "color": "rouge",
+    "temperature": 5.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-12-08",
+    "color": "blanc",
+    "temperature": 4.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-12-09",
+    "color": "bleu",
+    "temperature": 3.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-12-10",
+    "color": "blanc",
+    "temperature": 5.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-12-13",
+    "color": "blanc",
+    "temperature": 7.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-12-14",
+    "color": "bleu",
+    "temperature": 5.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-12-15",
+    "color": "bleu",
+    "temperature": 6.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-12-16",
+    "color": "blanc",
+    "temperature": 7.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-12-17",
+    "color": "bleu",
+    "temperature": 6.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-12-20",
+    "color": "bleu",
+    "temperature": 4.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-12-21",
+    "color": "bleu",
+    "temperature": -0.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-12-22",
+    "color": "blanc",
+    "temperature": -2.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-12-23",
+    "color": "rouge",
+    "temperature": 3.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-12-24",
+    "color": "blanc",
+    "temperature": 7.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-12-27",
+    "color": "rouge",
+    "temperature": 9.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-12-28",
+    "color": "rouge",
+    "temperature": 11.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-12-29",
+    "color": "blanc",
+    "temperature": 12.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-12-30",
+    "color": "blanc",
+    "temperature": 12.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2021-12-31",
+    "color": "bleu",
+    "temperature": 10.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-01-03",
+    "color": "bleu",
+    "temperature": 11.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-01-04",
+    "color": "bleu",
+    "temperature": 8.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-01-05",
+    "color": "rouge",
+    "temperature": 3.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-01-06",
+    "color": "rouge",
+    "temperature": 2.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-01-07",
+    "color": "blanc",
+    "temperature": 5.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-01-10",
+    "color": "bleu",
+    "temperature": 2.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-01-11",
+    "color": "rouge",
+    "temperature": -0.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-01-12",
+    "color": "blanc",
+    "temperature": 0.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-01-13",
+    "color": "blanc",
+    "temperature": 2.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-01-14",
+    "color": "blanc",
+    "temperature": 0.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-01-17",
+    "color": "rouge",
+    "temperature": 5.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-01-18",
+    "color": "rouge",
+    "temperature": 3.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-01-19",
+    "color": "bleu",
+    "temperature": 4.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-01-20",
+    "color": "bleu",
+    "temperature": 3.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-01-21",
+    "color": "bleu",
+    "temperature": 2.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-01-24",
+    "color": "rouge",
+    "temperature": 1.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-01-25",
+    "color": "blanc",
+    "temperature": -0.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-01-26",
+    "color": "blanc",
+    "temperature": 1.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-01-27",
+    "color": "blanc",
+    "temperature": 3.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-01-28",
+    "color": "bleu",
+    "temperature": 5.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-01-31",
+    "color": "blanc",
+    "temperature": 6.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-03-01",
+    "color": "blanc",
+    "temperature": 5.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-03-02",
+    "color": "bleu",
+    "temperature": 6.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-03-03",
+    "color": "bleu",
+    "temperature": 7.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-03-04",
+    "color": "blanc",
+    "temperature": 7.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-03-07",
+    "color": "blanc",
+    "temperature": 2.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-03-08",
+    "color": "rouge",
+    "temperature": 4.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-03-09",
+    "color": "rouge",
+    "temperature": 8.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-03-10",
+    "color": "rouge",
+    "temperature": 9.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-03-11",
+    "color": "bleu",
+    "temperature": 9.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-03-14",
+    "color": "bleu",
+    "temperature": 8.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-03-15",
+    "color": "bleu",
+    "temperature": 9.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-03-16",
+    "color": "rouge",
+    "temperature": 11.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-03-17",
+    "color": "blanc",
+    "temperature": 8.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-03-18",
+    "color": "bleu",
+    "temperature": 8.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-03-21",
+    "color": "bleu",
+    "temperature": 10.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-03-22",
+    "color": "bleu",
+    "temperature": 10.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-03-23",
+    "color": "bleu",
+    "temperature": 9.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-03-24",
+    "color": "rouge",
+    "temperature": 10.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-03-25",
+    "color": "blanc",
+    "temperature": 11.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-03-28",
+    "color": "rouge",
+    "temperature": 12.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-03-29",
+    "color": "bleu",
+    "temperature": 11.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-03-30",
+    "color": "blanc",
+    "temperature": 10.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-03-31",
+    "color": "blanc",
+    "temperature": 5.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-11-01",
+    "color": "rouge",
+    "temperature": 14.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-11-02",
+    "color": "blanc",
+    "temperature": 12.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-11-03",
+    "color": "blanc",
+    "temperature": 11.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-11-04",
+    "color": "rouge",
+    "temperature": 9.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-11-07",
+    "color": "blanc",
+    "temperature": 13.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-11-08",
+    "color": "blanc",
+    "temperature": 13.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-11-09",
+    "color": "rouge",
+    "temperature": 12.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-11-10",
+    "color": "blanc",
+    "temperature": 9.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-11-11",
+    "color": "bleu",
+    "temperature": 8.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-11-14",
+    "color": "bleu",
+    "temperature": 9.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-11-15",
+    "color": "blanc",
+    "temperature": 10.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-11-16",
+    "color": "bleu",
+    "temperature": 10.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-11-17",
+    "color": "bleu",
+    "temperature": 11.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-11-18",
+    "color": "bleu",
+    "temperature": 8.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-11-21",
+    "color": "rouge",
+    "temperature": 7.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-11-22",
+    "color": "blanc",
+    "temperature": 7.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-11-23",
+    "color": "blanc",
+    "temperature": 8.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-11-24",
+    "color": "rouge",
+    "temperature": 9.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-11-25",
+    "color": "bleu",
+    "temperature": 9.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-11-28",
+    "color": "bleu",
+    "temperature": 8.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-11-29",
+    "color": "bleu",
+    "temperature": 6.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-11-30",
+    "color": "blanc",
+    "temperature": 6.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-12-01",
+    "color": "blanc",
+    "temperature": 5.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-12-02",
+    "color": "bleu",
+    "temperature": 4.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-12-05",
+    "color": "blanc",
+    "temperature": 2.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-12-06",
+    "color": "bleu",
+    "temperature": 2.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-12-07",
+    "color": "rouge",
+    "temperature": 1.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-12-08",
+    "color": "rouge",
+    "temperature": 2.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-12-09",
+    "color": "bleu",
+    "temperature": 1.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-12-12",
+    "color": "rouge",
+    "temperature": -2.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-12-13",
+    "color": "rouge",
+    "temperature": -1.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-12-14",
+    "color": "bleu",
+    "temperature": -0.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-12-15",
+    "color": "blanc",
+    "temperature": -1.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-12-16",
+    "color": "bleu",
+    "temperature": -1.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-12-19",
+    "color": "bleu",
+    "temperature": 7.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-12-20",
+    "color": "rouge",
+    "temperature": 11.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-12-21",
+    "color": "blanc",
+    "temperature": 10.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-12-22",
+    "color": "rouge",
+    "temperature": 12.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-12-23",
+    "color": "bleu",
+    "temperature": 12.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-12-26",
+    "color": "blanc",
+    "temperature": 9.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-12-27",
+    "color": "bleu",
+    "temperature": 5.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-12-28",
+    "color": "blanc",
+    "temperature": 10.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-12-29",
+    "color": "blanc",
+    "temperature": 9.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2022-12-30",
+    "color": "blanc",
+    "temperature": 10.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-01-02",
+    "color": "bleu",
+    "temperature": 10.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-01-03",
+    "color": "blanc",
+    "temperature": 7.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-01-04",
+    "color": "bleu",
+    "temperature": 11.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-01-05",
+    "color": "blanc",
+    "temperature": 12.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-01-06",
+    "color": "blanc",
+    "temperature": 11.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-01-09",
+    "color": "blanc",
+    "temperature": 6.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-01-10",
+    "color": "bleu",
+    "temperature": 7.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-01-11",
+    "color": "blanc",
+    "temperature": 10.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-01-12",
+    "color": "blanc",
+    "temperature": 10.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-01-13",
+    "color": "bleu",
+    "temperature": 9.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-01-16",
+    "color": "bleu",
+    "temperature": 4.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-01-17",
+    "color": "bleu",
+    "temperature": 1.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-01-18",
+    "color": "bleu",
+    "temperature": 1.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-01-19",
+    "color": "bleu",
+    "temperature": 0.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-01-20",
+    "color": "rouge",
+    "temperature": 1.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-01-23",
+    "color": "blanc",
+    "temperature": 1.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-01-24",
+    "color": "rouge",
+    "temperature": 1.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-01-25",
+    "color": "bleu",
+    "temperature": 1.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-01-26",
+    "color": "blanc",
+    "temperature": 2.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-01-27",
+    "color": "bleu",
+    "temperature": 3.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-01-30",
+    "color": "bleu",
+    "temperature": 5.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-01-31",
+    "color": "bleu",
+    "temperature": 4.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-02-01",
+    "color": "bleu",
+    "temperature": 7.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-02-02",
+    "color": "blanc",
+    "temperature": 7.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-02-03",
+    "color": "bleu",
+    "temperature": 8.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-02-06",
+    "color": "blanc",
+    "temperature": 2.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-02-07",
+    "color": "blanc",
+    "temperature": 1.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-02-08",
+    "color": "blanc",
+    "temperature": -0.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-02-09",
+    "color": "bleu",
+    "temperature": 0.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-02-10",
+    "color": "blanc",
+    "temperature": 4.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-02-13",
+    "color": "blanc",
+    "temperature": 4.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-02-14",
+    "color": "blanc",
+    "temperature": 3.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-02-15",
+    "color": "blanc",
+    "temperature": 4.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-02-16",
+    "color": "bleu",
+    "temperature": 7.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-02-17",
+    "color": "rouge",
+    "temperature": 11.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-02-20",
+    "color": "bleu",
+    "temperature": 5.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-02-21",
+    "color": "blanc",
+    "temperature": 6.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-02-22",
+    "color": "blanc",
+    "temperature": 8.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-02-23",
+    "color": "bleu",
+    "temperature": 7.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-02-24",
+    "color": "bleu",
+    "temperature": 6.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-02-27",
+    "color": "rouge",
+    "temperature": 1.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-02-28",
+    "color": "blanc",
+    "temperature": 1.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-03-01",
+    "color": "rouge",
+    "temperature": 1.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-03-02",
+    "color": "rouge",
+    "temperature": 2.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-03-03",
+    "color": "rouge",
+    "temperature": 3.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-03-06",
+    "color": "bleu",
+    "temperature": 4.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-03-07",
+    "color": "blanc",
+    "temperature": 5.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-03-08",
+    "color": "bleu",
+    "temperature": 9.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-03-09",
+    "color": "rouge",
+    "temperature": 11.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-03-10",
+    "color": "blanc",
+    "temperature": 7.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-03-13",
+    "color": "blanc",
+    "temperature": 12.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-03-14",
+    "color": "blanc",
+    "temperature": 8.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-03-15",
+    "color": "bleu",
+    "temperature": 6.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-03-16",
+    "color": "rouge",
+    "temperature": 9.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-03-17",
+    "color": "bleu",
+    "temperature": 11.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-03-20",
+    "color": "bleu",
+    "temperature": 8.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-03-21",
+    "color": "blanc",
+    "temperature": 10.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-03-22",
+    "color": "rouge",
+    "temperature": 10.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-03-23",
+    "color": "rouge",
+    "temperature": 13.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-03-24",
+    "color": "bleu",
+    "temperature": 12.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-03-27",
+    "color": "bleu",
+    "temperature": 6.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-03-28",
+    "color": "bleu",
+    "temperature": 7.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-03-29",
+    "color": "blanc",
+    "temperature": 13.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-03-30",
+    "color": "bleu",
+    "temperature": 13.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-03-31",
+    "color": "blanc",
+    "temperature": 11.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-11-01",
+    "color": "bleu",
+    "temperature": 12.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-11-02",
+    "color": "blanc",
+    "temperature": 11.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-11-03",
+    "color": "bleu",
+    "temperature": 8.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-11-06",
+    "color": "bleu",
+    "temperature": 9.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-11-07",
+    "color": "rouge",
+    "temperature": 9.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-11-08",
+    "color": "bleu",
+    "temperature": 9.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-11-09",
+    "color": "rouge",
+    "temperature": 10.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-11-10",
+    "color": "blanc",
+    "temperature": 8.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-11-13",
+    "color": "bleu",
+    "temperature": 14.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-11-14",
+    "color": "rouge",
+    "temperature": 11.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-11-15",
+    "color": "blanc",
+    "temperature": 10.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-11-16",
+    "color": "rouge",
+    "temperature": 8.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-11-17",
+    "color": "blanc",
+    "temperature": 8.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-11-20",
+    "color": "bleu",
+    "temperature": 10.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-11-21",
+    "color": "bleu",
+    "temperature": 9.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-11-22",
+    "color": "bleu",
+    "temperature": 6.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-11-23",
+    "color": "blanc",
+    "temperature": 10.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-11-24",
+    "color": "rouge",
+    "temperature": 8.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-11-27",
+    "color": "bleu",
+    "temperature": 6.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-11-28",
+    "color": "rouge",
+    "temperature": 4.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-11-29",
+    "color": "rouge",
+    "temperature": 4.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-11-30",
+    "color": "rouge",
+    "temperature": 2.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-12-01",
+    "color": "bleu",
+    "temperature": 1.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-12-04",
+    "color": "blanc",
+    "temperature": 5.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-12-05",
+    "color": "blanc",
+    "temperature": 6.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-12-06",
+    "color": "bleu",
+    "temperature": 4.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-12-07",
+    "color": "bleu",
+    "temperature": 4.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-12-08",
+    "color": "bleu",
+    "temperature": 7.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-12-11",
+    "color": "blanc",
+    "temperature": 10.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-12-12",
+    "color": "bleu",
+    "temperature": 10.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-12-13",
+    "color": "blanc",
+    "temperature": 7.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-12-14",
+    "color": "bleu",
+    "temperature": 7.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-12-15",
+    "color": "bleu",
+    "temperature": 7.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-12-18",
+    "color": "blanc",
+    "temperature": 2.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-12-19",
+    "color": "rouge",
+    "temperature": 6.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-12-20",
+    "color": "blanc",
+    "temperature": 7.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-12-21",
+    "color": "blanc",
+    "temperature": 10.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-12-22",
+    "color": "rouge",
+    "temperature": 9.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-12-25",
+    "color": "blanc",
+    "temperature": 11.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-12-26",
+    "color": "rouge",
+    "temperature": 10.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-12-27",
+    "color": "bleu",
+    "temperature": 9.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-12-28",
+    "color": "rouge",
+    "temperature": 10.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2023-12-29",
+    "color": "rouge",
+    "temperature": 9.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-01-01",
+    "color": "bleu",
+    "temperature": 7.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-01-02",
+    "color": "blanc",
+    "temperature": 10.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-01-03",
+    "color": "bleu",
+    "temperature": 9.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-01-04",
+    "color": "bleu",
+    "temperature": 8.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-01-05",
+    "color": "bleu",
+    "temperature": 6.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-01-08",
+    "color": "blanc",
+    "temperature": -2.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-01-09",
+    "color": "blanc",
+    "temperature": -2.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-01-10",
+    "color": "bleu",
+    "temperature": -2.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-01-11",
+    "color": "rouge",
+    "temperature": -1.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-01-12",
+    "color": "blanc",
+    "temperature": 1.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-01-15",
+    "color": "bleu",
+    "temperature": 1.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-01-16",
+    "color": "blanc",
+    "temperature": -1.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-01-17",
+    "color": "rouge",
+    "temperature": 1.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-01-18",
+    "color": "blanc",
+    "temperature": -0.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-01-19",
+    "color": "blanc",
+    "temperature": -1.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-01-22",
+    "color": "bleu",
+    "temperature": 10.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-01-23",
+    "color": "bleu",
+    "temperature": 9.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-01-24",
+    "color": "blanc",
+    "temperature": 12.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-01-25",
+    "color": "bleu",
+    "temperature": 10.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-01-26",
+    "color": "blanc",
+    "temperature": 8.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-01-29",
+    "color": "bleu",
+    "temperature": 8.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-01-30",
+    "color": "blanc",
+    "temperature": 9.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-01-31",
+    "color": "bleu",
+    "temperature": 6.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-02-01",
+    "color": "blanc",
+    "temperature": 9.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-02-02",
+    "color": "rouge",
+    "temperature": 6.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-02-05",
+    "color": "blanc",
+    "temperature": 7.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-02-06",
+    "color": "rouge",
+    "temperature": 9.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-02-07",
+    "color": "bleu",
+    "temperature": 11.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-02-08",
+    "color": "bleu",
+    "temperature": 11.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-02-09",
+    "color": "blanc",
+    "temperature": 11.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-02-12",
+    "color": "blanc",
+    "temperature": 6.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-02-13",
+    "color": "blanc",
+    "temperature": 6.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-02-14",
+    "color": "blanc",
+    "temperature": 11.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-02-15",
+    "color": "blanc",
+    "temperature": 12.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-02-16",
+    "color": "blanc",
+    "temperature": 11.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-02-19",
+    "color": "bleu",
+    "temperature": 10.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-02-20",
+    "color": "blanc",
+    "temperature": 8.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-02-21",
+    "color": "bleu",
+    "temperature": 8.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-02-22",
+    "color": "bleu",
+    "temperature": 10.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-02-23",
+    "color": "blanc",
+    "temperature": 5.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-02-26",
+    "color": "rouge",
+    "temperature": 6.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-02-27",
+    "color": "blanc",
+    "temperature": 6.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-02-28",
+    "color": "blanc",
+    "temperature": 6.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-02-29",
+    "color": "blanc",
+    "temperature": 9.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-03-01",
+    "color": "bleu",
+    "temperature": 7.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-03-04",
+    "color": "blanc",
+    "temperature": 5.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-03-05",
+    "color": "blanc",
+    "temperature": 6.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-03-06",
+    "color": "bleu",
+    "temperature": 6.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-03-07",
+    "color": "bleu",
+    "temperature": 6.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-03-08",
+    "color": "bleu",
+    "temperature": 8.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-03-11",
+    "color": "blanc",
+    "temperature": 7.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-03-12",
+    "color": "blanc",
+    "temperature": 8.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-03-13",
+    "color": "rouge",
+    "temperature": 11.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-03-14",
+    "color": "rouge",
+    "temperature": 11.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-03-15",
+    "color": "bleu",
+    "temperature": 12.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-03-18",
+    "color": "bleu",
+    "temperature": 12.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-03-19",
+    "color": "bleu",
+    "temperature": 11.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-03-20",
+    "color": "bleu",
+    "temperature": 12.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-03-21",
+    "color": "blanc",
+    "temperature": 12.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-03-22",
+    "color": "rouge",
+    "temperature": 11.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-03-25",
+    "color": "bleu",
+    "temperature": 7.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-03-26",
+    "color": "bleu",
+    "temperature": 9.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-03-27",
+    "color": "blanc",
+    "temperature": 8.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-03-28",
+    "color": "blanc",
+    "temperature": 8.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-03-29",
+    "color": "rouge",
+    "temperature": 10.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-11-01",
+    "color": "bleu",
+    "temperature": 10.6,
+    "coldDays": 0,
+    "rteConsommation": 44607,
+    "rteTension": 50
+  },
+  {
+    "date": "2024-11-04",
+    "color": "blanc",
+    "temperature": 9.3,
+    "coldDays": 0,
+    "rteConsommation": 51390,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-11-05",
+    "color": "bleu",
+    "temperature": 9.5,
+    "coldDays": 0,
+    "rteConsommation": 51772,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-11-06",
+    "color": "rouge",
+    "temperature": 10.4,
+    "coldDays": 0,
+    "rteConsommation": 51756,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-11-07",
+    "color": "blanc",
+    "temperature": 10.9,
+    "coldDays": 0,
+    "rteConsommation": 52119,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-11-08",
+    "color": "bleu",
+    "temperature": 9.5,
+    "coldDays": 0,
+    "rteConsommation": 52302,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-11-11",
+    "color": "bleu",
+    "temperature": 8.7,
+    "coldDays": 0,
+    "rteConsommation": 47177,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-11-12",
+    "color": "blanc",
+    "temperature": 8.6,
+    "coldDays": 0,
+    "rteConsommation": 55480,
+    "rteTension": 70
+  },
+  {
+    "date": "2024-11-13",
+    "color": "blanc",
+    "temperature": 7.4,
+    "coldDays": 0,
+    "rteConsommation": 57814,
+    "rteTension": 70
+  },
+  {
+    "date": "2024-11-14",
+    "color": "rouge",
+    "temperature": 8.1,
+    "coldDays": 0,
+    "rteConsommation": 58643,
+    "rteTension": 70
+  },
+  {
+    "date": "2024-11-15",
+    "color": "bleu",
+    "temperature": 8.6,
+    "coldDays": 0,
+    "rteConsommation": 58264,
+    "rteTension": 70
+  },
+  {
+    "date": "2024-11-18",
+    "color": "blanc",
+    "temperature": 8.7,
+    "coldDays": 0,
+    "rteConsommation": 57726,
+    "rteTension": 70
+  },
+  {
+    "date": "2024-11-19",
+    "color": "rouge",
+    "temperature": 10.2,
+    "coldDays": 0,
+    "rteConsommation": 57932,
+    "rteTension": 70
+  },
+  {
+    "date": "2024-11-20",
+    "color": "blanc",
+    "temperature": 3.9,
+    "coldDays": 0,
+    "rteConsommation": 60829,
+    "rteTension": 70
+  },
+  {
+    "date": "2024-11-21",
+    "color": "blanc",
+    "temperature": 0.6,
+    "coldDays": 0,
+    "rteConsommation": 66009,
+    "rteTension": 80
+  },
+  {
+    "date": "2024-11-22",
+    "color": "bleu",
+    "temperature": 1.0,
+    "coldDays": 0,
+    "rteConsommation": 66922,
+    "rteTension": 80
+  },
+  {
+    "date": "2024-11-25",
+    "color": "bleu",
+    "temperature": 12.8,
+    "coldDays": 0,
+    "rteConsommation": 54355,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-11-26",
+    "color": "blanc",
+    "temperature": 8.6,
+    "coldDays": 0,
+    "rteConsommation": 56656,
+    "rteTension": 70
+  },
+  {
+    "date": "2024-11-27",
+    "color": "rouge",
+    "temperature": 10.3,
+    "coldDays": 0,
+    "rteConsommation": 57305,
+    "rteTension": 70
+  },
+  {
+    "date": "2024-11-28",
+    "color": "rouge",
+    "temperature": 6.4,
+    "coldDays": 0,
+    "rteConsommation": 58251,
+    "rteTension": 70
+  },
+  {
+    "date": "2024-11-29",
+    "color": "bleu",
+    "temperature": 3.6,
+    "coldDays": 0,
+    "rteConsommation": 60245,
+    "rteTension": 70
+  },
+  {
+    "date": "2024-12-02",
+    "color": "bleu",
+    "temperature": 10.1,
+    "coldDays": 0,
+    "rteConsommation": 57855,
+    "rteTension": 70
+  },
+  {
+    "date": "2024-12-03",
+    "color": "rouge",
+    "temperature": 5.6,
+    "coldDays": 0,
+    "rteConsommation": 60747,
+    "rteTension": 70
+  },
+  {
+    "date": "2024-12-04",
+    "color": "bleu",
+    "temperature": 4.6,
+    "coldDays": 0,
+    "rteConsommation": 64115,
+    "rteTension": 70
+  },
+  {
+    "date": "2024-12-05",
+    "color": "bleu",
+    "temperature": 7.8,
+    "coldDays": 0,
+    "rteConsommation": 64661,
+    "rteTension": 70
+  },
+  {
+    "date": "2024-12-06",
+    "color": "rouge",
+    "temperature": 9.0,
+    "coldDays": 0,
+    "rteConsommation": 59746,
+    "rteTension": 70
+  },
+  {
+    "date": "2024-12-09",
+    "color": "blanc",
+    "temperature": 5.5,
+    "coldDays": 0,
+    "rteConsommation": 64860,
+    "rteTension": 70
+  },
+  {
+    "date": "2024-12-10",
+    "color": "rouge",
+    "temperature": 5.3,
+    "coldDays": 0,
+    "rteConsommation": 66998,
+    "rteTension": 80
+  },
+  {
+    "date": "2024-12-11",
+    "color": "bleu",
+    "temperature": 4.9,
+    "coldDays": 0,
+    "rteConsommation": 67922,
+    "rteTension": 80
+  },
+  {
+    "date": "2024-12-12",
+    "color": "bleu",
+    "temperature": 3.8,
+    "coldDays": 0,
+    "rteConsommation": 69267,
+    "rteTension": 80
+  },
+  {
+    "date": "2024-12-13",
+    "color": "bleu",
+    "temperature": 1.8,
+    "coldDays": 0,
+    "rteConsommation": 70050,
+    "rteTension": 80
+  },
+  {
+    "date": "2024-12-16",
+    "color": "blanc",
+    "temperature": 9.2,
+    "coldDays": 0,
+    "rteConsommation": 64653,
+    "rteTension": 70
+  },
+  {
+    "date": "2024-12-17",
+    "color": "bleu",
+    "temperature": 7.0,
+    "coldDays": 0,
+    "rteConsommation": 64841,
+    "rteTension": 70
+  },
+  {
+    "date": "2024-12-18",
+    "color": "bleu",
+    "temperature": 10.5,
+    "coldDays": 0,
+    "rteConsommation": 61916,
+    "rteTension": 70
+  },
+  {
+    "date": "2024-12-19",
+    "color": "rouge",
+    "temperature": 8.6,
+    "coldDays": 0,
+    "rteConsommation": 61096,
+    "rteTension": 70
+  },
+  {
+    "date": "2024-12-20",
+    "color": "bleu",
+    "temperature": 5.1,
+    "coldDays": 0,
+    "rteConsommation": 64203,
+    "rteTension": 70
+  },
+  {
+    "date": "2024-12-23",
+    "color": "bleu",
+    "temperature": 5.9,
+    "coldDays": 0,
+    "rteConsommation": 61761,
+    "rteTension": 70
+  },
+  {
+    "date": "2024-12-24",
+    "color": "blanc",
+    "temperature": 7.0,
+    "coldDays": 0,
+    "rteConsommation": 58196,
+    "rteTension": 70
+  },
+  {
+    "date": "2024-12-25",
+    "color": "blanc",
+    "temperature": 9.4,
+    "coldDays": 0,
+    "rteConsommation": 51703,
+    "rteTension": 60
+  },
+  {
+    "date": "2024-12-26",
+    "color": "bleu",
+    "temperature": 6.7,
+    "coldDays": 0,
+    "rteConsommation": 57561,
+    "rteTension": 70
+  },
+  {
+    "date": "2024-12-27",
+    "color": "blanc",
+    "temperature": 1.8,
+    "coldDays": 0,
+    "rteConsommation": 62521,
+    "rteTension": 70
+  },
+  {
+    "date": "2024-12-30",
+    "color": "bleu",
+    "temperature": 3.1,
+    "coldDays": 0,
+    "rteConsommation": 65441,
+    "rteTension": 80
+  },
+  {
+    "date": "2024-12-31",
+    "color": "blanc",
+    "temperature": 3.7,
+    "coldDays": 0,
+    "rteConsommation": 65976,
+    "rteTension": 80
+  },
+  {
+    "date": "2025-01-01",
+    "color": "bleu",
+    "temperature": 6.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-01-02",
+    "color": "bleu",
+    "temperature": 4.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-01-03",
+    "color": "blanc",
+    "temperature": 0.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-01-06",
+    "color": "blanc",
+    "temperature": 9.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-01-07",
+    "color": "bleu",
+    "temperature": 5.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-01-08",
+    "color": "bleu",
+    "temperature": 6.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-01-09",
+    "color": "blanc",
+    "temperature": 6.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-01-10",
+    "color": "bleu",
+    "temperature": 3.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-01-13",
+    "color": "blanc",
+    "temperature": 0.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-01-14",
+    "color": "bleu",
+    "temperature": -1.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-01-15",
+    "color": "bleu",
+    "temperature": 2.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-01-16",
+    "color": "bleu",
+    "temperature": 3.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-01-17",
+    "color": "bleu",
+    "temperature": 0.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-01-20",
+    "color": "blanc",
+    "temperature": -0.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-01-21",
+    "color": "blanc",
+    "temperature": 0.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-01-22",
+    "color": "rouge",
+    "temperature": 5.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-01-23",
+    "color": "rouge",
+    "temperature": 6.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-01-24",
+    "color": "bleu",
+    "temperature": 9.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-01-27",
+    "color": "blanc",
+    "temperature": 9.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-01-28",
+    "color": "bleu",
+    "temperature": 7.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-01-29",
+    "color": "blanc",
+    "temperature": 7.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-01-30",
+    "color": "bleu",
+    "temperature": 5.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-01-31",
+    "color": "blanc",
+    "temperature": 2.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-02-03",
+    "color": "blanc",
+    "temperature": 1.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-02-04",
+    "color": "rouge",
+    "temperature": 1.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-02-05",
+    "color": "bleu",
+    "temperature": 4.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-02-06",
+    "color": "blanc",
+    "temperature": 3.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-02-07",
+    "color": "blanc",
+    "temperature": 4.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-02-10",
+    "color": "bleu",
+    "temperature": 4.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-02-11",
+    "color": "blanc",
+    "temperature": 4.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-02-12",
+    "color": "rouge",
+    "temperature": 3.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-02-13",
+    "color": "blanc",
+    "temperature": 4.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-02-14",
+    "color": "rouge",
+    "temperature": 1.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-02-17",
+    "color": "blanc",
+    "temperature": 1.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-02-18",
+    "color": "bleu",
+    "temperature": 2.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-02-19",
+    "color": "blanc",
+    "temperature": 5.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-02-20",
+    "color": "bleu",
+    "temperature": 9.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-02-21",
+    "color": "bleu",
+    "temperature": 12.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-02-24",
+    "color": "blanc",
+    "temperature": 10.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-02-25",
+    "color": "bleu",
+    "temperature": 8.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-02-26",
+    "color": "bleu",
+    "temperature": 7.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-02-27",
+    "color": "rouge",
+    "temperature": 5.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-02-28",
+    "color": "blanc",
+    "temperature": 5.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-03-03",
+    "color": "bleu",
+    "temperature": 4.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-03-04",
+    "color": "blanc",
+    "temperature": 5.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-03-05",
+    "color": "rouge",
+    "temperature": 7.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-03-06",
+    "color": "bleu",
+    "temperature": 9.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-03-07",
+    "color": "rouge",
+    "temperature": 10.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-03-10",
+    "color": "blanc",
+    "temperature": 10.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-03-11",
+    "color": "bleu",
+    "temperature": 7.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-03-12",
+    "color": "blanc",
+    "temperature": 4.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-03-13",
+    "color": "blanc",
+    "temperature": 4.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-03-14",
+    "color": "rouge",
+    "temperature": 3.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-03-17",
+    "color": "rouge",
+    "temperature": 5.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-03-18",
+    "color": "rouge",
+    "temperature": 6.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-03-19",
+    "color": "blanc",
+    "temperature": 10.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-03-20",
+    "color": "blanc",
+    "temperature": 11.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-03-21",
+    "color": "blanc",
+    "temperature": 13.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-03-24",
+    "color": "blanc",
+    "temperature": 10.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-03-25",
+    "color": "blanc",
+    "temperature": 10.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-03-26",
+    "color": "rouge",
+    "temperature": 10.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-03-27",
+    "color": "rouge",
+    "temperature": 8.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-03-28",
+    "color": "blanc",
+    "temperature": 7.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-03-31",
+    "color": "blanc",
+    "temperature": 9.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-11-03",
+    "color": "bleu",
+    "temperature": 11.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-11-04",
+    "color": "blanc",
+    "temperature": 12.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-11-05",
+    "color": "bleu",
+    "temperature": 13.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-11-06",
+    "color": "blanc",
+    "temperature": 12.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-11-07",
+    "color": "rouge",
+    "temperature": 11.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-11-10",
+    "color": "bleu",
+    "temperature": 9.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-11-11",
+    "color": "blanc",
+    "temperature": 11.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-11-12",
+    "color": "bleu",
+    "temperature": 11.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-11-13",
+    "color": "bleu",
+    "temperature": 14.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-11-14",
+    "color": "bleu",
+    "temperature": 15.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-11-17",
+    "color": "blanc",
+    "temperature": 6.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-11-18",
+    "color": "bleu",
+    "temperature": 3.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-11-19",
+    "color": "blanc",
+    "temperature": 5.5,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-11-20",
+    "color": "bleu",
+    "temperature": 2.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-11-21",
+    "color": "bleu",
+    "temperature": 1.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-11-24",
+    "color": "rouge",
+    "temperature": 7.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-11-25",
+    "color": "bleu",
+    "temperature": 5.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-11-26",
+    "color": "blanc",
+    "temperature": 4.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-11-27",
+    "color": "blanc",
+    "temperature": 5.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-11-28",
+    "color": "blanc",
+    "temperature": 8.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-12-01",
+    "color": "blanc",
+    "temperature": 4.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-12-02",
+    "color": "bleu",
+    "temperature": 8.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-12-03",
+    "color": "bleu",
+    "temperature": 7.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-12-04",
+    "color": "bleu",
+    "temperature": 6.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-12-05",
+    "color": "bleu",
+    "temperature": 3.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-12-08",
+    "color": "rouge",
+    "temperature": 14.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-12-09",
+    "color": "bleu",
+    "temperature": 11.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-12-10",
+    "color": "bleu",
+    "temperature": 11.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-12-11",
+    "color": "rouge",
+    "temperature": 7.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-12-12",
+    "color": "blanc",
+    "temperature": 9.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-12-15",
+    "color": "blanc",
+    "temperature": 7.7,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-12-16",
+    "color": "blanc",
+    "temperature": 10.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-12-17",
+    "color": "blanc",
+    "temperature": 8.4,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-12-18",
+    "color": "blanc",
+    "temperature": 10.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-12-19",
+    "color": "blanc",
+    "temperature": 10.3,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-12-22",
+    "color": "bleu",
+    "temperature": 9.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-12-23",
+    "color": "blanc",
+    "temperature": 4.9,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-12-24",
+    "color": "bleu",
+    "temperature": 3.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-12-25",
+    "color": "rouge",
+    "temperature": -0.1,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-12-26",
+    "color": "blanc",
+    "temperature": -0.6,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-12-29",
+    "color": "bleu",
+    "temperature": -0.8,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-12-30",
+    "color": "bleu",
+    "temperature": 2.2,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  },
+  {
+    "date": "2025-12-31",
+    "color": "rouge",
+    "temperature": -0.0,
+    "coldDays": 0,
+    "rteConsommation": 55000,
+    "rteTension": 60
+  }
+]
