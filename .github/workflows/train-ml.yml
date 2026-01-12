@@ -2,7 +2,6 @@ name: Train ML model (Tempo EDF)
 
 on:
   schedule:
-    # Tous les jours à 11h UTC (12h heure française en hiver)
     - cron: "0 11 * * *"
   workflow_dispatch:
 
@@ -21,7 +20,7 @@ jobs:
         uses: actions/checkout@v3
 
       # ======================
-      # SETUP PYTHON
+      # PYTHON
       # ======================
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -41,21 +40,14 @@ jobs:
       # ======================
       - name: Check ML dataset
         run: |
-          echo "📂 Vérification du dataset ML"
-          if [ ! -f ML/ml_dataset.json ]; then
-            echo "❌ ML/ml_dataset.json introuvable"
-            exit 1
-          fi
-          echo "✅ Dataset trouvé"
-          echo "📊 Taille :"
-          wc -l ML/ml_dataset.json
+          echo "📁 Vérification du dataset ML"
+          ls -lh ML/ml_dataset.json
 
       # ======================
       # TRAIN MODEL
       # ======================
       - name: Train ML model
         run: |
-          echo "🤖 Lancement entraînement ML"
           python ML/train_ml.py
 
       # ======================
@@ -65,7 +57,7 @@ jobs:
         run: |
           echo "🔍 Vérification du modèle ML"
           if [ ! -f ML/model.pkl ]; then
-            echo "❌ ML/model.pkl non généré"
+            echo "❌ Modèle introuvable"
             exit 1
           fi
 
@@ -73,7 +65,7 @@ jobs:
           echo "📦 Taille du modèle : $SIZE bytes"
 
           if [ "$SIZE" -lt 1000 ]; then
-            echo "❌ Modèle trop petit (probablement vide)"
+            echo "❌ Modèle trop petit"
             exit 1
           fi
 
@@ -86,7 +78,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
           git add ML/model.pkl
-          git commit -m "🤖 Auto-train ML model (Tempo + météo + RTE)" || echo "No changes"
+          git commit -m "🤖 Auto-train ML model (Tempo EDF)" || echo "No changes"
           git push
