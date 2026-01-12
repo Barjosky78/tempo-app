@@ -11,9 +11,19 @@ BASE_DIR = Path(__file__).resolve().parents[1]
 
 MODEL_PATH = BASE_DIR / "ML" / "ml_model.pkl"
 TEMPO_PATH = BASE_DIR / "tempo.json"
+HISTORY_PATH = BASE_DIR / "history.json"
 OUTPUT_PATH = BASE_DIR / "ML" / "ml_predictions.json"
 
-print("🤖 Lancement prédictions ML (avec règles Tempo)")
+print("🤖 Lancement prédictions ML (règles Tempo + quotas)")
+
+# ======================
+# CONSTANTES TEMPO
+# ======================
+MAX_DAYS = {
+    "bleu": 300,
+    "blanc": 43,
+    "rouge": 22
+}
 
 # ======================
 # LOAD MODEL
@@ -37,19 +47,48 @@ if not TEMPO_PATH.exists():
 with open(TEMPO_PATH, "r") as f:
     tempo = json.load(f)
 
+# ======================
+# LOAD HISTORY (pour quotas)
+# ======================
+used_days = {
+    "bleu": set(),
+    "blanc": set(),
+    "rouge": set()
+}
+
+if HISTORY_PATH.exists():
+    with open(HISTORY_PATH, "r") as f:
+        history = json.load(f)
+
+    for h in history:
+        if h.get("realColor"):
+            used_days[h["realColor"]].add(h["date"])
+
+# ======================
+# SAISON TEMPO
+# ======================
+today = datetime.now().date()
+season_year = today.year if today.month >= 11 else today.year - 1
+
+SEASON_START = datetime(season_year, 11, 1).date()
+SEASON_END   = datetime(season_year + 1, 3, 31).date()
+
+def in_season(d):
+    return SEASON_START <= d <= SEASON_END
+
+# ======================
+# PREDICT + RÈGLES
+# ======================
 predictions = []
 
-# ======================
-# PREDICT + RULES
-# ======================
 for day in tempo:
 
-    # ❌ Pas de ML sur jour réel
+    # ❌ Pas de ML sur jours EDF réels
     if day.get("fixed"):
         continue
 
     try:
-        d = datetime.fromisoformat(day["date"])
+        d = datetime.fromisoformat(day["date"]).date()
     except Exception:
         continue
 
@@ -77,24 +116,50 @@ for day in tempo:
     }
 
     corrected = False
+    corrections = []
 
     # ======================
     # 🔒 RÈGLES TEMPO EDF
     # ======================
 
-    # ❌ ROUGE INTERDIT SAMEDI & DIMANCHE
-    if weekday in (5, 6):
-        ml_probs["rouge"] = 0
-        corrected = True
+    # ❌ ROUGE HORS SAISON
+    if not in_season(d):
+        if ml_probs.get("rouge", 0) > 0:
+            ml_probs["rouge"] = 0
+            corrected = True
+            corrections.append("rouge_hors_saison")
 
-    # 🔵 DIMANCHE = BLEU 100 %
+    # ❌ ROUGE INTERDIT SAMEDI / DIMANCHE
+    if weekday in (5, 6):
+        if ml_probs.get("rouge", 0) > 0:
+            ml_probs["rouge"] = 0
+            corrected = True
+            corrections.append("rouge_weekend")
+
+    # 🔵 DIMANCHE = BLEU FORCÉ
     if weekday == 6:
         ml_probs["bleu"] = 100
         ml_probs["blanc"] = 0
+        ml_probs["rouge"] = 0
         corrected = True
+        corrections.append("dimanche_bleu")
 
     # ======================
-    # NORMALISATION APRÈS RÈGLES
+    # 🧮 QUOTAS RESTANTS
+    # ======================
+    remaining = {
+        k: MAX_DAYS[k] - len(used_days[k])
+        for k in MAX_DAYS
+    }
+
+    for color, rest in remaining.items():
+        if rest <= 0 and ml_probs.get(color, 0) > 0:
+            ml_probs[color] = 0
+            corrected = True
+            corrections.append(f"quota_{color}_epuise")
+
+    # ======================
+    # NORMALISATION
     # ======================
     total = sum(ml_probs.values())
 
@@ -116,7 +181,9 @@ for day in tempo:
         "mlPrediction": ml_color,
         "mlProbabilities": ml_probs,
         "mlConfidence": ml_confidence,
-        "correctedByRules": corrected
+        "correctedByRules": corrected,
+        "ruleDetails": corrections,
+        "remainingDays": remaining
     })
 
 # ======================
@@ -127,4 +194,4 @@ OUTPUT_PATH.parent.mkdir(exist_ok=True)
 with open(OUTPUT_PATH, "w") as f:
     json.dump(predictions, f, indent=2)
 
-print(f"✅ {len(predictions)} prédictions ML générées avec règles Tempo")
+print(f"✅ {len(predictions)} prédictions ML générées (règles + quotas intégrés)")
