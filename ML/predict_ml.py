@@ -1,7 +1,7 @@
 import json
 import pandas as pd
 import joblib
-from datetime import datetime
+from datetime import datetime, date
 from pathlib import Path
 
 # ======================
@@ -9,12 +9,12 @@ from pathlib import Path
 # ======================
 BASE_DIR = Path(__file__).resolve().parents[1]
 
-MODEL_PATH = BASE_DIR / "ML" / "ml_model.pkl"
-TEMPO_PATH = BASE_DIR / "tempo.json"
+MODEL_PATH   = BASE_DIR / "ML" / "ml_model.pkl"
+TEMPO_PATH   = BASE_DIR / "tempo.json"
 HISTORY_PATH = BASE_DIR / "history.json"
-OUTPUT_PATH = BASE_DIR / "ML" / "ml_predictions.json"
+OUTPUT_PATH  = BASE_DIR / "ML" / "ml_predictions.json"
 
-print("🤖 Lancement prédictions ML (règles Tempo + quotas)")
+print("🤖 Lancement prédictions ML (Tempo + quotas + règles EDF)")
 
 # ======================
 # CONSTANTES TEMPO
@@ -29,26 +29,23 @@ MAX_DAYS = {
 # LOAD MODEL
 # ======================
 if not MODEL_PATH.exists():
-    print("❌ Modèle ML introuvable")
-    exit(1)
+    raise SystemExit("❌ Modèle ML introuvable")
 
 bundle = joblib.load(MODEL_PATH)
 model = bundle["model"]
 le = bundle["label_encoder"]
-FEATURES = bundle["features"]
 
 # ======================
 # LOAD TEMPO
 # ======================
 if not TEMPO_PATH.exists():
-    print("❌ tempo.json introuvable")
-    exit(1)
+    raise SystemExit("❌ tempo.json introuvable")
 
-with open(TEMPO_PATH, "r") as f:
+with open(TEMPO_PATH, "r", encoding="utf-8") as f:
     tempo = json.load(f)
 
 # ======================
-# LOAD HISTORY (pour quotas)
+# LOAD HISTORY (QUOTAS)
 # ======================
 used_days = {
     "bleu": set(),
@@ -57,33 +54,37 @@ used_days = {
 }
 
 if HISTORY_PATH.exists():
-    with open(HISTORY_PATH, "r") as f:
+    with open(HISTORY_PATH, "r", encoding="utf-8") as f:
         history = json.load(f)
 
     for h in history:
-        if h.get("realColor"):
-            used_days[h["realColor"]].add(h["date"])
+        color = h.get("realColor")
+        if color in used_days:
+            used_days[color].add(h["date"])
 
 # ======================
-# SAISON TEMPO
+# SAISON TEMPO (1/09 → 31/08)
 # ======================
-today = datetime.now().date()
-season_year = today.year if today.month >= 11 else today.year - 1
+today = date.today()
+season_year = today.year if today.month >= 9 else today.year - 1
 
-SEASON_START = datetime(season_year, 11, 1).date()
-SEASON_END   = datetime(season_year + 1, 3, 31).date()
+SEASON_START = date(season_year, 9, 1)
+SEASON_END   = date(season_year + 1, 8, 31)
 
-def in_season(d):
+def in_tempo_season(d: date) -> bool:
     return SEASON_START <= d <= SEASON_END
 
+def red_allowed(d: date) -> bool:
+    return d.month in (11, 12, 1, 2, 3)
+
 # ======================
-# PREDICT + RÈGLES
+# PREDICTIONS
 # ======================
 predictions = []
 
 for day in tempo:
 
-    # ❌ Pas de ML sur jours EDF réels
+    # ❌ Pas de ML sur jours EDF confirmés
     if day.get("fixed"):
         continue
 
@@ -95,18 +96,17 @@ for day in tempo:
     weekday = d.weekday()  # 0=lundi ... 5=samedi 6=dimanche
 
     # ======================
-    # FEATURES (identiques au train)
+    # FEATURES (IDENTIQUES AU TRAIN)
     # ======================
-    features = {
+    X = pd.DataFrame([{
         "temp": day.get("temperature", 8),
         "coldDays": day.get("coldDays", 0),
         "rte": day.get("rteConsommation", 55000),
         "weekday": weekday,
         "month": d.month,
-        "horizon": day.get("horizon", 0),
-    }
+        "horizon": day.get("horizon", 0)
+    }])
 
-    X = pd.DataFrame([features])
     probs = model.predict_proba(X)[0]
     classes = le.inverse_transform(range(len(probs)))
 
@@ -116,62 +116,60 @@ for day in tempo:
     }
 
     corrected = False
-    corrections = []
+    rule_details = []
 
     # ======================
     # 🔒 RÈGLES TEMPO EDF
     # ======================
 
-    # ❌ ROUGE HORS SAISON
-    if not in_season(d):
-        if ml_probs.get("rouge", 0) > 0:
-            ml_probs["rouge"] = 0
-            corrected = True
-            corrections.append("rouge_hors_saison")
-
-    # ❌ ROUGE INTERDIT SAMEDI / DIMANCHE
-    if weekday in (5, 6):
-        if ml_probs.get("rouge", 0) > 0:
-            ml_probs["rouge"] = 0
-            corrected = True
-            corrections.append("rouge_weekend")
-
-    # 🔵 DIMANCHE = BLEU FORCÉ
-    if weekday == 6:
-        ml_probs["bleu"] = 100
-        ml_probs["blanc"] = 0
+    # ❌ ROUGE HORS PÉRIODE HIVER
+    if ml_probs.get("rouge", 0) > 0 and not red_allowed(d):
         ml_probs["rouge"] = 0
         corrected = True
-        corrections.append("dimanche_bleu")
+        rule_details.append("rouge_hors_periode_1nov_31mars")
+
+    # ❌ ROUGE INTERDIT WEEK-END
+    if weekday in (5, 6) and ml_probs.get("rouge", 0) > 0:
+        ml_probs["rouge"] = 0
+        corrected = True
+        rule_details.append("rouge_interdit_weekend")
+
+    # 🔵 DIMANCHE = BLEU 100 %
+    if weekday == 6:
+        ml_probs = {"bleu": 100, "blanc": 0, "rouge": 0}
+        corrected = True
+        rule_details.append("dimanche_bleu_force")
 
     # ======================
     # 🧮 QUOTAS RESTANTS
     # ======================
     remaining = {
-        k: MAX_DAYS[k] - len(used_days[k])
-        for k in MAX_DAYS
+        c: max(0, MAX_DAYS[c] - len(used_days[c]))
+        for c in MAX_DAYS
     }
 
     for color, rest in remaining.items():
         if rest <= 0 and ml_probs.get(color, 0) > 0:
             ml_probs[color] = 0
             corrected = True
-            corrections.append(f"quota_{color}_epuise")
+            rule_details.append(f"quota_{color}_epuise")
 
     # ======================
     # NORMALISATION
     # ======================
     total = sum(ml_probs.values())
 
-    if total > 0:
+    if total == 0:
+        ml_probs = {"bleu": 100, "blanc": 0, "rouge": 0}
+        rule_details.append("fallback_bleu")
+    else:
         for k in ml_probs:
             ml_probs[k] = round(ml_probs[k] / total * 100)
 
-    # Sécurité somme = 100
-    diff = 100 - sum(ml_probs.values())
-    if diff != 0:
-        best = max(ml_probs, key=ml_probs.get)
-        ml_probs[best] += diff
+        diff = 100 - sum(ml_probs.values())
+        if diff != 0:
+            best = max(ml_probs, key=ml_probs.get)
+            ml_probs[best] += diff
 
     ml_color = max(ml_probs, key=ml_probs.get)
     ml_confidence = ml_probs[ml_color]
@@ -182,7 +180,7 @@ for day in tempo:
         "mlProbabilities": ml_probs,
         "mlConfidence": ml_confidence,
         "correctedByRules": corrected,
-        "ruleDetails": corrections,
+        "ruleDetails": rule_details,
         "remainingDays": remaining
     })
 
@@ -191,7 +189,7 @@ for day in tempo:
 # ======================
 OUTPUT_PATH.parent.mkdir(exist_ok=True)
 
-with open(OUTPUT_PATH, "w") as f:
+with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
     json.dump(predictions, f, indent=2)
 
-print(f"✅ {len(predictions)} prédictions ML générées (règles + quotas intégrés)")
+print(f"✅ {len(predictions)} prédictions ML générées avec règles Tempo complètes")
