@@ -18,11 +18,22 @@ def load(path):
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
-def season_bounds(date):
-    year = date.year if date.month >= 11 else date.year - 1
-    start = datetime(year, 11, 1)
-    end   = datetime(year + 1, 3, 31)
+def tempo_season_bounds(date):
+    """
+    Saison Tempo EDF :
+    du 1er septembre au 31 août
+    """
+    year = date.year if date.month >= 9 else date.year - 1
+    start = datetime(year, 9, 1)
+    end   = datetime(year + 1, 8, 31)
     return start, end
+
+def is_red_allowed(date):
+    """
+    Jours rouges autorisés uniquement
+    du 1er novembre au 31 mars
+    """
+    return date.month in (11, 12, 1, 2, 3)
 
 # ======================
 # LOAD DATA
@@ -39,10 +50,9 @@ rte_by_date     = {r["date"]: r for r in rte}
 # ======================
 MAX = { "bleu": 300, "blanc": 43, "rouge": 22 }
 used_by_season = {}
-
 dataset = []
 
-# Trier chronologiquement (CRUCIAL)
+# 🔑 TRI CHRONOLOGIQUE OBLIGATOIRE
 tempo = sorted(tempo, key=lambda x: x["date"])
 
 for t in tempo:
@@ -56,10 +66,13 @@ for t in tempo:
         continue  # météo obligatoire
 
     date = datetime.fromisoformat(date_str)
-    season_start, season_end = season_bounds(date)
 
+    # ======================
+    # SAISON TEMPO
+    # ======================
+    season_start, season_end = tempo_season_bounds(date)
     if not (season_start <= date <= season_end):
-        continue  # hors saison Tempo → pas d’apprentissage
+        continue  # hors saison Tempo
 
     season_key = season_start.strftime("%Y")
 
@@ -72,7 +85,16 @@ for t in tempo:
 
     used = used_by_season[season_key]
 
-    # Marquer le jour comme consommé
+    # ======================
+    # RÈGLES ROUGE
+    # ======================
+    if color == "rouge" and not is_red_allowed(date):
+        # ❌ Jour rouge impossible → on n'entraîne PAS dessus
+        continue
+
+    # ======================
+    # CONSOMMATION DU JOUR
+    # ======================
     used[color].add(date_str)
 
     remaining = {
@@ -87,19 +109,27 @@ for t in tempo:
     r = rte_by_date.get(date_str)
 
     dataset.append({
+        # ======================
         # TARGET
+        # ======================
         "date": date_str,
         "color": color,
 
+        # ======================
         # METEO
+        # ======================
         "temperature": w.get("temperature", 10),
         "coldDays": w.get("coldDays", 0),
 
+        # ======================
         # RTE
+        # ======================
         "rteConsommation": r.get("consommation", 55000) if r else 55000,
         "rteTension": r.get("tension", 60) if r else 60,
 
-        # TEMPO CONTEXT (NOUVEAU)
+        # ======================
+        # TEMPO CONTEXT (ML++)
+        # ======================
         "remainingBleu": remaining["bleu"],
         "remainingBlanc": remaining["blanc"],
         "remainingRouge": remaining["rouge"],
@@ -109,10 +139,10 @@ for t in tempo:
 # ======================
 # SAVE
 # ======================
-print(f"📊 Tempo: {len(tempo)}")
-print(f"🌦️ Weather: {len(weather)}")
-print(f"⚡ RTE: {len(rte)}")
-print(f"✅ ML samples generated: {len(dataset)}")
+print(f"📊 Tempo records : {len(tempo)}")
+print(f"🌦️ Weather records : {len(weather)}")
+print(f"⚡ RTE records : {len(rte)}")
+print(f"✅ ML samples generated : {len(dataset)}")
 
 if not dataset:
     raise SystemExit("❌ Aucun échantillon ML généré")
@@ -122,4 +152,4 @@ os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
 with open(OUT_PATH, "w", encoding="utf-8") as f:
     json.dump(dataset, f, indent=2)
 
-print("💾 ml_dataset.json généré avec notion de quotas Tempo")
+print("💾 ml_dataset.json généré (saison Tempo + règles rouges respectées)")
