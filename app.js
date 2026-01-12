@@ -1,7 +1,7 @@
 /* ==========================
    RÉFÉRENCES DOM
 ========================== */
-const tempoDiv = document.getElementById("tempo");
+const tempoDiv   = document.getElementById("tempo");
 const historyDiv = document.getElementById("history");
 const updatedDiv = document.getElementById("updated");
 
@@ -19,7 +19,7 @@ function dayLabel(dateStr, index) {
 function verdictLabel(result) {
   if (result === "correct") return "✅ Bonne prédiction";
   if (result === "partial") return "⚠️ Zone correcte";
-  if (result === "wrong") return "❌ Mauvaise prédiction";
+  if (result === "wrong")   return "❌ Mauvaise prédiction";
   return "⏳ En attente de validation";
 }
 
@@ -36,7 +36,7 @@ fetch("meta.json?v=" + Date.now())
   });
 
 /* ==========================
-   TEMPO + ML (SYNC GARANTIE)
+   TEMPO + ML (SYNC)
 ========================== */
 Promise.all([
   fetch("tempo.json?v=" + Date.now()).then(r => r.json()),
@@ -118,9 +118,7 @@ Promise.all([
 });
 
 /* ==========================
-   HISTORIQUE — JOURS VALIDÉS EDF
-   (J0 inclus, J1 inclus SEULEMENT
-    s’il est validé dans history.json)
+   HISTORIQUE — VALIDÉ EDF
 ========================== */
 fetch("history.json?v=" + Date.now())
   .then(r => r.json())
@@ -130,12 +128,7 @@ fetch("history.json?v=" + Date.now())
     today.setHours(0,0,0,0);
 
     const visibles = history
-      .filter(h => {
-        if (!h.realColor) return false;
-        const d = new Date(h.date);
-        d.setHours(0,0,0,0);
-        return d <= today;
-      })
+      .filter(h => h.realColor && new Date(h.date) <= today)
       .sort((a,b) => new Date(b.date) - new Date(a.date))
       .slice(0, 10);
 
@@ -157,49 +150,41 @@ fetch("history.json?v=" + Date.now())
   });
 
 /* ==========================
-   COMPTEURS TEMPO RESTANTS
-   (SAISON COURANTE — J0 SEUL)
+   COMPTEURS TEMPO (OFFICIELS)
+   BASE EDF + J0 UNIQUEMENT
 ========================== */
-Promise.all([
-  fetch("history.json?v=" + Date.now()).then(r => r.json()),
-  fetch("tempo.json?v=" + Date.now()).then(r => r.json())
-]).then(([history, tempo]) => {
 
-  const MAX = { bleu: 300, blanc: 43, rouge: 22 };
-  const used = { bleu: new Set(), blanc: new Set(), rouge: new Set() };
+// 🔴⚪🔵 RÉFÉRENCE EDF AUJOURD’HUI
+const EDF_REMAINING = {
+  rouge: 17,
+  blanc: 24,
+  bleu: 189
+};
 
-  const now = new Date();
-  now.setHours(0,0,0,0);
-  const todayStr = now.toISOString().split("T")[0];
+const MAX = {
+  rouge: 22,
+  blanc: 43,
+  bleu: 300
+};
 
-  const year = now.getMonth() >= 10 ? now.getFullYear() : now.getFullYear() - 1;
-  const seasonStart = new Date(`${year}-11-01`);
-  const seasonEnd   = new Date(`${year + 1}-03-31`);
+// J0 uniquement
+fetch("tempo.json?v=" + Date.now())
+  .then(r => r.json())
+  .then(tempo => {
 
-  const inSeason = d => {
-    const x = new Date(d);
-    return x >= seasonStart && x <= seasonEnd;
-  };
+    const todayStr = new Date().toISOString().split("T")[0];
+    const today = tempo.find(d => d.fixed && d.date === todayStr);
 
-  // Historique validé EDF
-  history.forEach(h => {
-    if (!h.realColor) return;
-    if (!inSeason(h.date)) return;
-    used[h.realColor]?.add(h.date);
+    const remaining = { ...EDF_REMAINING };
+
+    if (today) {
+      remaining[today.couleur] = Math.max(
+        0,
+        remaining[today.couleur] - 1
+      );
+    }
+
+    document.getElementById("count-rouge").textContent = remaining.rouge;
+    document.getElementById("count-blanc").textContent = remaining.blanc;
+    document.getElementById("count-bleu").textContent  = remaining.bleu;
   });
-
-  // J0 uniquement depuis tempo.json
-  tempo.forEach(d => {
-    if (!d.fixed) return;
-    if (d.date !== todayStr) return;
-    if (!inSeason(d.date)) return;
-    used[d.couleur]?.add(d.date);
-  });
-
-  document.getElementById("count-bleu").textContent  =
-    Math.max(0, MAX.bleu - used.bleu.size);
-  document.getElementById("count-blanc").textContent =
-    Math.max(0, MAX.blanc - used.blanc.size);
-  document.getElementById("count-rouge").textContent =
-    Math.max(0, MAX.rouge - used.rouge.size);
-});
