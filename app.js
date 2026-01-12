@@ -1,3 +1,6 @@
+/* ==========================
+   RÉFÉRENCES DOM
+========================== */
 const tempoDiv = document.getElementById("tempo");
 const historyDiv = document.getElementById("history");
 const updatedDiv = document.getElementById("updated");
@@ -5,7 +8,6 @@ const updatedDiv = document.getElementById("updated");
 /* ==========================
    OUTILS
 ========================== */
-
 function dayLabel(dateStr, index) {
   const d = new Date(dateStr);
   const jours = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
@@ -24,7 +26,6 @@ function verdictLabel(result) {
 /* ==========================
    META
 ========================== */
-
 fetch("meta.json?v=" + Date.now())
   .then(r => r.json())
   .then(meta => {
@@ -37,18 +38,13 @@ fetch("meta.json?v=" + Date.now())
 /* ==========================
    TEMPO + ML (SYNC GARANTIE)
 ========================== */
-
 Promise.all([
   fetch("tempo.json?v=" + Date.now()).then(r => r.json()),
-  fetch("ML/ml_predictions.json?v=" + Date.now())
-    .then(r => r.json())
-    .catch(() => [])
+  fetch("ML/ml_predictions.json?v=" + Date.now()).then(r => r.json()).catch(() => [])
 ]).then(([days, mlData]) => {
 
   const mlByDate = {};
-  mlData.forEach(p => {
-    mlByDate[p.date] = p;
-  });
+  mlData.forEach(p => mlByDate[p.date] = p);
 
   tempoDiv.innerHTML = "";
 
@@ -105,8 +101,8 @@ Promise.all([
       ${ml ? `
         <div class="ml-box ml-${ml.mlPrediction}">
           🧠 <b>ML :</b> ${ml.mlPrediction.toUpperCase()}<br>
-          🔴 ${ml.mlProbabilities.rouge ?? 0}% 
-          ⚪ ${ml.mlProbabilities.blanc ?? 0}% 
+          🔴 ${ml.mlProbabilities.rouge ?? 0}%
+          ⚪ ${ml.mlProbabilities.blanc ?? 0}%
           🔵 ${ml.mlProbabilities.bleu ?? 0}%
 
           <div class="ml-bar">
@@ -123,9 +119,9 @@ Promise.all([
 
 /* ==========================
    HISTORIQUE — JOURS VALIDÉS EDF
-   (J0 inclus, J1 inclus s’il est validé)
+   (J0 inclus, J1 inclus SEULEMENT
+    s’il est validé dans history.json)
 ========================== */
-
 fetch("history.json?v=" + Date.now())
   .then(r => r.json())
   .then(history => {
@@ -135,17 +131,16 @@ fetch("history.json?v=" + Date.now())
 
     const visibles = history
       .filter(h => {
-        if (h.realColor === null) return false;
+        if (!h.realColor) return false;
         const d = new Date(h.date);
         d.setHours(0,0,0,0);
-        return d <= today; // 👈 J0 inclus
+        return d <= today;
       })
-      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .sort((a,b) => new Date(b.date) - new Date(a.date))
       .slice(0, 10);
 
     if (visibles.length === 0) {
-      historyDiv.innerHTML =
-        "<p>Aucune prédiction validée par EDF</p>";
+      historyDiv.innerHTML = "<p>Aucune prédiction validée par EDF</p>";
       return;
     }
 
@@ -159,82 +154,52 @@ fetch("history.json?v=" + Date.now())
         ${verdictLabel(h.result)}
       </div>
     `).join("");
-  })
-  .catch(() => {
-    historyDiv.innerHTML =
-      "<p>Erreur de chargement de l’historique</p>";
   });
+
 /* ==========================
    COMPTEURS TEMPO RESTANTS
-   (SAISON COURANTE — J0 UNIQUEMENT)
+   (SAISON COURANTE — J0 SEUL)
 ========================== */
-
 Promise.all([
   fetch("history.json?v=" + Date.now()).then(r => r.json()),
   fetch("tempo.json?v=" + Date.now()).then(r => r.json())
 ]).then(([history, tempo]) => {
 
-  const MAX = {
-    bleu: 300,
-    blanc: 43,
-    rouge: 22
-  };
-
-  const used = {
-    bleu: new Set(),
-    blanc: new Set(),
-    rouge: new Set()
-  };
+  const MAX = { bleu: 300, blanc: 43, rouge: 22 };
+  const used = { bleu: new Set(), blanc: new Set(), rouge: new Set() };
 
   const now = new Date();
   now.setHours(0,0,0,0);
+  const todayStr = now.toISOString().split("T")[0];
 
-  // Saison EDF : 1er nov → 31 mars
   const year = now.getMonth() >= 10 ? now.getFullYear() : now.getFullYear() - 1;
   const seasonStart = new Date(`${year}-11-01`);
   const seasonEnd   = new Date(`${year + 1}-03-31`);
 
-  function inSeason(dateStr) {
-    const d = new Date(dateStr);
-    return d >= seasonStart && d <= seasonEnd;
-  }
+  const inSeason = d => {
+    const x = new Date(d);
+    return x >= seasonStart && x <= seasonEnd;
+  };
 
-  /* ======================
-     HISTORIQUE VALIDÉ EDF
-  ====================== */
+  // Historique validé EDF
   history.forEach(h => {
     if (!h.realColor) return;
     if (!inSeason(h.date)) return;
-
     used[h.realColor]?.add(h.date);
   });
 
-  /* ======================
-     J0 UNIQUEMENT (PAS J1)
-  ====================== */
-  const todayStr = now.toISOString().split("T")[0];
-
+  // J0 uniquement depuis tempo.json
   tempo.forEach(d => {
     if (!d.fixed) return;
-    if (d.date !== todayStr) return; // ⬅️ J0 seulement
+    if (d.date !== todayStr) return;
     if (!inSeason(d.date)) return;
-
     used[d.couleur]?.add(d.date);
   });
 
-  /* ======================
-     CALCUL RESTANT
-  ====================== */
-  const remaining = {
-    bleu: Math.max(0, MAX.bleu - used.bleu.size),
-    blanc: Math.max(0, MAX.blanc - used.blanc.size),
-    rouge: Math.max(0, MAX.rouge - used.rouge.size)
-  };
-
-  document.getElementById("count-bleu").textContent  = remaining.bleu;
-  document.getElementById("count-blanc").textContent = remaining.blanc;
-  document.getElementById("count-rouge").textContent = remaining.rouge;
-
-}).catch(err => {
-  console.error("Erreur compteurs Tempo :", err);
+  document.getElementById("count-bleu").textContent  =
+    Math.max(0, MAX.bleu - used.bleu.size);
+  document.getElementById("count-blanc").textContent =
+    Math.max(0, MAX.blanc - used.blanc.size);
+  document.getElementById("count-rouge").textContent =
+    Math.max(0, MAX.rouge - used.rouge.size);
 });
