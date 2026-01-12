@@ -14,11 +14,11 @@
   },
   {
     "date": "2026-01-13",
-    "couleur": "blanc",
+    "couleur": "bleu",
     "probabilites": {
       "rouge": 0,
-      "blanc": 100,
-      "bleu": 0
+      "blanc": 0,
+      "bleu": 100
     },
     "fixed": true,
     "sources": {
@@ -34,7 +34,6 @@
       "bleu": 41
     },
     "fixed": false,
-    "estimated": true,
     "temperature": 9.4,
     "rteConsommation": 58315,
     "rteTension": 70,
@@ -53,7 +52,6 @@
       "bleu": 37
     },
     "fixed": false,
-    "estimated": false,
     "temperature": 8.1,
     "rteConsommation": 58315,
     "rteTension": 70,
@@ -72,7 +70,6 @@
       "bleu": 44
     },
     "fixed": false,
-    "estimated": false,
     "temperature": 8.8,
     "rteConsommation": 58315,
     "rteTension": 70,
@@ -91,7 +88,6 @@
       "bleu": 43
     },
     "fixed": false,
-    "estimated": false,
     "temperature": 7.2,
     "rteConsommation": 58315,
     "rteTension": 70,
@@ -110,7 +106,6 @@
       "bleu": 100
     },
     "fixed": false,
-    "estimated": false,
     "temperature": 6.9,
     "rteConsommation": 58315,
     "rteTension": 70,
@@ -129,7 +124,6 @@
       "bleu": 39
     },
     "fixed": false,
-    "estimated": false,
     "temperature": 7,
     "rteConsommation": 58315,
     "rteTension": 70,
@@ -148,7 +142,6 @@
       "bleu": 37
     },
     "fixed": false,
-    "estimated": false,
     "temperature": 6.2,
     "rteConsommation": 58315,
     "rteTension": 70,
@@ -167,7 +160,6 @@
       "bleu": 37
     },
     "fixed": false,
-    "estimated": false,
     "temperature": 4.5,
     "rteConsommation": 58315,
     "rteTension": 70,
