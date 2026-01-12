@@ -1,71 +1,73 @@
 import json
-import joblib
 import pandas as pd
-from sklearn.ensemble import RandomForestClassifier
+import joblib
+from sklearn.tree import DecisionTreeClassifier
 from sklearn.preprocessing import LabelEncoder
-from sklearn.model_selection import train_test_split
+from pathlib import Path
+
+DATASET_PATH = Path("ML/ml_dataset.json")
+MODEL_PATH = Path("ML/model.pkl")
 
 print("🤖 Lancement entraînement ML")
 
 # ======================
 # LOAD DATASET
 # ======================
-DATASET_PATH = "ML/ml_dataset.json"
-MODEL_PATH = "ML/model.pkl"
+if not DATASET_PATH.exists():
+    print("❌ Dataset ML introuvable")
+    exit(1)
 
-with open(DATASET_PATH, "r") as f:
-    data = json.load(f)
+df = pd.read_json(DATASET_PATH)
+print(f"📊 Échantillons disponibles : {len(df)}")
+print("🧱 Colonnes dataset :", list(df.columns))
 
-print(f"📊 Échantillons disponibles : {len(data)}")
-
-if len(data) < 50:
-    raise Exception("❌ Pas assez de données pour entraîner le modèle")
+if len(df) < 50:
+    print("❌ Dataset trop petit")
+    exit(1)
 
 # ======================
-# PREPARE DATA
+# NORMALISATION COLONNES
 # ======================
-df = pd.DataFrame(data)
+COLUMN_MAP = {
+    "temperature": "temp",
+    "rteConsommation": "rte",
+    "dayOfWeek": "weekday"
+}
 
-FEATURES = [
-    "temp",
-    "coldDays",
-    "rte",
-    "weekday",
-    "month",
-    "horizon"
-]
+for src, dst in COLUMN_MAP.items():
+    if src in df.columns and dst not in df.columns:
+        df[dst] = df[src]
 
-TARGET = "color"
+# ======================
+# FEATURES & TARGET
+# ======================
+FEATURES = ["temp", "rte", "weekday", "month", "horizon"]
+TARGET = "label"
+
+missing = [c for c in FEATURES + [TARGET] if c not in df.columns]
+if missing:
+    print("❌ Colonnes manquantes :", missing)
+    exit(1)
 
 X = df[FEATURES]
 y = df[TARGET]
 
 # ======================
-# ENCODE LABELS
+# ENCODE LABEL
 # ======================
 le = LabelEncoder()
-y_encoded = le.fit_transform(y)
-
-# ======================
-# SPLIT
-# ======================
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y_encoded, test_size=0.2, random_state=42
-)
+y_enc = le.fit_transform(y)
 
 # ======================
 # TRAIN MODEL
 # ======================
-model = RandomForestClassifier(
-    n_estimators=200,
-    max_depth=10,
+model = DecisionTreeClassifier(
+    max_depth=6,
+    min_samples_leaf=3,
     random_state=42
 )
 
-model.fit(X_train, y_train)
-
-score = model.score(X_test, y_test)
-print(f"✅ Précision ML : {round(score*100,2)} %")
+model.fit(X, y_enc)
 
 # ======================
 # SAVE MODEL
@@ -73,10 +75,11 @@ print(f"✅ Précision ML : {round(score*100,2)} %")
 bundle = {
     "model": model,
     "label_encoder": le,
-    "features": FEATURES,
-    "accuracy": score
+    "features": FEATURES
 }
 
 joblib.dump(bundle, MODEL_PATH)
 
-print(f"💾 Modèle ML sauvegardé : {MODEL_PATH}")
+print("✅ Modèle ML entraîné")
+print("💾 Modèle sauvegardé :", MODEL_PATH)
+print("📦 Taille :", MODEL_PATH.stat().st_size, "bytes")
