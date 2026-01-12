@@ -100,62 +100,87 @@ jobs:
           today.setHours(0,0,0,0);
           const days = [];
 
-          // J0
+          // ======================
+          // J0 — EDF
+          // ======================
           days.push({
             date: fmt(today),
             couleur: edfToday,
-            probabilites: { rouge:0, blanc:0, bleu:0, [edfToday]:100 },
+            probabilites:{rouge:0,blanc:0,bleu:0,[edfToday]:100},
             fixed:true,
             sources:{reel:true}
           });
 
-          // J1
+          // ======================
+          // J1 — EDF
+          // ======================
           const tomorrow = new Date(today);
           tomorrow.setDate(today.getDate()+1);
           days.push({
             date: fmt(tomorrow),
             couleur: edfTomorrow,
-            probabilites: { rouge:0, blanc:0, bleu:0, [edfTomorrow]:100 },
+            probabilites:{rouge:0,blanc:0,bleu:0,[edfTomorrow]:100},
             fixed:true,
             sources:{reel:true}
           });
 
+          // ======================
+          // J2 → J9
+          // ======================
           for(let i=2;i<=9;i++){
             const d=new Date(today);
             d.setDate(today.getDate()+i);
-            const dow=d.getDay(), month=d.getMonth()+1;
+
+            const dow=d.getDay();
+            const month=d.getMonth()+1;
             const temp=temps[i]??8;
 
             let base=HISTO_MONTH[month]||{rouge:10,blanc:25,bleu:65};
-            let {rouge,blanc,bleu}=base;
 
+            // 📊 Historique 25 %
+            let rouge=base.rouge*0.25;
+            let blanc=base.blanc*0.25;
+            let bleu =base.bleu *0.25;
+
+            // 📅 Calendrier 10 %
             if(HISTO_WEEKDAY[dow]){
-              rouge+=HISTO_WEEKDAY[dow].rouge;
-              blanc+=HISTO_WEEKDAY[dow].blanc;
-              bleu+=HISTO_WEEKDAY[dow].bleu;
+              rouge+=HISTO_WEEKDAY[dow].rouge*0.10;
+              blanc+=HISTO_WEEKDAY[dow].blanc*0.10;
+              bleu +=HISTO_WEEKDAY[dow].bleu *0.10;
             }
 
-            if(temp<0){rouge+=10;bleu-=5;}
-            else if(temp<3){blanc+=10;bleu-=5;}
+            // 🌡️ Météo 40 %
+            if(temp<-2){rouge+=25;blanc+=10;bleu-=20;}
+            else if(temp<2){blanc+=20;bleu-=15;}
+            else if(temp<5){blanc+=10;bleu-=5;}
+            else if(temp>8){bleu+=20;}
 
-            if(i>=3 && consommation!==null){
-              const boost=7;
-              if(tension<55){bleu+=boost;blanc-=3;rouge-=3;}
-              else if(tension<=70){blanc+=boost;bleu-=3;rouge-=3;}
-              else{rouge+=boost;blanc+=3;bleu-=6;}
+            // ⚡ RTE 25 % (J2 → J6)
+            if(i<=6 && consommation!==null){
+              if(tension<55) bleu+=25;
+              else if(tension<=70) blanc+=25;
+              else rouge+=25;
             }
 
+            // RTE faible J7+
+            if(i>6 && consommation!==null){
+              if(tension<55) bleu+=7;
+              else if(tension<=70) blanc+=7;
+              else rouge+=7;
+            }
+
+            // Règles Tempo
             if(dow===0){rouge=0;blanc=0;bleu=100;}
             if(dow===6){blanc+=rouge;rouge=0;}
 
             const total=rouge+blanc+bleu;
             rouge=Math.round(rouge/total*100);
             blanc=Math.round(blanc/total*100);
-            bleu=100-rouge-blanc;
+            bleu =100-rouge-blanc;
 
             let couleur="bleu";
-            if(rouge>blanc&&rouge>bleu)couleur="rouge";
-            else if(blanc>=bleu)couleur="blanc";
+            if(rouge>blanc&&rouge>bleu) couleur="rouge";
+            else if(blanc>=bleu) couleur="blanc";
 
             days.push({
               date:fmt(d),
@@ -165,7 +190,7 @@ jobs:
               temperature:temp,
               rteConsommation:consommation,
               rteTension:tension,
-              sources:{meteo:true,historique:true,rte:(i>=3&&consommation!==null)}
+              sources:{meteo:true,historique:true,rte:(consommation!==null)}
             });
           }
 
@@ -174,38 +199,28 @@ jobs:
           EOF
 
       # ======================
-      # UPDATE HISTORY (J0 / J1)
+      # UPDATE HISTORY (J0/J1)
       # ======================
       - name: Update history with EDF validation
         run: |
           node <<'EOF'
-          const fs = require("fs");
-
-          const tempo = JSON.parse(fs.readFileSync("tempo.json","utf8"));
-          let history = fs.existsSync("history.json")
-            ? JSON.parse(fs.readFileSync("history.json","utf8"))
-            : [];
-
-          const upsert = entry => {
-            const i = history.findIndex(h => h.date === entry.date);
-            if (i >= 0) history[i] = entry;
-            else history.push(entry);
-          };
-
-          tempo.forEach(day => {
-            if (!day.fixed) return;
+          const fs=require("fs");
+          const tempo=JSON.parse(fs.readFileSync("tempo.json","utf8"));
+          let history=fs.existsSync("history.json")?JSON.parse(fs.readFileSync("history.json","utf8")):[];
+          const upsert=e=>{const i=history.findIndex(h=>h.date===e.date);i>=0?history[i]=e:history.push(e)};
+          tempo.forEach(d=>{
+            if(!d.fixed)return;
             upsert({
-              date: day.date,
-              predictedOn: day.date,
-              horizon: 0,
-              predictedColor: day.couleur,
-              probabilites: day.probabilites,
-              realColor: day.couleur,
-              result: "correct"
+              date:d.date,
+              predictedOn:d.date,
+              horizon:0,
+              predictedColor:d.couleur,
+              probabilites:d.probabilites,
+              realColor:d.couleur,
+              result:"correct"
             });
           });
-
-          fs.writeFileSync("history.json", JSON.stringify(history, null, 2));
+          fs.writeFileSync("history.json",JSON.stringify(history,null,2));
           EOF
 
       # ======================
@@ -227,5 +242,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tempo.json meta.json history.json edf_tempo.json ML/*.json ML/*.pkl || true
-          git commit -m "Tempo update: EDF J0/J1 validated + history + ML" || echo "No changes"
+          git commit -m "Tempo update: EDF J0/J1 + weighted J2-J6 + ML" || echo "No changes"
           git push
