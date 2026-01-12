@@ -34,7 +34,7 @@
       "bleu": 38
     },
     "fixed": false,
-    "temperature": 9.5,
+    "temperature": 9.6,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
