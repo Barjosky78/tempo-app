@@ -1,0 +1,38 @@
+name: Generate ML Predictions (Shadow)
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 11 * * *" # après le train ML
+
+permissions:
+  contents: write
+
+jobs:
+  predict:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          pip install pandas scikit-learn joblib
+
+      - name: Generate ML predictions
+        run: |
+          python ML/predict_ml.py
+
+      - name: Commit ML predictions
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ML/ml_predictions.json
+          git commit -m "🤖 Generate ML predictions (shadow)" || echo "No changes"
+          git push
