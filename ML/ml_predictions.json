@@ -25,11 +25,11 @@
     "date": "2026-01-15",
     "mlPrediction": "bleu",
     "mlProbabilities": {
-      "blanc": 13,
-      "bleu": 66,
-      "rouge": 21
+      "blanc": 38,
+      "bleu": 40,
+      "rouge": 23
     },
-    "mlConfidence": 66,
+    "mlConfidence": 40,
     "correctedByRules": false
   },
   {
