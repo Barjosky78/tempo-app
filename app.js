@@ -123,25 +123,29 @@ Promise.all([
 
 /* ==========================
    HISTORIQUE — JOURS VALIDÉS EDF
+   (J0 inclus, J1 inclus s’il est validé)
 ========================== */
 
 fetch("history.json?v=" + Date.now())
   .then(r => r.json())
   .then(history => {
+
     const today = new Date();
     today.setHours(0,0,0,0);
 
     const visibles = history
-      .filter(h =>
-        h.realColor !== null &&
-        new Date(h.date) < today
-      )
+      .filter(h => {
+        if (h.realColor === null) return false;
+        const d = new Date(h.date);
+        d.setHours(0,0,0,0);
+        return d <= today; // 👈 J0 inclus
+      })
       .sort((a, b) => new Date(b.date) - new Date(a.date))
       .slice(0, 10);
 
     if (visibles.length === 0) {
       historyDiv.innerHTML =
-        "<p>Aucune prédiction passée validée par EDF</p>";
+        "<p>Aucune prédiction validée par EDF</p>";
       return;
     }
 
