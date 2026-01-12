@@ -166,43 +166,75 @@ fetch("history.json?v=" + Date.now())
   });
 /* ==========================
    COMPTEURS TEMPO RESTANTS
+   (SAISON COURANTE — J0 UNIQUEMENT)
 ========================== */
 
-fetch("history.json?v=" + Date.now())
-  .then(r => r.json())
-  .then(history => {
-    const MAX = {
-      bleu: 300,
-      blanc: 43,
-      rouge: 22
-    };
+Promise.all([
+  fetch("history.json?v=" + Date.now()).then(r => r.json()),
+  fetch("tempo.json?v=" + Date.now()).then(r => r.json())
+]).then(([history, tempo]) => {
 
-    const used = {
-      bleu: 0,
-      blanc: 0,
-      rouge: 0
-    };
+  const MAX = {
+    bleu: 300,
+    blanc: 43,
+    rouge: 22
+  };
 
-    history.forEach(h => {
-      if (!h.realColor) return;
+  const used = {
+    bleu: new Set(),
+    blanc: new Set(),
+    rouge: new Set()
+  };
 
-      if (used[h.realColor] !== undefined) {
-        used[h.realColor]++;
-      }
-    });
+  const now = new Date();
+  now.setHours(0,0,0,0);
 
-    const remaining = {
-      bleu: Math.max(0, MAX.bleu - used.bleu),
-      blanc: Math.max(0, MAX.blanc - used.blanc),
-      rouge: Math.max(0, MAX.rouge - used.rouge)
-    };
+  // Saison EDF : 1er nov → 31 mars
+  const year = now.getMonth() >= 10 ? now.getFullYear() : now.getFullYear() - 1;
+  const seasonStart = new Date(`${year}-11-01`);
+  const seasonEnd   = new Date(`${year + 1}-03-31`);
 
-    document.getElementById("count-bleu").textContent = remaining.bleu;
-    document.getElementById("count-blanc").textContent = remaining.blanc;
-    document.getElementById("count-rouge").textContent = remaining.rouge;
-  })
-  .catch(() => {
-    document.getElementById("count-bleu").textContent = "–";
-    document.getElementById("count-blanc").textContent = "–";
-    document.getElementById("count-rouge").textContent = "–";
+  function inSeason(dateStr) {
+    const d = new Date(dateStr);
+    return d >= seasonStart && d <= seasonEnd;
+  }
+
+  /* ======================
+     HISTORIQUE VALIDÉ EDF
+  ====================== */
+  history.forEach(h => {
+    if (!h.realColor) return;
+    if (!inSeason(h.date)) return;
+
+    used[h.realColor]?.add(h.date);
   });
+
+  /* ======================
+     J0 UNIQUEMENT (PAS J1)
+  ====================== */
+  const todayStr = now.toISOString().split("T")[0];
+
+  tempo.forEach(d => {
+    if (!d.fixed) return;
+    if (d.date !== todayStr) return; // ⬅️ J0 seulement
+    if (!inSeason(d.date)) return;
+
+    used[d.couleur]?.add(d.date);
+  });
+
+  /* ======================
+     CALCUL RESTANT
+  ====================== */
+  const remaining = {
+    bleu: Math.max(0, MAX.bleu - used.bleu.size),
+    blanc: Math.max(0, MAX.blanc - used.blanc.size),
+    rouge: Math.max(0, MAX.rouge - used.rouge.size)
+  };
+
+  document.getElementById("count-bleu").textContent  = remaining.bleu;
+  document.getElementById("count-blanc").textContent = remaining.blanc;
+  document.getElementById("count-rouge").textContent = remaining.rouge;
+
+}).catch(err => {
+  console.error("Erreur compteurs Tempo :", err);
+});
