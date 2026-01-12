@@ -21,39 +21,43 @@ df = pd.read_json(DATASET_PATH)
 print(f"📊 Échantillons disponibles : {len(df)}")
 print("🧱 Colonnes dataset :", list(df.columns))
 
-if len(df) < 50:
-    print("❌ Dataset trop petit")
+if len(df) < 100:
+    print("❌ Dataset insuffisant pour entraîner un modèle fiable")
     exit(1)
 
 # ======================
-# NORMALISATION COLONNES
+# FEATURE ENGINEERING
 # ======================
-COLUMN_MAP = {
-    "temperature": "temp",
-    "rteConsommation": "rte",
-    "dayOfWeek": "weekday"
-}
+print("🛠️ Construction des features ML")
 
-for src, dst in COLUMN_MAP.items():
-    if src in df.columns and dst not in df.columns:
-        df[dst] = df[src]
+# Date → weekday / month
+df["date"] = pd.to_datetime(df["date"])
+df["weekday"] = df["date"].dt.weekday
+df["month"] = df["date"].dt.month
 
-# ======================
-# FEATURES & TARGET
-# ======================
-FEATURES = ["temp", "rte", "weekday", "month", "horizon"]
+# Horizon (historique réel = 0)
+df["horizon"] = 0
+
+# Label (couleur réelle)
+df["label"] = df["color"]
+
+# Renommage cohérent
+df["temp"] = df["temperature"]
+df["rte"] = df["rteConsommation"]
+
+FEATURES = ["temp", "coldDays", "rte", "weekday", "month", "horizon"]
 TARGET = "label"
 
 missing = [c for c in FEATURES + [TARGET] if c not in df.columns]
 if missing:
-    print("❌ Colonnes manquantes :", missing)
+    print("❌ Colonnes encore manquantes :", missing)
     exit(1)
 
 X = df[FEATURES]
 y = df[TARGET]
 
 # ======================
-# ENCODE LABEL
+# ENCODAGE LABEL
 # ======================
 le = LabelEncoder()
 y_enc = le.fit_transform(y)
@@ -61,6 +65,8 @@ y_enc = le.fit_transform(y)
 # ======================
 # TRAIN MODEL
 # ======================
+print("🚀 Entraînement du modèle ML")
+
 model = DecisionTreeClassifier(
     max_depth=6,
     min_samples_leaf=3,
@@ -80,6 +86,10 @@ bundle = {
 
 joblib.dump(bundle, MODEL_PATH)
 
+size = MODEL_PATH.stat().st_size
 print("✅ Modèle ML entraîné")
-print("💾 Modèle sauvegardé :", MODEL_PATH)
-print("📦 Taille :", MODEL_PATH.stat().st_size, "bytes")
+print(f"📦 Taille du modèle : {size} bytes")
+
+if size < 1000:
+    print("❌ Modèle trop petit (erreur)")
+    exit(1)
