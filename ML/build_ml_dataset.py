@@ -1,97 +1,64 @@
 import json
 import os
-from datetime import datetime
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 TEMPO_PATH = os.path.join(BASE_DIR, "history_real_tempo.json")
 WEATHER_PATH = os.path.join(BASE_DIR, "weather_history.json")
 RTE_PATH = os.path.join(BASE_DIR, "rte_history.json")
-OUTPUT_PATH = os.path.join(BASE_DIR, "ML", "ml_dataset.json")
+OUT_PATH = os.path.join(BASE_DIR, "ML", "ml_dataset.json")
 
-# ======================
-# LOAD FILES
-# ======================
-def load_json(path):
+def load(path):
     if not os.path.exists(path):
-        print("❌ Fichier manquant:", path)
         return []
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
-tempo = load_json(TEMPO_PATH)
-weather = load_json(WEATHER_PATH)
-rte = load_json(RTE_PATH)
+tempo = load(TEMPO_PATH)
+weather = load(WEATHER_PATH)
+rte = load(RTE_PATH)
+
+weather_by_date = {w["date"]: w for w in weather}
+rte_by_date = {r["date"]: r for r in rte}
+
+dataset = []
+
+for t in tempo:
+    date = t.get("date")
+    color = t.get("realColor")
+
+    if not date or not color:
+        continue
+
+    if date not in weather_by_date:
+        continue  # météo obligatoire
+
+    w = weather_by_date[date]
+    r = rte_by_date.get(date)  # RTE optionnel
+
+    dataset.append({
+        "date": date,
+        "color": color,   # TARGET ML
+
+        # FEATURES
+        "temperature": w.get("temperature", 10),
+        "coldDays": w.get("coldDays", 0),
+
+        "rteConsommation": r.get("consommation", 55000) if r else 55000,
+        "rteTension": r.get("tension", 60) if r else 60
+    })
 
 print(f"📊 Tempo: {len(tempo)}")
 print(f"🌦️ Weather: {len(weather)}")
 print(f"⚡ RTE: {len(rte)}")
+print(f"✅ ML samples generated: {len(dataset)}")
 
-# ======================
-# INDEX PAR DATE
-# ======================
-weather_by_date = {w["date"][:10]: w for w in weather if "date" in w}
-rte_by_date = {r["date"][:10]: r for r in rte if "date" in r}
-
-dataset = []
-
-# ======================
-# BUILD DATASET
-# ======================
-for h in tempo:
-    date = h.get("date") or h.get("jour") or h.get("day")
-    if not date:
-        continue
-
-    date = date[:10]
-
-    # 🎯 COULEUR TEMPO (robuste)
-    couleur = (
-        h.get("couleur")
-        or h.get("color")
-        or h.get("tempo")
-        or h.get("value")
-    )
-
-    if couleur not in ("bleu", "blanc", "rouge"):
-        continue
-
-    w = weather_by_date.get(date, {})
-    r = rte_by_date.get(date, {})
-
-    try:
-        d = datetime.fromisoformat(date)
-    except:
-        continue
-
-    sample = {
-        "date": date,
-
-        # FEATURES
-        "temperature": w.get("temperature", w.get("temp", 8)),
-        "weekday": d.weekday(),
-        "month": d.month,
-        "rteConsommation": r.get("consommation", 55000),
-        "rteTension": r.get("tension", 60),
-
-        # LABEL
-        "label": couleur
-    }
-
-    dataset.append(sample)
-
-# ======================
-# SAVE
-# ======================
 if not dataset:
-    print("❌ Aucun échantillon généré")
-    exit(1)
+    raise SystemExit("❌ Aucun échantillon ML généré")
 
-os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
+os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
 
-with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
+with open(OUT_PATH, "w", encoding="utf-8") as f:
     json.dump(dataset, f, indent=2)
 
-print("✅ Dataset ML généré")
-print("📦 Échantillons:", len(dataset))
-print("📁 Fichier:", OUTPUT_PATH)
+print("💾 ml_dataset.json généré")
