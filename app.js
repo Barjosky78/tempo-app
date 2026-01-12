@@ -24,6 +24,7 @@ function verdictLabel(result) {
 /* ==========================
    META
 ========================== */
+
 fetch("meta.json?v=" + Date.now())
   .then(r => r.json())
   .then(meta => {
@@ -36,6 +37,7 @@ fetch("meta.json?v=" + Date.now())
 /* ==========================
    CHARGEMENT ML (PAR DATE)
 ========================== */
+
 let mlByDate = {};
 
 fetch("ML/ml_predictions.json?v=" + Date.now())
@@ -52,6 +54,7 @@ fetch("ML/ml_predictions.json?v=" + Date.now())
 /* ==========================
    PRÉVISIONS TEMPO + ML
 ========================== */
+
 fetch("tempo.json?v=" + Date.now())
   .then(r => r.json())
   .then(days => {
@@ -107,7 +110,7 @@ fetch("tempo.json?v=" + Date.now())
         </div>
 
         ${ml ? `
-          <div class="ml-box">
+          <div class="ml-box ml-${ml.mlPrediction}">
             🧠 <b>ML :</b> ${ml.mlPrediction.toUpperCase()}<br>
             🔴 ${ml.mlProbabilities.rouge ?? 0}% 
             ⚪ ${ml.mlProbabilities.blanc ?? 0}% 
@@ -128,6 +131,7 @@ fetch("tempo.json?v=" + Date.now())
 /* ==========================
    HISTORIQUE — À PARTIR D’HIER
 ========================== */
+
 fetch("history.json?v=" + Date.now())
   .then(r => r.json())
   .then(history => {
