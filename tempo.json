@@ -14,21 +14,15 @@
   },
   {
     "date": "2026-01-13",
-    "couleur": "bleu",
+    "couleur": "blanc",
     "probabilites": {
-      "rouge": 24,
-      "blanc": 35,
-      "bleu": 41
+      "rouge": 0,
+      "blanc": 100,
+      "bleu": 0
     },
-    "fixed": false,
-    "estimated": true,
-    "temperature": 9.7,
-    "rteConsommation": 58315,
-    "rteTension": 70,
+    "fixed": true,
     "sources": {
-      "meteo": true,
-      "historique": true,
-      "rte": false
+      "reel": true
     }
   },
   {
@@ -40,7 +34,7 @@
       "bleu": 41
     },
     "fixed": false,
-    "estimated": false,
+    "estimated": true,
     "temperature": 9.4,
     "rteConsommation": 58315,
     "rteTension": 70,
