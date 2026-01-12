@@ -3,11 +3,11 @@
     "date": "2026-01-13",
     "mlPrediction": "blanc",
     "mlProbabilities": {
-      "blanc": 49,
+      "blanc": 50,
       "bleu": 37,
       "rouge": 13
     },
-    "mlConfidence": 49,
+    "mlConfidence": 50,
     "correctedByRules": false
   },
   {
@@ -15,10 +15,10 @@
     "mlPrediction": "bleu",
     "mlProbabilities": {
       "blanc": 38,
-      "bleu": 40,
+      "bleu": 39,
       "rouge": 23
     },
-    "mlConfidence": 40,
+    "mlConfidence": 39,
     "correctedByRules": false
   },
   {
@@ -26,10 +26,10 @@
     "mlPrediction": "bleu",
     "mlProbabilities": {
       "blanc": 38,
-      "bleu": 40,
+      "bleu": 39,
       "rouge": 23
     },
-    "mlConfidence": 40,
+    "mlConfidence": 39,
     "correctedByRules": false
   },
   {
@@ -37,10 +37,10 @@
     "mlPrediction": "bleu",
     "mlProbabilities": {
       "blanc": 38,
-      "bleu": 40,
+      "bleu": 39,
       "rouge": 23
     },
-    "mlConfidence": 40,
+    "mlConfidence": 39,
     "correctedByRules": false
   },
   {
@@ -58,22 +58,22 @@
     "date": "2026-01-18",
     "mlPrediction": "bleu",
     "mlProbabilities": {
-      "blanc": 16,
-      "bleu": 84,
+      "blanc": 0,
+      "bleu": 100,
       "rouge": 0
     },
-    "mlConfidence": 84,
+    "mlConfidence": 100,
     "correctedByRules": true
   },
   {
     "date": "2026-01-19",
     "mlPrediction": "blanc",
     "mlProbabilities": {
-      "blanc": 49,
+      "blanc": 50,
       "bleu": 37,
       "rouge": 13
     },
-    "mlConfidence": 49,
+    "mlConfidence": 50,
     "correctedByRules": false
   },
   {
