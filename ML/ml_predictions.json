@@ -43,11 +43,11 @@
     "date": "2026-01-18",
     "mlPrediction": "bleu",
     "mlProbabilities": {
-      "bleu": 100,
-      "blanc": 0,
-      "rouge": 0
+      "bleu": 65,
+      "blanc": 25,
+      "rouge": 10
     },
-    "mlConfidence": 100
+    "mlConfidence": 65
   },
   {
     "date": "2026-01-19",
