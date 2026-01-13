@@ -1,71 +1,53 @@
-name: Build REAL Tempo History (RTE Official)
+- name: Build real Tempo history (official RTE repo)
+  run: |
+    node <<'EOF'
+    const fs = require("fs");
+    const https = require("https");
 
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: '30 2 * * *'   # Tous les jours à 02h30 UTC
+    const YEARS = [
+      "2016_2017","2017_2018","2018_2019","2019_2020",
+      "2020_2021","2021_2022","2022_2023","2023_2024","2024_2025"
+    ];
 
-permissions:
-  contents: write
+    const BASE_URL = "https://raw.githubusercontent.com/jbromain/rte-tempo/master/data";
+    const output = [];
 
-jobs:
-  build-history:
-    runs-on: ubuntu-latest
+    function fetch(url) {
+      return new Promise((resolve, reject) => {
+        https.get(url, res => {
+          let data = "";
+          res.on("data", c => data += c);
+          res.on("end", () => resolve(data));
+        }).on("error", reject);
+      });
+    }
 
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+    (async () => {
+      for (const y of YEARS) {
+        const url = `${BASE_URL}/tempo_${y}.json`;
+        try {
+          console.log("📥 Fetch", url);
+          const raw = await fetch(url);
+          const json = JSON.parse(raw);
 
-      - name: Build real Tempo history from RTE
-        run: |
-          node <<'EOF'
-          const fs = require("fs");
-          const https = require("https");
-
-          const OUTPUT = "history_real_tempo.json";
-
-          // ======================
-          // RTE TEMPO SOURCE
-          // ======================
-          const url = "https://odre.opendatasoft.com/api/records/1.0/search/?" +
-            "dataset=tempo-jours-rouges-blancs-bleus&" +
-            "rows=5000&sort=date";
-
-          function fetch(url) {
-            return new Promise((resolve, reject) => {
-              https.get(url, res => {
-                let data = "";
-                res.on("data", c => data += c);
-                res.on("end", () => resolve(JSON.parse(data)));
-              }).on("error", reject);
+          json.forEach(d => {
+            output.push({
+              date: d.date,
+              color: d.color
             });
-          }
+          });
+        } catch (e) {
+          console.warn("⚠️ Skip year", y);
+        }
+      }
 
-          (async () => {
-            console.log("📥 Fetching real Tempo history from RTE...");
-            const json = await fetch(url);
+      output.sort((a,b) => a.date.localeCompare(b.date));
 
-            if (!json.records) {
-              throw new Error("RTE data invalid");
-            }
+      fs.writeFileSync(
+        "history_real_tempo.json",
+        JSON.stringify(output, null, 2)
+      );
 
-            const history = json.records
-              .map(r => ({
-                date: r.fields.date,
-                color: r.fields.couleur
-              }))
-              .filter(d => d.color)
-              .sort((a, b) => a.date.localeCompare(b.date));
-
-            fs.writeFileSync(OUTPUT, JSON.stringify(history, null, 2));
-            console.log(`✅ ${history.length} real Tempo days saved`);
-          })();
-          EOF
-
-      - name: Commit history_real_tempo.json
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add history_real_tempo.json
-          git commit -m "Update REAL Tempo history from RTE" || echo "No changes"
-          git push
+      console.log("✅ history_real_tempo.json generated:", output.length, "days");
+    })();
+    EOF
