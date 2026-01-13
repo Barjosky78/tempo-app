@@ -14,29 +14,28 @@ TEMPO_PATH   = BASE_DIR / "tempo.json"
 HISTORY_PATH = BASE_DIR / "history.json"
 OUTPUT_PATH  = BASE_DIR / "ML" / "ml_predictions.json"
 
-print("🤖 Lancement prédictions ML Tempo (modèle + règles EDF)")
+print("🤖 Lancement prédictions ML Tempo (robuste features)")
 
 # ======================
-# CONSTANTES
+# LOAD MODEL
 # ======================
+bundle = joblib.load(MODEL_PATH)
+model = bundle["model"]
+le = bundle["label_encoder"]
+FEATURES = bundle["features"]   # 🔑 source de vérité ABSOLUE
+
+print("🧠 Features attendues par le modèle :", FEATURES)
+
 COLORS = ["bleu", "blanc", "rouge"]
 
+# ======================
+# CONSTANTES TEMPO
+# ======================
 MAX_DAYS = {
     "bleu": 300,
     "blanc": 43,
     "rouge": 22
 }
-
-# ======================
-# LOAD MODEL
-# ======================
-if not MODEL_PATH.exists():
-    raise SystemExit("❌ Modèle ML introuvable")
-
-bundle = joblib.load(MODEL_PATH)
-model = bundle["model"]
-le = bundle["label_encoder"]
-FEATURES = bundle["features"]  # 🔑 source de vérité
 
 # ======================
 # LOAD DATA
@@ -75,7 +74,6 @@ predictions = []
 
 for day in tempo:
 
-    # Pas de ML sur jours EDF confirmés
     if day.get("fixed"):
         continue
 
@@ -87,38 +85,43 @@ for day in tempo:
     weekday = d.weekday()
 
     # ======================
-    # QUOTAS RESTANTS
+    # QUOTAS
     # ======================
-    remaining_blanc = max(0, MAX_DAYS["blanc"] - len(used_days["blanc"]))
-    remaining_rouge = max(0, MAX_DAYS["rouge"] - len(used_days["rouge"]))
-
-    winter_bleu_remaining = (
-        max(0, MAX_DAYS["bleu"] - len(used_days["bleu"]))
-        if is_winter(d)
-        else 0
-    )
+    remaining = {
+        "bleu":  max(0, MAX_DAYS["bleu"]  - len(used_days["bleu"])),
+        "blanc": max(0, MAX_DAYS["blanc"] - len(used_days["blanc"])),
+        "rouge": max(0, MAX_DAYS["rouge"] - len(used_days["rouge"]))
+    }
 
     season_day_index = (d - SEASON_START).days + 1
 
     # ======================
-    # FEATURES ML — STRICTEMENT IDENTIQUES AU TRAIN
+    # FEATURE POOL (COMPLET)
     # ======================
-    X = pd.DataFrame([{
+    feature_pool = {
+        # anciennes features
+        "temp": day.get("temperature", 8),
+        "rte": day.get("rteConsommation", 55000),
+        "remainingBleu": remaining["bleu"],
+
+        # nouvelles features
         "temperature": day.get("temperature", 8),
         "coldDays": day.get("coldDays", 0),
         "rteConsommation": day.get("rteConsommation", 55000),
         "weekday": weekday,
         "month": d.month,
         "horizon": day.get("horizon", 0),
-
-        "remainingBlanc": remaining_blanc,
-        "remainingRouge": remaining_rouge,
-        "winterBleuRemaining": winter_bleu_remaining,
+        "remainingBlanc": remaining["blanc"],
+        "remainingRouge": remaining["rouge"],
+        "winterBleuRemaining": remaining["bleu"] if is_winter(d) else 0,
         "seasonDayIndex": season_day_index,
         "isWinter": int(is_winter(d))
-    }])
+    }
 
-    X = X[FEATURES]  # 🔑 sécurité absolue
+    # ======================
+    # BUILD X EXACTEMENT COMME LE MODÈLE
+    # ======================
+    X = pd.DataFrame([{f: feature_pool.get(f, 0) for f in FEATURES}])
 
     probs = model.predict_proba(X)[0]
     classes = le.inverse_transform(range(len(probs)))
@@ -127,56 +130,27 @@ for day in tempo:
     for i, c in enumerate(classes):
         ml_probs[c] = float(probs[i])
 
-    corrected = False
-    rules = []
-
     # ======================
-    # 🔒 RÈGLES EDF STRICTES
+    # RÈGLES EDF
     # ======================
     if not red_allowed(d):
         ml_probs["rouge"] = 0
-        rules.append("rouge_hors_periode")
-        corrected = True
 
     if weekday == 5:
         ml_probs["rouge"] = 0
-        rules.append("samedi_pas_rouge")
-        corrected = True
 
     if weekday == 6:
         ml_probs = {"bleu": 1.0, "blanc": 0.0, "rouge": 0.0}
-        rules.append("dimanche_bleu_force")
-        corrected = True
-
-    # ======================
-    # 🧮 QUOTAS
-    # ======================
-    if remaining_blanc <= 0:
-        ml_probs["blanc"] = 0
-        rules.append("quota_blanc_epuise")
-        corrected = True
-
-    if remaining_rouge <= 0:
-        ml_probs["rouge"] = 0
-        rules.append("quota_rouge_epuise")
-        corrected = True
 
     # ======================
     # NORMALISATION
     # ======================
     total = sum(ml_probs.values())
-    if total <= 0:
-        ml_probs = {"bleu": 0.6, "blanc": 0.3, "rouge": 0.1}
-        rules.append("fallback_soft")
-    else:
+    if total > 0:
         for c in COLORS:
             ml_probs[c] /= total
-
-    # Anti 100 %
-    if max(ml_probs.values()) > 0.95:
-        ml_probs = {"bleu": 0.65, "blanc": 0.25, "rouge": 0.10}
-        rules.append("anti_100")
-        corrected = True
+    else:
+        ml_probs = {"bleu": 0.6, "blanc": 0.3, "rouge": 0.1}
 
     ml_color = max(ml_probs, key=ml_probs.get)
 
@@ -184,14 +158,7 @@ for day in tempo:
         "date": day["date"],
         "mlPrediction": ml_color,
         "mlProbabilities": {c: round(ml_probs[c] * 100) for c in COLORS},
-        "mlConfidence": round(ml_probs[ml_color] * 100),
-        "correctedByRules": corrected,
-        "ruleDetails": rules,
-        "remainingDays": {
-            "blanc": remaining_blanc,
-            "rouge": remaining_rouge,
-            "winterBleu": winter_bleu_remaining
-        }
+        "mlConfidence": round(ml_probs[ml_color] * 100)
     })
 
     used_days[ml_color].add(day["date"])
@@ -202,4 +169,4 @@ for day in tempo:
 OUTPUT_PATH.parent.mkdir(exist_ok=True)
 OUTPUT_PATH.write_text(json.dumps(predictions, indent=2), encoding="utf-8")
 
-print(f"✅ {len(predictions)} prédictions ML générées (logique Tempo saine)")
+print(f"✅ {len(predictions)} prédictions ML générées sans crash")
