@@ -45,7 +45,7 @@ with open(TEMPO_PATH, "r", encoding="utf-8") as f:
     tempo = json.load(f)
 
 # ======================
-# LOAD HISTORY (QUOTAS)
+# LOAD HISTORY (SAFE)
 # ======================
 used_days = {
     "bleu": set(),
@@ -54,13 +54,19 @@ used_days = {
 }
 
 if HISTORY_PATH.exists():
-    with open(HISTORY_PATH, "r", encoding="utf-8") as f:
-        history = json.load(f)
+    try:
+        raw = HISTORY_PATH.read_text(encoding="utf-8").strip()
+        history = json.loads(raw) if raw else []
 
-    for h in history:
-        color = h.get("realColor")
-        if color in used_days:
-            used_days[color].add(h["date"])
+        for h in history:
+            color = h.get("realColor")
+            date_ = h.get("date")
+            if color in used_days and date_:
+                used_days[color].add(date_)
+    except Exception as e:
+        print("⚠️ history.json invalide → quotas ignorés :", e)
+else:
+    print("ℹ️ history.json absent → quotas ignorés")
 
 # ======================
 # SAISON TEMPO (1/09 → 31/08)
@@ -70,9 +76,6 @@ season_year = today.year if today.month >= 9 else today.year - 1
 
 SEASON_START = date(season_year, 9, 1)
 SEASON_END   = date(season_year + 1, 8, 31)
-
-def in_tempo_season(d: date) -> bool:
-    return SEASON_START <= d <= SEASON_END
 
 def red_allowed(d: date) -> bool:
     return d.month in (11, 12, 1, 2, 3)
@@ -93,7 +96,7 @@ for day in tempo:
     except Exception:
         continue
 
-    weekday = d.weekday()  # 0=lundi ... 5=samedi 6=dimanche
+    weekday = d.weekday()  # 0=lundi … 5=samedi 6=dimanche
 
     # ======================
     # FEATURES (IDENTIQUES AU TRAIN)
@@ -110,10 +113,9 @@ for day in tempo:
     probs = model.predict_proba(X)[0]
     classes = le.inverse_transform(range(len(probs)))
 
-    ml_probs = {
-        classes[i]: round(probs[i] * 100)
-        for i in range(len(classes))
-    }
+    ml_probs = {c: 0 for c in ["bleu", "blanc", "rouge"]}
+    for i, c in enumerate(classes):
+        ml_probs[c] = round(probs[i] * 100)
 
     corrected = False
     rule_details = []
@@ -123,18 +125,18 @@ for day in tempo:
     # ======================
 
     # ❌ ROUGE HORS PÉRIODE HIVER
-    if ml_probs.get("rouge", 0) > 0 and not red_allowed(d):
+    if ml_probs["rouge"] > 0 and not red_allowed(d):
         ml_probs["rouge"] = 0
         corrected = True
-        rule_details.append("rouge_hors_periode_1nov_31mars")
+        rule_details.append("rouge_hors_periode")
 
-    # ❌ ROUGE INTERDIT WEEK-END
-    if weekday in (5, 6) and ml_probs.get("rouge", 0) > 0:
+    # ❌ ROUGE INTERDIT SAMEDI / DIMANCHE
+    if weekday in (5, 6) and ml_probs["rouge"] > 0:
         ml_probs["rouge"] = 0
         corrected = True
-        rule_details.append("rouge_interdit_weekend")
+        rule_details.append("rouge_weekend")
 
-    # 🔵 DIMANCHE = BLEU 100 %
+    # ❌ DIMANCHE = BLEU UNIQUEMENT
     if weekday == 6:
         ml_probs = {"bleu": 100, "blanc": 0, "rouge": 0}
         corrected = True
@@ -148,11 +150,11 @@ for day in tempo:
         for c in MAX_DAYS
     }
 
-    for color, rest in remaining.items():
-        if rest <= 0 and ml_probs.get(color, 0) > 0:
-            ml_probs[color] = 0
+    for c in remaining:
+        if remaining[c] <= 0 and ml_probs[c] > 0:
+            ml_probs[c] = 0
             corrected = True
-            rule_details.append(f"quota_{color}_epuise")
+            rule_details.append(f"quota_{c}_epuise")
 
     # ======================
     # NORMALISATION
@@ -163,8 +165,8 @@ for day in tempo:
         ml_probs = {"bleu": 100, "blanc": 0, "rouge": 0}
         rule_details.append("fallback_bleu")
     else:
-        for k in ml_probs:
-            ml_probs[k] = round(ml_probs[k] / total * 100)
+        for c in ml_probs:
+            ml_probs[c] = round(ml_probs[c] / total * 100)
 
         diff = 100 - sum(ml_probs.values())
         if diff != 0:
@@ -173,6 +175,9 @@ for day in tempo:
 
     ml_color = max(ml_probs, key=ml_probs.get)
     ml_confidence = ml_probs[ml_color]
+
+    # 🔑 Met à jour les quotas simulés
+    used_days[ml_color].add(day["date"])
 
     predictions.append({
         "date": day["date"],
