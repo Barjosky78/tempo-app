@@ -48,6 +48,22 @@ def is_winter(date: datetime) -> bool:
 def is_red_allowed(date: datetime) -> bool:
     return is_winter(date)
 
+def compute_energy_stress(consumption: int) -> int:
+    """
+    Stress énergétique explicite pour la ML
+    0 = très faible
+    1 = normal
+    2 = tendu
+    3 = critique
+    """
+    if consumption >= 65000:
+        return 3
+    elif consumption >= 58000:
+        return 2
+    elif consumption >= 52000:
+        return 1
+    return 0
+
 # ======================
 # LOAD DATA
 # ======================
@@ -67,22 +83,18 @@ rte_by_date = {
 
 # ======================
 # DÉDUPLICATION TEMPO
-# 1 date = 1 couleur (priorité rouge > blanc > bleu)
 # ======================
 tempo_by_date = {}
 
 for entry in tempo_raw:
-    date = entry.get("date")
-    color = entry.get("color")
+    d = entry.get("date")
+    c = entry.get("color")
 
-    if not date or not color:
+    if not d or not c:
         continue
 
-    if (
-        date not in tempo_by_date
-        or COLOR_PRIORITY[color] > COLOR_PRIORITY[tempo_by_date[date]]
-    ):
-        tempo_by_date[date] = color
+    if d not in tempo_by_date or COLOR_PRIORITY[c] > COLOR_PRIORITY[tempo_by_date[d]]:
+        tempo_by_date[d] = c
 
 # ======================
 # BUILD DATASET ML
@@ -94,16 +106,13 @@ for date_str in sorted(tempo_by_date.keys()):
     color = tempo_by_date[date_str]
 
     if date_str not in weather_by_date:
-        continue  # météo obligatoire pour ML
+        continue
 
     try:
         date = datetime.fromisoformat(date_str)
     except ValueError:
         continue
 
-    # ======================
-    # SAISON TEMPO
-    # ======================
     season_start, season_end = tempo_season_bounds(date)
     if not (season_start <= date <= season_end):
         continue
@@ -123,9 +132,6 @@ for date_str in sorted(tempo_by_date.keys()):
     if color == "rouge" and not is_red_allowed(date):
         continue
 
-    # ======================
-    # CONSOMMATION DU JOUR
-    # ======================
     used[color].add(date_str)
 
     remaining_bleu  = max(0, MAX_DAYS["bleu"]  - len(used["bleu"]))
@@ -140,6 +146,12 @@ for date_str in sorted(tempo_by_date.keys()):
 
     w = weather_by_date.get(date_str, {})
     r = rte_by_date.get(date_str, {})
+
+    consommation = r.get("consommation", 55000)
+    energy_stress = compute_energy_stress(consommation)
+
+    # 🔑 stress tempo progressif (0 → 1)
+    tempo_stress_ratio = 1 - (remaining_tempo_days / TEMPO_TOTAL_DAYS)
 
     dataset.append({
         # ======================
@@ -157,16 +169,18 @@ for date_str in sorted(tempo_by_date.keys()):
         # ======================
         # RTE
         # ======================
-        "rteConsommation": r.get("consommation", 55000),
+        "rteConsommation": consommation,
         "rteTension": r.get("tension", 60),
+        "energyStress": energy_stress,
 
         # ======================
-        # CONTEXTE TEMPO (🔥 CLÉ ML)
+        # CONTEXTE TEMPO (CLÉ ML)
         # ======================
         "remainingBleu": remaining_bleu,
         "remainingBlanc": remaining_blanc,
         "remainingRouge": remaining_rouge,
         "remainingTempoDays": remaining_tempo_days,
+        "tempoStressRatio": round(tempo_stress_ratio, 3),
 
         "winterBleuRemaining": remaining_bleu if is_winter(date) else 0,
         "seasonDayIndex": season_day_index,
@@ -190,4 +204,4 @@ os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
 with open(OUT_PATH, "w", encoding="utf-8") as f:
     json.dump(dataset, f, indent=2)
 
-print("💾 ml_dataset.json généré (logique Tempo 150 jours correcte)")
+print("💾 ml_dataset.json généré (stress Tempo + stress énergétique intégrés)")
