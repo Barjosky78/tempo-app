@@ -32,7 +32,7 @@ jobs:
           pip install scikit-learn joblib pandas
 
       # ======================
-      # EDF TEMPO OFFICIEL (J0 / J1)
+      # EDF TEMPO OFFICIEL
       # ======================
       - name: Fetch official EDF Tempo
         run: |
@@ -67,20 +67,37 @@ jobs:
           const fs = require("fs");
           const fmt = d => d.toISOString().split("T")[0];
 
-          // ===== EDF =====
+          /* ======================
+             EDF OFFICIEL (ROBUSTE)
+          ====================== */
           let edf = {};
           try { edf = JSON.parse(fs.readFileSync("edf_tempo.json","utf8")); } catch {}
-          const edfToday = edf.today || "bleu";
-          const edfTomorrow = edf.tomorrow || "bleu";
 
-          // ===== WEATHER =====
+          const edfToday =
+            edf.today ??
+            edf.aujourd_hui ??
+            edf.jourJ ??
+            "bleu";
+
+          const edfTomorrow =
+            edf.tomorrow ??
+            edf.demain ??
+            edf.jourJ1 ??
+            edf.j1 ??
+            null;
+
+          /* ======================
+             WEATHER
+          ====================== */
           let temps = [];
           try {
             const w = JSON.parse(fs.readFileSync("weather.json","utf8"));
             temps = w.daily?.temperature_2m_mean || [];
           } catch {}
 
-          // ===== RTE =====
+          /* ======================
+             RTE
+          ====================== */
           let consommation = null;
           let tension = 60;
           try {
@@ -94,7 +111,9 @@ jobs:
             }
           } catch {}
 
-          // ===== HISTO =====
+          /* ======================
+             HISTO BASE
+          ====================== */
           const HISTO_MONTH = {
             11:{rouge:8,blanc:22,bleu:70},
             12:{rouge:14,blanc:30,bleu:56},
@@ -115,7 +134,9 @@ jobs:
           today.setHours(0,0,0,0);
           const days = [];
 
-          // ===== J0 EDF =====
+          /* ======================
+             J0 — EDF
+          ====================== */
           days.push({
             date: fmt(today),
             couleur: edfToday,
@@ -128,23 +149,29 @@ jobs:
             sources: { reel: true }
           });
 
-          // ===== J1 EDF =====
+          /* ======================
+             J1 — EDF (SEULEMENT SI PUBLIÉ)
+          ====================== */
           const tomorrow = new Date(today);
           tomorrow.setDate(today.getDate() + 1);
 
-          days.push({
-            date: fmt(tomorrow),
-            couleur: edfTomorrow,
-            probabilites: {
-              rouge: edfTomorrow === "rouge" ? 100 : 0,
-              blanc: edfTomorrow === "blanc" ? 100 : 0,
-              bleu:  edfTomorrow === "bleu"  ? 100 : 0
-            },
-            fixed: true,
-            sources: { reel: true }
-          });
+          if (edfTomorrow) {
+            days.push({
+              date: fmt(tomorrow),
+              couleur: edfTomorrow,
+              probabilites: {
+                rouge: edfTomorrow === "rouge" ? 100 : 0,
+                blanc: edfTomorrow === "blanc" ? 100 : 0,
+                bleu:  edfTomorrow === "bleu"  ? 100 : 0
+              },
+              fixed: true,
+              sources: { reel: true }
+            });
+          }
 
-          // ===== J2 → J9 =====
+          /* ======================
+             J2 → J9
+          ====================== */
           for (let i = 2; i <= 9; i++) {
             const d = new Date(today);
             d.setDate(today.getDate() + i);
@@ -164,20 +191,20 @@ jobs:
               bleu  += HISTO_WEEKDAY[dow].bleu;
             }
 
-            // météo (40% J2 → J6)
+            /* 🌦️ MÉTÉO 40 % (J2 → J6) */
             if (i <= 6) {
               if (temp < 0) { rouge += 12; bleu -= 6; }
               else if (temp < 3) { blanc += 12; bleu -= 6; }
             }
 
-            // RTE (25% dès J2)
+            /* ⚡ RTE 25 % DÈS J2 */
             if (consommation !== null) {
               if (tension < 55) { bleu += 6; blanc -= 3; rouge -= 3; }
               else if (tension <= 70) { blanc += 6; bleu -= 3; rouge -= 3; }
               else { rouge += 6; blanc += 3; bleu -= 9; }
             }
 
-            // règles Tempo
+            /* RÈGLES TEMPO */
             if (dow === 0) { rouge = 0; blanc = 0; bleu = 100; }
             if (dow === 6) { blanc += rouge; rouge = 0; }
 
@@ -267,5 +294,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tempo.json meta.json history.json edf_tempo.json ML/*.json ML/*.pkl || true
-          git commit -m "Hourly Tempo update (EDF + Weather + RTE + ML)" || echo "No changes"
+          git commit -m "Hourly Tempo update (EDF safe J1 + Weather + RTE + ML)" || echo "No changes"
           git push
