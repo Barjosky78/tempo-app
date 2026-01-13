@@ -14,7 +14,7 @@ TEMPO_PATH   = BASE_DIR / "tempo.json"
 HISTORY_PATH = BASE_DIR / "history.json"
 OUTPUT_PATH  = BASE_DIR / "ML" / "ml_predictions.json"
 
-print("🤖 Lancement prédictions ML Tempo (robuste & aligné modèle)")
+print("🤖 Lancement prédictions ML Tempo (aligné modèle + règles EDF)")
 
 # ======================
 # LOAD MODEL
@@ -25,7 +25,7 @@ if not MODEL_PATH.exists():
 bundle = joblib.load(MODEL_PATH)
 model = bundle["model"]
 le = bundle["label_encoder"]
-FEATURES = bundle["features"]  # 🔑 SOURCE DE VÉRITÉ
+FEATURES = bundle["features"]   # 🔑 source de vérité ABSOLUE
 
 print("🧠 Features attendues par le modèle :", FEATURES)
 
@@ -48,7 +48,11 @@ if not TEMPO_PATH.exists():
 
 tempo = json.loads(TEMPO_PATH.read_text(encoding="utf-8"))
 
+# ======================
+# LOAD HISTORY (quotas réels)
+# ======================
 used_days = {c: set() for c in COLORS}
+
 if HISTORY_PATH.exists():
     try:
         history = json.loads(HISTORY_PATH.read_text(encoding="utf-8") or "[]")
@@ -94,17 +98,14 @@ for day in tempo:
     # ======================
     # QUOTAS RESTANTS
     # ======================
-    remaining = {
-        "bleu":  max(0, MAX_DAYS["bleu"]  - len(used_days["bleu"])),
-        "blanc": max(0, MAX_DAYS["blanc"] - len(used_days["blanc"])),
-        "rouge": max(0, MAX_DAYS["rouge"] - len(used_days["rouge"]))
-    }
+    remaining_bleu  = max(0, MAX_DAYS["bleu"]  - len(used_days["bleu"]))
+    remaining_blanc = max(0, MAX_DAYS["blanc"] - len(used_days["blanc"]))
+    remaining_rouge = max(0, MAX_DAYS["rouge"] - len(used_days["rouge"]))
 
     season_day_index = (d - SEASON_START).days + 1
 
     # ======================
     # FEATURE POOL COMPLET
-    # (on fournit PLUS que nécessaire, puis on filtre)
     # ======================
     feature_pool = {
         # météo
@@ -124,15 +125,14 @@ for day in tempo:
         "isWinter": int(is_winter(d)),
 
         # Tempo
-        "remainingBleu": remaining["bleu"],
-        "remainingBlanc": remaining["blanc"],
-        "remainingRouge": remaining["rouge"],
-        "winterBleuRemaining": remaining["bleu"] if is_winter(d) else 0,
-        "remainingTempoDays": remaining["bleu"] + remaining["blanc"] + remaining["rouge"]
+        "remainingBleu": remaining_bleu,
+        "remainingBlanc": remaining_blanc,
+        "remainingRouge": remaining_rouge,
+        "winterBleuRemaining": remaining_bleu if is_winter(d) else 0
     }
 
     # ======================
-    # BUILD X STRICTEMENT SELON LE MODÈLE
+    # BUILD X STRICTEMENT SELON FEATURES DU MODÈLE
     # ======================
     X = pd.DataFrame([{f: feature_pool.get(f, 0) for f in FEATURES}])
 
@@ -147,7 +147,7 @@ for day in tempo:
         ml_probs[c] = float(probs[i])
 
     # ======================
-    # 🔒 RÈGLES EDF (APRÈS ML)
+    # 🔒 RÈGLES EDF (POST-ML)
     # ======================
     if not red_allowed(d):
         ml_probs["rouge"] = 0
@@ -168,6 +168,10 @@ for day in tempo:
     else:
         ml_probs = {"bleu": 0.6, "blanc": 0.3, "rouge": 0.1}
 
+    # Anti 100 %
+    if max(ml_probs.values()) > 0.95:
+        ml_probs = {"bleu": 0.65, "blanc": 0.25, "rouge": 0.10}
+
     ml_color = max(ml_probs, key=ml_probs.get)
 
     predictions.append({
@@ -186,4 +190,4 @@ for day in tempo:
 OUTPUT_PATH.parent.mkdir(exist_ok=True)
 OUTPUT_PATH.write_text(json.dumps(predictions, indent=2), encoding="utf-8")
 
-print(f"✅ {len(predictions)} prédictions ML générées correctement")
+print(f"✅ {len(predictions)} prédictions ML générées sans erreur")
