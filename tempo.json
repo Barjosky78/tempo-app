@@ -14,16 +14,133 @@
   },
   {
     "date": "2026-01-14",
-    "couleur": "blanc",
+    "couleur": "bleu",
     "probabilites": {
-      "rouge": 22,
+      "rouge": 17,
       "blanc": 39,
-      "bleu": 39
+      "bleu": 44
     },
     "fixed": false,
-    "temperature": 10.1,
-    "rteConsommation": 58315,
-    "rteTension": 70,
+    "sources": {
+      "historique": true,
+      "meteo": true,
+      "rte": true
+    }
+  },
+  {
+    "date": "2026-01-15",
+    "couleur": "bleu",
+    "probabilites": {
+      "rouge": 17,
+      "blanc": 39,
+      "bleu": 44
+    },
+    "fixed": false,
+    "sources": {
+      "historique": true,
+      "meteo": true,
+      "rte": true
+    }
+  },
+  {
+    "date": "2026-01-16",
+    "couleur": "bleu",
+    "probabilites": {
+      "rouge": 17,
+      "blanc": 39,
+      "bleu": 44
+    },
+    "fixed": false,
+    "sources": {
+      "historique": true,
+      "meteo": true,
+      "rte": true
+    }
+  },
+  {
+    "date": "2026-01-17",
+    "couleur": "bleu",
+    "probabilites": {
+      "rouge": 17,
+      "blanc": 39,
+      "bleu": 44
+    },
+    "fixed": false,
+    "sources": {
+      "historique": true,
+      "meteo": true,
+      "rte": true
+    }
+  },
+  {
+    "date": "2026-01-18",
+    "couleur": "bleu",
+    "probabilites": {
+      "rouge": 17,
+      "blanc": 39,
+      "bleu": 44
+    },
+    "fixed": false,
+    "sources": {
+      "historique": true,
+      "meteo": true,
+      "rte": true
+    }
+  },
+  {
+    "date": "2026-01-19",
+    "couleur": "bleu",
+    "probabilites": {
+      "rouge": 17,
+      "blanc": 39,
+      "bleu": 44
+    },
+    "fixed": false,
+    "sources": {
+      "historique": true,
+      "meteo": true,
+      "rte": true
+    }
+  },
+  {
+    "date": "2026-01-20",
+    "couleur": "bleu",
+    "probabilites": {
+      "rouge": 17,
+      "blanc": 39,
+      "bleu": 44
+    },
+    "fixed": false,
+    "sources": {
+      "historique": true,
+      "meteo": true,
+      "rte": true
+    }
+  },
+  {
+    "date": "2026-01-21",
+    "couleur": "bleu",
+    "probabilites": {
+      "rouge": 17,
+      "blanc": 39,
+      "bleu": 44
+    },
+    "fixed": false,
+    "sources": {
+      "historique": true,
+      "meteo": true,
+      "rte": true
+    }
+  },
+  {
+    "date": "2026-01-22",
+    "couleur": "bleu",
+    "probabilites": {
+      "rouge": 17,
+      "blanc": 39,
+      "bleu": 44
+    },
+    "fixed": false,
     "sources": {
       "historique": true,
       "meteo": true,
