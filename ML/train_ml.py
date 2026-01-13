@@ -11,7 +11,7 @@ from pathlib import Path
 DATASET_PATH = Path("ML/ml_dataset.json")
 MODEL_PATH   = Path("ML/ml_model.pkl")
 
-print("🌲 Entraînement RandomForest ML Tempo (historique réel + logique EDF)")
+print("🌲 Entraînement RandomForest ML Tempo (logique EDF corrigée)")
 
 # ======================
 # LOAD DATASET
@@ -35,19 +35,26 @@ print("🛠️ Construction des features")
 df["date"] = pd.to_datetime(df["date"], errors="coerce")
 df = df.dropna(subset=["date"])
 
+# Features temporelles
 df["weekday"] = df["date"].dt.weekday
 df["month"]   = df["date"].dt.month
 df["horizon"] = 0  # historique réel uniquement
 
-# Target
-df["label"] = df["color"]
-
-# Harmonisation
+# Harmonisation noms
 df["temp"] = df["temperature"]
 df["rte"]  = df["rteConsommation"]
 
+# 🔑 SÉCURITÉ : features hivernales toujours présentes
+if "winterBleuRemaining" not in df.columns:
+    df["winterBleuRemaining"] = 0
+
 # ======================
-# FEATURES (SOURCE DE VÉRITÉ)
+# TARGET
+# ======================
+df["label"] = df["color"]
+
+# ======================
+# FEATURES — SOURCE DE VÉRITÉ
 # ======================
 FEATURES = [
     "temp",
@@ -57,7 +64,7 @@ FEATURES = [
     "month",
     "horizon",
 
-    # 🔑 CONTEXTE TEMPO
+    # 🔥 CONTEXTE TEMPO STRUCTURANT
     "remainingBlanc",
     "remainingRouge",
     "winterBleuRemaining",
@@ -85,12 +92,12 @@ classes = list(le.classes_)
 print("🏷️ Classes apprises :", classes)
 
 # ======================
-# CLASS WEIGHTS (ANTI-BLEU)
+# CLASS WEIGHTS (ANTI BLEU RÉEL)
 # ======================
 BASE_WEIGHTS = {
     "bleu": 1.0,
-    "blanc": 3.5,
-    "rouge": 6.0
+    "blanc": 3.0,
+    "rouge": 5.0
 }
 
 class_weight = {
@@ -106,9 +113,9 @@ print("⚖️ Poids utilisés :", class_weight)
 print("🚀 Entraînement RandomForest")
 
 model = RandomForestClassifier(
-    n_estimators=250,        # 🔑 stabilité
-    max_depth=8,
-    min_samples_leaf=5,
+    n_estimators=300,        # stabilité
+    max_depth=9,             # logique saisonnière
+    min_samples_leaf=6,      # anti surapprentissage
     class_weight=class_weight,
     random_state=42,
     n_jobs=-1
@@ -136,4 +143,4 @@ print(f"📦 Taille du modèle : {size} bytes")
 if size < 10_000:
     raise SystemExit("❌ Modèle anormalement petit (erreur d'entraînement)")
 
-print("🎉 RandomForest prêt — prédictions plus réalistes et moins de BLEU abusif")
+print("🎉 RandomForest prêt — BLEU hivernal désormais pénalisé correctement")
