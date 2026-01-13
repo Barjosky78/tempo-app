@@ -59,10 +59,10 @@ if HISTORY_PATH.exists():
         history = json.loads(raw) if raw else []
 
         for h in history:
-            color = h.get("realColor")
-            date_ = h.get("date")
-            if color in used_days and date_:
-                used_days[color].add(date_)
+            c = h.get("realColor")
+            d = h.get("date")
+            if c in used_days and d:
+                used_days[c].add(d)
     except Exception as e:
         print("⚠️ history.json invalide → quotas ignorés :", e)
 else:
@@ -87,7 +87,7 @@ predictions = []
 
 for day in tempo:
 
-    # ❌ Pas de ML sur jours EDF confirmés
+    # ❌ Pas de ML sur J0/J1 EDF confirmés
     if day.get("fixed"):
         continue
 
@@ -96,10 +96,20 @@ for day in tempo:
     except Exception:
         continue
 
-    weekday = d.weekday()  # 0=lundi … 5=samedi 6=dimanche
+    weekday = d.weekday()  # 0=lundi … 6=dimanche
 
     # ======================
-    # FEATURES (IDENTIQUES AU TRAIN)
+    # QUOTAS RESTANTS (AVANT ML)
+    # ======================
+    remaining = {
+        c: max(0, MAX_DAYS[c] - len(used_days[c]))
+        for c in MAX_DAYS
+    }
+
+    season_day_index = (d - SEASON_START).days + 1
+
+    # ======================
+    # FEATURES — IDENTIQUES AU TRAIN
     # ======================
     X = pd.DataFrame([{
         "temp": day.get("temperature", 8),
@@ -107,7 +117,13 @@ for day in tempo:
         "rte": day.get("rteConsommation", 55000),
         "weekday": weekday,
         "month": d.month,
-        "horizon": day.get("horizon", 0)
+        "horizon": day.get("horizon", 0),
+
+        # 🔑 FEATURES MANQUANTES (CAUSE DU BUG)
+        "remainingBleu": remaining["bleu"],
+        "remainingBlanc": remaining["blanc"],
+        "remainingRouge": remaining["rouge"],
+        "seasonDayIndex": season_day_index
     }])
 
     probs = model.predict_proba(X)[0]
@@ -124,31 +140,20 @@ for day in tempo:
     # 🔒 RÈGLES TEMPO EDF
     # ======================
 
-    # ❌ ROUGE HORS PÉRIODE HIVER
     if ml_probs["rouge"] > 0 and not red_allowed(d):
         ml_probs["rouge"] = 0
         corrected = True
         rule_details.append("rouge_hors_periode")
 
-    # ❌ ROUGE INTERDIT SAMEDI / DIMANCHE
     if weekday in (5, 6) and ml_probs["rouge"] > 0:
         ml_probs["rouge"] = 0
         corrected = True
         rule_details.append("rouge_weekend")
 
-    # ❌ DIMANCHE = BLEU UNIQUEMENT
     if weekday == 6:
         ml_probs = {"bleu": 100, "blanc": 0, "rouge": 0}
         corrected = True
         rule_details.append("dimanche_bleu_force")
-
-    # ======================
-    # 🧮 QUOTAS RESTANTS
-    # ======================
-    remaining = {
-        c: max(0, MAX_DAYS[c] - len(used_days[c]))
-        for c in MAX_DAYS
-    }
 
     for c in remaining:
         if remaining[c] <= 0 and ml_probs[c] > 0:
@@ -176,7 +181,7 @@ for day in tempo:
     ml_color = max(ml_probs, key=ml_probs.get)
     ml_confidence = ml_probs[ml_color]
 
-    # 🔑 Met à jour les quotas simulés
+    # 🔑 Avance les quotas simulés
     used_days[ml_color].add(day["date"])
 
     predictions.append({
