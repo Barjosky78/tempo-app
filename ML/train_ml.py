@@ -11,7 +11,7 @@ from pathlib import Path
 DATASET_PATH = Path("ML/ml_dataset.json")
 MODEL_PATH   = Path("ML/ml_model.pkl")
 
-print("🤖 Lancement entraînement ML Tempo (historique réel + quotas EDF)")
+print("🤖 Entraînement ML Tempo (historique réel + logique hivernale EDF)")
 
 # ======================
 # LOAD DATASET
@@ -37,12 +37,18 @@ df = df.dropna(subset=["date"])
 
 df["weekday"] = df["date"].dt.weekday
 df["month"]   = df["date"].dt.month
-df["horizon"] = 0
+df["horizon"] = 0  # historique réel uniquement
 
+# Target
 df["label"] = df["color"]
-df["temp"]  = df["temperature"]
-df["rte"]   = df["rteConsommation"]
 
+# Harmonisation noms
+df["temp"] = df["temperature"]
+df["rte"]  = df["rteConsommation"]
+
+# ======================
+# FEATURES ML (CORRIGÉES)
+# ======================
 FEATURES = [
     "temp",
     "coldDays",
@@ -50,9 +56,11 @@ FEATURES = [
     "weekday",
     "month",
     "horizon",
-    "remainingBleu",
+
+    # 🔑 CONTEXTE TEMPO RÉEL
     "remainingBlanc",
     "remainingRouge",
+    "winterBleuRemaining",
     "seasonDayIndex"
 ]
 
@@ -77,7 +85,7 @@ classes = list(le.classes_)
 print("🏷️ Classes apprises :", classes)
 
 # ======================
-# CLASS WEIGHTS (CORRIGÉ)
+# CLASS WEIGHTS (ANTI-BLEU)
 # ======================
 BASE_WEIGHTS = {
     "bleu": 1.0,
@@ -90,7 +98,7 @@ class_weight = {
     for c in classes
 }
 
-print("⚖️ Poids encodés utilisés :", class_weight)
+print("⚖️ Poids utilisés :", class_weight)
 
 # ======================
 # TRAIN MODEL
@@ -98,8 +106,8 @@ print("⚖️ Poids encodés utilisés :", class_weight)
 print("🚀 Entraînement du modèle ML")
 
 model = DecisionTreeClassifier(
-    max_depth=7,
-    min_samples_leaf=5,
+    max_depth=7,          # logique saisonnière + quotas
+    min_samples_leaf=5,   # évite surapprentissage
     class_weight=class_weight,
     random_state=42
 )
@@ -126,4 +134,4 @@ print(f"📦 Taille du modèle : {size} bytes")
 if size < 400:
     raise SystemExit("❌ Modèle anormalement petit")
 
-print("🎉 Modèle ML valide — biais BLEU corrigé proprement")
+print("🎉 Modèle ML valide — biais BLEU structurel corrigé")
