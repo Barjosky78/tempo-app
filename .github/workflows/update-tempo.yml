@@ -1,8 +1,8 @@
-name: Update Tempo + History + Stats + ML (Hourly Safe J1 + RTE)
+name: Update Tempo + History + Stats + ML (Hourly Safe J1 FULL)
 
 on:
   schedule:
-    - cron: '0 * * * *'   # ⏱️ Toutes les heures (UTC)
+    - cron: '0 * * * *'   # Toutes les heures
   workflow_dispatch:
 
 permissions:
@@ -98,7 +98,7 @@ jobs:
           } catch {}
 
           /* ======================
-             BASE HISTO
+             HISTO
           ====================== */
           const HISTO_MONTH = {
             11:{rouge:8,blanc:22,bleu:70},
@@ -132,7 +132,7 @@ jobs:
           });
 
           /* ======================
-             J1 — EDF ou CALCULÉ + RTE
+             J1 — EDF OU CALCULÉ
           ====================== */
           const tomorrow = new Date(today);
           tomorrow.setDate(today.getDate() + 1);
@@ -146,40 +146,22 @@ jobs:
               sources: { reel:true }
             });
           } else {
-            const dow = tomorrow.getDay();
-            const month = tomorrow.getMonth() + 1;
-            const temp = temps[1] ?? 8;
-
-            let base = HISTO_MONTH[month] || {rouge:10,blanc:25,bleu:65};
+            let base = HISTO_MONTH[tomorrow.getMonth()+1] || {rouge:10,blanc:25,bleu:65};
             let {rouge,blanc,bleu} = base;
 
-            if (HISTO_WEEKDAY[dow]) {
-              rouge += HISTO_WEEKDAY[dow].rouge;
-              blanc += HISTO_WEEKDAY[dow].blanc;
-              bleu  += HISTO_WEEKDAY[dow].bleu;
-            }
-
-            /* 🌦️ MÉTÉO */
-            if (temp < 0) { rouge += 12; bleu -= 6; }
-            else if (temp < 3) { blanc += 12; bleu -= 6; }
-
-            /* ⚡ RTE (BLEU +5% MAX) */
             if (consommation !== null) {
-              if (tension < 55) { bleu += 5; blanc -= 3; rouge -= 2; }
-              else if (tension <= 70) { blanc += 5; bleu -= 2; rouge -= 3; }
-              else { rouge += 5; blanc += 2; bleu -= 7; }
+              if (tension < 55) { bleu+=5; blanc-=3; rouge-=2; }
+              else if (tension <= 70) { blanc+=5; bleu-=2; rouge-=3; }
+              else { rouge+=5; blanc+=2; bleu-=7; }
             }
 
-            if (dow === 0) { rouge=0; blanc=0; bleu=100; }
-            if (dow === 6) { blanc += rouge; rouge = 0; }
-
-            const total = rouge + blanc + bleu;
-            rouge = Math.round(rouge/total*100);
-            blanc = Math.round(blanc/total*100);
-            bleu  = 100 - rouge - blanc;
+            const total = rouge+blanc+bleu;
+            rouge=Math.round(rouge/total*100);
+            blanc=Math.round(blanc/total*100);
+            bleu=100-rouge-blanc;
 
             let couleur="bleu";
-            if (rouge>blanc && rouge>bleu) couleur="rouge";
+            if (rouge>blanc&&rouge>bleu) couleur="rouge";
             else if (blanc>=bleu) couleur="blanc";
 
             days.push({
@@ -187,19 +169,46 @@ jobs:
               couleur,
               probabilites:{rouge,blanc,bleu},
               fixed:false,
-              temperature:temp,
-              rteConsommation:consommation,
-              rteTension:tension,
               sources:{historique:true,meteo:true,rte:consommation!==null}
             });
           }
 
-          fs.writeFileSync("tempo.json", JSON.stringify(days,null,2));
-          fs.writeFileSync("meta.json", JSON.stringify({
-            updatedAt:new Date().toISOString(),
-            rteConsommation:consommation,
-            rteTension:tension
-          },null,2));
+          /* ======================
+             J2 → J9 (RESTAURÉ)
+          ====================== */
+          for (let i=2;i<=9;i++) {
+            const d=new Date(today);
+            d.setDate(today.getDate()+i);
+
+            let base=HISTO_MONTH[d.getMonth()+1]||{rouge:10,blanc:25,bleu:65};
+            let {rouge,blanc,bleu}=base;
+
+            if (consommation!==null) {
+              if (tension<55){bleu+=5;blanc-=3;rouge-=2;}
+              else if (tension<=70){blanc+=5;bleu-=2;rouge-=3;}
+              else{rouge+=5;blanc+=2;bleu-=7;}
+            }
+
+            const total=rouge+blanc+bleu;
+            rouge=Math.round(rouge/total*100);
+            blanc=Math.round(blanc/total*100);
+            bleu=100-rouge-blanc;
+
+            let couleur="bleu";
+            if (rouge>blanc&&rouge>bleu) couleur="rouge";
+            else if (blanc>=bleu) couleur="blanc";
+
+            days.push({
+              date:fmt(d),
+              couleur,
+              probabilites:{rouge,blanc,bleu},
+              fixed:false,
+              sources:{historique:true,meteo:true,rte:consommation!==null}
+            });
+          }
+
+          fs.writeFileSync("tempo.json",JSON.stringify(days,null,2));
+          fs.writeFileSync("meta.json",JSON.stringify({updatedAt:new Date().toISOString()},null,2));
           EOF
 
       # ======================
@@ -209,5 +218,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tempo.json meta.json edf_tempo.json
-          git commit -m "J1 fallback with RTE influence (safe EDF)" || echo "No changes"
+          git commit -m "Fix missing J2-J9 (restore full range)" || echo "No changes"
           git push
