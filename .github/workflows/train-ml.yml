@@ -82,3 +82,12 @@ jobs:
           git add ML/model.pkl
           git commit -m "🤖 Auto-train ML model (Tempo + Weather + RTE)" || echo "No changes"
           git push
+          
+- name: Commit trained ML model
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add ML/ml_model.pkl
+          git commit -m "🧠 Retrain ML model with stress features" || echo "No changes"
+          git push
