@@ -4,50 +4,101 @@
     const fs = require("fs");
     const https = require("https");
 
+    console.log("📦 Build real Tempo history from official RTE repository");
+
+    // ======================
+    // ANNÉES DISPONIBLES
+    // ======================
     const YEARS = [
-      "2016_2017","2017_2018","2018_2019","2019_2020",
-      "2020_2021","2021_2022","2022_2023","2023_2024","2024_2025"
+      "2016_2017",
+      "2017_2018",
+      "2018_2019",
+      "2019_2020",
+      "2020_2021",
+      "2021_2022",
+      "2022_2023",
+      "2023_2024",
+      "2024_2025"
     ];
 
-    const BASE_URL = "https://raw.githubusercontent.com/jbromain/rte-tempo/master/data";
+    const BASE_URL =
+      "https://raw.githubusercontent.com/jbromain/rte-tempo/master/data";
+
+    const OUTPUT_PATH = "history_real_tempo.json";
     const output = [];
 
+    // ======================
+    // FETCH UTIL
+    // ======================
     function fetch(url) {
       return new Promise((resolve, reject) => {
-        https.get(url, res => {
-          let data = "";
-          res.on("data", c => data += c);
-          res.on("end", () => resolve(data));
-        }).on("error", reject);
+        https
+          .get(url, res => {
+            if (res.statusCode !== 200) {
+              reject(new Error("HTTP " + res.statusCode));
+              return;
+            }
+
+            let data = "";
+            res.on("data", chunk => (data += chunk));
+            res.on("end", () => resolve(data));
+          })
+          .on("error", reject);
       });
     }
 
+    // ======================
+    // MAIN
+    // ======================
     (async () => {
-      for (const y of YEARS) {
-        const url = `${BASE_URL}/tempo_${y}.json`;
+      for (const year of YEARS) {
+        const url = `${BASE_URL}/tempo_${year}.json`;
+
         try {
-          console.log("📥 Fetch", url);
+          console.log("⬇️ Fetch:", url);
           const raw = await fetch(url);
-          const json = JSON.parse(raw);
+
+          let json;
+          try {
+            json = JSON.parse(raw);
+          } catch {
+            console.warn("⚠️ JSON invalide pour", year);
+            continue;
+          }
+
+          if (!Array.isArray(json)) {
+            console.warn("⚠️ Format inattendu pour", year);
+            continue;
+          }
 
           json.forEach(d => {
+            if (!d.date || !d.color) return;
+
             output.push({
               date: d.date,
-              color: d.color
+              realColor: d.color.toLowerCase()
             });
           });
-        } catch (e) {
-          console.warn("⚠️ Skip year", y);
+
+          console.log("✅ Année chargée:", year, "-", json.length, "jours");
+        } catch (err) {
+          console.warn("⚠️ Année ignorée:", year);
         }
       }
 
-      output.sort((a,b) => a.date.localeCompare(b.date));
+      // ======================
+      // TRI & SAUVEGARDE
+      // ======================
+      output.sort((a, b) => a.date.localeCompare(b.date));
 
       fs.writeFileSync(
-        "history_real_tempo.json",
-        JSON.stringify(output, null, 2)
+        OUTPUT_PATH,
+        JSON.stringify(output, null, 2),
+        "utf8"
       );
 
-      console.log("✅ history_real_tempo.json generated:", output.length, "days");
+      console.log("🎉 Historique Tempo réel généré");
+      console.log("📅 Jours total:", output.length);
+      console.log("💾 Fichier:", OUTPUT_PATH);
     })();
     EOF
