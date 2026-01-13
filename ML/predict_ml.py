@@ -14,60 +14,50 @@ TEMPO_PATH   = BASE_DIR / "tempo.json"
 HISTORY_PATH = BASE_DIR / "history.json"
 OUTPUT_PATH  = BASE_DIR / "ML" / "ml_predictions.json"
 
-print("🤖 Lancement prédictions ML (Tempo + quotas + règles EDF)")
+print("🤖 Lancement prédictions ML (Tempo + règles EDF + biais métier)")
 
 # ======================
-# CONSTANTES TEMPO
+# CONSTANTES
 # ======================
+COLORS = ["bleu", "blanc", "rouge"]
+
 MAX_DAYS = {
     "bleu": 300,
     "blanc": 43,
     "rouge": 22
 }
 
-COLORS = ["bleu", "blanc", "rouge"]
-
 # ======================
 # LOAD MODEL
 # ======================
-if not MODEL_PATH.exists():
-    raise SystemExit("❌ Modèle ML introuvable")
-
 bundle = joblib.load(MODEL_PATH)
 model = bundle["model"]
 le = bundle["label_encoder"]
 
 # ======================
-# LOAD TEMPO
+# LOAD DATA
 # ======================
-with open(TEMPO_PATH, "r", encoding="utf-8") as f:
-    tempo = json.load(f)
+tempo = json.loads(TEMPO_PATH.read_text(encoding="utf-8"))
 
-# ======================
-# LOAD HISTORY (QUOTAS RÉELS)
-# ======================
 used_days = {c: set() for c in COLORS}
-
 if HISTORY_PATH.exists():
     try:
         history = json.loads(HISTORY_PATH.read_text(encoding="utf-8") or "[]")
         for h in history:
-            c = h.get("realColor")
-            d = h.get("date")
-            if c in used_days and d:
-                used_days[c].add(d)
+            if h.get("realColor") in used_days:
+                used_days[h["realColor"]].add(h["date"])
     except Exception as e:
-        print("⚠️ history.json invalide → quotas ignorés", e)
+        print("⚠️ history.json invalide :", e)
 
 # ======================
-# SAISON TEMPO
+# UTILS
 # ======================
+def red_allowed(d: date) -> bool:
+    return d.month in (11, 12, 1, 2, 3)
+
 today = date.today()
 season_year = today.year if today.month >= 9 else today.year - 1
 SEASON_START = date(season_year, 9, 1)
-
-def red_allowed(d: date) -> bool:
-    return d.month in (11, 12, 1, 2, 3)
 
 # ======================
 # PREDICTIONS
@@ -76,7 +66,6 @@ predictions = []
 
 for day in tempo:
 
-    # Pas de ML sur jours EDF officiels
     if day.get("fixed"):
         continue
 
@@ -85,7 +74,7 @@ for day in tempo:
     except Exception:
         continue
 
-    weekday = d.weekday()  # 0=lundi … 6=dimanche
+    weekday = d.weekday()
 
     # ======================
     # QUOTAS RESTANTS
@@ -98,7 +87,7 @@ for day in tempo:
     season_day_index = (d - SEASON_START).days + 1
 
     # ======================
-    # FEATURES ML (IDENTIQUES AU TRAIN)
+    # FEATURES ML
     # ======================
     X = pd.DataFrame([{
         "temp": day.get("temperature", 8),
@@ -116,111 +105,99 @@ for day in tempo:
     probs = model.predict_proba(X)[0]
     classes = le.inverse_transform(range(len(probs)))
 
-    # ⚠️ PAS de round ici
     ml_probs = {c: 0.0 for c in COLORS}
     for i, c in enumerate(classes):
         ml_probs[c] = float(probs[i])
 
     corrected = False
-    rule_details = []
+    rules = []
 
     # ======================
-    # BOOST BLANC J1 / J2 EN HIVER
+    # ❄️ BIAIS HIVER (CLÉ)
     # ======================
-    if d.month in (11, 12, 1, 2, 3) and day.get("horizon", 0) in (1, 2):
-        ml_probs["blanc"] += 0.08
+    if d.month in (11, 12, 1, 2, 3):
+        ml_probs["bleu"] *= 0.65
+        ml_probs["blanc"] *= 1.25
+        ml_probs["rouge"] *= 1.15
         corrected = True
-        rule_details.append("boost_blanc_hiver_J1_J2")
+        rules.append("bias_hiver")
 
     # ======================
-    # RÈGLES EDF
+    # 📆 WEEK-END EDF
     # ======================
-    if not red_allowed(d):
+    if weekday == 5:  # samedi
         ml_probs["rouge"] = 0
+        rules.append("samedi_pas_rouge")
         corrected = True
-        rule_details.append("rouge_hors_periode")
 
     if weekday == 6:  # dimanche
         ml_probs = {"bleu": 1.0, "blanc": 0.0, "rouge": 0.0}
+        rules.append("dimanche_bleu_force")
         corrected = True
-        rule_details.append("dimanche_bleu_force")
 
     # ======================
-    # QUOTAS
+    # 🚫 ROUGE HORS PÉRIODE
+    # ======================
+    if not red_allowed(d):
+        ml_probs["rouge"] = 0
+        rules.append("rouge_hors_periode")
+        corrected = True
+
+    # ======================
+    # 🧮 QUOTAS
     # ======================
     for c in COLORS:
         if remaining[c] <= 0:
             ml_probs[c] = 0
+            rules.append(f"quota_{c}_epuise")
             corrected = True
-            rule_details.append(f"quota_{c}_epuise")
-# ======================
-# ❄️ BIAIS SAISONNIER HIVER (AVANT NORMALISATION)
-# ======================
-if d.month in (11, 12, 1, 2, 3):
-    # pénalité BLEU
-    ml_probs["bleu"] = max(0, ml_probs["bleu"] - 25)
 
-    # boost BLANC / ROUGE
-    ml_probs["blanc"] += 15
-    ml_probs["rouge"] += 10
-
-    corrected = True
-    rule_details.append("bias_hiver_reduction_bleu")
     # ======================
-# 🔵 PLAFOND BLEU HIVER
-# ======================
-if d.month in (11, 12, 1, 2, 3):
-    if ml_probs["bleu"] > 60:
-        excess = ml_probs["bleu"] - 60
-        ml_probs["bleu"] = 60
-        ml_probs["blanc"] += excess // 2
-        ml_probs["rouge"] += excess // 2
-        rule_details.append("plafond_bleu_hiver")
+    # 🔵 PLAFOND BLEU HIVER
+    # ======================
+    if d.month in (11, 12, 1, 2, 3) and ml_probs["bleu"] > 0.6:
+        excess = ml_probs["bleu"] - 0.6
+        ml_probs["bleu"] = 0.6
+        ml_probs["blanc"] += excess * 0.6
+        ml_probs["rouge"] += excess * 0.4
+        rules.append("plafond_bleu_hiver")
         corrected = True
+
     # ======================
-    # NORMALISATION (SAFE)
+    # NORMALISATION
     # ======================
     total = sum(ml_probs.values())
-
     if total <= 0:
         ml_probs = {"bleu": 0.6, "blanc": 0.3, "rouge": 0.1}
-        rule_details.append("fallback_soft")
+        rules.append("fallback_soft")
     else:
         for c in COLORS:
             ml_probs[c] /= total
 
-    # ❌ Interdiction du 100% hors EDF
+    # anti 100%
     if max(ml_probs.values()) > 0.95:
-        ml_probs = {"bleu": 0.7, "blanc": 0.25, "rouge": 0.05}
-        rule_details.append("anti_100_percent")
+        ml_probs = {"bleu": 0.65, "blanc": 0.25, "rouge": 0.10}
+        rules.append("anti_100")
+        corrected = True
 
-    # ======================
-    # FINAL
-    # ======================
     ml_color = max(ml_probs, key=ml_probs.get)
 
     predictions.append({
         "date": day["date"],
         "mlPrediction": ml_color,
-        "mlProbabilities": {
-            c: round(ml_probs[c] * 100)
-            for c in COLORS
-        },
+        "mlProbabilities": {c: round(ml_probs[c] * 100) for c in COLORS},
         "mlConfidence": round(ml_probs[ml_color] * 100),
         "correctedByRules": corrected,
-        "ruleDetails": rule_details,
+        "ruleDetails": rules,
         "remainingDays": remaining
     })
 
-    # avance les quotas simulés
     used_days[ml_color].add(day["date"])
 
 # ======================
 # SAVE
 # ======================
 OUTPUT_PATH.parent.mkdir(exist_ok=True)
-
-with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
-    json.dump(predictions, f, indent=2)
+OUTPUT_PATH.write_text(json.dumps(predictions, indent=2), encoding="utf-8")
 
 print(f"✅ {len(predictions)} prédictions ML générées")
