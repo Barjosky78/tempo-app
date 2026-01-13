@@ -32,26 +32,17 @@ if len(df) < 200:
 # ======================
 print("🛠️ Construction des features ML")
 
-# Date
 df["date"] = pd.to_datetime(df["date"], errors="coerce")
 df = df.dropna(subset=["date"])
 
 df["weekday"] = df["date"].dt.weekday
 df["month"]   = df["date"].dt.month
-
-# Historique réel uniquement
 df["horizon"] = 0
 
-# TARGET
 df["label"] = df["color"]
+df["temp"]  = df["temperature"]
+df["rte"]   = df["rteConsommation"]
 
-# Harmonisation noms
-df["temp"] = df["temperature"]
-df["rte"]  = df["rteConsommation"]
-
-# ======================
-# FEATURES ML (TEMPO-AWARE)
-# ======================
 FEATURES = [
     "temp",
     "coldDays",
@@ -59,8 +50,6 @@ FEATURES = [
     "weekday",
     "month",
     "horizon",
-
-    # 🔥 CONTEXTE TEMPO (CLÉS)
     "remainingBleu",
     "remainingBlanc",
     "remainingRouge",
@@ -73,7 +62,6 @@ missing = [c for c in FEATURES + [TARGET] if c not in df.columns]
 if missing:
     raise SystemExit(f"❌ Colonnes manquantes : {missing}")
 
-# Sécurité valeurs manquantes
 df[FEATURES] = df[FEATURES].fillna(0)
 
 X = df[FEATURES]
@@ -89,15 +77,20 @@ classes = list(le.classes_)
 print("🏷️ Classes apprises :", classes)
 
 # ======================
-# CLASS WEIGHTS (CRITIQUE)
+# CLASS WEIGHTS (CORRIGÉ)
 # ======================
-class_weight = {
+BASE_WEIGHTS = {
     "bleu": 1.0,
     "blanc": 3.5,
     "rouge": 6.0
 }
 
-print("⚖️ Poids des classes :", class_weight)
+class_weight = {
+    le.transform([c])[0]: BASE_WEIGHTS[c]
+    for c in classes
+}
+
+print("⚖️ Poids encodés utilisés :", class_weight)
 
 # ======================
 # TRAIN MODEL
@@ -105,8 +98,8 @@ print("⚖️ Poids des classes :", class_weight)
 print("🚀 Entraînement du modèle ML")
 
 model = DecisionTreeClassifier(
-    max_depth=7,            # logique saisonnière
-    min_samples_leaf=5,     # évite l’overfit
+    max_depth=7,
+    min_samples_leaf=5,
     class_weight=class_weight,
     random_state=42
 )
@@ -133,4 +126,4 @@ print(f"📦 Taille du modèle : {size} bytes")
 if size < 400:
     raise SystemExit("❌ Modèle anormalement petit")
 
-print("🎉 Modèle ML valide — biais BLEU corrigé")
+print("🎉 Modèle ML valide — biais BLEU corrigé proprement")
