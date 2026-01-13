@@ -11,7 +11,7 @@ from pathlib import Path
 DATASET_PATH = Path("ML/ml_dataset.json")
 MODEL_PATH   = Path("ML/ml_model.pkl")
 
-print("🤖 Lancement entraînement ML (avec quotas Tempo)")
+print("🤖 Lancement entraînement ML Tempo (historique réel + quotas EDF)")
 
 # ======================
 # LOAD DATASET
@@ -60,7 +60,7 @@ FEATURES = [
     "month",
     "horizon",
 
-    # 🔥 CONTEXTE TEMPO
+    # 🔥 CONTEXTE TEMPO (CLÉS)
     "remainingBleu",
     "remainingBlanc",
     "remainingRouge",
@@ -85,7 +85,19 @@ y = df[TARGET]
 le = LabelEncoder()
 y_enc = le.fit_transform(y)
 
-print("🏷️ Classes apprises :", list(le.classes_))
+classes = list(le.classes_)
+print("🏷️ Classes apprises :", classes)
+
+# ======================
+# CLASS WEIGHTS (CRITIQUE)
+# ======================
+class_weight = {
+    "bleu": 1.0,
+    "blanc": 3.5,
+    "rouge": 6.0
+}
+
+print("⚖️ Poids des classes :", class_weight)
 
 # ======================
 # TRAIN MODEL
@@ -93,9 +105,9 @@ print("🏷️ Classes apprises :", list(le.classes_))
 print("🚀 Entraînement du modèle ML")
 
 model = DecisionTreeClassifier(
-    max_depth=7,          # logique saisonnière + quotas
-    min_samples_leaf=5,   # évite surapprentissage
-    class_weight="balanced",
+    max_depth=7,            # logique saisonnière
+    min_samples_leaf=5,     # évite l’overfit
+    class_weight=class_weight,
     random_state=42
 )
 
@@ -121,4 +133,4 @@ print(f"📦 Taille du modèle : {size} bytes")
 if size < 400:
     raise SystemExit("❌ Modèle anormalement petit")
 
-print("🎉 Modèle ML valide et conscient des quotas Tempo")
+print("🎉 Modèle ML valide — biais BLEU corrigé")
