@@ -36,7 +36,7 @@ if not MODEL_PATH.exists():
 bundle = joblib.load(MODEL_PATH)
 model = bundle["model"]
 le = bundle["label_encoder"]
-FEATURES = bundle["features"]
+FEATURES = bundle["features"]  # 🔑 source de vérité
 
 # ======================
 # LOAD DATA
@@ -58,11 +58,11 @@ if HISTORY_PATH.exists():
 # ======================
 # UTILS
 # ======================
-def red_allowed(d: date) -> bool:
+def is_winter(d: date) -> bool:
     return d.month in (11, 12, 1, 2, 3)
 
-def in_winter(d: date) -> bool:
-    return d.month in (11, 12, 1, 2, 3)
+def red_allowed(d: date) -> bool:
+    return is_winter(d)
 
 today = date.today()
 season_year = today.year if today.month >= 9 else today.year - 1
@@ -92,22 +92,21 @@ for day in tempo:
     remaining_blanc = max(0, MAX_DAYS["blanc"] - len(used_days["blanc"]))
     remaining_rouge = max(0, MAX_DAYS["rouge"] - len(used_days["rouge"]))
 
-    # 🔑 BLEU RESTANT **EN HIVER SEULEMENT**
     winter_bleu_remaining = (
         max(0, MAX_DAYS["bleu"] - len(used_days["bleu"]))
-        if in_winter(d)
+        if is_winter(d)
         else 0
     )
 
     season_day_index = (d - SEASON_START).days + 1
 
     # ======================
-    # FEATURES ML (STRICTEMENT IDENTIQUES AU TRAIN)
+    # FEATURES ML — STRICTEMENT IDENTIQUES AU TRAIN
     # ======================
     X = pd.DataFrame([{
-        "temp": day.get("temperature", 8),
+        "temperature": day.get("temperature", 8),
         "coldDays": day.get("coldDays", 0),
-        "rte": day.get("rteConsommation", 55000),
+        "rteConsommation": day.get("rteConsommation", 55000),
         "weekday": weekday,
         "month": d.month,
         "horizon": day.get("horizon", 0),
@@ -115,11 +114,11 @@ for day in tempo:
         "remainingBlanc": remaining_blanc,
         "remainingRouge": remaining_rouge,
         "winterBleuRemaining": winter_bleu_remaining,
-        "seasonDayIndex": season_day_index
+        "seasonDayIndex": season_day_index,
+        "isWinter": int(is_winter(d))
     }])
 
-    # Sécurité ordre features
-    X = X[FEATURES]
+    X = X[FEATURES]  # 🔑 sécurité absolue
 
     probs = model.predict_proba(X)[0]
     classes = le.inverse_transform(range(len(probs)))
@@ -139,12 +138,12 @@ for day in tempo:
         rules.append("rouge_hors_periode")
         corrected = True
 
-    if weekday == 5:  # samedi
+    if weekday == 5:
         ml_probs["rouge"] = 0
         rules.append("samedi_pas_rouge")
         corrected = True
 
-    if weekday == 6:  # dimanche
+    if weekday == 6:
         ml_probs = {"bleu": 1.0, "blanc": 0.0, "rouge": 0.0}
         rules.append("dimanche_bleu_force")
         corrected = True
@@ -195,7 +194,6 @@ for day in tempo:
         }
     })
 
-    # Avance quotas simulés
     used_days[ml_color].add(day["date"])
 
 # ======================
