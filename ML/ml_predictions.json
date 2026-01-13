@@ -3,16 +3,16 @@
     "date": "2026-01-14",
     "mlPrediction": "bleu",
     "mlProbabilities": {
-      "blanc": 38,
-      "bleu": 39,
-      "rouge": 23
+      "bleu": 100,
+      "blanc": 0,
+      "rouge": 0
     },
-    "mlConfidence": 39,
+    "mlConfidence": 100,
     "correctedByRules": false,
     "ruleDetails": [],
     "remainingDays": {
-      "bleu": 296,
-      "blanc": 42,
+      "bleu": 300,
+      "blanc": 43,
       "rouge": 22
     }
   },
@@ -20,16 +20,16 @@
     "date": "2026-01-15",
     "mlPrediction": "bleu",
     "mlProbabilities": {
-      "blanc": 38,
-      "bleu": 39,
-      "rouge": 23
+      "bleu": 100,
+      "blanc": 0,
+      "rouge": 0
     },
-    "mlConfidence": 39,
+    "mlConfidence": 100,
     "correctedByRules": false,
     "ruleDetails": [],
     "remainingDays": {
-      "bleu": 296,
-      "blanc": 42,
+      "bleu": 299,
+      "blanc": 43,
       "rouge": 22
     }
   },
@@ -37,16 +37,16 @@
     "date": "2026-01-16",
     "mlPrediction": "bleu",
     "mlProbabilities": {
-      "blanc": 38,
-      "bleu": 39,
-      "rouge": 23
+      "bleu": 100,
+      "blanc": 0,
+      "rouge": 0
     },
-    "mlConfidence": 39,
+    "mlConfidence": 100,
     "correctedByRules": false,
     "ruleDetails": [],
     "remainingDays": {
-      "bleu": 296,
-      "blanc": 42,
+      "bleu": 298,
+      "blanc": 43,
       "rouge": 22
     }
   },
@@ -54,18 +54,16 @@
     "date": "2026-01-17",
     "mlPrediction": "bleu",
     "mlProbabilities": {
-      "blanc": 49,
-      "bleu": 51,
+      "bleu": 100,
+      "blanc": 0,
       "rouge": 0
     },
-    "mlConfidence": 51,
-    "correctedByRules": true,
-    "ruleDetails": [
-      "rouge_weekend"
-    ],
+    "mlConfidence": 100,
+    "correctedByRules": false,
+    "ruleDetails": [],
     "remainingDays": {
-      "bleu": 296,
-      "blanc": 42,
+      "bleu": 297,
+      "blanc": 43,
       "rouge": 22
     }
   },
@@ -73,19 +71,18 @@
     "date": "2026-01-18",
     "mlPrediction": "bleu",
     "mlProbabilities": {
-      "blanc": 0,
       "bleu": 100,
+      "blanc": 0,
       "rouge": 0
     },
     "mlConfidence": 100,
     "correctedByRules": true,
     "ruleDetails": [
-      "rouge_weekend",
-      "dimanche_bleu"
+      "dimanche_bleu_force"
     ],
     "remainingDays": {
       "bleu": 296,
-      "blanc": 42,
+      "blanc": 43,
       "rouge": 22
     }
   },
@@ -93,16 +90,16 @@
     "date": "2026-01-19",
     "mlPrediction": "bleu",
     "mlProbabilities": {
-      "blanc": 35,
-      "bleu": 42,
-      "rouge": 23
+      "bleu": 100,
+      "blanc": 0,
+      "rouge": 0
     },
-    "mlConfidence": 42,
+    "mlConfidence": 100,
     "correctedByRules": false,
     "ruleDetails": [],
     "remainingDays": {
-      "bleu": 296,
-      "blanc": 42,
+      "bleu": 295,
+      "blanc": 43,
       "rouge": 22
     }
   },
@@ -110,33 +107,50 @@
     "date": "2026-01-20",
     "mlPrediction": "bleu",
     "mlProbabilities": {
-      "blanc": 35,
-      "bleu": 42,
-      "rouge": 23
+      "bleu": 100,
+      "blanc": 0,
+      "rouge": 0
     },
-    "mlConfidence": 42,
+    "mlConfidence": 100,
     "correctedByRules": false,
     "ruleDetails": [],
     "remainingDays": {
-      "bleu": 296,
-      "blanc": 42,
+      "bleu": 294,
+      "blanc": 43,
       "rouge": 22
     }
   },
   {
     "date": "2026-01-21",
-    "mlPrediction": "blanc",
+    "mlPrediction": "bleu",
     "mlProbabilities": {
-      "blanc": 55,
-      "bleu": 32,
-      "rouge": 13
+      "bleu": 100,
+      "blanc": 0,
+      "rouge": 0
     },
-    "mlConfidence": 55,
+    "mlConfidence": 100,
     "correctedByRules": false,
     "ruleDetails": [],
     "remainingDays": {
-      "bleu": 296,
-      "blanc": 42,
+      "bleu": 293,
+      "blanc": 43,
+      "rouge": 22
+    }
+  },
+  {
+    "date": "2026-01-22",
+    "mlPrediction": "bleu",
+    "mlProbabilities": {
+      "bleu": 100,
+      "blanc": 0,
+      "rouge": 0
+    },
+    "mlConfidence": 100,
+    "correctedByRules": false,
+    "ruleDetails": [],
+    "remainingDays": {
+      "bleu": 292,
+      "blanc": 43,
       "rouge": 22
     }
   }
