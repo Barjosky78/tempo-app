@@ -13,9 +13,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # ======================
+      # CHECKOUT COMPLET
+      # ======================
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # 🔑 OBLIGATOIRE pour commit fiable
 
+      # ======================
+      # PYTHON
+      # ======================
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
@@ -25,14 +33,36 @@ jobs:
         run: |
           pip install pandas scikit-learn joblib
 
+      # ======================
+      # GENERATE PREDICTIONS
+      # ======================
       - name: Generate ML predictions
         run: |
           python ML/predict_ml.py
 
+          # Sécurité : le fichier doit exister
+          if [ ! -f ML/ml_predictions.json ]; then
+            echo "❌ ml_predictions.json non généré"
+            exit 1
+          fi
+
+          echo "📄 Aperçu du fichier généré :"
+          head -n 20 ML/ml_predictions.json
+
+      # ======================
+      # COMMIT & PUSH
+      # ======================
       - name: Commit ML predictions
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # 🔄 Synchronisation avant commit
+          git pull --rebase
+
           git add ML/ml_predictions.json
-          git commit -m "🤖 Generate ML predictions (shadow)" || echo "No changes"
+
+          git status
+
+          git commit -m "🤖 Update ML predictions (shadow)" || echo "No changes to commit"
           git push
