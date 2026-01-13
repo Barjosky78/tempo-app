@@ -20,9 +20,9 @@
       "blanc": 44,
       "bleu": 36
     },
-    "fixed": false,
+    "fixed": true,
     "sources": {
-      "historique": true,
+      "edf": true,
       "meteo": true,
       "rte": true
     }
@@ -36,7 +36,7 @@
       "bleu": 36
     },
     "fixed": false,
-    "temperature": 10.5,
+    "temperature": 8.9,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
@@ -54,7 +54,7 @@
       "bleu": 43
     },
     "fixed": false,
-    "temperature": 8.9,
+    "temperature": 8.5,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
@@ -72,7 +72,7 @@
       "bleu": 48
     },
     "fixed": false,
-    "temperature": 8.5,
+    "temperature": 6.5,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
@@ -90,7 +90,7 @@
       "bleu": 100
     },
     "fixed": false,
-    "temperature": 6.5,
+    "temperature": 5.5,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
@@ -108,7 +108,7 @@
       "bleu": 38
     },
     "fixed": false,
-    "temperature": 5.5,
+    "temperature": 4.9,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
@@ -126,7 +126,7 @@
       "bleu": 36
     },
     "fixed": false,
-    "temperature": 4.9,
+    "temperature": 2.4,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
@@ -144,7 +144,7 @@
       "bleu": 36
     },
     "fixed": false,
-    "temperature": 3,
+    "temperature": 3.6,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
@@ -162,7 +162,7 @@
       "bleu": 36
     },
     "fixed": false,
-    "temperature": 0.8,
+    "temperature": 5.4,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
