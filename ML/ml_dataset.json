@@ -6,10 +6,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 42,
     "remainingRouge": 22,
-    "seasonDayIndex": 75
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 75,
+    "isWinter": 1
   },
   {
     "date": "2019-11-15",
@@ -18,10 +19,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 41,
     "remainingRouge": 22,
-    "seasonDayIndex": 76
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 76,
+    "isWinter": 1
   },
   {
     "date": "2019-11-18",
@@ -30,10 +32,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 40,
     "remainingRouge": 22,
-    "seasonDayIndex": 79
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 79,
+    "isWinter": 1
   },
   {
     "date": "2019-11-19",
@@ -42,10 +45,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 39,
     "remainingRouge": 22,
-    "seasonDayIndex": 80
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 80,
+    "isWinter": 1
   },
   {
     "date": "2019-11-20",
@@ -54,10 +58,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 38,
     "remainingRouge": 22,
-    "seasonDayIndex": 81
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 81,
+    "isWinter": 1
   },
   {
     "date": "2019-11-21",
@@ -66,10 +71,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 37,
     "remainingRouge": 22,
-    "seasonDayIndex": 82
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 82,
+    "isWinter": 1
   },
   {
     "date": "2019-12-02",
@@ -78,10 +84,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 36,
     "remainingRouge": 22,
-    "seasonDayIndex": 93
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 93,
+    "isWinter": 1
   },
   {
     "date": "2019-12-03",
@@ -90,10 +97,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 35,
     "remainingRouge": 22,
-    "seasonDayIndex": 94
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 94,
+    "isWinter": 1
   },
   {
     "date": "2019-12-04",
@@ -102,10 +110,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 35,
     "remainingRouge": 21,
-    "seasonDayIndex": 95
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 95,
+    "isWinter": 1
   },
   {
     "date": "2019-12-05",
@@ -114,10 +123,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 35,
     "remainingRouge": 20,
-    "seasonDayIndex": 96
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 96,
+    "isWinter": 1
   },
   {
     "date": "2019-12-06",
@@ -126,10 +136,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 34,
     "remainingRouge": 20,
-    "seasonDayIndex": 97
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 97,
+    "isWinter": 1
   },
   {
     "date": "2019-12-10",
@@ -138,10 +149,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 33,
     "remainingRouge": 20,
-    "seasonDayIndex": 101
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 101,
+    "isWinter": 1
   },
   {
     "date": "2019-12-11",
@@ -150,10 +162,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 32,
     "remainingRouge": 20,
-    "seasonDayIndex": 102
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 102,
+    "isWinter": 1
   },
   {
     "date": "2019-12-20",
@@ -162,10 +175,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 31,
     "remainingRouge": 20,
-    "seasonDayIndex": 111
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 111,
+    "isWinter": 1
   },
   {
     "date": "2019-12-31",
@@ -174,10 +188,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 30,
     "remainingRouge": 20,
-    "seasonDayIndex": 122
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 122,
+    "isWinter": 1
   },
   {
     "date": "2020-11-23",
@@ -186,10 +201,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 42,
     "remainingRouge": 22,
-    "seasonDayIndex": 84
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 84,
+    "isWinter": 1
   },
   {
     "date": "2020-11-24",
@@ -198,10 +214,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 41,
     "remainingRouge": 22,
-    "seasonDayIndex": 85
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 85,
+    "isWinter": 1
   },
   {
     "date": "2020-11-25",
@@ -210,10 +227,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 40,
     "remainingRouge": 22,
-    "seasonDayIndex": 86
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 86,
+    "isWinter": 1
   },
   {
     "date": "2020-11-26",
@@ -222,10 +240,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 39,
     "remainingRouge": 22,
-    "seasonDayIndex": 87
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 87,
+    "isWinter": 1
   },
   {
     "date": "2020-11-30",
@@ -234,10 +253,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 38,
     "remainingRouge": 22,
-    "seasonDayIndex": 91
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 91,
+    "isWinter": 1
   },
   {
     "date": "2020-12-01",
@@ -246,10 +266,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 37,
     "remainingRouge": 22,
-    "seasonDayIndex": 92
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 92,
+    "isWinter": 1
   },
   {
     "date": "2020-12-02",
@@ -258,10 +279,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 37,
     "remainingRouge": 21,
-    "seasonDayIndex": 93
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 93,
+    "isWinter": 1
   },
   {
     "date": "2020-12-03",
@@ -270,10 +292,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 36,
     "remainingRouge": 21,
-    "seasonDayIndex": 94
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 94,
+    "isWinter": 1
   },
   {
     "date": "2020-12-04",
@@ -282,10 +305,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 35,
     "remainingRouge": 21,
-    "seasonDayIndex": 95
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 95,
+    "isWinter": 1
   },
   {
     "date": "2020-12-05",
@@ -294,10 +318,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 34,
     "remainingRouge": 21,
-    "seasonDayIndex": 96
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 96,
+    "isWinter": 1
   },
   {
     "date": "2020-12-07",
@@ -306,10 +331,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 34,
     "remainingRouge": 20,
-    "seasonDayIndex": 98
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 98,
+    "isWinter": 1
   },
   {
     "date": "2020-12-08",
@@ -318,10 +344,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 34,
     "remainingRouge": 19,
-    "seasonDayIndex": 99
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 99,
+    "isWinter": 1
   },
   {
     "date": "2020-12-09",
@@ -330,10 +357,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 34,
     "remainingRouge": 18,
-    "seasonDayIndex": 100
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 100,
+    "isWinter": 1
   },
   {
     "date": "2020-12-10",
@@ -342,10 +370,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 33,
     "remainingRouge": 18,
-    "seasonDayIndex": 101
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 101,
+    "isWinter": 1
   },
   {
     "date": "2020-12-11",
@@ -354,10 +383,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 32,
     "remainingRouge": 18,
-    "seasonDayIndex": 102
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 102,
+    "isWinter": 1
   },
   {
     "date": "2020-12-15",
@@ -366,10 +396,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 31,
     "remainingRouge": 18,
-    "seasonDayIndex": 106
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 106,
+    "isWinter": 1
   },
   {
     "date": "2020-12-17",
@@ -378,10 +409,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 30,
     "remainingRouge": 18,
-    "seasonDayIndex": 108
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 108,
+    "isWinter": 1
   },
   {
     "date": "2020-12-28",
@@ -390,10 +422,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 29,
     "remainingRouge": 18,
-    "seasonDayIndex": 119
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 119,
+    "isWinter": 1
   },
   {
     "date": "2020-12-29",
@@ -402,10 +435,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 28,
     "remainingRouge": 18,
-    "seasonDayIndex": 120
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 120,
+    "isWinter": 1
   },
   {
     "date": "2020-12-30",
@@ -414,10 +448,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 27,
     "remainingRouge": 18,
-    "seasonDayIndex": 121
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 121,
+    "isWinter": 1
   },
   {
     "date": "2020-12-31",
@@ -426,10 +461,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 27,
     "remainingRouge": 17,
-    "seasonDayIndex": 122
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 122,
+    "isWinter": 1
   },
   {
     "date": "2021-01-01",
@@ -438,10 +474,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 26,
     "remainingRouge": 17,
-    "seasonDayIndex": 123
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 123,
+    "isWinter": 1
   },
   {
     "date": "2021-01-02",
@@ -450,10 +487,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 25,
     "remainingRouge": 17,
-    "seasonDayIndex": 124
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 124,
+    "isWinter": 1
   },
   {
     "date": "2021-01-04",
@@ -462,10 +500,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 25,
     "remainingRouge": 16,
-    "seasonDayIndex": 126
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 126,
+    "isWinter": 1
   },
   {
     "date": "2021-01-05",
@@ -474,10 +513,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 25,
     "remainingRouge": 15,
-    "seasonDayIndex": 127
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 127,
+    "isWinter": 1
   },
   {
     "date": "2021-01-06",
@@ -486,10 +526,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 25,
     "remainingRouge": 14,
-    "seasonDayIndex": 128
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 128,
+    "isWinter": 1
   },
   {
     "date": "2021-01-07",
@@ -498,10 +539,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 25,
     "remainingRouge": 13,
-    "seasonDayIndex": 129
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 129,
+    "isWinter": 1
   },
   {
     "date": "2021-01-08",
@@ -510,10 +552,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 25,
     "remainingRouge": 12,
-    "seasonDayIndex": 130
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 130,
+    "isWinter": 1
   },
   {
     "date": "2021-01-09",
@@ -522,10 +565,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 24,
     "remainingRouge": 12,
-    "seasonDayIndex": 131
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 131,
+    "isWinter": 1
   },
   {
     "date": "2021-01-11",
@@ -534,10 +578,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 24,
     "remainingRouge": 11,
-    "seasonDayIndex": 133
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 133,
+    "isWinter": 1
   },
   {
     "date": "2021-01-12",
@@ -546,10 +591,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 24,
     "remainingRouge": 10,
-    "seasonDayIndex": 134
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 134,
+    "isWinter": 1
   },
   {
     "date": "2021-01-13",
@@ -558,10 +604,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 24,
     "remainingRouge": 9,
-    "seasonDayIndex": 135
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 135,
+    "isWinter": 1
   },
   {
     "date": "2021-01-14",
@@ -570,10 +617,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 23,
     "remainingRouge": 9,
-    "seasonDayIndex": 136
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 136,
+    "isWinter": 1
   },
   {
     "date": "2021-01-15",
@@ -582,10 +630,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 23,
     "remainingRouge": 8,
-    "seasonDayIndex": 137
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 137,
+    "isWinter": 1
   },
   {
     "date": "2021-01-16",
@@ -594,10 +643,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 22,
     "remainingRouge": 8,
-    "seasonDayIndex": 138
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 138,
+    "isWinter": 1
   },
   {
     "date": "2021-01-18",
@@ -606,10 +656,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 22,
     "remainingRouge": 7,
-    "seasonDayIndex": 140
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 140,
+    "isWinter": 1
   },
   {
     "date": "2021-01-19",
@@ -618,10 +669,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 21,
     "remainingRouge": 7,
-    "seasonDayIndex": 141
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 141,
+    "isWinter": 1
   },
   {
     "date": "2021-01-22",
@@ -630,10 +682,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 20,
     "remainingRouge": 7,
-    "seasonDayIndex": 144
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 144,
+    "isWinter": 1
   },
   {
     "date": "2021-01-23",
@@ -642,10 +695,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 19,
     "remainingRouge": 7,
-    "seasonDayIndex": 145
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 145,
+    "isWinter": 1
   },
   {
     "date": "2021-01-25",
@@ -654,10 +708,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 19,
     "remainingRouge": 6,
-    "seasonDayIndex": 147
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 147,
+    "isWinter": 1
   },
   {
     "date": "2021-01-26",
@@ -666,10 +721,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 19,
     "remainingRouge": 5,
-    "seasonDayIndex": 148
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 148,
+    "isWinter": 1
   },
   {
     "date": "2021-01-27",
@@ -678,10 +734,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 19,
     "remainingRouge": 4,
-    "seasonDayIndex": 149
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 149,
+    "isWinter": 1
   },
   {
     "date": "2021-02-01",
@@ -690,10 +747,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 18,
     "remainingRouge": 4,
-    "seasonDayIndex": 154
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 154,
+    "isWinter": 1
   },
   {
     "date": "2021-02-04",
@@ -702,10 +760,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 17,
     "remainingRouge": 4,
-    "seasonDayIndex": 157
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 157,
+    "isWinter": 1
   },
   {
     "date": "2021-02-05",
@@ -714,10 +773,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 16,
     "remainingRouge": 4,
-    "seasonDayIndex": 158
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 158,
+    "isWinter": 1
   },
   {
     "date": "2021-02-08",
@@ -726,10 +786,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 16,
     "remainingRouge": 3,
-    "seasonDayIndex": 161
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 161,
+    "isWinter": 1
   },
   {
     "date": "2021-02-09",
@@ -738,10 +799,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 16,
     "remainingRouge": 2,
-    "seasonDayIndex": 162
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 162,
+    "isWinter": 1
   },
   {
     "date": "2021-02-10",
@@ -750,10 +812,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 16,
     "remainingRouge": 1,
-    "seasonDayIndex": 163
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 163,
+    "isWinter": 1
   },
   {
     "date": "2021-02-11",
@@ -762,10 +825,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 16,
     "remainingRouge": 0,
-    "seasonDayIndex": 164
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 164,
+    "isWinter": 1
   },
   {
     "date": "2021-02-12",
@@ -774,10 +838,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 15,
     "remainingRouge": 0,
-    "seasonDayIndex": 165
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 165,
+    "isWinter": 1
   },
   {
     "date": "2021-02-13",
@@ -786,10 +851,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 14,
     "remainingRouge": 0,
-    "seasonDayIndex": 166
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 166,
+    "isWinter": 1
   },
   {
     "date": "2021-02-15",
@@ -798,10 +864,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 13,
     "remainingRouge": 0,
-    "seasonDayIndex": 168
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 168,
+    "isWinter": 1
   },
   {
     "date": "2021-02-16",
@@ -810,10 +877,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 12,
     "remainingRouge": 0,
-    "seasonDayIndex": 169
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 169,
+    "isWinter": 1
   },
   {
     "date": "2021-11-23",
@@ -822,10 +890,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 42,
     "remainingRouge": 22,
-    "seasonDayIndex": 84
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 84,
+    "isWinter": 1
   },
   {
     "date": "2021-11-24",
@@ -834,10 +903,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 41,
     "remainingRouge": 22,
-    "seasonDayIndex": 85
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 85,
+    "isWinter": 1
   },
   {
     "date": "2021-11-25",
@@ -846,10 +916,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 40,
     "remainingRouge": 22,
-    "seasonDayIndex": 86
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 86,
+    "isWinter": 1
   },
   {
     "date": "2021-11-26",
@@ -858,10 +929,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 39,
     "remainingRouge": 22,
-    "seasonDayIndex": 87
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 87,
+    "isWinter": 1
   },
   {
     "date": "2021-11-29",
@@ -870,10 +942,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 39,
     "remainingRouge": 21,
-    "seasonDayIndex": 90
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 90,
+    "isWinter": 1
   },
   {
     "date": "2021-11-30",
@@ -882,10 +955,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 38,
     "remainingRouge": 21,
-    "seasonDayIndex": 91
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 91,
+    "isWinter": 1
   },
   {
     "date": "2021-12-01",
@@ -894,10 +968,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 37,
     "remainingRouge": 21,
-    "seasonDayIndex": 92
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 92,
+    "isWinter": 1
   },
   {
     "date": "2021-12-02",
@@ -906,10 +981,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 36,
     "remainingRouge": 21,
-    "seasonDayIndex": 93
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 93,
+    "isWinter": 1
   },
   {
     "date": "2021-12-03",
@@ -918,10 +994,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 35,
     "remainingRouge": 21,
-    "seasonDayIndex": 94
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 94,
+    "isWinter": 1
   },
   {
     "date": "2021-12-06",
@@ -930,10 +1007,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 34,
     "remainingRouge": 21,
-    "seasonDayIndex": 97
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 97,
+    "isWinter": 1
   },
   {
     "date": "2021-12-07",
@@ -942,10 +1020,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 33,
     "remainingRouge": 21,
-    "seasonDayIndex": 98
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 98,
+    "isWinter": 1
   },
   {
     "date": "2021-12-08",
@@ -954,10 +1033,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 32,
     "remainingRouge": 21,
-    "seasonDayIndex": 99
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 99,
+    "isWinter": 1
   },
   {
     "date": "2021-12-09",
@@ -966,10 +1046,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 31,
     "remainingRouge": 21,
-    "seasonDayIndex": 100
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 100,
+    "isWinter": 1
   },
   {
     "date": "2021-12-11",
@@ -978,10 +1059,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 30,
     "remainingRouge": 21,
-    "seasonDayIndex": 102
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 102,
+    "isWinter": 1
   },
   {
     "date": "2021-12-13",
@@ -990,10 +1072,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 30,
     "remainingRouge": 20,
-    "seasonDayIndex": 104
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 104,
+    "isWinter": 1
   },
   {
     "date": "2021-12-14",
@@ -1002,10 +1085,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 30,
     "remainingRouge": 19,
-    "seasonDayIndex": 105
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 105,
+    "isWinter": 1
   },
   {
     "date": "2021-12-15",
@@ -1014,10 +1098,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 30,
     "remainingRouge": 18,
-    "seasonDayIndex": 106
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 106,
+    "isWinter": 1
   },
   {
     "date": "2021-12-16",
@@ -1026,10 +1111,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 29,
     "remainingRouge": 18,
-    "seasonDayIndex": 107
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 107,
+    "isWinter": 1
   },
   {
     "date": "2021-12-17",
@@ -1038,10 +1124,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 28,
     "remainingRouge": 18,
-    "seasonDayIndex": 108
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 108,
+    "isWinter": 1
   },
   {
     "date": "2021-12-20",
@@ -1050,10 +1137,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 28,
     "remainingRouge": 17,
-    "seasonDayIndex": 111
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 111,
+    "isWinter": 1
   },
   {
     "date": "2021-12-21",
@@ -1062,10 +1150,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 28,
     "remainingRouge": 16,
-    "seasonDayIndex": 112
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 112,
+    "isWinter": 1
   },
   {
     "date": "2021-12-22",
@@ -1074,10 +1163,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 28,
     "remainingRouge": 15,
-    "seasonDayIndex": 113
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 113,
+    "isWinter": 1
   },
   {
     "date": "2022-01-06",
@@ -1086,10 +1176,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 28,
     "remainingRouge": 14,
-    "seasonDayIndex": 128
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 128,
+    "isWinter": 1
   },
   {
     "date": "2022-01-10",
@@ -1098,10 +1189,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 28,
     "remainingRouge": 13,
-    "seasonDayIndex": 132
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 132,
+    "isWinter": 1
   },
   {
     "date": "2022-01-11",
@@ -1110,10 +1202,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 28,
     "remainingRouge": 12,
-    "seasonDayIndex": 133
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 133,
+    "isWinter": 1
   },
   {
     "date": "2022-01-12",
@@ -1122,10 +1215,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 28,
     "remainingRouge": 11,
-    "seasonDayIndex": 134
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 134,
+    "isWinter": 1
   },
   {
     "date": "2022-01-13",
@@ -1134,10 +1228,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 28,
     "remainingRouge": 10,
-    "seasonDayIndex": 135
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 135,
+    "isWinter": 1
   },
   {
     "date": "2022-01-14",
@@ -1146,10 +1241,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 28,
     "remainingRouge": 9,
-    "seasonDayIndex": 136
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 136,
+    "isWinter": 1
   },
   {
     "date": "2022-01-17",
@@ -1158,10 +1254,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 28,
     "remainingRouge": 8,
-    "seasonDayIndex": 139
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 139,
+    "isWinter": 1
   },
   {
     "date": "2022-01-18",
@@ -1170,10 +1267,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 28,
     "remainingRouge": 7,
-    "seasonDayIndex": 140
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 140,
+    "isWinter": 1
   },
   {
     "date": "2022-01-19",
@@ -1182,10 +1280,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 28,
     "remainingRouge": 6,
-    "seasonDayIndex": 141
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 141,
+    "isWinter": 1
   },
   {
     "date": "2022-01-20",
@@ -1194,10 +1293,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 28,
     "remainingRouge": 5,
-    "seasonDayIndex": 142
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 142,
+    "isWinter": 1
   },
   {
     "date": "2022-01-21",
@@ -1206,10 +1306,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 28,
     "remainingRouge": 4,
-    "seasonDayIndex": 143
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 143,
+    "isWinter": 1
   },
   {
     "date": "2022-01-24",
@@ -1218,10 +1319,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 28,
     "remainingRouge": 3,
-    "seasonDayIndex": 146
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 146,
+    "isWinter": 1
   },
   {
     "date": "2022-01-25",
@@ -1230,10 +1332,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 28,
     "remainingRouge": 2,
-    "seasonDayIndex": 147
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 147,
+    "isWinter": 1
   },
   {
     "date": "2022-01-26",
@@ -1242,10 +1345,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 28,
     "remainingRouge": 1,
-    "seasonDayIndex": 148
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 148,
+    "isWinter": 1
   },
   {
     "date": "2022-01-27",
@@ -1254,10 +1358,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 28,
     "remainingRouge": 0,
-    "seasonDayIndex": 149
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 149,
+    "isWinter": 1
   },
   {
     "date": "2022-11-29",
@@ -1266,10 +1371,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 42,
     "remainingRouge": 22,
-    "seasonDayIndex": 90
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 90,
+    "isWinter": 1
   },
   {
     "date": "2022-11-30",
@@ -1278,10 +1384,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 41,
     "remainingRouge": 22,
-    "seasonDayIndex": 91
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 91,
+    "isWinter": 1
   },
   {
     "date": "2022-12-01",
@@ -1290,10 +1397,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 40,
     "remainingRouge": 22,
-    "seasonDayIndex": 92
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 92,
+    "isWinter": 1
   },
   {
     "date": "2022-12-02",
@@ -1302,10 +1410,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 39,
     "remainingRouge": 22,
-    "seasonDayIndex": 93
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 93,
+    "isWinter": 1
   },
   {
     "date": "2022-12-05",
@@ -1314,10 +1423,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 38,
     "remainingRouge": 22,
-    "seasonDayIndex": 96
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 96,
+    "isWinter": 1
   },
   {
     "date": "2022-12-06",
@@ -1326,10 +1436,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 37,
     "remainingRouge": 22,
-    "seasonDayIndex": 97
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 97,
+    "isWinter": 1
   },
   {
     "date": "2022-12-07",
@@ -1338,10 +1449,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 36,
     "remainingRouge": 22,
-    "seasonDayIndex": 98
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 98,
+    "isWinter": 1
   },
   {
     "date": "2022-12-08",
@@ -1350,10 +1462,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 36,
     "remainingRouge": 21,
-    "seasonDayIndex": 99
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 99,
+    "isWinter": 1
   },
   {
     "date": "2022-12-09",
@@ -1362,10 +1475,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 35,
     "remainingRouge": 21,
-    "seasonDayIndex": 100
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 100,
+    "isWinter": 1
   },
   {
     "date": "2022-12-10",
@@ -1374,10 +1488,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 34,
     "remainingRouge": 21,
-    "seasonDayIndex": 101
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 101,
+    "isWinter": 1
   },
   {
     "date": "2022-12-12",
@@ -1386,10 +1501,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 34,
     "remainingRouge": 20,
-    "seasonDayIndex": 103
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 103,
+    "isWinter": 1
   },
   {
     "date": "2022-12-13",
@@ -1398,10 +1514,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 34,
     "remainingRouge": 19,
-    "seasonDayIndex": 104
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 104,
+    "isWinter": 1
   },
   {
     "date": "2022-12-14",
@@ -1410,10 +1527,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 34,
     "remainingRouge": 18,
-    "seasonDayIndex": 105
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 105,
+    "isWinter": 1
   },
   {
     "date": "2022-12-15",
@@ -1422,10 +1540,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 33,
     "remainingRouge": 18,
-    "seasonDayIndex": 106
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 106,
+    "isWinter": 1
   },
   {
     "date": "2022-12-16",
@@ -1434,10 +1553,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 32,
     "remainingRouge": 18,
-    "seasonDayIndex": 107
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 107,
+    "isWinter": 1
   },
   {
     "date": "2023-01-16",
@@ -1446,10 +1566,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 31,
     "remainingRouge": 18,
-    "seasonDayIndex": 138
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 138,
+    "isWinter": 1
   },
   {
     "date": "2023-01-17",
@@ -1458,10 +1579,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 31,
     "remainingRouge": 17,
-    "seasonDayIndex": 139
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 139,
+    "isWinter": 1
   },
   {
     "date": "2023-01-18",
@@ -1470,10 +1592,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 31,
     "remainingRouge": 16,
-    "seasonDayIndex": 140
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 140,
+    "isWinter": 1
   },
   {
     "date": "2023-01-19",
@@ -1482,10 +1605,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 31,
     "remainingRouge": 15,
-    "seasonDayIndex": 141
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 141,
+    "isWinter": 1
   },
   {
     "date": "2023-01-20",
@@ -1494,10 +1618,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 31,
     "remainingRouge": 14,
-    "seasonDayIndex": 142
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 142,
+    "isWinter": 1
   },
   {
     "date": "2023-01-21",
@@ -1506,10 +1631,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 30,
     "remainingRouge": 14,
-    "seasonDayIndex": 143
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 143,
+    "isWinter": 1
   },
   {
     "date": "2023-01-23",
@@ -1518,10 +1644,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 30,
     "remainingRouge": 13,
-    "seasonDayIndex": 145
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 145,
+    "isWinter": 1
   },
   {
     "date": "2023-01-24",
@@ -1530,10 +1657,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 30,
     "remainingRouge": 12,
-    "seasonDayIndex": 146
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 146,
+    "isWinter": 1
   },
   {
     "date": "2023-01-25",
@@ -1542,10 +1670,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 30,
     "remainingRouge": 11,
-    "seasonDayIndex": 147
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 147,
+    "isWinter": 1
   },
   {
     "date": "2023-01-26",
@@ -1554,10 +1683,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 30,
     "remainingRouge": 10,
-    "seasonDayIndex": 148
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 148,
+    "isWinter": 1
   },
   {
     "date": "2023-01-27",
@@ -1566,10 +1696,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 30,
     "remainingRouge": 9,
-    "seasonDayIndex": 149
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 149,
+    "isWinter": 1
   },
   {
     "date": "2023-01-28",
@@ -1578,10 +1709,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 29,
     "remainingRouge": 9,
-    "seasonDayIndex": 150
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 150,
+    "isWinter": 1
   },
   {
     "date": "2023-01-30",
@@ -1590,10 +1722,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 29,
     "remainingRouge": 8,
-    "seasonDayIndex": 152
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 152,
+    "isWinter": 1
   },
   {
     "date": "2023-01-31",
@@ -1602,10 +1735,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 29,
     "remainingRouge": 7,
-    "seasonDayIndex": 153
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 153,
+    "isWinter": 1
   },
   {
     "date": "2023-02-01",
@@ -1614,10 +1748,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 28,
     "remainingRouge": 7,
-    "seasonDayIndex": 154
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 154,
+    "isWinter": 1
   },
   {
     "date": "2023-02-02",
@@ -1626,10 +1761,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 27,
     "remainingRouge": 7,
-    "seasonDayIndex": 155
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 155,
+    "isWinter": 1
   },
   {
     "date": "2023-02-03",
@@ -1638,10 +1774,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 26,
     "remainingRouge": 7,
-    "seasonDayIndex": 156
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 156,
+    "isWinter": 1
   },
   {
     "date": "2023-02-04",
@@ -1650,10 +1787,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 25,
     "remainingRouge": 7,
-    "seasonDayIndex": 157
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 157,
+    "isWinter": 1
   },
   {
     "date": "2023-02-06",
@@ -1662,10 +1800,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 25,
     "remainingRouge": 6,
-    "seasonDayIndex": 159
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 159,
+    "isWinter": 1
   },
   {
     "date": "2023-02-07",
@@ -1674,10 +1813,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 25,
     "remainingRouge": 5,
-    "seasonDayIndex": 160
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 160,
+    "isWinter": 1
   },
   {
     "date": "2023-02-08",
@@ -1686,10 +1826,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 25,
     "remainingRouge": 4,
-    "seasonDayIndex": 161
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 161,
+    "isWinter": 1
   },
   {
     "date": "2023-02-09",
@@ -1698,10 +1839,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 25,
     "remainingRouge": 3,
-    "seasonDayIndex": 162
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 162,
+    "isWinter": 1
   },
   {
     "date": "2023-02-10",
@@ -1710,10 +1852,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 25,
     "remainingRouge": 2,
-    "seasonDayIndex": 163
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 163,
+    "isWinter": 1
   },
   {
     "date": "2023-02-11",
@@ -1722,10 +1865,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 24,
     "remainingRouge": 2,
-    "seasonDayIndex": 164
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 164,
+    "isWinter": 1
   },
   {
     "date": "2023-02-13",
@@ -1734,10 +1878,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 23,
     "remainingRouge": 2,
-    "seasonDayIndex": 166
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 166,
+    "isWinter": 1
   },
   {
     "date": "2023-02-14",
@@ -1746,10 +1891,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 22,
     "remainingRouge": 2,
-    "seasonDayIndex": 167
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 167,
+    "isWinter": 1
   },
   {
     "date": "2023-02-15",
@@ -1758,10 +1904,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 21,
     "remainingRouge": 2,
-    "seasonDayIndex": 168
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 168,
+    "isWinter": 1
   },
   {
     "date": "2023-02-16",
@@ -1770,10 +1917,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 20,
     "remainingRouge": 2,
-    "seasonDayIndex": 169
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 169,
+    "isWinter": 1
   },
   {
     "date": "2023-02-22",
@@ -1782,10 +1930,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 19,
     "remainingRouge": 2,
-    "seasonDayIndex": 175
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 175,
+    "isWinter": 1
   },
   {
     "date": "2023-02-23",
@@ -1794,10 +1943,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 18,
     "remainingRouge": 2,
-    "seasonDayIndex": 176
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 176,
+    "isWinter": 1
   },
   {
     "date": "2023-02-24",
@@ -1806,10 +1956,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 17,
     "remainingRouge": 2,
-    "seasonDayIndex": 177
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 177,
+    "isWinter": 1
   },
   {
     "date": "2023-02-27",
@@ -1818,10 +1969,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 16,
     "remainingRouge": 2,
-    "seasonDayIndex": 180
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 180,
+    "isWinter": 1
   },
   {
     "date": "2023-02-28",
@@ -1830,10 +1982,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 15,
     "remainingRouge": 2,
-    "seasonDayIndex": 181
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 181,
+    "isWinter": 1
   },
   {
     "date": "2023-03-01",
@@ -1842,10 +1995,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 15,
     "remainingRouge": 1,
-    "seasonDayIndex": 182
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 182,
+    "isWinter": 1
   },
   {
     "date": "2023-03-02",
@@ -1854,10 +2008,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 15,
     "remainingRouge": 0,
-    "seasonDayIndex": 183
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 183,
+    "isWinter": 1
   },
   {
     "date": "2023-03-03",
@@ -1866,10 +2021,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 14,
     "remainingRouge": 0,
-    "seasonDayIndex": 184
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 184,
+    "isWinter": 1
   },
   {
     "date": "2023-03-06",
@@ -1878,10 +2034,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 13,
     "remainingRouge": 0,
-    "seasonDayIndex": 187
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 187,
+    "isWinter": 1
   },
   {
     "date": "2023-04-04",
@@ -1890,10 +2047,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 12,
     "remainingRouge": 0,
-    "seasonDayIndex": 216
+    "winterBleuRemaining": 0,
+    "seasonDayIndex": 216,
+    "isWinter": 0
   },
   {
     "date": "2023-04-05",
@@ -1902,10 +2060,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 11,
     "remainingRouge": 0,
-    "seasonDayIndex": 217
+    "winterBleuRemaining": 0,
+    "seasonDayIndex": 217,
+    "isWinter": 0
   },
   {
     "date": "2023-04-06",
@@ -1914,10 +2073,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 10,
     "remainingRouge": 0,
-    "seasonDayIndex": 218
+    "winterBleuRemaining": 0,
+    "seasonDayIndex": 218,
+    "isWinter": 0
   },
   {
     "date": "2023-04-07",
@@ -1926,10 +2086,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 9,
     "remainingRouge": 0,
-    "seasonDayIndex": 219
+    "winterBleuRemaining": 0,
+    "seasonDayIndex": 219,
+    "isWinter": 0
   },
   {
     "date": "2023-04-13",
@@ -1938,10 +2099,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 8,
     "remainingRouge": 0,
-    "seasonDayIndex": 225
+    "winterBleuRemaining": 0,
+    "seasonDayIndex": 225,
+    "isWinter": 0
   },
   {
     "date": "2023-04-25",
@@ -1950,10 +2112,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 7,
     "remainingRouge": 0,
-    "seasonDayIndex": 237
+    "winterBleuRemaining": 0,
+    "seasonDayIndex": 237,
+    "isWinter": 0
   },
   {
     "date": "2023-04-26",
@@ -1962,10 +2125,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 6,
     "remainingRouge": 0,
-    "seasonDayIndex": 238
+    "winterBleuRemaining": 0,
+    "seasonDayIndex": 238,
+    "isWinter": 0
   },
   {
     "date": "2023-06-07",
@@ -1974,10 +2138,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 5,
     "remainingRouge": 0,
-    "seasonDayIndex": 280
+    "winterBleuRemaining": 0,
+    "seasonDayIndex": 280,
+    "isWinter": 0
   },
   {
     "date": "2023-06-08",
@@ -1986,10 +2151,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 4,
     "remainingRouge": 0,
-    "seasonDayIndex": 281
+    "winterBleuRemaining": 0,
+    "seasonDayIndex": 281,
+    "isWinter": 0
   },
   {
     "date": "2023-06-09",
@@ -1998,10 +2164,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 3,
     "remainingRouge": 0,
-    "seasonDayIndex": 282
+    "winterBleuRemaining": 0,
+    "seasonDayIndex": 282,
+    "isWinter": 0
   },
   {
     "date": "2023-06-12",
@@ -2010,10 +2177,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 2,
     "remainingRouge": 0,
-    "seasonDayIndex": 285
+    "winterBleuRemaining": 0,
+    "seasonDayIndex": 285,
+    "isWinter": 0
   },
   {
     "date": "2023-11-22",
@@ -2022,10 +2190,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 42,
     "remainingRouge": 22,
-    "seasonDayIndex": 83
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 83,
+    "isWinter": 1
   },
   {
     "date": "2023-11-27",
@@ -2034,10 +2203,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 41,
     "remainingRouge": 22,
-    "seasonDayIndex": 88
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 88,
+    "isWinter": 1
   },
   {
     "date": "2023-11-28",
@@ -2046,10 +2216,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 40,
     "remainingRouge": 22,
-    "seasonDayIndex": 89
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 89,
+    "isWinter": 1
   },
   {
     "date": "2023-11-29",
@@ -2058,10 +2229,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 40,
     "remainingRouge": 21,
-    "seasonDayIndex": 90
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 90,
+    "isWinter": 1
   },
   {
     "date": "2023-11-30",
@@ -2070,10 +2242,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 39,
     "remainingRouge": 21,
-    "seasonDayIndex": 91
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 91,
+    "isWinter": 1
   },
   {
     "date": "2023-12-01",
@@ -2082,10 +2255,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 39,
     "remainingRouge": 20,
-    "seasonDayIndex": 92
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 92,
+    "isWinter": 1
   },
   {
     "date": "2023-12-02",
@@ -2094,10 +2268,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 38,
     "remainingRouge": 20,
-    "seasonDayIndex": 93
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 93,
+    "isWinter": 1
   },
   {
     "date": "2023-12-05",
@@ -2106,10 +2281,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 37,
     "remainingRouge": 20,
-    "seasonDayIndex": 96
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 96,
+    "isWinter": 1
   },
   {
     "date": "2023-12-06",
@@ -2118,10 +2294,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 37,
     "remainingRouge": 19,
-    "seasonDayIndex": 97
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 97,
+    "isWinter": 1
   },
   {
     "date": "2023-12-08",
@@ -2130,10 +2307,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 36,
     "remainingRouge": 19,
-    "seasonDayIndex": 99
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 99,
+    "isWinter": 1
   },
   {
     "date": "2023-12-14",
@@ -2142,10 +2320,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 35,
     "remainingRouge": 19,
-    "seasonDayIndex": 105
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 105,
+    "isWinter": 1
   },
   {
     "date": "2023-12-15",
@@ -2154,10 +2333,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 34,
     "remainingRouge": 19,
-    "seasonDayIndex": 106
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 106,
+    "isWinter": 1
   },
   {
     "date": "2023-12-16",
@@ -2166,10 +2346,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 33,
     "remainingRouge": 19,
-    "seasonDayIndex": 107
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 107,
+    "isWinter": 1
   },
   {
     "date": "2023-12-18",
@@ -2178,10 +2359,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 33,
     "remainingRouge": 18,
-    "seasonDayIndex": 109
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 109,
+    "isWinter": 1
   },
   {
     "date": "2023-12-19",
@@ -2190,10 +2372,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 32,
     "remainingRouge": 18,
-    "seasonDayIndex": 110
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 110,
+    "isWinter": 1
   },
   {
     "date": "2024-01-04",
@@ -2202,10 +2385,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 31,
     "remainingRouge": 18,
-    "seasonDayIndex": 126
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 126,
+    "isWinter": 1
   },
   {
     "date": "2024-01-05",
@@ -2214,10 +2398,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 30,
     "remainingRouge": 18,
-    "seasonDayIndex": 127
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 127,
+    "isWinter": 1
   },
   {
     "date": "2024-01-06",
@@ -2226,10 +2411,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 29,
     "remainingRouge": 18,
-    "seasonDayIndex": 128
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 128,
+    "isWinter": 1
   },
   {
     "date": "2024-01-08",
@@ -2238,10 +2424,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 29,
     "remainingRouge": 17,
-    "seasonDayIndex": 130
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 130,
+    "isWinter": 1
   },
   {
     "date": "2024-01-09",
@@ -2250,10 +2437,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 29,
     "remainingRouge": 16,
-    "seasonDayIndex": 131
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 131,
+    "isWinter": 1
   },
   {
     "date": "2024-01-11",
@@ -2262,10 +2450,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 29,
     "remainingRouge": 15,
-    "seasonDayIndex": 133
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 133,
+    "isWinter": 1
   },
   {
     "date": "2024-01-12",
@@ -2274,10 +2463,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 29,
     "remainingRouge": 14,
-    "seasonDayIndex": 134
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 134,
+    "isWinter": 1
   },
   {
     "date": "2024-01-13",
@@ -2286,10 +2476,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 28,
     "remainingRouge": 14,
-    "seasonDayIndex": 135
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 135,
+    "isWinter": 1
   },
   {
     "date": "2024-01-15",
@@ -2298,10 +2489,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 28,
     "remainingRouge": 13,
-    "seasonDayIndex": 137
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 137,
+    "isWinter": 1
   },
   {
     "date": "2024-01-16",
@@ -2310,10 +2502,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 28,
     "remainingRouge": 12,
-    "seasonDayIndex": 138
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 138,
+    "isWinter": 1
   },
   {
     "date": "2024-01-17",
@@ -2322,10 +2515,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 27,
     "remainingRouge": 12,
-    "seasonDayIndex": 139
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 139,
+    "isWinter": 1
   },
   {
     "date": "2024-01-18",
@@ -2334,10 +2528,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 27,
     "remainingRouge": 11,
-    "seasonDayIndex": 140
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 140,
+    "isWinter": 1
   },
   {
     "date": "2024-01-19",
@@ -2346,10 +2541,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 27,
     "remainingRouge": 10,
-    "seasonDayIndex": 141
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 141,
+    "isWinter": 1
   },
   {
     "date": "2024-01-20",
@@ -2358,10 +2554,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 26,
     "remainingRouge": 10,
-    "seasonDayIndex": 142
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 142,
+    "isWinter": 1
   },
   {
     "date": "2024-01-26",
@@ -2370,10 +2567,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 25,
     "remainingRouge": 10,
-    "seasonDayIndex": 148
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 148,
+    "isWinter": 1
   },
   {
     "date": "2024-01-29",
@@ -2382,10 +2580,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 24,
     "remainingRouge": 10,
-    "seasonDayIndex": 151
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 151,
+    "isWinter": 1
   },
   {
     "date": "2024-01-30",
@@ -2394,10 +2593,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 23,
     "remainingRouge": 10,
-    "seasonDayIndex": 152
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 152,
+    "isWinter": 1
   },
   {
     "date": "2024-01-31",
@@ -2406,10 +2606,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 22,
     "remainingRouge": 10,
-    "seasonDayIndex": 153
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 153,
+    "isWinter": 1
   },
   {
     "date": "2024-02-01",
@@ -2418,10 +2619,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 21,
     "remainingRouge": 10,
-    "seasonDayIndex": 154
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 154,
+    "isWinter": 1
   },
   {
     "date": "2024-02-02",
@@ -2430,10 +2632,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 20,
     "remainingRouge": 10,
-    "seasonDayIndex": 155
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 155,
+    "isWinter": 1
   },
   {
     "date": "2024-02-05",
@@ -2442,10 +2645,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 19,
     "remainingRouge": 10,
-    "seasonDayIndex": 158
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 158,
+    "isWinter": 1
   },
   {
     "date": "2024-02-12",
@@ -2454,10 +2658,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 19,
     "remainingRouge": 9,
-    "seasonDayIndex": 165
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 165,
+    "isWinter": 1
   },
   {
     "date": "2024-02-13",
@@ -2466,10 +2671,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 18,
     "remainingRouge": 9,
-    "seasonDayIndex": 166
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 166,
+    "isWinter": 1
   },
   {
     "date": "2024-02-19",
@@ -2478,10 +2684,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 17,
     "remainingRouge": 9,
-    "seasonDayIndex": 172
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 172,
+    "isWinter": 1
   },
   {
     "date": "2024-02-20",
@@ -2490,10 +2697,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 16,
     "remainingRouge": 9,
-    "seasonDayIndex": 173
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 173,
+    "isWinter": 1
   },
   {
     "date": "2024-02-23",
@@ -2502,10 +2710,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 15,
     "remainingRouge": 9,
-    "seasonDayIndex": 176
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 176,
+    "isWinter": 1
   },
   {
     "date": "2024-02-24",
@@ -2514,10 +2723,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 14,
     "remainingRouge": 9,
-    "seasonDayIndex": 177
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 177,
+    "isWinter": 1
   },
   {
     "date": "2024-02-26",
@@ -2526,10 +2736,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 13,
     "remainingRouge": 9,
-    "seasonDayIndex": 179
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 179,
+    "isWinter": 1
   },
   {
     "date": "2024-02-27",
@@ -2538,10 +2749,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 13,
     "remainingRouge": 8,
-    "seasonDayIndex": 180
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 180,
+    "isWinter": 1
   },
   {
     "date": "2024-02-28",
@@ -2550,10 +2762,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 13,
     "remainingRouge": 7,
-    "seasonDayIndex": 181
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 181,
+    "isWinter": 1
   },
   {
     "date": "2024-02-29",
@@ -2562,10 +2775,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 12,
     "remainingRouge": 7,
-    "seasonDayIndex": 182
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 182,
+    "isWinter": 1
   },
   {
     "date": "2024-03-04",
@@ -2574,10 +2788,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 12,
     "remainingRouge": 6,
-    "seasonDayIndex": 186
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 186,
+    "isWinter": 1
   },
   {
     "date": "2024-03-05",
@@ -2586,10 +2801,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 12,
     "remainingRouge": 5,
-    "seasonDayIndex": 187
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 187,
+    "isWinter": 1
   },
   {
     "date": "2024-03-06",
@@ -2598,10 +2814,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 12,
     "remainingRouge": 4,
-    "seasonDayIndex": 188
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 188,
+    "isWinter": 1
   },
   {
     "date": "2024-03-07",
@@ -2610,10 +2827,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 11,
     "remainingRouge": 4,
-    "seasonDayIndex": 189
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 189,
+    "isWinter": 1
   },
   {
     "date": "2024-03-08",
@@ -2622,10 +2840,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 10,
     "remainingRouge": 4,
-    "seasonDayIndex": 190
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 190,
+    "isWinter": 1
   },
   {
     "date": "2024-03-11",
@@ -2634,10 +2853,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 10,
     "remainingRouge": 3,
-    "seasonDayIndex": 193
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 193,
+    "isWinter": 1
   },
   {
     "date": "2024-03-12",
@@ -2646,10 +2866,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 10,
     "remainingRouge": 2,
-    "seasonDayIndex": 194
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 194,
+    "isWinter": 1
   },
   {
     "date": "2024-03-13",
@@ -2658,10 +2879,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 9,
     "remainingRouge": 2,
-    "seasonDayIndex": 195
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 195,
+    "isWinter": 1
   },
   {
     "date": "2024-03-26",
@@ -2670,10 +2892,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 8,
     "remainingRouge": 2,
-    "seasonDayIndex": 208
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 208,
+    "isWinter": 1
   },
   {
     "date": "2024-03-29",
@@ -2682,10 +2905,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 8,
     "remainingRouge": 1,
-    "seasonDayIndex": 211
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 211,
+    "isWinter": 1
   },
   {
     "date": "2024-11-14",
@@ -2694,10 +2918,11 @@
     "coldDays": 0,
     "rteConsommation": 58643,
     "rteTension": 70,
-    "remainingBleu": 300,
     "remainingBlanc": 42,
     "remainingRouge": 22,
-    "seasonDayIndex": 75
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 75,
+    "isWinter": 1
   },
   {
     "date": "2024-11-15",
@@ -2706,10 +2931,11 @@
     "coldDays": 0,
     "rteConsommation": 58264,
     "rteTension": 70,
-    "remainingBleu": 300,
     "remainingBlanc": 41,
     "remainingRouge": 22,
-    "seasonDayIndex": 76
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 76,
+    "isWinter": 1
   },
   {
     "date": "2024-11-20",
@@ -2718,10 +2944,11 @@
     "coldDays": 0,
     "rteConsommation": 60829,
     "rteTension": 70,
-    "remainingBleu": 300,
     "remainingBlanc": 40,
     "remainingRouge": 22,
-    "seasonDayIndex": 81
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 81,
+    "isWinter": 1
   },
   {
     "date": "2024-11-21",
@@ -2730,10 +2957,11 @@
     "coldDays": 0,
     "rteConsommation": 66009,
     "rteTension": 80,
-    "remainingBleu": 300,
     "remainingBlanc": 39,
     "remainingRouge": 22,
-    "seasonDayIndex": 82
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 82,
+    "isWinter": 1
   },
   {
     "date": "2024-11-22",
@@ -2742,10 +2970,11 @@
     "coldDays": 0,
     "rteConsommation": 66922,
     "rteTension": 80,
-    "remainingBleu": 300,
     "remainingBlanc": 38,
     "remainingRouge": 22,
-    "seasonDayIndex": 83
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 83,
+    "isWinter": 1
   },
   {
     "date": "2024-11-28",
@@ -2754,10 +2983,11 @@
     "coldDays": 0,
     "rteConsommation": 58251,
     "rteTension": 70,
-    "remainingBleu": 300,
     "remainingBlanc": 37,
     "remainingRouge": 22,
-    "seasonDayIndex": 89
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 89,
+    "isWinter": 1
   },
   {
     "date": "2024-12-03",
@@ -2766,10 +2996,11 @@
     "coldDays": 0,
     "rteConsommation": 60747,
     "rteTension": 70,
-    "remainingBleu": 300,
     "remainingBlanc": 37,
     "remainingRouge": 21,
-    "seasonDayIndex": 94
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 94,
+    "isWinter": 1
   },
   {
     "date": "2024-12-04",
@@ -2778,10 +3009,11 @@
     "coldDays": 0,
     "rteConsommation": 64115,
     "rteTension": 70,
-    "remainingBleu": 300,
     "remainingBlanc": 36,
     "remainingRouge": 21,
-    "seasonDayIndex": 95
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 95,
+    "isWinter": 1
   },
   {
     "date": "2024-12-09",
@@ -2790,10 +3022,11 @@
     "coldDays": 0,
     "rteConsommation": 64860,
     "rteTension": 70,
-    "remainingBleu": 300,
     "remainingBlanc": 35,
     "remainingRouge": 21,
-    "seasonDayIndex": 100
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 100,
+    "isWinter": 1
   },
   {
     "date": "2024-12-10",
@@ -2802,10 +3035,11 @@
     "coldDays": 0,
     "rteConsommation": 66998,
     "rteTension": 80,
-    "remainingBleu": 300,
     "remainingBlanc": 35,
     "remainingRouge": 20,
-    "seasonDayIndex": 101
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 101,
+    "isWinter": 1
   },
   {
     "date": "2024-12-11",
@@ -2814,10 +3048,11 @@
     "coldDays": 0,
     "rteConsommation": 67922,
     "rteTension": 80,
-    "remainingBleu": 300,
     "remainingBlanc": 35,
     "remainingRouge": 19,
-    "seasonDayIndex": 102
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 102,
+    "isWinter": 1
   },
   {
     "date": "2024-12-12",
@@ -2826,10 +3061,11 @@
     "coldDays": 0,
     "rteConsommation": 69267,
     "rteTension": 80,
-    "remainingBleu": 300,
     "remainingBlanc": 35,
     "remainingRouge": 18,
-    "seasonDayIndex": 103
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 103,
+    "isWinter": 1
   },
   {
     "date": "2024-12-13",
@@ -2838,10 +3074,11 @@
     "coldDays": 0,
     "rteConsommation": 70050,
     "rteTension": 80,
-    "remainingBleu": 300,
     "remainingBlanc": 35,
     "remainingRouge": 17,
-    "seasonDayIndex": 104
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 104,
+    "isWinter": 1
   },
   {
     "date": "2024-12-14",
@@ -2850,10 +3087,11 @@
     "coldDays": 0,
     "rteConsommation": 63882,
     "rteTension": 70,
-    "remainingBleu": 300,
     "remainingBlanc": 34,
     "remainingRouge": 17,
-    "seasonDayIndex": 105
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 105,
+    "isWinter": 1
   },
   {
     "date": "2024-12-16",
@@ -2862,10 +3100,11 @@
     "coldDays": 0,
     "rteConsommation": 64653,
     "rteTension": 70,
-    "remainingBleu": 300,
     "remainingBlanc": 34,
     "remainingRouge": 16,
-    "seasonDayIndex": 107
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 107,
+    "isWinter": 1
   },
   {
     "date": "2024-12-17",
@@ -2874,10 +3113,11 @@
     "coldDays": 0,
     "rteConsommation": 64841,
     "rteTension": 70,
-    "remainingBleu": 300,
     "remainingBlanc": 33,
     "remainingRouge": 16,
-    "seasonDayIndex": 108
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 108,
+    "isWinter": 1
   },
   {
     "date": "2024-12-20",
@@ -2886,10 +3126,11 @@
     "coldDays": 0,
     "rteConsommation": 64203,
     "rteTension": 70,
-    "remainingBleu": 300,
     "remainingBlanc": 32,
     "remainingRouge": 16,
-    "seasonDayIndex": 111
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 111,
+    "isWinter": 1
   },
   {
     "date": "2024-12-23",
@@ -2898,10 +3139,11 @@
     "coldDays": 0,
     "rteConsommation": 61761,
     "rteTension": 70,
-    "remainingBleu": 300,
     "remainingBlanc": 31,
     "remainingRouge": 16,
-    "seasonDayIndex": 114
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 114,
+    "isWinter": 1
   },
   {
     "date": "2024-12-24",
@@ -2910,10 +3152,11 @@
     "coldDays": 0,
     "rteConsommation": 58196,
     "rteTension": 70,
-    "remainingBleu": 300,
     "remainingBlanc": 30,
     "remainingRouge": 16,
-    "seasonDayIndex": 115
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 115,
+    "isWinter": 1
   },
   {
     "date": "2024-12-26",
@@ -2922,10 +3165,11 @@
     "coldDays": 0,
     "rteConsommation": 57561,
     "rteTension": 70,
-    "remainingBleu": 300,
     "remainingBlanc": 29,
     "remainingRouge": 16,
-    "seasonDayIndex": 117
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 117,
+    "isWinter": 1
   },
   {
     "date": "2024-12-27",
@@ -2934,10 +3178,11 @@
     "coldDays": 0,
     "rteConsommation": 62521,
     "rteTension": 70,
-    "remainingBleu": 300,
     "remainingBlanc": 29,
     "remainingRouge": 15,
-    "seasonDayIndex": 118
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 118,
+    "isWinter": 1
   },
   {
     "date": "2024-12-28",
@@ -2946,10 +3191,11 @@
     "coldDays": 0,
     "rteConsommation": 62952,
     "rteTension": 70,
-    "remainingBleu": 300,
     "remainingBlanc": 28,
     "remainingRouge": 15,
-    "seasonDayIndex": 119
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 119,
+    "isWinter": 1
   },
   {
     "date": "2024-12-30",
@@ -2958,10 +3204,11 @@
     "coldDays": 0,
     "rteConsommation": 65441,
     "rteTension": 80,
-    "remainingBleu": 300,
     "remainingBlanc": 28,
     "remainingRouge": 14,
-    "seasonDayIndex": 121
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 121,
+    "isWinter": 1
   },
   {
     "date": "2024-12-31",
@@ -2970,10 +3217,11 @@
     "coldDays": 0,
     "rteConsommation": 65976,
     "rteTension": 80,
-    "remainingBleu": 300,
     "remainingBlanc": 27,
     "remainingRouge": 14,
-    "seasonDayIndex": 122
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 122,
+    "isWinter": 1
   },
   {
     "date": "2025-01-02",
@@ -2982,10 +3230,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 27,
     "remainingRouge": 13,
-    "seasonDayIndex": 124
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 124,
+    "isWinter": 1
   },
   {
     "date": "2025-01-03",
@@ -2994,10 +3243,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 27,
     "remainingRouge": 12,
-    "seasonDayIndex": 125
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 125,
+    "isWinter": 1
   },
   {
     "date": "2025-01-04",
@@ -3006,10 +3256,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 26,
     "remainingRouge": 12,
-    "seasonDayIndex": 126
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 126,
+    "isWinter": 1
   },
   {
     "date": "2025-01-07",
@@ -3018,10 +3269,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 25,
     "remainingRouge": 12,
-    "seasonDayIndex": 129
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 129,
+    "isWinter": 1
   },
   {
     "date": "2025-01-08",
@@ -3030,10 +3282,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 24,
     "remainingRouge": 12,
-    "seasonDayIndex": 130
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 130,
+    "isWinter": 1
   },
   {
     "date": "2025-01-09",
@@ -3042,10 +3295,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 23,
     "remainingRouge": 12,
-    "seasonDayIndex": 131
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 131,
+    "isWinter": 1
   },
   {
     "date": "2025-01-10",
@@ -3054,10 +3308,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 23,
     "remainingRouge": 11,
-    "seasonDayIndex": 132
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 132,
+    "isWinter": 1
   },
   {
     "date": "2025-01-11",
@@ -3066,10 +3321,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 22,
     "remainingRouge": 11,
-    "seasonDayIndex": 133
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 133,
+    "isWinter": 1
   },
   {
     "date": "2025-01-13",
@@ -3078,10 +3334,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 22,
     "remainingRouge": 10,
-    "seasonDayIndex": 135
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 135,
+    "isWinter": 1
   },
   {
     "date": "2025-01-14",
@@ -3090,10 +3347,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 22,
     "remainingRouge": 9,
-    "seasonDayIndex": 136
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 136,
+    "isWinter": 1
   },
   {
     "date": "2025-01-15",
@@ -3102,10 +3360,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 22,
     "remainingRouge": 8,
-    "seasonDayIndex": 137
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 137,
+    "isWinter": 1
   },
   {
     "date": "2025-01-16",
@@ -3114,10 +3373,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 22,
     "remainingRouge": 7,
-    "seasonDayIndex": 138
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 138,
+    "isWinter": 1
   },
   {
     "date": "2025-01-17",
@@ -3126,10 +3386,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 22,
     "remainingRouge": 6,
-    "seasonDayIndex": 139
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 139,
+    "isWinter": 1
   },
   {
     "date": "2025-01-18",
@@ -3138,10 +3399,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 21,
     "remainingRouge": 6,
-    "seasonDayIndex": 140
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 140,
+    "isWinter": 1
   },
   {
     "date": "2025-01-20",
@@ -3150,10 +3412,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 21,
     "remainingRouge": 5,
-    "seasonDayIndex": 142
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 142,
+    "isWinter": 1
   },
   {
     "date": "2025-01-21",
@@ -3162,10 +3425,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 21,
     "remainingRouge": 4,
-    "seasonDayIndex": 143
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 143,
+    "isWinter": 1
   },
   {
     "date": "2025-01-22",
@@ -3174,10 +3438,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 21,
     "remainingRouge": 3,
-    "seasonDayIndex": 144
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 144,
+    "isWinter": 1
   },
   {
     "date": "2025-01-23",
@@ -3186,10 +3451,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 20,
     "remainingRouge": 3,
-    "seasonDayIndex": 145
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 145,
+    "isWinter": 1
   },
   {
     "date": "2025-01-29",
@@ -3198,10 +3464,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 19,
     "remainingRouge": 3,
-    "seasonDayIndex": 151
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 151,
+    "isWinter": 1
   },
   {
     "date": "2025-01-30",
@@ -3210,10 +3477,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 19,
     "remainingRouge": 2,
-    "seasonDayIndex": 152
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 152,
+    "isWinter": 1
   },
   {
     "date": "2025-01-31",
@@ -3222,10 +3490,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 19,
     "remainingRouge": 1,
-    "seasonDayIndex": 153
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 153,
+    "isWinter": 1
   },
   {
     "date": "2025-02-01",
@@ -3234,10 +3503,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 18,
     "remainingRouge": 1,
-    "seasonDayIndex": 154
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 154,
+    "isWinter": 1
   },
   {
     "date": "2025-02-03",
@@ -3246,10 +3516,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 18,
     "remainingRouge": 0,
-    "seasonDayIndex": 156
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 156,
+    "isWinter": 1
   },
   {
     "date": "2025-02-04",
@@ -3258,10 +3529,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 17,
     "remainingRouge": 0,
-    "seasonDayIndex": 157
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 157,
+    "isWinter": 1
   },
   {
     "date": "2025-02-05",
@@ -3270,10 +3542,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 16,
     "remainingRouge": 0,
-    "seasonDayIndex": 158
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 158,
+    "isWinter": 1
   },
   {
     "date": "2025-02-06",
@@ -3282,10 +3555,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 15,
     "remainingRouge": 0,
-    "seasonDayIndex": 159
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 159,
+    "isWinter": 1
   },
   {
     "date": "2025-02-07",
@@ -3294,10 +3568,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 14,
     "remainingRouge": 0,
-    "seasonDayIndex": 160
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 160,
+    "isWinter": 1
   },
   {
     "date": "2025-02-08",
@@ -3306,10 +3581,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 13,
     "remainingRouge": 0,
-    "seasonDayIndex": 161
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 161,
+    "isWinter": 1
   },
   {
     "date": "2025-02-10",
@@ -3318,10 +3594,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 12,
     "remainingRouge": 0,
-    "seasonDayIndex": 163
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 163,
+    "isWinter": 1
   },
   {
     "date": "2025-02-11",
@@ -3330,10 +3607,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 11,
     "remainingRouge": 0,
-    "seasonDayIndex": 164
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 164,
+    "isWinter": 1
   },
   {
     "date": "2025-02-12",
@@ -3342,10 +3620,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 10,
     "remainingRouge": 0,
-    "seasonDayIndex": 165
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 165,
+    "isWinter": 1
   },
   {
     "date": "2025-02-13",
@@ -3354,10 +3633,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 9,
     "remainingRouge": 0,
-    "seasonDayIndex": 166
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 166,
+    "isWinter": 1
   },
   {
     "date": "2025-02-14",
@@ -3366,10 +3646,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 8,
     "remainingRouge": 0,
-    "seasonDayIndex": 167
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 167,
+    "isWinter": 1
   },
   {
     "date": "2025-02-17",
@@ -3378,10 +3659,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 7,
     "remainingRouge": 0,
-    "seasonDayIndex": 170
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 170,
+    "isWinter": 1
   },
   {
     "date": "2025-02-18",
@@ -3390,10 +3672,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 6,
     "remainingRouge": 0,
-    "seasonDayIndex": 171
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 171,
+    "isWinter": 1
   },
   {
     "date": "2025-02-19",
@@ -3402,10 +3685,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 5,
     "remainingRouge": 0,
-    "seasonDayIndex": 172
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 172,
+    "isWinter": 1
   },
   {
     "date": "2025-02-28",
@@ -3414,10 +3698,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 4,
     "remainingRouge": 0,
-    "seasonDayIndex": 181
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 181,
+    "isWinter": 1
   },
   {
     "date": "2025-03-03",
@@ -3426,10 +3711,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 3,
     "remainingRouge": 0,
-    "seasonDayIndex": 184
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 184,
+    "isWinter": 1
   },
   {
     "date": "2025-03-04",
@@ -3438,10 +3724,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 2,
     "remainingRouge": 0,
-    "seasonDayIndex": 185
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 185,
+    "isWinter": 1
   },
   {
     "date": "2025-03-12",
@@ -3450,10 +3737,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 1,
     "remainingRouge": 0,
-    "seasonDayIndex": 193
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 193,
+    "isWinter": 1
   },
   {
     "date": "2025-03-13",
@@ -3462,10 +3750,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 0,
     "remainingRouge": 0,
-    "seasonDayIndex": 194
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 194,
+    "isWinter": 1
   },
   {
     "date": "2025-11-20",
@@ -3474,10 +3763,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 42,
     "remainingRouge": 22,
-    "seasonDayIndex": 81
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 81,
+    "isWinter": 1
   },
   {
     "date": "2025-11-21",
@@ -3486,10 +3776,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 41,
     "remainingRouge": 22,
-    "seasonDayIndex": 82
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 82,
+    "isWinter": 1
   },
   {
     "date": "2025-11-26",
@@ -3498,10 +3789,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 40,
     "remainingRouge": 22,
-    "seasonDayIndex": 87
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 87,
+    "isWinter": 1
   },
   {
     "date": "2025-11-27",
@@ -3510,10 +3802,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 39,
     "remainingRouge": 22,
-    "seasonDayIndex": 88
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 88,
+    "isWinter": 1
   },
   {
     "date": "2025-12-02",
@@ -3522,10 +3815,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 38,
     "remainingRouge": 22,
-    "seasonDayIndex": 93
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 93,
+    "isWinter": 1
   },
   {
     "date": "2025-12-03",
@@ -3534,10 +3828,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 37,
     "remainingRouge": 22,
-    "seasonDayIndex": 94
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 94,
+    "isWinter": 1
   },
   {
     "date": "2025-12-12",
@@ -3546,10 +3841,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 36,
     "remainingRouge": 22,
-    "seasonDayIndex": 103
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 103,
+    "isWinter": 1
   },
   {
     "date": "2025-12-16",
@@ -3558,10 +3854,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 35,
     "remainingRouge": 22,
-    "seasonDayIndex": 107
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 107,
+    "isWinter": 1
   },
   {
     "date": "2025-12-17",
@@ -3570,10 +3867,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 34,
     "remainingRouge": 22,
-    "seasonDayIndex": 108
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 108,
+    "isWinter": 1
   },
   {
     "date": "2025-12-19",
@@ -3582,10 +3880,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 33,
     "remainingRouge": 22,
-    "seasonDayIndex": 110
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 110,
+    "isWinter": 1
   },
   {
     "date": "2025-12-22",
@@ -3594,10 +3893,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 32,
     "remainingRouge": 22,
-    "seasonDayIndex": 113
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 113,
+    "isWinter": 1
   },
   {
     "date": "2025-12-26",
@@ -3606,10 +3906,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 31,
     "remainingRouge": 22,
-    "seasonDayIndex": 117
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 117,
+    "isWinter": 1
   },
   {
     "date": "2025-12-27",
@@ -3618,10 +3919,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 30,
     "remainingRouge": 22,
-    "seasonDayIndex": 118
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 118,
+    "isWinter": 1
   },
   {
     "date": "2025-12-29",
@@ -3630,10 +3932,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 30,
     "remainingRouge": 21,
-    "seasonDayIndex": 120
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 120,
+    "isWinter": 1
   },
   {
     "date": "2025-12-30",
@@ -3642,10 +3945,11 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 29,
     "remainingRouge": 21,
-    "seasonDayIndex": 121
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 121,
+    "isWinter": 1
   },
   {
     "date": "2025-12-31",
@@ -3654,9 +3958,10 @@
     "coldDays": 0,
     "rteConsommation": 55000,
     "rteTension": 60,
-    "remainingBleu": 300,
     "remainingBlanc": 29,
     "remainingRouge": 20,
-    "seasonDayIndex": 122
+    "winterBleuRemaining": 300,
+    "seasonDayIndex": 122,
+    "isWinter": 1
   }
 ]
