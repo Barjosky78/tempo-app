@@ -67,9 +67,9 @@
     "date": "2026-01-17",
     "couleur": "blanc",
     "probabilites": {
-      "rouge": 15,
-      "blanc": 44,
-      "bleu": 41
+      "rouge": 0,
+      "blanc": 52,
+      "bleu": 48
     },
     "fixed": false,
     "temperature": 7.1,
@@ -83,11 +83,11 @@
   },
   {
     "date": "2026-01-18",
-    "couleur": "blanc",
+    "couleur": "bleu",
     "probabilites": {
-      "rouge": 15,
-      "blanc": 44,
-      "bleu": 41
+      "rouge": 0,
+      "blanc": 0,
+      "bleu": 100
     },
     "fixed": false,
     "temperature": 4.9,
