@@ -1,7 +1,7 @@
 import json
 import pandas as pd
 import joblib
-from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import LabelEncoder
 from pathlib import Path
 
@@ -11,7 +11,7 @@ from pathlib import Path
 DATASET_PATH = Path("ML/ml_dataset.json")
 MODEL_PATH   = Path("ML/ml_model.pkl")
 
-print("🤖 Entraînement ML Tempo (historique réel + logique hivernale EDF)")
+print("🌲 Entraînement RandomForest ML Tempo (historique réel + logique EDF)")
 
 # ======================
 # LOAD DATASET
@@ -30,26 +30,24 @@ if len(df) < 200:
 # ======================
 # FEATURE ENGINEERING
 # ======================
-print("🛠️ Construction des features ML")
+print("🛠️ Construction des features")
 
 df["date"] = pd.to_datetime(df["date"], errors="coerce")
 df = df.dropna(subset=["date"])
 
 df["weekday"] = df["date"].dt.weekday
 df["month"]   = df["date"].dt.month
-
-# Historique réel uniquement
-df["horizon"] = 0
+df["horizon"] = 0  # historique réel uniquement
 
 # Target
 df["label"] = df["color"]
 
-# Harmonisation noms
+# Harmonisation
 df["temp"] = df["temperature"]
 df["rte"]  = df["rteConsommation"]
 
 # ======================
-# FEATURES ML (ALIGNÉES DATASET FINAL)
+# FEATURES (SOURCE DE VÉRITÉ)
 # ======================
 FEATURES = [
     "temp",
@@ -59,14 +57,11 @@ FEATURES = [
     "month",
     "horizon",
 
-    # 🔑 CONTEXTE TEMPO STRUCTURANT
+    # 🔑 CONTEXTE TEMPO
     "remainingBlanc",
     "remainingRouge",
-    "remainingBleu",
-    "remainingTempoDays",
     "winterBleuRemaining",
-    "seasonDayIndex",
-    "isWinter"
+    "seasonDayIndex"
 ]
 
 TARGET = "label"
@@ -75,7 +70,6 @@ missing = [c for c in FEATURES + [TARGET] if c not in df.columns]
 if missing:
     raise SystemExit(f"❌ Colonnes manquantes : {missing}")
 
-# Sécurité valeurs manquantes
 df[FEATURES] = df[FEATURES].fillna(0)
 
 X = df[FEATURES]
@@ -91,12 +85,12 @@ classes = list(le.classes_)
 print("🏷️ Classes apprises :", classes)
 
 # ======================
-# CLASS WEIGHTS (ANTI-BLEU STRUCTUREL)
+# CLASS WEIGHTS (ANTI-BLEU)
 # ======================
 BASE_WEIGHTS = {
     "bleu": 1.0,
-    "blanc": 3.0,
-    "rouge": 5.0
+    "blanc": 3.5,
+    "rouge": 6.0
 }
 
 class_weight = {
@@ -107,15 +101,17 @@ class_weight = {
 print("⚖️ Poids utilisés :", class_weight)
 
 # ======================
-# TRAIN MODEL
+# TRAIN RANDOM FOREST
 # ======================
-print("🚀 Entraînement du modèle ML")
+print("🚀 Entraînement RandomForest")
 
-model = DecisionTreeClassifier(
-    max_depth=6,            # évite l’overfit
-    min_samples_leaf=8,     # stabilise les règles
+model = RandomForestClassifier(
+    n_estimators=250,        # 🔑 stabilité
+    max_depth=8,
+    min_samples_leaf=5,
     class_weight=class_weight,
-    random_state=42
+    random_state=42,
+    n_jobs=-1
 )
 
 model.fit(X, y_enc)
@@ -134,10 +130,10 @@ joblib.dump(bundle, MODEL_PATH)
 
 size = MODEL_PATH.stat().st_size
 
-print("✅ Modèle ML entraîné")
+print("✅ Modèle RandomForest entraîné")
 print(f"📦 Taille du modèle : {size} bytes")
 
-if size < 500:
-    raise SystemExit("❌ Modèle anormalement petit → problème d'entraînement")
+if size < 10_000:
+    raise SystemExit("❌ Modèle anormalement petit (erreur d'entraînement)")
 
-print("🎉 Modèle ML valide — logique Tempo EDF 150 jours intégrée")
+print("🎉 RandomForest prêt — prédictions plus réalistes et moins de BLEU abusif")
