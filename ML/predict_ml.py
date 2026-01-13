@@ -153,7 +153,30 @@ for day in tempo:
             ml_probs[c] = 0
             corrected = True
             rule_details.append(f"quota_{c}_epuise")
+# ======================
+# ❄️ BIAIS SAISONNIER HIVER (AVANT NORMALISATION)
+# ======================
+if d.month in (11, 12, 1, 2, 3):
+    # pénalité BLEU
+    ml_probs["bleu"] = max(0, ml_probs["bleu"] - 25)
 
+    # boost BLANC / ROUGE
+    ml_probs["blanc"] += 15
+    ml_probs["rouge"] += 10
+
+    corrected = True
+    rule_details.append("bias_hiver_reduction_bleu")
+    # ======================
+# 🔵 PLAFOND BLEU HIVER
+# ======================
+if d.month in (11, 12, 1, 2, 3):
+    if ml_probs["bleu"] > 60:
+        excess = ml_probs["bleu"] - 60
+        ml_probs["bleu"] = 60
+        ml_probs["blanc"] += excess // 2
+        ml_probs["rouge"] += excess // 2
+        rule_details.append("plafond_bleu_hiver")
+        corrected = True
     # ======================
     # NORMALISATION (SAFE)
     # ======================
