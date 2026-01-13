@@ -1,104 +1,126 @@
-- name: Build real Tempo history (official RTE repo)
-  run: |
-    node <<'EOF'
-    const fs = require("fs");
-    const https = require("https");
+name: Build real Tempo history (RTE official)
 
-    console.log("📦 Build real Tempo history from official RTE repository");
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 3 * * 1'   # Lundi 03:15 UTC (1 fois par semaine suffit)
 
-    // ======================
-    // ANNÉES DISPONIBLES
-    // ======================
-    const YEARS = [
-      "2016_2017",
-      "2017_2018",
-      "2018_2019",
-      "2019_2020",
-      "2020_2021",
-      "2021_2022",
-      "2022_2023",
-      "2023_2024",
-      "2024_2025"
-    ];
+permissions:
+  contents: write
 
-    const BASE_URL =
-      "https://raw.githubusercontent.com/jbromain/rte-tempo/master/data";
+jobs:
+  build-history:
+    runs-on: ubuntu-latest
 
-    const OUTPUT_PATH = "history_real_tempo.json";
-    const output = [];
+    steps:
+      # ======================
+      # CHECKOUT
+      # ======================
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    // ======================
-    // FETCH UTIL
-    // ======================
-    function fetch(url) {
-      return new Promise((resolve, reject) => {
-        https
-          .get(url, res => {
-            if (res.statusCode !== 200) {
-              reject(new Error("HTTP " + res.statusCode));
-              return;
+      # ======================
+      # BUILD HISTORY REAL TEMPO
+      # ======================
+      - name: Build real Tempo history from RTE (SAFE)
+        run: |
+          node <<'EOF'
+          const fs = require("fs");
+          const https = require("https");
+
+          console.log("📦 Building real Tempo history from RTE official repo");
+
+          const YEARS = [
+            "2016_2017",
+            "2017_2018",
+            "2018_2019",
+            "2019_2020",
+            "2020_2021",
+            "2021_2022",
+            "2022_2023",
+            "2023_2024",
+            "2024_2025"
+          ];
+
+          const BASE_URL =
+            "https://raw.githubusercontent.com/jbromain/rte-tempo/master/data";
+
+          const OUTPUT_FILE = "history_real_tempo.json";
+          const results = [];
+
+          function fetch(url) {
+            return new Promise(resolve => {
+              https.get(url, res => {
+                if (res.statusCode !== 200) {
+                  console.warn("⚠️ HTTP", res.statusCode, url);
+                  resolve(null);
+                  return;
+                }
+                let data = "";
+                res.on("data", c => data += c);
+                res.on("end", () => resolve(data));
+              }).on("error", () => {
+                console.warn("⚠️ Network error:", url);
+                resolve(null);
+              });
+            });
+          }
+
+          (async () => {
+            for (const year of YEARS) {
+              const url = `${BASE_URL}/tempo_${year}.json`;
+              console.log("⬇️ Fetch", url);
+
+              const raw = await fetch(url);
+              if (!raw) {
+                console.warn("⚠️ Skip year", year);
+                continue;
+              }
+
+              let json;
+              try {
+                json = JSON.parse(raw);
+              } catch {
+                console.warn("⚠️ Invalid JSON", year);
+                continue;
+              }
+
+              if (!Array.isArray(json)) {
+                console.warn("⚠️ Unexpected format", year);
+                continue;
+              }
+
+              json.forEach(d => {
+                if (!d.date || !d.color) return;
+                results.push({
+                  date: d.date,
+                  realColor: d.color.toLowerCase()
+                });
+              });
+
+              console.log("✅ Loaded", year, json.length, "days");
             }
 
-            let data = "";
-            res.on("data", chunk => (data += chunk));
-            res.on("end", () => resolve(data));
-          })
-          .on("error", reject);
-      });
-    }
+            results.sort((a, b) => a.date.localeCompare(b.date));
 
-    // ======================
-    // MAIN
-    // ======================
-    (async () => {
-      for (const year of YEARS) {
-        const url = `${BASE_URL}/tempo_${year}.json`;
+            fs.writeFileSync(
+              OUTPUT_FILE,
+              JSON.stringify(results, null, 2),
+              "utf8"
+            );
 
-        try {
-          console.log("⬇️ Fetch:", url);
-          const raw = await fetch(url);
+            console.log("🎉 history_real_tempo.json generated");
+            console.log("📅 Total days:", results.length);
+          })();
+          EOF
 
-          let json;
-          try {
-            json = JSON.parse(raw);
-          } catch {
-            console.warn("⚠️ JSON invalide pour", year);
-            continue;
-          }
-
-          if (!Array.isArray(json)) {
-            console.warn("⚠️ Format inattendu pour", year);
-            continue;
-          }
-
-          json.forEach(d => {
-            if (!d.date || !d.color) return;
-
-            output.push({
-              date: d.date,
-              realColor: d.color.toLowerCase()
-            });
-          });
-
-          console.log("✅ Année chargée:", year, "-", json.length, "jours");
-        } catch (err) {
-          console.warn("⚠️ Année ignorée:", year);
-        }
-      }
-
-      // ======================
-      // TRI & SAUVEGARDE
-      // ======================
-      output.sort((a, b) => a.date.localeCompare(b.date));
-
-      fs.writeFileSync(
-        OUTPUT_PATH,
-        JSON.stringify(output, null, 2),
-        "utf8"
-      );
-
-      console.log("🎉 Historique Tempo réel généré");
-      console.log("📅 Jours total:", output.length);
-      console.log("💾 Fichier:", OUTPUT_PATH);
-    })();
-    EOF
+      # ======================
+      # COMMIT IF CHANGED
+      # ======================
+      - name: Commit history_real_tempo.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add history_real_tempo.json
+          git commit -m "Update real Tempo history (RTE official)" || echo "No changes"
+          git push
