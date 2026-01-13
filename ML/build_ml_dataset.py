@@ -21,6 +21,12 @@ MAX_DAYS = {
     "rouge": 22
 }
 
+COLOR_PRIORITY = {
+    "rouge": 3,
+    "blanc": 2,
+    "bleu": 1
+}
+
 # ======================
 # UTILS
 # ======================
@@ -50,28 +56,41 @@ def is_red_allowed(date: datetime) -> bool:
 # ======================
 # LOAD DATA
 # ======================
-tempo   = load(TEMPO_PATH)
-weather = load(WEATHER_PATH)
-rte     = load(RTE_PATH)
+tempo_raw = load(TEMPO_PATH)
+weather   = load(WEATHER_PATH)
+rte       = load(RTE_PATH)
 
 weather_by_date = {w["date"]: w for w in weather}
 rte_by_date     = {r["date"]: r for r in rte}
 
 # ======================
-# BUILD DATASET
+# DÉDUPLICATION TEMPO
+# 1 date = 1 couleur
+# priorité rouge > blanc > bleu
+# ======================
+tempo_by_date = {}
+
+for entry in tempo_raw:
+    date = entry.get("date")
+    color = entry.get("color")
+
+    if not date or not color:
+        continue
+
+    if (
+        date not in tempo_by_date
+        or COLOR_PRIORITY[color] > COLOR_PRIORITY[tempo_by_date[date]]
+    ):
+        tempo_by_date[date] = color
+
+# ======================
+# BUILD DATASET ML
 # ======================
 dataset = []
 used_by_season = {}
 
-# 🔑 TRI CHRONOLOGIQUE OBLIGATOIRE
-tempo = sorted(tempo, key=lambda x: x["date"])
-
-for entry in tempo:
-    date_str = entry.get("date")
-    color    = entry.get("color")
-
-    if not date_str or not color:
-        continue
+for date_str in sorted(tempo_by_date.keys()):
+    color = tempo_by_date[date_str]
 
     if date_str not in weather_by_date:
         continue  # météo obligatoire pour ML
@@ -103,8 +122,7 @@ for entry in tempo:
     # RÈGLES ROUGES STRICTES
     # ======================
     if color == "rouge" and not is_red_allowed(date):
-        # ❌ impossible → on ne l'entraîne PAS
-        continue
+        continue  # impossible → exclu du ML
 
     # ======================
     # CONSOMMATION DU JOUR
@@ -119,8 +137,8 @@ for entry in tempo:
 
     season_day_index = (date - season_start).days + 1
 
-    w = weather_by_date[date_str]
-    r = rte_by_date.get(date_str)
+    w = weather_by_date.get(date_str, {})
+    r = rte_by_date.get(date_str, {})
 
     dataset.append({
         # ======================
@@ -138,11 +156,11 @@ for entry in tempo:
         # ======================
         # RTE
         # ======================
-        "rteConsommation": r.get("consommation", 55000) if r else 55000,
-        "rteTension": r.get("tension", 60) if r else 60,
+        "rteConsommation": r.get("consommation", 55000),
+        "rteTension": r.get("tension", 60),
 
         # ======================
-        # CONTEXTE TEMPO (CLÉ ML)
+        # CONTEXTE TEMPO (ML++)
         # ======================
         "remainingBleu": remaining["bleu"],
         "remainingBlanc": remaining["blanc"],
@@ -153,7 +171,8 @@ for entry in tempo:
 # ======================
 # SAVE
 # ======================
-print(f"📊 Tempo records        : {len(tempo)}")
+print(f"📊 Tempo brut           : {len(tempo_raw)}")
+print(f"📅 Tempo dédupliqué     : {len(tempo_by_date)}")
 print(f"🌦️ Weather records      : {len(weather)}")
 print(f"⚡ RTE records          : {len(rte)}")
 print(f"✅ ML samples generated : {len(dataset)}")
