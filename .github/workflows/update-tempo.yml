@@ -1,10 +1,12 @@
 name: Update Tempo + History + Stats + ML (Hourly Stable FULL)
+
 concurrency:
   group: pages
   cancel-in-progress: true
+
 on:
   schedule:
-    - cron: '0 * * * *'   # Toutes les heures (UTC)
+    - cron: '0 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -15,14 +17,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # ======================
-      # CHECKOUT
-      # ======================
       - uses: actions/checkout@v3
 
-      # ======================
-      # PYTHON (ML)
-      # ======================
       - uses: actions/setup-python@v4
         with:
           python-version: '3.10'
@@ -55,7 +51,7 @@ jobs:
           | jq . > rte.json || echo '{}' > rte.json
 
       # ======================
-      # BUILD TEMPO.JSON
+      # BUILD TEMPO.JSON (CORRIGÉ J+1)
       # ======================
       - name: Build tempo.json
         run: |
@@ -63,22 +59,20 @@ jobs:
           const fs = require("fs");
           const fmt = d => d.toISOString().split("T")[0];
 
-          /* ========= EDF ========= */
           let edf = {};
           try { edf = JSON.parse(fs.readFileSync("edf_tempo.json","utf8")); } catch {}
+
           const edfToday =
             edf.today ?? edf.aujourd_hui ?? edf.jourJ ?? "bleu";
           const edfTomorrow =
             edf.tomorrow ?? edf.demain ?? null;
 
-          /* ========= WEATHER ========= */
           let temps = [];
           try {
             const w = JSON.parse(fs.readFileSync("weather.json","utf8"));
             temps = w.daily?.temperature_2m_mean || [];
           } catch {}
 
-          /* ========= RTE ========= */
           let consommation = null;
           let tension = 60;
           try {
@@ -92,7 +86,6 @@ jobs:
             }
           } catch {}
 
-          /* ========= HISTORIQUE ========= */
           const HISTO_MONTH = {
             11:{rouge:8,blanc:22,bleu:70},
             12:{rouge:14,blanc:30,bleu:56},
@@ -122,27 +115,27 @@ jobs:
             sources:{reel:true}
           });
 
-          /* ========= J1 ========= */
+          /* ========= J+1 (TOUJOURS FIXED) ========= */
           const tomorrow = new Date(today);
           tomorrow.setDate(today.getDate()+1);
-          const dow1 = tomorrow.getDay();
+          const dow = tomorrow.getDay();
 
           if (edfTomorrow) {
             days.push({
               date: fmt(tomorrow),
               couleur: edfTomorrow,
               probabilites: { rouge:0, blanc:0, bleu:0, [edfTomorrow]:100 },
-              fixed:true,
+              fixed: true,
               sources:{reel:true}
             });
           } else {
             let base = HISTO_MONTH[tomorrow.getMonth()+1] || {rouge:10,blanc:25,bleu:65};
             let rouge=base.rouge, blanc=base.blanc, bleu=base.bleu;
 
-            if (HISTO_WEEKDAY[dow1]) {
-              rouge += HISTO_WEEKDAY[dow1].rouge;
-              blanc += HISTO_WEEKDAY[dow1].blanc;
-              bleu  += HISTO_WEEKDAY[dow1].bleu;
+            if (HISTO_WEEKDAY[dow]) {
+              rouge += HISTO_WEEKDAY[dow].rouge;
+              blanc += HISTO_WEEKDAY[dow].blanc;
+              bleu  += HISTO_WEEKDAY[dow].bleu;
             }
 
             const temp = temps[1] ?? 8;
@@ -150,14 +143,13 @@ jobs:
             if (temp < 0) { rouge += 6; bleu -= 4; }
 
             if (consommation !== null) {
-              if (tension < 55)      { bleu += 5;  blanc -= 3; rouge -= 2; }
+              if (tension < 55)      { bleu += 5; blanc -= 3; rouge -= 2; }
               else if (tension<=70) { blanc +=10; bleu  -=5; rouge -= 5; }
               else                  { rouge += 7; blanc += 3; bleu -=10; }
             }
 
-            /* WEEK-END EDF */
-            if (dow1 === 6) rouge = 0;                 // samedi
-            if (dow1 === 0) { rouge=0; blanc=0; bleu=100; } // dimanche
+            if (dow === 6) rouge = 0;
+            if (dow === 0) { rouge=0; blanc=0; bleu=100; }
 
             const total = rouge+blanc+bleu;
             rouge=Math.round(rouge/total*100);
@@ -172,12 +164,12 @@ jobs:
               date: fmt(tomorrow),
               couleur,
               probabilites:{rouge,blanc,bleu},
-              fixed:false,
-              sources:{historique:true,meteo:true,rte:consommation!==null}
+              fixed:true,
+              sources:{edf:true,meteo:true,rte:consommation!==null}
             });
           }
 
-          /* ========= J2 → J9 ========= */
+          /* ========= J+2 → J+9 ========= */
           for (let i=2;i<=9;i++) {
             const d=new Date(today);
             d.setDate(today.getDate()+i);
@@ -202,7 +194,6 @@ jobs:
               else                  { rouge+=7; blanc+=3; bleu -=10; }
             }
 
-            /* WEEK-END EDF */
             if (dow === 6) rouge = 0;
             if (dow === 0) { rouge=0; blanc=0; bleu=100; }
 
@@ -231,13 +222,10 @@ jobs:
           fs.writeFileSync("meta.json",JSON.stringify({updatedAt:new Date().toISOString()},null,2));
           EOF
 
-      # ======================
-      # COMMIT
-      # ======================
       - name: Commit & push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tempo.json meta.json edf_tempo.json
-          git commit -m "Stable Tempo update (week-end rules + RTE asymmetric boosts)" || echo "No changes"
+          git commit -m "Fix EDF J+1 validation (always fixed)" || echo "No changes"
           git push
