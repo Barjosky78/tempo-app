@@ -2,12 +2,24 @@ import json
 import os
 from datetime import datetime
 
+# ======================
+# PATHS
+# ======================
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 TEMPO_PATH   = os.path.join(BASE_DIR, "history_real_tempo.json")
 WEATHER_PATH = os.path.join(BASE_DIR, "weather_history.json")
 RTE_PATH     = os.path.join(BASE_DIR, "rte_history.json")
 OUT_PATH     = os.path.join(BASE_DIR, "ML", "ml_dataset.json")
+
+# ======================
+# CONSTANTES TEMPO
+# ======================
+MAX_DAYS = {
+    "bleu": 300,
+    "blanc": 43,
+    "rouge": 22
+}
 
 # ======================
 # UTILS
@@ -18,7 +30,7 @@ def load(path):
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
-def tempo_season_bounds(date):
+def tempo_season_bounds(date: datetime):
     """
     Saison Tempo EDF :
     du 1er septembre au 31 août
@@ -28,7 +40,7 @@ def tempo_season_bounds(date):
     end   = datetime(year + 1, 8, 31)
     return start, end
 
-def is_red_allowed(date):
+def is_red_allowed(date: datetime) -> bool:
     """
     Jours rouges autorisés uniquement
     du 1er novembre au 31 mars
@@ -48,31 +60,33 @@ rte_by_date     = {r["date"]: r for r in rte}
 # ======================
 # BUILD DATASET
 # ======================
-MAX = { "bleu": 300, "blanc": 43, "rouge": 22 }
-used_by_season = {}
 dataset = []
+used_by_season = {}
 
 # 🔑 TRI CHRONOLOGIQUE OBLIGATOIRE
 tempo = sorted(tempo, key=lambda x: x["date"])
 
-for t in tempo:
-    date_str = t.get("date")
-    color    = t.get("realColor")
+for entry in tempo:
+    date_str = entry.get("date")
+    color    = entry.get("color")
 
     if not date_str or not color:
         continue
 
     if date_str not in weather_by_date:
-        continue  # météo obligatoire
+        continue  # météo obligatoire pour ML
 
-    date = datetime.fromisoformat(date_str)
+    try:
+        date = datetime.fromisoformat(date_str)
+    except ValueError:
+        continue
 
     # ======================
     # SAISON TEMPO
     # ======================
     season_start, season_end = tempo_season_bounds(date)
     if not (season_start <= date <= season_end):
-        continue  # hors saison Tempo
+        continue
 
     season_key = season_start.strftime("%Y")
 
@@ -86,10 +100,10 @@ for t in tempo:
     used = used_by_season[season_key]
 
     # ======================
-    # RÈGLES ROUGE
+    # RÈGLES ROUGES STRICTES
     # ======================
     if color == "rouge" and not is_red_allowed(date):
-        # ❌ Jour rouge impossible → on n'entraîne PAS dessus
+        # ❌ impossible → on ne l'entraîne PAS
         continue
 
     # ======================
@@ -98,9 +112,9 @@ for t in tempo:
     used[color].add(date_str)
 
     remaining = {
-        "bleu":  max(0, MAX["bleu"]  - len(used["bleu"])),
-        "blanc": max(0, MAX["blanc"] - len(used["blanc"])),
-        "rouge": max(0, MAX["rouge"] - len(used["rouge"]))
+        "bleu":  max(0, MAX_DAYS["bleu"]  - len(used["bleu"])),
+        "blanc": max(0, MAX_DAYS["blanc"] - len(used["blanc"])),
+        "rouge": max(0, MAX_DAYS["rouge"] - len(used["rouge"]))
     }
 
     season_day_index = (date - season_start).days + 1
@@ -128,7 +142,7 @@ for t in tempo:
         "rteTension": r.get("tension", 60) if r else 60,
 
         # ======================
-        # TEMPO CONTEXT (ML++)
+        # CONTEXTE TEMPO (CLÉ ML)
         # ======================
         "remainingBleu": remaining["bleu"],
         "remainingBlanc": remaining["blanc"],
@@ -139,9 +153,9 @@ for t in tempo:
 # ======================
 # SAVE
 # ======================
-print(f"📊 Tempo records : {len(tempo)}")
-print(f"🌦️ Weather records : {len(weather)}")
-print(f"⚡ RTE records : {len(rte)}")
+print(f"📊 Tempo records        : {len(tempo)}")
+print(f"🌦️ Weather records      : {len(weather)}")
+print(f"⚡ RTE records          : {len(rte)}")
 print(f"✅ ML samples generated : {len(dataset)}")
 
 if not dataset:
@@ -152,4 +166,4 @@ os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
 with open(OUT_PATH, "w", encoding="utf-8") as f:
     json.dump(dataset, f, indent=2)
 
-print("💾 ml_dataset.json généré (saison Tempo + règles rouges respectées)")
+print("💾 ml_dataset.json généré (historique réel + règles Tempo strictes)")
