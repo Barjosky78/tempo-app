@@ -3,174 +3,90 @@
     "date": "2026-01-14",
     "mlPrediction": "bleu",
     "mlProbabilities": {
-      "bleu": 72,
-      "blanc": 28,
+      "bleu": 83,
+      "blanc": 17,
       "rouge": 0
     },
-    "mlConfidence": 72,
-    "correctedByRules": true,
-    "ruleDetails": [
-      "bias_hiver"
-    ],
-    "remainingDays": {
-      "bleu": 295,
-      "blanc": 42,
-      "rouge": 22
-    }
+    "mlConfidence": 83
   },
   {
     "date": "2026-01-15",
     "mlPrediction": "bleu",
     "mlProbabilities": {
-      "bleu": 72,
-      "blanc": 28,
+      "bleu": 83,
+      "blanc": 17,
       "rouge": 0
     },
-    "mlConfidence": 72,
-    "correctedByRules": true,
-    "ruleDetails": [
-      "bias_hiver"
-    ],
-    "remainingDays": {
-      "bleu": 295,
-      "blanc": 42,
-      "rouge": 22
-    }
+    "mlConfidence": 83
   },
   {
     "date": "2026-01-16",
     "mlPrediction": "bleu",
     "mlProbabilities": {
-      "bleu": 72,
-      "blanc": 28,
+      "bleu": 83,
+      "blanc": 17,
       "rouge": 0
     },
-    "mlConfidence": 72,
-    "correctedByRules": true,
-    "ruleDetails": [
-      "bias_hiver"
-    ],
-    "remainingDays": {
-      "bleu": 294,
-      "blanc": 42,
-      "rouge": 22
-    }
+    "mlConfidence": 83
   },
   {
     "date": "2026-01-17",
     "mlPrediction": "bleu",
     "mlProbabilities": {
-      "bleu": 72,
-      "blanc": 28,
+      "bleu": 83,
+      "blanc": 17,
       "rouge": 0
     },
-    "mlConfidence": 72,
-    "correctedByRules": true,
-    "ruleDetails": [
-      "bias_hiver",
-      "samedi_pas_rouge"
-    ],
-    "remainingDays": {
-      "bleu": 293,
-      "blanc": 42,
-      "rouge": 22
-    }
+    "mlConfidence": 83
   },
   {
     "date": "2026-01-18",
     "mlPrediction": "bleu",
     "mlProbabilities": {
-      "bleu": 60,
-      "blanc": 24,
-      "rouge": 16
+      "bleu": 100,
+      "blanc": 0,
+      "rouge": 0
     },
-    "mlConfidence": 60,
-    "correctedByRules": true,
-    "ruleDetails": [
-      "bias_hiver",
-      "dimanche_bleu_force",
-      "plafond_bleu_hiver"
-    ],
-    "remainingDays": {
-      "bleu": 292,
-      "blanc": 42,
-      "rouge": 22
-    }
+    "mlConfidence": 100
   },
   {
     "date": "2026-01-19",
     "mlPrediction": "bleu",
     "mlProbabilities": {
-      "bleu": 72,
-      "blanc": 28,
+      "bleu": 83,
+      "blanc": 17,
       "rouge": 0
     },
-    "mlConfidence": 72,
-    "correctedByRules": true,
-    "ruleDetails": [
-      "bias_hiver"
-    ],
-    "remainingDays": {
-      "bleu": 291,
-      "blanc": 42,
-      "rouge": 22
-    }
+    "mlConfidence": 83
   },
   {
     "date": "2026-01-20",
     "mlPrediction": "bleu",
     "mlProbabilities": {
-      "bleu": 72,
-      "blanc": 28,
+      "bleu": 83,
+      "blanc": 17,
       "rouge": 0
     },
-    "mlConfidence": 72,
-    "correctedByRules": true,
-    "ruleDetails": [
-      "bias_hiver"
-    ],
-    "remainingDays": {
-      "bleu": 290,
-      "blanc": 42,
-      "rouge": 22
-    }
+    "mlConfidence": 83
   },
   {
     "date": "2026-01-21",
     "mlPrediction": "bleu",
     "mlProbabilities": {
-      "bleu": 72,
-      "blanc": 28,
+      "bleu": 83,
+      "blanc": 17,
       "rouge": 0
     },
-    "mlConfidence": 72,
-    "correctedByRules": true,
-    "ruleDetails": [
-      "bias_hiver"
-    ],
-    "remainingDays": {
-      "bleu": 289,
-      "blanc": 42,
-      "rouge": 22
-    }
+    "mlConfidence": 83
   },
   {
     "date": "2026-01-22",
     "mlPrediction": "bleu",
     "mlProbabilities": {
-      "bleu": 72,
-      "blanc": 28,
+      "bleu": 83,
+      "blanc": 17,
       "rouge": 0
     },
-    "mlConfidence": 72,
-    "correctedByRules": true,
-    "ruleDetails": [
-      "bias_hiver"
-    ],
-    "remainingDays": {
-      "bleu": 288,
-      "blanc": 42,
-      "rouge": 22
-    }
+    "mlConfidence": 83
   }
 ]
