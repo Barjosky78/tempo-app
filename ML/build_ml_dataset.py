@@ -13,10 +13,12 @@ RTE_PATH     = os.path.join(BASE_DIR, "rte_history.json")
 OUT_PATH     = os.path.join(BASE_DIR, "ML", "ml_dataset.json")
 
 # ======================
-# CONSTANTES TEMPO
+# CONSTANTES TEMPO (LOGIQUE EDF)
 # ======================
+TEMPO_TOTAL_DAYS = 150
+
 MAX_DAYS = {
-    "bleu": 300,
+    "bleu": 85,
     "blanc": 43,
     "rouge": 22
 }
@@ -62,17 +64,14 @@ rte_by_date     = {r["date"]: r for r in rte if "date" in r}
 tempo_by_date = {}
 
 for entry in tempo_raw:
-    date = entry.get("date")
-    color = entry.get("color")
+    d = entry.get("date")
+    c = entry.get("color")
 
-    if not date or not color:
+    if not d or not c:
         continue
 
-    if (
-        date not in tempo_by_date
-        or COLOR_PRIORITY[color] > COLOR_PRIORITY[tempo_by_date[date]]
-    ):
-        tempo_by_date[date] = color
+    if d not in tempo_by_date or COLOR_PRIORITY[c] > COLOR_PRIORITY[tempo_by_date[d]]:
+        tempo_by_date[d] = c
 
 # ======================
 # BUILD DATASET ML
@@ -116,8 +115,9 @@ for date_str in sorted(tempo_by_date.keys()):
     remaining_blanc = max(0, MAX_DAYS["blanc"] - len(used["blanc"]))
     remaining_rouge = max(0, MAX_DAYS["rouge"] - len(used["rouge"]))
 
-    # 🔑 FEATURE CLÉ
-    winter_bleu_remaining = remaining_bleu if is_winter(date) else 0
+    remaining_tempo_days = (
+        remaining_bleu + remaining_blanc + remaining_rouge
+    )
 
     season_day_index = (date - season_start).days + 1
 
@@ -137,11 +137,13 @@ for date_str in sorted(tempo_by_date.keys()):
         "rteConsommation": r.get("consommation", 55000),
         "rteTension": r.get("tension", 60),
 
-        # CONTEXTE TEMPO
+        # CONTEXTE TEMPO (🔥 CLÉ ML)
         "remainingBlanc": remaining_blanc,
         "remainingRouge": remaining_rouge,
-        "winterBleuRemaining": winter_bleu_remaining,
+        "remainingBleu": remaining_bleu,
+        "remainingTempoDays": remaining_tempo_days,
 
+        "winterBleuRemaining": remaining_bleu if is_winter(date) else 0,
         "seasonDayIndex": season_day_index,
         "isWinter": int(is_winter(date))
     })
@@ -163,4 +165,4 @@ os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
 with open(OUT_PATH, "w", encoding="utf-8") as f:
     json.dump(dataset, f, indent=2)
 
-print("💾 ml_dataset.json généré (dataset hivernal corrigé)")
+print("💾 ml_dataset.json généré (logique Tempo 150j correcte)")
