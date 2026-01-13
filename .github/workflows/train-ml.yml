@@ -18,7 +18,9 @@ jobs:
       # CHECKOUT
       # ======================
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # 🔑 OBLIGATOIRE pour commit fiable
 
       # ======================
       # PYTHON
@@ -57,16 +59,17 @@ jobs:
       - name: Verify ML model
         run: |
           echo "🔍 Vérification du modèle ML"
-          if [ ! -f ML/model.pkl ]; then
-            echo "❌ Modèle absent"
+
+          if [ ! -f ML/ml_model.pkl ]; then
+            echo "❌ ml_model.pkl absent"
             exit 1
           fi
 
-          SIZE=$(stat -c%s ML/model.pkl)
+          SIZE=$(stat -c%s ML/ml_model.pkl)
           echo "📦 Taille du modèle : $SIZE bytes"
 
-          if [ "$SIZE" -lt 1000 ]; then
-            echo "❌ Modèle trop petit (probablement vide)"
+          if [ "$SIZE" -lt 10000 ]; then
+            echo "❌ Modèle trop petit (erreur d'entraînement)"
             exit 1
           fi
 
@@ -75,19 +78,13 @@ jobs:
       # ======================
       # COMMIT MODEL
       # ======================
-      - name: Commit trained model
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add ML/model.pkl
-          git commit -m "🤖 Auto-train ML model (Tempo + Weather + RTE)" || echo "No changes"
-          git push
-          
-- name: Commit trained ML model
+      - name: Commit trained ML model
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           git add ML/ml_model.pkl
-          git commit -m "🧠 Retrain ML model with stress features" || echo "No changes"
+          git status
+
+          git commit -m "🧠 Retrain ML model (Tempo + Weather + RTE + stress)" || echo "No changes"
           git push
