@@ -14,12 +14,12 @@ jobs:
 
     steps:
       # ======================
-      # CHECKOUT COMPLET
+      # CHECKOUT PROPRE
       # ======================
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0   # 🔑 OBLIGATOIRE pour commit fiable
+          fetch-depth: 0
 
       # ======================
       # PYTHON
@@ -50,19 +50,16 @@ jobs:
           head -n 20 ML/ml_predictions.json
 
       # ======================
-      # COMMIT & PUSH
+      # COMMIT & PUSH (SAFE)
       # ======================
       - name: Commit ML predictions
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # 🔄 Synchronisation avant commit
-          git pull --rebase
-
           git add ML/ml_predictions.json
 
-          git status
-
+          # Rien à commit → pas d’erreur
           git commit -m "🤖 Update ML predictions (shadow)" || echo "No changes to commit"
+
           git push
