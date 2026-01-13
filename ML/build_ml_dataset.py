@@ -37,21 +37,14 @@ def load(path):
         return json.load(f)
 
 def tempo_season_bounds(date: datetime):
-    """
-    Saison Tempo EDF :
-    du 1er septembre au 31 août
-    """
     year = date.year if date.month >= 9 else date.year - 1
-    start = datetime(year, 9, 1)
-    end   = datetime(year + 1, 8, 31)
-    return start, end
+    return datetime(year, 9, 1), datetime(year + 1, 8, 31)
+
+def is_winter(date: datetime) -> bool:
+    return date.month in (11, 12, 1, 2, 3)
 
 def is_red_allowed(date: datetime) -> bool:
-    """
-    Jours rouges autorisés uniquement
-    du 1er novembre au 31 mars
-    """
-    return date.month in (11, 12, 1, 2, 3)
+    return is_winter(date)
 
 # ======================
 # LOAD DATA
@@ -60,13 +53,11 @@ tempo_raw = load(TEMPO_PATH)
 weather   = load(WEATHER_PATH)
 rte       = load(RTE_PATH)
 
-weather_by_date = {w["date"]: w for w in weather}
-rte_by_date     = {r["date"]: r for r in rte}
+weather_by_date = {w["date"]: w for w in weather if "date" in w}
+rte_by_date     = {r["date"]: r for r in rte if "date" in r}
 
 # ======================
 # DÉDUPLICATION TEMPO
-# 1 date = 1 couleur
-# priorité rouge > blanc > bleu
 # ======================
 tempo_by_date = {}
 
@@ -93,16 +84,13 @@ for date_str in sorted(tempo_by_date.keys()):
     color = tempo_by_date[date_str]
 
     if date_str not in weather_by_date:
-        continue  # météo obligatoire pour ML
+        continue
 
     try:
         date = datetime.fromisoformat(date_str)
     except ValueError:
         continue
 
-    # ======================
-    # SAISON TEMPO
-    # ======================
     season_start, season_end = tempo_season_bounds(date)
     if not (season_start <= date <= season_end):
         continue
@@ -118,22 +106,18 @@ for date_str in sorted(tempo_by_date.keys()):
 
     used = used_by_season[season_key]
 
-    # ======================
-    # RÈGLES ROUGES STRICTES
-    # ======================
+    # ❌ rouge hors hiver
     if color == "rouge" and not is_red_allowed(date):
-        continue  # impossible → exclu du ML
+        continue
 
-    # ======================
-    # CONSOMMATION DU JOUR
-    # ======================
     used[color].add(date_str)
 
-    remaining = {
-        "bleu":  max(0, MAX_DAYS["bleu"]  - len(used["bleu"])),
-        "blanc": max(0, MAX_DAYS["blanc"] - len(used["blanc"])),
-        "rouge": max(0, MAX_DAYS["rouge"] - len(used["rouge"]))
-    }
+    remaining_bleu  = max(0, MAX_DAYS["bleu"]  - len(used["bleu"]))
+    remaining_blanc = max(0, MAX_DAYS["blanc"] - len(used["blanc"]))
+    remaining_rouge = max(0, MAX_DAYS["rouge"] - len(used["rouge"]))
+
+    # 🔑 FEATURE CLÉ
+    winter_bleu_remaining = remaining_bleu if is_winter(date) else 0
 
     season_day_index = (date - season_start).days + 1
 
@@ -141,31 +125,25 @@ for date_str in sorted(tempo_by_date.keys()):
     r = rte_by_date.get(date_str, {})
 
     dataset.append({
-        # ======================
         # TARGET
-        # ======================
         "date": date_str,
         "color": color,
 
-        # ======================
         # METEO
-        # ======================
         "temperature": w.get("temperature", 10),
         "coldDays": w.get("coldDays", 0),
 
-        # ======================
         # RTE
-        # ======================
         "rteConsommation": r.get("consommation", 55000),
         "rteTension": r.get("tension", 60),
 
-        # ======================
-        # CONTEXTE TEMPO (ML++)
-        # ======================
-        "remainingBleu": remaining["bleu"],
-        "remainingBlanc": remaining["blanc"],
-        "remainingRouge": remaining["rouge"],
-        "seasonDayIndex": season_day_index
+        # CONTEXTE TEMPO
+        "remainingBlanc": remaining_blanc,
+        "remainingRouge": remaining_rouge,
+        "winterBleuRemaining": winter_bleu_remaining,
+
+        "seasonDayIndex": season_day_index,
+        "isWinter": int(is_winter(date))
     })
 
 # ======================
@@ -185,4 +163,4 @@ os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
 with open(OUT_PATH, "w", encoding="utf-8") as f:
     json.dump(dataset, f, indent=2)
 
-print("💾 ml_dataset.json généré (historique réel + règles Tempo strictes)")
+print("💾 ml_dataset.json généré (dataset hivernal corrigé)")
