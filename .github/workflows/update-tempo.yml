@@ -1,5 +1,7 @@
 name: Update Tempo + History + Stats + ML (Hourly Stable FULL)
-
+concurrency:
+  group: pages
+  cancel-in-progress: true
 on:
   schedule:
     - cron: '0 * * * *'   # Toutes les heures (UTC)
