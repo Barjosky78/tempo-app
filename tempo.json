@@ -13,19 +13,6 @@
     }
   },
   {
-    "date": "2026-01-14",
-    "couleur": "bleu",
-    "probabilites": {
-      "rouge": 0,
-      "blanc": 0,
-      "bleu": 100
-    },
-    "fixed": true,
-    "sources": {
-      "reel": true
-    }
-  },
-  {
     "date": "2026-01-15",
     "couleur": "blanc",
     "probabilites": {
