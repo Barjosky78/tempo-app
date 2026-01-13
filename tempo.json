@@ -13,6 +13,20 @@
     }
   },
   {
+    "date": "2026-01-14",
+    "couleur": "bleu",
+    "probabilites": {
+      "rouge": 25,
+      "blanc": 34,
+      "bleu": 41
+    },
+    "fixed": false,
+    "sources": {
+      "historique": true,
+      "meteo": true
+    }
+  },
+  {
     "date": "2026-01-15",
     "couleur": "blanc",
     "probabilites": {
@@ -21,7 +35,7 @@
       "bleu": 38
     },
     "fixed": false,
-    "temperature": 8.5,
+    "temperature": 8.9,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
