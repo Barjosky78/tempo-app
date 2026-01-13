@@ -66,16 +66,16 @@
   },
   {
     "date": "2026-01-14",
-    "predictedOn": "2026-01-08",
-    "horizon": 6,
+    "predictedOn": "2026-01-14",
+    "horizon": 0,
     "predictedColor": "bleu",
     "probabilites": {
-      "rouge": 9,
-      "blanc": 15,
-      "bleu": 76
+      "rouge": 0,
+      "blanc": 0,
+      "bleu": 100
     },
-    "realColor": null,
-    "result": null
+    "realColor": "bleu",
+    "result": "correct"
   },
   {
     "date": "2026-01-15",

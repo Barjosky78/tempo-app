@@ -1,18 +1,5 @@
 [
   {
-    "date": "2026-01-12",
-    "couleur": "bleu",
-    "probabilites": {
-      "rouge": 0,
-      "blanc": 0,
-      "bleu": 100
-    },
-    "fixed": true,
-    "sources": {
-      "reel": true
-    }
-  },
-  {
     "date": "2026-01-13",
     "couleur": "bleu",
     "probabilites": {
@@ -27,20 +14,15 @@
   },
   {
     "date": "2026-01-14",
-    "couleur": "blanc",
+    "couleur": "bleu",
     "probabilites": {
-      "rouge": 22,
-      "blanc": 40,
-      "bleu": 38
+      "rouge": 0,
+      "blanc": 0,
+      "bleu": 100
     },
-    "fixed": false,
-    "temperature": 9.1,
-    "rteConsommation": 58315,
-    "rteTension": 70,
+    "fixed": true,
     "sources": {
-      "meteo": true,
-      "historique": true,
-      "rte": true
+      "reel": true
     }
   },
   {
@@ -52,7 +34,7 @@
       "bleu": 38
     },
     "fixed": false,
-    "temperature": 8.3,
+    "temperature": 9.1,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
@@ -70,7 +52,7 @@
       "bleu": 45
     },
     "fixed": false,
-    "temperature": 6.6,
+    "temperature": 8.3,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
@@ -88,7 +70,7 @@
       "bleu": 43
     },
     "fixed": false,
-    "temperature": 5.6,
+    "temperature": 6.6,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
@@ -106,7 +88,7 @@
       "bleu": 100
     },
     "fixed": false,
-    "temperature": 6.4,
+    "temperature": 4.9,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
@@ -124,7 +106,7 @@
       "bleu": 40
     },
     "fixed": false,
-    "temperature": 3.5,
+    "temperature": 4.8,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
@@ -142,7 +124,7 @@
       "bleu": 38
     },
     "fixed": false,
-    "temperature": -0.1,
+    "temperature": 3.2,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
@@ -157,6 +139,24 @@
     "probabilites": {
       "rouge": 22,
       "blanc": 40,
+      "bleu": 38
+    },
+    "fixed": false,
+    "temperature": -0.1,
+    "rteConsommation": 58315,
+    "rteTension": 70,
+    "sources": {
+      "meteo": true,
+      "historique": true,
+      "rte": true
+    }
+  },
+  {
+    "date": "2026-01-22",
+    "couleur": "blanc",
+    "probabilites": {
+      "rouge": 19,
+      "blanc": 43,
       "bleu": 38
     },
     "fixed": false,
