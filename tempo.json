@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-01-15",
-    "couleur": "blanc",
-    "probabilites": {
-      "rouge": 17,
-      "blanc": 47,
-      "bleu": 36
-    },
-    "fixed": false,
-    "sources": {
-      "historique": true,
-      "meteo": true,
-      "rte": true
-    }
-  },
-  {
     "date": "2026-01-16",
     "couleur": "blanc",
     "probabilites": {
@@ -41,7 +26,7 @@
       "bleu": 48
     },
     "fixed": false,
-    "temperature": 7.7,
+    "temperature": 8.5,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
@@ -59,7 +44,7 @@
       "bleu": 100
     },
     "fixed": false,
-    "temperature": 8.6,
+    "temperature": 7.3,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
@@ -77,7 +62,7 @@
       "bleu": 38
     },
     "fixed": false,
-    "temperature": 9,
+    "temperature": 7.6,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
