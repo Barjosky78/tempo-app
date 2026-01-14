@@ -1,5 +1,23 @@
 [
   {
+    "date": "2026-01-14",
+    "couleur": "blanc",
+    "probabilites": {
+      "rouge": 20,
+      "blanc": 44,
+      "bleu": 36
+    },
+    "fixed": false,
+    "temperature": 10.8,
+    "rteConsommation": 58315,
+    "rteTension": 70,
+    "sources": {
+      "historique": true,
+      "meteo": true,
+      "rte": true
+    }
+  },
+  {
     "date": "2026-01-15",
     "couleur": "blanc",
     "probabilites": {
