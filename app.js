@@ -24,8 +24,22 @@ function verdictLabel(result) {
 }
 
 /* ==========================
+   PROBABILITÉS À AFFICHER
+   🔑 CORRECTION MAJEURE
+========================== */
+function getDisplayProbabilities(day) {
+  if (day.fixed === true) {
+    return {
+      rouge: day.couleur === "rouge" ? 100 : 0,
+      blanc: day.couleur === "blanc" ? 100 : 0,
+      bleu:  day.couleur === "bleu"  ? 100 : 0
+    };
+  }
+  return day.probabilites;
+}
+
+/* ==========================
    POINT D’ENTRÉE UNIQUE
-   (RECALCUL TOTAL À CHAQUE REFRESH)
 ========================== */
 Promise.all([
   fetch("tempo.json?v=" + Date.now()).then(r => r.json()),
@@ -68,13 +82,11 @@ function renderTempo(days, mlData) {
 
   days.forEach((day, index) => {
 
+    const p = getDisplayProbabilities(day);
+
     const confidence = day.fixed
       ? 100
-      : Math.max(
-          day.probabilites.rouge,
-          day.probabilites.blanc,
-          day.probabilites.bleu
-        );
+      : Math.max(p.rouge, p.blanc, p.bleu);
 
     const icons = [];
     if (day.sources?.reel) icons.push("✔️");
@@ -82,7 +94,7 @@ function renderTempo(days, mlData) {
     if (day.sources?.rte) icons.push("⚡");
     if (day.sources?.historique) icons.push("📊");
 
-    const ml = mlByDate[day.date] || null;
+    const ml = (!day.fixed && mlByDate[day.date]) ? mlByDate[day.date] : null;
 
     let mlConfidence = 0;
     if (ml?.mlProbabilities) {
@@ -101,13 +113,12 @@ function renderTempo(days, mlData) {
       <span class="date">${day.date}</span><br><br>
 
       <b>${day.couleur.toUpperCase()}</b>
-      ${day.estimated ? `<div class="tag">Estimation météo</div>` : ""}
       <div class="sources">${icons.join(" ")}</div>
 
       <br>
-      🔴 ${day.probabilites.rouge}%<br>
-      ⚪ ${day.probabilites.blanc}%<br>
-      🔵 ${day.probabilites.bleu}%
+      🔴 ${p.rouge}%<br>
+      ⚪ ${p.blanc}%<br>
+      🔵 ${p.bleu}%
 
       <div class="confidence-wrapper">
         <div class="confidence-bar">
@@ -166,31 +177,11 @@ function renderHistory(history = []) {
 }
 
 /* ==========================
-   COMPTEURS TEMPO (OFFICIELS)
-   BASE EDF + J0 UNIQUEMENT
+   COMPTEURS TEMPO (EDF)
 ========================== */
-function computeCounters(tempo) {
+function computeCounters() {
 
-  // 🔴⚪🔵 Valeurs officielles EDF (AUJOURD’HUI)
-  const EDF_REMAINING = {
-    rouge: 17,
-    blanc: 24,
-    bleu: 189
-  };
-
-  const remaining = { ...EDF_REMAINING };
-
-  const todayStr = new Date().toISOString().split("T")[0];
-  const today = tempo.find(d => d.fixed && d.date === todayStr);
-
-  if (today) {
-    remaining[today.couleur] = Math.max(
-      0,
-      remaining[today.couleur] - 1
-    );
-  }
-
-  document.getElementById("count-rouge").textContent = remaining.rouge;
-  document.getElementById("count-blanc").textContent = remaining.blanc;
-  document.getElementById("count-bleu").textContent  = remaining.bleu;
+  document.getElementById("count-rouge").textContent = 17;
+  document.getElementById("count-blanc").textContent = 24;
+  document.getElementById("count-bleu").textContent  = 189;
 }
