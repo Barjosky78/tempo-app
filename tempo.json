@@ -54,7 +54,7 @@
       "bleu": 48
     },
     "fixed": false,
-    "temperature": 8,
+    "temperature": 7.5,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
@@ -72,7 +72,7 @@
       "bleu": 100
     },
     "fixed": false,
-    "temperature": 9.2,
+    "temperature": 6.7,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
