@@ -36,7 +36,7 @@
       "bleu": 43
     },
     "fixed": false,
-    "temperature": 8.9,
+    "temperature": 8.8,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
@@ -90,7 +90,7 @@
       "bleu": 38
     },
     "fixed": false,
-    "temperature": 8.8,
+    "temperature": 8.9,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
@@ -108,7 +108,7 @@
       "bleu": 36
     },
     "fixed": false,
-    "temperature": 7.2,
+    "temperature": 7.7,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
@@ -126,7 +126,7 @@
       "bleu": 36
     },
     "fixed": false,
-    "temperature": 3.9,
+    "temperature": 4.2,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
