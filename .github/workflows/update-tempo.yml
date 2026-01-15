@@ -1,8 +1,4 @@
-name: Update Tempo OFFICIAL EDF (Hourly Stable)
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
+name: Update Tempo (EDF Official + Forecast)
 
 on:
   schedule:
@@ -17,140 +13,88 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # ======================
-      # CHECKOUT
-      # ======================
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
-      # ======================
-      # NODE (SCRAPE EDF)
-      # ======================
-      - name: Scrape EDF official Tempo
+      - name: Fetch EDF Tempo (OFFICIAL API)
         run: |
-          node scripts/scrape_edf_tempo.js > edf_scraped.json
+          curl -s https://www.api-couleur-tempo.fr/api > edf_tempo.json
 
-      # ======================
-      # WEATHER
-      # ======================
-      - name: Fetch Weather
-        run: |
-          curl -s "https://api.open-meteo.com/v1/forecast?latitude=48.85&longitude=2.35&daily=temperature_2m_mean&forecast_days=10&timezone=Europe%2FParis" \
-          | jq . > weather.json
-
-      # ======================
-      # RTE
-      # ======================
-      - name: Fetch RTE
-        run: |
-          curl -s "https://odre.opendatasoft.com/api/records/1.0/search/?dataset=eco2mix-national-cons-def&rows=1&sort=-date_heure" \
-          | jq . > rte.json
-
-      # ======================
-      # BUILD TEMPO.JSON (PROPRE)
-      # ======================
-      - name: Build tempo.json
+      - name: Build tempo.json (J0/J1 FIXED)
         run: |
           node <<'EOF'
           const fs = require("fs");
+
+          const edf = JSON.parse(fs.readFileSync("edf_tempo.json","utf8"));
+
+          const today = new Date();
+          today.setHours(0,0,0,0);
+
           const fmt = d => d.toISOString().split("T")[0];
-
-          // 🔑 Fuseau EDF
-          const now = new Date(new Date().toLocaleString("en-US", { timeZone: "Europe/Paris" }));
-          now.setHours(0,0,0,0);
-
-          const edf = JSON.parse(fs.readFileSync("edf_scraped.json","utf8"));
-          const weather = JSON.parse(fs.readFileSync("weather.json","utf8"));
-          const rte = JSON.parse(fs.readFileSync("rte.json","utf8"));
-
-          const temps = weather.daily?.temperature_2m_mean || [];
-
-          let tension = 60;
-          const conso = rte.records?.[0]?.fields?.consommation ?? null;
-          if (conso !== null) {
-            if (conso < 45000) tension = 50;
-            else if (conso < 55000) tension = 60;
-            else if (conso < 65000) tension = 70;
-            else tension = 80;
-          }
 
           const days = [];
 
-          // ======================
-          // J0 — EDF OFFICIEL
-          // ======================
-          if (edf.today) {
-            days.push({
-              date: fmt(now),
-              couleur: edf.today,
-              probabilites: { rouge:0, blanc:0, bleu:0, [edf.today]:100 },
-              fixed: true,
-              sources: { edf:true }
-            });
+          /* ===== J0 ===== */
+          if (!edf.today) {
+            console.error("EDF TODAY MISSING");
+            process.exit(1);
           }
 
-          // ======================
-          // J1 — EDF OFFICIEL SI DISPO
-          // ======================
-          const j1 = new Date(now);
-          j1.setDate(j1.getDate()+1);
+          days.push({
+            date: fmt(today),
+            couleur: edf.today,
+            probabilites: {
+              rouge: 0,
+              blanc: 0,
+              bleu: 0,
+              [edf.today]: 100
+            },
+            fixed: true,
+            sources: { edf: true }
+          });
+
+          /* ===== J1 ===== */
+          const tomorrow = new Date(today);
+          tomorrow.setDate(today.getDate() + 1);
 
           if (edf.tomorrow) {
             days.push({
-              date: fmt(j1),
+              date: fmt(tomorrow),
               couleur: edf.tomorrow,
-              probabilites: { rouge:0, blanc:0, bleu:0, [edf.tomorrow]:100 },
+              probabilites: {
+                rouge: 0,
+                blanc: 0,
+                bleu: 0,
+                [edf.tomorrow]: 100
+              },
               fixed: true,
-              sources: { edf:true }
+              sources: { edf: true }
             });
           }
 
-          // ======================
-          // J2 → J9 — ESTIMATION
-          // ======================
-          for (let i=2;i<=9;i++) {
-            const d = new Date(now);
-            d.setDate(d.getDate()+i);
-
-            const temp = temps[i] ?? 8;
-
-            let rouge = 15, blanc = 40, bleu = 45;
-
-            if (temp < 3) { blanc+=10; bleu-=5; }
-            if (temp < 0) { rouge+=10; bleu-=10; }
-
-            if (tension >= 70) { rouge+=5; blanc+=5; bleu-=10; }
-
-            const total = rouge+blanc+bleu;
-            rouge = Math.round(rouge/total*100);
-            blanc = Math.round(blanc/total*100);
-            bleu = 100-rouge-blanc;
-
-            let couleur = blanc >= bleu ? "blanc" : "bleu";
-            if (rouge > blanc && rouge > bleu) couleur = "rouge";
+          /* ===== J2 → J9 (PLACEHOLDER) ===== */
+          for (let i = 2; i <= 9; i++) {
+            const d = new Date(today);
+            d.setDate(today.getDate() + i);
 
             days.push({
               date: fmt(d),
-              couleur,
-              probabilites:{rouge,blanc,bleu},
-              fixed:false,
-              temperature: temp,
-              rteConsommation: conso,
-              rteTension: tension,
-              sources:{historique:true,meteo:true,rte:conso!==null}
+              couleur: "bleu",
+              probabilites: { rouge: 10, blanc: 25, bleu: 65 },
+              fixed: false,
+              sources: { historique: true }
             });
           }
 
-          fs.writeFileSync("tempo.json",JSON.stringify(days,null,2));
-          fs.writeFileSync("meta.json",JSON.stringify({updatedAt:new Date().toISOString()},null,2));
+          fs.writeFileSync("tempo.json", JSON.stringify(days, null, 2));
+          fs.writeFileSync("meta.json", JSON.stringify({
+            updatedAt: new Date().toISOString()
+          }, null, 2));
           EOF
 
-      # ======================
-      # COMMIT
-      # ======================
       - name: Commit & push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add tempo.json meta.json edf_scraped.json
-          git commit -m "Fix EDF J0/J1 using official scraping" || echo "No changes"
+          git add tempo.json meta.json edf_tempo.json
+          git commit -m "Fix J0/J1 using official EDF API" || echo "No changes"
           git push
