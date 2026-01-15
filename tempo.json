@@ -116,12 +116,12 @@
     "date": "2026-01-22",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 19,
-      "blanc": 40,
-      "bleu": 41
+      "rouge": 20,
+      "blanc": 34,
+      "bleu": 46
     },
     "fixed": false,
-    "temperature": 2.9,
+    "temperature": 3.9,
     "rteConsommation": 58315,
     "sources": {
       "historique": true,
@@ -138,7 +138,7 @@
       "bleu": 46
     },
     "fixed": false,
-    "temperature": 3,
+    "temperature": 5.7,
     "rteConsommation": 58315,
     "sources": {
       "historique": true,
@@ -155,7 +155,7 @@
       "bleu": 46
     },
     "fixed": false,
-    "temperature": 3.6,
+    "temperature": 4.2,
     "rteConsommation": 58315,
     "sources": {
       "historique": true,
