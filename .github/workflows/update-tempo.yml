@@ -1,4 +1,4 @@
-name: Update Tempo + History + Stats + ML (Hourly FINAL SAFE)
+name: Update Tempo + History + Stats + ML (Hourly FINAL MULTI-SOURCE)
 
 concurrency:
   group: pages
@@ -6,7 +6,7 @@ concurrency:
 
 on:
   schedule:
-    - cron: "0 * * * *"   # toutes les heures
+    - cron: "0 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -34,12 +34,66 @@ jobs:
           pip install pandas scikit-learn joblib
 
       # ======================
-      # EDF TEMPO (API)
+      # NODE (SCRAPING)
       # ======================
-      - name: Fetch EDF Tempo
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # ======================
+      # SCRAPE EDF SITE
+      # ======================
+      - name: Scrape EDF official site
         run: |
-          curl -s https://www.api-couleur-tempo.fr/api \
-          > edf_tempo.json || echo '{}' > edf_tempo.json
+          node <<'EOF'
+          const fs = require("fs");
+          const fetch = (...a)=>import("node-fetch").then(({default:f})=>f(...a));
+
+          (async()=>{
+            let today=null, tomorrow=null;
+            try{
+              const html = await (await fetch("https://particulier.edf.fr/fr/accueil/gestion-contrat/options/tempo.html")).text();
+              const grab = label => {
+                const m = html.match(new RegExp(label+"[\\s\\S]*?(Bleu|Blanc|Rouge)","i"));
+                return m ? m[1].toLowerCase() : null;
+              };
+              today = grab("Aujourd’hui|Aujourd'hui");
+              tomorrow = grab("Demain");
+            }catch{}
+            fs.writeFileSync("edf_site.json",JSON.stringify({today,tomorrow},null,2));
+          })();
+          EOF
+
+      # ======================
+      # SCRAPE HELLOWATT
+      # ======================
+      - name: Scrape HelloWatt
+        run: |
+          node <<'EOF'
+          const fs = require("fs");
+          const fetch = (...a)=>import("node-fetch").then(({default:f})=>f(...a));
+
+          (async()=>{
+            let today=null, tomorrow=null;
+            try{
+              const html = await (await fetch("https://www.hellowatt.fr/edf/tempo")).text();
+              const grab = label => {
+                const m = html.match(new RegExp(label+"[\\s\\S]*?(Bleu|Blanc|Rouge)","i"));
+                return m ? m[1].toLowerCase() : null;
+              };
+              today = grab("Aujourd’hui|Aujourd'hui");
+              tomorrow = grab("Demain");
+            }catch{}
+            fs.writeFileSync("hellowatt.json",JSON.stringify({today,tomorrow},null,2));
+          })();
+          EOF
+
+      # ======================
+      # API TEMPO
+      # ======================
+      - name: Fetch API Tempo
+        run: |
+          curl -s https://www.api-couleur-tempo.fr/api > api_tempo.json || echo '{}' > api_tempo.json
 
       # ======================
       # WEATHER
@@ -58,221 +112,11 @@ jobs:
           | jq . > rte.json || echo '{}' > rte.json
 
       # ======================
-      # BUILD tempo.json (ROBUSTE J0/J1)
+      # BUILD tempo.json (MULTI-SOURCE FINAL)
       # ======================
       - name: Build tempo.json
         run: |
-          node <<'EOF'
-          const fs = require("fs");
-          const fmt = d => d.toISOString().split("T")[0];
-
-          /* ======================
-             EDF TEMPO (ROBUSTE)
-          ====================== */
-          let edf = {};
-          try {
-            edf = JSON.parse(fs.readFileSync("edf_tempo.json","utf8"));
-          } catch {}
-
-          const normalize = v =>
-            typeof v === "string" ? v.toLowerCase() : null;
-
-          let edfToday =
-            normalize(edf.today) ??
-            normalize(edf.aujourd_hui) ??
-            normalize(edf.jourJ) ??
-            normalize(edf.couleurJourJ) ??
-            null;
-
-          let edfTomorrow =
-            normalize(edf.tomorrow) ??
-            normalize(edf.demain) ??
-            normalize(edf.couleurJourJ1) ??
-            null;
-
-          // Fallback SAFE (ne jamais planter)
-          if (!edfToday) {
-            console.warn("⚠️ EDF TODAY MISSING → fallback BLEU");
-            edfToday = "bleu";
-          }
-
-          if (!["bleu","blanc","rouge"].includes(edfToday)) {
-            edfToday = "bleu";
-          }
-
-          if (edfTomorrow && !["bleu","blanc","rouge"].includes(edfTomorrow)) {
-            edfTomorrow = null;
-          }
-
-          /* ======================
-             WEATHER
-          ====================== */
-          let temps = [];
-          try {
-            const w = JSON.parse(fs.readFileSync("weather.json","utf8"));
-            temps = w.daily?.temperature_2m_mean || [];
-          } catch {}
-
-          /* ======================
-             RTE
-          ====================== */
-          let consommation = null;
-          let tension = 60;
-          try {
-            const r = JSON.parse(fs.readFileSync("rte.json","utf8"));
-            consommation = r.records?.[0]?.fields?.consommation ?? null;
-            if (consommation !== null) {
-              if (consommation < 45000) tension = 50;
-              else if (consommation < 55000) tension = 60;
-              else if (consommation < 65000) tension = 70;
-              else tension = 80;
-            }
-          } catch {}
-
-          /* ======================
-             BASES HISTORIQUES
-          ====================== */
-          const HISTO_MONTH = {
-            11:{rouge:8,blanc:22,bleu:70},
-            12:{rouge:14,blanc:30,bleu:56},
-            1:{rouge:20,blanc:34,bleu:46},
-            2:{rouge:17,blanc:33,bleu:50},
-            3:{rouge:4,blanc:22,bleu:74}
-          };
-
-          const HISTO_WEEKDAY = {
-            1:{rouge:-3,blanc:+6,bleu:-3},
-            2:{rouge:+4,blanc:+1,bleu:-5},
-            3:{rouge:+5,blanc:0,bleu:-5},
-            4:{rouge:+2,blanc:+3,bleu:-5},
-            5:{rouge:-4,blanc:+2,bleu:+2}
-          };
-
-          const today = new Date();
-          today.setHours(0,0,0,0);
-          const days = [];
-
-          /* ======================
-             J0 — OFFICIEL EDF
-          ====================== */
-          days.push({
-            date: fmt(today),
-            couleur: edfToday,
-            probabilites: { rouge:0, blanc:0, bleu:0, [edfToday]:100 },
-            fixed: true,
-            sources:{reel:true}
-          });
-
-          /* ======================
-             J1 — OFFICIEL SI DISPO
-          ====================== */
-          const tomorrow = new Date(today);
-          tomorrow.setDate(today.getDate()+1);
-          const dow1 = tomorrow.getDay();
-
-          if (edfTomorrow) {
-            days.push({
-              date: fmt(tomorrow),
-              couleur: edfTomorrow,
-              probabilites: { rouge:0, blanc:0, bleu:0, [edfTomorrow]:100 },
-              fixed: true,
-              sources:{reel:true}
-            });
-          } else {
-            let base = HISTO_MONTH[tomorrow.getMonth()+1] || {rouge:10,blanc:25,bleu:65};
-            let rouge=base.rouge, blanc=base.blanc, bleu=base.bleu;
-
-            if (HISTO_WEEKDAY[dow1]) {
-              rouge+=HISTO_WEEKDAY[dow1].rouge;
-              blanc+=HISTO_WEEKDAY[dow1].blanc;
-              bleu+=HISTO_WEEKDAY[dow1].bleu;
-            }
-
-            const temp = temps[1] ?? 8;
-            if (temp < 3) { blanc+=8; bleu-=4; }
-            if (temp < 0) { rouge+=6; bleu-=4; }
-
-            if (consommation !== null) {
-              if (tension < 55)      { bleu+=5; blanc-=3; rouge-=2; }
-              else if (tension<=70) { blanc+=10; bleu-=5; rouge-=5; }
-              else                  { rouge+=7; blanc+=3; bleu-=10; }
-            }
-
-            if (dow1 === 6) rouge = 0;
-            if (dow1 === 0) { rouge=0; blanc=0; bleu=100; }
-
-            const total=rouge+blanc+bleu;
-            rouge=Math.round(rouge/total*100);
-            blanc=Math.round(blanc/total*100);
-            bleu=100-rouge-blanc;
-
-            let couleur="bleu";
-            if (rouge>blanc&&rouge>bleu) couleur="rouge";
-            else if (blanc>=bleu) couleur="blanc";
-
-            days.push({
-              date: fmt(tomorrow),
-              couleur,
-              probabilites:{rouge,blanc,bleu},
-              fixed:false,
-              sources:{historique:true,meteo:true,rte:consommation!==null}
-            });
-          }
-
-          /* ======================
-             J2 → J9
-          ====================== */
-          for (let i=2;i<=9;i++) {
-            const d=new Date(today);
-            d.setDate(today.getDate()+i);
-            const dow=d.getDay();
-
-            let base=HISTO_MONTH[d.getMonth()+1]||{rouge:10,blanc:25,bleu:65};
-            let rouge=base.rouge, blanc=base.blanc, bleu=base.bleu;
-
-            if (HISTO_WEEKDAY[dow]) {
-              rouge+=HISTO_WEEKDAY[dow].rouge;
-              blanc+=HISTO_WEEKDAY[dow].blanc;
-              bleu+=HISTO_WEEKDAY[dow].bleu;
-            }
-
-            const temp=temps[i]??8;
-            if (i<=6 && temp<3){blanc+=10;bleu-=5;}
-            if (i<=6 && temp<0){rouge+=8;bleu-=5;}
-
-            if (consommation!==null){
-              if (tension < 55)      { bleu+=5; blanc-=3; rouge-=2; }
-              else if (tension<=70) { blanc+=10; bleu-=5; rouge-=5; }
-              else                  { rouge+=7; blanc+=3; bleu-=10; }
-            }
-
-            if (dow === 6) rouge = 0;
-            if (dow === 0) { rouge=0; blanc=0; bleu=100; }
-
-            const total=rouge+blanc+bleu;
-            rouge=Math.round(rouge/total*100);
-            blanc=Math.round(blanc/total*100);
-            bleu=100-rouge-blanc;
-
-            let couleur="bleu";
-            if (rouge>blanc&&rouge>bleu) couleur="rouge";
-            else if (blanc>=bleu) couleur="blanc";
-
-            days.push({
-              date:fmt(d),
-              couleur,
-              probabilites:{rouge,blanc,bleu},
-              fixed:false,
-              temperature:temp,
-              rteConsommation:consommation,
-              rteTension:tension,
-              sources:{historique:true,meteo:true,rte:consommation!==null}
-            });
-          }
-
-          fs.writeFileSync("tempo.json",JSON.stringify(days,null,2));
-          fs.writeFileSync("meta.json",JSON.stringify({updatedAt:new Date().toISOString()},null,2));
-          EOF
+          node scripts/build_tempo_multisource.js
 
       # ======================
       # COMMIT
@@ -281,6 +125,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add tempo.json meta.json edf_tempo.json
-          git commit -m "Tempo update (EDF safe J0/J1 + forecasts)" || echo "No changes"
+          git add tempo.json meta.json edf_site.json hellowatt.json api_tempo.json
+          git commit -m "Tempo update (EDF + HelloWatt + API + fallback)" || echo "No changes"
           git push
