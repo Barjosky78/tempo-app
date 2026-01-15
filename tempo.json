@@ -36,7 +36,7 @@
       "bleu": 46
     },
     "fixed": false,
-    "temperature": 7.8,
+    "temperature": 7.9,
     "rteConsommation": 58315,
     "sources": {
       "historique": true,
