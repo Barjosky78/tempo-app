@@ -1,43 +1,5 @@
 [
   {
-    "date": "2026-01-15",
-    "couleur": "blanc",
-    "probabilites": {
-      "rouge": 17,
-      "blanc": 47,
-      "bleu": 36
-    },
-    "fixed": false,
-    "temperature": 10.9,
-    "rteConsommation": 58315,
-    "rteTension": 70,
-    "sources": {
-      "reel": false,
-      "historique": true,
-      "meteo": true,
-      "rte": true
-    }
-  },
-  {
-    "date": "2026-01-16",
-    "couleur": "blanc",
-    "probabilites": {
-      "rouge": 11,
-      "blanc": 46,
-      "bleu": 43
-    },
-    "fixed": false,
-    "temperature": 10.1,
-    "rteConsommation": 58315,
-    "rteTension": 70,
-    "sources": {
-      "reel": false,
-      "historique": true,
-      "meteo": true,
-      "rte": true
-    }
-  },
-  {
     "date": "2026-01-17",
     "couleur": "blanc",
     "probabilites": {
@@ -46,11 +8,10 @@
       "bleu": 48
     },
     "fixed": false,
-    "temperature": 8,
+    "temperature": 8.2,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
-      "reel": false,
       "historique": true,
       "meteo": true,
       "rte": true
@@ -65,11 +26,10 @@
       "bleu": 100
     },
     "fixed": false,
-    "temperature": 8.5,
+    "temperature": 8.9,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
-      "reel": false,
       "historique": true,
       "meteo": true,
       "rte": true
@@ -84,11 +44,10 @@
       "bleu": 38
     },
     "fixed": false,
-    "temperature": 6.3,
+    "temperature": 8,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
-      "reel": false,
       "historique": true,
       "meteo": true,
       "rte": true
@@ -103,11 +62,10 @@
       "bleu": 36
     },
     "fixed": false,
-    "temperature": 7.1,
+    "temperature": 7.5,
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
-      "reel": false,
       "historique": true,
       "meteo": true,
       "rte": true
@@ -126,7 +84,6 @@
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
-      "reel": false,
       "historique": true,
       "meteo": true,
       "rte": true
@@ -145,7 +102,6 @@
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
-      "reel": false,
       "historique": true,
       "meteo": true,
       "rte": true
@@ -164,7 +120,6 @@
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
-      "reel": false,
       "historique": true,
       "meteo": true,
       "rte": true
@@ -183,7 +138,6 @@
     "rteConsommation": 58315,
     "rteTension": 70,
     "sources": {
-      "reel": false,
       "historique": true,
       "meteo": true,
       "rte": true
