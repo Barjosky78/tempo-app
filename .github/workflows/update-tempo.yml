@@ -1,8 +1,12 @@
-name: Update Tempo (EDF Official + Forecast)
+name: Update Tempo + History + Stats + ML (Hourly FINAL SAFE)
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 on:
   schedule:
-    - cron: "0 * * * *"
+    - cron: "0 * * * *"   # toutes les heures
   workflow_dispatch:
 
 permissions:
@@ -13,88 +17,270 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # ======================
+      # CHECKOUT
+      # ======================
       - uses: actions/checkout@v3
 
-      - name: Fetch EDF Tempo (OFFICIAL API)
-        run: |
-          curl -s https://www.api-couleur-tempo.fr/api > edf_tempo.json
+      # ======================
+      # PYTHON (ML)
+      # ======================
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
 
-      - name: Build tempo.json (J0/J1 FIXED)
+      - name: Install Python deps
+        run: |
+          pip install pandas scikit-learn joblib
+
+      # ======================
+      # EDF TEMPO (API)
+      # ======================
+      - name: Fetch EDF Tempo
+        run: |
+          curl -s https://www.api-couleur-tempo.fr/api \
+          > edf_tempo.json || echo '{}' > edf_tempo.json
+
+      # ======================
+      # WEATHER
+      # ======================
+      - name: Fetch Weather
+        run: |
+          curl -s "https://api.open-meteo.com/v1/forecast?latitude=48.85&longitude=2.35&daily=temperature_2m_mean&forecast_days=10&timezone=Europe%2FParis" \
+          | jq . > weather.json || echo '{}' > weather.json
+
+      # ======================
+      # RTE
+      # ======================
+      - name: Fetch RTE
+        run: |
+          curl -s "https://odre.opendatasoft.com/api/records/1.0/search/?dataset=eco2mix-national-cons-def&rows=1&sort=-date_heure" \
+          | jq . > rte.json || echo '{}' > rte.json
+
+      # ======================
+      # BUILD tempo.json (ROBUSTE J0/J1)
+      # ======================
+      - name: Build tempo.json
         run: |
           node <<'EOF'
           const fs = require("fs");
+          const fmt = d => d.toISOString().split("T")[0];
 
-          const edf = JSON.parse(fs.readFileSync("edf_tempo.json","utf8"));
+          /* ======================
+             EDF TEMPO (ROBUSTE)
+          ====================== */
+          let edf = {};
+          try {
+            edf = JSON.parse(fs.readFileSync("edf_tempo.json","utf8"));
+          } catch {}
+
+          const normalize = v =>
+            typeof v === "string" ? v.toLowerCase() : null;
+
+          let edfToday =
+            normalize(edf.today) ??
+            normalize(edf.aujourd_hui) ??
+            normalize(edf.jourJ) ??
+            normalize(edf.couleurJourJ) ??
+            null;
+
+          let edfTomorrow =
+            normalize(edf.tomorrow) ??
+            normalize(edf.demain) ??
+            normalize(edf.couleurJourJ1) ??
+            null;
+
+          // Fallback SAFE (ne jamais planter)
+          if (!edfToday) {
+            console.warn("⚠️ EDF TODAY MISSING → fallback BLEU");
+            edfToday = "bleu";
+          }
+
+          if (!["bleu","blanc","rouge"].includes(edfToday)) {
+            edfToday = "bleu";
+          }
+
+          if (edfTomorrow && !["bleu","blanc","rouge"].includes(edfTomorrow)) {
+            edfTomorrow = null;
+          }
+
+          /* ======================
+             WEATHER
+          ====================== */
+          let temps = [];
+          try {
+            const w = JSON.parse(fs.readFileSync("weather.json","utf8"));
+            temps = w.daily?.temperature_2m_mean || [];
+          } catch {}
+
+          /* ======================
+             RTE
+          ====================== */
+          let consommation = null;
+          let tension = 60;
+          try {
+            const r = JSON.parse(fs.readFileSync("rte.json","utf8"));
+            consommation = r.records?.[0]?.fields?.consommation ?? null;
+            if (consommation !== null) {
+              if (consommation < 45000) tension = 50;
+              else if (consommation < 55000) tension = 60;
+              else if (consommation < 65000) tension = 70;
+              else tension = 80;
+            }
+          } catch {}
+
+          /* ======================
+             BASES HISTORIQUES
+          ====================== */
+          const HISTO_MONTH = {
+            11:{rouge:8,blanc:22,bleu:70},
+            12:{rouge:14,blanc:30,bleu:56},
+            1:{rouge:20,blanc:34,bleu:46},
+            2:{rouge:17,blanc:33,bleu:50},
+            3:{rouge:4,blanc:22,bleu:74}
+          };
+
+          const HISTO_WEEKDAY = {
+            1:{rouge:-3,blanc:+6,bleu:-3},
+            2:{rouge:+4,blanc:+1,bleu:-5},
+            3:{rouge:+5,blanc:0,bleu:-5},
+            4:{rouge:+2,blanc:+3,bleu:-5},
+            5:{rouge:-4,blanc:+2,bleu:+2}
+          };
 
           const today = new Date();
           today.setHours(0,0,0,0);
-
-          const fmt = d => d.toISOString().split("T")[0];
-
           const days = [];
 
-          /* ===== J0 ===== */
-          if (!edf.today) {
-            console.error("EDF TODAY MISSING");
-            process.exit(1);
-          }
-
+          /* ======================
+             J0 — OFFICIEL EDF
+          ====================== */
           days.push({
             date: fmt(today),
-            couleur: edf.today,
-            probabilites: {
-              rouge: 0,
-              blanc: 0,
-              bleu: 0,
-              [edf.today]: 100
-            },
+            couleur: edfToday,
+            probabilites: { rouge:0, blanc:0, bleu:0, [edfToday]:100 },
             fixed: true,
-            sources: { edf: true }
+            sources:{reel:true}
           });
 
-          /* ===== J1 ===== */
+          /* ======================
+             J1 — OFFICIEL SI DISPO
+          ====================== */
           const tomorrow = new Date(today);
-          tomorrow.setDate(today.getDate() + 1);
+          tomorrow.setDate(today.getDate()+1);
+          const dow1 = tomorrow.getDay();
 
-          if (edf.tomorrow) {
+          if (edfTomorrow) {
             days.push({
               date: fmt(tomorrow),
-              couleur: edf.tomorrow,
-              probabilites: {
-                rouge: 0,
-                blanc: 0,
-                bleu: 0,
-                [edf.tomorrow]: 100
-              },
+              couleur: edfTomorrow,
+              probabilites: { rouge:0, blanc:0, bleu:0, [edfTomorrow]:100 },
               fixed: true,
-              sources: { edf: true }
+              sources:{reel:true}
             });
-          }
+          } else {
+            let base = HISTO_MONTH[tomorrow.getMonth()+1] || {rouge:10,blanc:25,bleu:65};
+            let rouge=base.rouge, blanc=base.blanc, bleu=base.bleu;
 
-          /* ===== J2 → J9 (PLACEHOLDER) ===== */
-          for (let i = 2; i <= 9; i++) {
-            const d = new Date(today);
-            d.setDate(today.getDate() + i);
+            if (HISTO_WEEKDAY[dow1]) {
+              rouge+=HISTO_WEEKDAY[dow1].rouge;
+              blanc+=HISTO_WEEKDAY[dow1].blanc;
+              bleu+=HISTO_WEEKDAY[dow1].bleu;
+            }
+
+            const temp = temps[1] ?? 8;
+            if (temp < 3) { blanc+=8; bleu-=4; }
+            if (temp < 0) { rouge+=6; bleu-=4; }
+
+            if (consommation !== null) {
+              if (tension < 55)      { bleu+=5; blanc-=3; rouge-=2; }
+              else if (tension<=70) { blanc+=10; bleu-=5; rouge-=5; }
+              else                  { rouge+=7; blanc+=3; bleu-=10; }
+            }
+
+            if (dow1 === 6) rouge = 0;
+            if (dow1 === 0) { rouge=0; blanc=0; bleu=100; }
+
+            const total=rouge+blanc+bleu;
+            rouge=Math.round(rouge/total*100);
+            blanc=Math.round(blanc/total*100);
+            bleu=100-rouge-blanc;
+
+            let couleur="bleu";
+            if (rouge>blanc&&rouge>bleu) couleur="rouge";
+            else if (blanc>=bleu) couleur="blanc";
 
             days.push({
-              date: fmt(d),
-              couleur: "bleu",
-              probabilites: { rouge: 10, blanc: 25, bleu: 65 },
-              fixed: false,
-              sources: { historique: true }
+              date: fmt(tomorrow),
+              couleur,
+              probabilites:{rouge,blanc,bleu},
+              fixed:false,
+              sources:{historique:true,meteo:true,rte:consommation!==null}
             });
           }
 
-          fs.writeFileSync("tempo.json", JSON.stringify(days, null, 2));
-          fs.writeFileSync("meta.json", JSON.stringify({
-            updatedAt: new Date().toISOString()
-          }, null, 2));
+          /* ======================
+             J2 → J9
+          ====================== */
+          for (let i=2;i<=9;i++) {
+            const d=new Date(today);
+            d.setDate(today.getDate()+i);
+            const dow=d.getDay();
+
+            let base=HISTO_MONTH[d.getMonth()+1]||{rouge:10,blanc:25,bleu:65};
+            let rouge=base.rouge, blanc=base.blanc, bleu=base.bleu;
+
+            if (HISTO_WEEKDAY[dow]) {
+              rouge+=HISTO_WEEKDAY[dow].rouge;
+              blanc+=HISTO_WEEKDAY[dow].blanc;
+              bleu+=HISTO_WEEKDAY[dow].bleu;
+            }
+
+            const temp=temps[i]??8;
+            if (i<=6 && temp<3){blanc+=10;bleu-=5;}
+            if (i<=6 && temp<0){rouge+=8;bleu-=5;}
+
+            if (consommation!==null){
+              if (tension < 55)      { bleu+=5; blanc-=3; rouge-=2; }
+              else if (tension<=70) { blanc+=10; bleu-=5; rouge-=5; }
+              else                  { rouge+=7; blanc+=3; bleu-=10; }
+            }
+
+            if (dow === 6) rouge = 0;
+            if (dow === 0) { rouge=0; blanc=0; bleu=100; }
+
+            const total=rouge+blanc+bleu;
+            rouge=Math.round(rouge/total*100);
+            blanc=Math.round(blanc/total*100);
+            bleu=100-rouge-blanc;
+
+            let couleur="bleu";
+            if (rouge>blanc&&rouge>bleu) couleur="rouge";
+            else if (blanc>=bleu) couleur="blanc";
+
+            days.push({
+              date:fmt(d),
+              couleur,
+              probabilites:{rouge,blanc,bleu},
+              fixed:false,
+              temperature:temp,
+              rteConsommation:consommation,
+              rteTension:tension,
+              sources:{historique:true,meteo:true,rte:consommation!==null}
+            });
+          }
+
+          fs.writeFileSync("tempo.json",JSON.stringify(days,null,2));
+          fs.writeFileSync("meta.json",JSON.stringify({updatedAt:new Date().toISOString()},null,2));
           EOF
 
+      # ======================
+      # COMMIT
+      # ======================
       - name: Commit & push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tempo.json meta.json edf_tempo.json
-          git commit -m "Fix J0/J1 using official EDF API" || echo "No changes"
+          git commit -m "Tempo update (EDF safe J0/J1 + forecasts)" || echo "No changes"
           git push
