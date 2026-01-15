@@ -1,5 +1,33 @@
 [
   {
+    "date": "2026-01-15",
+    "couleur": "bleu",
+    "probabilites": {
+      "rouge": 0,
+      "blanc": 0,
+      "bleu": 100
+    },
+    "fixed": true,
+    "sources": {
+      "reel": true
+    }
+  },
+  {
+    "date": "2026-01-16",
+    "couleur": "blanc",
+    "probabilites": {
+      "rouge": 11,
+      "blanc": 46,
+      "bleu": 43
+    },
+    "fixed": false,
+    "sources": {
+      "historique": true,
+      "meteo": true,
+      "rte": true
+    }
+  },
+  {
     "date": "2026-01-17",
     "couleur": "blanc",
     "probabilites": {

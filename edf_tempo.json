@@ -1,6 +1,1 @@
-{
-  "today": null,
-  "tomorrow": null,
-  "source": "edf.fr",
-  "scrapedAt": "2026-01-15T09:51:58.916Z"
-}
+{"resourceNameCollection":["App\\Entity\\JourTempo","App\\Entity\\Statistiques","App\\Entity\\Tarification","App\\Entity\\TempsReel"]}
