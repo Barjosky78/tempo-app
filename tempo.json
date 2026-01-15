@@ -36,7 +36,7 @@
       "bleu": 46
     },
     "fixed": false,
-    "temperature": 8.5,
+    "temperature": 7.8,
     "rteConsommation": 58315,
     "sources": {
       "historique": true,
@@ -53,7 +53,7 @@
       "bleu": 46
     },
     "fixed": false,
-    "temperature": 7.3,
+    "temperature": 8.5,
     "rteConsommation": 58315,
     "sources": {
       "historique": true,
@@ -70,7 +70,7 @@
       "bleu": 46
     },
     "fixed": false,
-    "temperature": 7.6,
+    "temperature": 6.3,
     "rteConsommation": 58315,
     "sources": {
       "historique": true,
@@ -87,7 +87,7 @@
       "bleu": 46
     },
     "fixed": false,
-    "temperature": 7.7,
+    "temperature": 7.1,
     "rteConsommation": 58315,
     "sources": {
       "historique": true,
@@ -104,7 +104,7 @@
       "bleu": 46
     },
     "fixed": false,
-    "temperature": 4.2,
+    "temperature": 5.2,
     "rteConsommation": 58315,
     "sources": {
       "historique": true,
@@ -116,12 +116,12 @@
     "date": "2026-01-22",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 20,
-      "blanc": 34,
-      "bleu": 46
+      "rouge": 19,
+      "blanc": 40,
+      "bleu": 41
     },
     "fixed": false,
-    "temperature": 3,
+    "temperature": 2.9,
     "rteConsommation": 58315,
     "sources": {
       "historique": true,
