@@ -34,43 +34,53 @@
     "mlPrediction": "blanc",
     "mlProbabilities": {
       "bleu": 0,
-      "blanc": 72,
-      "rouge": 28
+      "blanc": 74,
+      "rouge": 26
     },
-    "mlConfidence": 72
+    "mlConfidence": 74
   },
   {
     "date": "2026-01-21",
     "mlPrediction": "blanc",
     "mlProbabilities": {
       "bleu": 0,
-      "blanc": 62,
-      "rouge": 38
+      "blanc": 75,
+      "rouge": 25
     },
-    "mlConfidence": 62
+    "mlConfidence": 75
   },
   {
     "date": "2026-01-22",
     "mlPrediction": "blanc",
     "mlProbabilities": {
       "bleu": 0,
-      "blanc": 57,
-      "rouge": 43
+      "blanc": 77,
+      "rouge": 23
     },
-    "mlConfidence": 57
+    "mlConfidence": 77
   },
   {
     "date": "2026-01-23",
     "mlPrediction": "blanc",
     "mlProbabilities": {
       "bleu": 0,
-      "blanc": 54,
-      "rouge": 46
+      "blanc": 78,
+      "rouge": 22
     },
-    "mlConfidence": 54
+    "mlConfidence": 78
   },
   {
     "date": "2026-01-24",
+    "mlPrediction": "bleu",
+    "mlProbabilities": {
+      "bleu": 65,
+      "blanc": 25,
+      "rouge": 10
+    },
+    "mlConfidence": 65
+  },
+  {
+    "date": "2026-01-25",
     "mlPrediction": "bleu",
     "mlProbabilities": {
       "bleu": 65,
