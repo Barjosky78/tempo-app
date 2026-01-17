@@ -100,8 +100,8 @@
       "blanc": 9,
       "bleu": 88
     },
-    "realColor": null,
-    "result": null
+    "realColor": "bleu",
+    "result": "correct"
   },
   {
     "date": "2026-01-17",
