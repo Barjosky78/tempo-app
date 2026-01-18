@@ -101,9 +101,9 @@
     "date": "2026-01-25",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 20,
-      "blanc": 34,
-      "bleu": 46
+      "rouge": 19,
+      "blanc": 40,
+      "bleu": 41
     },
     "fixed": false,
     "sources": {
@@ -113,11 +113,11 @@
   },
   {
     "date": "2026-01-26",
-    "couleur": "blanc",
+    "couleur": "bleu",
     "probabilites": {
-      "rouge": 16,
-      "blanc": 46,
-      "bleu": 38
+      "rouge": 17,
+      "blanc": 40,
+      "bleu": 43
     },
     "fixed": false,
     "sources": {
