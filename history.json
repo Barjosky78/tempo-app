@@ -113,7 +113,7 @@
       "blanc": 5,
       "bleu": 95
     },
-    "realColor": null,
-    "result": null
+    "realColor": "bleu",
+    "result": "correct"
   }
 ]
