@@ -1,1 +1,15 @@
-{"resourceNameCollection":["App\\Entity\\JourTempo","App\\Entity\\Statistiques","App\\Entity\\Tarification","App\\Entity\\TempsReel"]}
+{
+  "today": {
+    "dateJour": "2026-01-20",
+    "codeJour": 2,
+    "periode": "2025-2026",
+    "libCouleur": "Blanc"
+  },
+  "tomorrow": {
+    "dateJour": "2026-01-21",
+    "codeJour": 0,
+    "periode": "2025-2026",
+    "libCouleur": "Inconnu"
+  },
+  "fetchedAt": "2026-01-19T23:40:32.595Z"
+}

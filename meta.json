@@ -1,3 +1,13 @@
 {
-  "updatedAt": "2026-01-19T22:46:27.447Z"
+  "updatedAt": "2026-01-19T23:40:32.595Z",
+  "counters": {
+    "bleu": 0,
+    "blanc": 0,
+    "rouge": 0
+  },
+  "remaining": {
+    "bleu": 300,
+    "blanc": 43,
+    "rouge": 22
+  }
 }
