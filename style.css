@@ -496,7 +496,7 @@ footer p {
 .day:nth-child(10) { animation-delay: 0.5s; }
 
 /* ==========================
-   DARK MODE (optionnel)
+   DARK MODE
 ========================== */
 @media (prefers-color-scheme: dark) {
   body {
@@ -508,24 +508,173 @@ footer p {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   }
   
-  .day, .history-card, .counter {
+  section h2 {
+    color: #e2e8f0;
+  }
+  
+  /* === COMPTEURS DARK === */
+  .counter {
+    color: #ffffff;
+  }
+  
+  .counter .count {
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  }
+  
+  .counter .label {
+    color: #ffffff;
+    opacity: 0.9;
+  }
+  
+  .counter.bleu {
+    background: linear-gradient(135deg, #0369a1 0%, #0284c7 100%);
+    border-left-color: #38bdf8;
+  }
+  
+  .counter.blanc {
+    background: linear-gradient(135deg, #475569 0%, #64748b 100%);
+    border-left-color: #cbd5e1;
+  }
+  
+  .counter.rouge {
+    background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%);
+    border-left-color: #f87171;
+  }
+  
+  /* === CARTES JOURS DARK === */
+  .day {
     background: #1e293b;
+    color: #e2e8f0;
   }
   
   .day.bleu {
     background: linear-gradient(135deg, #0c4a6e 0%, #075985 100%);
+    border-left-color: #38bdf8;
   }
   
   .day.blanc {
     background: linear-gradient(135deg, #334155 0%, #475569 100%);
+    border-left-color: #cbd5e1;
   }
   
   .day.rouge {
     background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 100%);
+    border-left-color: #f87171;
   }
   
+  .day.official {
+    box-shadow: 0 0 0 2px #22c55e, 0 2px 8px rgba(0,0,0,0.3);
+  }
+  
+  .date {
+    color: #cbd5e1;
+    opacity: 1;
+  }
+  
+  /* Couleurs du texte */
+  .color-bleu { color: #7dd3fc; }
+  .color-blanc { color: #e2e8f0; }
+  .color-rouge { color: #fca5a5; }
+  
+  .color-display b {
+    color: #ffffff;
+  }
+  
+  /* Sources */
+  .sources {
+    color: #e2e8f0;
+  }
+  
+  /* Probabilités */
+  .prob-value {
+    color: #e2e8f0;
+  }
+  
+  .prob-bar-container {
+    background: rgba(255,255,255,0.15);
+  }
+  
+  /* Confiance */
+  .confidence-wrapper {
+    border-top-color: rgba(255,255,255,0.1);
+  }
+  
+  .confidence-bar {
+    background: rgba(255,255,255,0.15);
+  }
+  
+  .confidence-label {
+    color: #cbd5e1;
+  }
+  
+  /* === ML BOX DARK === */
+  .ml-box {
+    background: rgba(0,0,0,0.2);
+    color: #e2e8f0;
+  }
+  
+  .ml-box.ml-bleu {
+    background: rgba(3, 105, 161, 0.3);
+    border-left-color: #38bdf8;
+  }
+  
+  .ml-box.ml-blanc {
+    background: rgba(71, 85, 105, 0.4);
+    border-left-color: #cbd5e1;
+  }
+  
+  .ml-box.ml-rouge {
+    background: rgba(185, 28, 28, 0.3);
+    border-left-color: #f87171;
+  }
+  
+  .ml-bar {
+    background: rgba(255,255,255,0.15);
+  }
+  
+  /* === HISTORIQUE DARK === */
+  .history-card {
+    background: #1e293b;
+    color: #e2e8f0;
+    border-left-color: #64748b;
+  }
+  
+  .history-card.correct {
+    background: linear-gradient(135deg, #14532d 0%, #166534 100%);
+    border-left-color: #4ade80;
+  }
+  
+  .history-card.partial {
+    background: linear-gradient(135deg, #78350f 0%, #92400e 100%);
+    border-left-color: #fbbf24;
+  }
+  
+  .history-card.wrong {
+    background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 100%);
+    border-left-color: #f87171;
+  }
+  
+  .history-date {
+    color: #ffffff;
+  }
+  
+  .no-history {
+    color: #94a3b8;
+  }
+  
+  /* === FOOTER DARK === */
   footer {
     background: #1e293b;
     color: #94a3b8;
+  }
+  
+  /* === BADGES DARK === */
+  .badge-official {
+    background: #16a34a;
+  }
+  
+  .badge-prediction {
+    background: #7c3aed;
   }
 }
