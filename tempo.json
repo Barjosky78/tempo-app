@@ -126,11 +126,11 @@
   },
   {
     "date": "2026-02-10",
-    "couleur": "bleu",
+    "couleur": "blanc",
     "probabilites": {
-      "rouge": 21,
-      "blanc": 34,
-      "bleu": 45
+      "rouge": 20,
+      "blanc": 40,
+      "bleu": 40
     },
     "fixed": false,
     "sources": {
