@@ -1,15 +1,15 @@
 {
   "today": {
-    "dateJour": "2026-01-31",
-    "codeJour": 2,
-    "periode": "2025-2026",
-    "libCouleur": "Blanc"
-  },
-  "tomorrow": {
     "dateJour": "2026-02-01",
     "codeJour": 1,
     "periode": "2025-2026",
     "libCouleur": "Bleu"
   },
-  "fetchedAt": "2026-01-31T22:52:41.616Z"
+  "tomorrow": {
+    "dateJour": "2026-02-02",
+    "codeJour": 2,
+    "periode": "2025-2026",
+    "libCouleur": "Blanc"
+  },
+  "fetchedAt": "2026-02-01T07:26:36.704Z"
 }
