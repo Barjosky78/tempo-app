@@ -14,17 +14,15 @@
   },
   {
     "date": "2026-02-05",
-    "couleur": "blanc",
+    "couleur": "bleu",
     "probabilites": {
-      "rouge": 14,
-      "blanc": 46,
-      "bleu": 40
+      "rouge": 0,
+      "blanc": 0,
+      "bleu": 100
     },
-    "fixed": false,
+    "fixed": true,
     "sources": {
-      "historique": true,
-      "meteo": true,
-      "rte": true
+      "reel": true
     }
   },
   {
