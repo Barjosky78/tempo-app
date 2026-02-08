@@ -1,15 +1,5 @@
 [
   {
-    "date": "2026-02-09",
-    "mlPrediction": "blanc",
-    "mlProbabilities": {
-      "bleu": 8,
-      "blanc": 85,
-      "rouge": 8
-    },
-    "mlConfidence": 85
-  },
-  {
     "date": "2026-02-10",
     "mlPrediction": "blanc",
     "mlProbabilities": {
@@ -71,6 +61,16 @@
   },
   {
     "date": "2026-02-16",
+    "mlPrediction": "blanc",
+    "mlProbabilities": {
+      "bleu": 8,
+      "blanc": 85,
+      "rouge": 8
+    },
+    "mlConfidence": 85
+  },
+  {
+    "date": "2026-02-17",
     "mlPrediction": "blanc",
     "mlProbabilities": {
       "bleu": 8,
