@@ -1,51 +1,51 @@
 [
   {
     "date": "2026-02-10",
-    "mlPrediction": "blanc",
+    "mlPrediction": "bleu",
     "mlProbabilities": {
-      "bleu": 0,
-      "blanc": 92,
-      "rouge": 8
+      "bleu": 86,
+      "blanc": 8,
+      "rouge": 5
     },
-    "mlConfidence": 92
+    "mlConfidence": 86
   },
   {
     "date": "2026-02-11",
-    "mlPrediction": "blanc",
+    "mlPrediction": "bleu",
     "mlProbabilities": {
-      "bleu": 0,
-      "blanc": 92,
-      "rouge": 8
+      "bleu": 86,
+      "blanc": 8,
+      "rouge": 5
     },
-    "mlConfidence": 92
+    "mlConfidence": 86
   },
   {
     "date": "2026-02-12",
-    "mlPrediction": "blanc",
+    "mlPrediction": "bleu",
     "mlProbabilities": {
-      "bleu": 0,
-      "blanc": 92,
-      "rouge": 8
+      "bleu": 86,
+      "blanc": 8,
+      "rouge": 5
     },
-    "mlConfidence": 92
+    "mlConfidence": 86
   },
   {
     "date": "2026-02-13",
-    "mlPrediction": "blanc",
+    "mlPrediction": "bleu",
     "mlProbabilities": {
-      "bleu": 0,
-      "blanc": 92,
-      "rouge": 8
+      "bleu": 86,
+      "blanc": 8,
+      "rouge": 5
     },
-    "mlConfidence": 92
+    "mlConfidence": 86
   },
   {
     "date": "2026-02-14",
-    "mlPrediction": "blanc",
+    "mlPrediction": "bleu",
     "mlProbabilities": {
-      "bleu": 4,
-      "blanc": 92,
-      "rouge": 4
+      "bleu": 92,
+      "blanc": 8,
+      "rouge": 0
     },
     "mlConfidence": 92
   },
@@ -61,22 +61,22 @@
   },
   {
     "date": "2026-02-16",
-    "mlPrediction": "blanc",
+    "mlPrediction": "bleu",
     "mlProbabilities": {
-      "bleu": 0,
-      "blanc": 92,
-      "rouge": 8
+      "bleu": 86,
+      "blanc": 8,
+      "rouge": 5
     },
-    "mlConfidence": 92
+    "mlConfidence": 86
   },
   {
     "date": "2026-02-17",
-    "mlPrediction": "blanc",
+    "mlPrediction": "bleu",
     "mlProbabilities": {
-      "bleu": 0,
-      "blanc": 92,
-      "rouge": 8
+      "bleu": 86,
+      "blanc": 8,
+      "rouge": 5
     },
-    "mlConfidence": 92
+    "mlConfidence": 86
   }
 ]
