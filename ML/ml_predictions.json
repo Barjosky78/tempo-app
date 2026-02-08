@@ -3,51 +3,51 @@
     "date": "2026-02-10",
     "mlPrediction": "blanc",
     "mlProbabilities": {
-      "bleu": 8,
-      "blanc": 85,
+      "bleu": 0,
+      "blanc": 92,
       "rouge": 8
     },
-    "mlConfidence": 85
+    "mlConfidence": 92
   },
   {
     "date": "2026-02-11",
     "mlPrediction": "blanc",
     "mlProbabilities": {
-      "bleu": 8,
-      "blanc": 85,
+      "bleu": 0,
+      "blanc": 92,
       "rouge": 8
     },
-    "mlConfidence": 85
+    "mlConfidence": 92
   },
   {
     "date": "2026-02-12",
     "mlPrediction": "blanc",
     "mlProbabilities": {
-      "bleu": 8,
-      "blanc": 85,
+      "bleu": 0,
+      "blanc": 92,
       "rouge": 8
     },
-    "mlConfidence": 85
+    "mlConfidence": 92
   },
   {
     "date": "2026-02-13",
     "mlPrediction": "blanc",
     "mlProbabilities": {
-      "bleu": 8,
-      "blanc": 85,
+      "bleu": 0,
+      "blanc": 92,
       "rouge": 8
     },
-    "mlConfidence": 85
+    "mlConfidence": 92
   },
   {
     "date": "2026-02-14",
     "mlPrediction": "blanc",
     "mlProbabilities": {
-      "bleu": 8,
-      "blanc": 85,
-      "rouge": 8
+      "bleu": 4,
+      "blanc": 92,
+      "rouge": 4
     },
-    "mlConfidence": 85
+    "mlConfidence": 92
   },
   {
     "date": "2026-02-15",
@@ -63,20 +63,20 @@
     "date": "2026-02-16",
     "mlPrediction": "blanc",
     "mlProbabilities": {
-      "bleu": 8,
-      "blanc": 85,
+      "bleu": 0,
+      "blanc": 92,
       "rouge": 8
     },
-    "mlConfidence": 85
+    "mlConfidence": 92
   },
   {
     "date": "2026-02-17",
     "mlPrediction": "blanc",
     "mlProbabilities": {
-      "bleu": 8,
-      "blanc": 85,
+      "bleu": 0,
+      "blanc": 92,
       "rouge": 8
     },
-    "mlConfidence": 85
+    "mlConfidence": 92
   }
 ]
