@@ -1,4 +1,4 @@
-name: Update Tempo + History + Stats + ML (FIXED)
+name: Update Tempo + History + Stats + ML (FIXED v2)
 
 concurrency:
   group: pages
@@ -35,9 +35,24 @@ jobs:
           pip install pandas scikit-learn joblib
 
       # ======================
+      # 🔧 FIX: DÉTECTION AUTOMATIQUE DE LA SAISON
+      # ======================
+      - name: Detect current Tempo season
+        id: season
+        run: |
+          SEASON=$(python3 -c "
+          from datetime import date
+          today = date.today()
+          year = today.year if today.month >= 9 else today.year - 1
+          print(f'{year}-{year+1}')
+          ")
+          echo "SEASON=$SEASON" >> $GITHUB_ENV
+          echo "📅 Saison Tempo détectée : $SEASON"
+
+      # ======================
       # EDF TEMPO (API) - ENDPOINTS CORRECTS
       # ======================
-      - name: Fetch EDF Tempo API (Today + Tomorrow)
+      - name: Fetch EDF Tempo API (Today + Tomorrow + Période)
         run: |
           echo "=== Fetching Tempo Today ==="
           curl -sf https://www.api-couleur-tempo.fr/api/jourTempo/today \
@@ -51,9 +66,24 @@ jobs:
           cat tempo_tomorrow.json
           
           echo ""
-          echo "=== Fetching Tempo Counters ==="
-          curl -sf "https://www.api-couleur-tempo.fr/api/jourTempo/periode/2024-2025" \
-            -o tempo_periode.json || echo '[]' > tempo_periode.json
+          echo "=== Fetching Tempo Période ${SEASON} ==="
+          curl -sf "https://www.api-couleur-tempo.fr/api/jourTempo/periode/${SEASON}" \
+            -o api_tempo.json || echo '[]' > api_tempo.json
+          
+          # 🔧 FIX: Vérifier que c'est bien un tableau JSON
+          python3 -c "
+          import json
+          try:
+              d = json.load(open('api_tempo.json'))
+              if not isinstance(d, list):
+                  print('⚠️ api_tempo.json n est pas un tableau, reset')
+                  json.dump([], open('api_tempo.json', 'w'))
+              else:
+                  print(f'✅ api_tempo.json : {len(d)} jours récupérés')
+          except:
+              print('⚠️ api_tempo.json invalide, reset')
+              json.dump([], open('api_tempo.json', 'w'))
+          "
 
       # ======================
       # HELLOWATT (HTML) - Backup source
@@ -79,31 +109,29 @@ jobs:
           | jq . > rte.json || echo '{}' > rte.json
 
       # ======================
-      # BUILD tempo.json - VERSION CORRIGÉE
+      # BUILD tempo.json + meta.json + edf_tempo.json
       # ======================
-      - name: Build tempo.json (FIXED API parsing)
+      - name: Build tempo.json (FIXED - season + counters)
         run: |
           node <<'EOF'
           const fs = require("fs");
           const fmt = d => d.toISOString().split("T")[0];
 
-          /* ========= LOAD API TEMPO (NOUVEAUX ENDPOINTS) ========= */
+          /* ========= LOAD API TEMPO ========= */
           let apiToday = {};
           let apiTomorrow = {};
           let apiPeriode = [];
           
           try { apiToday = JSON.parse(fs.readFileSync("tempo_today.json", "utf8")); } catch {}
           try { apiTomorrow = JSON.parse(fs.readFileSync("tempo_tomorrow.json", "utf8")); } catch {}
-          try { apiPeriode = JSON.parse(fs.readFileSync("tempo_periode.json", "utf8")); } catch {}
+          try { apiPeriode = JSON.parse(fs.readFileSync("api_tempo.json", "utf8")); } catch {}
 
-          // L'API renvoie : { "dateJour": "...", "codeJour": 1, "libCouleur": "Bleu" }
           const normalizeColor = (lib) => {
             if (!lib) return null;
-            const l = lib.toLowerCase();
+            const l = lib.toLowerCase().trim();
             if (l === "bleu" || l === "blue") return "bleu";
             if (l === "blanc" || l === "white") return "blanc";
             if (l === "rouge" || l === "red") return "rouge";
-            if (l === "inconnu" || l === "non_defini" || l === "nd") return null;
             return null;
           };
 
@@ -118,11 +146,8 @@ jobs:
           let hwTomorrow = null;
           try {
             const html = fs.readFileSync("hellowatt.html", "utf8").toLowerCase();
-            
-            // Extraction plus robuste
             const todayMatch = html.match(/aujourd['']?hui[^<]*?(?:jour\s+)?(bleu|blanc|rouge)/i);
             const tomorrowMatch = html.match(/demain[^<]*?(?:jour\s+)?(bleu|blanc|rouge)/i);
-            
             if (todayMatch) hwToday = todayMatch[1].toLowerCase();
             if (tomorrowMatch) hwTomorrow = tomorrowMatch[1].toLowerCase();
           } catch {}
@@ -151,7 +176,7 @@ jobs:
             }
           } catch {}
 
-          /* ========= COMPTEURS SAISON ========= */
+          /* ========= 🔧 FIX: COMPTEURS SAISON DYNAMIQUES ========= */
           let counters = { bleu: 0, blanc: 0, rouge: 0 };
           if (Array.isArray(apiPeriode)) {
             apiPeriode.forEach(j => {
@@ -160,7 +185,6 @@ jobs:
             });
           }
           
-          // Jours restants (sur saison complète : 300 bleu, 43 blanc, 22 rouge)
           const remaining = {
             bleu: Math.max(0, 300 - counters.bleu),
             blanc: Math.max(0, 43 - counters.blanc),
@@ -172,27 +196,24 @@ jobs:
 
           /* ========= HISTO MENSUEL ========= */
           const HISTO_MONTH = {
-            9: { rouge: 0, blanc: 5, bleu: 95 },   // Septembre
-            10: { rouge: 2, blanc: 10, bleu: 88 }, // Octobre
-            11: { rouge: 8, blanc: 22, bleu: 70 }, // Novembre
-            12: { rouge: 14, blanc: 30, bleu: 56 },// Décembre
-            1: { rouge: 20, blanc: 34, bleu: 46 }, // Janvier
-            2: { rouge: 17, blanc: 33, bleu: 50 }, // Février
-            3: { rouge: 4, blanc: 22, bleu: 74 },  // Mars
-            4: { rouge: 0, blanc: 5, bleu: 95 },   // Avril (fin saison)
+            9: { rouge: 0, blanc: 5, bleu: 95 },
+            10: { rouge: 2, blanc: 10, bleu: 88 },
+            11: { rouge: 8, blanc: 22, bleu: 70 },
+            12: { rouge: 14, blanc: 30, bleu: 56 },
+            1: { rouge: 20, blanc: 34, bleu: 46 },
+            2: { rouge: 17, blanc: 33, bleu: 50 },
+            3: { rouge: 4, blanc: 22, bleu: 74 },
+            4: { rouge: 0, blanc: 5, bleu: 95 },
           };
 
-          /* ========= AJUSTEMENTS JOUR SEMAINE ========= */
-          // Samedi : jamais rouge (règle EDF)
-          // Dimanche : toujours bleu (règle EDF)
           const HISTO_WEEKDAY = {
-            0: { rouge: -100, blanc: -100, bleu: 100 }, // Dimanche = TOUJOURS BLEU
-            1: { rouge: -3, blanc: 6, bleu: -3 },       // Lundi
-            2: { rouge: 4, blanc: 1, bleu: -5 },        // Mardi
-            3: { rouge: 5, blanc: 0, bleu: -5 },        // Mercredi
-            4: { rouge: 2, blanc: 3, bleu: -5 },        // Jeudi
-            5: { rouge: -4, blanc: 2, bleu: 2 },        // Vendredi
-            6: { rouge: -100, blanc: 10, bleu: -10 },   // Samedi = JAMAIS ROUGE
+            0: { rouge: -100, blanc: -100, bleu: 100 },
+            1: { rouge: -3, blanc: 6, bleu: -3 },
+            2: { rouge: 4, blanc: 1, bleu: -5 },
+            3: { rouge: 5, blanc: 0, bleu: -5 },
+            4: { rouge: 2, blanc: 3, bleu: -5 },
+            5: { rouge: -4, blanc: 2, bleu: 2 },
+            6: { rouge: -100, blanc: 10, bleu: -10 },
           };
 
           const today = new Date();
@@ -200,7 +221,6 @@ jobs:
           const days = [];
 
           /* ========= J0 (Aujourd'hui) ========= */
-          // Priorité : API > HelloWatt > Prédiction
           let j0Color = edfToday || hwToday;
           let j0Fixed = !!j0Color;
           let j0Sources = {};
@@ -211,18 +231,15 @@ jobs:
             j0Sources.hellowatt = true;
           }
 
-          // Si pas de données officielles, prédire (ne devrait pas arriver pour J0)
           if (!j0Color) {
-            console.log("⚠️ ATTENTION: Pas de couleur officielle pour J0, utilisation prédiction");
+            console.log("⚠️ Pas de couleur officielle pour J0");
             const dow = today.getDay();
             
-            // Règles EDF absolues
-            if (dow === 0) { // Dimanche
+            if (dow === 0) {
               j0Color = "bleu";
               j0Fixed = true;
               j0Sources.regle_edf = true;
             } else {
-              // Prédiction basée sur l'historique
               let base = HISTO_MONTH[today.getMonth() + 1] || { rouge: 10, blanc: 25, bleu: 65 };
               let r = base.rouge, b = base.blanc, bl = base.bleu;
               
@@ -232,7 +249,6 @@ jobs:
                 bl += HISTO_WEEKDAY[dow].bleu;
               }
               
-              // Samedi = jamais rouge
               if (dow === 6) r = 0;
               
               r = Math.max(0, r);
@@ -279,15 +295,12 @@ jobs:
             j1Proba[hwTomorrow] = 100;
           }
 
-          // Si demain n'est pas encore connu (avant 11h)
           if (!j1Color) {
-            // Règles EDF absolues
-            if (dow1 === 0) { // Dimanche
+            if (dow1 === 0) {
               j1Color = "bleu";
               j1Proba = { rouge: 0, blanc: 0, bleu: 100 };
               j1Sources.regle_edf = true;
             } else {
-              // Prédiction
               let base = HISTO_MONTH[tomorrow.getMonth() + 1] || { rouge: 10, blanc: 25, bleu: 65 };
               let r = base.rouge, b = base.blanc, bl = base.bleu;
 
@@ -297,23 +310,19 @@ jobs:
                 bl += HISTO_WEEKDAY[dow1].bleu;
               }
 
-              // Température
               const temp = temps[1] ?? 8;
               if (temp < 3) { b += 8; bl -= 4; }
               if (temp < 0) { r += 6; bl -= 4; }
               if (temp < -5) { r += 10; bl -= 8; }
 
-              // Consommation RTE
               if (consommation !== null) {
                 if (tension < 55) { bl += 5; b -= 3; r -= 2; }
                 else if (tension <= 70) { b += 10; bl -= 5; r -= 5; }
                 else { r += 7; b += 3; bl -= 10; }
               }
 
-              // Samedi = jamais rouge
               if (dow1 === 6) r = 0;
               
-              // Normalisation
               r = Math.max(0, r);
               b = Math.max(0, b);
               bl = Math.max(0, bl);
@@ -346,11 +355,10 @@ jobs:
             let r, b, bl;
             let sources = { historique: true, meteo: true };
 
-            // Règles EDF absolues
-            if (dow === 0) { // Dimanche = TOUJOURS BLEU
+            if (dow === 0) {
               r = 0; b = 0; bl = 100;
               sources.regle_edf = true;
-            } else if (dow === 6) { // Samedi = JAMAIS ROUGE
+            } else if (dow === 6) {
               let base = HISTO_MONTH[d.getMonth() + 1] || { rouge: 10, blanc: 25, bleu: 65 };
               r = 0;
               b = base.blanc + 10;
@@ -367,14 +375,12 @@ jobs:
                 bl += HISTO_WEEKDAY[dow].bleu;
               }
 
-              // Température
               const temp = temps[i] ?? 8;
               if (temp < 3) { b += 8; bl -= 4; }
               if (temp < 0) { r += 6; bl -= 4; }
               if (temp < -5) { r += 10; bl -= 8; }
             }
 
-            // Normalisation
             r = Math.max(0, r);
             b = Math.max(0, b);
             bl = Math.max(0, bl);
@@ -403,25 +409,54 @@ jobs:
             remaining: remaining
           }, null, 2));
           
-          // Sauvegarde edf_tempo.json avec les vraies données
           fs.writeFileSync("edf_tempo.json", JSON.stringify({
             today: apiToday,
             tomorrow: apiTomorrow,
             fetchedAt: new Date().toISOString()
           }, null, 2));
 
-          console.log("\n✅ tempo.json généré avec succès");
+          console.log("\n✅ tempo.json généré");
           console.log("📅 J0:", days[0].date, "→", days[0].couleur, days[0].fixed ? "(officiel)" : "(prédit)");
           console.log("📅 J1:", days[1].date, "→", days[1].couleur, days[1].fixed ? "(officiel)" : "(prédit)");
+          console.log("📊 Compteurs restants → B:", remaining.bleu, "W:", remaining.blanc, "R:", remaining.rouge);
           EOF
 
       # ======================
-      # COMMIT
+      # 🔧 FIX: PRÉDICTIONS ML (manquait complètement)
+      # ======================
+      - name: Run ML predictions
+        run: |
+          if [ -f ML/ml_model.pkl ]; then
+            echo "🤖 Exécution des prédictions ML..."
+            python3 ML/predict_ml.py || echo "⚠️ ML predictions failed"
+          else
+            echo "⚠️ Pas de modèle ML trouvé (ML/ml_model.pkl)"
+            echo "   → Exécutez d'abord: python3 ML/train_ml.py"
+          fi
+
+      # ======================
+      # 🔧 FIX: MISE À JOUR HISTORIQUE (manquait complètement)
+      # ======================
+      - name: Update prediction history
+        run: |
+          echo "🔄 Mise à jour de l'historique des prédictions..."
+          python3 scripts/update_history.py || echo "⚠️ History update failed"
+
+      # ======================
+      # 🔧 FIX: COMMIT COMPLET (ajout des fichiers manquants)
       # ======================
       - name: Commit & push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add tempo.json meta.json edf_tempo.json hellowatt.html
-          git commit -m "🔄 Tempo update $(date +'%Y-%m-%d %H:%M') UTC" || echo "No changes"
-          git push
+          git add \
+            tempo.json \
+            meta.json \
+            edf_tempo.json \
+            api_tempo.json \
+            hellowatt.html \
+            history.json \
+            stats.json \
+            ML/ml_predictions.json
+          git diff --cached --quiet && echo "No changes" || \
+            (git commit -m "⚡ Tempo update $(date +'%Y-%m-%d %H:%M') UTC" && git push)
