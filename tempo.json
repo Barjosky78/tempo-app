@@ -58,8 +58,8 @@
     "couleur": "bleu",
     "probabilites": {
       "rouge": 13,
-      "blanc": 35,
-      "bleu": 52
+      "blanc": 41,
+      "bleu": 46
     },
     "fixed": false,
     "sources": {
