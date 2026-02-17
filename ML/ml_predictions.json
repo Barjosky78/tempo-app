@@ -78,5 +78,15 @@
       "rouge": 5
     },
     "mlConfidence": 86
+  },
+  {
+    "date": "2026-02-26",
+    "mlPrediction": "bleu",
+    "mlProbabilities": {
+      "bleu": 86,
+      "blanc": 8,
+      "rouge": 5
+    },
+    "mlConfidence": 86
   }
 ]
