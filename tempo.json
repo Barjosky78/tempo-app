@@ -16,15 +16,13 @@
     "date": "2026-02-18",
     "couleur": "blanc",
     "probabilites": {
-      "rouge": 17,
-      "blanc": 43,
-      "bleu": 40
+      "rouge": 0,
+      "blanc": 100,
+      "bleu": 0
     },
-    "fixed": false,
+    "fixed": true,
     "sources": {
-      "historique": true,
-      "meteo": true,
-      "rte": true
+      "reel": true
     }
   },
   {
