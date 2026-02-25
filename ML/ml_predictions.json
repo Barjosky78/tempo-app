@@ -34,8 +34,8 @@
     "mlPrediction": "bleu",
     "mlProbabilities": {
       "bleu": 92,
-      "blanc": 6,
-      "rouge": 2
+      "blanc": 7,
+      "rouge": 1
     },
     "mlConfidence": 92
   },
@@ -44,8 +44,8 @@
     "mlPrediction": "bleu",
     "mlProbabilities": {
       "bleu": 92,
-      "blanc": 7,
-      "rouge": 1
+      "blanc": 8,
+      "rouge": 0
     },
     "mlConfidence": 92
   },
@@ -54,8 +54,8 @@
     "mlPrediction": "bleu",
     "mlProbabilities": {
       "bleu": 92,
-      "blanc": 7,
-      "rouge": 1
+      "blanc": 8,
+      "rouge": 0
     },
     "mlConfidence": 92
   },
@@ -64,8 +64,8 @@
     "mlPrediction": "bleu",
     "mlProbabilities": {
       "bleu": 92,
-      "blanc": 7,
-      "rouge": 1
+      "blanc": 8,
+      "rouge": 0
     },
     "mlConfidence": 92
   },
