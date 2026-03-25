@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-03-25",
+    "predictedOn": "2026-03-25",
+    "horizon": 0,
+    "predictedColor": "rouge",
+    "probabilites": {
+      "rouge": 100,
+      "blanc": 0,
+      "bleu": 0
+    },
+    "realColor": "rouge",
+    "result": "correct"
+  },
+  {
     "date": "2026-03-24",
     "predictedOn": "2026-03-24",
     "horizon": 0,
