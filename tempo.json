@@ -7,10 +7,9 @@
       "blanc": 0,
       "bleu": 100
     },
-    "fixed": false,
+    "fixed": true,
     "sources": {
-      "historique": true,
-      "meteo": true
+      "reel": true
     }
   },
   {
@@ -21,9 +20,9 @@
       "blanc": 0,
       "bleu": 100
     },
-    "fixed": false,
+    "fixed": true,
     "sources": {
-      "regle_edf": true
+      "reel": true
     }
   },
   {
