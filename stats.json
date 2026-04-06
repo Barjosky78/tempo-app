@@ -1,8 +1,8 @@
 {
   "total": 60,
-  "correct": 59,
-  "partial": 1,
+  "correct": 60,
+  "partial": 0,
   "wrong": 0,
-  "accuracy": 98,
+  "accuracy": 100,
   "accuracyWithPartial": 100
 }
