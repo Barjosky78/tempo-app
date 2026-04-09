@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-04-09",
+    "predictedOn": "2026-04-09",
+    "horizon": 0,
+    "predictedColor": "bleu",
+    "probabilites": {
+      "rouge": 0,
+      "blanc": 0,
+      "bleu": 100
+    },
+    "realColor": "bleu",
+    "result": "correct"
+  },
+  {
     "date": "2026-04-08",
     "predictedOn": "2026-04-08",
     "horizon": 0,
@@ -764,19 +777,6 @@
       "bleu": 0
     },
     "realColor": "blanc",
-    "result": "correct"
-  },
-  {
-    "date": "2026-02-08",
-    "predictedOn": "2026-02-08",
-    "horizon": 0,
-    "predictedColor": "bleu",
-    "probabilites": {
-      "rouge": 0,
-      "blanc": 0,
-      "bleu": 100
-    },
-    "realColor": "bleu",
     "result": "correct"
   }
 ]
