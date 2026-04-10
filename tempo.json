@@ -1,6 +1,6 @@
 [
   {
-    "date": "2026-04-09",
+    "date": "2026-04-10",
     "couleur": "bleu",
     "probabilites": {
       "rouge": 0,
@@ -13,32 +13,16 @@
     }
   },
   {
-    "date": "2026-04-10",
-    "couleur": "bleu",
-    "probabilites": {
-      "rouge": 0,
-      "blanc": 16,
-      "bleu": 84
-    },
-    "fixed": false,
-    "sources": {
-      "historique": true,
-      "meteo": true,
-      "rte": true
-    }
-  },
-  {
     "date": "2026-04-11",
     "couleur": "bleu",
     "probabilites": {
       "rouge": 0,
-      "blanc": 15,
-      "bleu": 85
+      "blanc": 0,
+      "bleu": 100
     },
-    "fixed": false,
+    "fixed": true,
     "sources": {
-      "historique": true,
-      "meteo": true
+      "reel": true
     }
   },
   {
@@ -138,6 +122,21 @@
     "sources": {
       "historique": true,
       "meteo": true
+    }
+  },
+  {
+    "date": "2026-04-19",
+    "couleur": "bleu",
+    "probabilites": {
+      "rouge": 0,
+      "blanc": 0,
+      "bleu": 100
+    },
+    "fixed": false,
+    "sources": {
+      "historique": true,
+      "meteo": true,
+      "regle_edf": true
     }
   }
 ]
