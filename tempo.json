@@ -7,9 +7,10 @@
       "blanc": 0,
       "bleu": 100
     },
-    "fixed": true,
+    "fixed": false,
     "sources": {
-      "reel": true
+      "historique": true,
+      "meteo": true
     }
   },
   {
