@@ -16,13 +16,15 @@
     "date": "2026-05-01",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 0,
-      "blanc": 0,
-      "bleu": 100
+      "rouge": 1,
+      "blanc": 37,
+      "bleu": 62
     },
-    "fixed": true,
+    "fixed": false,
     "sources": {
-      "reel": true
+      "historique": true,
+      "meteo": true,
+      "rte": true
     }
   },
   {
