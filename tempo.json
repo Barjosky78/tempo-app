@@ -16,13 +16,15 @@
     "date": "2026-05-12",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 0,
-      "blanc": 0,
-      "bleu": 100
+      "rouge": 9,
+      "blanc": 36,
+      "bleu": 55
     },
-    "fixed": true,
+    "fixed": false,
     "sources": {
-      "reel": true
+      "historique": true,
+      "meteo": true,
+      "rte": true
     }
   },
   {
