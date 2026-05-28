@@ -7,9 +7,9 @@
   },
   "tomorrow": {
     "dateJour": "2026-05-29",
-    "codeJour": 0,
+    "codeJour": 2,
     "periode": "2025-2026",
-    "libCouleur": "Inconnu"
+    "libCouleur": "Blanc"
   },
-  "fetchedAt": "2026-05-27T23:35:15.101Z"
+  "fetchedAt": "2026-05-28T08:47:23.606Z"
 }
