@@ -14,15 +14,17 @@
   },
   {
     "date": "2026-05-29",
-    "couleur": "blanc",
+    "couleur": "bleu",
     "probabilites": {
-      "rouge": 0,
-      "blanc": 100,
-      "bleu": 0
+      "rouge": 1,
+      "blanc": 37,
+      "bleu": 62
     },
-    "fixed": true,
+    "fixed": false,
     "sources": {
-      "reel": true
+      "historique": true,
+      "meteo": true,
+      "rte": true
     }
   },
   {
