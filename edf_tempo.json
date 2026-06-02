@@ -5,6 +5,11 @@
     "periode": "2025-2026",
     "libCouleur": "Bleu"
   },
-  "tomorrow": {},
-  "fetchedAt": "2026-06-02T09:13:08.934Z"
+  "tomorrow": {
+    "dateJour": "2026-06-03",
+    "codeJour": 1,
+    "periode": "2025-2026",
+    "libCouleur": "Bleu"
+  },
+  "fetchedAt": "2026-06-02T14:11:22.212Z"
 }
