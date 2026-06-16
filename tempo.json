@@ -1,6 +1,6 @@
 [
   {
-    "date": "2026-06-15",
+    "date": "2026-06-16",
     "couleur": "bleu",
     "probabilites": {
       "rouge": 0,
@@ -13,32 +13,16 @@
     }
   },
   {
-    "date": "2026-06-16",
-    "couleur": "bleu",
-    "probabilites": {
-      "rouge": 9,
-      "blanc": 36,
-      "bleu": 55
-    },
-    "fixed": false,
-    "sources": {
-      "historique": true,
-      "meteo": true,
-      "rte": true
-    }
-  },
-  {
     "date": "2026-06-17",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 15,
-      "blanc": 25,
-      "bleu": 60
+      "rouge": 0,
+      "blanc": 0,
+      "bleu": 100
     },
-    "fixed": false,
+    "fixed": true,
     "sources": {
-      "historique": true,
-      "meteo": true
+      "reel": true
     }
   },
   {
@@ -132,6 +116,20 @@
     "probabilites": {
       "rouge": 15,
       "blanc": 25,
+      "bleu": 60
+    },
+    "fixed": false,
+    "sources": {
+      "historique": true,
+      "meteo": true
+    }
+  },
+  {
+    "date": "2026-06-25",
+    "couleur": "bleu",
+    "probabilites": {
+      "rouge": 12,
+      "blanc": 28,
       "bleu": 60
     },
     "fixed": false,
