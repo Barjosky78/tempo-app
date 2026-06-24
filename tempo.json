@@ -16,13 +16,15 @@
     "date": "2026-06-25",
     "couleur": "bleu",
     "probabilites": {
-      "rouge": 0,
-      "blanc": 0,
-      "bleu": 100
+      "rouge": 12,
+      "blanc": 28,
+      "bleu": 60
     },
-    "fixed": true,
+    "fixed": false,
     "sources": {
-      "reel": true
+      "historique": true,
+      "meteo": true,
+      "rte": false
     }
   },
   {
