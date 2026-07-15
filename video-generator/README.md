@@ -54,6 +54,26 @@ besoin depuis le dashboard fal.ai.
   facturation réelle et exacte, vérifie toujours ton
   [dashboard fal.ai](https://fal.ai/dashboard/billing).
 
+## Installer l'app sur ton téléphone (PWA)
+
+L'app est installable comme une Progressive Web App — pas de fichier `.apk`
+à télécharger, tout se passe depuis le navigateur :
+
+1. Héberge le dossier `video-generator/` quelque part en HTTPS (ex. GitHub
+   Pages) — la PWA ne s'installe pas depuis `file://`, il faut un vrai
+   serveur (même un `npx serve` en local suffit pour tester en HTTP).
+2. Ouvre la page dans Chrome sur Android.
+3. Un bouton **📲 Installer l'app** apparaît en haut de la page (ou utilise
+   le menu ⋮ → « Installer l'application »).
+4. Une icône est ajoutée à l'écran d'accueil, l'app s'ouvre en plein écran
+   comme une app native.
+
+Si tu veux un vrai fichier `.apk` installable manuellement (par ex. pour le
+distribuer hors Play Store), une fois l'app hébergée en ligne tu peux la
+passer dans [PWABuilder](https://www.pwabuilder.com/) qui génère un `.apk`/
+`.aab` signé à partir de l'URL — ce n'est pas quelque chose que je peux
+compiler directement dans cet environnement (pas de SDK Android).
+
 ## Notes
 
 - Les liens des vidéos générées (hébergées sur le CDN de fal.ai) peuvent

@@ -1,5 +1,29 @@
 import { fal } from "https://esm.sh/@fal-ai/client@1";
 
+// ---------- PWA: service worker + install prompt ----------
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./service-worker.js").catch((err) => {
+      console.warn("Service worker registration failed:", err);
+    });
+  });
+}
+
+let deferredInstallPrompt = null;
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredInstallPrompt = e;
+  const btn = document.getElementById("installBtn");
+  if (btn) btn.hidden = false;
+});
+
+window.addEventListener("appinstalled", () => {
+  deferredInstallPrompt = null;
+  const btn = document.getElementById("installBtn");
+  if (btn) btn.hidden = true;
+});
+
 const MAX_IMAGES = 9;
 const STORAGE_KEY = "seedance_fal_api_key";
 const HISTORY_KEY = "seedance_history";
@@ -41,6 +65,15 @@ const historyEl = el("history");
 const costEstimateEl = el("costEstimate");
 const spendSummaryEl = el("spendSummary");
 const spendMonthsEl = el("spendMonths");
+const installBtn = el("installBtn");
+
+installBtn.addEventListener("click", async () => {
+  if (!deferredInstallPrompt) return;
+  deferredInstallPrompt.prompt();
+  await deferredInstallPrompt.userChoice;
+  deferredInstallPrompt = null;
+  installBtn.hidden = true;
+});
 
 /** @type {{file: File, url: string}[]} */
 let images = [];

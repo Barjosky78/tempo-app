@@ -38,6 +38,10 @@ header h1 {
   margin: 0;
 }
 
+.install-btn {
+  margin-top: 14px;
+}
+
 main {
   max-width: 720px;
   margin: 0 auto;
