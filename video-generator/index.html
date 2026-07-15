@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>🎬 Générateur vidéo IA — Seedance 2.0</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Génère des vidéos IA à partir de photos et d'un prompt avec Seedance 2.0 (fal.ai).">
+  <meta name="theme-color" content="#0f1115">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fal.run">
+  <link rel="preconnect" href="https://queue.fal.run">
+</head>
+<body>
+
+<header>
+  <h1>🎬 Générateur vidéo IA</h1>
+  <p class="subtitle">Propulsé par <strong>Seedance 2.0</strong> via <strong>fal.ai</strong></p>
+</header>
+
+<main>
+
+  <!-- ======================
+       CLÉ API
+  ====================== -->
+  <section class="card">
+    <h2>🔑 Clé API fal.ai</h2>
+    <p class="hint">
+      Récupère ta clé sur <a href="https://fal.ai/dashboard/keys" target="_blank" rel="noopener">fal.ai/dashboard/keys</a>.
+      Elle est utilisée uniquement depuis ton navigateur pour appeler l'API fal.ai et n'est jamais envoyée ailleurs.
+      Elle reste stockée en local (localStorage) sur cet appareil si tu coches « mémoriser ».
+    </p>
+    <div class="row">
+      <input type="password" id="apiKey" placeholder="fal_xxx..." autocomplete="off">
+      <button type="button" id="toggleKeyVisibility" class="btn-secondary" title="Afficher/masquer">👁</button>
+    </div>
+    <label class="checkbox">
+      <input type="checkbox" id="rememberKey" checked>
+      Mémoriser la clé sur cet appareil
+    </label>
+  </section>
+
+  <!-- ======================
+       FORMULAIRE DE GÉNÉRATION
+  ====================== -->
+  <section class="card">
+    <h2>🖼️ Photos (optionnel)</h2>
+    <p class="hint">0 photo → texte vers vidéo. 1 photo → anime cette image. 2 à 9 photos → vidéo de référence multi-images (utilise <code>@Image1</code>, <code>@Image2</code>… dans le prompt pour les cibler).</p>
+
+    <div id="dropzone" class="dropzone">
+      <span>Glisse tes photos ici ou clique pour choisir (JPEG, PNG, WebP — max 9)</span>
+      <input type="file" id="fileInput" accept="image/png,image/jpeg,image/webp" multiple hidden>
+    </div>
+    <div id="thumbs" class="thumbs"></div>
+
+    <h2>✍️ Prompt</h2>
+    <textarea id="prompt" rows="4" placeholder="Décris l'action, la caméra, l'ambiance… ex : Le personnage tourne la tête vers la caméra et sourit, léger travelling avant, lumière dorée de fin de journée."></textarea>
+
+    <h2>⚙️ Réglages</h2>
+    <div class="grid">
+      <label>
+        Modèle
+        <select id="tier">
+          <option value="fast">Rapide (fast) — moins cher, plus rapide</option>
+          <option value="standard" selected>Standard — meilleure qualité</option>
+        </select>
+      </label>
+
+      <label>
+        Résolution
+        <select id="resolution">
+          <option value="480p">480p</option>
+          <option value="720p" selected>720p</option>
+        </select>
+      </label>
+
+      <label>
+        Durée
+        <select id="duration">
+          <option value="auto" selected>Auto (laisser le modèle décider)</option>
+          <option value="4">4 s</option>
+          <option value="5">5 s</option>
+          <option value="6">6 s</option>
+          <option value="7">7 s</option>
+          <option value="8">8 s</option>
+          <option value="9">9 s</option>
+          <option value="10">10 s</option>
+          <option value="11">11 s</option>
+          <option value="12">12 s</option>
+          <option value="13">13 s</option>
+          <option value="14">14 s</option>
+          <option value="15">15 s</option>
+        </select>
+      </label>
+
+      <label>
+        Format (aspect ratio)
+        <select id="aspectRatio">
+          <option value="auto" selected>Auto</option>
+          <option value="16:9">16:9 (paysage)</option>
+          <option value="9:16">9:16 (portrait)</option>
+          <option value="1:1">1:1 (carré)</option>
+          <option value="4:3">4:3</option>
+          <option value="3:4">3:4</option>
+          <option value="21:9">21:9 (cinéma ultra-large)</option>
+        </select>
+      </label>
+
+      <label>
+        Qualité d'encodage
+        <select id="bitrateMode">
+          <option value="standard" selected>Standard</option>
+          <option value="high">Haute qualité (fichier plus lourd)</option>
+        </select>
+      </label>
+
+      <label>
+        Seed (optionnel)
+        <input type="number" id="seed" placeholder="aléatoire">
+      </label>
+    </div>
+
+    <label class="checkbox">
+      <input type="checkbox" id="generateAudio" checked>
+      Générer l'audio synchronisé
+    </label>
+
+    <button type="button" id="generateBtn" class="btn-primary">Générer la vidéo</button>
+
+    <div id="status" class="status" hidden></div>
+  </section>
+
+  <!-- ======================
+       RÉSULTAT
+  ====================== -->
+  <section class="card" id="resultCard" hidden>
+    <h2>✅ Résultat</h2>
+    <video id="resultVideo" controls playsinline></video>
+    <div class="row">
+      <button type="button" id="downloadBtn" class="btn-primary">⬇️ Télécharger le fichier</button>
+      <a id="openBtn" class="btn-secondary" target="_blank" rel="noopener">Ouvrir dans un nouvel onglet</a>
+    </div>
+  </section>
+
+  <!-- ======================
+       HISTORIQUE
+  ====================== -->
+  <section class="card">
+    <h2>🕒 Historique (cet appareil)</h2>
+    <p class="hint">Les liens des vidéos générées peuvent expirer après un certain temps côté fal.ai — pense à télécharger ce que tu veux garder.</p>
+    <div id="history" class="history"></div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Les vidéos sont générées par le modèle Seedance 2.0 de ByteDance, hébergé sur fal.ai.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
