@@ -40,6 +40,20 @@ attache la clé côté serveur (voir la
 Ne partage jamais cette page avec ta clé déjà remplie, et régénère ta clé si
 besoin depuis le dashboard fal.ai.
 
+## Coût estimé et suivi des dépenses
+
+- Un montant estimé s'affiche en direct sous les réglages, avant de lancer une
+  génération (basé sur le modèle, la résolution et la durée choisis).
+- Après chaque génération, le coût réel est recalculé à partir de la durée
+  effective de la vidéo produite et ajouté à un « grand livre » local
+  (`localStorage`, jamais envoyé nulle part).
+- La carte **💰 Dépenses estimées** affiche le total du mois en cours, le
+  nombre de vidéos générées ce mois-ci, et un historique des 6 derniers mois.
+- Ces montants sont des **estimations** basées sur les tarifs publics fal.ai
+  pour Seedance 2.0 (720p confirmés ; 480p approximatifs). Pour la
+  facturation réelle et exacte, vérifie toujours ton
+  [dashboard fal.ai](https://fal.ai/dashboard/billing).
+
 ## Notes
 
 - Les liens des vidéos générées (hébergées sur le CDN de fal.ai) peuvent

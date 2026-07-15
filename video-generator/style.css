@@ -297,6 +297,77 @@ button {
   font-size: 0.85rem;
 }
 
+.cost-estimate {
+  margin-top: 14px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #7c5cff14;
+  border: 1px solid #7c5cff33;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.cost-estimate .amount {
+  font-weight: 700;
+  color: var(--accent-hover);
+}
+
+.spend-summary {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.spend-tile {
+  background: #0c0e13;
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  min-width: 140px;
+}
+
+.spend-tile .label {
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.spend-tile .value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.spend-months {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.spend-month-row {
+  display: grid;
+  grid-template-columns: 90px 1fr 70px;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.spend-bar-track {
+  background: #0c0e13;
+  border-radius: 6px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.spend-bar-fill {
+  background: var(--accent);
+  height: 100%;
+  border-radius: 6px;
+}
+
 footer {
   text-align: center;
   color: var(--text-dim);

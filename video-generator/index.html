@@ -124,9 +124,26 @@
       Générer l'audio synchronisé
     </label>
 
+    <div id="costEstimate" class="cost-estimate"></div>
+
     <button type="button" id="generateBtn" class="btn-primary">Générer la vidéo</button>
 
     <div id="status" class="status" hidden></div>
+  </section>
+
+  <!-- ======================
+       DÉPENSES
+  ====================== -->
+  <section class="card">
+    <h2>💰 Dépenses estimées</h2>
+    <p class="hint">
+      Calculées localement à partir des tarifs publics fal.ai (720p : $0.3034/s en standard,
+      $0.2419/s en fast — tarifs 480p estimés, non confirmés officiellement). Ce n'est pas ta
+      facturation réelle : vérifie toujours le montant exact sur ton
+      <a href="https://fal.ai/dashboard/billing" target="_blank" rel="noopener">dashboard fal.ai</a>.
+    </p>
+    <div id="spendSummary" class="spend-summary"></div>
+    <div id="spendMonths" class="spend-months"></div>
   </section>
 
   <!-- ======================

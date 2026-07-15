@@ -4,6 +4,16 @@ const MAX_IMAGES = 9;
 const STORAGE_KEY = "seedance_fal_api_key";
 const HISTORY_KEY = "seedance_history";
 const MAX_HISTORY = 10;
+const LEDGER_KEY = "seedance_spend_ledger";
+const MAX_LEDGER = 2000;
+
+// Prix par seconde en USD. 720p confirmés sur les pages de prix fal.ai ;
+// 480p estimés (non confirmés officiellement) — à vérifier sur fal.ai/pricing.
+const PRICING = {
+  standard: { "480p": 0.14, "720p": 0.3034 },
+  fast: { "480p": 0.11, "720p": 0.2419 },
+};
+const DEFAULT_DURATION_RANGE = [4, 15];
 
 const el = (id) => document.getElementById(id);
 
@@ -28,6 +38,9 @@ const resultVideo = el("resultVideo");
 const downloadBtn = el("downloadBtn");
 const openBtn = el("openBtn");
 const historyEl = el("history");
+const costEstimateEl = el("costEstimate");
+const spendSummaryEl = el("spendSummary");
+const spendMonthsEl = el("spendMonths");
 
 /** @type {{file: File, url: string}[]} */
 let images = [];
@@ -94,6 +107,7 @@ function addFiles(fileList) {
     images.push({ file, url: URL.createObjectURL(file) });
   }
   renderThumbs();
+  renderCostEstimate();
 }
 
 function renderThumbs() {
@@ -110,6 +124,7 @@ function renderThumbs() {
       URL.revokeObjectURL(img.url);
       images.splice(i, 1);
       renderThumbs();
+      renderCostEstimate();
     });
     thumbsEl.appendChild(div);
   });
@@ -151,10 +166,11 @@ function renderHistory() {
     const div = document.createElement("div");
     div.className = "history-item";
     const date = new Date(entry.date).toLocaleString("fr-FR");
+    const costLabel = typeof entry.costUSD === "number" ? ` · ${formatUSD(entry.costUSD)}` : "";
     div.innerHTML = `
       <div>${escapeHtml(entry.prompt || "(sans prompt)")}</div>
       <video src="${entry.url}" controls preload="metadata" muted></video>
-      <div class="meta"><span>${date}</span><span>${entry.resolution} · ${entry.duration}s · ${entry.tier}</span></div>
+      <div class="meta"><span>${date}</span><span>${entry.resolution} · ${entry.duration}s · ${entry.tier}${costLabel}</span></div>
     `;
     historyEl.appendChild(div);
   });
@@ -166,7 +182,125 @@ function escapeHtml(str) {
   return d.innerHTML;
 }
 
+// ---------- Cost estimation ----------
+
+function formatUSD(n) {
+  return `$${n.toFixed(2)}`;
+}
+
+function rateFor(tier, resolution) {
+  return PRICING[tier]?.[resolution] ?? PRICING.standard["720p"];
+}
+
+function estimateCost(tier, resolution, durationValue) {
+  const rate = rateFor(tier, resolution);
+  if (durationValue === "auto") {
+    const [min, max] = DEFAULT_DURATION_RANGE;
+    return { min: rate * min, max: rate * max, isRange: true };
+  }
+  const seconds = Number(durationValue) || DEFAULT_DURATION_RANGE[0];
+  const cost = rate * seconds;
+  return { min: cost, max: cost, isRange: false };
+}
+
+function renderCostEstimate() {
+  const tier = tierInput.value;
+  const resolution = resolutionInput.value;
+  const duration = durationInput.value;
+  const nImages = images.length;
+  const mode = nImages === 0 ? "texte → vidéo" : nImages === 1 ? "image → vidéo" : "référence multi-images";
+  const { min, max, isRange } = estimateCost(tier, resolution, duration);
+  const amount = isRange
+    ? `${formatUSD(min)} – ${formatUSD(max)}`
+    : formatUSD(min);
+  costEstimateEl.innerHTML = `💰 Coût estimé pour cette génération (${mode}) : <span class="amount">${amount}</span>${resolution === "480p" ? " (480p : estimation approximative)" : ""}`;
+}
+
+[tierInput, resolutionInput, durationInput].forEach((input) =>
+  input.addEventListener("change", renderCostEstimate)
+);
+
+// ---------- Spend ledger (monthly tracking) ----------
+
+function loadLedger() {
+  try {
+    return JSON.parse(localStorage.getItem(LEDGER_KEY)) || [];
+  } catch {
+    return [];
+  }
+}
+
+function addSpend(costUSD, date = Date.now()) {
+  const ledger = loadLedger();
+  ledger.push({ date, costUSD });
+  localStorage.setItem(LEDGER_KEY, JSON.stringify(ledger.slice(-MAX_LEDGER)));
+  renderSpend();
+}
+
+function monthKey(timestamp) {
+  const d = new Date(timestamp);
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`;
+}
+
+function monthLabel(key) {
+  const [y, m] = key.split("-");
+  const d = new Date(Number(y), Number(m) - 1, 1);
+  return d.toLocaleDateString("fr-FR", { month: "short", year: "numeric" });
+}
+
+function renderSpend() {
+  const ledger = loadLedger();
+  const now = new Date();
+  const currentKey = monthKey(now.getTime());
+
+  const totals = new Map();
+  for (const entry of ledger) {
+    const key = monthKey(entry.date);
+    totals.set(key, (totals.get(key) || 0) + entry.costUSD);
+  }
+
+  const currentMonthTotal = totals.get(currentKey) || 0;
+  const currentMonthCount = ledger.filter((e) => monthKey(e.date) === currentKey).length;
+  const allTimeTotal = ledger.reduce((sum, e) => sum + e.costUSD, 0);
+
+  spendSummaryEl.innerHTML = `
+    <div class="spend-tile">
+      <div class="label">Ce mois-ci</div>
+      <div class="value">${formatUSD(currentMonthTotal)}</div>
+    </div>
+    <div class="spend-tile">
+      <div class="label">Vidéos ce mois-ci</div>
+      <div class="value">${currentMonthCount}</div>
+    </div>
+    <div class="spend-tile">
+      <div class="label">Total (historique local)</div>
+      <div class="value">${formatUSD(allTimeTotal)}</div>
+    </div>
+  `;
+
+  const sortedKeys = Array.from(totals.keys()).sort().reverse().slice(0, 6);
+  const maxTotal = Math.max(...sortedKeys.map((k) => totals.get(k)), 0.01);
+
+  spendMonthsEl.innerHTML = sortedKeys.length
+    ? sortedKeys
+        .map((key) => {
+          const total = totals.get(key);
+          const pct = Math.max(4, Math.round((total / maxTotal) * 100));
+          return `
+            <div class="spend-month-row">
+              <span>${monthLabel(key)}</span>
+              <span class="spend-bar-track"><span class="spend-bar-fill" style="width:${pct}%"></span></span>
+              <span>${formatUSD(total)}</span>
+            </div>
+          `;
+        })
+        .join("")
+    : `<p class="history-empty">Aucune dépense enregistrée pour l'instant.</p>`;
+}
+
 renderHistory();
+renderCostEstimate();
+renderSpend();
 
 // ---------- Download ----------
 
@@ -277,14 +411,37 @@ async function generate() {
 
     downloadBtn.onclick = () => downloadFile(videoUrl, `seedance-${Date.now()}.mp4`);
 
-    saveHistoryEntry({
-      prompt,
-      url: videoUrl,
-      date: Date.now(),
-      resolution,
-      duration,
-      tier,
-    });
+    const rate = rateFor(tier, resolution);
+    const fallbackSeconds = duration === "auto" ? DEFAULT_DURATION_RANGE[0] : Number(duration);
+    let spendRecorded = false;
+    const recordSpend = (actualSeconds) => {
+      if (spendRecorded) return;
+      spendRecorded = true;
+      const seconds = Number.isFinite(actualSeconds) && actualSeconds > 0 ? actualSeconds : fallbackSeconds;
+      const costUSD = rate * seconds;
+      addSpend(costUSD);
+      saveHistoryEntry({
+        prompt,
+        url: videoUrl,
+        date: Date.now(),
+        resolution,
+        duration,
+        tier,
+        costUSD,
+      });
+    };
+
+    resultVideo.addEventListener(
+      "loadedmetadata",
+      () => recordSpend(resultVideo.duration),
+      { once: true }
+    );
+    // Filet de sécurité si la métadonnée vidéo ne se charge pas (ex : CORS sur le CDN).
+    setTimeout(() => {
+      if (!resultVideo.duration || Number.isNaN(resultVideo.duration)) {
+        recordSpend(fallbackSeconds);
+      }
+    }, 4000);
   } catch (err) {
     console.error(err);
     const message = err?.body?.detail
