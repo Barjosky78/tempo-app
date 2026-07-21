@@ -1,25 +1,5 @@
 [
   {
-    "date": "2026-07-21",
-    "mlPrediction": "bleu",
-    "mlProbabilities": {
-      "bleu": 92,
-      "blanc": 8,
-      "rouge": 0
-    },
-    "mlConfidence": 92
-  },
-  {
-    "date": "2026-07-22",
-    "mlPrediction": "bleu",
-    "mlProbabilities": {
-      "bleu": 92,
-      "blanc": 8,
-      "rouge": 0
-    },
-    "mlConfidence": 92
-  },
-  {
     "date": "2026-07-23",
     "mlPrediction": "bleu",
     "mlProbabilities": {
@@ -81,6 +61,16 @@
   },
   {
     "date": "2026-07-29",
+    "mlPrediction": "bleu",
+    "mlProbabilities": {
+      "bleu": 92,
+      "blanc": 8,
+      "rouge": 0
+    },
+    "mlConfidence": 92
+  },
+  {
+    "date": "2026-07-30",
     "mlPrediction": "bleu",
     "mlProbabilities": {
       "bleu": 92,
