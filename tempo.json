@@ -17,12 +17,14 @@
     "couleur": "bleu",
     "probabilites": {
       "rouge": 0,
-      "blanc": 0,
-      "bleu": 100
+      "blanc": 16,
+      "bleu": 84
     },
-    "fixed": true,
+    "fixed": false,
     "sources": {
-      "reel": true
+      "historique": true,
+      "meteo": true,
+      "rte": true
     }
   },
   {
